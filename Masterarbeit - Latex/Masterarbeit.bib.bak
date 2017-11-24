@@ -1,0 +1,23 @@
+% Encoding: UTF-8
+
+@Misc{HololensVerkaufszahlen,
+  author       = {Peter Gothard},
+  title        = {Microsoft HoloLens: Firm admits sales figures are in the 'thousands'},
+  howpublished = {Internetquelle (abgerufen am 24.11.2017)},
+  month        = jan,
+  year         = {2017},
+  abstract     = {Interview mit Roger Walkden, dem Commercial Leader der Hololens bei Microsoft.
+Das Inteview handelt von den Verkaufszahlen der Hololens},
+  url          = {https://www.theinquirer.net/inquirer/news/3003380/microsoft-hololens-firm-admits-sales-figures-are-in-the-thousands (abgerufen am 24.11.2017)},
+}
+
+@Misc{ControllerTest,
+  author       = {Robert Berg},
+  title        = {Touch-Controller machen Oculus Rift zur besten VR-Brille},
+  howpublished = {Internetquelle (abgerufen am 24.11.2017)},
+  month        = dec,
+  year         = {2016},
+  url          = {https://www.welt.de/wirtschaft/webwelt/article160455301/Touch-Controller-machen-Oculus-Rift-zur-besten-VR-Brille.html },
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}

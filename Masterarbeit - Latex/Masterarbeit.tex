@@ -1,0 +1,79 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{ae}
+\usepackage{graphicx}
+\usepackage{hyperref}
+%\usepackage[printonlyused,withpage]{acronym}
+\usepackage[acronym,toc,section]{glossaries}
+\usepackage{subfig}
+
+\newglossary[slg]{symbolslist}{syi}{syg}{Symbolverzeichnis}
+\renewcommand*{\glspostdescription}{}
+\makenoidxglossaries
+\input{GlosSymbAcr}
+\makeindex
+
+\begin{document}
+\title{
+	{Entwicklung einer VR-basierten Methode für 3D-Datennotation}\\
+	{\large Cmore Automotive GmbH}\\
+	{\includegraphics{Main_Images/cmoreLogo}}
+}
+\author{Patrick Grüner}
+\date{\today}
+\maketitle
+
+\pagenumbering{roman}
+\tableofcontents
+
+\newpage
+\chapter*{Abstract}
+Abstract goes here
+
+\chapter*{Dedication}
+To mum and dad
+
+\chapter*{Declaration}
+I declare that..
+
+\chapter*{Acknowledgements}
+I want to thank...
+\newpage
+
+\newpage
+\printnoidxglossary[style=altlist,title=Glossar]
+
+\newpage
+\deftranslation[to=German]{Acronyms}{Abkürzungsverzeichnis}
+\printnoidxglossary[type=\acronymtype,style=long]
+
+\newpage
+\printnoidxglossary[type=symbolslist,style=long]
+
+\newpage
+
+\pagenumbering{arabic}
+\chapter{Einleitung}
+\input{Kapitel/Kapitel_Einleitung/Einleitung}
+
+\chapter{Vorbereitungen}
+\input{Kapitel/Kapitel_Vorbereitungen/Vorbereitungen}
+
+
+
+%\chapter{Ab hier kommen Inhalte für CopyPaste}
+%\input{Kapitel/Kapitel_CopyPaste/CopyPaste}
+%\chapter{Ab hier enden Inhalte für CopyPaste}
+
+
+\appendix
+\chapter{Appendix Title}
+%\input{chapters/appendix}
+
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{Masterarbeit}
+
+\end{document}

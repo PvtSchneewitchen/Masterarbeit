@@ -1,0 +1,22 @@
+\select@language {ngerman}
+\contentsline {section}{Glossar}{vi}{section*.6}
+\contentsline {section}{Akronyme}{vii}{section*.8}
+\contentsline {section}{Symbolverzeichnis}{viii}{section*.10}
+\contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Ziel der Arbeit}{1}{section.1.2}
+\contentsline {chapter}{\numberline {2}Vorbereitungen}{2}{chapter.2}
+\contentsline {section}{\numberline {2.1}Das C.LABEL Tool}{2}{section.2.1}
+\contentsline {section}{\numberline {2.2}Wahl des passenden Mediums}{2}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Eignung von \acrlong {acr:AR} und \acrlong {acr:VR} im Bezug auf 3D-Datennotation}{3}{subsection.2.2.1}
+\contentsline {subsubsection}{Eignung von \acrlong {acr:AR}}{3}{section*.13}
+\contentsline {subsubsection}{Eignung von \acrlong {acr:VR}}{5}{section*.14}
+\contentsline {subsection}{\numberline {2.2.2}\acrshort {acr:AR}-Brillen im Vergleich}{6}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}\acrshort {acr:VR}-Brillen im Vergleich}{6}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Erl\IeC {\"a}uterung der Entscheidung}{6}{subsection.2.2.4}
+\contentsline {section}{\numberline {2.3}Wahl des passenden Rechners}{6}{section.2.3}
+\contentsline {section}{\numberline {2.4}Wahl der passenden Entwicklungsplattform}{6}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}\acrlong {acr:UE}}{6}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}\acrlong {acr:UE4}}{6}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Erl\IeC {\"a}uterung der Entscheidung}{6}{subsection.2.4.3}
+\contentsline {chapter}{\numberline {A}Appendix Title}{7}{appendix.A}

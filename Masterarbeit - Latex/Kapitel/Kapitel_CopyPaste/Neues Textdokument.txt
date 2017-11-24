@@ -1,0 +1,76 @@
+\chapter{Sections and Paragraphs}
+
+\section{Section}
+Inhalt des ersten Abschnitts
+\subsection{Subsection}
+\label{lab1}
+Inhalt des ersten Unterabschnitts
+\paragraph{Paragraph!?}
+\subparagraph{Unterparagraph!?}
+
+\section{Referenz}
+Wie in \ref{lab1} geschrieben.
+
+\chapter{Lists}
+
+\begin{enumerate}
+\item erstens
+\item zweitens
+\begin{itemize}
+\item unter erstens
+\item unter zweitens
+\item[+] Pro
+\item[-] Contra
+\end{itemize}
+\item drittens\\
+Das Zeichen \verb|\\| \\ forciert eine neue Zeile.
+\end{enumerate}
+
+
+\chapter{Tabellen}
+\begin{tabular}{|l|l|}
+left alligned & left alligned----------\\
+left alligned------- & left alligned\\
+\end{tabular}
+
+\begin{tabular}{|r|r|}
+------right alligned & right alligned\\
+right alligned & --------right alligned\\
+\end{tabular}
+
+\begin{tabular}{|c|c|}
+center alligned & center alligned\\
+center alligned & center alligned\\
+\end{tabular}
+
+\begin{tabular}{|l|r|c|}
+left alligned & right alligned & center alligned\\
+\end{tabular}
+
+\chapter{Figures}
+
+\begin{figure}[h] %h=here	t=top	b=bottom	p=seperate page 
+\centering	%if not centered then left aligned
+\includegraphics[width=1\textwidth]{Main_Images/cmoreLogo}
+\caption{Here is my image}
+\label{image-myimage}
+\end{figure}
+
+\chapter{Equations}
+
+$1+2=3$ \\
+$$1+2=3$$
+\begin{equation}
+1+2=3
+\end{equation}
+\\
+\begin{eqnarray}
+x_1^2 & = & 1+2+3 \\
+& = & \sqrt{6}
+\end{eqnarray}
+
+
+\chapter{References}
+This is a reference.\cite{Testzitat}
+
+This is a website reference.\cite{TestWebsite}
