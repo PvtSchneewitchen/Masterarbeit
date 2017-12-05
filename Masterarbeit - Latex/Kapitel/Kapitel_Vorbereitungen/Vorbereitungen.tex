@@ -90,7 +90,7 @@ Aufgrund der eben genannten Vorteile von \acrshort{acr:VR} gegenüber \acrshort{
 
 Bleibt noch die Frage zu klären welche Brille verwendet werden soll. Diese Frage ist schwerer zu beantworten als die vorherige. Die zwei potentiellen \acrshort{acr:VR}-Brillen, also Oculus Rift und HTC Vive, sind beide geeignete Kandidaten. Die Vive punktet durch gutes \gls{glos:Roomscaling} und gutes Tracking der Brille und der Controller, wogegen die Oculus Rift guten Tragekomfort und gut durchdachte Controller-Bedienung bietet. 
 
-Wichtig für die Entwicklung einer \glslink{glos:Labeling}{3D-Datennotation} ist aber nicht, ob man sich physisch, also mittels \gls{glos:Roomscaling} durch die Punktwolke bewegen kann, sondern wie man die klassifizierbaren Punkte markieren bzw. auswählen kann. Da hierfür die Oculus Touch Controller mehr Möglichkeiten bieten wird für die Entwicklung eines \acrshort{acr:VR}-\glslink{glos:Labeling}{Labeling}-Tools die Oculus Rift verwendet.    
+Wichtig für die Entwicklung einer \glslink{glos:Labeling}{3D-Datennotation} ist aber nicht, ob man sich physisch, also mittels \gls{glos:Roomscaling} durch die Punktwolke bewegen kann, sondern wie man die klassifizierbaren Punkte markieren bzw. auswählen kann. Da hierfür die Oculus Touch Controller mehr Möglichkeiten bieten wird für die Entwicklung eines \acrshort{acr:VR}-\glslink{glos:Labeling}{Labeling}-Tools die \textbf{Oculus Rift} verwendet.    
 
 \section{Wahl des passenden Rechners}
 Für die Berechnungen, die notwendig sind um Inhalte in der Oculus anzuzeigen, ist nicht die Brille selbst verantwortlich. Diese Aufgabe übernimmt ein extra Computer. Die Brille fungiert dementsprechend nur als Anzeigegerät. Auch die Sensoren sind an den PC angeschlossen um das Tracking der Brille und der Controller zu gewährleisten. Da vor allem die Grafikberechnungen sehr aufwendig sind, kann nicht jeder handelsübliche PC oder Laptop dazu verwendet werden eine solche \acrshort{acr:VR}-Brille zu betreiben.\\ 
@@ -99,6 +99,7 @@ Wichtig sind also zunächst die Basiskomponenten wie ein schneller Prozessor und
 
 Sind die Basiskomponenten ausgewählt, sollte noch geprüft werden ob noch weiteres Zubehör wichtig ist um diese zu betreiben. Da gerade Prozessoren mit hoher \gls{glos:Taktrate} viel Wärme produzieren, muss stets für ausreichende Kühlung gesorgt werden. Bei der Rechner-Konfiguration für diese Masterarbeit wurden beispielsweise, neben einem hochwertigen Prozessorkühler, noch zwei weitere Gehäuselüfter verbaut, um die Abwärme aus dem inneren des Computers heraus zu leiten. Zu guter Letzt ist es wichtig ein passendes Mainboard auszuwählen, auf dem alle Komponenten verbaut werden. Für die Oculus Rift werden vier USB-Anschlüsse empfohlen, welche das Mainboard haben muss \cite{bib:OculusSpecs}. Ebenfalls muss das Board genug Platz bieten um die gewählten Komponenten zusammen anbringen zu können. Leistungsstarke Grafikkarten und Prozessorlüfter können zum Teil sehr groß ausfallen. Auch für weitere Aufrüstungen sollte das Board genügend Platz bieten, falls es, zu einem späteren Zeitpunkt, notwendig wäre zusätzliche Komponenten (zweite Grafikkarte) hinzuzufügen. Unter Berücksichtigung der eben genannten Aspekte wurde folgende Rechner-Konfiguration für die Entwicklung verwendet:\\  
 
+\textcolor{red}{Eventuell grafikkarte anpassen}
 \begin{table}[h]
  \begin{tabular}{lcr}
   \textbf{Bezeichnung der Komponente} & \textbf{Verwendete Komponente}\\
@@ -120,16 +121,17 @@ Sind die Basiskomponenten ausgewählt, sollte noch geprüft werden ob noch weite
  \end{table}
 
 \section{Wahl der passenden Entwicklungsplattform}
-Für die Erstellung von \acrlong{acr:VR} Software gibt es zwei Entwicklungsumgebungen, die schon seit längerem \acrshort{acr:VR}-Support bieten. Diese sind  Unreal Engine 4 und Unity Engine. Beide Plattformen bieten alles nötige um \acrshort{acr:VR}-Software zu entwickeln, weshalb die Wahl zwischen ihnen eher subjektiv, aufgrund der eigenen Bedürfnisse und Erfahrungen, zu fällen ist.\\ 
+Für die Erstellung von \acrlong{acr:VR} Software gibt es zwei Entwicklungsumgebungen, die gut für das Entwickeln von \acrlong{acr:VR} geeignet sind, weil sie schon seit längerem \acrshort{acr:VR}-Support bieten und dies auf umfassende Weise. Diese sind  Unreal Engine 4 und Unity Engine. Beide Plattformen bieten alles nötige um \acrshort{acr:VR}-Software zu entwickeln, weshalb die Wahl zwischen ihnen eher subjektiv, aufgrund der eigenen Bedürfnisse und Erfahrungen, zu fällen ist. 
 
-Im Allgemeinen kann man sagen, dass die Unreal Engine mehr Möglichkeiten für professionelles Game Engineering bietet, da viel Wert auf visuelle Qualität gelegt wird. Sie bietet neben dem \gls{glos:Scripting} auch die Gelegenheit, durch C++ Programmierung Module der Engine zu verändern bzw. neue hinzuzufügen. Das gestalten von \glspl{glos:UI} ist mit dem UMG UI Designer ebenfalls gut gelöst \cite{bib:UEvsUE4}. \\
+Im Allgemeinen kann man sagen, dass die Unreal Engine mehr Möglichkeiten für professionelles Game Engineering bietet, da viel Wert auf visuelle Qualität gelegt wird, beispielsweise durch integrierte \gls{glos:PostPr}-Techniken und bessere \gls{glos:Shader}. Sie bietet neben dem \gls{glos:Scripting} auch die Gelegenheit, durch C++ Programmierung Module der Engine zu verändern bzw. neue hinzuzufügen. Das gestalten von \glspl{glos:UI} ist mit dem UMG UI Designer ebenfalls gut gelöst \cite{bib:UEvsUE4}.
 
 Die Unity Engine bietet vor allem Anfängern einen leichten Einstieg in die Welt der Grafik- und Spieleprogrammierung. Im Editor können ganz einfach sogenannte Game Objects erstellt werden, denen dann Funktionalitäten und Eigenschaften angehängt werden können. Dies geschieht meist in Form von Skripten, welche oft schon vorgefertigt zur Verfügung stehen. Wenn dies nicht der Fall ist können diese angepasst oder neu erstellt werden. Die große Community der Unity Engine ist hierbei eine große Hilfe.
 
-\subsection{Erläuterung der Entscheidung}
-%TODO 
-Erläuterung was besser wäre -> beide gut
-=> Beispielprojekt
+\subsubsection{Entscheidung}
+Ein Vorteil den die Unity Engine, im Falle dieser Arbeit, bietet ist Nutzung von C\# als \gls{glos:Scripting}-Sprache. Da  
+C.LABEL (vgl. \ref{sec:C.LABEL}) ebenfalls in C\# programmiert wurde können Komponenten, wie etwa das Einlesen von Daten in die Anwendung, leicht übernommen werden. Des Weiteren habe ich selbst schon, im Rahmen eines Universitätsprojekts, mit dieser Engine gearbeitet, weshalb ein längeres einarbeiten in die Entwicklungsumgebung nicht nötig wäre. Die Vorteile der Unreal Engine sind, wie schon erwähnt, die visuelle Präsentation und die dabei gebotene Performance. Diese sind vor allem für das erstellen aufwändiger Landschaften und deren Inhalten von Vorteil. 
+
+Für die Entwicklung der, in dieser Arbeit, angestrebten Anwendung spielen jedoch Dinge wie Grafik und beeindruckendes Leveldesign keine große Rolle. Viel wichtiger ist sowohl die Möglichkeit der Kompatibilität zur C.LABEL-Anwendung als auch die vorhandene Entwicklungserfahrung einer Engine. Gerade letzteres ist auf Grund des begrenzten Zeitrahmens einer Masterarbeit von Vorteil, da ohne große Einarbeitung mehr Zeit zum Entwickeln von Funktionalität und Optimierungen bleibt. Aus diesen Gründen wird im weiteren Verlauf dieser Arbeit die \textbf{Unity Engine} als Entwicklungsumgebung verwendet.
 
 
 

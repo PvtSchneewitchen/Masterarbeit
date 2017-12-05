@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.06.2 (MiKTeX 2.9.6500 64-bit)  (format=lualatex 2017.11.29)  30 NOV 2017 10:00
+This is LuaTeX, Version 1.06.2 (MiKTeX 2.9.6500 64-bit)  (format=lualatex 2017.11.29)  5 DEC 2017 09:47
  restricted system commands enabled.
 **Masterarbeit.tex
 (./Masterarbeit.tex
@@ -33,7 +33,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.785 seconds
+luaotfload | main : initialization completed in 0.734 seconds
 Babel <3.15> and hyphenation patterns for 1 language(s) loaded.
 
 ("C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/latex/koma-script/scr
@@ -1718,7 +1718,11 @@ LaTeX Info: Redefining \sffamily on input line 31.
 \openout4 = Masterarbeit.idx
 
 Writing index file Masterarbeit.idx
-(./Masterarbeit.aux)
+(./Masterarbeit.aux
+
+LaTeX Warning: Label `sec:C.LABEL' multiply defined.
+
+)
 \openout1 = Masterarbeit.aux
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
@@ -1849,7 +1853,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 
 warning  (font expansion): autoexpand not supported
-<Main_Images/cmoreLogo.jpeg, id=70, pagebox=cropbox, 376.40625pt x 168.63pt>
+<Main_Images/cmoreLogo.jpeg, id=66, pagebox=cropbox, 376.40625pt x 168.63pt>
 File: Main_Images/cmoreLogo.jpeg Graphic file (type jpg)
 <use Main_Images/cmoreLogo.jpeg>
 Package luatex.def Info: Main_Images/cmoreLogo.jpeg  used on input line 53. on i
@@ -2159,7 +2163,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 47--48
 
  []
 
-<Kapitel/Kapitel_Vorbereitungen/Images/Hololens.jpg, id=290, pagebox=cropbox, 75
+<Kapitel/Kapitel_Vorbereitungen/Images/Hololens.jpg, id=291, pagebox=cropbox, 75
 4.82pt x 424.58624pt>
 File: Kapitel/Kapitel_Vorbereitungen/Images/Hololens.jpg Graphic file (type jpg)
 
@@ -2170,7 +2174,7 @@ Package luatex.def Info: Requested size: 142.26378pt x 80.01787pt on input line
 53.
 
 warning  (font expansion): autoexpand not supported
-<Kapitel/Kapitel_Vorbereitungen/Images/Meta2.jpg, id=293, pagebox=cropbox, 592.2
+<Kapitel/Kapitel_Vorbereitungen/Images/Meta2.jpg, id=294, pagebox=cropbox, 592.2
 125pt x 439.6425pt>
 File: Kapitel/Kapitel_Vorbereitungen/Images/Meta2.jpg Graphic file (type jpg)
 <use Kapitel/Kapitel_Vorbereitungen/Images/Meta2.jpg>
@@ -2214,7 +2218,7 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 71.
 [7]
-<Kapitel/Kapitel_Vorbereitungen/Images/Vive.jpg, id=333, pagebox=cropbox, 523.95
+<Kapitel/Kapitel_Vorbereitungen/Images/Vive.jpg, id=334, pagebox=cropbox, 523.95
 75pt x 339.2675pt>
 File: Kapitel/Kapitel_Vorbereitungen/Images/Vive.jpg Graphic file (type jpg)
 <use Kapitel/Kapitel_Vorbereitungen/Images/Vive.jpg>
@@ -2222,7 +2226,7 @@ Package luatex.def Info: Kapitel/Kapitel_Vorbereitungen/Images/Vive.jpg  used on
  input line 76. on input line 76.
 Package luatex.def Info: Requested size: 142.26378pt x 92.11594pt on input line 
 76.
-<Kapitel/Kapitel_Vorbereitungen/Images/Oculus.jpg, id=336, pagebox=cropbox, 426.
+<Kapitel/Kapitel_Vorbereitungen/Images/Oculus.jpg, id=337, pagebox=cropbox, 426.
 59375pt x 397.485pt>
 File: Kapitel/Kapitel_Vorbereitungen/Images/Oculus.jpg Graphic file (type jpg)
 <use Kapitel/Kapitel_Vorbereitungen/Images/Oculus.jpg>
@@ -2282,33 +2286,18 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 101.
 [9]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 122.
+(babel)             in language  on input line 123.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 122.
-
-Underfull \hbox (badness 10000) in paragraph at lines 123--124
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 125--126
-
- []
-
+(babel)             in language  on input line 123.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 129.
+(babel)             in language  on input line 130.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 129.
-)
+(babel)             in language  on input line 130.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 98.
+(babel)             in language  on input line 130.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 98.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 98.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 98.
- [10]
+(babel)             in language  on input line 130.
+ [10])
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 98.
 Package babel Info: Redefining ngerman shorthand "~
@@ -2420,23 +2409,26 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 106.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 106.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 106.
 Package rerunfilecheck Info: File `Masterarbeit.out' has not changed.
-(rerunfilecheck)             Checksum: E89826173848BD5CA8FFF2B70D1964FE;1103.
+(rerunfilecheck)             Checksum: A641DF4BB94664A6DDDA7F6FB12C9261;1019.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 106.
 )
 
 Here is how much of LuaTeX's memory you used:
- 39587 strings out of 494456
+ 39649 strings out of 494456
  100000,1144653 words of node,token memory allocated
  763 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 5 glue, 1 kern, 23 attribute, 75 glue_spec, 23 attr
 ibute_list, 1 write, 15 pdf_action nodes
-   avail lists: 1:2,2:515,3:230,4:67,5:1966,6:22,7:5683,8:148,9:130,10:29,11:600
+   avail lists: 1:3,2:485,3:230,4:67,5:1966,6:29,7:5683,8:148,9:130,10:29,11:600
 
- 42147 multiletter control sequences out of 65536+200000
+ 42208 multiletter control sequences out of 65536+200000
  68 fonts using 11543463 bytes
  67i,10n,108p,8853b,688s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/Adobe/Acrobat Reader DC/Resource/Font/minionpro-it.otf><
@@ -2445,9 +2437,9 @@ C:/Program Files (x86)/Adobe/Acrobat Reader DC/Resource/Font/minionpro-bold.otf>
 otf><C:/Program Files (x86)/Adobe/Acrobat Reader DC/Resource/Font/myriadpro-bold
 .otf><C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
 fonts/cm/cmr12.pfb>
-Output written on Masterarbeit.pdf (22 pages, 240079 bytes).
+Output written on Masterarbeit.pdf (22 pages, 243446 bytes).
 
-PDF statistics: 467 PDF objects out of 1000 (max. 8388607)
- 79 named destinations out of 1000 (max. 131072)
- 144 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 472 PDF objects out of 1000 (max. 8388607)
+ 80 named destinations out of 1000 (max. 131072)
+ 136 words of extra memory for PDF output out of 10000 (max. 100000000)
 

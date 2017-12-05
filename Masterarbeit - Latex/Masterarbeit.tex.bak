@@ -10,6 +10,7 @@
 \usepackage[acronym,toc,section]{glossaries}
 \usepackage{subfig}
 \usepackage{setspace}
+\usepackage{xcolor}
 
 \usepackage{geometry}
 \geometry{a4paper, top=15mm, left=35mm, right=25mm, bottom=15mm}

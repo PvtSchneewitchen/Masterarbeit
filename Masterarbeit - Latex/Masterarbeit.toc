@@ -19,5 +19,5 @@
 \contentsline {subsection}{\numberline {2.2.4}Zusammenfassung und Entscheidung}{8}{subsection.2.2.4}
 \contentsline {section}{\numberline {2.3}Wahl des passenden Rechners}{9}{section.2.3}
 \contentsline {section}{\numberline {2.4}Wahl der passenden Entwicklungsplattform}{10}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Erläuterung der Entscheidung}{11}{subsection.2.4.1}
+\contentsline {subsubsection}{Entscheidung}{11}{section.2.4}
 \contentsline {chapter}{\numberline {A}Appendix Title}{12}{appendix.A}
