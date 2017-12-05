@@ -1,8 +1,11 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: Masterarbeit.aux
 The style file: IEEEtran.bst
 Database file #1: Masterarbeit.bib
+Warning--entry type for "bib:UEvsUE4" isn't style-file defined
+--line 135 of file Masterarbeit.bib
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
+(There was 1 warning)

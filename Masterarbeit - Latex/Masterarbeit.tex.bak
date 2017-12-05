@@ -1,12 +1,34 @@
-\documentclass[a4paper,12pt]{report}
+\documentclass[12pt]{scrreprt}
+\usepackage{fontspec,microtype}
 \usepackage[ngerman]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage{ae}
 \usepackage{graphicx}
 \usepackage{hyperref}
 %\usepackage[printonlyused,withpage]{acronym}
 \usepackage[acronym,toc,section]{glossaries}
 \usepackage{subfig}
+\usepackage{setspace}
+
+\usepackage{geometry}
+\geometry{a4paper, top=15mm, left=35mm, right=25mm, bottom=15mm}
+
+%Fancy Kapitelübersxchrift und Textfont
+\usepackage{lmodern,titlesec,tikz,blindtext}
+\newcommand*{\chapnumfont}{\normalfont\huge\bfseries}
+\titleformat{\chapter}[display]
+{\filleft\bfseries}
+{\filleft%
+  \begin{tikzpicture}
+    \draw[fill,color=black] (0,0) rectangle (2cm,2cm);
+    \draw[color=white] (1cm,1cm) node {\chapnumfont\thechapter};
+  \end{tikzpicture}
+}
+{20pt}
+{\Huge}
+\setmainfont{Minion Pro}
+\setsansfont{Myriad Pro}
 
 \newglossary[slg]{symbolslist}{syi}{syg}{Symbolverzeichnis}
 \renewcommand*{\glspostdescription}{}
@@ -14,7 +36,12 @@
 \input{GlosSymbAcr}
 \makeindex
 
+
 \begin{document}
+\onehalfspacing
+%\sffamily
+
+
 \title{
 	{Entwicklung einer VR-basierten Methode für 3D-Datennotation}\\
 	{\large Cmore Automotive GmbH}\\
