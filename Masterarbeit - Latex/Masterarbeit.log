@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.06.2 (MiKTeX 2.9.6500 64-bit)  (format=lualatex 2017.11.29)  5 DEC 2017 09:47
+This is LuaTeX, Version 1.06.2 (MiKTeX 2.9.6500 64-bit)  (format=lualatex 2017.12.19)  19 DEC 2017 12:04
  restricted system commands enabled.
 **Masterarbeit.tex
 (./Masterarbeit.tex
@@ -33,7 +33,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.734 seconds
+luaotfload | main : initialization completed in 0.484 seconds
 Babel <3.15> and hyphenation patterns for 1 language(s) loaded.
 
 ("C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/latex/koma-script/scr
@@ -149,11 +149,11 @@ ec.sty"
 se/xparse.sty"
 ("C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/latex/l3kernel/expl3.
 sty"
-Package: expl3 2017/11/14 L3 programming layer (loader) 
+Package: expl3 2017/12/16 L3 programming layer (loader) 
 
 ("C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/latex/l3kernel/expl3-
 code.tex"
-Package: expl3 2017/11/14 L3 programming layer (code)
+Package: expl3 2017/12/16 L3 programming layer (code)
 \ucharcat@table=\catcodetable5
 \c_max_int=\count89
 \l_tmpa_int=\count90
@@ -301,7 +301,7 @@ File: l3pdfmode.def 2017/03/18 v L3 Experimental driver: PDF mode
 \l__driver_color_stack_int=\count170
 \l__driver_tmp_box=\box43
 ))
-Package: xparse 2017/11/14 L3 Experimental document command parser
+Package: xparse 2017/12/16 L3 Experimental document command parser
 \l__xparse_current_arg_int=\count171
 \g__xparse_grabber_int=\count172
 \l__xparse_m_args_int=\count173
@@ -891,7 +891,7 @@ Package: mfirstuc 2017/11/14 v2.06 (NLCT)
 
 ("C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/latex/etoolbox/etoolb
 ox.sty"
-Package: etoolbox 2017/01/02 v2.4 e-TeX tools for LaTeX (JAW)
+Package: etoolbox 2017/11/22 v2.5 e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count198
 )
 \@glsmfirst=\toks21
@@ -1054,12 +1054,10 @@ Package: tracklang 2017/03/25 v1.3.4 (NLCT) Track Languages
 
 ("C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/generic/tracklang/tra
 cklang.tex"))
-("C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/latex/beamer/translat
-or/translator.sty"
-Package: translator 2010/06/12 ver 1.10
-
-("C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/latex/beamer/translat
-or/translator-language-mappings.tex"))
+("C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/latex/translator/tran
+slator.sty"
+Package: translator 2017/11/30 v1.11
+)
 ("C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/latex/glossaries-germ
 an/glossaries-german.ldf"
 File: glossaries-german.ldf 2014/11/23 v1.0
@@ -1186,6 +1184,25 @@ Package caption Info: supertabular package is loaded.
 ce.sty"
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
+("C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/latex/xcolor/xcolor.s
+ty"
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+("C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics-cfg/co
+lor.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: luatex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
 ("C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/latex/geometry/geomet
 ry.sty"
 Package: geometry 2010/09/12 v5.6 Page Geometry
@@ -1248,7 +1265,7 @@ Class scrreprt Warning: Usage of package `titlesec' together
 (scrreprt)              the extended optional argument of the section
 (scrreprt)              commands.
 (scrreprt)              Nevertheless, using requested
-(scrreprt)              package `titlesec' on input line 19.
+(scrreprt)              package `titlesec' on input line 20.
 
 
 ("C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/latex/titlesec/titles
@@ -1287,7 +1304,7 @@ Package titlesec Warning: Non standard sectioning command detected
 )
 
 Class scrreprt Warning: Activating an ugly workaround for a missing
-(scrreprt)              feature of package `titlesec` on input line 19.
+(scrreprt)              feature of package `titlesec` on input line 20.
 
 
 ("C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/latex/pgf/frontendlay
@@ -1377,25 +1394,6 @@ File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
 er/pgfsysprotocol.code.tex"
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
 ))
-("C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/latex/xcolor/xcolor.s
-ty"
-Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
-
-("C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics-cfg/co
-lor.cfg"
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package xcolor Info: Driver file: luatex.def on input line 225.
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
-Package xcolor Info: Model `RGB' extended on input line 1364.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
-)
 ("C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/generic/pgf/basiclaye
 r/pgfcore.code.tex"
 Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
@@ -1670,7 +1668,7 @@ ppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts/otl/minionpro-it.luc)
 . - 'bold italic small caps'  (bx/itsc) with NFSS spec.:
 . <->"MinionPro/BI:mode=node;script=latn;language=DFLT;+tlig;+smcp;"
 .................................................
-LaTeX Info: Redefining \rmfamily on input line 30.
+LaTeX Info: Redefining \rmfamily on input line 31.
 (load luc: C:/Users/gruepazu/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts
 /otl/myriadpro-regular.luc)
 \g__fontspec_family_MyriadPro_int=\count352
@@ -1711,37 +1709,33 @@ luaotfload | aux : no font with id 39
 . <->"MyriadPro/BI:mode=node;script=latn;language=DFLT;+tlig;"
 . - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
 .................................................
-LaTeX Info: Redefining \sffamily on input line 31.
+LaTeX Info: Redefining \sffamily on input line 32.
  (./GlosSymbAcr.tex)
 \@indexfile=\write4
 
 \openout4 = Masterarbeit.idx
 
 Writing index file Masterarbeit.idx
-(./Masterarbeit.aux
-
-LaTeX Warning: Label `sec:C.LABEL' multiply defined.
-
-)
+(./Masterarbeit.aux)
 \openout1 = Masterarbeit.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Info: Redefining \microtypecontext on input line 40.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Info: Redefining \microtypecontext on input line 41.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1789,7 +1783,7 @@ Package grfext Info: Graphics extension search list:
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 \AtBeginShipoutBox=\box64
-Package hyperref Info: Link coloring OFF on input line 40.
+Package hyperref Info: Link coloring OFF on input line 41.
 
 ("C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/latex/hyperref/namere
 f.sty"
@@ -1801,9 +1795,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count359
 )
-LaTeX Info: Redefining \ref on input line 40.
-LaTeX Info: Redefining \pageref on input line 40.
-LaTeX Info: Redefining \nameref on input line 40.
+LaTeX Info: Redefining \ref on input line 41.
+LaTeX Info: Redefining \pageref on input line 41.
+LaTeX Info: Redefining \nameref on input line 41.
  (./Masterarbeit.out) (./Masterarbeit.out)
 \@outlinefile=\write5
 
@@ -1856,11 +1850,11 @@ warning  (font expansion): autoexpand not supported
 <Main_Images/cmoreLogo.jpeg, id=66, pagebox=cropbox, 376.40625pt x 168.63pt>
 File: Main_Images/cmoreLogo.jpeg Graphic file (type jpg)
 <use Main_Images/cmoreLogo.jpeg>
-Package luatex.def Info: Main_Images/cmoreLogo.jpeg  used on input line 53. on i
-nput line 53.
+Package luatex.def Info: Main_Images/cmoreLogo.jpeg  used on input line 54. on i
+nput line 54.
 Package luatex.def Info: Requested size: 376.40532pt x 168.62958pt on input line
- 53.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 53.
+ 54.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 54.
 ("C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1873,41 +1867,41 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmr' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 53.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 54.
 
 ("C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 53.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 54.
 
 ("C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 53.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 54.
 ("C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 53.
+(Font)              <17.28> on input line 54.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 53.
+(Font)              <12> on input line 54.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 53.
+(Font)              <10> on input line 54.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 53.
+(babel)             in language  on input line 54.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 53.
+(babel)             in language  on input line 54.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 53.
+(babel)             in language  on input line 54.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 53.
+(babel)             in language  on input line 54.
 [1
 
 
 
 {C:/Users/gruepazu/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}<./Main_Ima
 ges/cmoreLogo.jpeg>]
-Package tocbasic Info: character protrusion at toc deactivated on input line 55.
+Package tocbasic Info: character protrusion at toc deactivated on input line 56.
 
  (./Masterarbeit.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -1919,98 +1913,98 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 \openout6 = Masterarbeit.toc
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 57.
+(babel)             in language  on input line 58.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 57.
+(babel)             in language  on input line 58.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 57.
+(babel)             in language  on input line 58.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 57.
+(babel)             in language  on input line 58.
  [1
 
 ]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 61.
+(babel)             in language  on input line 62.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 61.
+(babel)             in language  on input line 62.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 61.
+(babel)             in language  on input line 62.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 61.
+(babel)             in language  on input line 62.
  [2
 
 ]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 64.
+(babel)             in language  on input line 65.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 64.
+(babel)             in language  on input line 65.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 64.
+(babel)             in language  on input line 65.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 64.
+(babel)             in language  on input line 65.
  [3
 
 ]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 67.
+(babel)             in language  on input line 68.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 67.
+(babel)             in language  on input line 68.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 67.
+(babel)             in language  on input line 68.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 67.
+(babel)             in language  on input line 68.
  [4
 
 ]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 69.
+(babel)             in language  on input line 70.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 69.
+(babel)             in language  on input line 70.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 69.
+(babel)             in language  on input line 70.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 69.
+(babel)             in language  on input line 70.
  [5
 
 ]
 Using TeX to sort glossary entries---this may take a while
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 72.
+(babel)             in language  on input line 73.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 72.
+(babel)             in language  on input line 73.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 74.
+(babel)             in language  on input line 75.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 74.
+(babel)             in language  on input line 75.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 74.
+(babel)             in language  on input line 75.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 74.
+(babel)             in language  on input line 75.
 [6]
 Using TeX to sort glossary entries---this may take a while
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 76.
+(babel)             in language  on input line 77.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 76.
+(babel)             in language  on input line 77.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 78.
+(babel)             in language  on input line 79.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 78.
+(babel)             in language  on input line 79.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 78.
+(babel)             in language  on input line 79.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 78.
+(babel)             in language  on input line 79.
 [7]
 
 Package glossaries Warning: Empty glossary for \printnoidxglossary[type={symbols
 list}]. Rerun may be required (or you may have forgotten to use commands like \g
-ls) on input line 79.
+ls) on input line 80.
 
 chapter 1.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 84.
+(babel)             in language  on input line 85.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 84.
+(babel)             in language  on input line 85.
 (./Kapitel/Kapitel_Einleitung/Einleitung.tex
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 1.
@@ -2022,13 +2016,13 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 2.
 )
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 87.
+(babel)             in language  on input line 88.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 87.
+(babel)             in language  on input line 88.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 87.
+(babel)             in language  on input line 88.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 87.
+(babel)             in language  on input line 88.
 
 warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 [1
@@ -2036,9 +2030,9 @@ warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 ]
 chapter 2.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 87.
+(babel)             in language  on input line 88.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 87.
+(babel)             in language  on input line 88.
 (./Kapitel/Kapitel_Vorbereitungen/Vorbereitungen.tex
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 6.
@@ -2299,19 +2293,19 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 130.
  [10])
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 98.
+(babel)             in language  on input line 99.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 98.
+(babel)             in language  on input line 99.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 98.
+(babel)             in language  on input line 99.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 98.
+(babel)             in language  on input line 99.
  [11]
 chapter A.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 98.
+(babel)             in language  on input line 99.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 98.
+(babel)             in language  on input line 99.
 (./Masterarbeit.bbl
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 2.
@@ -2395,40 +2389,37 @@ Underfull \hbox (badness 8019) in paragraph at lines 91--95
 
 )
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 106.
+(babel)             in language  on input line 107.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 106.
+(babel)             in language  on input line 107.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 106.
+(babel)             in language  on input line 107.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 106.
+(babel)             in language  on input line 107.
  [14]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 106.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 106.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 107.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 107.
  (./Masterarbeit.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 106.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 106.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 107.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 107.
 Package rerunfilecheck Info: File `Masterarbeit.out' has not changed.
 (rerunfilecheck)             Checksum: A641DF4BB94664A6DDDA7F6FB12C9261;1019.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 106.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 107.
 )
 
 Here is how much of LuaTeX's memory you used:
- 39649 strings out of 494456
+ 39725 strings out of 494456
  100000,1144653 words of node,token memory allocated
  763 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 5 glue, 1 kern, 23 attribute, 75 glue_spec, 23 attr
 ibute_list, 1 write, 15 pdf_action nodes
-   avail lists: 1:3,2:485,3:230,4:67,5:1966,6:29,7:5683,8:148,9:130,10:29,11:600
+   avail lists: 1:2,2:485,3:230,4:67,5:1966,6:29,7:5683,8:148,9:130,10:29,11:600
 
- 42208 multiletter control sequences out of 65536+200000
+ 42290 multiletter control sequences out of 65536+200000
  68 fonts using 11543463 bytes
  67i,10n,108p,8853b,688s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/Adobe/Acrobat Reader DC/Resource/Font/minionpro-it.otf><
@@ -2437,9 +2428,9 @@ C:/Program Files (x86)/Adobe/Acrobat Reader DC/Resource/Font/minionpro-bold.otf>
 otf><C:/Program Files (x86)/Adobe/Acrobat Reader DC/Resource/Font/myriadpro-bold
 .otf><C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
 fonts/cm/cmr12.pfb>
-Output written on Masterarbeit.pdf (22 pages, 243446 bytes).
+Output written on Masterarbeit.pdf (22 pages, 243640 bytes).
 
-PDF statistics: 472 PDF objects out of 1000 (max. 8388607)
+PDF statistics: 473 PDF objects out of 1000 (max. 8388607)
  80 named destinations out of 1000 (max. 131072)
  136 words of extra memory for PDF output out of 10000 (max. 100000000)
 

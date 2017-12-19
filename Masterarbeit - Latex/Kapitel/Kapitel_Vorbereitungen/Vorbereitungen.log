@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.06.2 (MiKTeX 2.9.6500 64-bit)  (format=lualatex 2017.11.29)  5 DEC 2017 08:12
+This is LuaTeX, Version 1.06.2 (MiKTeX 2.9.6500 64-bit)  (format=lualatex 2017.12.19)  19 DEC 2017 12:04
  restricted system commands enabled.
 **Vorbereitungen.tex
 (./Vorbereitungen.tex
@@ -33,7 +33,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 1.093 seconds
+luaotfload | main : initialization completed in 0.500 seconds
 Babel <3.15> and hyphenation patterns for 1 language(s) loaded.
 ! Undefined control sequence.
 l.1 \graphicspath
@@ -226,11 +226,12 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 luaotfload | db : Font names database loaded from C:/Users/gruepazu/AppData/Loca
-l/MiKTeX/2.9/luatex-cache/generic/names/luaotfload-names.luc(load luc: C:/Users/
-gruepazu/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts/otl/lmroman10-regul
-ar.luc)(save: C:/Users/gruepazu/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fo
-nts/otl/lmroman10-bold.lua)(save: C:/Users/gruepazu/AppData/Local/MiKTeX/2.9/lua
-tex-cache/generic/fonts/otl/lmroman10-bold.luc)
+l/MiKTeX/2.9/luatex-cache/generic/names/luaotfload-names.luc(save: C:/Users/grue
+pazu/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts/otl/lmroman10-regular.l
+ua)(save: C:/Users/gruepazu/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts/
+otl/lmroman10-regular.luc)(save: C:/Users/gruepazu/AppData/Local/MiKTeX/2.9/luat
+ex-cache/generic/fonts/otl/lmroman10-bold.lua)(save: C:/Users/gruepazu/AppData/L
+ocal/MiKTeX/2.9/luatex-cache/generic/fonts/otl/lmroman10-bold.luc)
 ! Undefined control sequence.
 <write> ...g: Reference `fig:AR-Brillen' on page \thepage 
                                                   \space undefined\on@line .
@@ -2630,6 +2631,21 @@ Overfull \hbox (20.0pt too wide) in paragraph at lines 93--94
 []Wichtig
  []
 
+
+Overfull \hbox (23.97pt too wide) in paragraph at lines 93--94
+\TU/lmr/bx/n/10 Ocu-
+ []
+
+
+Overfull \hbox (14.12pt too wide) in paragraph at lines 93--94
+\TU/lmr/bx/n/10 lus
+ []
+
+
+Overfull \hbox (19.8pt too wide) in paragraph at lines 93--94
+\TU/lmr/bx/n/10 Rift
+ []
+
 ! Undefined control sequence.
 l.95 \section
            {Wahl des passenden Rechners}
@@ -2757,18 +2773,14 @@ Overfull \hbox (5.43pt too wide) in paragraph at lines 100--101
 [[]].
  []
 
-
-! LaTeX Error: Environment table undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.102 \begin{table}
-                 [h]
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
+! Undefined control sequence.
+l.102 \textcolor
+              {red}{Eventuell grafikkarte anpassen}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
 
 ! LaTeX Error: Missing \begin{document}.
@@ -2777,10 +2789,23 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.102 \begin{table}[
-                  h]
+l.102 \textcolor{r
+                ed}{Eventuell grafikkarte anpassen}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Environment table undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.103 \begin{table}
+                 [h]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
 
 ! LaTeX Error: \caption outside float.
@@ -2789,7 +2814,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.118  \caption
+l.119  \caption
              {Rechner-Konfiguration für die Entwicklungen dieser Arbeit}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2801,24 +2826,24 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.120  \end{table}
+l.121  \end{table}
                 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 102--121
-[][h]
+Overfull \hbox (20.0pt too wide) in paragraph at lines 102--122
+[]redEventuell
  []
 
 
-Overfull \hbox (277.38002pt too wide) in paragraph at lines 102--121
+Overfull \hbox (277.38002pt too wide) in paragraph at lines 102--122
 []
  []
 
 ! Undefined control sequence.
-l.122 \section
+l.123 \section
             {Wahl der passenden Entwicklungsplattform}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2833,13 +2858,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.122 \section{W
+l.123 \section{W
               ahl der passenden Entwicklungsplattform}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 ! Undefined control sequence.
-l.123 Für die Erstellung von \acrlong
+l.124 Für die Erstellung von \acrlong
                                     {acr:VR} Software gibt es zwei Entwicklu...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2848,8 +2873,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.123 ...ebungen, die schon seit längerem \acrshort
-                                                  {acr:VR}-Support bieten. D...
+l.124 ...n, die gut für das Entwickeln von \acrlong
+                                                  {acr:VR} geeignet sind, we...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2857,7 +2882,16 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.123 ...attformen bieten alles nötige um \acrshort
+l.124 ...nd, weil sie schon seit längerem \acrshort
+                                                  {acr:VR}-Support bieten un...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.124 ...attformen bieten alles nötige um \acrshort
                                                   {acr:VR}-Software zu entwi...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2866,7 +2900,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 122--124
+Overfull \hbox (20.0pt too wide) in paragraph at lines 123--125
 []Wahl
  []
 
@@ -2877,13 +2911,31 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.125 I
+l.126 I
      m Allgemeinen kann man sagen, dass die Unreal Engine mehr Möglichkeite...
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 ! Undefined control sequence.
-l.125 ...tät gelegt wird. Sie bietet neben dem \gls
+l.126 ...wird, beispielsweise durch integrierte \gls
+                                                  {glos:PostPr}-Techniken un...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.126 ...gls{glos:PostPr}-Techniken und bessere \gls
+                                                  {glos:Shader}. Sie bietet ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.126 ...gls{glos:Shader}. Sie bietet neben dem \gls
                                                   {glos:Scripting} auch die ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2892,7 +2944,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.125 ...eue hinzuzufügen. Das gestalten von \glspl
+l.126 ...eue hinzuzufügen. Das gestalten von \glspl
                                                   {glos:UI} ist mit dem UMG ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2904,8 +2956,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <write> ... Warning: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.125 ...er ebenfalls gut gelöst \cite{bib:UEvsUE4}
-                                                  . \\
+l.126 ...er ebenfalls gut gelöst \cite{bib:UEvsUE4}
+                                                  .
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2913,15 +2965,15 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `bib:UEvsUE4' on page  undefined on input line 125.
+LaTeX Warning: Citation `bib:UEvsUE4' on page  undefined on input line 126.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 125--126
+Overfull \hbox (20.0pt too wide) in paragraph at lines 126--127
 []Im
  []
 
 
-Overfull \hbox (5.43pt too wide) in paragraph at lines 125--126
+Overfull \hbox (5.43pt too wide) in paragraph at lines 126--127
 [[]]. 
  []
 
@@ -2932,19 +2984,19 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.127 D
+l.128 D
      ie Unity Engine bietet vor allem Anfängern einen leichten Einstieg in ...
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 127--128
+Overfull \hbox (20.0pt too wide) in paragraph at lines 128--129
 []Die
  []
 
 ! Undefined control sequence.
-l.129 \subsection
-               {Erläuterung der Entscheidung}
+l.130 \subsubsection
+                  {Entscheidung}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2958,14 +3010,74 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.129 \subsection{E
-                 rläuterung der Entscheidung}
+l.130 \subsubsection{E
+                    ntscheidung}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.131 ...Arbeit, bietet ist Nutzung von C\# als \gls
+                                                  {glos:Scripting}-Sprache. Da
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<write> ...ning: Reference `sec:C.LABEL' on page \thepage 
+                                                  \space undefined\on@line .
+l.132 C.LABEL (vgl. \ref{sec:C.LABEL}
+                                   ) ebenfalls in C\# programmiert wurde kö...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `sec:C.LABEL' on page  undefined on input line 132.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 130--133
+[]Entscheidung
+ []
+
+
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 130--133
+[])
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.134 F
+     ür die Entwicklung der, in dieser Arbeit, angestrebten Anwendung spiel...
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 129--133
-[]Erläuterung
+Overfull \hbox (20.0pt too wide) in paragraph at lines 134--135
+[]Für
+ []
+
+
+Overfull \hbox (28.65001pt too wide) in paragraph at lines 134--135
+\TU/lmr/bx/n/10 Unity
+ []
+
+
+Overfull \hbox (17.78pt too wide) in paragraph at lines 134--135
+\TU/lmr/bx/n/10 En-
+ []
+
+
+Overfull \hbox (20.6pt too wide) in paragraph at lines 134--135
+\TU/lmr/bx/n/10 gine
  []
 
 )
@@ -2978,11 +3090,11 @@ Overfull \hbox (20.0pt too wide) in paragraph at lines 129--133
 
 Here is how much of LuaTeX's memory you used:
  58 strings out of 494456
- 195338,89155 words of node,token memory allocated 184814 words of node memory still in use:
-   346 hlist, 1 vlist, 12 rule, 118 disc, 40 local_par, 1 dir, 4 math, 3934 glue
-, 62 kern, 144 penalty, 21440 glyph, 349 attribute, 35 glue_spec, 349 attribute_
+ 244179,89155 words of node,token memory allocated 194810 words of node memory still in use:
+   359 hlist, 1 vlist, 12 rule, 122 disc, 41 local_par, 1 dir, 4 math, 4133 glue
+, 65 kern, 148 penalty, 22635 glyph, 360 attribute, 35 glue_spec, 360 attribute_
 list, 9 write nodes
-   avail lists: 1:1,2:2,4:257,5:10,7:14,8:11,10:256
+   avail lists: 2:5,4:257,5:9,7:80,8:11,10:256
  4298 multiletter control sequences out of 65536+200000
  27 fonts using 1608167 bytes
  18i,7n,21p,1980b,183s stack positions out of 5000i,500n,10000p,200000b,50000s
