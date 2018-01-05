@@ -1,0 +1,21 @@
+1) Pointclouds:
+Pointclouds are loaded from .pcd files in the "PointClouds" folder
+
+Switch between them with the arrow keys left and right (Current cloud number is shown at the upper right).
+
+2) Movement:
+
+Use W,A,S,D for moving to the front,left,back,right.
+
+Hold right mouse button to look around (camera will move towards the viewing direction).
+
+Hold left shift key to move faster.
+
+3)Labeling:
+
+Select the desired classification group from the dropdown at the upper left
+
+Click on a point to label it with the selected group.
+
+Save/Load the session with Save/Load Button. 
+
