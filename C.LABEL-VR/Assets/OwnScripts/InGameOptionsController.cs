@@ -2,98 +2,137 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using VRTK;
 
 public class InGameOptionsController : MonoBehaviour
 {
+    public GameObject _mainCamera;
+    public GameObject _inGameOptionsMain;
 
+    public ControlScript _mainControl;
+    public Movement _movementController;
+    public KeyboardController _digitKeyboard;
+    public VRTK_UIPointer _rightControllerUiPointer;
+    public VRTK_StraightPointerRenderer _rightControllerPointerRenderer;
+    public VRTK_Pointer _leftControllerPointer;
+
+    private GameObject _currentWindow;
+    private GameObject _parent;
 
     private bool _bIsEnabled;
-    private float _fCameraDistance;
     private Util.Datatype _dataTypeToLoad;
-    private GameObject _currentWindow;
-    private GameObject _mainCamera;
-    private GameObject _parent;
     private Color _invalidCollisionColor;
     private Color _validCollisionColor;
     private Color _invalidCollisionColor_old;
     private Color _validCollisionColor_old;
 
-    private Dropdown _dropdown_MovementMode;
-    private InputField _inputField_MovementDistance;
-
     private void Start()
     {
-        InitListeners();
-
         _invalidCollisionColor = new Color32(99, 109, 115, 50);
         _validCollisionColor = new Color32(255, 255, 255, 150);
 
-        _fCameraDistance = 5.0f;
-        _mainCamera = GameObject.Find("Headset");
+        //_mainCamera = GameObject.Find("Headset");
         _parent = this.gameObject;
+
+        _rightControllerUiPointer.UIPointerElementClick += OnInputFieldClick;
 
         Util.DisableAllChildren(_parent);
     }
 
     public void EnableOptionMenu()
     {
-        _currentWindow = Util.FindInactiveGameobject(_parent, "InGameOptions_Main");
-        _currentWindow.SetActive(true);
-        _currentWindow.transform.rotation = _mainCamera.transform.rotation;
-        _currentWindow.transform.position = _mainCamera.transform.position + _mainCamera.transform.forward * _fCameraDistance;
+        //todo disable unnecessary things when usion option menu
+        _movementController._bMovementEnabled = false;
+        _leftControllerPointer.enabled = false;
+        //_mainCamera.GetComponent<Camera>().nearClipPlane = Util.ClippingDistances._distanceToCamera_Clipping;
 
-        _invalidCollisionColor_old = GameObject.Find("RightController").GetComponent<VRTK_StraightPointerRenderer>().invalidCollisionColor;
-        _validCollisionColor_old = GameObject.Find("RightController").GetComponent<VRTK_StraightPointerRenderer>().validCollisionColor;
-        GameObject.Find("RightController").GetComponent<VRTK_StraightPointerRenderer>().invalidCollisionColor = _invalidCollisionColor;
-        GameObject.Find("RightController").GetComponent<VRTK_StraightPointerRenderer>().validCollisionColor = _validCollisionColor;
+        _currentWindow = _inGameOptionsMain;
+        _currentWindow.transform.rotation = _mainCamera.transform.rotation;
+        _currentWindow.transform.position = _mainCamera.transform.position + _mainCamera.transform.forward * Util.ClippingDistances._distanceToCamera_IngameOptions;
+        _currentWindow.SetActive(true);
+
+
+        _invalidCollisionColor_old = _rightControllerPointerRenderer.invalidCollisionColor;
+        _validCollisionColor_old = _rightControllerPointerRenderer.validCollisionColor;
+        _rightControllerPointerRenderer.invalidCollisionColor = _invalidCollisionColor;
+        _rightControllerPointerRenderer.validCollisionColor = _validCollisionColor;
     }
 
     public void DisableOptionMenu()
     {
-        GameObject.Find("RightController").GetComponent<VRTK_StraightPointerRenderer>().invalidCollisionColor = _invalidCollisionColor_old;
-        GameObject.Find("RightController").GetComponent<VRTK_StraightPointerRenderer>().validCollisionColor = _validCollisionColor_old;
+        //todo enable things going back from option mode
+        //_mainCamera.GetComponent<Camera>().nearClipPlane = Util.ClippingDistances._distanceToCamera_ClippingDefault;
+        _movementController._bMovementEnabled = true;
+        _leftControllerPointer.enabled = true;
+        _rightControllerPointerRenderer.invalidCollisionColor = _invalidCollisionColor_old;
+        _rightControllerPointerRenderer.validCollisionColor = _validCollisionColor_old;
         Util.DisableAllChildren(_parent);
     }
 
-    private void InitListeners()
+    #region Onlick() and Change() methods 
+
+    public void MovementModeChanged(int iModeIndex_inp)
     {
-        _dropdown_MovementMode = GameObject.Find("Dropdown_MovementMode").GetComponent<Dropdown>();
-        _inputField_MovementDistance = GameObject.Find("InputField_MovementDistance").GetComponent<InputField>();
-
-        InitUiComponents();
-
-        _dropdown_MovementMode.onValueChanged.AddListener(MovementModeChanged);
-        _inputField_MovementDistance.onValueChanged.AddListener(MovementDistanceChanged);
+        Util.InGameOptions._movementMode = (Util.MovementMode)iModeIndex_inp;
     }
 
-
-
-    private void InitUiComponents()
+    public void FreeFlyFast_MaxSpeedChanged(string sSpeed_input)
     {
-        //Dropdown MovementMode
-        List<string> dropdown_MovementModeList = new List<string>();
-        foreach (var mode in Enum.GetValues(typeof(Util.MovementMode)))
+        Util.InGameOptions._fFreeFlyFast_MaxSpeed = float.Parse(sSpeed_input);
+    }
+
+    public void FreeFlyFast_AccelerationChanged(string sAcceleration_input)
+    {
+        Util.InGameOptions._fFreeFlyFast_AccelerationFactor = float.Parse(sAcceleration_input);
+    }
+
+    public void FreeFlySlow_MaxSpeedChanged(string sSpeed_input)
+    {
+        Util.InGameOptions._fFreeFlySlow_MaxSpeed = float.Parse(sSpeed_input);
+    }
+
+    public void FreeFlySlow_AccelerationChanged(string sAcceleration_input)
+    {
+        Util.InGameOptions._fFreeFlySlow_AccelerationFactor = float.Parse(sAcceleration_input);
+    }
+
+    public void SicknessPrevention_TeleportDistanceChanged(string sDistance_input)
+    {
+        Util.InGameOptions._fSicknessPrevention_TeleportDistance = float.Parse(sDistance_input);
+    }
+
+    public void SicknessPrevention_TurnAngleChanged(string sAngle_input)
+    {
+        Util.InGameOptions._fSicknessPrevention_TurnAngle = float.Parse(sAngle_input);
+    }
+
+    public void SicknessPrevention_TeleportWithBlinkChanged(bool bBlink_inp)
+    {
+        Util.InGameOptions._bSicknessPrevention_TeleportWithBlink = bBlink_inp;
+    }
+
+    public void OnInputFieldClick(object sender, UIPointerEventArgs args)
+    {
+        if(Util.IsGameobjectTypeOf<InputField>(args.currentTarget))
         {
-            dropdown_MovementModeList.Add(Enum.GetName(typeof(Util.MovementMode), mode));
+            var inputField = args.currentTarget.GetComponent<InputField>();
+            _digitKeyboard.EnableKeyboard(inputField, _currentWindow);
         }
-        _dropdown_MovementMode.AddOptions(dropdown_MovementModeList);
-        _dropdown_MovementMode.value = (int)GameObject.Find("MovementController").GetComponent<Movement>()._movementMode;
     }
 
-    private void MovementModeChanged(int iModeIndex_inp)
+    public void OnCloseMainOptionsClick()
     {
-        GameObject.Find("MovementController").GetComponent<Movement>()._movementMode = (Util.MovementMode)iModeIndex_inp;
+        _mainControl._bOptionMode = false;
+        Util.InGameOptions.SaveOptions();
+        DisableOptionMenu();
     }
 
-    private void MovementDistanceChanged(string sDistance_input)
+    public void OnRestoreDefaultClick()
     {
-        GameObject.Find("MovementController").GetComponent<Movement>()._fMovementDistance = float.Parse(sDistance_input);
+        Util.InGameOptions.RestoreDefaultValues();
     }
+    #endregion
 
-    public void OnMovementDistanceClicked()
-    {
-        Util.FindInactiveGameobject(this.gameObject, "IngameOptions_KeyBoard").GetComponent<KeyboardController>().EnableKeyboard(_inputField_MovementDistance);
-    }
 }

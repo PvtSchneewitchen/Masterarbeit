@@ -211,6 +211,9 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
+    <Reference Include="Vuforia.UnityExtensions">
+      <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Runtime/Vuforia.UnityExtensions.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.Analytics">
       <HintPath>C:/Users/gruepazu/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@1.0.1/UnityEngine.Analytics.dll</HintPath>
     </Reference>
@@ -231,7 +234,13 @@
     <Compile Include="Assets\BasicScripts\SaveContainer.cs" />
     <Compile Include="Assets\BasicScripts\UIController.cs" />
     <Compile Include="Assets\Eye Blink Effect\Scripts\BlinkEffect.cs" />
-    <Compile Include="Assets\KeyboardController.cs" />
+    <Compile Include="Assets\GracesGames\Common\Scripts\FiniteStack.cs" />
+    <Compile Include="Assets\GracesGames\Common\Scripts\Utilities.cs" />
+    <Compile Include="Assets\GracesGames\SimpleFileBrowser\Scripts\DemoCaller.cs" />
+    <Compile Include="Assets\GracesGames\SimpleFileBrowser\Scripts\FileBrowser.cs" />
+    <Compile Include="Assets\GracesGames\SimpleFileBrowser\Scripts\UI\LandscapeUserInterface.cs" />
+    <Compile Include="Assets\GracesGames\SimpleFileBrowser\Scripts\UI\PortraitUserInterface.cs" />
+    <Compile Include="Assets\GracesGames\SimpleFileBrowser\Scripts\UI\UserInterface.cs" />
     <Compile Include="Assets\OculusPlatform\Scripts\AchievementType.cs" />
     <Compile Include="Assets\OculusPlatform\Scripts\AndroidPlatform.cs" />
     <Compile Include="Assets\OculusPlatform\Scripts\ApplicationOptions.cs" />
@@ -411,20 +420,15 @@
     <Compile Include="Assets\OvrAvatar\Scripts\OvrAvatarSkinnedMeshRenderPBSComponent.cs" />
     <Compile Include="Assets\OvrAvatar\Scripts\OvrAvatarTouchController.cs" />
     <Compile Include="Assets\OwnScripts\ControlScript.cs" />
-    <Compile Include="Assets\OwnScripts\FlyCamVR.cs" />
     <Compile Include="Assets\OwnScripts\InGameOptionsController.cs" />
+    <Compile Include="Assets\OwnScripts\KeyboardController.cs" />
     <Compile Include="Assets\OwnScripts\LabelPoint.cs" />
     <Compile Include="Assets\OwnScripts\MainMenuController.cs" />
     <Compile Include="Assets\OwnScripts\Movement.cs" />
+    <Compile Include="Assets\OwnScripts\PlatformManager.cs" />
+    <Compile Include="Assets\OwnScripts\PointerTeleport.cs" />
     <Compile Include="Assets\OwnScripts\Util.cs" />
-    <Compile Include="Assets\PlatformManager.cs" />
-    <Compile Include="Assets\SimpleFileBrowser\Common\Scripts\FiniteStack.cs" />
-    <Compile Include="Assets\SimpleFileBrowser\Common\Scripts\Utilities.cs" />
-    <Compile Include="Assets\SimpleFileBrowser\SimpleFileBrowser\Scripts\DemoCaller.cs" />
-    <Compile Include="Assets\SimpleFileBrowser\SimpleFileBrowser\Scripts\FileBrowser.cs" />
-    <Compile Include="Assets\SimpleFileBrowser\SimpleFileBrowser\Scripts\UI\LandscapeUserInterface.cs" />
-    <Compile Include="Assets\SimpleFileBrowser\SimpleFileBrowser\Scripts\UI\PortraitUserInterface.cs" />
-    <Compile Include="Assets\SimpleFileBrowser\SimpleFileBrowser\Scripts\UI\UserInterface.cs" />
+    <Compile Include="Assets\PointerLengthDisplayControl.cs" />
     <Compile Include="Assets\VRTK\Examples\ExampleResources\Scripts\Archery\Arrow.cs" />
     <Compile Include="Assets\VRTK\Examples\ExampleResources\Scripts\Archery\ArrowNotch.cs" />
     <Compile Include="Assets\VRTK\Examples\ExampleResources\Scripts\Archery\ArrowSpawner.cs" />
@@ -683,6 +687,9 @@
   <ItemGroup>
     <None Include="Assets\Eye Blink Effect\Shaders\Blink Curved.shader" />
     <None Include="Assets\Eye Blink Effect\Shaders\Blink Straight.shader" />
+    <None Include="Assets\GracesGames\SimpleFileBrowser\DemoFiles\DemoText.txt" />
+    <None Include="Assets\GracesGames\SimpleFileBrowser\DemoFiles\TextFileWithNewLines.txt" />
+    <None Include="Assets\GracesGames\SimpleFileBrowser\ReadMe.txt" />
     <None Include="Assets\OVR\Editor\AndroidManifest.OVRSubmission.xml" />
     <None Include="Assets\OVR\Plugins\placeholder.txt" />
     <None Include="Assets\OVR\Resources\Cubemap Blit.shader" />
@@ -702,9 +709,6 @@
     <None Include="Assets\OvrAvatar\Content\Materials\AvatarSurfaceShader.shader" />
     <None Include="Assets\OvrAvatar\Content\Materials\AvatarSurfaceShaderPBS.shader" />
     <None Include="Assets\OvrAvatar\Content\Materials\AvatarSurfaceShaderSelfOccluding.shader" />
-    <None Include="Assets\SimpleFileBrowser\SimpleFileBrowser\DemoFiles\DemoText.txt" />
-    <None Include="Assets\SimpleFileBrowser\SimpleFileBrowser\DemoFiles\TextFileWithNewLines.txt" />
-    <None Include="Assets\SimpleFileBrowser\SimpleFileBrowser\ReadMe.txt" />
     <None Include="Assets\VRTK\Scripts\Internal\Shaders\AdaptiveQualityDebugVisualization.shader" />
     <None Include="Assets\VRTK\Scripts\Internal\Shaders\TransparentFresnelBehind.shader" />
     <None Include="Assets\VRTK\Scripts\Internal\Shaders\UIOverlay.shader" />

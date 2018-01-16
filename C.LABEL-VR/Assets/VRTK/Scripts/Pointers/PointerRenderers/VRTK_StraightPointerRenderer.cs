@@ -37,9 +37,11 @@ namespace VRTK
         [Tooltip("A custom game object to use as the appearance for the pointer cursor. If this is empty then a Sphere primitive will be created and used.")]
         public GameObject customCursor;
 
+        public float tracerLength;
+
         protected GameObject actualContainer;
         protected GameObject actualTracer;
-        protected GameObject actualCursor;
+        public GameObject actualCursor;
 
         protected Vector3 cursorOriginalScale = Vector3.one;
 
@@ -50,7 +52,7 @@ namespace VRTK
         {
             if ((controllingPointer && controllingPointer.IsPointerActive()) || IsVisible())
             {
-                float tracerLength = CastRayForward();
+                tracerLength = CastRayForward();
                 SetPointerAppearance(tracerLength);
                 MakeRenderersVisible();
             }

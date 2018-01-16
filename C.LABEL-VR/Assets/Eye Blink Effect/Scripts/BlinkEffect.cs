@@ -11,7 +11,7 @@ namespace PostProcess
 		public Shader standard;
 		public Shader curved;
 
-		enum State
+		public enum State
 		{
 			FadingIn,
 			FadingOut,
@@ -37,11 +37,11 @@ namespace PostProcess
 		public AnimationCurve fadeInCurve;
 		public AnimationCurve fadeOutCurve;
 
-		Material material;
+        Material material;
 		Material materialCurved;
 
 		float localTime;
-		State state;
+		public State state;
 		bool inAndOut;
 		
 		System.Action onFadeInComplete;
@@ -52,8 +52,8 @@ namespace PostProcess
 			standard = Shader.Find ("Hidden/Image Effects/Blink");
 			curved = Shader.Find ("Hidden/Image Effects/Blink Curved");
 
-			SetDefaultFadeInAnimationCurves ();
-			SetDefaultFadeOutAnimationCurves ();
+			//SetDefaultFadeInAnimationCurves ();
+			//SetDefaultFadeOutAnimationCurves ();
 			time = 0f;
 			localTime = 0f;
 			state = State.Idle;

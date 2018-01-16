@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class LabelPoint_old
 {
-	public GameObject _point {get;}
+	public GameObject _point { get; private set; }
 	public Labeler.LabelGroup _labelingClassGroup{get; set;}
-	public int _iID {get;}
+	public int _iID { get; private set; }
 //	public bool bIsLabeled{get; set;}
 
 	public LabelPoint_old (GameObject Point_inp, Labeler.LabelGroup Group_inp, int iId_inp, bool bIsLabeled_inp)

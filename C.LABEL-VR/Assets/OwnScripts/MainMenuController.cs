@@ -90,7 +90,9 @@ namespace GracesGames.SimpleFileBrowser.Scripts
 
         public void loadtestsecene()
         {
-            Application.LoadLevel("ReaderViewerSceneVR");
+            String path = "C:\\Users\\gruepazu\\Desktop\\PointClouds\\000000000_LidarImage_000000002.pcd";
+            Util.DataLoadInfo.StoreInfo(path, Util.Datatype.pcd, true);
+            SceneManager.LoadScene("ApplicationScene");
         }
 
         /// ///////////////////////////////////////////////////////////////////
@@ -141,7 +143,6 @@ namespace GracesGames.SimpleFileBrowser.Scripts
             _cameraDistance = 10.0f;
             _currentWindow = GetNewWindow("MainMenu_LoadTypeBrowser");
             _dataTypeToLoad = Util.Datatype.hdf5;
-            OpenBrowser("hdf5");
         }
 
         public void OnButtonCLick_BackFromNewSession()
@@ -174,7 +175,7 @@ namespace GracesGames.SimpleFileBrowser.Scripts
             fileBrowserObject.name = "FileBrowser";
             // Set the mode to save or load
             FileBrowser fileBrowserScript = fileBrowserObject.GetComponent<FileBrowser>();
-            fileBrowserScript.SetupFileBrowser(ViewMode.Landscape, parent_inp.name);
+            fileBrowserScript.SetupFileBrowser(ViewMode.Landscape, parent_inp);
             if (fileBrowserMode_inp == FileBrowserMode.Save)
             {
                 fileBrowserScript.SaveFilePanel(this, "SaveFileUsingPath", "DemoText", sFileExtension_inp);
@@ -189,7 +190,7 @@ namespace GracesGames.SimpleFileBrowser.Scripts
         private void LoadFileUsingPath(string path_inp)
         {
             Debug.Log("LoadFileUsingPath: " + path_inp);
-
+            
             if (File.Exists(path_inp))
             {
                 // path is a file.
@@ -199,6 +200,10 @@ namespace GracesGames.SimpleFileBrowser.Scripts
             {
                 // path is a directory.
                 Util.DataLoadInfo.StoreInfo(path_inp, _dataTypeToLoad, false);
+            }
+            else
+            {
+                return;
             }
 
             SceneManager.LoadScene("ApplicationScene");

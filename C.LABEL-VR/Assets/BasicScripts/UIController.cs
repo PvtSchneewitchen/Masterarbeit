@@ -35,13 +35,13 @@ public class UIController : MonoBehaviour
 	public void OnCLickSave ()
 	{
 		GameObject.Find ("AppController").GetComponent <AppController>().Save ();
-		GameObject.Find ("AppController").GetComponent <AppController>().ShowFrameNumber ();
+		//GameObject.Find ("AppController").GetComponent <AppController>().ShowFrameNumber ();
 	}
 
 	public void OnClickLoad ()
 	{
 		GameObject.Find ("AppController").GetComponent <AppController>().Load ();
-		GameObject.Find ("AppController").GetComponent <AppController>().ShowFrameNumber ();
+		//GameObject.Find ("AppController").GetComponent <AppController>().ShowFrameNumber ();
 	}
 
 	public void OnClickQuit ()

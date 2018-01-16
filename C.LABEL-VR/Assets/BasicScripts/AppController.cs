@@ -20,9 +20,9 @@ public class AppController : MonoBehaviour
 	public Labeler sessionLabeler{ get; set; }
 
 	public bool bMultipleFiles = false;
-
-	//
-	Text text_FileNumber;
+    private bool _bOptionMode;
+    //
+    Text text_FileNumber;
 	float fClickTime;
 	bool bHoldDown = false;
 	GameObject selectionBox;
@@ -35,7 +35,7 @@ public class AppController : MonoBehaviour
 		currentCLoud = new PointCLoud ();
 		sessionLabeler = new Labeler ();
 
-
+        _bOptionMode = false;
 
         List<KeyValuePair<int, List<Vector3>>> Coordinates = new List<KeyValuePair<int, List<Vector3>>>();
         if (bMultipleFiles)
@@ -65,7 +65,7 @@ public class AppController : MonoBehaviour
 
 
 		//
-		ShowFrameNumber ();
+		//ShowFrameNumber ();
 
 		selectionBox = GameObject.CreatePrimitive (PrimitiveType.Plane);
 		selectionBox.GetComponent <Renderer> ().material.color = new Color (1.0f, 0.0f, 0.0f, 1.0f);
@@ -81,12 +81,12 @@ public class AppController : MonoBehaviour
 		if (Input.GetKeyDown (KeyCode.RightArrow))
 		{
 			SwitchToNextPointcloud ();
-			ShowFrameNumber ();
+			//ShowFrameNumber ();
 		}
 		else if (Input.GetKeyDown (KeyCode.LeftArrow))
 		{
 			SwitchToPreviousPointcloud ();
-			ShowFrameNumber ();
+			//ShowFrameNumber ();
 		}
 
 		if (Input.GetMouseButtonDown ((int)MouseButton.LeftMouse))
@@ -109,7 +109,24 @@ public class AppController : MonoBehaviour
 //				}
 //			}
 		}
-	}
+
+        if (!_bOptionMode)
+        {
+            if (OVRInput.GetDown(OVRInput.Button.Start))
+            {
+                GameObject.Find("InGameOptions").GetComponent<InGameOptionsController>().EnableOptionMenu();
+                _bOptionMode = true;
+            }
+        }
+        else
+        {
+            if (OVRInput.GetDown(OVRInput.Button.Start))
+            {
+                GameObject.Find("InGameOptions").GetComponent<InGameOptionsController>().DisableOptionMenu();
+                _bOptionMode = false;
+            }
+        }
+    }
 
 //	void OnGUI ()
 //	{
@@ -132,10 +149,10 @@ public class AppController : MonoBehaviour
 
 
 	//testzwecke//
-	public void ShowFrameNumber ()
-	{
-		GameObject.Find ("UIController").GetComponent <UIController> ().text_Filenumber.text = "FrameNumber: " + session.iCurrentCLoud;
-	}
+	//public void ShowFrameNumber ()
+	//{
+	//	GameObject.Find ("UIController").GetComponent <UIController> ().text_Filenumber.text = "FrameNumber: " + session.iCurrentCLoud;
+	//}
 
 	/// ////////////////////////////////////////
 
