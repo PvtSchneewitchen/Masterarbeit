@@ -228,46 +228,47 @@ public static class Util
             GameObject.Find("Toggle_TeleportWithBlink").GetComponent<Toggle>().isOn = _bSicknessPrevention_TeleportWithBlink;
         }
 
-    }
-
-    [Serializable]
-    public class InGameOptionsSaveData
-    {
-        public MovementMode movementMode;
-        public float _fFreeFlyFast_MaxSpeed;
-        public float _fFreeFlyFast_AccelerationFactor;
-        public float _fFreeFlySlow_MaxSpeed;
-        public float _fFreeFlySlow_AccelerationFactor;
-        public float _fSicknessPrevention_TeleportDistance;
-        public float _fSicknessPrevention_TurnAngle;
-        public bool _bSicknessPrevention_TeleportWithBlink;
-
-        public InGameOptionsSaveData()
+        [Serializable]
+        private class InGameOptionsSaveData
         {
-            movementMode = InGameOptions._movementMode;
-            _fFreeFlyFast_MaxSpeed = InGameOptions._fFreeFlyFast_MaxSpeed;
-            _fFreeFlyFast_AccelerationFactor = InGameOptions._fFreeFlyFast_AccelerationFactor;
-            _fFreeFlySlow_MaxSpeed = InGameOptions._fFreeFlySlow_MaxSpeed;
-            _fFreeFlySlow_AccelerationFactor = InGameOptions._fFreeFlySlow_AccelerationFactor;
-            _fSicknessPrevention_TeleportDistance = InGameOptions._fSicknessPrevention_TeleportDistance;
-            _fSicknessPrevention_TurnAngle = InGameOptions._fSicknessPrevention_TurnAngle;
-            _bSicknessPrevention_TeleportWithBlink = InGameOptions._bSicknessPrevention_TeleportWithBlink;
+            public MovementMode movementMode;
+            public float _fFreeFlyFast_MaxSpeed;
+            public float _fFreeFlyFast_AccelerationFactor;
+            public float _fFreeFlySlow_MaxSpeed;
+            public float _fFreeFlySlow_AccelerationFactor;
+            public float _fSicknessPrevention_TeleportDistance;
+            public float _fSicknessPrevention_TurnAngle;
+            public bool _bSicknessPrevention_TeleportWithBlink;
+
+            public InGameOptionsSaveData()
+            {
+                movementMode = InGameOptions._movementMode;
+                _fFreeFlyFast_MaxSpeed = InGameOptions._fFreeFlyFast_MaxSpeed;
+                _fFreeFlyFast_AccelerationFactor = InGameOptions._fFreeFlyFast_AccelerationFactor;
+                _fFreeFlySlow_MaxSpeed = InGameOptions._fFreeFlySlow_MaxSpeed;
+                _fFreeFlySlow_AccelerationFactor = InGameOptions._fFreeFlySlow_AccelerationFactor;
+                _fSicknessPrevention_TeleportDistance = InGameOptions._fSicknessPrevention_TeleportDistance;
+                _fSicknessPrevention_TurnAngle = InGameOptions._fSicknessPrevention_TurnAngle;
+                _bSicknessPrevention_TeleportWithBlink = InGameOptions._bSicknessPrevention_TeleportWithBlink;
+            }
+
+            public void GetData()
+            {
+                Debug.Log(movementMode);
+                Debug.Log(_fFreeFlyFast_AccelerationFactor);
+                Debug.Log(_bSicknessPrevention_TeleportWithBlink);
+                InGameOptions._movementMode = movementMode;
+                InGameOptions._fFreeFlyFast_MaxSpeed = _fFreeFlyFast_MaxSpeed;
+                InGameOptions._fFreeFlyFast_AccelerationFactor = _fFreeFlyFast_AccelerationFactor;
+                InGameOptions._fFreeFlySlow_MaxSpeed = _fFreeFlySlow_MaxSpeed;
+                InGameOptions._fFreeFlySlow_AccelerationFactor = _fFreeFlySlow_AccelerationFactor;
+                InGameOptions._fSicknessPrevention_TeleportDistance = _fSicknessPrevention_TeleportDistance;
+                InGameOptions._fSicknessPrevention_TurnAngle = _fSicknessPrevention_TurnAngle;
+                InGameOptions._bSicknessPrevention_TeleportWithBlink = _bSicknessPrevention_TeleportWithBlink;
+            }
         }
 
-        public void GetData()
-        {
-            Debug.Log(movementMode);
-            Debug.Log(_fFreeFlyFast_AccelerationFactor);
-            Debug.Log(_bSicknessPrevention_TeleportWithBlink);
-            InGameOptions._movementMode = movementMode;
-            InGameOptions._fFreeFlyFast_MaxSpeed = _fFreeFlyFast_MaxSpeed;
-            InGameOptions._fFreeFlyFast_AccelerationFactor = _fFreeFlyFast_AccelerationFactor;
-            InGameOptions._fFreeFlySlow_MaxSpeed = _fFreeFlySlow_MaxSpeed;
-            InGameOptions._fFreeFlySlow_AccelerationFactor = _fFreeFlySlow_AccelerationFactor;
-            InGameOptions._fSicknessPrevention_TeleportDistance = _fSicknessPrevention_TeleportDistance;
-            InGameOptions._fSicknessPrevention_TurnAngle = _fSicknessPrevention_TurnAngle;
-            InGameOptions._bSicknessPrevention_TeleportWithBlink = _bSicknessPrevention_TeleportWithBlink;
-        }
+    
     }
     #endregion
 }

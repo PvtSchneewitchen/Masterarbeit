@@ -76,40 +76,84 @@ public class InGameOptionsController : MonoBehaviour
     public void MovementModeChanged(int iModeIndex_inp)
     {
         Util.InGameOptions._movementMode = (Util.MovementMode)iModeIndex_inp;
+        _movementController.Stop();
     }
 
     public void FreeFlyFast_MaxSpeedChanged(string sSpeed_input)
     {
-        Util.InGameOptions._fFreeFlyFast_MaxSpeed = float.Parse(sSpeed_input);
+        try
+        {
+            Util.InGameOptions._fFreeFlyFast_MaxSpeed = float.Parse(sSpeed_input);
+        }
+        catch (Exception e)
+        {
+            Util.InGameOptions._fFreeFlyFast_MaxSpeed = 0.0f;
+        }
     }
 
     public void FreeFlyFast_AccelerationChanged(string sAcceleration_input)
     {
-        Util.InGameOptions._fFreeFlyFast_AccelerationFactor = float.Parse(sAcceleration_input);
+        try
+        {
+            Util.InGameOptions._fFreeFlyFast_AccelerationFactor = float.Parse(sAcceleration_input);
+        }
+        catch(Exception e)
+        {
+            Util.InGameOptions._fFreeFlyFast_AccelerationFactor = 0;
+        }
     }
 
     public void FreeFlySlow_MaxSpeedChanged(string sSpeed_input)
     {
-        Util.InGameOptions._fFreeFlySlow_MaxSpeed = float.Parse(sSpeed_input);
+        try
+        {
+            Util.InGameOptions._fFreeFlySlow_MaxSpeed = float.Parse(sSpeed_input);
+        }
+        catch (Exception e)
+        {
+            Util.InGameOptions._fFreeFlySlow_MaxSpeed = 0;
+        }
     }
 
     public void FreeFlySlow_AccelerationChanged(string sAcceleration_input)
     {
-        Util.InGameOptions._fFreeFlySlow_AccelerationFactor = float.Parse(sAcceleration_input);
+        try
+        {
+            Util.InGameOptions._fFreeFlySlow_AccelerationFactor = float.Parse(sAcceleration_input);
+        }
+        catch (Exception e)
+        {
+            Util.InGameOptions._fFreeFlySlow_AccelerationFactor = 0;
+        }
     }
 
     public void SicknessPrevention_TeleportDistanceChanged(string sDistance_input)
     {
-        Util.InGameOptions._fSicknessPrevention_TeleportDistance = float.Parse(sDistance_input);
+        try
+        {
+            Util.InGameOptions._fSicknessPrevention_TeleportDistance = float.Parse(sDistance_input);
+        }
+        catch (Exception e)
+        {
+            Util.InGameOptions._fSicknessPrevention_TeleportDistance = 0;
+        }
     }
 
     public void SicknessPrevention_TurnAngleChanged(string sAngle_input)
     {
-        Util.InGameOptions._fSicknessPrevention_TurnAngle = float.Parse(sAngle_input);
+        try
+        {
+            Util.InGameOptions._fSicknessPrevention_TurnAngle = float.Parse(sAngle_input);
+        }
+        catch (Exception e)
+        {
+            Util.InGameOptions._fSicknessPrevention_TurnAngle = 0;
+        }
     }
 
     public void SicknessPrevention_TeleportWithBlinkChanged(bool bBlink_inp)
     {
+
         Util.InGameOptions._bSicknessPrevention_TeleportWithBlink = bBlink_inp;
     }
 
