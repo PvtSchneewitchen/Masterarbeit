@@ -8,9 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MainMenu.unity
     guid: e6f1534a80b94714b9dcbac0098cba11
-  - enabled: 0
-    path: Assets/ReaderViewerSceneVR.unity
-    guid: 5e293886e29ca7944a98937212d36d06
   - enabled: 1
     path: Assets/ApplicationScene.unity
     guid: 525bfe92a2e8cbd43968e842ef7e8fc4
+  - enabled: 1
+    path: Assets/TutorialScene.unity
+    guid: b008935129a36594da9a8be3b42ee524

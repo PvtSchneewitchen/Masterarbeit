@@ -1,8 +1,28 @@
 
+\section{Generierung einer Punktwolke}
 
-\section{optimierung}
+\section{Bewegung durch die Punktwolke}
+
+\subsection{VR-Krankheit}
+
+\subsection{Freier Flug}
+
+\subsection{Teleport}
+
+\section{Annotieren der Punktwolke}
+
+\section{Optimierung}
 -generell nichts teures in update mehtode
 -gameobject find
 -getcomponent
 
 -aufruf von anderer klasse vs. eigene variablen -> umstellung der ingame optionsarchitektur
+
+-clonen von prefabs statt neue instanzen von inbuilts
+
+-verringern der angezeigten punkte whärend der bewegung
+
+-kombinieren von meshes
+   bohrmaschinenbeispiel 
+   
+   fps anzahl zeigen

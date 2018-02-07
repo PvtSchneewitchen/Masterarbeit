@@ -40,10 +40,15 @@ namespace VRTK
         public float tracerLength;
 
         protected GameObject actualContainer;
-        protected GameObject actualTracer;
+        public GameObject actualTracer;
         public GameObject actualCursor;
 
         protected Vector3 cursorOriginalScale = Vector3.one;
+
+        //patrick
+        public bool _bCursorCollided = false;
+        public Vector3 _cursorCollisionPoint;
+        public Vector3 _cursorCollisionNormal;
 
         /// <summary>
         /// The UpdateRenderer method is used to run an Update routine on the pointer.

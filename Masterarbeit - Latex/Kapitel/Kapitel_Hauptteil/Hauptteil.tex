@@ -1,8 +1,28 @@
 
+\section{Generierung einer Punktwolke}
 
-\section{optimierung}
--generell nichts teures in update mehtode
+\section{Bewegung durch die Punktwolke}
+
+\subsection{VR-Krankheit}
+
+\subsection{Freier Flug}
+
+\subsection{Teleport}
+
+\section{Annotieren der Punktwolke}
+
+\section{Optimierung}
+-generell nichts teures in update mehthode
+	
 -gameobject find
 -getcomponent
 
--aufruf von anderer klasse vs. eigene variablen -> umstellung der ingame optionsarchitektur
+keine update oder start mehtode bei skripten der punkte
+collider trigger nicht bei den punkten sondern beim anderen object
+generell alle pollenden aktionen von den punkten entfernen
+
+
+(-clonen von prefabs statt neue instanzen von inbuilts)
+shared materials verwenden   kein material.color weil das eine kopie des materials erzeugt, welches dann einzeln gecallt werden muss
+
+gpu instancing bei den materials verwenden und forward rendering options
