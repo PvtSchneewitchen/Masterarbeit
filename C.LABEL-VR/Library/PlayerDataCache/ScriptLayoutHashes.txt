@@ -333,7 +333,7 @@ d4a69d91b01f3eb7db006f01a9a7be69 Assembly-CSharp.dll:VRTK.UnityEventHelper.VRTK_
 74a6fefe8bd94289ab461e70916d7ac3 Assembly-CSharp.dll:.OVRGrabbable
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:VRTK.SDK_FallbackController
 1e042027c649b7b536a46a4e0335362a Assembly-CSharp.dll:.OVRCubemapCapture
-cf90d01070466b5e58ee0f9e0a8f6e10 Assembly-CSharp.dll:VRTK.VRTK_StraightPointerRenderer
+8c45be50324e27d9dc64061cfbeeff19 Assembly-CSharp.dll:VRTK.VRTK_StraightPointerRenderer
 b8c781e4627e9e25ef9771aa7eea4122 Assembly-CSharp.dll:VRTK.Examples.FireExtinguisher_Base
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:VRTK.SDK_ControllerSim
 dbcf0747c0ba7d53ad280f253bc91e5d Assembly-CSharp.dll:VRTK.Examples.Archery.ArrowSpawner
@@ -458,7 +458,7 @@ ea307a07a882ec9ef6b6b4a02c9e2dbc Assembly-CSharp.dll:.KeyboardController
 2d4a1286379f30096b2cd1920a85978a Assembly-CSharp.dll:VRTK.VRTK_WarpObjectControlAction
 a7fb925992eaa6c7ad4ddffedadd1fb5 Assembly-CSharp.dll:VRTK.Examples.RealGun_Slide
 a7c2e2176de8a94f882bb46179b86539 Assembly-CSharp.dll:VRTK.Examples.ControlReactor
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.PointerLabeler
+132c30a5b2d726cfbca0a942f79be1e1 Assembly-CSharp.dll:.PointerLabeler
 9b5a0829e139e3312e07a09633c29642 Assembly-CSharp.dll:VRTK.VRTK_TouchpadWalking
 fadd04417ee52a6ae6b69da79dd767d2 Assembly-CSharp.dll:VRTK.Examples.Archery.BowHandle
 f27babfbcf2aa30e17d5f40e2dbb3fcb Assembly-CSharp.dll:VRTK.VRTK_Chest
