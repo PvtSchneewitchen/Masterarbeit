@@ -25,7 +25,7 @@ public class ControlScript : MonoBehaviour
         //Debug.Log("Path: " + _sLoadPath + "  Type: " + _dataTypeToLoad);
 
 #if UNITY_EDITOR
-        _dataTypeToLoad = Util.Datatype.hdf5;
+        _dataTypeToLoad = Util.Datatype.pcd;
 
         if(_dataTypeToLoad == Util.Datatype.pcd)
             _sLoadPath = "C:\\Users\\gruepazu\\Desktop\\PointClouds\\000000000_LidarImage_000000002.pcd";
@@ -48,12 +48,12 @@ public class ControlScript : MonoBehaviour
         }
         else if (_dataTypeToLoad == Util.Datatype.hdf5)
         {
-            List<HDF5Addon.Lidar_Daimler> containers = HDF5Addon.ReadDaimlerHdf(_sLoadPath);
+            //List<HDF5Addon.Lidar_Daimler> containers = HDF5Addon.ReadDaimlerHdf(_sLoadPath);
 
-            foreach (var container in containers)
-            {
-                pointClouds.Add(new PointCloud(container));
-            }
+            //foreach (var container in containers)
+            //{
+            //    pointClouds.Add(new PointCloud(container));
+            //}
         }
         else if (_dataTypeToLoad == Util.Datatype.lidar)
         {
@@ -63,7 +63,7 @@ public class ControlScript : MonoBehaviour
         _session = new Session(pointClouds, 0);
         _session.GetCurrentPointCloud().EnableAllPoints();
 
-        //Util.Labeling.SetCurrentGroup(Util.Labeling.LabelGroup.motorcycle);
+        Util.Labeling.SetCurrentGroup(Util.Labeling.LabelGroup.motorcycle);
 
         //CombineMeshes();
     }
@@ -76,7 +76,7 @@ public class ControlScript : MonoBehaviour
 
     private void LoadSettings()
     {
-        InGameOptions.LoadOptions();
+        Util.InGameOptions.LoadOptions();
 
         _sLoadPath = Util.DataLoadInfo._sDataPath;
         _dataTypeToLoad = Util.DataLoadInfo._dataType;

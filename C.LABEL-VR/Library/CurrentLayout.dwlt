@@ -318,7 +318,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 88fbffff00000000
+    m_ExpandedIDs: 88fbffff00000000dc3700004e3c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -412,19 +412,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/OwnScripts/Classes
+    - Assets/OwnScripts/MonoBehaviours
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/OwnScripts/Classes
+  - Assets/OwnScripts/MonoBehaviours
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\gruepazu\Desktop\Masterarbeit\C.LABEL-VR
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: aa2e0000
-    m_LastClickedID: 11946
-    m_ExpandedIDs: 00000000b60a00000a2d0000b02d0000762e0000c22e0000d62e0000242f0000ee2f00004030000048300000d83000005831000066310000a6310000dc310000243200007a32000082330000f2330000b6340000343500009835000040410000424100004441000046410000484100004a4100004c4100004e41000000ca9a3bffffff7f
+    m_SelectedIDs: 2e350000
+    m_LastClickedID: 13614
+    m_ExpandedIDs: 00000000b80a0000082d0000ae2d0000762e0000c22e0000d62e0000242f0000ee2f00004030000048300000d83000005831000066310000a6310000dc310000243200007a32000082330000f2330000b8340000363500009a3500003e41000040410000424100004441000046410000484100004a4100004c41000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -452,7 +452,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b60a00000a2d0000b02d0000762e0000c22e0000d62e0000242f0000ee2f00004030000048300000d83000005831000066310000a6310000dc310000243200007a32000082330000f2330000b6340000343500009835000040410000424100004441000046410000484100004a4100004c4100004e410000
+    m_ExpandedIDs: 00000000b80a0000082d0000ae2d0000762e0000c22e0000d62e0000242f0000ee2f00004030000048300000d83000005831000066310000a6310000dc310000243200007a32000082330000f2330000b8340000363500009a3500003e41000040410000424100004441000046410000484100004a4100004c410000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -479,7 +479,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 882a000000000000e0dd0200c02c00002e32000026340000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

@@ -259,6 +259,12 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="OpenCvSharp.Blob">
+      <HintPath>Assets/OwnScripts/OpenCVSharp/OpenCvSharp.Blob.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp">
+      <HintPath>Assets/OwnScripts/OpenCVSharp/OpenCvSharp.dll</HintPath>
+    </Reference>
     <Reference Include="HDF.PInvoke">
       <HintPath>Assets/Plugins/hdf5/HDF.PInvoke.dll</HintPath>
     </Reference>

@@ -25,186 +25,175 @@ public class PointCloud
         }
     }
 
-    public PointCloud(HDF5Addon.Lidar_Daimler hdf5Container_inp)
-    {
-        List<GameObject> points = new List<GameObject>();
-        _origin = CreateOrigin();
+    //public PointCloud(HDF5Addon.Lidar_Daimler hdf5Container_inp)
+    //{
+    //    List<GameObject> points = new List<GameObject>();
+    //    _origin = CreateOrigin();
 
-        int rows = hdf5Container_inp._sensorX.GetLength(0);
-        int cols = hdf5Container_inp._sensorX.GetLength(1);
+    //    int rows = hdf5Container_inp._sensorX.GetLength(0);
+    //    int cols = hdf5Container_inp._sensorX.GetLength(1);
 
-        PointAttributes[,] attributeTable = new PointAttributes[rows, cols];
+    //    PointAttributes[,] attributeTable = new PointAttributes[rows, cols];
 
-        for (int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < cols; j++)
-            {
-                PointAttributes attribute = new PointAttributes
-                {
-                    _tableIndex = new PointAttributes.Tuple<int, int>(i, j),
-                    _distance = hdf5Container_inp._distances[i, j],
-                    _intensity = hdf5Container_inp._intensity[i, j],
-                    _labelPropability = hdf5Container_inp._labelProbabilities[i, j],
-                    //TODO import labelWorkingSet the right way
-                    _label = Labeling.LabelGroup.unlabeled,
-                    _pointValid = hdf5Container_inp._pointValid[i, j],
-                    _position_Sensor = Quaternion.Euler(0, 180, 0) * new Vector3(hdf5Container_inp._sensorX[i, j], hdf5Container_inp._sensorZ[i, j], hdf5Container_inp._sensorY[i, j]),
-                    _position_Vehicle = new Vector3(hdf5Container_inp._vehicleX[i, j], hdf5Container_inp._vehicleZ[i, j], hdf5Container_inp._vehicleY[i, j])
-                };
+    //    for (int i = 0; i < rows; i++)
+    //    {
+    //        for (int j = 0; j < cols; j++)
+    //        {
+    //            PointAttributes attribute = new PointAttributes
+    //            {
+    //                _tableIndex = new PointAttributes.Tuple<int, int>(i, j),
+    //                _distance = hdf5Container_inp._distances[i, j],
+    //                _intensity = hdf5Container_inp._intensity[i, j],
+    //                _labelPropability = hdf5Container_inp._labelProbabilities[i, j],
+    //                //TODO import labelWorkingSet the right way
+    //                _label = Util.Labeling.LabelGroup.unlabeled,
+    //                _pointValid = hdf5Container_inp._pointValid[i, j],
+    //                _position_Sensor = Quaternion.Euler(0, 180, 0) * new Vector3(hdf5Container_inp._sensorX[i, j], hdf5Container_inp._sensorZ[i, j], hdf5Container_inp._sensorY[i, j]),
+    //                _position_Vehicle = new Vector3(hdf5Container_inp._vehicleX[i, j], hdf5Container_inp._vehicleZ[i, j], hdf5Container_inp._vehicleY[i, j])
+    //            };
 
-                //PointAttributes attribute = new PointAttributes();
-                //attribute._tableIndex = new PointAttributes.Tuple<int, int>(i, j);
-                //attribute._distance = hdf5Container_inp._distances[i, j];
-                //attribute._intensity = hdf5Container_inp._intensity[i, j];
-                //attribute._labelPropability = hdf5Container_inp._labelProbabilities[i, j];
-                ////TODO import labelWorkingSet the right way
-                //attribute._label = Util.Labeling.LabelGroup.unlabeled;
-                //attribute._pointValid = hdf5Container_inp._pointValid[i, j];
-                //attribute._position_Sensor = Quaternion.Euler(0, 180, 0) * new Vector3(hdf5Container_inp._sensorX[i, j], hdf5Container_inp._sensorZ[i, j], hdf5Container_inp._sensorY[i, j]);
-                //attribute._position_Vehicle = new Vector3(hdf5Container_inp._vehicleX[i, j], hdf5Container_inp._vehicleZ[i, j], hdf5Container_inp._vehicleY[i, j]);
+    //            attributeTable[i, j] = attribute;
+    //        }
+    //    }
 
-                attributeTable[i, j] = attribute;
-            }
-        }
+    //    CalculateGroundPoints(attributeTable, ref points);
 
-        CalculateGroundPoints(attributeTable, ref points);
-
-        _points = points;
-    }
+    //    _points = points;
+    //}
 
 
-    private void CalculateGroundPoints(PointAttributes[,] pointTable_inp, ref List<GameObject> points_out)
-    {
-        int rows = pointTable_inp.GetLength(0);
-        int cols = pointTable_inp.GetLength(1);
+    //private void CalculateGroundPoints(PointAttributes[,] pointTable_inp, ref List<GameObject> points_out)
+    //{
+    //    int rows = pointTable_inp.GetLength(0);
+    //    int cols = pointTable_inp.GetLength(1);
 
-        for (int i = 0; i < cols; i++)
-        {
-            //+1 because of the selfmade start ground point 
-            PointAttributes[] verticalLine = new PointAttributes[rows+1];
+    //    for (int i = 0; i < cols; i++)
+    //    {
+    //        //+1 because of the selfmade start ground point 
+    //        PointAttributes[] verticalLine = new PointAttributes[rows+1];
 
-            for (int j = 0; j < rows; j++)
-            {
-                verticalLine[j] = pointTable_inp[j, i];
-            }
+    //        for (int j = 0; j < rows; j++)
+    //        {
+    //            verticalLine[j] = pointTable_inp[j, i];
+    //        }
 
-            ProcessVerticalLine(verticalLine, ref points_out);
-        }
-    }
+    //        ProcessVerticalLine(verticalLine, ref points_out);
+    //    }
+    //}
 
-    private void ProcessVerticalLine(PointAttributes[] verticalLine_inp, ref List<GameObject> points_out)
-    {
-        int thresholdPoint = -1;
+    //private void ProcessVerticalLine(PointAttributes[] verticalLine_inp, ref List<GameObject> points_out)
+    //{
+    //    int thresholdPoint = -1;
 
-        //start grounbd point at sensors location
-        verticalLine_inp[verticalLine_inp.Length] = new PointAttributes();
+    //    //start grounbd point at sensors location
+    //    verticalLine_inp[verticalLine_inp.Length] = new PointAttributes();
 
-        for (int i = verticalLine_inp.Length; i > 0; i--)
-        {
-            int prePoint = i;
-            int curPoint = i - 1;
+    //    for (int i = verticalLine_inp.Length; i > 0; i--)
+    //    {
+    //        int prePoint = i;
+    //        int curPoint = i - 1;
 
-            //First stage (Gradient-Query)
-            float height = Mathf.Abs(verticalLine_inp[prePoint]._position_Vehicle.y - verticalLine_inp[curPoint]._position_Vehicle.y);
-            float distance = Vector3.Distance(verticalLine_inp[prePoint]._position_Vehicle, verticalLine_inp[curPoint]._position_Vehicle);
-            float alpha = Mathf.Asin(height / distance);
+    //        //First stage (Gradient-Query)
+    //        float height = Mathf.Abs(verticalLine_inp[prePoint]._position_Vehicle.y - verticalLine_inp[curPoint]._position_Vehicle.y);
+    //        float distance = Vector3.Distance(verticalLine_inp[prePoint]._position_Vehicle, verticalLine_inp[curPoint]._position_Vehicle);
+    //        float alpha = Mathf.Asin(height / distance);
 
-            if (alpha >= _alphaMax)
-            {
-                thresholdPoint = prePoint;
-                break;
-            }
+    //        if (alpha >= _alphaMax)
+    //        {
+    //            thresholdPoint = prePoint;
+    //            break;
+    //        }
 
-            //Second Stage (Lost-PointQuery)
-            if (verticalLine_inp[curPoint]._pointValid == 0)
-            {
-                //find next valid point
-                int nextV = curPoint - 1;
-                bool found = false;
-                while (nextV < verticalLine_inp.Length)
-                {
-                    if (verticalLine_inp[nextV]._pointValid == 1)
-                    {
-                        found = true;
-                        break;
-                    }
+    //        //Second Stage (Lost-PointQuery)
+    //        if (verticalLine_inp[curPoint]._pointValid == 0)
+    //        {
+    //            //find next valid point
+    //            int nextV = curPoint - 1;
+    //            bool found = false;
+    //            while (nextV < verticalLine_inp.Length)
+    //            {
+    //                if (verticalLine_inp[nextV]._pointValid == 1)
+    //                {
+    //                    found = true;
+    //                    break;
+    //                }
 
-                    nextV++;
-                }
+    //                nextV++;
+    //            }
 
-                if (found)
-                {
-                    float tempHeight = Mathf.Abs(verticalLine_inp[prePoint]._position_Vehicle.y - verticalLine_inp[nextV]._position_Vehicle.y);
-                    if (tempHeight > _hMin)
-                    {
-                        thresholdPoint = prePoint;
-                        break;
-                    }
-                }
-                else
-                {
-                    thresholdPoint = prePoint;
-                    break;
-                }
-            }
+    //            if (found)
+    //            {
+    //                float tempHeight = Mathf.Abs(verticalLine_inp[prePoint]._position_Vehicle.y - verticalLine_inp[nextV]._position_Vehicle.y);
+    //                if (tempHeight > _hMin)
+    //                {
+    //                    thresholdPoint = prePoint;
+    //                    break;
+    //                }
+    //            }
+    //            else
+    //            {
+    //                thresholdPoint = prePoint;
+    //                break;
+    //            }
+    //        }
 
-            //Third stage (Abnormality-Query)
-            if(verticalLine_inp[prePoint]._distance > verticalLine_inp[curPoint]._distance)
-            {
-                thresholdPoint = prePoint;
-                break;
-            }
+    //        //Third stage (Abnormality-Query)
+    //        if(verticalLine_inp[prePoint]._distance > verticalLine_inp[curPoint]._distance)
+    //        {
+    //            thresholdPoint = prePoint;
+    //            break;
+    //        }
 
-            //No query was valid -> next Step
-        }
+    //        //No query was valid -> next Step
+    //    }
 
-        if (thresholdPoint >= 0)
-        {
-            //found
-            for (int i = verticalLine_inp.Length; i > 1; i--)
-            {
-                if (i >= thresholdPoint)
-                {
-                    //is ground
-                    if (verticalLine_inp[i]._pointValid == 1)
-                    {
-                        verticalLine_inp[i]._groundPoint = true;
-                        GameObject point = Util.CreateDefaultLabelPoint();
-                        point.GetComponent<PointAttributes>().CopyAttributes(verticalLine_inp[i]);
-                        point.SetActive(false);
-                        points_out.Add(point);
-                    }
-                }
-                else
-                {
-                    //nonGround
-                    if (verticalLine_inp[i]._pointValid == 1)
-                    {
-                        verticalLine_inp[i]._groundPoint = false;
-                        GameObject point = Util.CreateDefaultLabelPoint();
-                        point.GetComponent<PointAttributes>().CopyAttributes(verticalLine_inp[i]);
-                        point.SetActive(false);
-                        points_out.Add(point);
-                    }
-                }
-            }
-        }
-        else
-        {
-            //not found -> all points are ground points
-            for (int i = verticalLine_inp.Length; i > 1; i--)
-            {
-                if (verticalLine_inp[i]._pointValid == 1)
-                {
-                    verticalLine_inp[i]._groundPoint = true;
-                    GameObject point = Util.CreateDefaultLabelPoint();
-                    point.GetComponent<PointAttributes>().CopyAttributes(verticalLine_inp[i]);
-                    point.SetActive(false);
-                    points_out.Add(point);
-                }
-            }
-        }
-    }
+    //    if (thresholdPoint >= 0)
+    //    {
+    //        //found
+    //        for (int i = verticalLine_inp.Length; i > 1; i--)
+    //        {
+    //            if (i >= thresholdPoint)
+    //            {
+    //                //is ground
+    //                if (verticalLine_inp[i]._pointValid == 1)
+    //                {
+    //                    verticalLine_inp[i]._groundPoint = true;
+    //                    GameObject point = Util.CreateDefaultLabelPoint();
+    //                    point.GetComponent<PointAttributes>().CopyAttributes(verticalLine_inp[i]);
+    //                    point.SetActive(false);
+    //                    points_out.Add(point);
+    //                }
+    //            }
+    //            else
+    //            {
+    //                //nonGround
+    //                if (verticalLine_inp[i]._pointValid == 1)
+    //                {
+    //                    verticalLine_inp[i]._groundPoint = false;
+    //                    GameObject point = Util.CreateDefaultLabelPoint();
+    //                    point.GetComponent<PointAttributes>().CopyAttributes(verticalLine_inp[i]);
+    //                    point.SetActive(false);
+    //                    points_out.Add(point);
+    //                }
+    //            }
+    //        }
+    //    }
+    //    else
+    //    {
+    //        //not found -> all points are ground points
+    //        for (int i = verticalLine_inp.Length; i > 1; i--)
+    //        {
+    //            if (verticalLine_inp[i]._pointValid == 1)
+    //            {
+    //                verticalLine_inp[i]._groundPoint = true;
+    //                GameObject point = Util.CreateDefaultLabelPoint();
+    //                point.GetComponent<PointAttributes>().CopyAttributes(verticalLine_inp[i]);
+    //                point.SetActive(false);
+    //                points_out.Add(point);
+    //            }
+    //        }
+    //    }
+    //}
 
     public void EnableAllPoints()
     {
