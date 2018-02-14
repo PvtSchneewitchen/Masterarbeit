@@ -42,14 +42,14 @@ public class Movement : MonoBehaviour
         {
             UpdateValues();
 
-            if (Util.InGameOptions._movementMode == Util.MovementMode.FreeFly)
+            if (InGameOptions._movementMode == InGameOptions.MovementMode.FreeFly)
             {
                 UpdateCameraPositionAndRotation_FreeFly();
 
                 //if (Util.InGameOptions._bDecreasePointsWhenMoving)
                 //DecreasePointsWhenMoving();
             }
-            else if (Util.InGameOptions._movementMode == Util.MovementMode.TeleportMode)
+            else if (InGameOptions._movementMode == InGameOptions.MovementMode.TeleportMode)
             {
                 UpdateMovement_SicknessPrevention();
             }
@@ -73,7 +73,7 @@ public class Movement : MonoBehaviour
         _leftStickMovement = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
         _rightStickMovement = OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick);
 
-        if (Util.InGameOptions._movementMode == Util.MovementMode.TeleportMode)
+        if (InGameOptions._movementMode == InGameOptions.MovementMode.TeleportMode)
         {
             //TEST auf BOARDERS
             if (Mathf.Abs(_leftStickMovement.x) > InternValues._stickActivationBoarderSPM || Mathf.Abs(_leftStickMovement.y) > InternValues._stickActivationBoarderSPM
@@ -261,7 +261,7 @@ public class Movement : MonoBehaviour
             }
 
             //simulate a human eye blink
-            if (Util.InGameOptions._bSicknessPrevention_TeleportWithBlink)
+            if (InGameOptions._bSicknessPrevention_TeleportWithBlink)
                 Util.EyeBlink.Blink();
 
             _cameraRig.Translate(new Vector3(x, y, z));
@@ -293,32 +293,32 @@ public class Movement : MonoBehaviour
 
         private static float GetMaxSpeedTrans()
         {
-            return Util.InGameOptions._fFreeFly_MaxSpeedTrans / scaleFactorTrans;
+            return InGameOptions._fFreeFly_MaxSpeedTrans / scaleFactorTrans;
         }
 
         private static float GetAccelerationTrans()
         {
-            return Util.InGameOptions._fFreeFly_AccelerationTrans / (scaleFactorTrans * 150);
+            return InGameOptions._fFreeFly_AccelerationTrans / (scaleFactorTrans * 150);
         }
 
         private static float GetMaxSpeedRot()
         {
-            return Util.InGameOptions._fFreeFly_MaxSpeedRot / scaleFactorRot;
+            return InGameOptions._fFreeFly_MaxSpeedRot / scaleFactorRot;
         }
 
         private static float GetAccelerationRot()
         {
-            return Util.InGameOptions._fFreeFly_AccelerationRot / (scaleFactorRot * 170);
+            return InGameOptions._fFreeFly_AccelerationRot / (scaleFactorRot * 170);
         }
 
         private static float GetTeleportDistance()
         {
-            return Util.InGameOptions._fSicknessPrevention_TeleportDistance / scaleFactorTeleport;
+            return InGameOptions._fSicknessPrevention_TeleportDistance / scaleFactorTeleport;
         }
 
         private static float GetTurnAngle()
         {
-            return Util.InGameOptions._fSicknessPrevention_TurnAngle;
+            return InGameOptions._fSicknessPrevention_TurnAngle;
         }
     }
 }

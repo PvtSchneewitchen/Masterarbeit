@@ -259,77 +259,8 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
-    <Reference Include="Accord.Controls">
-      <HintPath>Assets/OwnScripts/AccordLibrary/Accord.Controls.dll</HintPath>
-    </Reference>
-    <Reference Include="Accord">
-      <HintPath>Assets/OwnScripts/AccordLibrary/Accord.dll</HintPath>
-    </Reference>
-    <Reference Include="Accord.MachineLearning">
-      <HintPath>Assets/OwnScripts/AccordLibrary/Accord.MachineLearning.dll</HintPath>
-    </Reference>
-    <Reference Include="Accord.MachineLearning.GPL">
-      <HintPath>Assets/OwnScripts/AccordLibrary/Accord.MachineLearning.GPL.dll</HintPath>
-    </Reference>
-    <Reference Include="Accord.Math.Core">
-      <HintPath>Assets/OwnScripts/AccordLibrary/Accord.Math.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Accord.Math">
-      <HintPath>Assets/OwnScripts/AccordLibrary/Accord.Math.dll</HintPath>
-    </Reference>
-    <Reference Include="Accord.Statistics">
-      <HintPath>Assets/OwnScripts/AccordLibrary/Accord.Statistics.dll</HintPath>
-    </Reference>
-    <Reference Include="Accord.Controls">
-      <HintPath>Assets/OwnScripts/AccordLibrary/GPL/Accord.Controls.dll</HintPath>
-    </Reference>
-    <Reference Include="Accord.Controls.Imaging">
-      <HintPath>Assets/OwnScripts/AccordLibrary/GPL/Accord.Controls.Imaging.dll</HintPath>
-    </Reference>
-    <Reference Include="Accord.Controls.Vision">
-      <HintPath>Assets/OwnScripts/AccordLibrary/GPL/Accord.Controls.Vision.dll</HintPath>
-    </Reference>
-    <Reference Include="Accord.DebuggerVisualizers.GPL">
-      <HintPath>Assets/OwnScripts/AccordLibrary/GPL/Accord.DebuggerVisualizers.GPL.dll</HintPath>
-    </Reference>
-    <Reference Include="Accord">
-      <HintPath>Assets/OwnScripts/AccordLibrary/GPL/Accord.dll</HintPath>
-    </Reference>
-    <Reference Include="Accord.Imaging">
-      <HintPath>Assets/OwnScripts/AccordLibrary/GPL/Accord.Imaging.dll</HintPath>
-    </Reference>
-    <Reference Include="Accord.MachineLearning">
-      <HintPath>Assets/OwnScripts/AccordLibrary/GPL/Accord.MachineLearning.dll</HintPath>
-    </Reference>
-    <Reference Include="Accord.MachineLearning.GPL">
-      <HintPath>Assets/OwnScripts/AccordLibrary/GPL/Accord.MachineLearning.GPL.dll</HintPath>
-    </Reference>
-    <Reference Include="Accord.Math.Core">
-      <HintPath>Assets/OwnScripts/AccordLibrary/GPL/Accord.Math.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Accord.Math">
-      <HintPath>Assets/OwnScripts/AccordLibrary/GPL/Accord.Math.dll</HintPath>
-    </Reference>
-    <Reference Include="Accord.Statistics">
-      <HintPath>Assets/OwnScripts/AccordLibrary/GPL/Accord.Statistics.dll</HintPath>
-    </Reference>
-    <Reference Include="Accord.Video">
-      <HintPath>Assets/OwnScripts/AccordLibrary/GPL/Accord.Video.dll</HintPath>
-    </Reference>
-    <Reference Include="Accord.Vision">
-      <HintPath>Assets/OwnScripts/AccordLibrary/GPL/Accord.Vision.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.VisualStudio.DebuggerVisualizers">
-      <HintPath>Assets/OwnScripts/AccordLibrary/GPL/Microsoft.VisualStudio.DebuggerVisualizers.dll</HintPath>
-    </Reference>
-    <Reference Include="ZedGraph">
-      <HintPath>Assets/OwnScripts/AccordLibrary/GPL/ZedGraph.dll</HintPath>
-    </Reference>
-    <Reference Include="OpenCvSharp.Blob">
-      <HintPath>Assets/OwnScripts/OpenCVSharp/OpenCvSharp.Blob.dll</HintPath>
-    </Reference>
-    <Reference Include="OpenCvSharp">
-      <HintPath>Assets/OwnScripts/OpenCVSharp/OpenCvSharp.dll</HintPath>
+    <Reference Include="HDF.PInvoke">
+      <HintPath>Assets/Plugins/hdf5/HDF.PInvoke.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>C:/Users/gruepazu/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@1.0.7/Editor/UnityEditor.Advertisements.dll</HintPath>
@@ -402,28 +333,7 @@
     <None Include="Assets\OvrAvatar\Content\Materials\AvatarSurfaceShader.shader" />
     <None Include="Assets\OvrAvatar\Content\Materials\AvatarSurfaceShaderPBS.shader" />
     <None Include="Assets\OvrAvatar\Content\Materials\AvatarSurfaceShaderSelfOccluding.shader" />
-    <None Include="Assets\OwnScripts\AccordLibrary\Accord.Controls.XML" />
-    <None Include="Assets\OwnScripts\AccordLibrary\Accord.MachineLearning.GPL.XML" />
-    <None Include="Assets\OwnScripts\AccordLibrary\Accord.MachineLearning.XML" />
-    <None Include="Assets\OwnScripts\AccordLibrary\Accord.Math.Core.XML" />
-    <None Include="Assets\OwnScripts\AccordLibrary\Accord.Math.XML" />
-    <None Include="Assets\OwnScripts\AccordLibrary\Accord.Statistics.XML" />
-    <None Include="Assets\OwnScripts\AccordLibrary\Accord.XML" />
-    <None Include="Assets\OwnScripts\AccordLibrary\GPL\Accord.Controls.Imaging.xml" />
-    <None Include="Assets\OwnScripts\AccordLibrary\GPL\Accord.Controls.Vision.xml" />
-    <None Include="Assets\OwnScripts\AccordLibrary\GPL\Accord.Controls.xml" />
-    <None Include="Assets\OwnScripts\AccordLibrary\GPL\Accord.Imaging.xml" />
-    <None Include="Assets\OwnScripts\AccordLibrary\GPL\Accord.MachineLearning.GPL.XML" />
-    <None Include="Assets\OwnScripts\AccordLibrary\GPL\Accord.MachineLearning.xml" />
-    <None Include="Assets\OwnScripts\AccordLibrary\GPL\Accord.Math.Core.xml" />
-    <None Include="Assets\OwnScripts\AccordLibrary\GPL\Accord.Math.xml" />
-    <None Include="Assets\OwnScripts\AccordLibrary\GPL\Accord.Statistics.xml" />
-    <None Include="Assets\OwnScripts\AccordLibrary\GPL\Accord.Video.FFMPEG.xml" />
-    <None Include="Assets\OwnScripts\AccordLibrary\GPL\Accord.Video.xml" />
-    <None Include="Assets\OwnScripts\AccordLibrary\GPL\Accord.Vision.xml" />
-    <None Include="Assets\OwnScripts\AccordLibrary\GPL\Accord.xml" />
-    <None Include="Assets\OwnScripts\AccordLibrary\GPL\License (GPL).txt" />
-    <None Include="Assets\OwnScripts\AccordLibrary\GPL\ZedGraph.xml" />
+    <None Include="Assets\Plugins\hdf5\HDF.PInvoke.XML" />
     <None Include="Assets\VRTK\Scripts\Internal\Shaders\AdaptiveQualityDebugVisualization.shader" />
     <None Include="Assets\VRTK\Scripts\Internal\Shaders\TransparentFresnelBehind.shader" />
     <None Include="Assets\VRTK\Scripts\Internal\Shaders\UIOverlay.shader" />

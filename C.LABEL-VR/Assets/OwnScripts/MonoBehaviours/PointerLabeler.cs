@@ -88,8 +88,6 @@ public class PointerLabeler : MonoBehaviour
 
     public ControlScript _controlScript;
 
-    private PointOctree<GameObject> _ocTree;
-
     private bool _bPointerActivated;
     private bool _bPointerSelectionActivated;
 
@@ -100,8 +98,6 @@ public class PointerLabeler : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        _ocTree = _controlScript._session.GetCurrentPointCloud()._ocTree;
-
         _pointer = GetComponent<VRTK_Pointer>();
         _pointerRenderer = GetComponent<VRTK_StraightPointerRenderer>();
 
@@ -126,16 +122,16 @@ public class PointerLabeler : MonoBehaviour
                     if (OVRInput.Get(OVRInput.Button.One))
                     {
                         //adjacent labeling
-                        if (_collidedObjectAttributes._group != Util.Labeling._currentGoup)
+                        if (_collidedObjectAttributes._label != Labeling._currentLabel)
                         {
                             float t = Time.realtimeSinceStartup;
                             List<GameObject> adjacentObjects = GetAdjacentLabelPoints(collidedObject.gameObject);
 
                             for (int i = 0; i < adjacentObjects.Count; i++)
                             {
-                                if (adjacentObjects[i].GetComponent<PointAttributes>()._group != Util.Labeling._currentGoup)
+                                if (adjacentObjects[i].GetComponent<PointAttributes>()._label != Labeling._currentLabel)
                                 {
-                                    adjacentObjects[i].GetComponent<PointAttributes>().ChangeGroup(Util.Labeling._currentGoup);
+                                    adjacentObjects[i].GetComponent<PointAttributes>()._label = Labeling._currentLabel;
                                 }
                             }
 
@@ -144,16 +140,16 @@ public class PointerLabeler : MonoBehaviour
                     }
                     else if (OVRInput.Get(OVRInput.Button.Two))
                     {
-                        if (_collidedObjectAttributes._group != Util.Labeling._currentGoup)
+                        if (_collidedObjectAttributes._label != Labeling._currentLabel)
                         {
                             float t = Time.realtimeSinceStartup;
                             List<GameObject> adjacentObjects = GetAdjacentLabelPointsFromOcTree(collidedObject.gameObject);
 
                             for (int i = 0; i < adjacentObjects.Count; i++)
                             {
-                                if (adjacentObjects[i].GetComponent<PointAttributes>()._group != Util.Labeling._currentGoup)
+                                if (adjacentObjects[i].GetComponent<PointAttributes>()._label != Labeling._currentLabel)
                                 {
-                                    adjacentObjects[i].GetComponent<PointAttributes>().ChangeGroup(Util.Labeling._currentGoup);
+                                    adjacentObjects[i].GetComponent<PointAttributes>()._label = Labeling._currentLabel;
                                 }
                             }
 
@@ -163,9 +159,9 @@ public class PointerLabeler : MonoBehaviour
                     else
                     {
                         //simple single point labeling
-                        if (_collidedObjectAttributes._group != Util.Labeling._currentGoup)
+                        if (_collidedObjectAttributes._label != Labeling._currentLabel)
                         {
-                            _collidedObjectAttributes.ChangeGroup(Util.Labeling._currentGoup);
+                            _collidedObjectAttributes._label = Labeling._currentLabel;
                         }
                     }
                 }
@@ -201,30 +197,6 @@ public class PointerLabeler : MonoBehaviour
         RecursiveRadiusSearch(ref adjacentObjects, new List<GameObject> { startPoint_inp }, radius);
 
         return adjacentObjects.Values.ToList();
-    }
-
-    private void RecursiveRadiusSearchOcTree(ref Dictionary<int, GameObject> outputObjects, List<GameObject> objectsToCheck_inp, float radius_inp)
-    {
-        List<GameObject> newObjectsToCheck = new List<GameObject>();
-
-        for (int i = 0; i < objectsToCheck_inp.Count; i++)
-        {
-            GameObject[] gameobjectsInRadius = _ocTree.GetNearby(objectsToCheck_inp[i].transform.position, radius_inp);
-
-            for (int j = 0; j < gameobjectsInRadius.Length; j++)
-            {
-                if (!outputObjects.ContainsKey(gameobjectsInRadius[j].GetInstanceID()) && gameobjectsInRadius[j].name.Contains("Label"))
-                {
-                    outputObjects.Add(gameobjectsInRadius[j].GetInstanceID(), gameobjectsInRadius[j]);
-                    newObjectsToCheck.Add(gameobjectsInRadius[j]);
-                }
-            }
-        }
-
-        if (newObjectsToCheck.Count > 0)
-        {
-            RecursiveRadiusSearch(ref outputObjects, newObjectsToCheck, radius_inp);
-        }
     }
 
     private List<GameObject> GetAdjacentLabelPoints(GameObject startPoint_inp)

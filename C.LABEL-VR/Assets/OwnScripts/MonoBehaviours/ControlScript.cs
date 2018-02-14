@@ -25,12 +25,16 @@ public class ControlScript : MonoBehaviour
         //Debug.Log("Path: " + _sLoadPath + "  Type: " + _dataTypeToLoad);
 
 #if UNITY_EDITOR
-        _sLoadPath = "C:\\Users\\gruepazu\\Desktop\\PointClouds\\000000000_LidarImage_000000002.pcd";
-        _dataTypeToLoad = Util.Datatype.pcd;
+        _dataTypeToLoad = Util.Datatype.hdf5;
+
+        if(_dataTypeToLoad == Util.Datatype.pcd)
+            _sLoadPath = "C:\\Users\\gruepazu\\Desktop\\PointClouds\\000000000_LidarImage_000000002.pcd";
+        else if(_dataTypeToLoad == Util.Datatype.hdf5)
+            _sLoadPath = "C:\\Users\\gruepazu\\Desktop\\Lidar18.8\\LidarImages_03_05\\LidarImage_000000002.hdf5";
 #endif
 
         List<PointCloud> pointClouds = new List<PointCloud>();
-  
+
         if (_dataTypeToLoad == Util.Datatype.pcd)
         {
             Dictionary<int, List<Vector3>> pcdCoordinateLists = new Dictionary<int, List<Vector3>>();
@@ -44,7 +48,12 @@ public class ControlScript : MonoBehaviour
         }
         else if (_dataTypeToLoad == Util.Datatype.hdf5)
         {
-            //TODO Implement hdf Import and call it here
+            List<HDF5Addon.Lidar_Daimler> containers = HDF5Addon.ReadDaimlerHdf(_sLoadPath);
+
+            foreach (var container in containers)
+            {
+                pointClouds.Add(new PointCloud(container));
+            }
         }
         else if (_dataTypeToLoad == Util.Datatype.lidar)
         {
@@ -54,7 +63,7 @@ public class ControlScript : MonoBehaviour
         _session = new Session(pointClouds, 0);
         _session.GetCurrentPointCloud().EnableAllPoints();
 
-        Util.Labeling.SetCurrentGroup(Util.Labeling.LabelGroup.motorcycle);
+        //Util.Labeling.SetCurrentGroup(Util.Labeling.LabelGroup.motorcycle);
 
         //CombineMeshes();
     }
@@ -67,10 +76,10 @@ public class ControlScript : MonoBehaviour
 
     private void LoadSettings()
     {
-        Util.InGameOptions.LoadOptions();
+        InGameOptions.LoadOptions();
 
-        _sLoadPath = Util.DataLoadInfo.sDataPath;
-        _dataTypeToLoad = Util.DataLoadInfo.dataType;
+        _sLoadPath = Util.DataLoadInfo._sDataPath;
+        _dataTypeToLoad = Util.DataLoadInfo._dataType;
     }
 
     private void CheckOptionButton()
@@ -91,30 +100,5 @@ public class ControlScript : MonoBehaviour
                 _inGameOptions.OnCloseMainOptionsClick();
             }
         }
-    }
-
-    private void CombineMeshes()
-    {
-        GameObject origin = GameObject.Find("Origin");
-
-        for (int j = 0; j < _session.GetCurrentPointCloud()._points.Count; j++)
-        {
-            _session.GetCurrentPointCloud()._points[j].transform.parent = origin.transform;
-        }
-
-        MeshFilter[] meshFilters = origin.GetComponentsInChildren<MeshFilter>();
-        CombineInstance[] combine = new CombineInstance[meshFilters.Length];
-
-        int i = 0;
-        while (i < meshFilters.Length)
-        {
-            combine[i].mesh = meshFilters[i].sharedMesh;
-            combine[i].transform = meshFilters[i].transform.localToWorldMatrix;
-            meshFilters[i].gameObject.SetActive(false);
-            i++;
-        }
-        origin.transform.GetComponent<MeshFilter>().mesh = new Mesh();
-        origin.transform.GetComponent<MeshFilter>().mesh.CombineMeshes(combine);
-        origin.transform.gameObject.SetActive(true);
     }
 }

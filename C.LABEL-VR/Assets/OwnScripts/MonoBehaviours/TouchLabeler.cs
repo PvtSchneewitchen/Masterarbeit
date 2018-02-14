@@ -22,7 +22,7 @@ public class TouchLabeler : MonoBehaviour {
         if (other.gameObject.name == _labelPointPrefab.name)
         {
             _collidedObjectAttributes = other.gameObject.GetComponent<PointAttributes>();
-            if (_collidedObjectAttributes._group != Util.Labeling._currentGoup)
+            if (_collidedObjectAttributes._label != Util.Labeling._currentLabel)
             {
                 if(gameObject.transform.parent.name.Contains("left"))
                 {
@@ -33,7 +33,7 @@ public class TouchLabeler : MonoBehaviour {
                     OVRHaptics.RightChannel.Queue(_vibration);
                 }
                 
-                _collidedObjectAttributes.ChangeGroup(Util.Labeling._currentGoup);
+                _collidedObjectAttributes._label = Util.Labeling._currentLabel;
             }
         }
     }
