@@ -231,6 +231,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CustomAttributes.cs" />
     <Compile Include="Assets\Eye Blink Effect\Scripts\BlinkEffect.cs" />
     <Compile Include="Assets\GracesGames\Common\Scripts\FiniteStack.cs" />
     <Compile Include="Assets\GracesGames\Common\Scripts\Utilities.cs" />
@@ -429,7 +430,6 @@
     <Compile Include="Assets\OwnScripts\MonoBehaviours\MainMenuController.cs" />
     <Compile Include="Assets\OwnScripts\MonoBehaviours\Movement.cs" />
     <Compile Include="Assets\OwnScripts\MonoBehaviours\PlatformManager.cs" />
-    <Compile Include="Assets\OwnScripts\MonoBehaviours\PointAttributes.cs" />
     <Compile Include="Assets\OwnScripts\MonoBehaviours\PointerLabeler.cs" />
     <Compile Include="Assets\OwnScripts\MonoBehaviours\PointerLengthDisplayControl.cs" />
     <Compile Include="Assets\OwnScripts\MonoBehaviours\PointerTeleport.cs" />

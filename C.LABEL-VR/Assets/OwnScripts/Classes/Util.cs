@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
-using System.Xml;
-using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.UI;
-using VRTK;
 using PostProcess;
-using System.Threading;
-using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Reflection;
 
@@ -107,6 +100,26 @@ public static class Util
 
     #region Nested Classes
 
+    public class Tuple<T1>
+    {
+        public Tuple(T1 item1)
+        {
+            Item1 = item1;
+        }
+
+        public T1 Item1 { get; set; }
+    }
+
+    public class Tuple<T1, T2> : Tuple<T1>
+    {
+        public Tuple(T1 item1, T2 item2) : base(item1)
+        {
+            Item2 = item2;
+        }
+
+        public T2 Item2 { get; set; }
+    }
+
     public static class ClippingDistances
     {
         public static float _distanceToCamera_IngameOptions { get { return 5.0f; } }
@@ -147,6 +160,40 @@ public static class Util
         {
             _sDataPath = sPath_inp;
             _dataType = dataType_inp;
+        }
+    }
+
+    public class CustomAttributesContainer
+    {
+        public Tuple<int, int> _tableIndex { get; set; }
+
+        public float _distance { get; set; }
+
+        public float _intensity { get; set; }
+
+        public float _labelPropability { get; set; }
+
+        public Labeling.LabelGroup _label { get; set; }
+
+        public int _pointValid { get; set; }
+
+        public Vector3 _position_Sensor { get; set; }
+
+        public Vector3 _position_Vehicle { get; set; }
+
+        public bool _groundPoint { get; set; }
+
+        public CustomAttributesContainer()
+        {
+            _tableIndex = new Tuple<int, int>(0, 0);
+            _distance = 0;
+            _intensity = 0;
+            _labelPropability = 0;
+            _label = Util.Labeling.LabelGroup.unlabeled;
+            _pointValid = 0;
+            _position_Sensor = Vector3.zero;
+            _position_Vehicle = Vector3.zero;
+            _groundPoint = true;
         }
     }
 

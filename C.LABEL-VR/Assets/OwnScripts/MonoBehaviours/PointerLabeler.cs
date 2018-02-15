@@ -93,7 +93,7 @@ public class PointerLabeler : MonoBehaviour
 
     private VRTK_Pointer _pointer;
     private VRTK_StraightPointerRenderer _pointerRenderer;
-    private PointAttributes _collidedObjectAttributes;
+    private CustomAttributes _collidedObjectAttributes;
 
     // Use this for initialization
     void Start()
@@ -117,21 +117,21 @@ public class PointerLabeler : MonoBehaviour
                 Collider collidedObject = _pointerRenderer.GetDestinationHit().collider;
                 if (collidedObject != null && collidedObject.name.Contains("Label"))
                 {
-                    _collidedObjectAttributes = collidedObject.gameObject.GetComponent<PointAttributes>();
+                    _collidedObjectAttributes = collidedObject.gameObject.GetComponent<CustomAttributes>();
 
                     if (OVRInput.Get(OVRInput.Button.One))
                     {
                         //adjacent labeling
-                        if (_collidedObjectAttributes.GetGroup() != Util.Labeling._currentLabel)
+                        if (_collidedObjectAttributes._label != Util.Labeling._currentLabel)
                         {
                             float t = Time.realtimeSinceStartup;
                             List<GameObject> adjacentObjects = GetAdjacentLabelPoints(collidedObject.gameObject);
 
                             for (int i = 0; i < adjacentObjects.Count; i++)
                             {
-                                if (adjacentObjects[i].GetComponent<PointAttributes>().GetGroup() != Util.Labeling._currentLabel)
+                                if (adjacentObjects[i].GetComponent<CustomAttributes>()._label != Util.Labeling._currentLabel)
                                 {
-                                    adjacentObjects[i].GetComponent<PointAttributes>().ChangeGroup(Util.Labeling._currentLabel);
+                                    adjacentObjects[i].GetComponent<CustomAttributes>()._label = Util.Labeling._currentLabel;
                                 }
                             }
 
@@ -140,16 +140,16 @@ public class PointerLabeler : MonoBehaviour
                     }
                     else if (OVRInput.Get(OVRInput.Button.Two))
                     {
-                        if (_collidedObjectAttributes.GetGroup() != Util.Labeling._currentLabel)
+                        if (_collidedObjectAttributes._label != Util.Labeling._currentLabel)
                         {
                             float t = Time.realtimeSinceStartup;
                             List<GameObject> adjacentObjects = GetAdjacentLabelPointsFromOcTree(collidedObject.gameObject);
 
                             for (int i = 0; i < adjacentObjects.Count; i++)
                             {
-                                if (adjacentObjects[i].GetComponent<PointAttributes>().GetGroup() != Util.Labeling._currentLabel)
+                                if (adjacentObjects[i].GetComponent<CustomAttributes>()._label != Util.Labeling._currentLabel)
                                 {
-                                    adjacentObjects[i].GetComponent<PointAttributes>().ChangeGroup(Util.Labeling._currentLabel);
+                                    adjacentObjects[i].GetComponent<CustomAttributes>()._label = Util.Labeling._currentLabel;
                                 }
                             }
 
@@ -159,9 +159,9 @@ public class PointerLabeler : MonoBehaviour
                     else
                     {
                         //simple single point labeling
-                        if (_collidedObjectAttributes.GetGroup() != Util.Labeling._currentLabel)
+                        if (_collidedObjectAttributes._label != Util.Labeling._currentLabel)
                         {
-                            _collidedObjectAttributes.ChangeGroup( Util.Labeling._currentLabel);
+                            _collidedObjectAttributes._label = Util.Labeling._currentLabel;
                         }
                     }
                 }

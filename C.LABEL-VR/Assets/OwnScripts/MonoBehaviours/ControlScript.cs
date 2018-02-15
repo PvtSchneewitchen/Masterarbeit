@@ -25,7 +25,7 @@ public class ControlScript : MonoBehaviour
         //Debug.Log("Path: " + _sLoadPath + "  Type: " + _dataTypeToLoad);
 
 #if UNITY_EDITOR
-        _dataTypeToLoad = Util.Datatype.pcd;
+        _dataTypeToLoad = Util.Datatype.hdf5;
 
         if(_dataTypeToLoad == Util.Datatype.pcd)
             _sLoadPath = "C:\\Users\\gruepazu\\Desktop\\PointClouds\\000000000_LidarImage_000000002.pcd";
@@ -48,12 +48,12 @@ public class ControlScript : MonoBehaviour
         }
         else if (_dataTypeToLoad == Util.Datatype.hdf5)
         {
-            //List<HDF5Addon.Lidar_Daimler> containers = HDF5Addon.ReadDaimlerHdf(_sLoadPath);
+            List<HDF5Addon.Lidar_Daimler> containers = HDF5Addon.ReadDaimlerHdf(_sLoadPath);
 
-            //foreach (var container in containers)
-            //{
-            //    pointClouds.Add(new PointCloud(container));
-            //}
+            foreach (var container in containers)
+            {
+                pointClouds.Add(new PointCloud(container));
+            }
         }
         else if (_dataTypeToLoad == Util.Datatype.lidar)
         {
