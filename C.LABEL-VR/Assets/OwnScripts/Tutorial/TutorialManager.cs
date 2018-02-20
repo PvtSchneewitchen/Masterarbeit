@@ -52,8 +52,8 @@ public class TutorialManager : MonoBehaviour
 
     private void InitPointCloud()
     {
-        Util.InGameOptions.LoadOptions();
-        Util.InGameOptions.RestoreDefaultValues();
+        InGameOptions.LoadOptions();
+        InGameOptions.RestoreDefaultValues();
 
         foreach (var camera in _cameraRig.GetComponentsInChildren<Camera>())
         {
@@ -126,12 +126,12 @@ public class TutorialManager : MonoBehaviour
 
     public void Enable_MovementTeleportMode()
     {
-        Util.InGameOptions._movementMode = Util.MovementMode.TeleportMode;
+        InGameOptions._movementMode = Util.MovementMode.TeleportMode;
     }
 
     public void Enable_MovementFreeFlyMode()
     {
-        Util.InGameOptions._movementMode = Util.MovementMode.FreeFly;
+        InGameOptions._movementMode = Util.MovementMode.FreeFly;
     }
 
     public void Create_LabelpointsForPointer()

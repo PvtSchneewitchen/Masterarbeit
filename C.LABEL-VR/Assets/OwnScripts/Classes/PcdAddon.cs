@@ -7,7 +7,8 @@ using UnityEngine;
 public static class PcdAddon
 {
     /// <summary>
-    /// Reads one or multiple pcd-files and delivers the coordinates from it 
+    /// Reads one or multiple pcd-files and delivers the coordinates from it. 
+    /// It adds a label class to the global label classes
     /// </summary>
     /// <param name="sPath_inp"> Path of a pcd file or a directory with pcd-files in it</param>
     /// <returns>coordinates of the pcd files</returns>
@@ -73,6 +74,21 @@ public static class PcdAddon
             }
             outputCoordinates.Add(i, coordinatesFromFile);
         }
+
+        InitializeLabelClasses();
         return outputCoordinates;
+    }
+
+    private static void InitializeLabelClasses()
+    {
+        Dictionary<string, uint> classes = new Dictionary<string, uint>
+        {
+            { "label1", 1 },
+            { "label2", 2 },
+            { "label3", 3 },
+            { "label4", 4 }
+        };
+
+        Labeling.SetNewLabelClasses(classes);
     }
 }

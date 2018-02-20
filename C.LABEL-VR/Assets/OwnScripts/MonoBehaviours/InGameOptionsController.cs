@@ -36,7 +36,7 @@ public class InGameOptionsController : MonoBehaviour
 
         _rightControllerUiPointer.UIPointerElementClick += OnInputFieldClick;
 
-        if(Util.InGameOptions._bAttachOptionsToCamera)
+        if (InGameOptions._bAttachOptionsToCamera)
         {
             _parent.transform.parent = _mainCamera.transform;
         }
@@ -78,7 +78,7 @@ public class InGameOptionsController : MonoBehaviour
 
     public void MovementModeChanged(int iModeIndex_inp)
     {
-        Util.InGameOptions._movementMode = (Util.MovementMode)iModeIndex_inp;
+        InGameOptions._movementMode = (Util.MovementMode)iModeIndex_inp;
         _movementController.Stop();
     }
 
@@ -86,11 +86,11 @@ public class InGameOptionsController : MonoBehaviour
     {
         try
         {
-            Util.InGameOptions._fFreeFly_MaxSpeedTrans = float.Parse(sSpeed_input);
+            InGameOptions._fFreeFly_MaxSpeedTrans = float.Parse(sSpeed_input);
         }
         catch
         {
-            Util.InGameOptions._fFreeFly_MaxSpeedTrans = 0.0f;
+            InGameOptions._fFreeFly_MaxSpeedTrans = 0.0f;
         }
     }
 
@@ -98,11 +98,11 @@ public class InGameOptionsController : MonoBehaviour
     {
         try
         {
-            Util.InGameOptions._fFreeFly_AccelerationTrans = float.Parse(sAcceleration_input);
+            InGameOptions._fFreeFly_AccelerationTrans = float.Parse(sAcceleration_input);
         }
         catch
         {
-            Util.InGameOptions._fFreeFly_AccelerationTrans = 0;
+            InGameOptions._fFreeFly_AccelerationTrans = 0;
         }
     }
 
@@ -110,11 +110,11 @@ public class InGameOptionsController : MonoBehaviour
     {
         try
         {
-            Util.InGameOptions._fFreeFly_MaxSpeedRot = float.Parse(sSpeed_input);
+            InGameOptions._fFreeFly_MaxSpeedRot = float.Parse(sSpeed_input);
         }
-        catch 
+        catch
         {
-            Util.InGameOptions._fFreeFly_MaxSpeedRot = 0;
+            InGameOptions._fFreeFly_MaxSpeedRot = 0;
         }
     }
 
@@ -122,11 +122,11 @@ public class InGameOptionsController : MonoBehaviour
     {
         try
         {
-            Util.InGameOptions._fFreeFly_AccelerationRot = float.Parse(sAcceleration_input);
+            InGameOptions._fFreeFly_AccelerationRot = float.Parse(sAcceleration_input);
         }
-        catch 
+        catch
         {
-            Util.InGameOptions._fFreeFly_AccelerationRot = 0;
+            InGameOptions._fFreeFly_AccelerationRot = 0;
         }
     }
 
@@ -134,11 +134,11 @@ public class InGameOptionsController : MonoBehaviour
     {
         try
         {
-            Util.InGameOptions._fSicknessPrevention_TeleportDistance = float.Parse(sDistance_input);
+            InGameOptions._fSicknessPrevention_TeleportDistance = float.Parse(sDistance_input);
         }
-        catch 
+        catch
         {
-            Util.InGameOptions._fSicknessPrevention_TeleportDistance = 0;
+            InGameOptions._fSicknessPrevention_TeleportDistance = 0;
         }
     }
 
@@ -146,25 +146,25 @@ public class InGameOptionsController : MonoBehaviour
     {
         try
         {
-            Util.InGameOptions._fSicknessPrevention_TurnAngle = float.Parse(sAngle_input);
+            InGameOptions._fSicknessPrevention_TurnAngle = float.Parse(sAngle_input);
         }
         catch
         {
-            Util.InGameOptions._fSicknessPrevention_TurnAngle = 0;
+            InGameOptions._fSicknessPrevention_TurnAngle = 0;
         }
     }
 
     public void SicknessPrevention_TeleportWithBlinkChanged(bool bBlink_inp)
     {
 
-        Util.InGameOptions._bSicknessPrevention_TeleportWithBlink = bBlink_inp;
+        InGameOptions._bSicknessPrevention_TeleportWithBlink = bBlink_inp;
     }
 
     public void AttachToCameraChanged(bool bAttach_inp)
     {
-        Util.InGameOptions._bAttachOptionsToCamera = bAttach_inp;
+        InGameOptions._bAttachOptionsToCamera = bAttach_inp;
 
-        if(bAttach_inp)
+        if (bAttach_inp)
         {
             Util.AlignToCamera(_mainCamera, _currentWindow, Util.ClippingDistances._distanceToCamera_IngameOptions);
             _parent.transform.parent = _mainCamera.transform;
@@ -177,18 +177,18 @@ public class InGameOptionsController : MonoBehaviour
 
     public void DecreasePointsWhenMovingChanged(bool bDecrease_inp)
     {
-        Util.InGameOptions._bDecreasePointsWhenMoving = bDecrease_inp;
+        InGameOptions._bDecreasePointsWhenMoving = bDecrease_inp;
 
-        if(!bDecrease_inp)
+        if (!bDecrease_inp)
         {
-            if(_mainControl._session.GetCurrentPointCloud() != null)
+            if (_mainControl._session.GetCurrentPointCloud() != null)
                 _mainControl._session.GetCurrentPointCloud().EnableAllPoints();
         }
     }
 
     public void OnInputFieldClick(object sender, UIPointerEventArgs args)
     {
-        if(Util.IsGameobjectTypeOf<InputField>(args.currentTarget))
+        if (Util.IsGameobjectTypeOf<InputField>(args.currentTarget))
         {
             var inputField = args.currentTarget.GetComponent<InputField>();
             _digitKeyboard.EnableKeyboard(inputField, _currentWindow);
@@ -198,18 +198,18 @@ public class InGameOptionsController : MonoBehaviour
     public void OnCloseMainOptionsClick()
     {
         _mainControl._bOptionMode = false;
-        Util.InGameOptions.SaveOptions();
+        InGameOptions.SaveOptions();
         DisableOptionMenu();
     }
 
     public void OnRestoreDefaultClick()
     {
-        Util.InGameOptions.RestoreDefaultValues();
+        InGameOptions.RestoreDefaultValues();
     }
 
     public void OnBackToMainMenuClick()
     {
-        Util.InGameOptions.SaveOptions();
+        InGameOptions.SaveOptions();
         SceneManager.LoadScene(0);
     }
     #endregion

@@ -25,7 +25,7 @@ public class ControlScript : MonoBehaviour
         //Debug.Log("Path: " + _sLoadPath + "  Type: " + _dataTypeToLoad);
 
 #if UNITY_EDITOR
-        _dataTypeToLoad = Util.Datatype.hdf5;
+        _dataTypeToLoad = Util.Datatype.pcd;
 
         if(_dataTypeToLoad == Util.Datatype.pcd)
             _sLoadPath = "C:\\Users\\gruepazu\\Desktop\\PointClouds\\000000000_LidarImage_000000002.pcd";
@@ -41,19 +41,23 @@ public class ControlScript : MonoBehaviour
 
             pcdCoordinateLists = PcdAddon.ReadPcdFromPath(_sLoadPath);
 
-            foreach (var coordinateList in pcdCoordinateLists)
+            for (int i = 0; i < pcdCoordinateLists.Count; i++)
             {
-                pointClouds.Add(new PointCloud(coordinateList.Value));
+                pointClouds.Add(new PointCloud(pcdCoordinateLists[i]));
             }
+
+            Labeling.SetCurrentLabelClass(new Tuple<string, uint>("label1", 1));
         }
         else if (_dataTypeToLoad == Util.Datatype.hdf5)
         {
             List<HDF5Addon.Lidar_Daimler> containers = HDF5Addon.ReadDaimlerHdf(_sLoadPath);
 
-            foreach (var container in containers)
+            for (int i = 0; i < containers.Count; i++)
             {
-                pointClouds.Add(new PointCloud(container));
+                pointClouds.Add(new PointCloud(containers[i]));
             }
+
+            Labeling.SetCurrentLabelClass(new Tuple<string, uint>("motorcycle", 32));
         }
         else if (_dataTypeToLoad == Util.Datatype.lidar)
         {
@@ -63,7 +67,7 @@ public class ControlScript : MonoBehaviour
         _session = new Session(pointClouds, 0);
         _session.GetCurrentPointCloud().EnableAllPoints();
 
-        Util.Labeling.SetCurrentGroup(Util.Labeling.LabelGroup.motorcycle);
+        
 
         //CombineMeshes();
     }
@@ -76,7 +80,7 @@ public class ControlScript : MonoBehaviour
 
     private void LoadSettings()
     {
-        Util.InGameOptions.LoadOptions();
+        InGameOptions.LoadOptions();
 
         _sLoadPath = Util.DataLoadInfo._sDataPath;
         _dataTypeToLoad = Util.DataLoadInfo._dataType;

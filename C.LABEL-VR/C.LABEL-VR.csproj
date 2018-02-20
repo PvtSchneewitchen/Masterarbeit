@@ -231,7 +231,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CustomAttributes.cs" />
     <Compile Include="Assets\Eye Blink Effect\Scripts\BlinkEffect.cs" />
     <Compile Include="Assets\GracesGames\Common\Scripts\FiniteStack.cs" />
     <Compile Include="Assets\GracesGames\Common\Scripts\Utilities.cs" />
@@ -418,12 +417,17 @@
     <Compile Include="Assets\OvrAvatar\Scripts\OvrAvatarSkinnedMeshRenderComponent.cs" />
     <Compile Include="Assets\OvrAvatar\Scripts\OvrAvatarSkinnedMeshRenderPBSComponent.cs" />
     <Compile Include="Assets\OvrAvatar\Scripts\OvrAvatarTouchController.cs" />
+    <Compile Include="Assets\OwnScripts\Classes\CloudSegmentation.cs" />
     <Compile Include="Assets\OwnScripts\Classes\HDF5Addon.cs" />
+    <Compile Include="Assets\OwnScripts\Classes\InGameOptions.cs" />
+    <Compile Include="Assets\OwnScripts\Classes\Labeling.cs" />
     <Compile Include="Assets\OwnScripts\Classes\LabelSession.cs" />
     <Compile Include="Assets\OwnScripts\Classes\PcdAddon.cs" />
     <Compile Include="Assets\OwnScripts\Classes\PointCloud.cs" />
+    <Compile Include="Assets\OwnScripts\Classes\Tuple.cs" />
     <Compile Include="Assets\OwnScripts\Classes\Util.cs" />
     <Compile Include="Assets\OwnScripts\MonoBehaviours\ControlScript.cs" />
+    <Compile Include="Assets\OwnScripts\MonoBehaviours\CustomAttributes.cs" />
     <Compile Include="Assets\OwnScripts\MonoBehaviours\FpsCounter.cs" />
     <Compile Include="Assets\OwnScripts\MonoBehaviours\InGameOptionsController.cs" />
     <Compile Include="Assets\OwnScripts\MonoBehaviours\KeyboardController.cs" />
