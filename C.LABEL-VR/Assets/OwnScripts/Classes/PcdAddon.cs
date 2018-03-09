@@ -1,6 +1,7 @@
 ﻿using System;
-using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using UnityEngine;
 
@@ -10,39 +11,44 @@ public static class PcdAddon
     /// Reads one or multiple pcd-files and delivers the coordinates from it. 
     /// It adds a label class to the global label classes
     /// </summary>
-    /// <param name="sPath_inp"> Path of a pcd file or a directory with pcd-files in it</param>
+    /// <param name="loadPath"> Path of a pcd file or a directory with pcd-files in it</param>
     /// <returns>coordinates of the pcd files</returns>
-    public static Dictionary<int, List<Vector3>> ReadPcdFromPath(string sPath_inp)
+    public static List<List<Vector3>> ReadPcdFromPath(string loadPath, ref List<string> paths_ref)
     {
-        Dictionary<int, List<Vector3>> outputCoordinates = new Dictionary<int, List<Vector3>>();
+        List<List<Vector3>> outputCoordinates = new List<List<Vector3>>();
         List<Vector3> pcdCoordinates = new List<Vector3>();
-        List<StreamReader> pcdFiles = new List<StreamReader>();
+        List<StreamReader> pcdFileStreams = new List<StreamReader>();
 
-        if (sPath_inp.Substring(sPath_inp.Length - 4) == ".pcd") 
+        CultureInfo cultureInfo = (CultureInfo)CultureInfo.CurrentCulture.Clone();
+        cultureInfo.NumberFormat.CurrencyDecimalSeparator = ".";
+
+        if (loadPath.Substring(loadPath.Length - 4) == ".pcd")
         {
             //single file
 
-            pcdFiles.Add(new StreamReader(sPath_inp));
+            pcdFileStreams.Add(new StreamReader(loadPath));
+            paths_ref.Add(loadPath);
         }
         else
         {
             //directory
 
-            string[] files = Directory.GetFiles(sPath_inp, "*.pcd");
-            foreach (var file in files)
+            string[] filePaths = Directory.GetFiles(loadPath, "*.pcd");
+            foreach (var path in filePaths)
             {
-                pcdFiles.Add(new StreamReader(file));
+                pcdFileStreams.Add(new StreamReader(path));
+                paths_ref.Add(path);
             }
         }
 
-        for (int i = 0; i < pcdFiles.Count; i++)
+        for (int i = 0; i < pcdFileStreams.Count; i++)
         {
             List<Vector3> coordinatesFromFile = new List<Vector3>();
             bool firstLineSkipped = false;
 
-            while (!pcdFiles[i].EndOfStream)
+            while (!pcdFileStreams[i].EndOfStream)
             {
-                var line = pcdFiles[i].ReadLine();
+                var line = pcdFileStreams[i].ReadLine();
                 if (firstLineSkipped)
                 {
                     var coordinates = line.Split(' ');
@@ -53,42 +59,61 @@ public static class PcdAddon
 
                     try
                     {
-                        x = float.Parse(coordinates[0]);
-                        y = float.Parse(coordinates[1]);
-                        z = float.Parse(coordinates[2]);
+                        x = float.Parse(coordinates[0], NumberStyles.Any, cultureInfo);
+                        y = float.Parse(coordinates[1], NumberStyles.Any, cultureInfo);
+                        z = float.Parse(coordinates[2], NumberStyles.Any, cultureInfo);
                     }
                     catch (Exception e)
                     {
                         Debug.Log(e.Source + " " + e.Message);
                     }
-
-                    //pcd data is not compatible with unity coordinate system
-                    //the pointcloud is displayed vertical and is mirrored
-                    //so one has to rotate it around the x-axis by -90° and negate the x-coordinate
-                    coordinatesFromFile.Add(Quaternion.Euler(-90, 0, 0) * new Vector3(-x, y, z));
+                    coordinatesFromFile.Add(new Vector3(-x, y, z));
                 }
                 else
                 {
                     firstLineSkipped = true;
                 }
             }
-            outputCoordinates.Add(i, coordinatesFromFile);
+            outputCoordinates.Add(coordinatesFromFile);
         }
 
-        InitializeLabelClasses();
+        //InitializeLabelClasses();
         return outputCoordinates;
     }
 
-    private static void InitializeLabelClasses()
+    public static List<List<InternalDataFormat>> GetDataFromCoordinates(List<List<Vector3>> listOfCoordinateLists)
     {
-        Dictionary<string, uint> classes = new Dictionary<string, uint>
-        {
-            { "label1", 1 },
-            { "label2", 2 },
-            { "label3", 3 },
-            { "label4", 4 }
-        };
+        List<List<InternalDataFormat>> dataList_out = new List<List<InternalDataFormat>>();
 
-        Labeling.SetNewLabelClasses(classes);
+        for (int i = 0; i < listOfCoordinateLists.Count; i++)
+        {
+            List<Vector3> singleCoordinateList = listOfCoordinateLists.ElementAt(i);
+            List<InternalDataFormat> singleDataList = new List<InternalDataFormat>();
+
+            for (int j = 0; j < singleCoordinateList.Count; j++)
+            {
+                singleDataList.Add(new InternalDataFormat(j, singleCoordinateList.ElementAt(j), 0, 2));
+            }
+            dataList_out.Add(singleDataList);
+        }
+
+        return dataList_out;
     }
+
+    //private static void InitializeLabelClasses()
+    //{
+    //    Dictionary<uint, string> classes = new Dictionary<uint, string>
+    //    {
+    //        { 1, "label1"},
+    //        { 2, "label2"},
+    //        { 3, "label3"},
+    //        { 4, "label4"},
+    //        { 5, "label5"},
+    //        { 6, "label6"},
+    //        { 7, "label7"},
+    //        { 8, "label8"}
+    //    };
+
+    //    Labeling.SetNewLabelClasses(classes);
+    //}
 }

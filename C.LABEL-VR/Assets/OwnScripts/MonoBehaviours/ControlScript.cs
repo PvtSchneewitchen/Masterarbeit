@@ -1,17 +1,17 @@
 ﻿using System;
-using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ControlScript : MonoBehaviour
 {
-    public Session _session { get; private set; }
+    public LabelSession _session { get; private set; }
     public InGameOptionsController _inGameOptions;
     public Camera _centerEyeAnchor;
 
-    public bool _bOptionMode { get; set; }
+    public bool _optionModeActive { get; set; }
 
-    private string _sLoadPath;
+    private string _loadPath;
     private Util.Datatype _dataTypeToLoad;
 
 
@@ -20,56 +20,52 @@ public class ControlScript : MonoBehaviour
     {
         LoadSettings();
 
-        _bOptionMode = false;
+        _optionModeActive = false;
 
         //Debug.Log("Path: " + _sLoadPath + "  Type: " + _dataTypeToLoad);
 
 #if UNITY_EDITOR
-        _dataTypeToLoad = Util.Datatype.pcd;
+        _dataTypeToLoad = Util.Datatype.hdf5_DaimlerLidar;
 
         if(_dataTypeToLoad == Util.Datatype.pcd)
-            _sLoadPath = "C:\\Users\\gruepazu\\Desktop\\PointClouds\\000000000_LidarImage_000000002.pcd";
-        else if(_dataTypeToLoad == Util.Datatype.hdf5)
-            _sLoadPath = "C:\\Users\\gruepazu\\Desktop\\Lidar18.8\\LidarImages_03_05\\LidarImage_000000002.hdf5";
+            _loadPath = "C:\\Users\\gruepazu\\Desktop\\PointClouds\\000000000_LidarImage_000000002.pcd";
+        else if(_dataTypeToLoad == Util.Datatype.hdf5_DaimlerLidar)
+            _loadPath = "C:\\Users\\gruepazu\\Desktop\\Lidar18.8\\LidarImages_03_05\\LidarImage_000000002.hdf5";
 #endif
 
-        List<PointCloud> pointClouds = new List<PointCloud>();
+        
+       List<PointCloud> pointClouds = new List<PointCloud>();
 
         if (_dataTypeToLoad == Util.Datatype.pcd)
         {
-            Dictionary<int, List<Vector3>> pcdCoordinateLists = new Dictionary<int, List<Vector3>>();
-
-            pcdCoordinateLists = PcdAddon.ReadPcdFromPath(_sLoadPath);
-
-            for (int i = 0; i < pcdCoordinateLists.Count; i++)
-            {
-                pointClouds.Add(new PointCloud(pcdCoordinateLists[i]));
-            }
-
-            Labeling.SetCurrentLabelClass(new Tuple<string, uint>("label1", 1));
+            pointClouds = Import.ImportPcd(_loadPath);
         }
-        else if (_dataTypeToLoad == Util.Datatype.hdf5)
+        else if (_dataTypeToLoad == Util.Datatype.hdf5_DaimlerLidar)
         {
-            List<HDF5Addon.Lidar_Daimler> containers = HDF5Addon.ReadDaimlerHdf(_sLoadPath);
-
-            for (int i = 0; i < containers.Count; i++)
-            {
-                pointClouds.Add(new PointCloud(containers[i]));
-            }
-
-            Labeling.SetCurrentLabelClass(new Tuple<string, uint>("motorcycle", 32));
+            pointClouds = Import.ImportHdf5_DaimlerLidar(_loadPath);
         }
         else if (_dataTypeToLoad == Util.Datatype.lidar)
         {
             //TODO Implement lidar Import and call it here
         }
 
-        _session = new Session(pointClouds, 0);
+        _session = new LabelSession(pointClouds, 0);
         _session.GetCurrentPointCloud().EnableAllPoints();
 
-        
+        //Export.ExportHdf5_DaimlerLidar("C:\\Users\\gruepazu\\Desktop\\Lidar18.8\\LidarImages_03_05\\Export");
 
-        //CombineMeshes();
+        //Labeling.SetCurrentLabelClass(new Tuple<uint, string>(11, "building"));
+        //var points = _session.GetCurrentPointCloud()._validPoints;
+        //for (int i = 0; i < points.Count; i++)
+        //{
+        //    var point = points[i];
+        //    var attr = points[i].GetComponent<CustomAttributes>();
+
+        //    if(attr._groundPoint == 1)
+        //    {
+        //        attr._label = Labeling._currentLabelClass;
+        //    }
+        //}
     }
 
     // Update is called once per frame
@@ -82,17 +78,17 @@ public class ControlScript : MonoBehaviour
     {
         InGameOptions.LoadOptions();
 
-        _sLoadPath = Util.DataLoadInfo._sDataPath;
+        _loadPath = Util.DataLoadInfo._sDataPath;
         _dataTypeToLoad = Util.DataLoadInfo._dataType;
     }
 
     private void CheckOptionButton()
     {
-        if (!_bOptionMode)
+        if (!_optionModeActive)
         {
             if (OVRInput.GetDown(OVRInput.Button.Start))
             {
-                _bOptionMode = true;
+                _optionModeActive = true;
                 _inGameOptions.EnableOptionMenu();
             }
         }
@@ -100,7 +96,7 @@ public class ControlScript : MonoBehaviour
         {
             if (OVRInput.GetDown(OVRInput.Button.Start))
             {
-                _bOptionMode = false;
+                _optionModeActive = false;
                 _inGameOptions.OnCloseMainOptionsClick();
             }
         }

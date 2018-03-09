@@ -82,6 +82,100 @@ public static class Util
         return go;
     }
 
+    public static float GetBiggestDistance(List<Vector3> coordinates_inp)
+    {
+        List<Vector3> lowestValuePoints = new List<Vector3>(4);
+        List<float> distances = new List<float>();
+
+        //init list
+        for (int i = 0; i < lowestValuePoints.Capacity; i++)
+        {
+            lowestValuePoints.Add(coordinates_inp[0]);
+        }
+
+        //search for lowest values
+        for (int i = 1; i < coordinates_inp.Count; i++)
+        {
+            if (coordinates_inp[i].x < lowestValuePoints[0].x)
+            {
+                lowestValuePoints[0] = coordinates_inp[i];
+            }
+            if (coordinates_inp[i].z < lowestValuePoints[1].z)
+            {
+                lowestValuePoints[1] = coordinates_inp[i];
+            }
+            if (coordinates_inp[i].x > lowestValuePoints[2].x)
+            {
+                lowestValuePoints[2] = coordinates_inp[i];
+            }
+            if (coordinates_inp[i].z > lowestValuePoints[3].z)
+            {
+                lowestValuePoints[3] = coordinates_inp[i];
+            }
+        }
+
+        //calculate distances
+        for (int i = 0; i < lowestValuePoints.Count; i++)
+        {
+            for (int j = 0; j < lowestValuePoints.Count; j++)
+            {
+                distances.Add(Vector3.Distance(lowestValuePoints[i], lowestValuePoints[j]));
+            }
+        }
+
+        //sort descending
+        distances.Sort((x, y) => -1 * x.CompareTo(y));
+
+        return distances[0];
+    }
+
+    public static float GetBiggestDistance(List<GameObject> points_inp)
+    {
+        List<GameObject> lowestValuePoints = new List<GameObject>(4);
+        List<float> distances = new List<float>();
+
+        //init list
+        for (int i = 0; i < lowestValuePoints.Capacity; i++)
+        {
+            lowestValuePoints.Add(points_inp[0]);
+        }
+
+        //search for lowest values
+        for (int i = 1; i < points_inp.Count; i++)
+        {
+            if (points_inp[i].transform.position.x < lowestValuePoints[0].transform.position.x)
+            {
+                lowestValuePoints[0] = points_inp[i];
+            }
+            if (points_inp[i].transform.position.z < lowestValuePoints[1].transform.position.z)
+            {
+                lowestValuePoints[1] = points_inp[i];
+            }
+            if (points_inp[i].transform.position.x > lowestValuePoints[2].transform.position.x)
+            {
+                lowestValuePoints[2] = points_inp[i];
+            }
+            if (points_inp[i].transform.position.z > lowestValuePoints[3].transform.position.z)
+            {
+                lowestValuePoints[3] = points_inp[i];
+            }
+        }
+
+        //calculate distances
+        for (int i = 0; i < lowestValuePoints.Count; i++)
+        {
+            for (int j = 0; j < lowestValuePoints.Count; j++)
+            {
+                distances.Add(Vector3.Distance(lowestValuePoints[i].transform.position, lowestValuePoints[j].transform.position));
+            }
+        }
+
+        //sort descending
+        distances.Sort((x, y) => -1 * x.CompareTo(y));
+
+        return distances[0];
+    }
+
     #endregion
 
     #region Enums
@@ -90,7 +184,7 @@ public static class Util
     {
         pcd,
         lidar,
-        hdf5
+        hdf5_DaimlerLidar
     }
 
     public enum MovementMode
@@ -102,28 +196,6 @@ public static class Util
     #endregion
 
     #region Nested Classes
-
-    //public class Tuple<T1>
-    //{
-    //    public Tuple(T1 item1)
-    //    {
-    //        Item1 = item1;
-    //    }
-
-    //    public T1 Item1 { get; set; }
-    //}
-
-    //public class Tuple<T1, T2> : Tuple<T1>
-    //{
-    //    public Tuple(T1 item1, T2 item2) : base(item1)
-    //    {
-    //        Item2 = item2;
-    //    }
-
-    //    public T2 Item2 { get; set; }
-    //}
-
-    
 
     public static class ClippingDistances
     {

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.EventSystems;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using VRTK;
@@ -10,7 +6,9 @@ using VRTK;
 public class InGameOptionsController : MonoBehaviour
 {
     public GameObject _mainCamera;
-    public GameObject _inGameOptionsMain;
+    public GameObject _inGameOptionsContainer;
+    public GameObject _panelMovement;
+    public GameObject _panelLabeling;
 
     public ControlScript _mainControl;
     public Movement _movementController;
@@ -19,8 +17,8 @@ public class InGameOptionsController : MonoBehaviour
     public VRTK_StraightPointerRenderer _rightControllerPointerRenderer;
     public VRTK_Pointer _leftControllerPointer;
 
-    private GameObject _currentWindow;
-    private GameObject _parent;
+    private GameObject _currentPanel;
+    private GameObject _lastPanelUsed;
 
     //private Color _invalidCollisionColor;
     //private Color _validCollisionColor;
@@ -32,16 +30,14 @@ public class InGameOptionsController : MonoBehaviour
         //_invalidCollisionColor = new Color32(99, 109, 115, 50);
         //_validCollisionColor = new Color32(255, 255, 255, 150);
 
-        _parent = this.gameObject;
-
         _rightControllerUiPointer.UIPointerElementClick += OnInputFieldClick;
 
         if (InGameOptions._bAttachOptionsToCamera)
         {
-            _parent.transform.parent = _mainCamera.transform;
+            gameObject.transform.parent = _mainCamera.transform;
         }
 
-        Util.DisableAllChildren(_parent);
+        Util.DisableAllChildren(gameObject);
     }
 
     public void EnableOptionMenu()
@@ -49,11 +45,19 @@ public class InGameOptionsController : MonoBehaviour
         //todo disable unnecessary things when usion option menu
         _movementController._bMovementEnabled = false;
         _leftControllerPointer.enabled = false;
-        //_mainCamera.GetComponent<Camera>().nearClipPlane = Util.ClippingDistances._distanceToCamera_Clipping;
 
-        _currentWindow = _inGameOptionsMain;
-        Util.AlignToCamera(_mainCamera, _currentWindow, Util.ClippingDistances._distanceToCamera_IngameOptions);
-        _currentWindow.SetActive(true);
+        if(_lastPanelUsed == null)
+        {
+            _currentPanel = _panelMovement;
+        }
+        else
+        {
+            _currentPanel = _lastPanelUsed;
+        }
+
+        Util.AlignToCamera(_mainCamera, _inGameOptionsContainer, Util.ClippingDistances._distanceToCamera_IngameOptions);
+        _inGameOptionsContainer.SetActive(true);
+        _currentPanel.SetActive(true);
 
 
         //_invalidCollisionColor_old = _rightControllerPointerRenderer.invalidCollisionColor;
@@ -70,7 +74,8 @@ public class InGameOptionsController : MonoBehaviour
         _leftControllerPointer.enabled = true;
         //_rightControllerPointerRenderer.invalidCollisionColor = _invalidCollisionColor_old;
         //_rightControllerPointerRenderer.validCollisionColor = _validCollisionColor_old;
-        Util.DisableAllChildren(_parent);
+        _currentPanel.SetActive(false);
+        Util.DisableAllChildren(gameObject);
     }
 
 
@@ -166,12 +171,12 @@ public class InGameOptionsController : MonoBehaviour
 
         if (bAttach_inp)
         {
-            Util.AlignToCamera(_mainCamera, _currentWindow, Util.ClippingDistances._distanceToCamera_IngameOptions);
-            _parent.transform.parent = _mainCamera.transform;
+            Util.AlignToCamera(_mainCamera, _currentPanel, Util.ClippingDistances._distanceToCamera_IngameOptions);
+            gameObject.transform.parent = _mainCamera.transform;
         }
         else
         {
-            _parent.transform.parent = null;
+            gameObject.transform.parent = null;
         }
     }
 
@@ -191,13 +196,27 @@ public class InGameOptionsController : MonoBehaviour
         if (Util.IsGameobjectTypeOf<InputField>(args.currentTarget))
         {
             var inputField = args.currentTarget.GetComponent<InputField>();
-            _digitKeyboard.EnableKeyboard(inputField, _currentWindow);
+            _digitKeyboard.EnableNumpad(inputField, _currentPanel);
         }
+    }
+
+    public void OnMovementButtonClick()
+    {
+        _currentPanel.SetActive(false);
+        _currentPanel = _panelMovement;
+        _currentPanel.SetActive(true);
+    }
+
+    public void OnLabelingButtonClick()
+    {
+        _currentPanel.SetActive(false);
+        _currentPanel = _panelLabeling;
+        _currentPanel.SetActive(true);
     }
 
     public void OnCloseMainOptionsClick()
     {
-        _mainControl._bOptionMode = false;
+        _mainControl._optionModeActive = false;
         InGameOptions.SaveOptions();
         DisableOptionMenu();
     }

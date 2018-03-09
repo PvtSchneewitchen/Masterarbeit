@@ -1,23 +1,47 @@
 \select@language {ngerman}
-\contentsline {section}{Glossar}{vi}{section*.6}
-\contentsline {section}{Akronyme}{vii}{section*.7}
+\contentsline {section}{Glossar}{vii}{section*.6}
+\contentsline {section}{Akronyme}{viii}{section*.7}
 \contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}Ziel der Arbeit}{1}{section.1.2}
-\contentsline {chapter}{\numberline {2}Vorbereitungen}{2}{chapter.2}
-\contentsline {section}{\numberline {2.1}Das C.LABEL Tool}{2}{section.2.1}
-\contentsline {section}{\numberline {2.2}Wahl des passenden Mediums}{2}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Eignung von \acrlong {acr:AR} und \acrlong {acr:VR} im Bezug auf 3D-Datennotation}{3}{subsection.2.2.1}
-\contentsline {subsubsection}{Eignung von \acrlong {acr:AR}}{3}{subsection.2.2.1}
-\contentsline {subsubsection}{Eignung von \acrlong {acr:VR}}{4}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}\acrshort {acr:AR}-Brillen im Vergleich}{5}{subsection.2.2.2}
-\contentsline {subsubsection}{Microsoft Hololens}{5}{subsection.2.2.2}
-\contentsline {subsubsection}{Meta 2}{6}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}\acrshort {acr:VR}-Brillen im Vergleich}{6}{subsection.2.2.3}
-\contentsline {subsubsection}{Oculus Rift}{7}{subsection.2.2.3}
-\contentsline {subsubsection}{HTC Vive}{7}{subsection.2.2.3}
-\contentsline {subsection}{\numberline {2.2.4}Zusammenfassung und Entscheidung}{8}{subsection.2.2.4}
-\contentsline {section}{\numberline {2.3}Wahl des passenden Rechners}{9}{section.2.3}
-\contentsline {section}{\numberline {2.4}Wahl der passenden Entwicklungsplattform}{10}{section.2.4}
-\contentsline {subsubsection}{Entscheidung}{11}{section.2.4}
-\contentsline {chapter}{\numberline {A}Appendix Title}{12}{appendix.A}
+\contentsline {section}{\numberline {1.1}Motivation}{2}{section.1.1}
+\contentsline {section}{\numberline {1.2}Ziel der Arbeit}{3}{section.1.2}
+\contentsline {chapter}{\numberline {2}Vorbereitungen}{4}{chapter.2}
+\contentsline {section}{\numberline {2.1}Wahl des passenden Mediums}{4}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Eignung von \acrlong {acr:AR} und \acrlong {acr:VR} im Bezug auf 3D-Datennotation}{5}{subsection.2.1.1}
+\contentsline {subsubsection}{Eignung von \acrlong {acr:AR}}{5}{subsection.2.1.1}
+\contentsline {subsubsection}{Eignung von \acrlong {acr:VR}}{6}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}\acrshort {acr:AR}-Brillen im Vergleich}{7}{subsection.2.1.2}
+\contentsline {subsubsection}{Microsoft Hololens}{7}{subsection.2.1.2}
+\contentsline {subsubsection}{Meta 2}{8}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}\acrshort {acr:VR}-Brillen im Vergleich}{8}{subsection.2.1.3}
+\contentsline {subsubsection}{Oculus Rift}{9}{subsection.2.1.3}
+\contentsline {subsubsection}{HTC Vive}{9}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}Zusammenfassung und Entscheidung}{10}{subsection.2.1.4}
+\contentsline {section}{\numberline {2.2}Wahl des passenden Rechners}{11}{section.2.2}
+\contentsline {section}{\numberline {2.3}Wahl der passenden Entwicklungsplattform}{12}{section.2.3}
+\contentsline {subsubsection}{Entscheidung}{13}{section.2.3}
+\contentsline {chapter}{\numberline {3}Grundlagen}{14}{chapter.3}
+\contentsline {section}{\numberline {3.1}Maschinelles Lernen}{14}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Künstliche Neuronale Netze}{14}{subsection.3.1.1}
+\contentsline {subsubsection}{Eingangschicht}{17}{equation.3.1.2}
+\contentsline {subsubsection}{Zwischenschicht}{17}{equation.3.1.2}
+\contentsline {subsubsection}{Ausgangsschicht}{18}{equation.3.1.2}
+\contentsline {subsection}{\numberline {3.1.2}Trainieren von Neuronalen Netzen}{18}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}Das C.LABEL Tool}{20}{section.3.2}
+\contentsline {section}{\numberline {3.3}Die Unity Engine}{20}{section.3.3}
+\contentsline {chapter}{\numberline {4}C.LABEL VR}{21}{chapter.4}
+\contentsline {section}{\numberline {4.1}Generierung einer Punktwolke}{21}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Import HDF5}{21}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Generierung}{21}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Optimierung}{21}{subsection.4.1.3}
+\contentsline {section}{\numberline {4.2}Navigation}{22}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}VR-Krankheit}{22}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Freier Flug}{22}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Teleport}{22}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3}Annotieren der Punktwolke}{22}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Pointer Labeling}{22}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Clustering}{22}{subsection.4.3.2}
+\contentsline {subsubsection}{ground plane fitting}{22}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}Ingame Menu}{22}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Movement}{22}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Labelclasses}{22}{subsection.4.4.2}
+\contentsline {chapter}{\numberline {A}Appendix Title}{23}{appendix.A}

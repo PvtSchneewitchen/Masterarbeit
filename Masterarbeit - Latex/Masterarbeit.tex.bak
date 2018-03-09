@@ -83,13 +83,16 @@ I want to thank...
 
 \pagenumbering{arabic}
 \chapter{Einleitung}
-\input{Kapitel/Kapitel_Einleitung/Einleitung}
+\input{Kapitel/Kapitel1_Einleitung/Einleitung}
 
 \chapter{Vorbereitungen}
-\input{Kapitel/Kapitel_Vorbereitungen/Vorbereitungen}
+\input{Kapitel/Kapitel2_Vorbereitungen/Vorbereitungen}
+
+\chapter{Grundlagen}
+\input{Kapitel/Kapitel3_Grundlagen/Grundlagen}
 
 \chapter{C.LABEL VR}
-\input{Kapitel/Kapitel_Hauptteil/Hauptteil}
+\input{Kapitel/Kapitel4_Hauptteil/Hauptteil}
 
 
 

@@ -122,16 +122,16 @@ public class PointerLabeler : MonoBehaviour
                     if (OVRInput.Get(OVRInput.Button.One))
                     {
                         //adjacent labeling
-                        if (_collidedObjectAttributes._label != Labeling._currentLabelClass)
+                        if (_collidedObjectAttributes._label != Labeling.currentLabelClassID)
                         {
                             float t = Time.realtimeSinceStartup;
                             List<GameObject> adjacentObjects = GetAdjacentLabelPoints(collidedObject.gameObject);
 
                             for (int i = 0; i < adjacentObjects.Count; i++)
                             {
-                                if (adjacentObjects[i].GetComponent<CustomAttributes>()._label != Labeling._currentLabelClass)
+                                if (adjacentObjects[i].GetComponent<CustomAttributes>()._label != Labeling.currentLabelClassID)
                                 {
-                                    adjacentObjects[i].GetComponent<CustomAttributes>()._label = Labeling._currentLabelClass;
+                                    adjacentObjects[i].GetComponent<CustomAttributes>()._label = Labeling.currentLabelClassID;
                                 }
                             }
 
@@ -140,16 +140,16 @@ public class PointerLabeler : MonoBehaviour
                     }
                     else if (OVRInput.Get(OVRInput.Button.Two))
                     {
-                        if (_collidedObjectAttributes._label != Labeling._currentLabelClass)
+                        if (_collidedObjectAttributes._label != Labeling.currentLabelClassID)
                         {
                             float t = Time.realtimeSinceStartup;
                             List<GameObject> adjacentObjects = GetAdjacentLabelPointsFromOcTree(collidedObject.gameObject);
 
                             for (int i = 0; i < adjacentObjects.Count; i++)
                             {
-                                if (adjacentObjects[i].GetComponent<CustomAttributes>()._label != Labeling._currentLabelClass)
+                                if (adjacentObjects[i].GetComponent<CustomAttributes>()._label != Labeling.currentLabelClassID)
                                 {
-                                    adjacentObjects[i].GetComponent<CustomAttributes>()._label = Labeling._currentLabelClass;
+                                    adjacentObjects[i].GetComponent<CustomAttributes>()._label = Labeling.currentLabelClassID;
                                 }
                             }
 
@@ -159,9 +159,9 @@ public class PointerLabeler : MonoBehaviour
                     else
                     {
                         //simple single point labeling
-                        if (_collidedObjectAttributes._label != Labeling._currentLabelClass)
+                        if (_collidedObjectAttributes._label != Labeling.currentLabelClassID)
                         {
-                            _collidedObjectAttributes._label = Labeling._currentLabelClass;
+                            _collidedObjectAttributes._label = Labeling.currentLabelClassID;
                         }
                     }
                 }

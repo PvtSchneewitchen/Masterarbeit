@@ -3,8 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
-using PostProcess;
-using UnityEngine.UI;
 
 public class PointerTeleport : MonoBehaviour
 {

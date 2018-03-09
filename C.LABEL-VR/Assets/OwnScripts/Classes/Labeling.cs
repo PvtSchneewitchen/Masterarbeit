@@ -1,75 +1,154 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public static class Labeling
 {
-    //public static LabelGroup _currentLabel;
-    public static Tuple<string, uint> _currentLabelClass;
+    public static uint currentLabelClassID;
 
-    private static Dictionary<Tuple<string, uint>, Material> _labelClasses;
+    private static Dictionary<uint, Tuple<string, Material>> _labelClassInformations;
     private static Material _standardMaterial;
-    private static List<Color> _standardColors;
+    private static List<Color32> _standardColors;
+    private static string _dummyClassName = "Dummy Class";
 
     static Labeling()
     {
         Material unlabeledMaterial = Resources.Load("Materials/Unlabeled") as Material;
         _standardMaterial = unlabeledMaterial;
 
-        _labelClasses = new Dictionary<Tuple<string, uint>, Material>
+        _labelClassInformations = new Dictionary<uint, Tuple<string, Material>>
             {
-                { new Tuple<string, uint>("unlabeled", 0), unlabeledMaterial }
+                {0 , new Tuple<string, Material>("unlabeled" ,unlabeledMaterial) }
             };
 
-        _standardColors = new List<Color>
-            {
-                Color.yellow,
-                Color.red,
-                Color.blue,
-                Color.green
-            };
-
-        SetCurrentLabelClass(new Tuple<string, uint>("unlabeled", 0)); 
-    }
-
-    public static void SetNewLabelClasses(Dictionary<string, uint> labelWorkingSet_inp)
-    {
-        for (int i = 0; i < labelWorkingSet_inp.Count; i++)
+        _standardColors = new List<Color32>
         {
-            string key = labelWorkingSet_inp.ElementAt(i).Key;
-            uint value = labelWorkingSet_inp.ElementAt(i).Value;
-            if (key != "unlabeled" && value != 0 && !_labelClasses.ContainsKey(new Tuple<string, uint>(key, value)))
-            {
-                _labelClasses.Add(new Tuple<string, uint>(key, value), CreateNewMaterial());
-            }
-        }
+            new Color32(210, 240, 225, 225),
+            new Color32(190, 255, 255, 225),
+            new Color32(0, 255, 0, 225),
+            new Color32(150, 12, 150, 225),
+            new Color32(255, 0, 255, 225),
+            new Color32(120, 120, 200, 225),
+            new Color32(40, 140, 50, 225),
+            new Color32(24, 24, 147, 225),
+            new Color32(120, 120, 2, 225),
+            new Color32(170, 90, 50, 225),
+            new Color32(200, 200, 200, 225),
+            new Color32(255, 100, 0, 225),
+            new Color32(100, 255, 100, 225),
+            new Color32(255, 255, 0, 225),
+            new Color32(90, 130, 140, 225),
+            new Color32(0, 0, 255, 225),
+            new Color32(200, 20, 135, 225),
+            new Color32(0, 255, 255, 225),
+            new Color32(255, 0, 0, 225),
+            new Color32(10, 150, 150, 225)
+        };
+
+        SetNewLabelClasses(new Dictionary<uint, string> { { 1, _dummyClassName } });
+        SetCurrentLabelClass(_labelClassInformations.ElementAt(1).Key);
     }
 
-    public static Material GetGroupMaterial(Tuple<string, uint> label_inp)
+    public static string GetLabelClassName(uint ID_inp)
     {
-        Material outMat = new Material(_standardMaterial);
+        Tuple<string, Material> info;
 
-        _labelClasses.TryGetValue(label_inp, out outMat);
-
-        return outMat;
-    }
-
-    public static void SetCurrentLabelClass(Tuple<string, uint> label_inp)
-    {
-        if (_labelClasses.ContainsKey(label_inp))
+        if(_labelClassInformations.TryGetValue(ID_inp, out info))
         {
-            _currentLabelClass = label_inp;
+            return info.Item1;
         }
         else
         {
-            UnityEngine.Debug.Log("LabelClass " + label_inp.Item1 + " with ID " + label_inp.Item2 + " does not exist!");
-            UnityEngine.Debug.Log("Class tried to set: " + label_inp.Item1 + " " + label_inp.Item2);
-            UnityEngine.Debug.Log("available:");
-            for (int i = 0; i < _labelClasses.Count; i++)
+            Debug.Log("GetLabelClassName: No such key" + ID_inp);
+            return null;
+        }
+    }
+
+    public static Dictionary<uint, Tuple<string, Material>> GetAllLabelClassInfos()
+    {
+        return _labelClassInformations;
+    }
+
+    public static Tuple<string, Material> GetLabelClassInfo(uint ID_inp)
+    {
+        Tuple<string, Material> info;
+
+        if (_labelClassInformations.TryGetValue(ID_inp, out info))
+        {
+            return info;
+        }
+        else
+        {
+            Debug.Log("GetLabelClassName: No such key" + ID_inp);
+            return null;
+        }
+    }
+
+    public static void SetNewLabelClasses(Dictionary<uint, string> labelWorkingSet_inp)
+    {
+        if(_labelClassInformations.ContainsKey(1))
+        {
+            Tuple<string, Material> info;
+            _labelClassInformations.TryGetValue(1, out info);
+
+            if(info.Item1 == _dummyClassName)
+                _labelClassInformations.Remove(1);
+        }
+
+        for (int i = 0; i < labelWorkingSet_inp.Count; i++)
+        {
+            uint key = labelWorkingSet_inp.ElementAt(i).Key;
+            string value = labelWorkingSet_inp.ElementAt(i).Value;
+            if (value != "unlabeled" && key != 0 && !_labelClassInformations.ContainsKey(key))
             {
-                UnityEngine.Debug.Log(_labelClasses.ElementAt(i).Key.Item1 + " " + _labelClasses.ElementAt(i).Key.Item2);
+                _labelClassInformations.Add(key, new Tuple<string, Material>(value, CreateNewMaterial()));
             }
+        }
+
+        if (_labelClassInformations.Count > 1)
+            SetCurrentLabelClass(_labelClassInformations.ElementAt(1).Key);
+    }
+
+    public static Material GetLabelClassMaterial(uint ID_inp)
+    {
+        Tuple<string, Material> info;
+
+        if (_labelClassInformations.TryGetValue(ID_inp, out info))
+        {
+            return info.Item2;
+        }
+        else
+        {
+            Debug.Log("GetLabelClassMaterial: No such key" + ID_inp);
+            return null;
+        }
+    }
+
+    public static void SetCurrentLabelClass(uint label_inp)
+    {
+        if (_labelClassInformations.ContainsKey(label_inp))
+        {
+            currentLabelClassID = label_inp;
+        }
+        else
+        {
+            Debug.Log("LabelClass with ID " + label_inp + " does not exist!");
+        }
+    }
+
+    public static Color32 GetLabelClassColor(uint ID_inp)
+    {
+        Tuple<string, Material> info;
+
+        if (_labelClassInformations.TryGetValue(ID_inp, out info))
+        {
+            return info.Item2.color;
+        }
+        else
+        {
+            Debug.Log("GetLabelClassMaterial: No such key" + ID_inp);
+            return new Color32(0, 132, 198, 1);
         }
     }
 
@@ -80,6 +159,7 @@ public static class Labeling
         if (_standardColors.Count > 0)
         {
             outMat.color = _standardColors[0];
+            _standardColors.RemoveAt(0);
         }
         else
         {

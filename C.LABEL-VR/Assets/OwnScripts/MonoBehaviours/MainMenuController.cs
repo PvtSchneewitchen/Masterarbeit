@@ -60,7 +60,7 @@ namespace GracesGames.SimpleFileBrowser.Scripts
         private GameObject GetNewWindow(string gameObjectName_inp)
         {
             GameObject newWindow = Util.FindInactiveGameobject(_parent, gameObjectName_inp);
-            _currentWindow.SetActive(false);
+            _currentWindow.SetActive(false); 
             newWindow.SetActive(true);
             return newWindow;
         }
@@ -98,11 +98,11 @@ namespace GracesGames.SimpleFileBrowser.Scripts
             //TODO find out data ending for lidar data and call OpenBrowser() with it
         }
 
-        public void OnButtonCLick_HDF5()
+        public void OnButtonCLick_HDF5_Daimler()
         {
             _cameraDistance = 10.0f;
             _currentWindow = GetNewWindow("MainMenu_LoadTypeBrowser");
-            _dataTypeToLoad = Util.Datatype.hdf5;
+            _dataTypeToLoad = Util.Datatype.hdf5_DaimlerLidar;
         }
 
         public void OnButtonCLick_BackFromNewSession()

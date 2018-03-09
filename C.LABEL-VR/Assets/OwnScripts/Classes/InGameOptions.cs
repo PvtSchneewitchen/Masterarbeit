@@ -6,7 +6,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using UnityEngine.UI;
 
-public static class InGameOptions
+public class InGameOptions
 {
     //GetEditorValues()
     //InitUiComponentValues()

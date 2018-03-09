@@ -28,9 +28,9 @@ public class KeyboardController : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
-    public void EnableKeyboard(InputField inputField_inp, GameObject window_inp)
+    public void EnableNumpad(InputField inputField_inp, GameObject window_inp)
     {
-        print("EnableKeyboard");
+        print("EnableNumpad");
         _currentWindow = window_inp;
         _inputField = inputField_inp;
         transform.rotation = _currentWindow.transform.rotation;
