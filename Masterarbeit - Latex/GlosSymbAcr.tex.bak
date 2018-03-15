@@ -13,12 +13,18 @@ sort=symbolpi, type=symbolslist
 \newacronym{acr:UE4}{UE4}{Unreal Engine 4}
 \newacronym[plural={\glspl{glos:SDK}}]{acr:SDK}{SDK}{\gls{glos:SDK}}
 \newacronym{acr:knn}{KNN}{Künstliche Neuronale Netze}
+\newacronym{acr:UI}{UI}{User Interface}
 
 
 \newglossaryentry{glos:SDK}{%
   name={Software Development Kit},
   description={TODO},
   plural={Software Development Kits}
+}
+
+\newglossaryentry{glos:Workflow}{%
+  name={Workflow},
+  description={TODO},
 }
 
 \newglossaryentry{glos:Labeling}{%

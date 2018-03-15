@@ -15,26 +15,28 @@
 \BOOKMARK [1][-]{section.3.1}{Maschinelles Lernen}{chapter.3}% 15
 \BOOKMARK [2][-]{subsection.3.1.1}{Künstliche Neuronale Netze}{section.3.1}% 16
 \BOOKMARK [2][-]{subsection.3.1.2}{Trainieren von Neuronalen Netzen}{section.3.1}% 17
-\BOOKMARK [1][-]{section.3.2}{Das C.LABEL Tool}{chapter.3}% 18
-\BOOKMARK [1][-]{section.3.3}{Die Unity Engine}{chapter.3}% 19
-\BOOKMARK [0][-]{chapter.4}{C.LABEL VR}{}% 20
-\BOOKMARK [1][-]{section.4.1}{Import und Export von Daten}{chapter.4}% 21
-\BOOKMARK [2][-]{subsection.4.1.1}{Import HDF5}{section.4.1}% 22
-\BOOKMARK [1][-]{section.4.2}{Generierung einer Punktwolke}{chapter.4}% 23
-\BOOKMARK [2][-]{subsection.4.2.1}{Generierung}{section.4.2}% 24
-\BOOKMARK [2][-]{subsection.4.2.2}{Optimierung}{section.4.2}% 25
-\BOOKMARK [1][-]{section.4.3}{Navigation}{chapter.4}% 26
-\BOOKMARK [2][-]{subsection.4.3.1}{VR-Krankheit}{section.4.3}% 27
-\BOOKMARK [2][-]{subsection.4.3.2}{Freier Flug}{section.4.3}% 28
-\BOOKMARK [2][-]{subsection.4.3.3}{Teleport}{section.4.3}% 29
-\BOOKMARK [1][-]{section.4.4}{Annotieren der Punktwolke}{chapter.4}% 30
-\BOOKMARK [2][-]{subsection.4.4.1}{Pointer Labeling}{section.4.4}% 31
-\BOOKMARK [2][-]{subsection.4.4.2}{Clustering}{section.4.4}% 32
-\BOOKMARK [1][-]{section.4.5}{Ingame Menu}{chapter.4}% 33
-\BOOKMARK [2][-]{subsection.4.5.1}{Movement}{section.4.5}% 34
-\BOOKMARK [2][-]{subsection.4.5.2}{Labelclasses}{section.4.5}% 35
-\BOOKMARK [0][-]{chapter.5}{Schluss}{}% 36
-\BOOKMARK [1][-]{subsection.5.0.1}{Zusammenfassung}{chapter.5}% 37
-\BOOKMARK [2][-]{subsection.5.0.2}{Herausforderungen}{subsection.5.0.1}% 38
-\BOOKMARK [1][-]{section.5.1}{Ausblick}{chapter.5}% 39
-\BOOKMARK [0][-]{appendix.A}{Appendix Title}{}% 40
+\BOOKMARK [1][-]{section.3.2}{Die Unity Engine}{chapter.3}% 18
+\BOOKMARK [1][-]{section.3.3}{Lidar-Sensor}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.4}{Das C.LABEL Tool}{chapter.3}% 20
+\BOOKMARK [0][-]{chapter.4}{C.LABEL VR}{}% 21
+\BOOKMARK [1][-]{section.4.1}{Import und Export von Daten}{chapter.4}% 22
+\BOOKMARK [1][-]{section.4.2}{Architektur}{chapter.4}% 23
+\BOOKMARK [2][-]{subsection.4.2.1}{HDF5-Beispiel}{section.4.2}% 24
+\BOOKMARK [1][-]{section.4.3}{Generierung einer Punktwolke}{chapter.4}% 25
+\BOOKMARK [2][-]{subsection.4.3.1}{Generierung}{section.4.3}% 26
+\BOOKMARK [2][-]{subsection.4.3.2}{Optimierung}{section.4.3}% 27
+\BOOKMARK [1][-]{section.4.4}{Navigation}{chapter.4}% 28
+\BOOKMARK [2][-]{subsection.4.4.1}{VR-Krankheit}{section.4.4}% 29
+\BOOKMARK [2][-]{subsection.4.4.2}{Freier Flug}{section.4.4}% 30
+\BOOKMARK [2][-]{subsection.4.4.3}{Teleport}{section.4.4}% 31
+\BOOKMARK [1][-]{section.4.5}{Annotieren der Punktwolke}{chapter.4}% 32
+\BOOKMARK [2][-]{subsection.4.5.1}{Pointer Labeling}{section.4.5}% 33
+\BOOKMARK [2][-]{subsection.4.5.2}{Clustering}{section.4.5}% 34
+\BOOKMARK [1][-]{section.4.6}{Ingame Menu}{chapter.4}% 35
+\BOOKMARK [2][-]{subsection.4.6.1}{Movement}{section.4.6}% 36
+\BOOKMARK [2][-]{subsection.4.6.2}{Labelclasses}{section.4.6}% 37
+\BOOKMARK [0][-]{chapter.5}{Schluss}{}% 38
+\BOOKMARK [1][-]{section.5.1}{Zusammenfassung}{chapter.5}% 39
+\BOOKMARK [1][-]{section.5.2}{Herausforderungen}{chapter.5}% 40
+\BOOKMARK [1][-]{section.5.3}{Ausblick}{chapter.5}% 41
+\BOOKMARK [0][-]{appendix.A}{Appendix Title}{}% 42
