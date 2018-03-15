@@ -10,8 +10,14 @@ namespace GracesGames.Common.Scripts {
 
 		// Finds and returns a game object by name or prints an error and return null
 		public static GameObject FindGameObjectOrError(string objectName) {
-			GameObject foundGameObject = GameObject.Find(objectName);
-			if (foundGameObject == null) {
+
+            GameObject foundGameObject = GameObject.Find(objectName); 
+            if(!foundGameObject)
+            {
+                foundGameObject = Util.FindInactiveGameobject(GameObject.Find("MainMenu"), objectName);
+            }
+
+            if (foundGameObject == null) {
 				Debug.LogError("Make sure " + objectName + " is present");
 			}
 			return foundGameObject;

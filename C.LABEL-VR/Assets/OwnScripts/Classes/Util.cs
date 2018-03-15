@@ -13,6 +13,16 @@ public static class Util
 {
 
     #region Methods
+    public static Vector3 MultiplyVectorValues(Vector3 vectorOne_inp, Vector3 vectorTwo_inp)
+    {
+        Vector3 vector_out = Vector3.zero;
+        vector_out.x = vectorOne_inp.x * vectorTwo_inp.x;
+        vector_out.y = vectorOne_inp.y * vectorTwo_inp.y;
+        vector_out.z = vectorOne_inp.z * vectorTwo_inp.z;
+
+        return vector_out;
+    }
+
     public static void DisableAllChildren(GameObject parent_inp)
     {
         for (int i = 0; i < parent_inp.transform.childCount; i++)
@@ -193,6 +203,12 @@ public static class Util
         TeleportMode
     }
 
+    public enum AccesMode
+    {
+        Create,
+        Load
+    }
+
     #endregion
 
     #region Nested Classes
@@ -230,18 +246,22 @@ public static class Util
 
     public static class DataLoadInfo
     {
-        public static string _sDataPath { get; private set; }
-        public static Datatype _dataType { get; private set; }
+        public static string _sourceDataPath { get; set; }
+        public static Datatype _dataType { get; set; }
+        public static AccesMode _accessMode { get; set; }
+        public static string _sessionName { get; set; }
+        public static string _sessionFolderPath { get; set; }
 
-        public static void StoreInfo(string sPath_inp, Datatype dataType_inp)
+        public static void StoreInfo(string sPath_inp, Datatype dataType_inp, AccesMode accessMode_inp, string sessionName)
         {
-            _sDataPath = sPath_inp;
+            _sourceDataPath = sPath_inp;
             _dataType = dataType_inp;
+            _accessMode = accessMode_inp;
         }
     }
 
-    
 
-    
+
+
     #endregion
 }

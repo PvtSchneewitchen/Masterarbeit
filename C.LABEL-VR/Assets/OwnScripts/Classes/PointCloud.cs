@@ -1,9 +1,7 @@
-﻿using OpenCvSharp;
-using System.Linq;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using System;
+
 
 public class PointCloud
 {
@@ -17,7 +15,7 @@ public class PointCloud
     private List<Tuple<Vector3, bool>> list;
 
 
-    public PointCloud(List<InternalDataFormat> dataList_inp, string dataPath_inp, Quaternion rotationToUnityCs)
+    public PointCloud(List<InternalDataFormat> dataList_inp, string dataPath_inp, Quaternion rotationToUnityCs, Vector3 mirroring_inp)
     {
         _validPoints = new List<GameObject>();
         _pathToPointCloudData = dataPath_inp;
@@ -28,7 +26,7 @@ public class PointCloud
             GameObject point = Util.CreateDefaultLabelPoint();
             CustomAttributes attributes = point.GetComponent<CustomAttributes>();
 
-            attributes._pointPosition = rotationToUnityCs * dataList_inp[i]._position;
+            attributes._pointPosition = Util.MultiplyVectorValues(rotationToUnityCs * dataList_inp[i]._position , mirroring_inp);
             attributes._groundPoint = dataList_inp[i]._groundPointLabel;
             attributes._ID = dataList_inp[i]._ID;
             attributes._label = dataList_inp[i]._label;

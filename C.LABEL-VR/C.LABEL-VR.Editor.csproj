@@ -327,6 +327,7 @@
     <Compile Include="Assets\OVR\Editor\OVRScreenshotWizard.cs" />
     <Compile Include="Assets\OVR\Scripts\Editor\OVRManagerEditor.cs" />
     <Compile Include="Assets\OvrAvatar\Editor\AvatarMaterialEditor.cs" />
+    <Compile Include="Assets\Unity-Logs-Viewer\Reporter\Editor\ReporterEditor.cs" />
     <Compile Include="Assets\VRTK\Editor\VRTK_AdaptiveQualityEditor.cs" />
     <Compile Include="Assets\VRTK\Editor\VRTK_EditorUtilities.cs" />
     <Compile Include="Assets\VRTK\Editor\VRTK_InteractHapticsEditor.cs" />
@@ -365,6 +366,7 @@
     <None Include="Assets\OvrAvatar\Content\Materials\AvatarSurfaceShaderSelfOccluding.shader" />
     <None Include="Assets\Plugins\Math.net\MathNet.Numerics.xml" />
     <None Include="Assets\Plugins\hdf5\HDF.PInvoke.XML" />
+    <None Include="Assets\StreamingAssets\build_info.txt" />
     <None Include="Assets\VRKeyboard\README.txt" />
     <None Include="Assets\VRTK\Scripts\Internal\Shaders\AdaptiveQualityDebugVisualization.shader" />
     <None Include="Assets\VRTK\Scripts\Internal\Shaders\TransparentFresnelBehind.shader" />

@@ -12,20 +12,22 @@ public class HDF5Addon
 {
     public static List<List<InternalDataFormat>> ReadHdf5_DaimlerLidar(string loadPath_inp, ref List<string> paths_ref)
     {
-        string[] filePaths = new string[1];
+        string[] filePaths;
 
         List<List<InternalDataFormat>> listOfDataLists_out = new List<List<InternalDataFormat>>();
 
         if (loadPath_inp.Substring(loadPath_inp.Length - 5) == ".hdf5")
         {
             //single file
-            filePaths[0] = loadPath_inp;
+            string[] temp = new string[1];
+            temp[0] = loadPath_inp;
+            filePaths = temp;
             paths_ref.Add(loadPath_inp);
         }
         else
         {
             //directory
-            filePaths = Directory.GetFiles(loadPath_inp, ".hdf5");
+            filePaths = Directory.GetFiles(loadPath_inp, "*.hdf5");
             for (int i = 0; i < filePaths.Length; i++)
             {
                 paths_ref.Add(filePaths[i]);
@@ -94,7 +96,7 @@ public class HDF5Addon
     private static List<InternalDataFormat> Processhdf5Containers_DaimlerLidar(int fileIndex, Hdf5Container_LidarDaimler hdf5Container_inp)
     {
         List<InternalDataFormat> listOfData_out = new List<InternalDataFormat>();
-        MetaData.Hdf5_DaimlerLidar._importedContainer.Add(hdf5Container_inp);
+        MetaData.Hdf5_DaimlerLidar._importedContainers.Add(hdf5Container_inp);
         MetaData.Hdf5_DaimlerLidar._tableIndexToID.Add(new Dictionary<Tuple<int, int>, int>());
 
 

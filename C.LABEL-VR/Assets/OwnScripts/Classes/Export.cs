@@ -12,13 +12,11 @@ public class Export
 
     public static void ExportHdf5_DaimlerLidar(string exportPath_inp)
     {
-        Quaternion UnityToHdf5Cs = Quaternion.Euler(0, 180, 0);
-
         _ctrl = GameObject.Find("AppController").GetComponent<ControlScript>();
 
         for (int i = 0; i < _ctrl._session._pointClouds.Count; i++)
         {
-            var container = MetaData.Hdf5_DaimlerLidar._importedContainer[i];
+            var container = MetaData.Hdf5_DaimlerLidar._importedContainers[i];
             var indexToID = MetaData.Hdf5_DaimlerLidar._tableIndexToID[i];
 
             PointCloud cloud = _ctrl._session._pointClouds[i];
@@ -27,7 +25,7 @@ public class Export
             string[] filePaths = Directory.GetFiles(exportPath_inp);
             string exportDatapath = Path.Combine(exportPath_inp, Path.GetFileName(cloud._pathToPointCloudData));
 
-            if (filePaths.ToList().Contains(Path.Combine(exportDatapath)))
+            if (filePaths.ToList().Contains(exportDatapath))
             {
                 //overwrite
                 HDF5Addon.OverwriteHdf5_DaimlerLidar(i, indexToID, container, pointList, exportDatapath);
@@ -44,7 +42,7 @@ public class Export
 
     public static void ExportPcd(string exportPath_inp)
     {
-        Quaternion UnityToPcdCs = Quaternion.Euler(90, 0, 0);
+        Quaternion UnityToPcdCs = Quaternion.Euler(-90, 90, 0);
 
         _ctrl = GameObject.Find("AppController").GetComponent<ControlScript>();
 
@@ -61,7 +59,7 @@ public class Export
             }
             else
             {
-                _exportDataPath = exportPath_inp + Path.GetFileName(cloud._pathToPointCloudData);
+                _exportDataPath = Path.Combine(exportPath_inp, Path.GetFileName(cloud._pathToPointCloudData));
             }
 
             using (StreamWriter pcdFileWriter = new StreamWriter(_exportDataPath, false))
@@ -75,9 +73,9 @@ public class Export
                     Vector3 position = UnityToPcdCs * attr._pointPosition;
                     position.x *= -1;
 
-                    string lineContent = position.x.ToString() + " "
-                                            + position.y.ToString() + " "
-                                                + position.z.ToString() + " "
+                    string lineContent = position.y.ToString() + " "
+                                            + position.z.ToString() + " "
+                                                + position.x.ToString() + " "
                                                      + attr._label.ToString();
 
                     pcdFileWriter.WriteLine(lineContent);

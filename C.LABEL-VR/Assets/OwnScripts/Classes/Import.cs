@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +10,8 @@ public class Import
         List<PointCloud> pointClouds_out = new List<PointCloud>();
         List<List<Vector3>> listOfCoordinateLists = new List<List<Vector3>>();
         List<List<InternalDataFormat>> listOfDataLists = new List<List<InternalDataFormat>>();
-        Quaternion pcdToUnityCS = Quaternion.Euler(-90, 0, 0);
+        Quaternion pcdToUnityCS_Rotation = Quaternion.Euler(-90, 90, 0);
+        Vector3 pcdToUnityCS_Mirroring = Vector3.one;
         List<string> paths = new List<string>();
 
         listOfCoordinateLists = PcdAddon.ReadPcdFromPath(loadPath_inp, ref paths);
@@ -23,9 +24,11 @@ public class Import
 
         for (int i = 0; i < listOfDataLists.Count; i++)
         {
-            pointClouds_out.Add(new PointCloud(listOfDataLists[i], paths[i], pcdToUnityCS));
+            pointClouds_out.Add(new PointCloud(listOfDataLists[i], paths[i], pcdToUnityCS_Rotation, pcdToUnityCS_Mirroring));
         }
-        
+
+        Labeling.SetNewLabelClasses(new Dictionary<uint, string> { { 1, "TestClass" } });
+
         return pointClouds_out;
     }
 
@@ -34,13 +37,15 @@ public class Import
         List<PointCloud> pointClouds_out = new List<PointCloud>();
         List<List<InternalDataFormat>> listOfDataLists = new List<List<InternalDataFormat>>();
         List<string> paths = new List<string>();
-        Quaternion hdf5ToUnityCS = Quaternion.Euler(-90, 0, 0);
+        Quaternion hdf5ToUnityCS_Rotation = Quaternion.Euler(-90, -90, 0);
+        Vector3 hdf5ToUnityCS_Mirroring = new Vector3(-1, 1, 1);
 
         listOfDataLists = HDF5Addon.ReadHdf5_DaimlerLidar(loadPath_inp, ref paths);
+        Debug.Log("List of read Data: " + listOfDataLists.Count);
 
         for (int i = 0; i < listOfDataLists.Count; i++)
         {
-            pointClouds_out.Add(new PointCloud(listOfDataLists[i], paths[i], hdf5ToUnityCS));
+            pointClouds_out.Add(new PointCloud(listOfDataLists[i], paths[i], hdf5ToUnityCS_Rotation, hdf5ToUnityCS_Mirroring));
         }
 
         return pointClouds_out;

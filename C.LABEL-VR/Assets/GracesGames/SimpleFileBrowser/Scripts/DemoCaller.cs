@@ -47,12 +47,12 @@ namespace GracesGames.SimpleFileBrowser.Scripts {
 		}
 
 		// Open the file browser using boolean parameter so it can be called in GUI
-		public void OpenFileBrowser(bool saving) {
-			OpenFileBrowser(saving ? FileBrowserMode.Save : FileBrowserMode.Load);
+		public void OpenFileBrowser(bool saving, string startPath) {
+			OpenFileBrowser(saving ? FileBrowserMode.Save : FileBrowserMode.Load, startPath);
 		}
 
 		// Open a file browser to save and load files
-		private void OpenFileBrowser(FileBrowserMode fileBrowserMode) {
+		private void OpenFileBrowser(FileBrowserMode fileBrowserMode, string startPath) {
 			// Create the file browser and name it
 			GameObject fileBrowserObject = Instantiate(FileBrowserPrefab, transform);
 			fileBrowserObject.name = "FileBrowser";
@@ -60,9 +60,9 @@ namespace GracesGames.SimpleFileBrowser.Scripts {
 			FileBrowser fileBrowserScript = fileBrowserObject.GetComponent<FileBrowser>();
 			fileBrowserScript.SetupFileBrowser(PortraitMode ? ViewMode.Portrait : ViewMode.Landscape, this.transform.parent);
 			if (fileBrowserMode == FileBrowserMode.Save) {
-				fileBrowserScript.SaveFilePanel(this, "SaveFileUsingPath", "DemoText", FileExtension);
+				fileBrowserScript.SaveFilePanel(this, "SaveFileUsingPath", "DemoText", FileExtension, startPath);
 			} else {
-				fileBrowserScript.OpenFilePanel(this, "LoadFileUsingPath", FileExtension);
+				fileBrowserScript.OpenFilePanel(this, "LoadFileUsingPath", FileExtension, startPath);
 			}
 		}
 

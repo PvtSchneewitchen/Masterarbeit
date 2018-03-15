@@ -79,30 +79,36 @@ Die Werte der Gewichte \(W_1 \dots W_n\) werden bei einem untrainierten Netz zu 
 \begin{itemize}
 \item \(t_i\) steht darin für den gewünschten Zielwert
 \end{itemize}
-\item \(\net_j\) ist die Netzeingabe \(\sum \limits_{i=1}^n x_iw_{ij}\)
+\item \(net_j\) ist die Netzeingabe \(\sum \limits_{i=1}^n x_iw_{ij}\)
 \end{itemize}
 
-\item \(o_i\) steht sowohl bei der Berechnung von \(\triangle w_{ij}\) als auch von \(E\) für die errechnete Ausgabe des Neurons \(i\)
+\item \(o_i\) steht sowohl bei der Berechnung von \(\triangle w_{ij}\), als auch von \(E\) für die errechnete Ausgabe des Neurons \(i\)
 \end{itemize}
 
 Zusammenfassend kann man nun sagen, dass der Lernprozess eines künstlichen Neuronalen Netzes nach folgendem Schema abläuft:
 
 \begin{enumerate}
 \item \textbf{Eingabe} eines Elements \(p\) aus der Trainingsmenge \(P\) in die Eingabeschicht des Netzes
-\item \textbf{Vorwärtspropagierung} der Eingabe durch das Netz und somit Berechnung des Ergebnisses an der Ausgabeschicht 
+\item \textbf{Vorwärtspropagierung} der Eingabe durch das Netz gesamte Netz, sodass man bei der Ausgabeschicht ein Ergebnis erhält
 \item \textbf{Vergleich} des Ergebnisses mit der richtigen Lösung und Berechnung des Fehlers
-\item \textbf{Zurückpropagieren} des Fehlers um somit die Gewichte der Neuronen anzupassen
+\item \textbf{Zurückpropagieren} des Fehlers, um somit die Gewichte der Neuronen anzupassen
 \end{enumerate}
 
-Wie unschwer zu erkennen ist basiert der Backpropagation-Algorithmus auf dem Vorhandensein eines Trainingsdatensatzes. Damit das Netz nach dem Training für neue, unbekannte Eingaben die richtige Lösung errechnet ist es elementar wichtig, dass dieser Datensatz eine hohe Qualität und Quantität hat. Qualität bedeutet in diesem Fall, dass die Trainingsdaten repräsentativ für den jeweiligen Anwendungsfall sein müssen. Einem Personenerkennungsalgorithmus der im Straßenverkehr Personen identifizieren soll bringt es nichts, wenn er ausschließlich mit Bildern von Personen in Innenräumen gefüttert wird. Mit Quantität ist Anzahl der verschiedenen Elemente im Trainingssatz gemeint. \acrshort{acr:knn}s verbessern ihre Ausgabe in der Regel mit größerer Menge an Trainingsdaten. 
+Wie unschwer zu erkennen ist basiert der Backpropagation-Algorithmus auf dem Vorhandensein eines Trainingsdatensatzes. Damit das Netz nach dem Training für neue, unbekannte Eingaben die richtige Lösung errechnet ist es elementar wichtig, dass dieser Datensatz eine hohe Qualität und Quantität hat. Qualität bedeutet in diesem Fall, dass die Trainingsdaten repräsentativ für den jeweiligen Anwendungsfall sein müssen. Ein Personenerkennungsalgorithmus der im Straßenverkehr Personen identifizieren soll liefert keine guten Ergebnisse, wenn er ausschließlich mit Bildern von Personen in Innenräumen gefüttert wird. Mit Quantität ist Anzahl der verschiedenen Elemente im Trainingssatz gemeint. \acrshort{acr:knn}s verbessern ihre Ausgabe in der Regel mit größerer Menge an unterschiedlichen Trainingsdaten.\\
 
-Zur Erstellung dieses Datensatzes ist es nun nötig so viele repräsentative Daten wie möglich zu sammeln und diese mit der richtigen Lösung zu annotieren. Eine Methode für eine solche Annotierung wird in dieser Arbeit vorgestellt. Dieses Kapitel sollte nun verdeutlicht haben wie essentiell solche Methoden auf dem Weg zur Erschaffung einer künstlichen Intelligenz sind.
+Zur Erstellung dieses Datensatzes ist es nun nötig so viele repräsentative Daten wie möglich zu sammeln und diese mit der richtigen Lösung zu annotieren. Eine Methode für eine solche Annotierung wird in dieser Arbeit vorgestellt. Dieses Kapitel sollte nun veranschaulicht haben warum  solche Methoden so essentiell, auf dem Weg zur Erschaffung einer künstlichen Intelligenz, sind.
+
+\section{Die Unity Engine}
+\label{sec:UnityEngine}
+
+
+\section{Lidar-Sensor}
+\label{sec:lidar}
+
 
 \section{Das C.LABEL Tool}
 \label{sec:C.LABEL}
 %TODO 
 Beschreibung des C.Label Tools, was es kann, was in die VR übernommen werden soll und was deswegen für die weitere Auswahl an HW und Tools zu berücksichtigen ist
 
-\section{Die Unity Engine}
-\label{sec:UnityEngine}
 

@@ -47,14 +47,14 @@ public static class Labeling
         };
 
         SetNewLabelClasses(new Dictionary<uint, string> { { 1, _dummyClassName } });
-        SetCurrentLabelClass(_labelClassInformations.ElementAt(1).Key);
+        SetCurrentLabelClassID(_labelClassInformations.ElementAt(1).Key);
     }
 
     public static string GetLabelClassName(uint ID_inp)
     {
         Tuple<string, Material> info;
 
-        if(_labelClassInformations.TryGetValue(ID_inp, out info))
+        if (_labelClassInformations.TryGetValue(ID_inp, out info))
         {
             return info.Item1;
         }
@@ -85,14 +85,28 @@ public static class Labeling
         }
     }
 
+    public static Dictionary<uint, string> GetLabelWorkingSet()
+    {
+        Dictionary<uint, string> lws = new Dictionary<uint, string>();
+
+        for (int i = 0; i < _labelClassInformations.Count; i++)
+        {
+            uint id = _labelClassInformations.ElementAt(i).Key;
+            string name = _labelClassInformations.ElementAt(i).Value.Item1;
+            lws.Add(id, name);
+        }
+
+        return lws;
+    }
+
     public static void SetNewLabelClasses(Dictionary<uint, string> labelWorkingSet_inp)
     {
-        if(_labelClassInformations.ContainsKey(1))
+        if (_labelClassInformations.ContainsKey(1))
         {
             Tuple<string, Material> info;
             _labelClassInformations.TryGetValue(1, out info);
 
-            if(info.Item1 == _dummyClassName)
+            if (info.Item1 == _dummyClassName)
                 _labelClassInformations.Remove(1);
         }
 
@@ -107,7 +121,7 @@ public static class Labeling
         }
 
         if (_labelClassInformations.Count > 1)
-            SetCurrentLabelClass(_labelClassInformations.ElementAt(1).Key);
+            SetCurrentLabelClassID(_labelClassInformations.ElementAt(1).Key);
     }
 
     public static Material GetLabelClassMaterial(uint ID_inp)
@@ -125,7 +139,7 @@ public static class Labeling
         }
     }
 
-    public static void SetCurrentLabelClass(uint label_inp)
+    public static void SetCurrentLabelClassID(uint label_inp)
     {
         if (_labelClassInformations.ContainsKey(label_inp))
         {

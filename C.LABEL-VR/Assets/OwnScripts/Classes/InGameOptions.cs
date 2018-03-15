@@ -24,9 +24,6 @@ public class InGameOptions
     public static bool _bAttachOptionsToCamera { get; set; }
     public static bool _bDecreasePointsWhenMoving { get; set; }
 
-    private static string sPathUserOptions = Application.persistentDataPath + "/UserOptions.dat";
-    private static string sPathDefaultOptions = Application.persistentDataPath + "/DefaultOptions.dat";
-
     private static Dropdown _dropDown_MovementMode;
     private static InputField _inputField_MaxSpeedTrans;
     private static InputField _inputField_AccelerationTrans;
@@ -38,31 +35,36 @@ public class InGameOptions
     private static Toggle _toggle_StickWithCamera;
     private static Toggle _toggle_DecreasePoints;
 
-    public static void SaveOptions()
+    public static void SaveOptions(string path_inp)
     {
+        string sPathUserOptions = path_inp + "/UserOptions.dat";
+
         SaveAt(sPathUserOptions);
-        UnityEngine.Debug.Log("Options Saved at: " + Application.dataPath);
+        Debug.Log("Options Saved at: " + Application.dataPath);
     }
 
-    public static void LoadOptions()
+    public static void LoadOptions(string path_inp)
     {
+        string sPathUserOptions = path_inp + "/UserOptions.dat";
+        string sPathDefaultOptions = path_inp + "/DefaultOptions.dat";
+
         if (File.Exists(sPathUserOptions))
         {
             LoadFrom(sPathUserOptions);
             InitUiComponentValues();
-            UnityEngine.Debug.Log("Options Loaded from " + sPathUserOptions);
+            Debug.Log("Options Loaded from " + sPathUserOptions);
         }
         else
         {
             if (File.Exists(sPathDefaultOptions))
             {
-                UnityEngine.Debug.Log("No Save Data in " + sPathDefaultOptions + " || default values used");
+                Debug.Log("No Save Data in " + sPathDefaultOptions + " || default values used");
                 LoadFrom(sPathDefaultOptions);
                 InitUiComponentValues();
             }
             else
             {
-                UnityEngine.Debug.Log("No Save or Default Data " + sPathDefaultOptions + " ||  editor values used");
+                Debug.Log("No Save or Default Data " + sPathDefaultOptions + " ||  editor values used");
                 GetEditorValues();
                 InitUiComponentValues();
                 SaveAt(sPathDefaultOptions);
@@ -70,8 +72,11 @@ public class InGameOptions
         }
     }
 
-    public static void RestoreDefaultValues()
+    public static void RestoreDefaultValues(string path_inp)
     {
+        string sPathUserOptions = path_inp + "/UserOptions.dat";
+        string sPathDefaultOptions = path_inp + "/DefaultOptions.dat";
+
         if (File.Exists(sPathDefaultOptions))
         {
             if (File.Exists(sPathUserOptions))
@@ -153,7 +158,7 @@ public class InGameOptions
         loadedData.GetData();
     }
 
-    private static void InitUiComponentValues()
+    public static void InitUiComponentValues()
     {
         try
         {

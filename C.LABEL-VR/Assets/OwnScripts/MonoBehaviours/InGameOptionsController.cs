@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using GracesGames.SimpleFileBrowser.Scripts;
+using System.IO;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using VRTK;
@@ -9,6 +11,7 @@ public class InGameOptionsController : MonoBehaviour
     public GameObject _inGameOptionsContainer;
     public GameObject _panelMovement;
     public GameObject _panelLabeling;
+    public GameObject _fileBrowserPrefab;
 
     public ControlScript _mainControl;
     public Movement _movementController;
@@ -217,20 +220,69 @@ public class InGameOptionsController : MonoBehaviour
     public void OnCloseMainOptionsClick()
     {
         _mainControl._optionModeActive = false;
-        InGameOptions.SaveOptions();
+        InGameOptions.SaveOptions(Util.DataLoadInfo._sessionFolderPath);
+        SessionSaveFile.SaveSession(Util.DataLoadInfo._sessionFolderPath);
         DisableOptionMenu();
     }
 
     public void OnRestoreDefaultClick()
     {
-        InGameOptions.RestoreDefaultValues();
+        InGameOptions.RestoreDefaultValues(Util.DataLoadInfo._sessionFolderPath);
+    }
+
+    public void OnExportDataClicked()
+    {
+        Transform rig = _mainCamera.transform.parent.parent;
+        rig.transform.position += -rig.transform.forward * 2.5f;
+
+        OpenBrowser("nofilesjustdirectories", Path.GetDirectoryName(Util.DataLoadInfo._sourceDataPath));
     }
 
     public void OnBackToMainMenuClick()
     {
-        InGameOptions.SaveOptions();
+        InGameOptions.SaveOptions(Util.DataLoadInfo._sessionFolderPath);
+        SessionSaveFile.SaveSession(Util.DataLoadInfo._sessionFolderPath);
         SceneManager.LoadScene(0);
     }
     #endregion
 
+    private void OpenBrowser(string sFileExtension_inp, string startPath)
+    {
+        OpenFileBrowser(FileBrowserMode.Load, _currentPanel.transform.parent, sFileExtension_inp, startPath);
+    }
+
+    private void OpenFileBrowser(FileBrowserMode fileBrowserMode_inp, Transform parent_inp, string sFileExtension_inp, string startPath)
+    {
+        // Create the file browser and name it
+        GameObject fileBrowserObject = Instantiate(_fileBrowserPrefab, parent_inp);
+        //fileBrowserObject.transform.parent = null;
+        fileBrowserObject.name = "FileBrowser";
+        // Set the mode to save or load
+        FileBrowser fileBrowserScript = fileBrowserObject.GetComponent<FileBrowser>();
+        fileBrowserScript.SetupFileBrowser(ViewMode.Landscape, parent_inp);
+        if (fileBrowserMode_inp == FileBrowserMode.Save)
+        {
+            fileBrowserScript.SaveFilePanel(this, "SaveFileUsingPath", "DemoText", sFileExtension_inp, startPath);
+        }
+        else
+        {
+            //caller script, callbackmethod, fileextension
+            fileBrowserScript.OpenFilePanel(this, "ExportToPath", sFileExtension_inp, startPath);
+        }
+    }
+
+    private void ExportToPath(string path_inp)
+    {
+        if(Util.DataLoadInfo._dataType == Util.Datatype.pcd)
+        {
+            Export.ExportPcd(path_inp);
+        }
+        else
+        {
+            Export.ExportHdf5_DaimlerLidar(path_inp);
+        }
+
+        Transform rig = _mainCamera.transform.parent.parent;
+        rig.transform.position += rig.transform.forward * 2.5f;
+    }
 }
