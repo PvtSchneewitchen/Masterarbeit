@@ -30,27 +30,27 @@
 \contentsline {section}{\numberline {3.3}Lidar-Sensor}{20}{section.3.3}
 \contentsline {section}{\numberline {3.4}Das C.LABEL Tool}{20}{section.3.4}
 \contentsline {chapter}{\numberline {4}C.LABEL VR}{21}{chapter.4}
-\contentsline {section}{\numberline {4.1}Import und Export von Daten}{22}{section.4.1}
-\contentsline {section}{\numberline {4.2}Architektur}{22}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}HDF5-Beispiel}{22}{subsection.4.2.1}
-\contentsline {subsubsection}{HDF5 Daten}{22}{subsection.4.2.1}
-\contentsline {subsubsection}{Beispiel}{22}{subsection.4.2.1}
-\contentsline {section}{\numberline {4.3}Generierung einer Punktwolke}{22}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Generierung}{22}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Optimierung}{22}{subsection.4.3.2}
-\contentsline {section}{\numberline {4.4}Navigation}{23}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}VR-Krankheit}{23}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Freier Flug}{23}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}Teleport}{23}{subsection.4.4.3}
-\contentsline {section}{\numberline {4.5}Annotieren der Punktwolke}{23}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}Pointer Labeling}{23}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}Clustering}{23}{subsection.4.5.2}
-\contentsline {subsubsection}{ground plane fitting}{23}{subsection.4.5.2}
-\contentsline {section}{\numberline {4.6}Ingame Menu}{23}{section.4.6}
-\contentsline {subsection}{\numberline {4.6.1}Movement}{23}{subsection.4.6.1}
-\contentsline {subsection}{\numberline {4.6.2}Labelclasses}{23}{subsection.4.6.2}
-\contentsline {chapter}{\numberline {5}Schluss}{24}{chapter.5}
-\contentsline {section}{\numberline {5.1}Zusammenfassung}{24}{section.5.1}
-\contentsline {section}{\numberline {5.2}Herausforderungen}{24}{section.5.2}
-\contentsline {section}{\numberline {5.3}Ausblick}{24}{section.5.3}
-\contentsline {chapter}{\numberline {A}Appendix Title}{25}{appendix.A}
+\contentsline {section}{\numberline {4.1}Import und Export von Daten}{23}{section.4.1}
+\contentsline {section}{\numberline {4.2}Architektur}{23}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}HDF5-Beispiel}{23}{subsection.4.2.1}
+\contentsline {subsubsection}{HDF5 Daten}{23}{subsection.4.2.1}
+\contentsline {subsubsection}{Beispiel}{23}{subsection.4.2.1}
+\contentsline {section}{\numberline {4.3}Generierung einer Punktwolke}{23}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Generierung}{23}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Optimierung}{23}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}Navigation}{24}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}VR-Krankheit}{24}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Freier Flug}{24}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Teleport}{24}{subsection.4.4.3}
+\contentsline {section}{\numberline {4.5}Annotieren der Punktwolke}{24}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Pointer Labeling}{24}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}Clustering}{24}{subsection.4.5.2}
+\contentsline {subsubsection}{ground plane fitting}{24}{subsection.4.5.2}
+\contentsline {section}{\numberline {4.6}Ingame Menu}{24}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Movement}{24}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.2}Labelclasses}{24}{subsection.4.6.2}
+\contentsline {chapter}{\numberline {5}Schluss}{25}{chapter.5}
+\contentsline {section}{\numberline {5.1}Zusammenfassung}{25}{section.5.1}
+\contentsline {section}{\numberline {5.2}Herausforderungen}{25}{section.5.2}
+\contentsline {section}{\numberline {5.3}Ausblick}{25}{section.5.3}
+\contentsline {chapter}{\numberline {A}Appendix Title}{26}{appendix.A}

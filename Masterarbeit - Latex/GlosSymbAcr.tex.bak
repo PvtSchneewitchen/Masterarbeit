@@ -14,6 +14,7 @@ sort=symbolpi, type=symbolslist
 \newacronym[plural={\glspl{glos:SDK}}]{acr:SDK}{SDK}{\gls{glos:SDK}}
 \newacronym{acr:knn}{KNN}{Künstliche Neuronale Netze}
 \newacronym{acr:UI}{UI}{User Interface}
+\newacronym{acr:IDS}{IDS}{Interne Datenstruktur}
 
 
 \newglossaryentry{glos:SDK}{%
@@ -24,6 +25,11 @@ sort=symbolpi, type=symbolslist
 
 \newglossaryentry{glos:Workflow}{%
   name={Workflow},
+  description={TODO},
+}
+
+\newglossaryentry{glos:OpenSrc}{%
+  name={Open Source},
   description={TODO},
 }
 
