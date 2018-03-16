@@ -1,6 +1,6 @@
 \select@language {ngerman}
 \contentsline {section}{Glossar}{vii}{section*.6}
-\contentsline {section}{Akronyme}{viii}{section*.7}
+\contentsline {section}{Akronyme}{ix}{section*.7}
 \contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Motivation}{2}{section.1.1}
 \contentsline {section}{\numberline {1.2}Ziel der Arbeit}{3}{section.1.2}
@@ -30,27 +30,28 @@
 \contentsline {section}{\numberline {3.3}Lidar-Sensor}{20}{section.3.3}
 \contentsline {section}{\numberline {3.4}Das C.LABEL Tool}{20}{section.3.4}
 \contentsline {chapter}{\numberline {4}C.LABEL VR}{21}{chapter.4}
-\contentsline {section}{\numberline {4.1}Import und Export von Daten}{23}{section.4.1}
-\contentsline {section}{\numberline {4.2}Architektur}{23}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}HDF5-Beispiel}{23}{subsection.4.2.1}
-\contentsline {subsubsection}{HDF5 Daten}{23}{subsection.4.2.1}
-\contentsline {subsubsection}{Beispiel}{23}{subsection.4.2.1}
-\contentsline {section}{\numberline {4.3}Generierung einer Punktwolke}{23}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Generierung}{23}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Optimierung}{23}{subsection.4.3.2}
-\contentsline {section}{\numberline {4.4}Navigation}{24}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}VR-Krankheit}{24}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Freier Flug}{24}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}Teleport}{24}{subsection.4.4.3}
-\contentsline {section}{\numberline {4.5}Annotieren der Punktwolke}{24}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}Pointer Labeling}{24}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}Clustering}{24}{subsection.4.5.2}
-\contentsline {subsubsection}{ground plane fitting}{24}{subsection.4.5.2}
-\contentsline {section}{\numberline {4.6}Ingame Menu}{24}{section.4.6}
-\contentsline {subsection}{\numberline {4.6.1}Movement}{24}{subsection.4.6.1}
-\contentsline {subsection}{\numberline {4.6.2}Labelclasses}{24}{subsection.4.6.2}
-\contentsline {chapter}{\numberline {5}Schluss}{25}{chapter.5}
-\contentsline {section}{\numberline {5.1}Zusammenfassung}{25}{section.5.1}
-\contentsline {section}{\numberline {5.2}Herausforderungen}{25}{section.5.2}
-\contentsline {section}{\numberline {5.3}Ausblick}{25}{section.5.3}
-\contentsline {chapter}{\numberline {A}Appendix Title}{26}{appendix.A}
+\contentsline {section}{\numberline {4.1}Import und Export von Daten}{21}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Architektur}{23}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}HDF5-Beispiel}{24}{subsection.4.1.2}
+\contentsline {subsubsection}{HDF5 Daten}{24}{subsection.4.1.2}
+\contentsline {subsubsection}{Beispiel}{24}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Generierung einer Punktwolke}{24}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Interne Datenstruktur}{24}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Generierung}{24}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Optimierung}{24}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3}Navigation}{25}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}VR-Krankheit}{25}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Freier Flug}{25}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Teleport}{25}{subsection.4.3.3}
+\contentsline {section}{\numberline {4.4}Annotieren der Punktwolke}{25}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Pointer Labeling}{25}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Clustering}{25}{subsection.4.4.2}
+\contentsline {subsubsection}{ground plane fitting}{25}{subsection.4.4.2}
+\contentsline {section}{\numberline {4.5}Ingame Menu}{25}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Movement}{25}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}Labelclasses}{25}{subsection.4.5.2}
+\contentsline {chapter}{\numberline {5}Schluss}{26}{chapter.5}
+\contentsline {section}{\numberline {5.1}Zusammenfassung}{26}{section.5.1}
+\contentsline {section}{\numberline {5.2}Herausforderungen}{26}{section.5.2}
+\contentsline {section}{\numberline {5.3}Ausblick}{26}{section.5.3}
+\contentsline {chapter}{\numberline {A}Appendix Title}{27}{appendix.A}
