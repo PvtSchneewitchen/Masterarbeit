@@ -3,6 +3,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using VRKeyboard.Utils;
 using VRTK;
 
 public class InGameOptionsController : MonoBehaviour
@@ -12,13 +13,16 @@ public class InGameOptionsController : MonoBehaviour
     public GameObject _panelMovement;
     public GameObject _panelLabeling;
     public GameObject _fileBrowserPrefab;
+    public GameObject _keyboard;
 
     public ControlScript _mainControl;
-    public Movement _movementController;
     public KeyboardController _digitKeyboard;
     public VRTK_UIPointer _rightControllerUiPointer;
     public VRTK_StraightPointerRenderer _rightControllerPointerRenderer;
-    public VRTK_Pointer _leftControllerPointer;
+    public PointerTeleport _pointerTeleportScript;
+    public Movement _movementScript;
+    public PointerLabeler _pointerLabelerScript;
+    public LabelClassDisplayUpdate _labelClassDisplay;
 
     private GameObject _currentPanel;
     private GameObject _lastPanelUsed;
@@ -46,10 +50,12 @@ public class InGameOptionsController : MonoBehaviour
     public void EnableOptionMenu()
     {
         //todo disable unnecessary things when usion option menu
-        _movementController._bMovementEnabled = false;
-        _leftControllerPointer.enabled = false;
+        _movementScript._bMovementEnabled = false;
+        _pointerLabelerScript.enabled = false;
+        _pointerTeleportScript._teleportEnabled = false;
+        _labelClassDisplay._enabled = false;
 
-        if(_lastPanelUsed == null)
+        if (_lastPanelUsed == null)
         {
             _currentPanel = _panelMovement;
         }
@@ -73,8 +79,11 @@ public class InGameOptionsController : MonoBehaviour
     {
         //todo enable things going back from option mode
         //_mainCamera.GetComponent<Camera>().nearClipPlane = Util.ClippingDistances._distanceToCamera_ClippingDefault;
-        _movementController._bMovementEnabled = true;
-        _leftControllerPointer.enabled = true;
+        _movementScript._bMovementEnabled = true;
+        _pointerLabelerScript.enabled = true;
+        _pointerTeleportScript._teleportEnabled = true;
+        _labelClassDisplay._enabled = true; 
+
         //_rightControllerPointerRenderer.invalidCollisionColor = _invalidCollisionColor_old;
         //_rightControllerPointerRenderer.validCollisionColor = _validCollisionColor_old;
         _currentPanel.SetActive(false);
@@ -87,7 +96,7 @@ public class InGameOptionsController : MonoBehaviour
     public void MovementModeChanged(int iModeIndex_inp)
     {
         InGameOptions._movementMode = (Util.MovementMode)iModeIndex_inp;
-        _movementController.Stop();
+        _movementScript.Stop();
     }
 
     public void FreeFly_MaxSpeedTransChanged(string sSpeed_input)
@@ -196,10 +205,18 @@ public class InGameOptionsController : MonoBehaviour
 
     public void OnInputFieldClick(object sender, UIPointerEventArgs args)
     {
-        if (Util.IsGameobjectTypeOf<InputField>(args.currentTarget))
+        var target = args.currentTarget;
+        if (Util.IsGameobjectTypeOf<InputField>(target))
         {
-            var inputField = args.currentTarget.GetComponent<InputField>();
-            _digitKeyboard.EnableNumpad(inputField, _currentPanel);
+            var inputField = target.GetComponent<InputField>();
+            if(inputField.name.Contains("Num"))
+            {
+                _digitKeyboard.EnableNumpad(inputField, inputField.gameObject);
+            }
+            else if(inputField.name.Contains("Key"))
+            {
+                EnableKeyBoard(_currentPanel, inputField);
+            }
         }
     }
 
@@ -221,7 +238,7 @@ public class InGameOptionsController : MonoBehaviour
     {
         _mainControl._optionModeActive = false;
         InGameOptions.SaveOptions(Util.DataLoadInfo._sessionFolderPath);
-        SessionSaveFile.SaveSession(Util.DataLoadInfo._sessionFolderPath);
+        //SessionSaveFile.SaveSession(Util.DataLoadInfo._sessionFolderPath);
         DisableOptionMenu();
     }
 
@@ -242,9 +259,28 @@ public class InGameOptionsController : MonoBehaviour
     {
         InGameOptions.SaveOptions(Util.DataLoadInfo._sessionFolderPath);
         SessionSaveFile.SaveSession(Util.DataLoadInfo._sessionFolderPath);
+
+        Labeling.Reset();
+        MetaData.Reset();
+
         SceneManager.LoadScene(0);
     }
+
+    public void OnKeyboardConfirmClick()
+    {
+        _keyboard.SetActive(false);
+    }
+
     #endregion
+
+    private void EnableKeyBoard(GameObject position, InputField inputField)
+    {
+        _keyboard.SetActive(true);
+        _keyboard.SetActive(true);
+        _keyboard.transform.rotation = position.transform.rotation;
+        _keyboard.transform.position = position. transform.position -position.transform.forward - position.transform.up;
+        _keyboard.GetComponent<KeyboardManager>().inputField= inputField;
+    }
 
     private void OpenBrowser(string sFileExtension_inp, string startPath)
     {

@@ -203,11 +203,71 @@ Das Inteview handelt von den Verkaufszahlen der Hololens},
   doi       = {10.1007/978-3-642-70911-1_20},
 }
 
-@Book{bib:NeuronaleNetze,
+@Book{bib:UebereblickNN,
   title  = {Ein kleiner \"{U}berblick \"{u}ber Neuronale Netze},
   year   = {2007},
   author = {David Kriesel},
   url    = { erh\"{a}ltlich auf http://www.dkriesel.com },
+}
+
+@Article{bib:FastGroundSeg,
+  author        = {Chu, Phuong and Cho, Seoungjae and Sim, Sungdae and Kwak, Kiho and Cho, Kyungeun},
+  title         = {A Fast Ground Segmentation Method for 3D Point Cloud},
+  journal       = {Journal of information processing systems},
+  year          = {2017},
+  volume        = {13},
+  number        = {3},
+  pages         = {491--499},
+  __markedentry = {[gruepazu:6]},
+  publisher     = {한국정보처리학회},
+}
+
+@Misc{bib:AzureCS,
+  author       = {Microsoft},
+  title        = {Machine Learning – Cheat Sheet für Algorithmen für Microsoft Azure Machine Learning Studio},
+  howpublished = {Internetquelle(abgerufen am 21.03.2018)},
+  month        = dec,
+  year         = {2017},
+}
+
+@Misc{Neurons,
+  author = {{Wikimedia Commons}},
+  title  = {Neurons},
+  year   = {2008},
+  note   = {[Internetquelle (abgerufen am 21.03.2018)]},
+  url    = {https://commons.wikimedia.org/wiki/File:Neurons_big1.jpg#filehistory},
+}
+
+@InProceedings{bib:Segmentation1,
+  author    = {Dimitris Zermas and Izzat Izzat and Nikolaos Papanikolopoulos},
+  title     = {Fast segmentation of 3D point clouds: A paradigm on {LiDAR} data for autonomous vehicle applications},
+  booktitle = {2017 {IEEE} International Conference on Robotics and Automation ({ICRA})},
+  year      = {2017},
+  month     = {may},
+  publisher = {{IEEE}},
+  doi       = {10.1109/icra.2017.7989591},
+}
+
+@InProceedings{bib:Segmentation2,
+  author    = {M. Hoy and J. Dauwels and J. Yuan},
+  title     = {Efficient ground object segmentation in 3D LIDAR based on cascaded mode seeking},
+  booktitle = {2017 IEEE 20th International Conference on Intelligent Transportation Systems (ITSC)},
+  year      = {2017},
+  pages     = {1-6},
+  month     = {Oct},
+  doi       = {10.1109/ITSC.2017.8317867},
+  keywords  = {Conferences;Intelligent transportation systems;Kalman filters;Laser radar;Real-time systems;Surface treatment;Three-dimensional displays},
+}
+
+@InProceedings{bib:Segmentation3,
+  author    = {S. Goga and S. Nedevschi},
+  title     = {An approach for segmenting 3D LiDAR data using multi-volume grid structures},
+  booktitle = {2017 13th IEEE International Conference on Intelligent Computer Communication and Processing (ICCP)},
+  year      = {2017},
+  pages     = {309-315},
+  month     = {Sept},
+  doi       = {10.1109/ICCP.2017.8117022},
+  keywords  = {graph theory;image segmentation;intelligent transportation systems;optical radar;3D LiDAR data segmention;accurate segmentation algorithm;automotive driving perception tasks;autonomous driving tasks;compact data representation;connected-component-based segmentation method;ground segment;hanging objects;multivolume grid representation;multivolume grid structures;object labeled data;object segment;road barrier;road surface;space partitioning data;sparse 3D LiDAR point clouds;spatial graph structure;urban environments;urban scenes;Buildings;Image segmentation;Laser radar;Roads;Three-dimensional displays;Vegetation;connected components;elevation map;hanging objects;lidar;multi-volume grid;overlapping intervals;protruding objects;segmentation},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

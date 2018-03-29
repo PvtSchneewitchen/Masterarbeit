@@ -27,12 +27,15 @@ public class HDF5Addon
         else
         {
             //directory
-            filePaths = Directory.GetFiles(loadPath_inp, "*.hdf5");
+            filePaths = Directory.GetFiles(loadPath_inp + "\\", "*.hdf5");
             for (int i = 0; i < filePaths.Length; i++)
             {
                 paths_ref.Add(filePaths[i]);
             }
         }
+
+        Debug.Log("Loading FIles: ");
+        Debug.Log(filePaths);
 
         for (int i = 0; i < filePaths.Length; i++)
         {
@@ -55,25 +58,34 @@ public class HDF5Addon
         int rows = container._labels.GetLength(0);
         int cols = container._labels.GetLength(1);
 
-        uint[,] labels = new uint[rows, cols];
-        var pointValid = container._pointValid;
+        uint[,] labels = container._labels;
 
-        for (int i = 0; i < rows; i++)
+        for (int i = 0; i < pointList.Count; i++)
         {
-            for (int j = 0; j < cols; j++)
-            {
-                if (pointValid[i, j] == 0)
-                {
-                    labels[i, j] = container._labels[i, j];
-                }
-                else
-                {
-                    int pointID = MetaData.Hdf5_DaimlerLidar.GetIdByTableIndex(fileIndex_inp, i, j);
-                    GameObject point = pointList.First(p => p.GetComponent<CustomAttributes>()._ID == pointID);
-                    labels[i, j] = point.GetComponent<CustomAttributes>()._label;
-                }
-            }
+            var attr = pointList[i].GetComponent<CustomAttributes>();
+            var index = indexToID.First(indx => indx.Value == attr._ID).Key;
+            labels[index.Item1, index.Item2] = attr._label;
         }
+
+        //uint[,] labels = new uint[rows, cols];
+        //var pointValid = container._pointValid;
+
+        //for (int i = 0; i < rows; i++)
+        //{
+        //    for (int j = 0; j < cols; j++)
+        //    {
+        //        if (pointValid[i, j] == 0)
+        //        {
+        //            labels[i, j] = container._labels[i, j];
+        //        }
+        //        else
+        //        {
+        //            int pointID = MetaData.Hdf5_DaimlerLidar.GetIdByTableIndex(fileIndex_inp, i, j);
+        //            GameObject point = pointList.First(p => p.GetComponent<CustomAttributes>()._ID == pointID);
+        //            labels[i, j] = point.GetComponent<CustomAttributes>()._label;
+        //        }
+        //    }
+        //}
 
         Hdf5IO.WriteUIntDataset(file_id, "labels", labels, false);
         Hdf5IO.WriteLabelWorkingSet(file_id, false);
@@ -89,6 +101,33 @@ public class HDF5Addon
         Hdf5IO.WriteFloatDataset(file_id, "vehicleX", container._vehicleX, false);
         Hdf5IO.WriteFloatDataset(file_id, "vehicleY", container._vehicleY, false);
         Hdf5IO.WriteFloatDataset(file_id, "vehicleZ", container._vehicleZ, false);
+
+        status = H5F.close(file_id);
+    }
+
+    public static void OverwriteHdf5_DaimlerLidar(int fileIndex_inp, Dictionary<Tuple<int, int>, int> indexToID, Hdf5Container_LidarDaimler container, List<GameObject> pointList, string pathToFile_inp)
+    {
+        int status = 0;
+
+        long file_id = H5F.open(pathToFile_inp, H5F.ACC_RDWR);
+
+        int rows = container._labels.GetLength(0);
+        int cols = container._labels.GetLength(1);
+
+        uint[,] labels = new uint[rows, cols];
+        var pointValid = container._pointValid;
+
+        labels = container._labels;
+
+        for (int i = 0; i < pointList.Count; i++)
+        {
+            var attr = pointList[i].GetComponent<CustomAttributes>();
+            var index = indexToID.First(indx => indx.Value == attr._ID).Key;
+            labels[index.Item1, index.Item2] = attr._label;
+        }
+
+        Hdf5IO.WriteUIntDataset(file_id, "labels", labels, true);
+        Hdf5IO.WriteLabelWorkingSet(file_id, true);
 
         status = H5F.close(file_id);
     }
@@ -118,40 +157,7 @@ public class HDF5Addon
         return listOfData_out;
     }
 
-    public static void OverwriteHdf5_DaimlerLidar(int fileIndex_inp, Dictionary<Tuple<int, int>, int> indexToID, Hdf5Container_LidarDaimler container, List<GameObject> pointList, string pathToFile_inp)
-    {
-        int status = 0;
-
-        long file_id = H5F.open(pathToFile_inp, H5F.ACC_RDWR);
-
-        int rows = container._labels.GetLength(0);
-        int cols = container._labels.GetLength(1);
-
-        uint[,] labels = new uint[rows, cols];
-        var pointValid = container._pointValid;
-
-        for (int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < cols; j++)
-            {
-                if (pointValid[i, j] == 0)
-                {
-                    labels[i, j] = container._labels[i, j];
-                }
-                else
-                {
-                    int pointID = MetaData.Hdf5_DaimlerLidar.GetIdByTableIndex(fileIndex_inp, i, j);
-                    GameObject point = pointList.First(p => p.GetComponent<CustomAttributes>()._ID == pointID);
-                    labels[i, j] = point.GetComponent<CustomAttributes>()._label;
-                }
-            }
-        }
-
-        Hdf5IO.WriteUIntDataset(file_id, "labels", labels, true);
-        Hdf5IO.WriteLabelWorkingSet(file_id, true);
-
-        status = H5F.close(file_id);
-    }
+    
 
     private static InternalDataFormat CreateInternalDataFormat(Hdf5Container_LidarDaimler hdf5Container_input, int rowIndex_inp, int columIndex)
     {

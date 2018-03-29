@@ -9,11 +9,11 @@ public class LabelSession
     public List<PointCloud> _pointClouds { get; set; }
     private int _currentCLoud { get; set; }
 
-    public LabelSession (List<PointCloud> pointClouds_inp, int iCurrentCloud)
-	{
+    public LabelSession(List<PointCloud> pointClouds_inp, int iCurrentCloud)
+    {
         _pointClouds = pointClouds_inp;
         _currentCLoud = iCurrentCloud;
-	}
+    }
 
     public LabelSession(SessionSaveFile saveFile_inp)
     {
@@ -46,7 +46,7 @@ public class LabelSession
             MetaData.Hdf5_DaimlerLidar._tableIndexToID = saveFile_inp._exportMetaData._hdf5_DaimlerLidar.GetTableIndexToID();
             MetaData.Hdf5_DaimlerLidar._importedContainers = saveFile_inp._exportMetaData._hdf5_DaimlerLidar.GetImportedContainers();
         }
-        
+
     }
 
     public int GetCurrentPointCloudIndex()
@@ -54,32 +54,42 @@ public class LabelSession
         return _currentCLoud;
     }
 
-    public PointCloud GetCurrentPointCloud ()
-	{
+    public PointCloud GetCurrentPointCloud()
+    {
         Debug.Log(_pointClouds.Count);
         return _pointClouds.ElementAt(_currentCLoud);
-	}
+    }
 
-	public PointCloud GetPointcloud (int index_inp)
-	{
+    public PointCloud GetPointcloud(int index_inp)
+    {
         return _pointClouds.ElementAt(index_inp);
     }
 
-	public PointCloud GetNextPointCloud ()
-	{
-        _currentCLoud++;
-		if (_currentCLoud >= _pointClouds.Count)
-            _currentCLoud = 0;
+    public void ShowNextPointCloud()
+    {
+        if (_pointClouds.Count > 1)
+        {
+            _pointClouds.ElementAt(_currentCLoud).DisableAllPoints();
 
-		return _pointClouds.ElementAt(_currentCLoud);
-	}
+            _currentCLoud++;
+            if (_currentCLoud >= _pointClouds.Count)
+                _currentCLoud = 0;
 
-	public PointCloud GetPreviousPointCloud ()
-	{
-        _currentCLoud--;
-        if (_currentCLoud >= _pointClouds.Count)
-            _currentCLoud = 0;
+            _pointClouds.ElementAt(_currentCLoud).EnableAllPoints();
+        }
+    }
 
-        return _pointClouds.ElementAt(_currentCLoud);
+    public void ShowPreviousPointCloud()
+    {
+        if (_pointClouds.Count > 1)
+        {
+            _pointClouds.ElementAt(_currentCLoud).DisableAllPoints();
+
+            _currentCLoud--;
+            if (_currentCLoud <= 0)
+                _currentCLoud = _pointClouds.Count-1;
+
+            _pointClouds.ElementAt(_currentCLoud).EnableAllPoints();
+        }
     }
 }

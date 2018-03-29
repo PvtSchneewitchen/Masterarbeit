@@ -4,12 +4,27 @@ using UnityEngine;
 
 public static class MetaData
 {
+    public static void Reset()
+    {
+        Hdf5_DaimlerLidar.Reset();
+    }
+
     public static class Hdf5_DaimlerLidar
     {
         public static List<Dictionary<Tuple<int, int>, int>> _tableIndexToID { get; set; }
         public static List<HDF5Addon.Hdf5Container_LidarDaimler> _importedContainers { get; set; }
 
         static Hdf5_DaimlerLidar()
+        {
+            Init();
+        }
+
+        public static void Reset()
+        {
+            Init();
+        }
+
+        private static void Init()
         {
             _tableIndexToID = new List<Dictionary<Tuple<int, int>, int>>();
             _importedContainers = new List<HDF5Addon.Hdf5Container_LidarDaimler>();

@@ -21,6 +21,11 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{bib:FastGroundSeg}
+P.~Chu, S.~Cho, S.~Sim, K.~Kwak, and K.~Cho, ``A fast ground segmentation
+  method for 3d point cloud,'' \emph{Journal of information processing
+  systems}, vol.~13, no.~3, pp. 491--499, 2017.
+
 \bibitem{bib:HololensVerkaufszahlen}
 \BIBentryALTinterwordspacing
 P.~Gothard, ``Microsoft hololens: Firm admits sales figures are in the
@@ -130,15 +135,37 @@ P.~Gora and L.~Leibetseder, ``Unreal vs unity: Ein vergleich zwischen zwei
   \url{https://www.cg.tuwien.ac.at/research/publications/2016/Przemyslaw_Gora_2016_UVU/}
 \BIBentrySTDinterwordspacing
 
+\bibitem{bib:AzureCs}
+Microsoft, ``Machine learning – cheat sheet für algorithmen für microsoft
+  azure machine learning studio,'' Internetquelle(abgerufen am 21.03.2018),
+  Dec. 2017.
+
+\bibitem{bib:UebereblickNN}
+\BIBentryALTinterwordspacing
+D.~Kriesel, \emph{Ein kleiner \"{U}berblick \"{u}ber Neuronale Netze}, 2007.
+  [Online]. Available: \url{erh\"{a}ltlich auf http://www.dkriesel.com}
+\BIBentrySTDinterwordspacing
+
 \bibitem{bib:Perzeptron}
 C.~V.~D. Malsburg, ``Frank rosenblatt: Principles of neurodynamics: Perceptrons
   and the theory of brain mechanisms,'' in \emph{Brain Theory}.\hskip 1em plus
   0.5em minus 0.4em\relax Springer Berlin Heidelberg, 1986, pp. 245--248.
 
-\bibitem{bib:NeuronaleNetze}
-\BIBentryALTinterwordspacing
-D.~Kriesel, \emph{Ein kleiner \"{U}berblick \"{u}ber Neuronale Netze}, 2007.
-  [Online]. Available: \url{erh\"{a}ltlich auf http://www.dkriesel.com}
-\BIBentrySTDinterwordspacing
+\bibitem{bib:Segmentation1}
+D.~Zermas, I.~Izzat, and N.~Papanikolopoulos, ``Fast segmentation of 3d point
+  clouds: A paradigm on {LiDAR} data for autonomous vehicle applications,'' in
+  \emph{2017 {IEEE} International Conference on Robotics and Automation
+  ({ICRA})}.\hskip 1em plus 0.5em minus 0.4em\relax {IEEE}, may 2017.
+
+\bibitem{bib:Segmentation2}
+M.~Hoy, J.~Dauwels, and J.~Yuan, ``Efficient ground object segmentation in 3d
+  lidar based on cascaded mode seeking,'' in \emph{2017 IEEE 20th International
+  Conference on Intelligent Transportation Systems (ITSC)}, Oct 2017, pp. 1--6.
+
+\bibitem{bib:Segmentation3}
+S.~Goga and S.~Nedevschi, ``An approach for segmenting 3d lidar data using
+  multi-volume grid structures,'' in \emph{2017 13th IEEE International
+  Conference on Intelligent Computer Communication and Processing (ICCP)}, Sept
+  2017, pp. 309--315.
 
 \end{thebibliography}

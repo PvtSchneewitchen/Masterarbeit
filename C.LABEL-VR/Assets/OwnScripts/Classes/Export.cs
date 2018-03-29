@@ -22,22 +22,33 @@ public class Export
             PointCloud cloud = _ctrl._session._pointClouds[i];
             List<GameObject> pointList = cloud._validPoints;
 
-            string[] filePaths = Directory.GetFiles(exportPath_inp);
-            string exportDatapath = Path.Combine(exportPath_inp, Path.GetFileName(cloud._pathToPointCloudData));
+            string[] filePaths;
+            try
+            {
+                filePaths = Directory.GetFiles(exportPath_inp);
+            }
+            catch
+            {
+                exportPath_inp = exportPath_inp + "//";
+                Debug.Log(exportPath_inp + "is not a valid Directory => trying: " + exportPath_inp);
+                filePaths = Directory.GetFiles(exportPath_inp);
+            }
 
-            if (filePaths.ToList().Contains(exportDatapath))
+            _exportDataPath = Path.Combine(exportPath_inp, Path.GetFileName(cloud._pathToPointCloudData));
+
+            if (filePaths.ToList().Contains(_exportDataPath))
             {
                 //overwrite
-                HDF5Addon.OverwriteHdf5_DaimlerLidar(i, indexToID, container, pointList, exportDatapath);
+                HDF5Addon.OverwriteHdf5_DaimlerLidar(i, indexToID, container, pointList, _exportDataPath);
             }
             else
             {
                 //create new
-                HDF5Addon.CreateNewHdf5File_DaimlerLidar(i, indexToID, container, pointList, exportDatapath);
+                HDF5Addon.CreateNewHdf5File_DaimlerLidar(i, indexToID, container, pointList, _exportDataPath);
             }
-
+            Debug.Log("hdf5-Files exported to " + _exportDataPath);
         }
-        Debug.Log("hdf5-Files exported to " + exportPath_inp);
+        
     }
 
     public static void ExportPcd(string exportPath_inp)

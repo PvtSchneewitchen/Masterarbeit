@@ -7,6 +7,7 @@ using VRTK;
 public class PointerTeleport : MonoBehaviour
 {
     public bool _bTeleportWithBlink;
+    public bool _teleportEnabled;
 
     public GameObject _pointerLenghtDisplay;
     public TextMesh _pointerLengthDisplayText;
@@ -15,9 +16,7 @@ public class PointerTeleport : MonoBehaviour
     public VRTK_Pointer _controllerPointer;
     public VRTK_StraightPointerRenderer _controllerPointerRenderer;
     
-
-    
-    private bool _bTeleportEnabled;
+    private bool _teleportActivated;
     private int _iDefaultPointerLength;
     private Vector2 _leftStickMovement;
 
@@ -32,7 +31,8 @@ public class PointerTeleport : MonoBehaviour
         _pointerLenghtDisplay.SetActive(false);
         _iDefaultPointerLength = 10;
         _controllerPointerRenderer.maximumLength = _iDefaultPointerLength;
-        _bTeleportEnabled = false;
+        _teleportActivated = false;
+        _teleportEnabled = true;
 
         if (InGameOptions._movementMode != Util.MovementMode.TeleportMode)
             _controllerPointerRenderer.enabled = false;
@@ -40,7 +40,7 @@ public class PointerTeleport : MonoBehaviour
 
     private void Update()
     {
-        if (_bTeleportEnabled && InGameOptions._movementMode == Util.MovementMode.TeleportMode)
+        if (_teleportActivated && InGameOptions._movementMode == Util.MovementMode.TeleportMode)
         {
             _leftStickMovement = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
             UpdatePointerLength();
@@ -81,7 +81,7 @@ public class PointerTeleport : MonoBehaviour
 
     private void PointerTeleport_SelectionButtonPressed(object sender, ControllerInteractionEventArgs e)
     {
-        if (InGameOptions._movementMode == Util.MovementMode.TeleportMode)
+        if (InGameOptions._movementMode == Util.MovementMode.TeleportMode && _teleportEnabled)
         {
             TeleportOnClick();
             _controllerPointerRenderer.maximumLength = _iDefaultPointerLength;
@@ -93,7 +93,7 @@ public class PointerTeleport : MonoBehaviour
         if (InGameOptions._movementMode == Util.MovementMode.TeleportMode)
         {
             _movementController._bMovementEnabled = true;
-            _bTeleportEnabled = false;
+            _teleportActivated = false;
         }
         _controllerPointerRenderer.enabled = false;
         _pointerLenghtDisplay.SetActive(false);
@@ -104,7 +104,7 @@ public class PointerTeleport : MonoBehaviour
         if (InGameOptions._movementMode == Util.MovementMode.TeleportMode)
         {
             _movementController._bMovementEnabled = false;
-            _bTeleportEnabled = true;
+            _teleportActivated = true;
             _pointerLenghtDisplay.SetActive(true);
             _controllerPointerRenderer.enabled = true;
         }

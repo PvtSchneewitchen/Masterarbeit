@@ -100,12 +100,12 @@ public class InGameOptions
     private static void InitUiComponentReferences()
     {
         _dropDown_MovementMode = Util.FindInactiveGameobject(GameObject.Find("InGameOptions"), "Dropdown_MovementMode").GetComponent<Dropdown>();
-        _inputField_MaxSpeedTrans = Util.FindInactiveGameobject(GameObject.Find("InGameOptions"), "InputField_MaxSpeedTrans").GetComponent<InputField>();
-        _inputField_AccelerationTrans = Util.FindInactiveGameobject(GameObject.Find("InGameOptions"), "InputField_AccelerationTrans").GetComponent<InputField>();
-        _inputField_MaxSpeedRot = Util.FindInactiveGameobject(GameObject.Find("InGameOptions"), "InputField_MaxSpeedRot").GetComponent<InputField>();
-        _inputField_AccelerationRot = Util.FindInactiveGameobject(GameObject.Find("InGameOptions"), "InputField_AccelerationRot").GetComponent<InputField>();
-        _inputField_MovementDistance = Util.FindInactiveGameobject(GameObject.Find("InGameOptions"), "InputField_MovementDistance").GetComponent<InputField>();
-        _inputField_TurnAngle = Util.FindInactiveGameobject(GameObject.Find("InGameOptions"), "InputField_TurnAngle").GetComponent<InputField>();
+        _inputField_MaxSpeedTrans = Util.FindInactiveGameobject(GameObject.Find("InGameOptions"), "InputField_MaxSpeedTrans_Num").GetComponent<InputField>();
+        _inputField_AccelerationTrans = Util.FindInactiveGameobject(GameObject.Find("InGameOptions"), "InputField_AccelerationTrans_Num").GetComponent<InputField>();
+        _inputField_MaxSpeedRot = Util.FindInactiveGameobject(GameObject.Find("InGameOptions"), "InputField_MaxSpeedRot_Num").GetComponent<InputField>();
+        _inputField_AccelerationRot = Util.FindInactiveGameobject(GameObject.Find("InGameOptions"), "InputField_AccelerationRot_Num").GetComponent<InputField>();
+        _inputField_MovementDistance = Util.FindInactiveGameobject(GameObject.Find("InGameOptions"), "InputField_MovementDistance_Num").GetComponent<InputField>();
+        _inputField_TurnAngle = Util.FindInactiveGameobject(GameObject.Find("InGameOptions"), "InputField_TurnAngle_Num").GetComponent<InputField>();
         _toggle_TeleportWithBlink = Util.FindInactiveGameobject(GameObject.Find("InGameOptions"), "Toggle_TeleportWithBlink").GetComponent<Toggle>();
         _toggle_StickWithCamera = Util.FindInactiveGameobject(GameObject.Find("InGameOptions"), "Toggle_StickWithCamera").GetComponent<Toggle>();
         _toggle_DecreasePoints = Util.FindInactiveGameobject(GameObject.Find("InGameOptions"), "Toggle_DecreasePoints").GetComponent<Toggle>();

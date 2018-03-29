@@ -9,29 +9,26 @@ public class ControlScript : MonoBehaviour
     public LabelSession _session { get; private set; }
     public InGameOptionsController _inGameOptions;
     public Camera _centerEyeAnchor;
+    public LabelClassDisplayUpdate LabelClassDisplay;
 
     public bool _optionModeActive { get; set; }
 
     // Use this for initialization
     void Awake()
     {
-
 #if UNITY_EDITOR
-        Debug.Log("1");
-        Util.DataLoadInfo._dataType = Util.Datatype.hdf5_DaimlerLidar;
+        Util.DataLoadInfo._dataType = Util.Datatype.pcd;
         Util.DataLoadInfo._accessMode = Util.AccesMode.Create;
         Util.DataLoadInfo._sessionName = "EditorDev";
 
         if (Util.DataLoadInfo._dataType == Util.Datatype.pcd)
             Util.DataLoadInfo._sourceDataPath = "C:\\Users\\gruepazu\\Desktop\\PointClouds\\000000000_LidarImage_000000002.pcd";
         else if (Util.DataLoadInfo._dataType == Util.Datatype.hdf5_DaimlerLidar)
-            Util.DataLoadInfo._sourceDataPath = "C:\\Users\\gruepazu\\Desktop\\LIdar18.8\\LidarImages_03_05\\";
+            Util.DataLoadInfo._sourceDataPath = "C:\\Users\\gruepazu\\Desktop\\LidarDaten\\DatenDAG\\2017-08-18_090334\\LidarImages_03_05\\LidarImage_000001723.hdf5";
 #endif
-        Debug.Log("2");
 
         if (Util.DataLoadInfo._accessMode == Util.AccesMode.Create)
         {
-            Debug.Log("3");
             CreateSessionFolder();
             InGameOptions.LoadOptions(Util.DataLoadInfo._sessionFolderPath);
 
@@ -43,7 +40,6 @@ public class ControlScript : MonoBehaviour
             }
             else if (Util.DataLoadInfo._dataType == Util.Datatype.hdf5_DaimlerLidar)
             {
-                Debug.Log("5");
                 pointClouds = Import.ImportHdf5_DaimlerLidar(Util.DataLoadInfo._sourceDataPath);
             }
             else if (Util.DataLoadInfo._dataType == Util.Datatype.lidar)
@@ -81,18 +77,29 @@ public class ControlScript : MonoBehaviour
         _session.GetCurrentPointCloud().EnableAllPoints();
         _session._sessionName = Util.DataLoadInfo._sessionName;
 
-        //Labeling.SetCurrentLabelClass(new Tuple<uint, string>(11, "building"));
-        //var points = _session.GetCurrentPointCloud()._validPoints;
-        //for (int i = 0; i < points.Count; i++)
-        //{
-        //    var point = points[i];
-        //    var attr = points[i].GetComponent<CustomAttributes>();
 
-        //    if(attr._groundPoint == 1)
-        //    {
-        //        attr._label = Labeling._currentLabelClass;
-        //    }
-        //}
+        //ground testing
+
+        var test = Labeling.GetLabelClassColor(Labeling.currentLabelClassID);
+
+        var clouds = _session._pointClouds;
+        for (int i = 0; i < clouds.Count; i++)
+        {
+            var points = clouds[i]._validPoints;
+
+            for (int j = 0; j < points.Count; j++)
+            {
+                var attr = points[j].GetComponent<CustomAttributes>();
+
+                if (attr._groundPoint == 1)
+                {
+                    attr._label = Labeling.currentLabelClassID;
+                }
+            }
+
+        }
+
+
     }
 
     private void CreateSessionFolder()
@@ -107,24 +114,33 @@ public class ControlScript : MonoBehaviour
     {
         CheckOptionMenuButton();
         CheckCloudChangeButton();
+        CheckLabelClassChangeButton();
     }
 
     private void CheckCloudChangeButton()
     {
-        if (OVRInput.GetDown(OVRInput.Button.One))
+        if (OVRInput.GetDown(OVRInput.Button.Four))
         {
-            if (OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick).x > 0.8f)
-            {
-                _session.GetNextPointCloud();
-            }
-            else if (OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick).x < -0.8f)
-            {
-                _session.GetPreviousPointCloud();
-            }
+            _session.ShowNextPointCloud();
         }
+        else if (OVRInput.GetDown(OVRInput.Button.Three))
+        {
+            _session.ShowPreviousPointCloud();
+        }
+    }
 
-        OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
-
+    private void CheckLabelClassChangeButton()
+    {
+        if (OVRInput.GetDown(OVRInput.Button.Two))
+        {
+            Labeling.SwitchToNextLabelClass();
+            LabelClassDisplay.UpdatePointerDisplay();
+        }
+        else if (OVRInput.GetDown(OVRInput.Button.One))
+        {
+            Labeling.SwitchToPreviousLabelClass();
+            LabelClassDisplay.UpdatePointerDisplay();
+        }
     }
 
     private void CheckOptionMenuButton()
@@ -147,3 +163,54 @@ public class ControlScript : MonoBehaviour
         }
     }
 }
+//int segments = 4;
+//int potentialgroundcounter = 0;
+
+//List<GameObject> testpoints = new List<GameObject>();
+
+//System.Random random = new System.Random(88);
+//random.Next(-50, 50);
+
+//        for (int i = 0; i< 1000; i++)
+//        {
+//            GameObject testpoint = Util.CreateDefaultLabelPoint();
+//testpoint.transform.position = new Vector3(random.Next(-10, 10), random.Next(-10, 10), random.Next(-10, 10));
+//            testpoints.Add(testpoint);
+
+//            if(testpoint.transform.position.y< 1 && testpoint.transform.position.y> -1)
+//            {
+//                potentialgroundcounter++;
+//            }
+//        }
+
+//        //testpoints.OrderBy(x => x.transform.position.x).ThenBy(x => x.transform.position.z);
+
+//        List<Tuple<float, GameObject>> mortonCurvedPointList = new List<Tuple<float, GameObject>>();
+
+//        for (int i = 0; i<testpoints.Count; i++)
+//        {
+//            var pos = testpoints[i].transform.position;
+//mortonCurvedPointList.Add(new Tuple<float, GameObject>(pos.x + pos.z, testpoints[i]));
+//        }
+
+//        mortonCurvedPointList.OrderBy(x => x.Item1);
+
+
+//        int pointsInSegmentcounter = 0;
+//int pointsInSegment = potentialgroundcounter / segments + 1;
+//Color color = new Color((float)random.NextDouble(), (float)random.NextDouble(), (float)random.NextDouble());
+//        for (int i = 0; i<mortonCurvedPointList.Count; i++)
+//        {
+
+//            if (mortonCurvedPointList[i].Item2.transform.position.y< 1 && mortonCurvedPointList[i].Item2.transform.position.y> -1)
+//            {
+//                mortonCurvedPointList[i].Item2.GetComponent<MeshRenderer>().material.color = color;
+//                pointsInSegmentcounter++;
+//            }
+
+//            if (pointsInSegmentcounter >= pointsInSegment)
+//            {
+//                pointsInSegmentcounter = 0;
+//                color = new Color((float) random.NextDouble(), (float) random.NextDouble(), (float) random.NextDouble());
+//            }
+//        }

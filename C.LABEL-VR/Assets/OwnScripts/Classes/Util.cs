@@ -1,18 +1,54 @@
-﻿using System;
-using System.IO;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor;
 using PostProcess;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Linq;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Globalization;
+using MathNet.Numerics.LinearAlgebra;
 
 public static class Util
 {
 
     #region Methods
+
+    public static void DrawPlane(Vector3 pointOnPlane, Vector3 normal, float width, int number)
+    {
+        Vector3 v3;
+
+        if (normal.normalized != Vector3.forward)
+            v3 = Vector3.Cross(normal, Vector3.forward).normalized * width;
+        else
+            v3 = Vector3.Cross(normal, Vector3.up).normalized * width;
+
+        var corner0 = pointOnPlane + v3;
+        var corner2 = pointOnPlane - v3;
+        var q = Quaternion.AngleAxis(90, normal);
+        v3 = q * v3;
+        var corner1 = pointOnPlane + v3;
+        var corner3 = pointOnPlane - v3;
+
+        Debug.DrawLine(corner0, corner2, Color.blue, 300);
+        Debug.DrawLine(corner1, corner3, Color.blue, 300);
+        Debug.DrawLine(corner0, corner1, Color.blue, 300);
+        Debug.DrawLine(corner1, corner2, Color.blue, 300);
+        Debug.DrawLine(corner2, corner3, Color.blue, 300);
+        Debug.DrawLine(corner3, corner0, Color.blue, 300);
+        Debug.DrawRay(pointOnPlane, normal, Color.red, 300);
+
+        GameObject num = new GameObject(number.ToString());
+        num.AddComponent<TextMesh>();
+        num.GetComponent<TextMesh>().text = number.ToString();
+        num.transform.position = pointOnPlane + normal;
+    }
+
+    
+
+    public static void EnableLoadingScreen(GameObject loadingScreen_inp, string screenMessage_inp)
+    {
+        var textObjects = loadingScreen_inp.GetComponentsInChildren<Text>();
+        textObjects[1].text = screenMessage_inp;
+        AlignToCamera(GameObject.Find("CenterEyeAnchor"), loadingScreen_inp, 0.5f);
+    }
+
     public static Vector3 MultiplyVectorValues(Vector3 vectorOne_inp, Vector3 vectorTwo_inp)
     {
         Vector3 vector_out = Vector3.zero;
@@ -212,6 +248,22 @@ public static class Util
     #endregion
 
     #region Nested Classes
+
+    public static class PlaneTesting
+    {
+        public static List<Vector3> PlaneNormals { get; }
+
+        static PlaneTesting()
+        {
+            PlaneNormals = new List<Vector3>();
+        }
+
+        public static void AddPlaneNormal(Vector<float> normal_inp)
+        {
+            Vector3 unityNormal = new Vector3(normal_inp[0], normal_inp[1], normal_inp[2]);
+            PlaneNormals.Add(unityNormal);
+        }
+    }
 
     public static class ClippingDistances
     {

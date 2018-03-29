@@ -10,9 +10,10 @@ namespace VRKeyboard.Utils {
         [Tooltip("If the character is uppercase at the initialization")]
         public bool isUppercase = false;
         public int maxInputLength;
-        
+
         [Header("UI Elements")]
-        public Text inputText;
+        //public Text inputText;
+        public InputField inputField;
 
         [Header("Essentials")]
         public Transform characters;
@@ -20,8 +21,8 @@ namespace VRKeyboard.Utils {
 
         #region Private Variables
         private string Input {
-            get { return inputText.text;  }
-            set { inputText.text = value;  }
+            get { return inputField.text;  }
+            set { inputField.text = value;  }
         }
 
         private Dictionary<GameObject, Text> keysDictionary = new Dictionary<GameObject, Text>();

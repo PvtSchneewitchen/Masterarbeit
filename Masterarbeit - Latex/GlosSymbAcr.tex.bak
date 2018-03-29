@@ -46,7 +46,7 @@ sort=symbolpi, type=symbolslist
 }
 
 \newglossaryentry{glos:Umfeldmodell}{%
-  name={Tiefenkamera},
+  name={Umfeldmodell},
   description={TODO},
   plural={Umfeldmodelle}
 }

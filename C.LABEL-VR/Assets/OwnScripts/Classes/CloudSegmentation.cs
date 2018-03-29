@@ -1,55 +1,56 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using MathNet.Numerics;
-using MathNet.Numerics.LinearAlgebra;
-using MathNet.Numerics.LinearAlgebra.Factorization;
-using System;
+
+using g3;
 
 public static class CloudSegmentation
 {
     public static void SetGroundLabels(List<InternalDataFormat> listOfDataLists)
     {
-        int segmentCount = 5;
-        float initialSeedsThresh = 0.4f;
+        int segmentCount = 3;
+        float initialSeedDistanceThreshold = 0.3f;
         float seedDistanceThreshold = 0.2f;
-        float covarIterations = 3;
-        float seedDistanceToPlane;
+        float covarIterations = 1;
         InternalDataFormat seed = new InternalDataFormat(0, Vector3.zero, 0, 2);
-        Vector<float> seedPosition = CreateVector.Dense<float>(3);
-        Matrix<float> covariance = CreateMatrix.Dense<float>(3, 3);
-        Vector<float> estimatedPlaneNormal = CreateVector.Dense<float>(3);
-        Svd<float> singleValueDecomposition;
         List<InternalDataFormat> seedPoints = new List<InternalDataFormat>();
 
-        List<List<InternalDataFormat>> cloudSegments = GetCloudSegments(listOfDataLists, segmentCount);
+        //List<List<InternalDataFormat>> cloudSegments = GetCloudSegmentsSegmentedByYAndXAxis(listOfDataLists, segmentCount);
+        List<List<InternalDataFormat>> cloudSegments = GetCloudSegmentsSegmentedByYAndXAxis(listOfDataLists, segmentCount);
 
         for (int i = 0; i < cloudSegments.Count; i++)
         {
             List<InternalDataFormat> segmentData = cloudSegments.ElementAt(i);
-            seedPoints = GetInitialSeedPoints(segmentData, initialSeedsThresh);
+            seedPoints = GetInitialSeedPoints(segmentData, initialSeedDistanceThreshold);
 
             for (int j = 0; j < covarIterations; j++)
             {
-                covariance = ComputeCovarianceMat(seedPoints);
-                seedPoints.Clear();
+                List<Vector3d> points = new List<Vector3d>();
+                for (int m = 0; m < seedPoints.Count; m++)
+                {
+                    var pos = seedPoints[m]._position;
+                    points.Add(new Vector3d(pos.x, pos.y, pos.z));
+                }
 
-                singleValueDecomposition = covariance.Svd();
+                OrthogonalPlaneFit3 estimatedGroundPlane = new OrthogonalPlaneFit3(points);
 
-                estimatedPlaneNormal = singleValueDecomposition.VT.Column(2);
+                Vector3 planeOriginPoint = new Vector3((float)estimatedGroundPlane.Origin.x, (float)estimatedGroundPlane.Origin.y, (float)estimatedGroundPlane.Origin.z);
+                Vector3 planeNormal = new Vector3((float)estimatedGroundPlane.Normal.x, (float)estimatedGroundPlane.Normal.y, (float)estimatedGroundPlane.Normal.z);
+                Plane estimatedGroundPlaneUnity = new Plane(planeNormal, planeOriginPoint);
+
+                if (j == covarIterations - 1)
+                {
+                    Util.DrawPlane(planeOriginPoint, planeNormal, planeNormal.magnitude * 2, i);
+                }
+
 
                 for (int k = 0; k < segmentData.Count; k++)
                 {
                     seed = cloudSegments.ElementAt(i).ElementAt(k);
-                    seedPosition[0] = seed._position.x;
-                    seedPosition[1] = seed._position.y;
-                    seedPosition[2] = seed._position.z;
 
-                    var distanceMat = estimatedPlaneNormal.ToRowMatrix() * seedPosition.ToColumnMatrix();
+                    float distancePointToPlane = estimatedGroundPlaneUnity.GetDistanceToPoint(seed._position);
 
-                    seedDistanceToPlane = distanceMat[0, 0];
-
-                    if (seedDistanceToPlane <= seedDistanceThreshold)
+                    if (distancePointToPlane <= seedDistanceThreshold)
                     {
                         seed._groundPointLabel = 1;
                         seedPoints.Add(seed);
@@ -63,45 +64,45 @@ public static class CloudSegmentation
         }
     }
 
-    private static Matrix<float> ComputeCovarianceMat(List<InternalDataFormat> segmentData_inp)
-    {
-        Matrix<float> covariance_out = CreateMatrix.Dense<float>(3, 3);
-        Vector<float> avgSeedPosition = CreateVector.Dense<float>(3);
-        Vector<float> seedPosition = CreateVector.Dense<float>(3);
-        Vector<float> positionDifference = CreateVector.Dense<float>(3);
-        Vector<float> sum = CreateVector.Dense<float>(3);
+    //private static Matrix<float> ComputeCovarianceMat(List<InternalDataFormat> segmentData_inp)
+    //{
+    //    Matrix<float> covariance_out = CreateMatrix.Dense<float>(3, 3);
+    //    Vector<float> avgSeedPosition = CreateVector.Dense<float>(3);
+    //    Vector<float> seedPosition = CreateVector.Dense<float>(3);
+    //    Vector<float> positionDifference = CreateVector.Dense<float>(3);
+    //    Vector<float> sum = CreateVector.Dense<float>(3);
 
-        for (int i = 0; i < segmentData_inp.Count; i++)
-        {
-            Vector3 pos = segmentData_inp.ElementAt(i)._position;
-            sum[0] = pos.x;
-            sum[1] = pos.y;
-            sum[2] = pos.z;
-        }
-        avgSeedPosition = sum / segmentData_inp.Count;
+    //    for (int i = 0; i < segmentData_inp.Count; i++)
+    //    {
+    //        Vector3 pos = segmentData_inp.ElementAt(i)._position;
+    //        sum[0] = pos.x;
+    //        sum[1] = pos.y;
+    //        sum[2] = pos.z;
+    //    }
+    //    avgSeedPosition = sum / segmentData_inp.Count;
 
-        for (int i = 0; i < segmentData_inp.Count; i++)
-        {
-            Matrix<float> seedVariance = CreateMatrix.Dense<float>(3, 3);
-            Vector3 position = segmentData_inp.ElementAt(i)._position;
-            seedPosition[0] = position.x;
-            seedPosition[1] = position.y;
-            seedPosition[2] = position.z;
+    //    for (int i = 0; i < segmentData_inp.Count; i++)
+    //    {
+    //        Matrix<float> seedVariance = CreateMatrix.Dense<float>(3, 3);
+    //        Vector3 position = segmentData_inp.ElementAt(i)._position;
+    //        seedPosition[0] = position.x;
+    //        seedPosition[1] = position.y;
+    //        seedPosition[2] = position.z;
 
-            positionDifference = seedPosition - avgSeedPosition;
-            seedVariance = positionDifference.ToColumnMatrix() * positionDifference.ToRowMatrix();
-            covariance_out += seedVariance;
-        }
+    //        positionDifference = seedPosition - avgSeedPosition;
+    //        seedVariance = positionDifference.ToColumnMatrix() * positionDifference.ToRowMatrix();
+    //        covariance_out += seedVariance;
+    //    }
 
-        return covariance_out;
-    }
+    //    return covariance_out;
+    //}
 
     private static List<InternalDataFormat> GetInitialSeedPoints(List<InternalDataFormat> segmentData_inp, float initialSeedsThresh_inp)
     {
         List<InternalDataFormat> initialSeeds_out = new List<InternalDataFormat>();
 
         float lprHeightValue = GetLprHeight(segmentData_inp);
-        initialSeeds_out = GetLowestPoints(segmentData_inp, lprHeightValue, initialSeedsThresh_inp);
+        initialSeeds_out = GetPointsInLprThresh(segmentData_inp, lprHeightValue, initialSeedsThresh_inp);
 
         return initialSeeds_out;
     }
@@ -109,21 +110,14 @@ public static class CloudSegmentation
     private static float GetLprHeight(List<InternalDataFormat> segmentData_inp)
     {
         float lprHeight_out;
-        int avgPointsCount = (int)Mathf.Floor(segmentData_inp.Count / 3);
         List<float> lowestAvgPoints = new List<float>();
-
-        lowestAvgPoints = Enumerable.Range(0, avgPointsCount).Select(n => float.MaxValue).ToList();
 
         for (int i = 0; i < segmentData_inp.Count; i++)
         {
-            var segmentDataElement = segmentData_inp.ElementAt(i);
-            float height = segmentDataElement._position.z;
-            float maxValue = lowestAvgPoints.Max();
+            float height = segmentData_inp[i]._position.z;
 
-            if (height < maxValue)
+            if (height < 0.5 && height > -0.5)
             {
-                int indexMax = lowestAvgPoints.Select((value, index) => new { Value = value, Index = index }).Aggregate((a, b) => (a.Value > b.Value) ? a : b).Index;
-                lowestAvgPoints.RemoveAt(indexMax);
                 lowestAvgPoints.Add(height);
             }
         }
@@ -133,7 +127,7 @@ public static class CloudSegmentation
         return lprHeight_out;
     }
 
-    private static List<InternalDataFormat> GetLowestPoints(List<InternalDataFormat> segmentData_inp, float lprHeightValue_inp, float initialSeedsThresh_inp)
+    private static List<InternalDataFormat> GetPointsInLprThresh(List<InternalDataFormat> segmentData_inp, float lprHeightValue_inp, float initialSeedsThresh_inp)
     {
         List<InternalDataFormat> lowestPoints_out = new List<InternalDataFormat>();
         float heightBoarder = lprHeightValue_inp + initialSeedsThresh_inp;
@@ -150,37 +144,193 @@ public static class CloudSegmentation
         return lowestPoints_out;
     }
 
+    //private static List<List<InternalDataFormat>> GetSimpleCloudSegments(List<InternalDataFormat> dataList_inp)
+    //{
+    //    List<List<InternalDataFormat>> listOfSegments_out = new List<List<InternalDataFormat>>(3)
+    //    {
+    //        new List<InternalDataFormat>(),
+    //        new List<InternalDataFormat>(),
+    //        new List<InternalDataFormat>()
+    //    };
 
-    private static List<List<InternalDataFormat>> GetCloudSegments(List<InternalDataFormat> dataList_inp, int segmentCount_inp)
+    //    var biggestdistance = GetBiggestDistance(dataList_inp);
+    //    var boarder = 25;
+
+    //    Debug.DrawLine(new Vector3(-boarder, -100, 0), new Vector3(-boarder, 100, 0),Color.blue,300);
+    //    Debug.DrawLine(new Vector3(boarder, -100, 0), new Vector3(boarder, 100, 0), Color.blue, 300);
+
+    //    for (int i = 0; i < dataList_inp.Count; i++)
+    //    {
+    //        var xval = dataList_inp[i]._position.x;
+    //        if (xval < -boarder)
+    //        {
+    //            listOfSegments_out.ElementAt(0).Add(dataList_inp[i]);
+    //        }
+    //        else if (xval < boarder && xval >= -boarder)
+    //        {
+    //            listOfSegments_out.ElementAt(1).Add(dataList_inp[i]);
+    //        }
+    //        else
+    //        {
+    //            listOfSegments_out.ElementAt(2).Add(dataList_inp[i]);
+    //        }
+
+
+    //    }
+
+    //    return listOfSegments_out;
+    //}
+
+    private static List<List<InternalDataFormat>> GetCloudSegmentsSegmentedByYAxis(List<InternalDataFormat> dataList_inp, int segmentCount_inp)
     {
         List<List<InternalDataFormat>> listOfSegments_out = new List<List<InternalDataFormat>>();
 
-        float range = Util.GetBiggestDistance(dataList_inp.Select(dataElement => dataElement._position).ToList()) / 2;
-        var boarders = new List<Tuple<float, float>>();
-        float boarderStep = 2 * range / segmentCount_inp;
+        dataList_inp.Sort((a, b) => a._position.x.CompareTo(b._position.x));
 
-        for (float i = 0; i < segmentCount_inp; i++)
-        {
-            float lowerBoundary = -range + boarderStep * i;
-            boarders.Add(new Tuple<float, float>(lowerBoundary, lowerBoundary + boarderStep));
-            listOfSegments_out.Add(new List<InternalDataFormat>());
-        }
-
+        int potentialGroundPointCounter = 0;
         for (int i = 0; i < dataList_inp.Count; i++)
         {
-            float xVal = dataList_inp.ElementAt(i)._position.x;
-            for (int j = 0; j < boarders.Count; j++)
+            float height = dataList_inp[i]._position.z;
+            if (height < 0.5 && height > -0.5)
             {
-                float lBoarder = boarders.ElementAt(j).Item1;
-                float uBoarder = boarders.ElementAt(j).Item2;
-                if (xVal >= lBoarder && xVal < uBoarder)
-                {
-                    listOfSegments_out.ElementAt(j).Add(dataList_inp.ElementAt(i));
-                    break;
-                }
+                potentialGroundPointCounter++;
             }
         }
 
+        int potentialGroundPointsPerSegment = (int)Mathf.Floor(potentialGroundPointCounter / (segmentCount_inp)) + 1;
+
+        int pointsInSegmentCounter = 0;
+        int currentSegment = 0;
+
+        Debug.DrawLine(new Vector3(dataList_inp[0]._position.x, -100, 0), new Vector3(dataList_inp[0]._position.x, 100, 0), Color.blue, 300);
+
+        listOfSegments_out.Add(new List<InternalDataFormat>());
+        for (int i = 0; i < dataList_inp.Count; i++)
+        {
+            listOfSegments_out.ElementAt(currentSegment).Add(dataList_inp[i]);
+
+            float height = dataList_inp[i]._position.z;
+            if (height < 0.5 && height > -0.5)
+            {
+                pointsInSegmentCounter++;
+            }
+
+            if (pointsInSegmentCounter >= potentialGroundPointsPerSegment)
+            {
+                Debug.DrawLine(new Vector3(dataList_inp[i]._position.x, -100, 0), new Vector3(dataList_inp[i]._position.x, 100, 0), Color.blue, 300);
+
+                pointsInSegmentCounter = 0;
+                currentSegment++;
+                listOfSegments_out.Add(new List<InternalDataFormat>());
+            }
+        }
         return listOfSegments_out;
+    }
+
+    private static List<List<InternalDataFormat>> GetCloudSegmentsSegmentedByYAndXAxis(List<InternalDataFormat> dataList_inp, int segmentCount_inp)
+    {
+        List<List<InternalDataFormat>> listOfSegments_out = new List<List<InternalDataFormat>>();
+
+        dataList_inp.Sort((a, b) => a._position.x.CompareTo(b._position.x));
+
+        int potentialGroundPointCounter = 0;
+        for (int i = 0; i < dataList_inp.Count; i++)
+        {
+            float height = dataList_inp[i]._position.z;
+            if (height < 0.5 && height > -0.5)
+            {
+                potentialGroundPointCounter++;
+            }
+        }
+
+        int potentialGroundPointsPerSegment = (int)Mathf.Floor(potentialGroundPointCounter / (segmentCount_inp)) + 1;
+
+        int pointsInSegmentCounter = 0;
+        int currentSegment = 0;
+
+        Debug.DrawLine(new Vector3(dataList_inp[0]._position.x, -100, 0), new Vector3(dataList_inp[0]._position.x, 100, 0), Color.blue, 300);
+        Debug.DrawLine(new Vector3(-100, 0, 0), new Vector3(100, 0, 0), Color.blue, 300);
+
+        listOfSegments_out.Add(new List<InternalDataFormat>());
+        listOfSegments_out.Add(new List<InternalDataFormat>());
+        for (int i = 0; i < dataList_inp.Count; i++)
+        {
+            if (dataList_inp[i]._position.y >= 0)
+            {
+                listOfSegments_out.ElementAt(currentSegment).Add(dataList_inp[i]);
+            }
+            else
+            {
+                listOfSegments_out.ElementAt(currentSegment + 1).Add(dataList_inp[i]);
+            }
+
+            float height = dataList_inp[i]._position.z;
+            if (height < 0.5 && height > -0.5)
+            {
+                pointsInSegmentCounter++;
+            }
+
+            if (pointsInSegmentCounter >= potentialGroundPointsPerSegment)
+            {
+                Debug.DrawLine(new Vector3(dataList_inp[i]._position.x, -100, 0), new Vector3(dataList_inp[i]._position.x, 100, 0), Color.blue, 300);
+
+                pointsInSegmentCounter = 0;
+                currentSegment += 2;
+                listOfSegments_out.Add(new List<InternalDataFormat>());
+                listOfSegments_out.Add(new List<InternalDataFormat>());
+            }
+
+        }
+        return listOfSegments_out;
+    }
+
+
+
+    private static float GetBiggestDistance(List<InternalDataFormat> data_inp)
+    {
+        List<Vector3> lowestValuePoints = new List<Vector3>(4);
+        List<float> distances = new List<float>();
+
+        //init list
+        for (int i = 0; i < lowestValuePoints.Capacity; i++)
+        {
+            lowestValuePoints.Add(data_inp[0]._position);
+        }
+
+        //search for lowest values
+        for (int i = 1; i < data_inp.Count; i++)
+        {
+            if (data_inp[i]._position.x < lowestValuePoints[0].x)
+            {
+                lowestValuePoints[0] = data_inp[i]._position;
+            }
+            if (data_inp[i]._position.z < lowestValuePoints[1].z)
+            {
+                lowestValuePoints[1] = data_inp[i]._position;
+            }
+            if (data_inp[i]._position.x > lowestValuePoints[2].x)
+            {
+                lowestValuePoints[2] = data_inp[i]._position;
+            }
+            if (data_inp[i]._position.z > lowestValuePoints[3].z)
+            {
+                lowestValuePoints[3] = data_inp[i]._position;
+            }
+        }
+
+        //calculate distances
+        for (int i = 0; i < lowestValuePoints.Count; i++)
+        {
+            for (int j = 0; j < lowestValuePoints.Count; j++)
+            {
+                distances.Add(Vector3.Distance(lowestValuePoints[i], lowestValuePoints[j]));
+            }
+        }
+
+        //sort descending
+        distances.Sort((x, y) => -1 * x.CompareTo(y));
+
+        return distances[0];
+
     }
 }

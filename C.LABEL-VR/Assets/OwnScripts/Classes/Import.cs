@@ -17,17 +17,16 @@ public class Import
         listOfCoordinateLists = PcdAddon.ReadPcdFromPath(loadPath_inp, ref paths);
         listOfDataLists = PcdAddon.GetDataFromCoordinates(listOfCoordinateLists);
 
-        //for (int i = 0; i < listOfDataLists.Count; i++)
-        //{
-        //    CloudSegmentation.SetGroundLabels(listOfDataLists.ElementAt(i));
-        //}
+        for (int i = 0; i < listOfDataLists.Count; i++)
+        {
+            CloudSegmentation.SetGroundLabels(listOfDataLists.ElementAt(i));
+        }
 
         for (int i = 0; i < listOfDataLists.Count; i++)
         {
-            pointClouds_out.Add(new PointCloud(listOfDataLists[i], paths[i], pcdToUnityCS_Rotation, pcdToUnityCS_Mirroring));
+            //pointClouds_out.Add(new PointCloud(listOfDataLists[i], paths[i], pcdToUnityCS_Rotation, pcdToUnityCS_Mirroring));
+            pointClouds_out.Add(new PointCloud(listOfDataLists[i], paths[i], Quaternion.Euler(0,0,0), pcdToUnityCS_Mirroring));
         }
-
-        Labeling.SetNewLabelClasses(new Dictionary<uint, string> { { 1, "TestClass" } });
 
         return pointClouds_out;
     }
@@ -45,7 +44,13 @@ public class Import
 
         for (int i = 0; i < listOfDataLists.Count; i++)
         {
-            pointClouds_out.Add(new PointCloud(listOfDataLists[i], paths[i], hdf5ToUnityCS_Rotation, hdf5ToUnityCS_Mirroring));
+            CloudSegmentation.SetGroundLabels(listOfDataLists.ElementAt(i));
+        }
+
+        for (int i = 0; i < listOfDataLists.Count; i++)
+        {
+            //pointClouds_out.Add(new PointCloud(listOfDataLists[i], paths[i], hdf5ToUnityCS_Rotation, hdf5ToUnityCS_Mirroring));
+            pointClouds_out.Add(new PointCloud(listOfDataLists[i], paths[i], Quaternion.Euler(0, 0, 0), Vector3.one));
         }
 
         return pointClouds_out;

@@ -119,31 +119,13 @@ public class PointerLabeler : MonoBehaviour
                 {
                     _collidedObjectAttributes = collidedObject.gameObject.GetComponent<CustomAttributes>();
 
-                    if (OVRInput.Get(OVRInput.Button.One))
+                    if (OVRInput.Get(OVRInput.Button.SecondaryThumbstick))
                     {
                         //adjacent labeling
                         if (_collidedObjectAttributes._label != Labeling.currentLabelClassID)
                         {
                             float t = Time.realtimeSinceStartup;
-                            List<GameObject> adjacentObjects = GetAdjacentLabelPoints(collidedObject.gameObject);
-
-                            for (int i = 0; i < adjacentObjects.Count; i++)
-                            {
-                                if (adjacentObjects[i].GetComponent<CustomAttributes>()._label != Labeling.currentLabelClassID)
-                                {
-                                    adjacentObjects[i].GetComponent<CustomAttributes>()._label = Labeling.currentLabelClassID;
-                                }
-                            }
-
-                            print(t - Time.realtimeSinceStartup + "s");
-                        }
-                    }
-                    else if (OVRInput.Get(OVRInput.Button.Two))
-                    {
-                        if (_collidedObjectAttributes._label != Labeling.currentLabelClassID)
-                        {
-                            float t = Time.realtimeSinceStartup;
-                            List<GameObject> adjacentObjects = GetAdjacentLabelPointsFromOcTree(collidedObject.gameObject);
+                            List<GameObject> adjacentObjects = GetAdjacentLabelPointsAndTheirAdjacentPoints(collidedObject.gameObject);
 
                             for (int i = 0; i < adjacentObjects.Count; i++)
                             {
@@ -159,9 +141,24 @@ public class PointerLabeler : MonoBehaviour
                     else
                     {
                         //simple single point labeling
-                        if (_collidedObjectAttributes._label != Labeling.currentLabelClassID)
+
+                        var objectsColidingWithPointer = GetAdjacentLabelPoints(collidedObject.gameObject);
+                        objectsColidingWithPointer.Add(collidedObject.gameObject);
+
+                        for (int i = 0; i < objectsColidingWithPointer.Count; i++)
                         {
-                            _collidedObjectAttributes._label = Labeling.currentLabelClassID;
+                            var attr = objectsColidingWithPointer[i].GetComponent<CustomAttributes>();
+                            try
+                            {
+                                if (attr._label != Labeling.currentLabelClassID)
+                                {
+                                    attr._label = Labeling.currentLabelClassID;
+                                }
+                            }
+                            catch
+                            {
+                                //The Cursor is also a collider but has no CustomAttributes
+                            }
                         }
                     }
                 }
@@ -189,22 +186,36 @@ public class PointerLabeler : MonoBehaviour
         _bPointerSelectionActivated = false;
     }
 
-    private List<GameObject> GetAdjacentLabelPointsFromOcTree(GameObject startPoint_inp)
+    private List<GameObject> GetAdjacentLabelPoints(GameObject startPoint_inp)
+    {
+        List<GameObject> adjacentPoints_out = new List<GameObject>();
+        float radius = 0;
+
+        try
+        {
+            radius = startPoint_inp.GetComponent<SphereCollider>().radius * startPoint_inp.transform.localScale.x;
+        }
+        catch
+        {
+            return adjacentPoints_out;
+        }
+
+        Collider[] collidersInRadius = Physics.OverlapSphere(startPoint_inp.transform.position, radius);
+
+        for (int i = 0; i < collidersInRadius.Length; i++)
+        {
+            adjacentPoints_out.Add(collidersInRadius[i].gameObject);
+        }
+
+        return adjacentPoints_out;
+    }
+
+    private List<GameObject> GetAdjacentLabelPointsAndTheirAdjacentPoints(GameObject startPoint_inp)
     {
         Dictionary<int, GameObject> adjacentObjects = new Dictionary<int, GameObject>();
         float radius = startPoint_inp.GetComponent<SphereCollider>().radius * startPoint_inp.transform.localScale.x;
 
         RecursiveRadiusSearch(ref adjacentObjects, new List<GameObject> { startPoint_inp }, radius);
-
-        return adjacentObjects.Values.ToList();
-    }
-
-    private List<GameObject> GetAdjacentLabelPoints(GameObject startPoint_inp)
-    {
-        Dictionary<int, GameObject> adjacentObjects = new Dictionary<int, GameObject>();
-        float radius = startPoint_inp.GetComponent<SphereCollider>().radius * startPoint_inp.transform.localScale.x;
-
-        RecursiveRadiusSearch(ref adjacentObjects, new List<GameObject>{startPoint_inp}, radius);
 
         return adjacentObjects.Values.ToList();
     }

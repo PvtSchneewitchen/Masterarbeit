@@ -14,6 +14,16 @@ public static class Labeling
 
     static Labeling()
     {
+        Init();
+    }
+
+    public static void Reset()
+    {
+        Init();
+    }
+
+    private static void Init()
+    {
         Material unlabeledMaterial = Resources.Load("Materials/Unlabeled") as Material;
         _standardMaterial = unlabeledMaterial;
 
@@ -24,30 +34,74 @@ public static class Labeling
 
         _standardColors = new List<Color32>
         {
-            new Color32(210, 240, 225, 225),
-            new Color32(190, 255, 255, 225),
-            new Color32(0, 255, 0, 225),
-            new Color32(150, 12, 150, 225),
-            new Color32(255, 0, 255, 225),
-            new Color32(120, 120, 200, 225),
-            new Color32(40, 140, 50, 225),
-            new Color32(24, 24, 147, 225),
-            new Color32(120, 120, 2, 225),
-            new Color32(170, 90, 50, 225),
-            new Color32(200, 200, 200, 225),
-            new Color32(255, 100, 0, 225),
-            new Color32(100, 255, 100, 225),
-            new Color32(255, 255, 0, 225),
-            new Color32(90, 130, 140, 225),
-            new Color32(0, 0, 255, 225),
-            new Color32(200, 20, 135, 225),
-            new Color32(0, 255, 255, 225),
-            new Color32(255, 0, 0, 225),
-            new Color32(10, 150, 150, 225)
+            new Color32(255,15,15,255)
+            //new Color32(210, 240, 225, 225),
+            //new Color32(0, 213, 43, 225),
+            //new Color32(190, 255, 255, 225),
+            //new Color32(0, 255, 0, 225),
+            //new Color32(150, 12, 150, 225),
+            //new Color32(255, 0, 255, 225),
+            //new Color32(120, 120, 200, 225),
+            //new Color32(40, 140, 50, 225),
+            //new Color32(24, 24, 147, 225),
+            //new Color32(120, 120, 2, 225),
+            //new Color32(170, 90, 50, 225),
+            //new Color32(200, 200, 200, 225),
+            //new Color32(255, 100, 0, 225),
+            //new Color32(100, 255, 100, 225),
+            //new Color32(255, 255, 0, 225),
+            //new Color32(90, 130, 140, 225),
+            //new Color32(0, 0, 255, 225),
+            //new Color32(200, 20, 135, 225),
+            //new Color32(0, 255, 255, 225),
+            //new Color32(255, 0, 0, 225),
+            //new Color32(10, 150, 150, 225)
         };
 
         SetNewLabelClasses(new Dictionary<uint, string> { { 1, _dummyClassName } });
         SetCurrentLabelClassID(_labelClassInformations.ElementAt(1).Key);
+    }
+
+    public static void SwitchToPreviousLabelClass()
+    {
+        var keyList = _labelClassInformations.Keys.ToList();
+        keyList.Sort();
+        var currentListIndex = keyList.IndexOf(currentLabelClassID);
+
+        if(currentListIndex <= 0)
+        {
+            currentLabelClassID = keyList.Last();
+        }
+        else
+        {
+            currentLabelClassID = keyList[currentListIndex-1];
+        }
+    }
+
+    public static void SwitchToNextLabelClass()
+    {
+        var keyList = _labelClassInformations.Keys.ToList();
+        keyList.Sort();
+        var currentListIndex = keyList.IndexOf(currentLabelClassID);
+
+        if (currentListIndex+1 >= keyList.Count)
+        {
+            currentLabelClassID = keyList[0];
+        }
+        else
+        {
+            currentLabelClassID = keyList[currentListIndex + 1];
+        }
+    }
+
+    public static void EditLabelClass(uint oldID_inp, uint newID_inp, string newName_inp, Color newColor_inp)
+    {
+        if (oldID_inp != 0)
+        {
+            _labelClassInformations.Remove(oldID_inp);
+
+            _labelClassInformations.Add(newID_inp, new Tuple<string, Material>(newName_inp, CreateNewMaterial(newColor_inp)));
+        }
     }
 
     public static string GetLabelClassName(uint ID_inp)
@@ -70,7 +124,7 @@ public static class Labeling
         return _labelClassInformations;
     }
 
-    public static Tuple<string, Material> GetLabelClassInfo(uint ID_inp)
+    public static Tuple<string, Material> GetLabelClassNameAndColor(uint ID_inp)
     {
         Tuple<string, Material> info;
 
@@ -99,6 +153,14 @@ public static class Labeling
         return lws;
     }
 
+    public static void AddNewLabelClass(uint id_inp, string name_inp, Color color_inp)
+    {
+        Material mat = new Material(_standardMaterial);
+        mat.color = color_inp;
+
+        _labelClassInformations.Add(id_inp, new Tuple<string, Material>(name_inp, mat));
+    }
+
     public static void SetNewLabelClasses(Dictionary<uint, string> labelWorkingSet_inp)
     {
         if (_labelClassInformations.ContainsKey(1))
@@ -116,7 +178,14 @@ public static class Labeling
             string value = labelWorkingSet_inp.ElementAt(i).Value;
             if (value != "unlabeled" && key != 0 && !_labelClassInformations.ContainsKey(key))
             {
-                _labelClassInformations.Add(key, new Tuple<string, Material>(value, CreateNewMaterial()));
+                try
+                {
+                    _labelClassInformations.Add(key, new Tuple<string, Material>(value, CreateNewMaterial()));
+                }
+                catch
+                {
+                    Debug.Log("SetNewLabelClasses(): Key probabably added yet");
+                }
             }
         }
 
@@ -166,6 +235,15 @@ public static class Labeling
         }
     }
 
+    private static Material CreateNewMaterial(Color color_inp)
+    {
+        Material outMat = new Material(_standardMaterial);
+
+        outMat.color = color_inp;
+
+        return outMat;
+    }
+
     private static Material CreateNewMaterial()
     {
         Material outMat = new Material(_standardMaterial);
@@ -186,118 +264,3 @@ public static class Labeling
         return outMat;
     }
 }
-
-//Materials.Unlabeled = Resources.Load("Materials/Unlabeled") as Material;
-//Materials.Bicycle = Resources.Load("Materials/Bicycle") as Material;
-//Materials.Building = Resources.Load("Materials/Building") as Material;
-//Materials.Bus = Resources.Load("Materials/Bus") as Material;
-//Materials.Car = Resources.Load("Materials/Car") as Material;
-//Materials.Fence = Resources.Load("Materials/Fence") as Material;
-//Materials.Motorcycle = Resources.Load("Materials/Motorcycle") as Material;
-//Materials.Person = Resources.Load("Materials/Person") as Material;
-//Materials.Pole = Resources.Load("Materials/Pole") as Material;
-//Materials.Rider = Resources.Load("Materials/Rider") as Material;
-//Materials.Road = Resources.Load("Materials/Road") as Material;
-//Materials.Sidewalk = Resources.Load("Materials/Sidewalk") as Material;
-//Materials.Sky = Resources.Load("Materials/Sky") as Material;
-//Materials.Terrain = Resources.Load("Materials/Terrain") as Material;
-//Materials.TrafficLight = Resources.Load("Materials/TrafficLight") as Material;
-//Materials.TrafficSign = Resources.Load("Materials/TrafficSign") as Material;
-//Materials.Train = Resources.Load("Materials/Train") as Material;
-//Materials.Truck = Resources.Load("Materials/Truck") as Material;
-//Materials.Void = Resources.Load("Materials/Void") as Material;
-//Materials.Vegetation = Resources.Load("Materials/Vegetation") as Material;
-//Materials.Wall = Resources.Load("Materials/Wall") as Material;
-
-//private struct Materials
-//{
-//    public static Material Unlabeled { get; set; }
-//    public static Material Bicycle { get; set; }
-//    public static Material Building { get; set; }
-//    public static Material Bus { get; set; }
-//    public static Material Car { get; set; }
-//    public static Material Fence { get; set; }
-//    public static Material Motorcycle { get; set; }
-//    public static Material Person { get; set; }
-//    public static Material Pole { get; set; }
-//    public static Material Rider { get; set; }
-//    public static Material Road { get; set; }
-//    public static Material Sidewalk { get; set; }
-//    public static Material Sky { get; set; }
-//    public static Material Terrain { get; set; }
-//    public static Material TrafficLight { get; set; }
-//    public static Material TrafficSign { get; set; }
-//    public static Material Train { get; set; }
-//    public static Material Truck { get; set; }
-//    public static Material Void { get; set; }
-//    public static Material Vegetation { get; set; }
-//    public static Material Wall { get; set; }
-//}
-
-//public static void SetCurrentGroup(LabelGroup newGroup_inp)
-//{
-//    _currentLabel = newGroup_inp;
-//}
-
-//public static Material GetGroupMaterial(LabelGroup group_inp)
-//{
-//    PropertyInfo[] properties = typeof(Materials).GetProperties();
-//    PropertyInfo p = properties[(int)group_inp];
-//    var v = properties[(int)group_inp].GetValue(typeof(Material), null);
-//    Material material_out = (Material)properties[(int)group_inp].GetValue(typeof(Materials), null);
-//    return material_out;
-//}
-
-
-
-//public static void SetCurrentGroup(int newGroup_inp)
-//{
-//    _currentLabel = newGroup_inp;
-//}
-
-//public enum LabelGroup
-//{
-//    unlabeled,
-//    bicycle,
-//    building,
-//    bus,
-//    car,
-//    fence,
-//    motorcycle,
-//    person,
-//    pole,
-//    rider,
-//    road,
-//    sidewalk,
-//    sky,
-//    terrain,
-//    trafficLight,
-//    trafficSign,
-//    train,
-//    truck,
-//    vegetation,
-//    Void,
-//    wall
-//}
-
-//unlabeled,
-//bicycle = 33,
-//building = 11,
-//bus = 28,
-//car = 26,
-//fence = 13,
-//motorcycle = 32,
-//person = 24,
-//pole = 17,
-//rider = 25,
-//road = 7,
-//sidewalk = 8,
-//sky = 23,
-//terrain = 22,
-//trafficLight = 19,
-//trafficSign = 20,
-//train = 31,
-//truck = 27,
-//vegetation = 21,
-//Void = 38,
-//wall = 12

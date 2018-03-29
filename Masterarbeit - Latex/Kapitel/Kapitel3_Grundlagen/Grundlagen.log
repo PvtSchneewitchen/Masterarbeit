@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.06.2 (MiKTeX 2.9.6500 64-bit)  (format=lualatex 2017.12.19)  9 MAR 2018 12:24
+This is LuaTeX, Version 1.06.2 (MiKTeX 2.9.6500 64-bit)  (format=lualatex 2017.12.19)  20 MAR 2018 12:04
  restricted system commands enabled.
 **Grundlagen.tex
 (./Grundlagen.tex
@@ -33,7 +33,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.632 seconds
+luaotfload | main : initialization completed in 0.501 seconds
 Babel <3.15> and hyphenation patterns for 1 language(s) loaded.
 ! Undefined control sequence.
 l.1 \graphicspath
@@ -157,7 +157,7 @@ LaTeX Warning: Reference `sec:C.LABEL' on page  undefined on input line 3.
 <write> ...: Reference `sec:UnityEngine' on page \thepage 
                                                   \space undefined\on@line .
 l.3 ...nannotierung zu zeigen. \ref{sec:UnityEngine}
-                                                   stellt die \glslink{glos:...
+                                                   stellt die \gls{glos:Game...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -168,7 +168,7 @@ and I'll forget about whatever was undefined.
 LaTeX Warning: Reference `sec:UnityEngine' on page  undefined on input line 3.
 
 ! Undefined control sequence.
-l.3 ...en. \ref{sec:UnityEngine} stellt die \glslink
+l.3 ...zeigen. \ref{sec:UnityEngine} stellt die \gls
                                                   {glos:GameEngine} Unity vo...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -232,7 +232,7 @@ If that doesn't work, type  X <return>  to quit.
 <write> ...Warning: Reference `fig:MLCS' on page \thepage 
                                                   \space undefined\on@line .
 l.7 ...t eine Graphik (vgl. Abbildung \ref{fig:MLCS}
-                                                  ) mit der man den richtige...
+                                                  ), mit der man den richtig...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -243,8 +243,8 @@ and I'll forget about whatever was undefined.
 LaTeX Warning: Reference `fig:MLCS' on page  undefined on input line 7.
 
 ! Undefined control sequence.
-l.7 ...chtigen Lernalgorithmus für gewisse \glslink
-                                                  {glos:PredAna} Methoden be...
+l.7 ...n richtigen Lernalgorithmus für gewisse \gls
+                                                  {glos:PredAna}-Methoden be...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -264,6 +264,15 @@ and I'll forget about whatever was undefined.
 
 
 LaTeX Warning: Reference `fig:MLCS' on page  undefined on input line 7.
+
+! Undefined control sequence.
+l.7 ...r ein Künstliches Neuronales Netz(\acrshort
+                                                  {acr:knn}). Die Benutzung ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
 
 Overfull \hbox (20.0pt too wide) in paragraph at lines 5--8
@@ -292,7 +301,7 @@ Overfull \hbox (13.76001pt too wide) in paragraph at lines 5--8
 
 
 Overfull \hbox (10.85999pt too wide) in paragraph at lines 5--8
-[])
+[]),
  []
 
 
@@ -315,7 +324,7 @@ or  <return>  to continue without it.
 
 ! Undefined control sequence.
 l.11     \includegraphics
-                       [width=19cm, angle=270]{MLCS}\label{fig:MLCS}
+                       [width=19cm, angle=270]{MLCS}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -330,7 +339,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.11     \includegraphics[
-                        width=19cm, angle=270]{MLCS}\label{fig:MLCS}
+                        width=19cm, angle=270]{MLCS}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -347,8 +356,8 @@ You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 ! Undefined control sequence.
-l.12 ...hine Learning Algorithmus für eine \glslink
-                                                  {glos:PredAna} Methode zu ...
+l.12 ... Machine Learning Algorithmus für eine \gls
+                                                  {glos:PredAna}-Methoden zu...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -362,14 +371,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.13 \end{figure}
+l.14 \end{figure}
                
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Undefined control sequence.
-l.15 \subsection
+l.16 \subsection
               {Künstliche Neuronale Netze}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -384,22 +393,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.15 \subsection{K
+l.16 \subsection{K
                 ünstliche Neuronale Netze}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 ! Undefined control sequence.
-l.16 ...der künstlichen neuronalen Netze (\acrshort
-                                                  {acr:knn}) ist, wie vieles...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.16 ...tellte Prinzip, wird auch bei den  \acrshort
+l.18 ...tellte Prinzip, wird auch bei den  \acrshort
                                                   {acr:knn}s verwendet. Übe...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -408,12 +408,12 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 15--17
+Overfull \hbox (20.0pt too wide) in paragraph at lines 16--19
 []Künstliche
  []
 
 
-Overfull \hbox (25.18002pt too wide) in paragraph at lines 15--17
+Overfull \hbox (25.18002pt too wide) in paragraph at lines 16--19
 \TU/lmr/m/it/10 feuert\nullfont .
  []
 
@@ -424,14 +424,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.18 D
+l.20 D
     ie entscheidende Komponente dieses Prinzips ist die adaptive Gewichtung ...
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 ! Undefined control sequence.
-l.18 ...esem Kontext bedeutet das, dass an die \glqq
-                                                   Gefahren-Neuronen\grqq ke...
+l.20 ...sem Kontext bedeutet das, dass an die {\glqq
+                                                   Gefahren-Neuronen\grqq} k...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -439,8 +439,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.18 ...as, dass an die \glqq Gefahren-Neuronen\grqq
-                                                   kein ausreichend starker ...
+l.20 ...s, dass an die {\glqq Gefahren-Neuronen\grqq
+                                                  } kein ausreichend starker...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -448,7 +448,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 18--19
+Overfull \hbox (20.0pt too wide) in paragraph at lines 20--21
 []Die
  []
 
@@ -459,15 +459,15 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.20 \begin{figure}
+l.22 \begin{figure}
                  %
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Undefined control sequence.
-l.22     \includegraphics
-                       [width=13cm]{Perceptron}\label{fig:Perceptron}
+l.24     \includegraphics
+                       [width=13cm]{Perceptron}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -481,8 +481,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.22     \includegraphics[
-                        width=13cm]{Perceptron}\label{fig:Perceptron}
+l.24     \includegraphics[
+                        width=13cm]{Perceptron}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -493,7 +493,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.23     \caption
+l.25     \caption
                {Einfaches Perzeptron nach dem Prinzip von Frank Rosenblatt}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -505,7 +505,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.24 \end{figure}
+l.27 \end{figure}
                
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -518,7 +518,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.26 K
+l.29 K
     ünstliche Neuronale Netze basieren auf dem Prinzip des Perzeptrons, das...
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -527,8 +527,8 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 <write> ... Warning: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.26 ...1958 vorgestellt wurde \cite{bib:Perzeptron}
-                                                  . Dieses Perzeptron stellt...
+l.29 ...1958 vorgestellt wurde \cite{bib:Perzeptron}
+                                                  . Dieses Perzeptron reprä...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -536,12 +536,12 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `bib:Perzeptron' on page  undefined on input line 26.
+LaTeX Warning: Citation `bib:Perzeptron' on page  undefined on input line 29.
 
 ! Undefined control sequence.
 <write> ...g: Reference `fig:Perceptron' on page \thepage 
                                                   \space undefined\on@line .
-l.26 ... mathematisch dar (vgl. \ref{fig:Perceptron}
+l.29 ...thematische Weise (vgl. \ref{fig:Perceptron}
                                                   ). Die Eingangsdaten eines...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -550,45 +550,45 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `fig:Perceptron' on page  undefined on input line 26.
+LaTeX Warning: Reference `fig:Perceptron' on page  undefined on input line 29.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 26--27
+Overfull \hbox (20.0pt too wide) in paragraph at lines 29--30
 []Künstliche
  []
 
 
-Overfull \hbox (5.43pt too wide) in paragraph at lines 26--27
+Overfull \hbox (5.43pt too wide) in paragraph at lines 29--30
 [[]].
  []
 
 
-Overfull \hbox (10.85999pt too wide) in paragraph at lines 26--27
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 29--30
 []).
  []
 
 
-Overfull \hbox (6.00235pt too wide) in paragraph at lines 26--27
-\OML/cmm/m/it/10 n$
+Overfull \hbox (6.00235pt too wide) in paragraph at lines 29--30
+\OML/cmm/m/it/10 n$\nullfont -
  []
 
 
-Overfull \hbox (36.35986pt too wide) in paragraph at lines 26--27
+Overfull \hbox (36.35986pt too wide) in paragraph at lines 29--30
 \OML/cmm/m/it/10 x[] [] x[]$\nullfont ,
  []
 
 
-Overfull \hbox (43.8182pt too wide) in paragraph at lines 26--27
+Overfull \hbox (43.8182pt too wide) in paragraph at lines 29--30
 \OML/cmm/m/it/10 W[] [] W[]$
  []
 
 
-Overfull \hbox (6.00235pt too wide) in paragraph at lines 26--27
+Overfull \hbox (6.00235pt too wide) in paragraph at lines 29--30
 \OML/cmm/m/it/10 n$
  []
 
 
-Overfull \hbox (5.0903pt too wide) in paragraph at lines 26--27
+Overfull \hbox (5.0903pt too wide) in paragraph at lines 29--30
 \OML/cmm/m/it/10 z$
  []
 
@@ -599,18 +599,18 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.28 \begin{equation}
+l.31 \begin{equation}
                    
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 28--28
+Overfull \hbox (20.0pt too wide) in paragraph at lines 31--31
 [] 
  []
 
 
-Overfull \hbox (59.13069pt too wide) detected at line 30
+Overfull \hbox (59.13069pt too wide) detected at line 33
 \OML/cmm/m/it/10 z \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 W[] \OMS/cmsy/m/n/10 
  \OML/cmm/m/it/10 x[]
  []
@@ -622,24 +622,31 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.32 I
+l.35 I
     m biologischen Vorbild repräsentiert diese Summe den eingehenden Reiz i...
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
+\citation{bib:NeuronaleNetze}
 ! Undefined control sequence.
-l.32 ...ion \(\sigma(x)\) dargestellt. Wie in \citep
-                                                  {bib:NeuronaleNetze} besch...
+<write> ... Warning: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.35 ...argestellt. Wie in \cite{bib:NeuronaleNetze}
+                                                   beschrieben gibt dafür e...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+
+LaTeX Warning: Citation `bib:NeuronaleNetze' on page  undefined on input line 35
+.
+
 ! Undefined control sequence.
 <write> ...Warning: Reference `eq:Fermi' on page \thepage 
                                                   \space undefined\on@line .
-l.32 ...unktionen. Die Fermifunktion (\ref{eq:Fermi}
+l.35 .... Die \textit{Fermifunktion} (\ref{eq:Fermi}
                                                   ) , auch Logische Funktion...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -648,13 +655,13 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `eq:Fermi' on page  undefined on input line 32.
+LaTeX Warning: Reference `eq:Fermi' on page  undefined on input line 35.
 
 ! Undefined control sequence.
 <write> ...ing: Reference `sec:Training' on page \thepage 
                                                   \space undefined\on@line .
-l.33 ... Was das bedeutet wird in \ref{sec:Training}
-                                                   näher erläutert.Wenn de...
+l.35 ... Was das bedeutet wird in \ref{sec:Training}
+                                                   näher erläutert. Wenn d...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -662,40 +669,96 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `sec:Training' on page  undefined on input line 33.
+LaTeX Warning: Reference `sec:Training' on page  undefined on input line 35.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 32--34
+Overfull \hbox (20.0pt too wide) in paragraph at lines 35--36
 []Im
  []
 
 
-Overfull \hbox (5.71527pt too wide) in paragraph at lines 32--34
+Overfull \hbox (5.71527pt too wide) in paragraph at lines 35--36
 \OML/cmm/m/it/10 x$\nullfont -
  []
 
 
-Overfull \hbox (7.42825pt too wide) in paragraph at lines 32--34
-\OML/cmm/m/it/10 w$\nullfont -
+Overfull \hbox (10.83334pt too wide) in paragraph at lines 35--36
+\OML/cmm/m/it/10 W$\nullfont -
  []
 
 
-Overfull \hbox (19.56598pt too wide) in paragraph at lines 32--34
-\OML/cmm/m/it/10 \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )$
+Overfull \hbox (18.94101pt too wide) in paragraph at lines 35--36
+\OML/cmm/m/it/10 \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 z\OT1/cmr/m/n/10 )$
  []
 
 
-Overfull \hbox (10.85999pt too wide) in paragraph at lines 32--34
+Overfull \hbox (5.43pt too wide) in paragraph at lines 35--36
+[[]]
+ []
+
+
+Overfull \hbox (18.16pt too wide) in paragraph at lines 35--36
+\TU/lmr/m/it/10 Fer-
+ []
+
+
+Overfull \hbox (14.83pt too wide) in paragraph at lines 35--36
+\TU/lmr/m/it/10 mi-
+ []
+
+
+Overfull \hbox (22.24pt too wide) in paragraph at lines 35--36
+\TU/lmr/m/it/10 funk-
+ []
+
+
+Overfull \hbox (17.12001pt too wide) in paragraph at lines 35--36
+\TU/lmr/m/it/10 tion
+ []
+
+
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 35--36
 ([])
  []
 
 
-Overfull \hbox (34.154pt too wide) in paragraph at lines 32--34
-\OML/cmm/m/it/10 tanh\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 )$
+Overfull \hbox (20.7pt too wide) in paragraph at lines 35--36
+\TU/lmr/m/it/10 Tan-
  []
 
 
-Overfull \hbox (10.85999pt too wide) in paragraph at lines 32--34
+Overfull \hbox (18.91pt too wide) in paragraph at lines 35--36
+\TU/lmr/m/it/10 gens
+ []
+
+
+Overfull \hbox (15.87pt too wide) in paragraph at lines 35--36
+\TU/lmr/m/it/10 Hy-
+ []
+
+
+Overfull \hbox (17.00002pt too wide) in paragraph at lines 35--36
+\TU/lmr/m/it/10 per-
+ []
+
+
+Overfull \hbox (18.41002pt too wide) in paragraph at lines 35--36
+\TU/lmr/m/it/10 boli-
+ []
+
+
+Overfull \hbox (14.06pt too wide) in paragraph at lines 35--36
+\TU/lmr/m/it/10 cus
+ []
+
+
+Overfull \hbox (33.52904pt too wide) in paragraph at lines 35--36
+($\OML/cmm/m/it/10 tanh\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 z\OT1/cmr/m/n/10 )$\nu
+llfont )
+ []
+
+
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 35--36
 []
  []
 
@@ -706,30 +769,20 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.35 \begin{equation}
+l.37 \begin{equation}
                    
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 35--35
+Overfull \hbox (20.0pt too wide) in paragraph at lines 37--37
 [] 
  []
 
 
-Overfull \hbox (90.89711pt too wide) detected at line 38
-\OML/cmm/m/it/10 sigma\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) = []
-[]
+Overfull \hbox (68.39296pt too wide) detected at line 40
+\OML/cmm/m/it/10 \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 z\OT1/cmr/m/n/10 ) = [][]
  []
-
-! Undefined control sequence.
-l.40 \acrshort
-            {acr:knn}s bestehen aus verschiedenen Schichten. Jede dieser Sch...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
 
 ! LaTeX Error: Missing \begin{document}.
@@ -738,13 +791,22 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.40 \acrshort{a
-              cr:knn}s bestehen aus verschiedenen Schichten. Jede dieser Sch...
+l.42 I
+    n \acrshort{acr:knn}s können mehrere dieser Perzeptrons eine sogenannte...
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 ! Undefined control sequence.
-l.40 ...p Learning}. In der Regel bestehen \acrshort
+l.42 In \acrshort
+               {acr:knn}s können mehrere dieser Perzeptrons eine sogenannte...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.42 ...efes Lernen. In der Regel bestehen \acrshort
                                                   {acr:knn}s aus mindestens ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -753,32 +815,32 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 40--41
-[]acr:knns
+Overfull \hbox (20.0pt too wide) in paragraph at lines 42--43
+[]In
  []
 
 
-Overfull \hbox (22.88004pt too wide) in paragraph at lines 40--41
+Overfull \hbox (22.88004pt too wide) in paragraph at lines 42--43
 \TU/lmr/m/it/10 tiefer
  []
 
 
-Overfull \hbox (21.35002pt too wide) in paragraph at lines 40--41
+Overfull \hbox (21.35002pt too wide) in paragraph at lines 42--43
 \TU/lmr/m/it/10 Deep
  []
 
 
-Overfull \hbox (28.38002pt too wide) in paragraph at lines 40--41
+Overfull \hbox (28.38002pt too wide) in paragraph at lines 42--43
 \TU/lmr/m/it/10 Learn-
  []
 
 
-Overfull \hbox (13.29001pt too wide) in paragraph at lines 40--41
-\TU/lmr/m/it/10 ing\nullfont .
+Overfull \hbox (13.29001pt too wide) in paragraph at lines 42--43
+\TU/lmr/m/it/10 ing\nullfont ,
  []
 
 ! Undefined control sequence.
-l.42 \subsubsection
+l.44 \subsubsection
                  {Eingangschicht}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -793,18 +855,18 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.42 \subsubsection{E
+l.44 \subsubsection{E
                    ingangschicht}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 42--44
+Overfull \hbox (20.0pt too wide) in paragraph at lines 44--46
 []Eingangschicht
  []
 
 ! Undefined control sequence.
-l.45 \subsubsection
+l.47 \subsubsection
                  {Zwischenschicht}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -819,18 +881,33 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.45 \subsubsection{Z
+l.47 \subsubsection{Z
                    wischenschicht}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 45--47
+Overfull \hbox (20.0pt too wide) in paragraph at lines 47--49
 []Zwischenschicht
  []
 
+
+Overfull \hbox (16.87001pt too wide) in paragraph at lines 47--49
+\TU/lmr/m/it/10 hid-
+ []
+
+
+Overfull \hbox (15.33pt too wide) in paragraph at lines 47--49
+\TU/lmr/m/it/10 den
+ []
+
+
+Overfull \hbox (22.22pt too wide) in paragraph at lines 47--49
+\TU/lmr/m/it/10 layer\nullfont )
+ []
+
 ! Undefined control sequence.
-l.48 \subsubsection
+l.50 \subsubsection
                  {Ausgangsschicht}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -845,15 +922,24 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.48 \subsubsection{A
+l.50 \subsubsection{A
                    usgangsschicht}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 ! Undefined control sequence.
+l.51 ...t des Informationsflusses in einem \acrshort
+                                                  {acr:knn} dar und enthält...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
 <write> ...Reference `fig:Bilderkennung' on page \thepage 
                                                   \space undefined\on@line .
-l.49 ...e handelt. Abbildung \ref{fig:Bilderkennung}
+l.51 ...e handelt. Abbildung \ref{fig:Bilderkennung}
                                                    soll dieses Prinzip nochm...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -862,21 +948,26 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `fig:Bilderkennung' on page  undefined on input line 49
+LaTeX Warning: Reference `fig:Bilderkennung' on page  undefined on input line 51
 .
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 48--50
+Overfull \hbox (20.0pt too wide) in paragraph at lines 50--52
 []Ausgangsschicht
  []
 
 
-Overfull \hbox (6.00235pt too wide) in paragraph at lines 48--50
+Overfull \hbox (6.00235pt too wide) in paragraph at lines 50--52
 \OML/cmm/m/it/10 n$
  []
 
 
-Overfull \hbox (10.85999pt too wide) in paragraph at lines 48--50
+Overfull \hbox (6.00235pt too wide) in paragraph at lines 50--52
+\OML/cmm/m/it/10 n$
+ []
+
+
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 50--52
 []
  []
 
@@ -887,15 +978,15 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.51 \begin{figure}
+l.53 \begin{figure}
                  %
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Undefined control sequence.
-l.53     \includegraphics
-                       [width=13cm]{Bilderkennung}\label{fig:Bilderkennung}
+l.55     \includegraphics
+                       [width=13cm]{Bilderkennung}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -909,8 +1000,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.53     \includegraphics[
-                        width=13cm]{Bilderkennung}\label{fig:Bilderkennung}
+l.55     \includegraphics[
+                        width=13cm]{Bilderkennung}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -921,13 +1012,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.54     \caption
+l.56     \caption
                {Stark vereinfachte Darstellung eines \acrshort{acr:knn}s zur...
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 ! Undefined control sequence.
-l.54 ...ark vereinfachte Darstellung eines \acrshort
+l.56 ...ark vereinfachte Darstellung eines \acrshort
                                                   {acr:knn}s zur Erkennung v...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -942,14 +1033,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.55 \end{figure}
+l.58 \end{figure}
                
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Undefined control sequence.
-l.57 \subsection
+l.60 \subsection
               {Trainieren von Neuronalen Netzen}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -964,13 +1055,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.57 \subsection{T
+l.60 \subsection{T
                 rainieren von Neuronalen Netzen}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 57--59
+Overfull \hbox (20.0pt too wide) in paragraph at lines 60--62
 []Trainieren
  []
 
@@ -981,84 +1072,80 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.60 L
+l.63 L
     ernen ist ein weiter Begriff. Es bedeutet, dass ein System sich in irgen...
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 60--61
+Overfull \hbox (20.0pt too wide) in paragraph at lines 63--64
 []Lernen
  []
 
 
-Overfull \hbox (16.62999pt too wide) in paragraph at lines 60--61
+Overfull \hbox (43.8182pt too wide) in paragraph at lines 63--64
+\OML/cmm/m/it/10 W[] [] W[]$\nullfont .
+ []
+
+
+Overfull \hbox (16.62999pt too wide) in paragraph at lines 63--64
 (\TU/lmr/m/it/10 Un-
  []
 
 
-Overfull \hbox (13.04pt too wide) in paragraph at lines 60--61
+Overfull \hbox (13.04pt too wide) in paragraph at lines 63--64
 \TU/lmr/m/it/10 su-
  []
 
 
-Overfull \hbox (17.00002pt too wide) in paragraph at lines 60--61
+Overfull \hbox (17.00002pt too wide) in paragraph at lines 63--64
 \TU/lmr/m/it/10 per-
  []
 
 
-Overfull \hbox (20.96002pt too wide) in paragraph at lines 60--61
+Overfull \hbox (20.96002pt too wide) in paragraph at lines 63--64
 \TU/lmr/m/it/10 vised
  []
 
 
-Overfull \hbox (28.38002pt too wide) in paragraph at lines 60--61
+Overfull \hbox (28.38002pt too wide) in paragraph at lines 63--64
 \TU/lmr/m/it/10 Learn-
  []
 
 
-Overfull \hbox (13.76001pt too wide) in paragraph at lines 60--61
+Overfull \hbox (13.76001pt too wide) in paragraph at lines 63--64
 \TU/lmr/m/it/10 ing\nullfont ),
  []
 
 
-Overfull \hbox (14.96pt too wide) in paragraph at lines 60--61
+Overfull \hbox (14.96pt too wide) in paragraph at lines 63--64
 (\TU/lmr/m/it/10 Re-
  []
 
 
-Overfull \hbox (12.27pt too wide) in paragraph at lines 60--61
+Overfull \hbox (12.27pt too wide) in paragraph at lines 63--64
 \TU/lmr/m/it/10 in-
  []
 
 
-Overfull \hbox (24.16003pt too wide) in paragraph at lines 60--61
+Overfull \hbox (24.16003pt too wide) in paragraph at lines 63--64
 \TU/lmr/m/it/10 force-
  []
 
 
-Overfull \hbox (21.72pt too wide) in paragraph at lines 60--61
+Overfull \hbox (21.72pt too wide) in paragraph at lines 63--64
 \TU/lmr/m/it/10 ment
  []
 
 
-Overfull \hbox (28.38002pt too wide) in paragraph at lines 60--61
+Overfull \hbox (28.38002pt too wide) in paragraph at lines 63--64
 \TU/lmr/m/it/10 Learn-
  []
 
 
-Overfull \hbox (13.76001pt too wide) in paragraph at lines 60--61
+Overfull \hbox (13.76001pt too wide) in paragraph at lines 63--64
 \TU/lmr/m/it/10 ing\nullfont )
  []
-
-! Undefined control sequence.
-l.64 \section
-           {Das C.LABEL Tool}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
 
 ! LaTeX Error: Missing \begin{document}.
@@ -1067,19 +1154,309 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.64 \section{D
-             as C.LABEL Tool}
+l.65 D
+    er Lernprozess bei dieser Methode ist, wie der Name schon sagt, überwac...
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 64--68
+Overfull \hbox (20.0pt too wide) in paragraph at lines 65--66
+[]Der
+ []
+
+
+Overfull \hbox (7.80904pt too wide) in paragraph at lines 65--66
+\OML/cmm/m/it/10 P$
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.67 D
+    ie Werte der Gewichte \(W_1 \dots W_n\) werden bei einem untrainierten N...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 67--68
+[]Die
+ []
+
+
+Overfull \hbox (43.8182pt too wide) in paragraph at lines 67--68
+\OML/cmm/m/it/10 W[] [] W[]$
+ []
+
+
+Overfull \hbox (12.77373pt too wide) in paragraph at lines 67--68
+\OML/cmm/m/it/10 W[]$
+ []
+
+
+Overfull \hbox (24.93001pt too wide) in paragraph at lines 67--68
+\TU/lmr/m/it/10 Back-
+ []
+
+
+Overfull \hbox (22.62001pt too wide) in paragraph at lines 67--68
+\TU/lmr/m/it/10 prop-
+ []
+
+
+Overfull \hbox (8.69pt too wide) in paragraph at lines 67--68
+\TU/lmr/m/it/10 a-
+ []
+
+
+Overfull \hbox (13.29001pt too wide) in paragraph at lines 67--68
+\TU/lmr/m/it/10 ga-
+ []
+
+
+Overfull \hbox (17.12001pt too wide) in paragraph at lines 67--68
+\TU/lmr/m/it/10 tion\nullfont .
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.69 \begin{equation}
+                   
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 69--69
+[] 
+ []
+
+
+Overfull \hbox (66.36053pt too wide) detected at line 72
+\OMS/cmsy/m/n/10 4\OML/cmm/m/it/10 w[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10  \OML
+/cmm/m/it/10 []o[][]
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.74 \begin{itemize}
+                  
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 74--74
+[] 
+ []
+
+
+Overfull \hbox (23.09091pt too wide) in paragraph at lines 75--76
+\OMS/cmsy/m/n/10 4\OML/cmm/m/it/10 w[]$
+ []
+
+
+Overfull \hbox (14.20201pt too wide) in paragraph at lines 75--76
+\OML/cmm/m/it/10 w[]$
+ []
+
+
+Overfull \hbox (3.44513pt too wide) in paragraph at lines 75--76
+\OML/cmm/m/it/10 i$
+ []
+
+
+Overfull \hbox (4.69049pt too wide) in paragraph at lines 75--76
+\OML/cmm/m/it/10 j$ 
+ []
+
+
+Overfull \hbox (5.32408pt too wide) in paragraph at lines 76--77
+\OML/cmm/m/it/10 $
+ []
+
+
+Overfull \hbox (8.658pt too wide) in paragraph at lines 77--78
+\OML/cmm/m/it/10 []$
+ []
+
+
+Overfull \hbox (4.69049pt too wide) in paragraph at lines 77--78
+\OML/cmm/m/it/10 j$
+ []
+
+
+Overfull \hbox (22.59517pt too wide) in paragraph at lines 77--78
+[]$
+ []
+
+
+Overfull \hbox (7.95831pt too wide) in paragraph at lines 79--80
+\OML/cmm/m/it/10 E$
+ []
+
+
+Overfull \hbox (18.51382pt too wide) in paragraph at lines 79--80
+\OML/cmm/m/it/10 E \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (31.56143pt too wide) in paragraph at lines 79--80
+[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t[] \OMS/cmsy/m/n/10  
+ []
+
+
+Overfull \hbox (16.55154pt too wide) in paragraph at lines 79--80
+\OML/cmm/m/it/10 o[]\OT1/cmr/m/n/10 )[]$
+ []
+
+
+Overfull \hbox (6.9404pt too wide) in paragraph at lines 81--82
+\OML/cmm/m/it/10 t[]$
+ []
+
+
+Overfull \hbox (18.48329pt too wide) in paragraph at lines 83--84
+\OML/cmm/m/it/10 net[]$
+ []
+
+
+Overfull \hbox (37.86752pt too wide) in paragraph at lines 83--84
+[] \OML/cmm/m/it/10 x[]w[]$ 
+ []
+
+
+Overfull \hbox (8.17651pt too wide) in paragraph at lines 86--87
+\OML/cmm/m/it/10 o[]$
+ []
+
+
+Overfull \hbox (23.09091pt too wide) in paragraph at lines 86--87
+\OMS/cmsy/m/n/10 4\OML/cmm/m/it/10 w[]$\nullfont ,
+ []
+
+
+Overfull \hbox (7.95831pt too wide) in paragraph at lines 86--87
+\OML/cmm/m/it/10 E$
+ []
+
+
+Overfull \hbox (3.44513pt too wide) in paragraph at lines 86--87
+\OML/cmm/m/it/10 i$ 
+ []
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 89--90
+[]Zusammenfassend
+ []
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 91--91
+[] 
+ []
+
+
+Overfull \hbox (40.46pt too wide) in paragraph at lines 92--93
+\TU/lmr/bx/n/10 Eingabe
+ []
+
+
+Overfull \hbox (5.03125pt too wide) in paragraph at lines 92--93
+\OML/cmm/m/it/10 p$
+ []
+
+
+Overfull \hbox (7.80904pt too wide) in paragraph at lines 92--93
+\OML/cmm/m/it/10 P$
+ []
+
+
+Overfull \hbox (22.05pt too wide) in paragraph at lines 93--94
+\TU/lmr/bx/n/10 Vor-
+ []
+
+
+Overfull \hbox (26.62pt too wide) in paragraph at lines 93--94
+\TU/lmr/bx/n/10 wärt-
+ []
+
+
+Overfull \hbox (70.88pt too wide) in paragraph at lines 93--94
+\TU/lmr/bx/n/10 spropagierung
+ []
+
+
+Overfull \hbox (21.57pt too wide) in paragraph at lines 94--95
+\TU/lmr/bx/n/10 Ver-
+ []
+
+
+Overfull \hbox (18.04001pt too wide) in paragraph at lines 94--95
+\TU/lmr/bx/n/10 gle-
+ []
+
+
+Overfull \hbox (14.37pt too wide) in paragraph at lines 94--95
+\TU/lmr/bx/n/10 ich
+ []
+
+
+Overfull \hbox (39.24pt too wide) in paragraph at lines 95--96
+\TU/lmr/bx/n/10 Zurück-
+ []
+
+
+Overfull \hbox (59.47002pt too wide) in paragraph at lines 95--96
+\TU/lmr/bx/n/10 propagieren
+ []
+
+! Undefined control sequence.
+l.98 ...Elemente im Trainingssatz gemeint. \acrshort
+                                                  {acr:knn}s verbessern ihre...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 98--99
+[]Wie
+ []
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 100--101
+[]Zur
+ []
+
+! Undefined control sequence.
+l.102 \section
+            {Das C.LABEL Tool}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 102--107
 []Das
  []
 
 ! Undefined control sequence.
-l.69 \section
-           {Die Unity Engine}
+l.108 \section
+            {Die Unity Engine}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1087,20 +1464,22 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.69 \section{D
-             ie Unity Engine}
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 69--71
+Overfull \hbox (20.0pt too wide) in paragraph at lines 108--112
 []Die
+ []
+
+! Undefined control sequence.
+l.113 \section
+            {Lidar-Sensor}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 113--117
+[]Lidar-
  []
 
 )
@@ -1112,13 +1491,13 @@ Overfull \hbox (20.0pt too wide) in paragraph at lines 69--71
 
 
 Here is how much of LuaTeX's memory you used:
- 39 strings out of 494456
- 100000,89155 words of node,token memory allocated 68745 words of node memory still in use:
-   162 hlist, 2 vlist, 1 rule, 15 disc, 21 local_par, 1 dir, 12 math, 1438 glue,
- 34 kern, 67 penalty, 7953 glyph, 127 attribute, 35 glue_spec, 127 attribute_lis
-t, 8 write nodes
-   avail lists: 1:1,2:2,4:160,5:1,7:11,8:18,10:159
- 4279 multiletter control sequences out of 65536+200000
+ 47 strings out of 494456
+ 125007,89155 words of node,token memory allocated 103490 words of node memory still in use:
+   358 hlist, 5 vlist, 2 rule, 39 disc, 41 local_par, 1 dir, 37 math, 2336 glue,
+ 83 kern, 173 penalty, 11524 glyph, 260 attribute, 35 glue_spec, 260 attribute_l
+ist, 11 write nodes
+   avail lists: 1:1,2:2,4:159,5:11,7:11,8:17,10:158
+ 4287 multiletter control sequences out of 65536+200000
  27 fonts using 1608167 bytes
- 18i,3n,21p,1681b,116s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 18i,3n,21p,1657b,202s stack positions out of 5000i,500n,10000p,200000b,50000s
 !  ==> Fatal error occurred, no output PDF file produced!

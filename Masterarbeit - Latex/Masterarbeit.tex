@@ -11,9 +11,24 @@
 \usepackage{subfig}
 \usepackage{setspace}
 \usepackage{xcolor}
+\usepackage{float}
+
+\usepackage{algorithm,algpseudocode}% http://ctan.org/pkg/{algorithms,algorithmx}
+\algnewcommand{\Inputs}[1]{%
+  \State \textbf{Inputs:}
+  \Statex \hspace*{\algorithmicindent}\parbox[t]{.8\linewidth}{\raggedright #1}
+}
+\algnewcommand{\Initialize}[1]{%
+  \State \textbf{Initialize:}
+  \Statex \hspace*{\algorithmicindent}\parbox[t]{.8\linewidth}{\raggedright #1}
+}
+\algnewcommand{\Mainloop}[1]{%
+  \State \textbf{Main Loop:}
+  \Statex \hspace*{\algorithmicindent}\parbox[t]{.8\linewidth}{\raggedright #1}
+}
 
 \usepackage{geometry}
-\geometry{a4paper, top=15mm, left=35mm, right=25mm, bottom=15mm}
+\geometry{a4paper, top=15mm, left=35mm, right=25mm, bottom=15mm, includefoot}
 
 %Fancy Kapitelübersxchrift und Textfont
 \usepackage{lmodern,titlesec,tikz,blindtext}
@@ -43,24 +58,44 @@
 %\sffamily
 
 
-\title{
-	{Entwicklung einer VR-basierten Methode für 3D-Datennotation}\\
-	{\large Cmore Automotive GmbH}\\
-	{\includegraphics{Main_Images/cmoreLogo}}
+\titlehead{
+Universität Augsburg \\ Fakultät für Angewandte Informatik \\ Institut für Software \& Systems Engineering
 }
-\author{Patrick Grüner}
-\date{\today}
+\subject{
+Masterarbeit \\ %Master- / Diplom- / Bachelor- oder Seminararbeit
+\normalsize{Im Studiengang Informatik}} %Ihr Studiengang
+\title{Titel} %Titel der Arbeit, wie im Prüfungsamt agegeben
+\author{\normalsize{Patrick Grüner} \\
+\normalsize{patrick.gmm91@gmail.com} \\
+\normalsize{Matrikelnummer: xxxxxxx} \\ 
+\normalsize{Schneiderhansenweg 10} \\ 
+\normalsize{87700 Memmingen}} 
+\publishers{ \vfill 
+
+\begin{figure}[H]
+    \centering
+    \subfloat{{\includegraphics[width=5cm]{Main_Images/LogoCmore}}}%
+    \qquad
+    \subfloat{{\includegraphics[width=3cm]{Main_Images/LogoIsse}}}%
+\end{figure}
+
+\normalsize{Betreuer: N.N. } \\  
+\normalsize{Erstgutachter: Dr. Alwin Hoffmann}
+}
+\date{\today} 
+
 \maketitle
 
 \pagenumbering{roman}
+
 \tableofcontents
 
 \newpage
 \chapter*{Abstract}
 Abstract goes here
 
-\chapter*{Dedication}
-To mum and dad
+%\chapter*{Dedication}
+%To mum and dad
 
 \chapter*{Declaration}
 I declare that..
@@ -79,9 +114,8 @@ I want to thank...
 \newpage
 \printnoidxglossary[type=symbolslist,style=long]
 
-\newpage
-
 \pagenumbering{arabic}
+
 \chapter{Einleitung}
 \input{Kapitel/Kapitel1_Einleitung/Einleitung}
 

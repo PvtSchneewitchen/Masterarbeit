@@ -73,6 +73,8 @@ namespace GracesGames.SimpleFileBrowser.Scripts
             return newWindow;
         }
 
+
+
         public void OnButtonCLick_CreateNewSession()
         {
             _cameraDistance = 5.0f;
@@ -111,7 +113,7 @@ namespace GracesGames.SimpleFileBrowser.Scripts
         {
             _cameraDistance = 10.0f;
 
-            Util.DataLoadInfo._sessionName = _keyboard.GetComponent<KeyboardManager>().inputText.text;
+            Util.DataLoadInfo._sessionName = _keyboard.GetComponent<KeyboardManager>().inputField.text;
 
             if (Util.DataLoadInfo._dataType == Util.Datatype.pcd)
             {
@@ -188,7 +190,7 @@ namespace GracesGames.SimpleFileBrowser.Scripts
             }
             else
             {
-                Util.DataLoadInfo._sourceDataPath = sPath_inp + "\\";
+                Util.DataLoadInfo._sourceDataPath = sPath_inp;
                 Util.DataLoadInfo._accessMode = Util.AccesMode.Create;
             }
 
