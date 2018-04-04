@@ -292,8 +292,15 @@ Das Inteview handelt von den Verkaufszahlen der Hololens},
   title   = {Using SVD for some fitting problems},
   author  = {Inge Söderkvist},
   address = {Lulea Univerity of Technology},
-  month   = mar,
-  year    = {2014},
+}
+
+@Booklet{bib:g3sharp,
+  title   = {Least Squares Fitting of Data},
+  author  = {David Eberly},
+  address = {Geometric Tools, Redmond WA 98052},
+  month   = jul,
+  year    = {1999},
+  note    = {Last Modified: December 12, 2017},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

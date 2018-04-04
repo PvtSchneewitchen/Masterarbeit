@@ -8,7 +8,7 @@ public static class CloudSegmentation
 {
     public static void SetGroundLabels(List<InternalDataFormat> listOfDataLists)
     {
-        int segmentCount = 6;
+        int segmentCount = 3;
         float initialSeedDistanceThreshold = 0.3f;
         float seedDistanceThreshold = 0.2f;
         float covarIterations = 1;

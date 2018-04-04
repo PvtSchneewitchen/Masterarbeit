@@ -1,8 +1,12 @@
 \graphicspath{{Kapitel/Kapitel3_Grundlagen/Images/}}
 
-Dieses Kapitel befasst sich mit einigen grundlegenden Themen, die mit dem Inhalt dieser Arbeit zu tun haben. Dies soll dem besseren Verständnis für die folgenden Kapitel dienen. Der Abschnitt \ref{sec:MLearning} beispielsweise, befasst sich mit dem Prinzip des maschinellen Lernens auf Basis von neuronalen Netzen, was verdeutlichen soll warum die Daten der Punktwolken überhaupt \glslink{glos:Labeling}{gelabelt} werden müssen. Anschließend wird die CMORE Inhouse Software C.LABEL in \ref{sec:C.LABEL} vorgestellt um den aktuellen Stand der Technik im Bereich Punktwolkenannotierung zu zeigen. \ref{sec:UnityEngine} stellt die \gls{glos:GameEngine} Unity vor, die benutzt wurde um die \acrlong{acr:VR} Applikation zu erstellen.
+%Dieses Kapitel befasst sich mit einigen grundlegenden Themen, die mit dem Inhalt dieser Arbeit zu tun haben. Dies soll dem besseren Verständnis für die folgenden Kapitel dienen. Der Abschnitt \ref{sec:MLearning} beispielsweise, befasst sich mit dem Prinzip des maschinellen Lernens auf Basis von neuronalen Netzen, was verdeutlichen soll warum die Daten der Punktwolken überhaupt \glslink{glos:Labeling}{gelabelt} werden müssen. Anschließend wird die CMORE Inhouse Software C.LABEL in \ref{sec:C.LABEL} vorgestellt um den aktuellen Stand der Technik im Bereich Punktwolkenannotierung zu zeigen. \ref{sec:UnityEngine} stellt die \gls{glos:GameEngine} Unity vor, die benutzt wurde um die \acrlong{acr:VR} Applikation zu erstellen.
 
-\section{Maschinelles Lernen}
+\section{Annotation}
+warum?
+was für arten?
+
+\subsection{Maschinelles Lernen}
 \label{sec:MLearning}
 Der Ausdruck Maschinelles Lernen (engl.: \textit{Machine Learning}) ist heutzutage ein Überbegriff für Methoden, die versuchen durch Optimierung eine Funktion zu erlernen. Bei solch einer Funktion kann es sich sowohl um eine simple binäre Entscheidung auf eine Fragestellung handeln als auch um komplexere Dinge wie das Übersetzen von Texten in eine andere Sprache, das Erkennen von Personen auf Bildern, oder eben das Klassifizieren von Objekten in einer Punktwolke. Letzteres ist speziell für diese Arbeit relevant. Die Komplexität der Funktion bestimmt auch die zu verwendende Methode zur Lösung des Problems. Im Zuge des \textit{Azure Machine Learning Studios} veröffentlichte Microsoft eine Graphik (vgl. Abbildung \ref{fig:MLCS}), mit der man den richtigen Lernalgorithmus für gewisse Vorhersage-Methoden bestimmen kann. Für die Objektklassifizierung im Automobilbereich ist es wichtig die Klasse eines Objekts mit hoher Genauigkeit aus einer großen Anzahl verschiedener Klassen zu bestimmen. Basierend auf der Graphik \ref{fig:MLCS} ist die beste Methode dafür die Verwendung eines künstlichen neuronalen Netzes(\acrshort{acr:knn}). Die Benutzung solcher Netze ist üblich, wenn es um Klassifikation von vielen verschiedenen Dingen geht und soll im Folgenden näher erläutert werden.\\
 
@@ -15,7 +19,7 @@ TODO Grafik von Bild und wolkenerkennung\\
     \label{fig:MLCS}
 \end{figure}
   
-\subsection{Künstliche Neuronale Netze}
+\subsubsection{Künstliche Neuronale Netze}
 \label{sec:KNN}
 David Kriesel hat in \cite{bib:UebereblickNN} den Zusammenhang zwischen physischen und künstlichen neuronalen Netzen dargestellt. Seine Arbeit soll im Folgenden als Quelle dienen. Das Prinzip der künstlichen neuronalen Netze ist, wie vieles in der Informatik, einer Struktur aus der realen Welt nachempfunden. Das komplexeste neuronale Netz ist wohl das menschliche Gehirn mit etwa 86 Milliarden Nervenzellen, welche auch Neuronen genannt werden. Daher kommt auch der Begriff des neuronalen Netzes. Diese Nervenzellen sind durch Synapsen mit bis zu mehreren Tausend anderen Zellen verbunden. Diese Verbindungen bilden zusammen das Netz. Die Kommunikation zwischen den Neuronen erfolgt in der Regel über elektrische Impulse und chemische Botenstoffe. Beides wird über Synapsen zu den nächsten, verbundenen Neuronen weitergeleitet und bewirkt dort einen Reiz. Durch Übertragung von chemischen Botenstoffen kann dieser Reiz zusätzlich gewichtet werden, das heißt es kann ein stärkerer oder schwächerer Reiz ausgesendet werden. Alle ankommenden Reize werden dann am Empfangsneuron akkumuliert und ergeben den Eingangsreiz des Neurons.\\ 
 
@@ -52,14 +56,16 @@ Im biologischen Vorbild repräsentiert diese Summe den eingehenden Reiz in eine 
 
 In \acrshort{acr:knn}s können mehrere dieser Perzeptrons eine sogenannte Schicht bilden. Je mehr Schichten ein neuronales Netz hat desto \textit{tiefer} ist es, daher auch der Begriff \textit{Deep Learning}, also tiefes Lernen. In der Regel bestehen \acrshort{acr:knn}s aus mindestens 3 Schichten, nämlich einer Eingangsschicht, einer oder mehrerer Zwischenschichten und einer Ausgangsschicht (veranschaulicht in Abbildung \ref{fig:Bilderkennung}). Die einzelnen Schichten werden im Folgenden kurz erläutert.  
 
-\subsubsection{Eingangschicht}
+\begin{itemize}
+\item \textbf{Eingangsschicht}\\
 Die Eingabeschicht ist der Startpunkt des Informationsflusses in einem künstlichen neuronalen Netzes. Eingangssignale werden von den Neuronen dieser Schicht aufgenommen und gewichtet an alle Neuronen der ersten Zwischenschicht weitergegeben. Die Anzahl der Neuronen dieser Schicht hängt, wie schon erwähnt, von den Eingangsdaten ab. Werden Bilder mit einer Auflösung von 50x50 Pixeln in das Netz gespeist, hat dieses Netz in der Regel 50x50, also 2500 Neuronen in der Eingangsschicht.
 
-\subsubsection{Zwischenschicht}
+\item \textbf{Zwischenschicht}\\
 Zwischen der Eingabe- und der Ausgabeschicht befindet sich in jedem künstlichen neuronalen Netz mindestens eine Zwischenschicht, die auch verborgene Schicht (engl.: \textit{hidden layer}) genannt wird. Theoretisch ist die Anzahl der möglichen verborgenen Schichten in einem künstlichen neuronalen Netzwerk unbegrenzt. In der Praxis bewirkt jede hinzukommende Schicht jedoch auch einen Anstieg der benötigten Rechenleistung, die für den Betrieb des Netzes notwendig ist.
 
-\subsubsection{Ausgangsschicht}
+\item \textbf{Ausgangsschicht}\\
 Die Ausgabeschicht liegt hinter den Zwischenschichten und bildet die letzte Schicht in einem künstlichen neuronalen Netz. In der Ausgabeschicht angeordnete Neuronen sind jeweils mit allen Neuronen der letzten Zwischenschicht verbunden. Die Ausgabeschicht stellt den Endpunkt des Informationsflusses in einem \acrshort{acr:knn} dar und enthält das Ergebnis der Informationsverarbeitung durch das Netzwerk. Beim Beispiel der Objektklassifikation besteht die Ausgabeschicht nun aus \(n\) vielen Endknoten, wobei \(n\) die Menge an möglichen Klassifikationen ist. Die Eingangssumme dieser Knoten, den sie aus den vorherigen Neuronen bekommen, entsprechen der Wahrscheinlichkeit, dass es sich bei den Eingangsdaten um die jeweilige Klasse handelt. Abbildung \ref{fig:Bilderkennung} soll dieses Prinzip veranschaulichen.
+\end{itemize}
 
 \begin{figure}%
 	\centering
@@ -68,7 +74,7 @@ Die Ausgabeschicht liegt hinter den Zwischenschichten und bildet die letzte Schi
     \label{fig:Bilderkennung}
 \end{figure}
 
-\subsection{Trainieren von künstlichen neuronalen Netzen}
+\subsubsection{Trainieren von künstlichen neuronalen Netzen}
 \label{sec:Training}
 
 Damit ein Mensch eine neue Tätigkeit beherrscht muss er diese erst erlernen. In der Regel muss diese Tätigkeit dafür so oft es geht geübt werden. Bei künstlichen neuronalen Netzen ist das genauso. Das Üben bezeichnet man in diesem Kontext als \textit{Trainieren} von Netzen. Im allgemeinen bedeutet der Vorgang des Lernens, dass ein System sich in irgendeiner Form verändert, um sich z.B. an Veränderungen in seiner Umwelt anzupassen. Die typische Veränderung von künstlichen neuronalen Netzen ist das adaptieren der Verbindungsgewichte \(W_1 \dots W_n\). Damit die Verbindungsgewichte auf einen passenden Wert verändert werden muss das Netz entsprechend oft trainiert werden. Dies geschieht nach Regeln, die man in Algorithmen definiert – ein Lernverfahren ist also immer ein Algorithmus, den man einfach mithilfe einer Programmiersprache implementieren kann. Diese Algorithmen lassen sich grob in 3 verschieden Arten einteilen:
@@ -118,15 +124,18 @@ Wie unschwer zu erkennen ist basiert der Backpropagation-Algorithmus auf dem Vor
 
 Zur Erstellung dieses Datensatzes ist es nun nötig so viele repräsentative Daten wie möglich zu sammeln und diese mit der richtigen Lösung zu annotieren. Eine Methode für eine solche Annotierung wird in dieser Arbeit vorgestellt. Dieses Kapitel sollte nun veranschaulicht haben warum  solche Methoden so essentiell sind, um künstliche Intelligenzen zu entwickeln.
 
-\section{Die Unity Engine}
-\label{sec:UnityEngine}
-TODO
-Grobes Konzept der Unity Engine vorstellen
 
-\section{Lidar-Sensor}
-\label{sec:Lidar}
+\section{Virtual Reality}
+Anfänge 
+aktueller stand
+einzug auch in industrie 
+
+\section{Evtl Lidar-Sesnor}
 TODO
 Beschreibung wie Lidar-Sensoren Punktwolken aufnehmen
+
+
+
 
 
 

@@ -35,7 +35,7 @@ public static class Labeling
         _standardColors = new List<Color32>
         {
             new Color32(210, 240, 225, 225),
-            new Color32(255,15,15,255),
+            //new Color32(255,15,15,255),
             new Color32(0, 213, 43, 225),
             new Color32(190, 255, 255, 225),
             new Color32(0, 255, 0, 225),

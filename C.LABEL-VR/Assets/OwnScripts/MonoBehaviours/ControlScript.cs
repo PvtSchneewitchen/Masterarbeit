@@ -17,7 +17,7 @@ public class ControlScript : MonoBehaviour
     void Awake()
     {
 #if UNITY_EDITOR
-        Util.DataLoadInfo._dataType = Util.Datatype.hdf5_DaimlerLidar;
+        Util.DataLoadInfo._dataType = Util.Datatype.pcd;
         Util.DataLoadInfo._accessMode = Util.AccesMode.Create;
         Util.DataLoadInfo._sessionName = "EditorDev";
 
