@@ -168,4 +168,20 @@ S.~Goga and S.~Nedevschi, ``An approach for segmenting 3d lidar data using
   Conference on Intelligent Computer Communication and Processing (ICCP)}, Sept
   2017, pp. 309--315.
 
+\bibitem{bib:Decomposion}
+E.~H. Clemens~Brand, ``Matrixzerlegungen. Überbestimmte systeme,''
+  Vorlesungsskript, Montanuniversität Leoben, Mar. 2014.
+
+\bibitem{bib:SVD}
+D.~Kalman, ``A singularly valuable decomposition: The svd of a matrix,''
+  \emph{College Math Journal}, vol.~27, pp. 2--23, 1996.
+
+\bibitem{bib:SVDforFitting}
+I.~Söderkvist, ``Using svd for some fitting problems,'' Lulea Univerity of
+  Technology.
+
+\bibitem{bib:g3sharp}
+D.~Eberly, ``Least squares fitting of data,'' Geometric Tools, Redmond WA
+  98052, Jul. 1999, last Modified: December 12, 2017.
+
 \end{thebibliography}

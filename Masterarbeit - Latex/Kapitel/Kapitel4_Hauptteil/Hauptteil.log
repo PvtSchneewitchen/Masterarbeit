@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.06.2 (MiKTeX 2.9.6500 64-bit)  (format=lualatex 2017.11.29)  31 MAR 2018 08:49
+This is LuaTeX, Version 1.06.2 (MiKTeX 2.9.6500 64-bit)  (format=lualatex 2017.12.19)  3 APR 2018 09:24
  restricted system commands enabled.
 **Hauptteil.tex
 (./Hauptteil.tex
@@ -33,7 +33,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 1.172 seconds
+luaotfload | main : initialization completed in 0.636 seconds
 Babel <3.15> and hyphenation patterns for 1 language(s) loaded.
 ! Undefined control sequence.
 l.1 \graphicspath
@@ -1635,7 +1635,7 @@ Overfull \hbox (10.85999pt too wide) in paragraph at lines 112--113
 <write> ... Warning: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
 l.114 ...erfahren (GPF) aus \cite{bib:Segmentation1}
-                                                   verwendet. Ziel dieses Ve...
+                                                   verwendet. Ist im Folgend...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1784,6 +1784,21 @@ and I'll forget about whatever was undefined.
 LaTeX Warning: Citation `bib:Segmentation1' on page  undefined on input line 123
 .
 
+! Undefined control sequence.
+<write> ...Reference `fig:WrongSegments' on page \thepage 
+                                                  \space undefined\on@line .
+l.123 ...elt (vgl. Abbildung \ref{fig:WrongSegments}
+                                                  ). Das Problem ist, dass s...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `fig:WrongSegments' on page  undefined on input line 12
+3.
+
 
 Overfull \hbox (20.0pt too wide) in paragraph at lines 123--126
 []Beim
@@ -1797,6 +1812,11 @@ Overfull \hbox (5.43pt too wide) in paragraph at lines 123--126
 
 Overfull \hbox (5.71527pt too wide) in paragraph at lines 123--126
 \OML/cmm/m/it/10 x$\nullfont -
+ []
+
+
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 123--126
+[]).
  []
 
 \citation{bib:Segmentation1}
@@ -1815,6 +1835,21 @@ and I'll forget about whatever was undefined.
 LaTeX Warning: Citation `bib:Segmentation1' on page  undefined on input line 127
 .
 
+! Undefined control sequence.
+<write> ...Reference `fig:RightSegments' on page \thepage 
+                                                  \space undefined\on@line .
+l.127 ...de ist in Abbildung \ref{fig:RightSegments}
+                                                   zu sehen.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `fig:RightSegments' on page  undefined on input line 12
+7.
+
 
 Overfull \hbox (20.0pt too wide) in paragraph at lines 127--128
 []Darum
@@ -1831,6 +1866,11 @@ Overfull \hbox (5.2616pt too wide) in paragraph at lines 127--128
  []
 
 
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 127--128
+[]
+ []
+
+
 ! LaTeX Error: Environment figure undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -1838,36 +1878,66 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.129 \begin{figure}
-                  %
+                  [!tbp]
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Undefined control sequence.
-l.131     \includegraphics
-                        [width=12cm,height=7cm]{GroundSeg_BirdeyeWithSectors}
+l.132     \includegraphics
+                        [width=\textwidth]{GroundSeg_BirdeyeWithSectors2}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+! Missing number, treated as zero.
+<to be read again> 
+]
+l.132     \includegraphics[width=\textwidth]
+                                          {GroundSeg_BirdeyeWithSectors2}
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+]
+l.132     \includegraphics[width=\textwidth]
+                                          {GroundSeg_BirdeyeWithSectors2}
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
 ! Missing $ inserted.
 <inserted text> 
 $
-l.131 ...egraphics[width=12cm,height=7cm]{GroundSeg_
-                                                  BirdeyeWithSectors}
+l.132 ...ncludegraphics[width=\textwidth]{GroundSeg_
+                                                  BirdeyeWithSectors2}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
-l.131 ...m,height=7cm]{GroundSeg_BirdeyeWithSectors}
+l.132 ...=\textwidth]{GroundSeg_BirdeyeWithSectors2}
                                                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
+
+! Undefined control sequence.
+l.133     \tiny
+             {\caption{Segmentierung anhand potentieller Bodenpunkten}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
 
 ! LaTeX Error: \caption outside float.
@@ -1876,17 +1946,80 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.132     \caption
-                {In \cite{bib:Segmentation1} wird gezeigt, dass die Segmenti...
+l.133     \tiny{\caption
+                      {Segmentierung anhand potentieller Bodenpunkten}}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-\citation{bib:Segmentation1}
+! Missing $ inserted.
+<inserted text> 
+$
+l.135   \end{minipage}
+                    
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.135   \end{minipage}
+                    
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
 ! Undefined control sequence.
-<write> ... Warning: Citation `\@citeb ' on page \thepage 
-                                                  \space undefined\on@line .
-l.132     \caption{In \cite{bib:Segmentation1}
-                                             wird gezeigt, dass die Segmenti...
+l.138     \includegraphics
+                        [width=\textwidth]{GroundSeg_BirdeyeWithWrongSectors2}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+]
+l.138     \includegraphics[width=\textwidth]
+                                          {GroundSeg_BirdeyeWithWrongSectors2}
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+]
+l.138     \includegraphics[width=\textwidth]
+                                          {GroundSeg_BirdeyeWithWrongSectors2}
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! Missing $ inserted.
+<inserted text> 
+$
+l.138 ...ncludegraphics[width=\textwidth]{GroundSeg_
+                                                  BirdeyeWithWrongSectors2}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+l.138 ...twidth]{GroundSeg_BirdeyeWithWrongSectors2}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Undefined control sequence.
+l.139     \tiny
+             {\caption{Segmentierung anhand Koordinaten entlang der $x$-Achse}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1894,7 +2027,117 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `bib:Segmentation1' on page  undefined on input line 132
+! LaTeX Error: \caption outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.139     \tiny{\caption
+                      {Segmentierung anhand Koordinaten entlang der $x$-Achse}}
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.139 ...mentierung anhand Koordinaten entlang der $
+                                                  x$-Achse}}
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.139 ...mentierung anhand Koordinaten entlang der $
+                                                  x$-Achse}}
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Extra }, or forgotten $.
+l.139 ...g anhand Koordinaten entlang der $x$-Achse}
+                                                  }
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+l.139 ... anhand Koordinaten entlang der $x$-Achse}}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+$
+l.141   \end{minipage}
+                    
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.141   \end{minipage}
+                    
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 129--142
+ [][!tbp] 
+ []
+
+! Undefined control sequence.
+l.143   \small
+            {\caption {Vergleich der Segmentierungsmethoden zur Bodenpunktan...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: \caption outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.143   \small{\caption
+                      {Vergleich der Segmentierungsmethoden zur Bodenpunktan...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+\citation{bib:Segmentation1}
+! Undefined control sequence.
+<write> ... Warning: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.143 ...enpunktanalyse aus \cite{bib:Segmentation1}
+                                                   und C.LABEL-VR. Bodenpunk...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `bib:Segmentation1' on page  undefined on input line 143
 .
 
 
@@ -1904,42 +2147,15 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.134 \end{figure}
+l.145 \end{figure}
                 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-! Missing $ inserted.
-<inserted text> 
-$
-l.134 \end{figure}
-                
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
 
-Missing character: There is no ü (U+00FC) in font cmmi10!
-Missing character: There is no ü (U+00FC) in font cmmi10!
-Missing character: There is no ü (U+00FC) in font cmmi10!
-Missing character: There is no ü (U+00FC) in font cmmi10!
-! Missing } inserted.
-<inserted text> 
-}
-l.134 \end{figure}
-                
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-Overfull \hbox (1589.99525pt too wide) in paragraph at lines 131--135
-[][width=12cm,height=7cm]GroundSeg$[][]\OML/cmm/m/it/10 irdeyeWithSectors[][]$ 
-
+Overfull \hbox (5.43pt too wide) in paragraph at lines 143--146
+[[]]
  []
 
 
@@ -1949,7 +2165,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.137 \begin{algorithm}
+l.147 \begin{algorithm}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1962,7 +2178,364 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.138   \caption
+l.148   \caption
+              {Algorithmus zur Einteilung einer Punktwolke in $N_{Segs}$ Seg...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Environment algorithmic undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.150   \begin{algorithmic}
+                         [1]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+l.151     \Inputs
+               {\textbf{$\textbf{P}$} : Menge aller Punkte\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Extra }, or forgotten \endgroup.
+l.152     $N_{Segs}$} : Anzahl der Segmente}
+                                          
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Undefined control sequence.
+l.153     \Initialize
+                   {$\textbf{S}$ : Menge aller Segmente mit den jeweiligen P...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 148--157
+[]Algorithmus
+ []
+
+
+Overfull \hbox (25.54868pt too wide) in paragraph at lines 148--157
+\OML/cmm/m/it/10 N[]$
+ []
+
+
+Overfull \hbox (7.86pt too wide) in paragraph at lines 148--157
+[]$
+ []
+
+
+Overfull \hbox (25.54868pt too wide) in paragraph at lines 148--157
+\OML/cmm/m/it/10 N[]$
+ []
+
+
+Overfull \hbox (6.39pt too wide) in paragraph at lines 148--157
+[]$
+ []
+
+
+Overfull \hbox (19.45041pt too wide) in paragraph at lines 148--157
+[][]$
+ []
+
+
+Overfull \hbox (28.69792pt too wide) in paragraph at lines 148--157
+\OML/cmm/m/it/10 C[] \OT1/cmr/m/n/10 :$
+ []
+
+
+Overfull \hbox (35.84006pt too wide) in paragraph at lines 148--157
+\OML/cmm/m/it/10 C[] \OT1/cmr/m/n/10 :$
+ []
+
+! Undefined control sequence.
+l.158    	\State
+               \textbf{MainLoop:}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.159    	\State
+               $\textbf{P} = \Call{SortAscendingByXValue}{\textbf{P}}$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.159    	\State $\textbf{P} = \Call
+                                  {SortAscendingByXValue}{\textbf{P}}$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.160   	\State
+              $\textbf{P}_{pot} = \Call{GetPotentialGroundPointsBetween}{-0....
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.160   	\State $\textbf{P}_{pot} = \Call
+                                       {GetPotentialGroundPointsBetween}{-0....
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.161   	\State
+              $C_{segs} = C_{segs} = 0$;
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.162     \For
+            {$i=1 : |P|$}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.163       	\If
+              {$p_i.yValue \geq 0$}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.164       		\State
+                   $\textbf{S}[C_{segs}] gets p_i$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.165       	\Else
+                
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.166       		\State
+                   $\textbf{S}[C_{segs}+1] gets p_i$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.167       	\EndIf
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.168       	\If
+              {$p_i.zValue \geq $}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.169       	\EndIf
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.170       \EndFor
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (49.92pt too wide) in paragraph at lines 158--171
+[]\TU/lmr/bx/n/10 Main-
+ []
+
+
+Overfull \hbox (28.32pt too wide) in paragraph at lines 158--171
+\TU/lmr/bx/n/10 Loop:
+ []
+
+
+Overfull \hbox (18.41551pt too wide) in paragraph at lines 158--171
+[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (124.09122pt too wide) in paragraph at lines 158--171
+[][]$
+ []
+
+
+Overfull \hbox (30.00592pt too wide) in paragraph at lines 158--171
+[][] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (218.97139pt too wide) in paragraph at lines 158--171
+[][]$;
+ []
+
+
+Overfull \hbox (33.69794pt too wide) in paragraph at lines 158--171
+\OML/cmm/m/it/10 C[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (33.69794pt too wide) in paragraph at lines 158--171
+\OML/cmm/m/it/10 C[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 158--171
+\OT1/cmr/m/n/10 0$\nullfont ;
+ []
+
+
+Overfull \hbox (14.00064pt too wide) in paragraph at lines 158--171
+\OML/cmm/m/it/10 i \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (10.55551pt too wide) in paragraph at lines 158--171
+\OT1/cmr/m/n/10 1 :
+ []
+
+
+Overfull \hbox (13.36461pt too wide) in paragraph at lines 158--171
+\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 P\OMS/cmsy/m/n/10 j$
+ []
+
+
+Overfull \hbox (53.85829pt too wide) in paragraph at lines 158--171
+\OML/cmm/m/it/10 p[]:yValue \OMS/cmsy/m/n/10 
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 158--171
+\OT1/cmr/m/n/10 0$
+ []
+
+
+Overfull \hbox (61.53188pt too wide) in paragraph at lines 158--171
+[]\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 C[]\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 getsp[
+]$
+ []
+
+
+Overfull \hbox (40.08801pt too wide) in paragraph at lines 158--171
+[]\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 C[] \OT1/cmr/m/n/10 +
+ []
+
+
+Overfull \hbox (34.22168pt too wide) in paragraph at lines 158--171
+\OT1/cmr/m/n/10 1]\OML/cmm/m/it/10 getsp[]$
+ []
+
+
+Overfull \hbox (53.687pt too wide) in paragraph at lines 158--171
+\OML/cmm/m/it/10 p[]:zValue \OMS/cmsy/m/n/10 $ 
+ []
+
+
+! LaTeX Error: \begin{document} ended by \end{algorithmic}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.172   \end{algorithmic}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: \begin{document} ended by \end{algorithm}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.173 \end{algorithm}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Environment algorithm undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.186 \begin{algorithm}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: \caption outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.187   \caption
               {Algorithmus zur Identifizierung von Bodenpunkten eines Punktw...
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1974,15 +2547,15 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.140   \begin{algorithmic}
+l.189   \begin{algorithmic}
                          [1]
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Undefined control sequence.
-l.141     \Inputs
-               {\textbf{$\textbf{P}$} : Liste mit allen internen Daten der P...
+l.190     \Inputs
+               {\textbf{$\textbf{P}$} : Menge aller Punkte der Wolke\\}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1990,8 +2563,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.142     \Initialize
-                   {\textbf{$\textbf{P}_{seeds}$} : Liste der Seed-Punkte\\
+l.191     \Initialize
+                   {\textbf{$\textbf{P}_{seeds}$} : Menge aller Seed-Punkte\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1999,7 +2572,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.147    	\State
+l.196    	\State
                \textbf{MainLoop:}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2008,7 +2581,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.148   	\State
+l.197   	\State
               $\textbf{P}_{seeds}$ = \Call{\textbf{GetInitialSeedPoints}}{$\...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2017,7 +2590,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.148   	\State $\textbf{P}_{seeds}$ = \Call
+l.197   	\State $\textbf{P}_{seeds}$ = \Call
                                           {\textbf{GetInitialSeedPoints}}{$\...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2026,7 +2599,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.149     \For
+l.198     \For
             {$i=1 : N_{iter}$}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2035,7 +2608,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.150       \State
+l.199       \State
                  $plane$ = \Call{\textbf{FitPlaneIntoPoints}}{$\textbf{P}_{s...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2044,7 +2617,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.150       \State $plane$ = \Call
+l.199       \State $plane$ = \Call
                                 {\textbf{FitPlaneIntoPoints}}{$\textbf{P}_{s...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2053,7 +2626,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.151       \State
+l.200       \State
                  \Call{Clear}{$\textbf{P}_{seeds}$};
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2062,7 +2635,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.151       \State \Call
+l.200       \State \Call
                       {Clear}{$\textbf{P}_{seeds}$};
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2071,7 +2644,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.152       \For
+l.201       \For
               {$j=1 : |\textbf{P}|$}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2080,7 +2653,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.153       	\State
+l.202       	\State
                   $distance$ = \Call{\textbf{GetDistanceToPlane}}{$plane$, $...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2089,7 +2662,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.153       	\State $distance$ = \Call
+l.202       	\State $distance$ = \Call
                                     {\textbf{GetDistanceToPlane}}{$plane$, $...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2098,7 +2671,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.154       	\If
+l.203       	\If
               {$distance < T_{plane}$}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2107,7 +2680,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.155       		\State
+l.204       		\State
                    $p_k.groundpoint = true$;
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2116,7 +2689,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.156       		\State
+l.205       		\State
                    $\textbf{P}_{seeds} \gets p_k$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2125,7 +2698,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.157       	\Else
+l.206       	\Else
                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2134,7 +2707,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.158       		\State
+l.207       		\State
                    $p_k.groundpoint = true$;
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2143,7 +2716,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.159       	\EndIf
+l.208       	\EndIf
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2152,7 +2725,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.160       \EndFor
+l.209       \EndFor
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2161,7 +2734,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.161     \EndFor
+l.210     \EndFor
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2172,7 +2745,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <recently read> \State 
        
-l.163     \State
+l.212     \State
                \textbf{GetInitialSeedPoints:}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2181,7 +2754,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.164     \Initialize
+l.213     \Initialize
                    {\textbf{$\textbf{P}_{low}$} : Alle tiefen Punkte aus $\t...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2190,7 +2763,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.166     \For
+l.215     \For
             {$i=1 : |\textbf{P}|$}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2199,7 +2772,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.167     	\If
+l.216     	\If
             {$p_i.height < 0.5 \And p_i.height > -0.5$}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2208,7 +2781,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.167     	\If{$p_i.height < 0.5 \And
+l.216     	\If{$p_i.height < 0.5 \And
                                     p_i.height > -0.5$}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2217,7 +2790,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.168     		\State
+l.217     		\State
                  $\textbf{P}_{low} \gets p_i$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2226,7 +2799,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.169     	\EndIf
+l.218     	\EndIf
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2235,7 +2808,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.170     \EndFor
+l.219     \EndFor
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2244,7 +2817,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.171     \State
+l.220     \State
                $H_{avg} = \Call{\textbf{GetAverageHeight}}{\textbf{P}_{low}}$;
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2253,7 +2826,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.171     \State $H_{avg} = \Call
+l.220     \State $H_{avg} = \Call
                                {\textbf{GetAverageHeight}}{\textbf{P}_{low}}$;
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2262,7 +2835,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.172     \For
+l.221     \For
             {$i=1 : |\textbf{P}|$}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2271,7 +2844,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.173     	\If
+l.222     	\If
             {$p_i.height < T_{init}$}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2280,7 +2853,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.174     		\State
+l.223     		\State
                  $\textbf{P}_{seeds} \gets p:i$;
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2289,7 +2862,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.175     	\EndIf
+l.224     	\EndIf
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2298,7 +2871,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.176     \EndFor
+l.225     \EndFor
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2313,7 +2886,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.177   \end{algorithmic}
+l.226   \end{algorithmic}
                        
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2326,335 +2899,330 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.178 \end{algorithm}
+l.227 \end{algorithm}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 138--179
+Overfull \hbox (20.0pt too wide) in paragraph at lines 187--228
 []Algorithmus
  []
 
 
-Overfull \hbox (7.86pt too wide) in paragraph at lines 138--179
+Overfull \hbox (7.86pt too wide) in paragraph at lines 187--228
 []$
  []
 
 
-Overfull \hbox (27.65974pt too wide) in paragraph at lines 138--179
+Overfull \hbox (27.65974pt too wide) in paragraph at lines 187--228
 [][]$
  []
 
 
-Overfull \hbox (29.58542pt too wide) in paragraph at lines 138--179
+Overfull \hbox (27.6627pt too wide) in paragraph at lines 187--228
 \OML/cmm/m/it/10 N[] \OT1/cmr/m/n/10 :$
  []
 
 
-Overfull \hbox (27.6627pt too wide) in paragraph at lines 138--179
-\OML/cmm/m/it/10 N[] \OT1/cmr/m/n/10 :$
- []
-
-
-Overfull \hbox (25.52199pt too wide) in paragraph at lines 138--179
+Overfull \hbox (25.52199pt too wide) in paragraph at lines 187--228
 \OML/cmm/m/it/10 T[] \OT1/cmr/m/n/10 :$
  []
 
 
-Overfull \hbox (31.66614pt too wide) in paragraph at lines 138--179
+Overfull \hbox (31.66614pt too wide) in paragraph at lines 187--228
 \OML/cmm/m/it/10 T[] \OT1/cmr/m/n/10 :$
  []
 
 
-Overfull \hbox (29.92pt too wide) in paragraph at lines 138--179
+Overfull \hbox (29.92pt too wide) in paragraph at lines 187--228
 \TU/lmr/bx/n/10 Main-
  []
 
 
-Overfull \hbox (28.32pt too wide) in paragraph at lines 138--179
+Overfull \hbox (28.32pt too wide) in paragraph at lines 187--228
 \TU/lmr/bx/n/10 Loop:
  []
 
 
-Overfull \hbox (27.65974pt too wide) in paragraph at lines 138--179
+Overfull \hbox (27.65974pt too wide) in paragraph at lines 187--228
 [][]$
  []
 
 
-Overfull \hbox (18.14pt too wide) in paragraph at lines 138--179
+Overfull \hbox (18.14pt too wide) in paragraph at lines 187--228
 \TU/lmr/bx/n/10 Ge-
  []
 
 
-Overfull \hbox (22.24pt too wide) in paragraph at lines 138--179
+Overfull \hbox (22.24pt too wide) in paragraph at lines 187--228
 \TU/lmr/bx/n/10 tIni-
  []
 
 
-Overfull \hbox (43.59001pt too wide) in paragraph at lines 138--179
+Overfull \hbox (43.59001pt too wide) in paragraph at lines 187--228
 \TU/lmr/bx/n/10 tialSeed-
  []
 
 
-Overfull \hbox (39.41998pt too wide) in paragraph at lines 138--179
+Overfull \hbox (39.41998pt too wide) in paragraph at lines 187--228
 \TU/lmr/bx/n/10 Points$[]$\nullfont ,
  []
 
 
-Overfull \hbox (19.96649pt too wide) in paragraph at lines 138--179
+Overfull \hbox (19.96649pt too wide) in paragraph at lines 187--228
 \OML/cmm/m/it/10 T[]$\nullfont ;
  []
 
 
-Overfull \hbox (14.00064pt too wide) in paragraph at lines 138--179
+Overfull \hbox (14.00064pt too wide) in paragraph at lines 187--228
 \OML/cmm/m/it/10 i \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (10.55551pt too wide) in paragraph at lines 138--179
+Overfull \hbox (10.55551pt too wide) in paragraph at lines 187--228
 \OT1/cmr/m/n/10 1 :
  []
 
 
-Overfull \hbox (22.10721pt too wide) in paragraph at lines 138--179
+Overfull \hbox (22.10721pt too wide) in paragraph at lines 187--228
 \OML/cmm/m/it/10 N[]$
  []
 
 
-Overfull \hbox (24.15633pt too wide) in paragraph at lines 138--179
+Overfull \hbox (24.15633pt too wide) in paragraph at lines 187--228
 \OML/cmm/m/it/10 plane$
  []
 
 
-Overfull \hbox (18.73001pt too wide) in paragraph at lines 138--179
+Overfull \hbox (18.73001pt too wide) in paragraph at lines 187--228
 \TU/lmr/bx/n/10 Fit-
  []
 
 
-Overfull \hbox (42.88pt too wide) in paragraph at lines 138--179
+Overfull \hbox (42.88pt too wide) in paragraph at lines 187--228
 \TU/lmr/bx/n/10 PlaneIn-
  []
 
 
-Overfull \hbox (14.05pt too wide) in paragraph at lines 138--179
+Overfull \hbox (14.05pt too wide) in paragraph at lines 187--228
 \TU/lmr/bx/n/10 to-
  []
 
 
-Overfull \hbox (59.21973pt too wide) in paragraph at lines 138--179
+Overfull \hbox (59.21973pt too wide) in paragraph at lines 187--228
 \TU/lmr/bx/n/10 Points$[][]$\nullfont ;
  []
 
 
-Overfull \hbox (27.65974pt too wide) in paragraph at lines 138--179
+Overfull \hbox (27.65974pt too wide) in paragraph at lines 187--228
 Clear$[][]$;
  []
 
 
-Overfull \hbox (15.246pt too wide) in paragraph at lines 138--179
+Overfull \hbox (15.246pt too wide) in paragraph at lines 187--228
 \OML/cmm/m/it/10 j \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (10.55551pt too wide) in paragraph at lines 138--179
+Overfull \hbox (10.55551pt too wide) in paragraph at lines 187--228
 \OT1/cmr/m/n/10 1 :
  []
 
 
-Overfull \hbox (13.41557pt too wide) in paragraph at lines 138--179
+Overfull \hbox (13.41557pt too wide) in paragraph at lines 187--228
 \OMS/cmsy/m/n/10 j[]j$
  []
 
 
-Overfull \hbox (37.22067pt too wide) in paragraph at lines 138--179
+Overfull \hbox (37.22067pt too wide) in paragraph at lines 187--228
 \OML/cmm/m/it/10 distance$
  []
 
 
-Overfull \hbox (22.61pt too wide) in paragraph at lines 138--179
+Overfull \hbox (22.61pt too wide) in paragraph at lines 187--228
 \TU/lmr/bx/n/10 Get-
  []
 
 
-Overfull \hbox (20.38pt too wide) in paragraph at lines 138--179
+Overfull \hbox (20.38pt too wide) in paragraph at lines 187--228
 \TU/lmr/bx/n/10 Dis-
  []
 
 
-Overfull \hbox (30.66pt too wide) in paragraph at lines 138--179
+Overfull \hbox (30.66pt too wide) in paragraph at lines 187--228
 \TU/lmr/bx/n/10 tance-
  []
 
 
-Overfull \hbox (16.62pt too wide) in paragraph at lines 138--179
+Overfull \hbox (16.62pt too wide) in paragraph at lines 187--228
 \TU/lmr/bx/n/10 To-
  []
 
 
-Overfull \hbox (52.45633pt too wide) in paragraph at lines 138--179
+Overfull \hbox (52.45633pt too wide) in paragraph at lines 187--228
 \TU/lmr/bx/n/10 Plane$\OML/cmm/m/it/10 plane$\nullfont ,
  []
 
 
-Overfull \hbox (9.95142pt too wide) in paragraph at lines 138--179
+Overfull \hbox (9.95142pt too wide) in paragraph at lines 187--228
 \OML/cmm/m/it/10 p[]$\nullfont ;
  []
 
 
-Overfull \hbox (47.77618pt too wide) in paragraph at lines 138--179
+Overfull \hbox (47.77618pt too wide) in paragraph at lines 187--228
 \OML/cmm/m/it/10 distance <
  []
 
 
-Overfull \hbox (26.11064pt too wide) in paragraph at lines 138--179
+Overfull \hbox (26.11064pt too wide) in paragraph at lines 187--228
 \OML/cmm/m/it/10 T[]$
  []
 
 
-Overfull \hbox (77.91864pt too wide) in paragraph at lines 138--179
+Overfull \hbox (77.91864pt too wide) in paragraph at lines 187--228
 \OML/cmm/m/it/10 p[]:groundpoint \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (18.78133pt too wide) in paragraph at lines 138--179
+Overfull \hbox (18.78133pt too wide) in paragraph at lines 187--228
 \OML/cmm/m/it/10 true$\nullfont ;
  []
 
 
-Overfull \hbox (40.43747pt too wide) in paragraph at lines 138--179
+Overfull \hbox (40.43747pt too wide) in paragraph at lines 187--228
 [][] \OMS/cmsy/m/n/10  
  []
 
 
-Overfull \hbox (9.95142pt too wide) in paragraph at lines 138--179
+Overfull \hbox (9.95142pt too wide) in paragraph at lines 187--228
 \OML/cmm/m/it/10 p[]$
  []
 
 
-Overfull \hbox (77.91864pt too wide) in paragraph at lines 138--179
+Overfull \hbox (77.91864pt too wide) in paragraph at lines 187--228
 \OML/cmm/m/it/10 p[]:groundpoint \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (18.78133pt too wide) in paragraph at lines 138--179
+Overfull \hbox (18.78133pt too wide) in paragraph at lines 187--228
 \OML/cmm/m/it/10 true$\nullfont ; 
  []
 
 
-Overfull \hbox (107.23pt too wide) in paragraph at lines 138--179
+Overfull \hbox (107.23pt too wide) in paragraph at lines 187--228
 \TU/lmr/bx/n/10 GetInitialSeedPoints:
  []
 
 
-Overfull \hbox (20.85008pt too wide) in paragraph at lines 138--179
+Overfull \hbox (20.85008pt too wide) in paragraph at lines 187--228
 [][]$
  []
 
 
-Overfull \hbox (7.86pt too wide) in paragraph at lines 138--179
+Overfull \hbox (7.86pt too wide) in paragraph at lines 187--228
 []$ 
  []
 
 
-Overfull \hbox (21.55379pt too wide) in paragraph at lines 138--179
+Overfull \hbox (21.55379pt too wide) in paragraph at lines 187--228
 \OML/cmm/m/it/10 H[]$
  []
 
 
-Overfull \hbox (20.85008pt too wide) in paragraph at lines 138--179
+Overfull \hbox (20.85008pt too wide) in paragraph at lines 187--228
 [][]$
  []
 
 
-Overfull \hbox (14.00064pt too wide) in paragraph at lines 138--179
+Overfull \hbox (14.00064pt too wide) in paragraph at lines 187--228
 \OML/cmm/m/it/10 i \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (10.55551pt too wide) in paragraph at lines 138--179
+Overfull \hbox (10.55551pt too wide) in paragraph at lines 187--228
 \OT1/cmr/m/n/10 1 :
  []
 
 
-Overfull \hbox (13.41557pt too wide) in paragraph at lines 138--179
+Overfull \hbox (13.41557pt too wide) in paragraph at lines 187--228
 \OMS/cmsy/m/n/10 j[]j$
  []
 
 
-Overfull \hbox (50.05797pt too wide) in paragraph at lines 138--179
+Overfull \hbox (50.05797pt too wide) in paragraph at lines 187--228
 \OML/cmm/m/it/10 p[]:height <
  []
 
 
-Overfull \hbox (62.83578pt too wide) in paragraph at lines 138--179
+Overfull \hbox (62.83578pt too wide) in paragraph at lines 187--228
 \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5\OML/cmm/m/it/10 p[]:height
  >
  []
 
 
-Overfull \hbox (20.55562pt too wide) in paragraph at lines 138--179
+Overfull \hbox (20.55562pt too wide) in paragraph at lines 187--228
 \OMS/cmsy/m/n/10  \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5$
  []
 
 
-Overfull \hbox (33.6278pt too wide) in paragraph at lines 138--179
+Overfull \hbox (33.6278pt too wide) in paragraph at lines 187--228
 [][] \OMS/cmsy/m/n/10  
  []
 
 
-Overfull \hbox (8.36053pt too wide) in paragraph at lines 138--179
+Overfull \hbox (8.36053pt too wide) in paragraph at lines 187--228
 \OML/cmm/m/it/10 p[]$
  []
 
 
-Overfull \hbox (32.1093pt too wide) in paragraph at lines 138--179
+Overfull \hbox (32.1093pt too wide) in paragraph at lines 187--228
 \OML/cmm/m/it/10 H[] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (113.1601pt too wide) in paragraph at lines 138--179
+Overfull \hbox (113.1601pt too wide) in paragraph at lines 187--228
 [][]$;
  []
 
 
-Overfull \hbox (14.00064pt too wide) in paragraph at lines 138--179
+Overfull \hbox (14.00064pt too wide) in paragraph at lines 187--228
 \OML/cmm/m/it/10 i \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (10.55551pt too wide) in paragraph at lines 138--179
+Overfull \hbox (10.55551pt too wide) in paragraph at lines 187--228
 \OT1/cmr/m/n/10 1 :
  []
 
 
-Overfull \hbox (13.41557pt too wide) in paragraph at lines 138--179
+Overfull \hbox (13.41557pt too wide) in paragraph at lines 187--228
 \OMS/cmsy/m/n/10 j[]j$
  []
 
 
-Overfull \hbox (50.05797pt too wide) in paragraph at lines 138--179
+Overfull \hbox (50.05797pt too wide) in paragraph at lines 187--228
 \OML/cmm/m/it/10 p[]:height <
  []
 
 
-Overfull \hbox (19.96649pt too wide) in paragraph at lines 138--179
+Overfull \hbox (19.96649pt too wide) in paragraph at lines 187--228
 \OML/cmm/m/it/10 T[]$
  []
 
 
-Overfull \hbox (40.43747pt too wide) in paragraph at lines 138--179
+Overfull \hbox (40.43747pt too wide) in paragraph at lines 187--228
 [][] \OMS/cmsy/m/n/10  
  []
 
 
-Overfull \hbox (10.58675pt too wide) in paragraph at lines 138--179
+Overfull \hbox (10.58675pt too wide) in paragraph at lines 187--228
 \OML/cmm/m/it/10 p \OT1/cmr/m/n/10 :
  []
 
 
-Overfull \hbox (3.44513pt too wide) in paragraph at lines 138--179
+Overfull \hbox (3.44513pt too wide) in paragraph at lines 187--228
 \OML/cmm/m/it/10 i$\nullfont ;
  []
 
@@ -2666,7 +3234,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.179 
+l.228 
     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -4325,7 +4893,7 @@ Missing character: There is no t (U+0074) in font nullfont!
 ! Undefined control sequence.
 <write> \newlabel{fig:Workflow}{{}{\thepage 
                                     }}
-l.179 
+l.228 
     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4360,7 +4928,7 @@ Missing character: There is no n (U+006E) in font nullfont!
 ! Undefined control sequence.
 <write> \newlabel{sec:ImportExport}{{}{\thepage 
                                         }}
-l.179 
+l.228 
     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -8628,7 +9196,7 @@ Missing character: There is no t (U+0074) in font nullfont!
 ! Undefined control sequence.
 <write> \newlabel{fig:ImportExport}{{}{\thepage 
                                         }}
-l.179 
+l.228 
     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -9603,7 +10171,7 @@ Missing character: There is no n (U+006E) in font nullfont!
 ! Undefined control sequence.
 <write> \newlabel{sec:HDF5}{{}{\thepage 
                                 }}
-l.179 
+l.228 
     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -9649,7 +10217,7 @@ Missing character: There is no e (U+0065) in font nullfont!
 ! Undefined control sequence.
 <write> \newlabel{sec:Generierung}{{}{\thepage 
                                        }}
-l.179 
+l.228 
     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -9681,7 +10249,7 @@ Missing character: There is no r (U+0072) in font nullfont!
 ! Undefined control sequence.
 <write> \newlabel{sec:IDS}{{}{\thepage 
                                }}
-l.179 
+l.228 
     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -9704,7 +10272,7 @@ Missing character: There is no g (U+0067) in font nullfont!
 ! Undefined control sequence.
 <write> \newlabel{sec:PclGenerate}{{}{\thepage 
                                        }}
-l.179 
+l.228 
     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -9766,7 +10334,7 @@ Missing character: There is no n (U+006E) in font nullfont!
 ! Undefined control sequence.
 <write> \newlabel{sec:Navigation}{{}{\thepage 
                                       }}
-l.179 
+l.228 
     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -9831,7 +10399,7 @@ Missing character: There is no e (U+0065) in font nullfont!
 ! Undefined control sequence.
 <write> \newlabel{sec:Annotation}{{}{\thepage 
                                       }}
-l.179 
+l.228 
     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -9868,7 +10436,7 @@ Missing character: There is no n (U+006E) in font nullfont!
 ! Undefined control sequence.
 <write> ...label{sec:SimplePointerAnnotation}{{}{\thepage 
                                                   }}
-l.179 
+l.228 
     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11309,7 +11877,7 @@ Missing character: There is no . (U+002E) in font nullfont!
 ! Undefined control sequence.
 <write> \newlabel{fig:ClusteredCloud}{{}{\thepage 
                                           }}
-l.179 
+l.228 
     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12606,6 +13174,82 @@ Missing character: There is no d (U+0064) in font nullfont!
 Missing character: There is no e (U+0065) in font nullfont!
 Missing character: There is no t (U+0074) in font nullfont!
 Missing character: There is no . (U+002E) in font nullfont!
+Missing character: There is no I (U+0049) in font nullfont!
+Missing character: There is no s (U+0073) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no m (U+006D) in font nullfont!
+Missing character: There is no F (U+0046) in font nullfont!
+Missing character: There is no o (U+006F) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no g (U+0067) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no R (U+0052) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no v (U+0076) in font nullfont!
+Missing character: There is no o (U+006F) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no G (U+0047) in font nullfont!
+Missing character: There is no P (U+0050) in font nullfont!
+Missing character: There is no F (U+0046) in font nullfont!
+Missing character: There is no , (U+002C) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no s (U+0073) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no m (U+006D) in font nullfont!
+Missing character: There is no m (U+006D) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no A (U+0041) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no s (U+0073) in font nullfont!
+Missing character: There is no a (U+0061) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no z (U+007A) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no b (U+0062) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no z (U+007A) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no A (U+0041) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no b (U+0062) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no g (U+0067) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no m (U+006D) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no . (U+002E) in font nullfont!
 Missing character: There is no Z (U+005A) in font nullfont!
 Missing character: There is no i (U+0069) in font nullfont!
 Missing character: There is no e (U+0065) in font nullfont!
@@ -13643,7 +14287,7 @@ Missing character: There is no . (U+002E) in font nullfont!
 ! Undefined control sequence.
 <write> \newlabel{fig:Segments}{{}{\thepage 
                                     }}
-l.179 
+l.228 
     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -13890,6 +14534,21 @@ Missing character: There is no i (U+0069) in font nullfont!
 Missing character: There is no e (U+0065) in font nullfont!
 Missing character: There is no l (U+006C) in font nullfont!
 Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no ( (U+0028) in font nullfont!
+Missing character: There is no v (U+0076) in font nullfont!
+Missing character: There is no g (U+0067) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no . (U+002E) in font nullfont!
+Missing character: There is no A (U+0041) in font nullfont!
+Missing character: There is no b (U+0062) in font nullfont!
+Missing character: There is no b (U+0062) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no u (U+0075) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no g (U+0067) in font nullfont!
+Missing character: There is no ) (U+0029) in font nullfont!
 Missing character: There is no . (U+002E) in font nullfont!
 Missing character: There is no D (U+0044) in font nullfont!
 Missing character: There is no a (U+0061) in font nullfont!
@@ -14574,18 +15233,6 @@ Missing character: There is no l (U+006C) in font nullfont!
 Missing character: There is no d (U+0064) in font nullfont!
 Missing character: There is no e (U+0065) in font nullfont!
 Missing character: There is no r (U+0072) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no n (U+006E) in font nullfont!
-Missing character: There is no t (U+0074) in font nullfont!
-Missing character: There is no h (U+0068) in font nullfont!
-Missing character: There is no a (U+0061) in font nullfont!
-Missing character: There is no l (U+006C) in font nullfont!
-Missing character: There is no t (U+0074) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no n (U+006E) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no n (U+006E) in font nullfont!
-Missing character: There is no , (U+002C) in font nullfont!
 Missing character: There is no p (U+0070) in font nullfont!
 Missing character: There is no o (U+006F) in font nullfont!
 Missing character: There is no t (U+0074) in font nullfont!
@@ -14609,6 +15256,33 @@ Missing character: There is no n (U+006E) in font nullfont!
 Missing character: There is no k (U+006B) in font nullfont!
 Missing character: There is no t (U+0074) in font nullfont!
 Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no , (U+002C) in font nullfont!
+Missing character: There is no w (U+0077) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no c (U+0063) in font nullfont!
+Missing character: There is no h (U+0068) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no S (U+0053) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no g (U+0067) in font nullfont!
+Missing character: There is no m (U+006D) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no h (U+0068) in font nullfont!
+Missing character: There is no a (U+0061) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
 Missing character: There is no . (U+002E) in font nullfont!
 Missing character: There is no P (U+0050) in font nullfont!
 Missing character: There is no o (U+006F) in font nullfont!
@@ -14769,98 +15443,56 @@ Missing character: There is no k (U+006B) in font nullfont!
 Missing character: There is no t (U+0074) in font nullfont!
 Missing character: There is no e (U+0065) in font nullfont!
 Missing character: There is no , (U+002C) in font nullfont!
-Missing character: There is no w (U+0077) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
 Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no l (U+006C) in font nullfont!
-Missing character: There is no c (U+0063) in font nullfont!
-Missing character: There is no h (U+0068) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
 Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no h (U+0068) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no H (U+0048) in font nullfont!
 Missing character: There is no ö (U+00F6) in font nullfont!
 Missing character: There is no h (U+0068) in font nullfont!
 Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no r (U+0072) in font nullfont!
-Missing character: There is no l (U+006C) in font nullfont!
-Missing character: There is no i (U+0069) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no g (U+0067) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
 Missing character: There is no n (U+006E) in font nullfont!
-Missing character: There is no a (U+0061) in font nullfont!
-Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no w (U+0077) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
 Missing character: There is no s (U+0073) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no c (U+0063) in font nullfont!
+Missing character: There is no h (U+0068) in font nullfont!
 Missing character: There is no i (U+0069) in font nullfont!
 Missing character: There is no n (U+006E) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
 Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
 Missing character: There is no h (U+0068) in font nullfont!
 Missing character: There is no a (U+0061) in font nullfont!
 Missing character: There is no l (U+006C) in font nullfont!
 Missing character: There is no b (U+0062) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no n (U+006E) in font nullfont!
-Missing character: There is no M (U+004D) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no t (U+0074) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no r (U+0072) in font nullfont!
-Missing character: There is no u (U+0075) in font nullfont!
-Missing character: There is no n (U+006E) in font nullfont!
-Missing character: There is no t (U+0074) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no r (U+0072) in font nullfont!
 Missing character: There is no d (U+0064) in font nullfont!
 Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no m (U+006D) in font nullfont!
-Missing character: There is no N (U+004E) in font nullfont!
-Missing character: There is no u (U+0075) in font nullfont!
-Missing character: There is no l (U+006C) in font nullfont!
-Missing character: There is no l (U+006C) in font nullfont!
-Missing character: There is no p (U+0070) in font nullfont!
-Missing character: There is no u (U+0075) in font nullfont!
-Missing character: There is no n (U+006E) in font nullfont!
-Missing character: There is no k (U+006B) in font nullfont!
+Missing character: There is no s (U+0073) in font nullfont!
+Missing character: There is no W (U+0057) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
 Missing character: There is no t (U+0074) in font nullfont!
-Missing character: There is no u (U+0075) in font nullfont!
-Missing character: There is no n (U+006E) in font nullfont!
-Missing character: There is no d (U+0064) in font nullfont!
-Missing character: There is no u (U+0075) in font nullfont!
-Missing character: There is no n (U+006E) in font nullfont!
-Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no b (U+0062) in font nullfont!
 Missing character: There is no e (U+0065) in font nullfont!
 Missing character: There is no r (U+0072) in font nullfont!
 Missing character: There is no e (U+0065) in font nullfont!
 Missing character: There is no i (U+0069) in font nullfont!
-Missing character: There is no n (U+006E) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no m (U+006D) in font nullfont!
+Missing character: There is no c (U+0063) in font nullfont!
 Missing character: There is no h (U+0068) in font nullfont!
-Missing character: There is no a (U+0061) in font nullfont!
-Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no s (U+0073) in font nullfont!
 Missing character: There is no b (U+0062) in font nullfont!
 Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no f (U+0066) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
 Missing character: There is no n (U+006E) in font nullfont!
-Missing character: There is no M (U+004D) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no t (U+0074) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no r (U+0072) in font nullfont!
-Missing character: There is no ü (U+00FC) in font nullfont!
-Missing character: There is no b (U+0062) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no r (U+0072) in font nullfont!
 Missing character: There is no d (U+0064) in font nullfont!
 Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no m (U+006D) in font nullfont!
-Missing character: There is no N (U+004E) in font nullfont!
-Missing character: There is no u (U+0075) in font nullfont!
-Missing character: There is no l (U+006C) in font nullfont!
-Missing character: There is no l (U+006C) in font nullfont!
-Missing character: There is no p (U+0070) in font nullfont!
-Missing character: There is no u (U+0075) in font nullfont!
-Missing character: There is no n (U+006E) in font nullfont!
-Missing character: There is no k (U+006B) in font nullfont!
 Missing character: There is no t (U+0074) in font nullfont!
 Missing character: There is no , (U+002C) in font nullfont!
 Missing character: There is no s (U+0073) in font nullfont!
@@ -14981,7 +15613,6 @@ Missing character: There is no s (U+0073) in font nullfont!
 Missing character: There is no e (U+0065) in font nullfont!
 Missing character: There is no r (U+0072) in font nullfont!
 Missing character: There is no p (U+0070) in font nullfont!
-Missing character: There is no d (U+0064) in font nullfont!
 Missing character: There is no o (U+006F) in font nullfont!
 Missing character: There is no t (U+0074) in font nullfont!
 Missing character: There is no e (U+0065) in font nullfont!
@@ -15215,6 +15846,53 @@ Missing character: There is no b (U+0062) in font nullfont!
 Missing character: There is no n (U+006E) in font nullfont!
 Missing character: There is no i (U+0069) in font nullfont!
 Missing character: There is no s (U+0073) in font nullfont!
+Missing character: There is no u (U+0075) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no k (U+006B) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no V (U+0056) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no g (U+0067) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no c (U+0063) in font nullfont!
+Missing character: There is no h (U+0068) in font nullfont!
+Missing character: There is no m (U+006D) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no o (U+006F) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no m (U+006D) in font nullfont!
+Missing character: There is no a (U+0061) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no G (U+0047) in font nullfont!
+Missing character: There is no P (U+0050) in font nullfont!
+Missing character: There is no F (U+0046) in font nullfont!
+Missing character: There is no - (U+002D) in font nullfont!
+Missing character: There is no M (U+004D) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no h (U+0068) in font nullfont!
+Missing character: There is no o (U+006F) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
 Missing character: There is no i (U+0069) in font nullfont!
 Missing character: There is no s (U+0073) in font nullfont!
 Missing character: There is no t (U+0074) in font nullfont!
@@ -15229,42 +15907,287 @@ Missing character: There is no d (U+0064) in font nullfont!
 Missing character: There is no u (U+0075) in font nullfont!
 Missing character: There is no n (U+006E) in font nullfont!
 Missing character: There is no g (U+0067) in font nullfont!
-Missing character: There is no [ (U+005B) in font nullfont!
-Missing character: There is no w (U+0077) in font nullfont!
-Missing character: There is no i (U+0069) in font nullfont!
-Missing character: There is no d (U+0064) in font nullfont!
-Missing character: There is no t (U+0074) in font nullfont!
-Missing character: There is no h (U+0068) in font nullfont!
-Missing character: There is no = (U+003D) in font nullfont!
-Missing character: There is no 1 (U+0031) in font nullfont!
-Missing character: There is no 2 (U+0032) in font nullfont!
-Missing character: There is no c (U+0063) in font nullfont!
-Missing character: There is no m (U+006D) in font nullfont!
-Missing character: There is no , (U+002C) in font nullfont!
+Missing character: There is no z (U+007A) in font nullfont!
+Missing character: There is no u (U+0075) in font nullfont!
+Missing character: There is no s (U+0073) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
 Missing character: There is no h (U+0068) in font nullfont!
 Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no i (U+0069) in font nullfont!
-Missing character: There is no g (U+0067) in font nullfont!
-Missing character: There is no h (U+0068) in font nullfont!
-Missing character: There is no t (U+0074) in font nullfont!
-Missing character: There is no = (U+003D) in font nullfont!
-Missing character: There is no 7 (U+0037) in font nullfont!
-Missing character: There is no c (U+0063) in font nullfont!
-Missing character: There is no m (U+006D) in font nullfont!
-Missing character: There is no ] (U+005D) in font nullfont!
-Missing character: There is no G (U+0047) in font nullfont!
-Missing character: There is no r (U+0072) in font nullfont!
-Missing character: There is no o (U+006F) in font nullfont!
-Missing character: There is no u (U+0075) in font nullfont!
 Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no . (U+002E) in font nullfont!
+Missing character: There is no [ (U+005B) in font nullfont!
+Missing character: There is no ! (U+0021) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no b (U+0062) in font nullfont!
+Missing character: There is no p (U+0070) in font nullfont!
+Missing character: There is no ] (U+005D) in font nullfont!
+Missing character: There is no V (U+0056) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no g (U+0067) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no c (U+0063) in font nullfont!
+Missing character: There is no h (U+0068) in font nullfont!
 Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
 Missing character: There is no S (U+0053) in font nullfont!
 Missing character: There is no e (U+0065) in font nullfont!
 Missing character: There is no g (U+0067) in font nullfont!
+Missing character: There is no m (U+006D) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no u (U+0075) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no g (U+0067) in font nullfont!
+Missing character: There is no s (U+0073) in font nullfont!
+Missing character: There is no m (U+006D) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no h (U+0068) in font nullfont!
+Missing character: There is no o (U+006F) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no z (U+007A) in font nullfont!
+Missing character: There is no u (U+0075) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no B (U+0042) in font nullfont!
+Missing character: There is no o (U+006F) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no p (U+0070) in font nullfont!
+Missing character: There is no u (U+0075) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no k (U+006B) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no a (U+0061) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no a (U+0061) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no y (U+0079) in font nullfont!
+Missing character: There is no s (U+0073) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no a (U+0061) in font nullfont!
+Missing character: There is no u (U+0075) in font nullfont!
+Missing character: There is no s (U+0073) in font nullfont!
+Missing character: There is no [ (U+005B) in font nullfont!
+Missing character: There is no ] (U+005D) in font nullfont!
+Missing character: There is no u (U+0075) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no C (U+0043) in font nullfont!
+Missing character: There is no . (U+002E) in font nullfont!
+Missing character: There is no L (U+004C) in font nullfont!
+Missing character: There is no A (U+0041) in font nullfont!
+Missing character: There is no B (U+0042) in font nullfont!
+Missing character: There is no E (U+0045) in font nullfont!
+Missing character: There is no L (U+004C) in font nullfont!
+Missing character: There is no - (U+002D) in font nullfont!
+Missing character: There is no V (U+0056) in font nullfont!
+Missing character: There is no R (U+0052) in font nullfont!
+Missing character: There is no . (U+002E) in font nullfont!
+Missing character: There is no B (U+0042) in font nullfont!
+Missing character: There is no o (U+006F) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no p (U+0070) in font nullfont!
+Missing character: There is no u (U+0075) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no k (U+006B) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no s (U+0073) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no o (U+006F) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no , (U+002C) in font nullfont!
+Missing character: There is no a (U+0061) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no a (U+0061) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no s (U+0073) in font nullfont!
+Missing character: There is no c (U+0063) in font nullfont!
+Missing character: There is no h (U+0068) in font nullfont!
+Missing character: There is no w (U+0077) in font nullfont!
+Missing character: There is no a (U+0061) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no z (U+007A) in font nullfont!
+Missing character: There is no . (U+002E) in font nullfont!
+Missing character: There is no D (U+0044) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no b (U+0062) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no a (U+0061) in font nullfont!
+Missing character: There is no u (U+0075) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no L (U+004C) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no s (U+0073) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no T (U+0054) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no u (U+0075) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no g (U+0067) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no S (U+0053) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no g (U+0067) in font nullfont!
+Missing character: There is no m (U+006D) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no a (U+0061) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no . (U+002E) in font nullfont!
+Missing character: There is no D (U+0044) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no g (U+0067) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no ü (U+00FC) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no B (U+0042) in font nullfont!
+Missing character: There is no o (U+006F) in font nullfont!
+Missing character: There is no x (U+0078) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no m (U+006D) in font nullfont!
+Missing character: There is no a (U+0061) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no k (U+006B) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no B (U+0042) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no c (U+0063) in font nullfont!
+Missing character: There is no h (U+0068) in font nullfont!
+Missing character: There is no , (U+002C) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no m (U+006D) in font nullfont!
+Missing character: There is no m (U+006D) in font nullfont!
+Missing character: There is no a (U+0061) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no U (U+0055) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no s (U+0073) in font nullfont!
+Missing character: There is no c (U+0063) in font nullfont!
+Missing character: There is no h (U+0068) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no b (U+0062) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no M (U+004D) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no h (U+0068) in font nullfont!
+Missing character: There is no o (U+006F) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no b (U+0062) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no B (U+0042) in font nullfont!
+Missing character: There is no o (U+006F) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no p (U+0070) in font nullfont!
+Missing character: There is no u (U+0075) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no k (U+006B) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no k (U+006B) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no u (U+0075) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no g (U+0067) in font nullfont!
+Missing character: There is no s (U+0073) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no h (U+0068) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no . (U+002E) in font nullfont!
 ! Undefined control sequence.
-<write> \newlabel{fig:Segments}{{}{\thepage 
-                                    }}
-l.179 
+<write> \newlabel{fig:Segmentation}{{}{\thepage 
+                                        }}
+l.228 
     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -15272,7 +16195,250 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-\newlabel{fig:Segments}{{}{}}
+\newlabel{fig:Segmentation}{{}{}}
+Missing character: There is no A (U+0041) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no g (U+0067) in font nullfont!
+Missing character: There is no o (U+006F) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no h (U+0068) in font nullfont!
+Missing character: There is no m (U+006D) in font nullfont!
+Missing character: There is no u (U+0075) in font nullfont!
+Missing character: There is no s (U+0073) in font nullfont!
+Missing character: There is no z (U+007A) in font nullfont!
+Missing character: There is no u (U+0075) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no E (U+0045) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no u (U+0075) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no g (U+0067) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no P (U+0050) in font nullfont!
+Missing character: There is no u (U+0075) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no k (U+006B) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no w (U+0077) in font nullfont!
+Missing character: There is no o (U+006F) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no k (U+006B) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no S (U+0053) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no g (U+0067) in font nullfont!
+Missing character: There is no m (U+006D) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+! Undefined control sequence.
+<write> \newlabel{alg:Segmentation}{{}{\thepage 
+                                        }}
+l.228 
+    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+\newlabel{alg:Segmentation}{{}{}}
+Missing character: There is no [ (U+005B) in font nullfont!
+Missing character: There is no 1 (U+0031) in font nullfont!
+Missing character: There is no ] (U+005D) in font nullfont!
+Missing character: There is no : (U+003A) in font nullfont!
+Missing character: There is no M (U+004D) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no g (U+0067) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no a (U+0061) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no P (U+0050) in font nullfont!
+Missing character: There is no u (U+0075) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no k (U+006B) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no : (U+003A) in font nullfont!
+Missing character: There is no A (U+0041) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no z (U+007A) in font nullfont!
+Missing character: There is no a (U+0061) in font nullfont!
+Missing character: There is no h (U+0068) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no S (U+0053) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no g (U+0067) in font nullfont!
+Missing character: There is no m (U+006D) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no : (U+003A) in font nullfont!
+Missing character: There is no M (U+004D) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no g (U+0067) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no a (U+0061) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no S (U+0053) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no g (U+0067) in font nullfont!
+Missing character: There is no m (U+006D) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no m (U+006D) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no j (U+006A) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no w (U+0077) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no g (U+0067) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no P (U+0050) in font nullfont!
+Missing character: There is no u (U+0075) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no k (U+006B) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no : (U+003A) in font nullfont!
+Missing character: There is no M (U+004D) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no g (U+0067) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no a (U+0061) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no p (U+0070) in font nullfont!
+Missing character: There is no o (U+006F) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no B (U+0042) in font nullfont!
+Missing character: There is no o (U+006F) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no p (U+0070) in font nullfont!
+Missing character: There is no u (U+0075) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no k (U+006B) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no Z (U+005A) in font nullfont!
+Missing character: There is no ä (U+00E4) in font nullfont!
+Missing character: There is no h (U+0068) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no s (U+0073) in font nullfont!
+Missing character: There is no a (U+0061) in font nullfont!
+Missing character: There is no k (U+006B) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no u (U+0075) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no S (U+0053) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no g (U+0067) in font nullfont!
+Missing character: There is no m (U+006D) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no s (U+0073) in font nullfont!
+Missing character: There is no Z (U+005A) in font nullfont!
+Missing character: There is no ä (U+00E4) in font nullfont!
+Missing character: There is no h (U+0068) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no B (U+0042) in font nullfont!
+Missing character: There is no o (U+006F) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no p (U+0070) in font nullfont!
+Missing character: There is no u (U+0075) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no k (U+006B) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no s (U+0073) in font nullfont!
+Missing character: There is no a (U+0061) in font nullfont!
+Missing character: There is no k (U+006B) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no u (U+0075) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no S (U+0053) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no g (U+0067) in font nullfont!
+Missing character: There is no m (U+006D) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no s (U+0073) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
+Missing character: There is no ; (U+003B) in font nullfont!
 Missing character: There is no A (U+0041) in font nullfont!
 Missing character: There is no l (U+006C) in font nullfont!
 Missing character: There is no g (U+0067) in font nullfont!
@@ -15345,7 +16511,7 @@ Missing character: There is no s (U+0073) in font nullfont!
 ! Undefined control sequence.
 <write> \newlabel{alg:GroundPoints}{{}{\thepage 
                                         }}
-l.179 
+l.228 
     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -15358,33 +16524,14 @@ Missing character: There is no [ (U+005B) in font nullfont!
 Missing character: There is no 1 (U+0031) in font nullfont!
 Missing character: There is no ] (U+005D) in font nullfont!
 Missing character: There is no : (U+003A) in font nullfont!
-Missing character: There is no L (U+004C) in font nullfont!
-Missing character: There is no i (U+0069) in font nullfont!
-Missing character: There is no s (U+0073) in font nullfont!
-Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no M (U+004D) in font nullfont!
 Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no m (U+006D) in font nullfont!
-Missing character: There is no i (U+0069) in font nullfont!
-Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no g (U+0067) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
 Missing character: There is no a (U+0061) in font nullfont!
 Missing character: There is no l (U+006C) in font nullfont!
 Missing character: There is no l (U+006C) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no n (U+006E) in font nullfont!
-Missing character: There is no i (U+0069) in font nullfont!
-Missing character: There is no n (U+006E) in font nullfont!
-Missing character: There is no t (U+0074) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no r (U+0072) in font nullfont!
-Missing character: There is no n (U+006E) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no n (U+006E) in font nullfont!
-Missing character: There is no D (U+0044) in font nullfont!
-Missing character: There is no a (U+0061) in font nullfont!
-Missing character: There is no t (U+0074) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no n (U+006E) in font nullfont!
-Missing character: There is no d (U+0064) in font nullfont!
 Missing character: There is no e (U+0065) in font nullfont!
 Missing character: There is no r (U+0072) in font nullfont!
 Missing character: There is no P (U+0050) in font nullfont!
@@ -15395,22 +16542,21 @@ Missing character: There is no t (U+0074) in font nullfont!
 Missing character: There is no e (U+0065) in font nullfont!
 Missing character: There is no d (U+0064) in font nullfont!
 Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no s (U+0073) in font nullfont!
-Missing character: There is no S (U+0053) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no W (U+0057) in font nullfont!
+Missing character: There is no o (U+006F) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no k (U+006B) in font nullfont!
 Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no g (U+0067) in font nullfont!
-Missing character: There is no m (U+006D) in font nullfont!
+Missing character: There is no : (U+003A) in font nullfont!
+Missing character: There is no M (U+004D) in font nullfont!
 Missing character: There is no e (U+0065) in font nullfont!
 Missing character: There is no n (U+006E) in font nullfont!
-Missing character: There is no t (U+0074) in font nullfont!
-Missing character: There is no s (U+0073) in font nullfont!
-Missing character: There is no : (U+003A) in font nullfont!
-Missing character: There is no L (U+004C) in font nullfont!
-Missing character: There is no i (U+0069) in font nullfont!
-Missing character: There is no s (U+0073) in font nullfont!
-Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no g (U+0067) in font nullfont!
 Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no a (U+0061) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
 Missing character: There is no e (U+0065) in font nullfont!
 Missing character: There is no r (U+0072) in font nullfont!
 Missing character: There is no S (U+0053) in font nullfont!
@@ -15422,23 +16568,6 @@ Missing character: There is no P (U+0050) in font nullfont!
 Missing character: There is no u (U+0075) in font nullfont!
 Missing character: There is no n (U+006E) in font nullfont!
 Missing character: There is no k (U+006B) in font nullfont!
-Missing character: There is no t (U+0074) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no A (U+0041) in font nullfont!
-Missing character: There is no n (U+006E) in font nullfont!
-Missing character: There is no z (U+007A) in font nullfont!
-Missing character: There is no a (U+0061) in font nullfont!
-Missing character: There is no h (U+0068) in font nullfont!
-Missing character: There is no l (U+006C) in font nullfont!
-Missing character: There is no d (U+0064) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no r (U+0072) in font nullfont!
-Missing character: There is no S (U+0053) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no g (U+0067) in font nullfont!
-Missing character: There is no m (U+006D) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no n (U+006E) in font nullfont!
 Missing character: There is no t (U+0074) in font nullfont!
 Missing character: There is no e (U+0065) in font nullfont!
 Missing character: There is no A (U+0041) in font nullfont!
@@ -15546,65 +16675,9 @@ Missing character: There is no e (U+0065) in font nullfont!
 Missing character: There is no a (U+0061) in font nullfont!
 Missing character: There is no r (U+0072) in font nullfont!
 Missing character: There is no ; (U+003B) in font nullfont!
-Missing character: There is no = (U+003D) in font nullfont!
-Missing character: There is no , (U+002C) in font nullfont!
-Missing character: There is no ; (U+003B) in font nullfont!
-Missing character: There is no ; (U+003B) in font nullfont!
-Missing character: There is no ; (U+003B) in font nullfont!
-Missing character: There is no : (U+003A) in font nullfont!
-Missing character: There is no A (U+0041) in font nullfont!
-Missing character: There is no l (U+006C) in font nullfont!
-Missing character: There is no l (U+006C) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no t (U+0074) in font nullfont!
-Missing character: There is no i (U+0069) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no f (U+0066) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no n (U+006E) in font nullfont!
-Missing character: There is no P (U+0050) in font nullfont!
-Missing character: There is no u (U+0075) in font nullfont!
-Missing character: There is no n (U+006E) in font nullfont!
-Missing character: There is no k (U+006B) in font nullfont!
-Missing character: There is no t (U+0074) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no a (U+0061) in font nullfont!
-Missing character: There is no u (U+0075) in font nullfont!
-Missing character: There is no s (U+0073) in font nullfont!
-Missing character: There is no : (U+003A) in font nullfont!
-Missing character: There is no D (U+0044) in font nullfont!
-Missing character: There is no u (U+0075) in font nullfont!
-Missing character: There is no r (U+0072) in font nullfont!
-Missing character: There is no c (U+0063) in font nullfont!
-Missing character: There is no h (U+0068) in font nullfont!
-Missing character: There is no s (U+0073) in font nullfont!
-Missing character: There is no c (U+0063) in font nullfont!
-Missing character: There is no h (U+0068) in font nullfont!
-Missing character: There is no n (U+006E) in font nullfont!
-Missing character: There is no i (U+0069) in font nullfont!
-Missing character: There is no t (U+0074) in font nullfont!
-Missing character: There is no t (U+0074) in font nullfont!
-Missing character: There is no s (U+0073) in font nullfont!
-Missing character: There is no h (U+0068) in font nullfont!
-Missing character: There is no ö (U+00F6) in font nullfont!
-Missing character: There is no h (U+0068) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no a (U+0061) in font nullfont!
-Missing character: There is no l (U+006C) in font nullfont!
-Missing character: There is no l (U+006C) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no P (U+0050) in font nullfont!
-Missing character: There is no u (U+0075) in font nullfont!
-Missing character: There is no n (U+006E) in font nullfont!
-Missing character: There is no k (U+006B) in font nullfont!
-Missing character: There is no t (U+0074) in font nullfont!
-Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no a (U+0061) in font nullfont!
-Missing character: There is no u (U+0075) in font nullfont!
-Missing character: There is no s (U+0073) in font nullfont!
 ]
 ! Undefined control sequence.
-l.185 \subsubsection
+l.234 \subsubsection
                   {Cluster-Analyse}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -15613,12 +16686,12 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 185--186
+Overfull \hbox (20.0pt too wide) in paragraph at lines 234--235
 []Cluster-
  []
 
 ! Undefined control sequence.
-l.188 \section
+l.237 \section
             {User Interface}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -15627,7 +16700,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.190 \subsection
+l.239 \subsection
                {Ingame Menu}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -15636,7 +16709,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 188--193
+Overfull \hbox (20.0pt too wide) in paragraph at lines 237--242
 []User
  []
 
@@ -15649,13 +16722,13 @@ Overfull \hbox (20.0pt too wide) in paragraph at lines 188--193
 
 
 Here is how much of LuaTeX's memory you used:
- 57 strings out of 494456
- 156259,89155 words of node,token memory allocated 1893 words of node memory still in use:
-   32 hlist, 3 disc, 2 local_par, 1 dir, 5 math, 48 glue, 10 kern, 12 penalty, 1
-06 glyph, 28 attribute, 35 glue_spec, 28 attribute_list, 1 write nodes
-   avail lists: 1:1,2:623,3:447,4:129,5:174,6:34,7:16405,8:322,9:375,10:127,11:7
-3
- 4296 multiletter control sequences out of 65536+200000
+ 59 strings out of 494456
+ 156265,89155 words of node,token memory allocated 4941 words of node memory still in use:
+   80 hlist, 7 disc, 2 local_par, 1 dir, 20 math, 129 glue, 31 kern, 29 penalty,
+ 334 glyph, 65 attribute, 35 glue_spec, 65 attribute_list, 1 write nodes
+   avail lists: 1:1,2:661,3:183,4:102,5:112,6:37,7:16684,8:66,9:394,10:101,11:72
+
+ 4298 multiletter control sequences out of 65536+200000
  27 fonts using 1608167 bytes
- 18i,5n,21p,1191b,177s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 18i,5n,21p,1191b,179s stack positions out of 5000i,500n,10000p,200000b,50000s
 !  ==> Fatal error occurred, no output PDF file produced!

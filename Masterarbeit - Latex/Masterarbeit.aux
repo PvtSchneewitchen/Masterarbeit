@@ -44,6 +44,7 @@
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
 \@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Vogelperspektive auf eine Lidar-Punktwolke, wobei die roten Punkte alle Boden- und die blauen alle Nicht-Bodenpunkte darstellen \cite  {bib:FastGroundSeg}\relax }}{2}{figure.caption.8}}
+\@cons\caption@pkg@list{{ragged2e}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:Punktwolke}{{1.1}{2}{Vogelperspektive auf eine Lidar-Punktwolke, wobei die roten Punkte alle Boden- und die blauen alle Nicht-Bodenpunkte darstellen \cite {bib:FastGroundSeg}\relax }{figure.caption.8}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.1}Motivation}{2}{section.1.1}}
@@ -301,34 +302,45 @@
 \citation{bib:Segmentation1}
 \citation{bib:Segmentation1}
 \citation{bib:Segmentation1}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces In \cite  {bib:Segmentation1} wird gezeigt, dass die Segmentierung einer Punktwolke zu einem besseren Ergebnis der Bodenpunktanalyse führt. Die obere Abbildung ist dabei ohne Segmentierung und die untere mit Segmentierung. Bodenpunkte sind blau und Objektpunkte in grün dargestellt. Die roten Rechtecke kennzeichnen den Bereich in dem die Analyse schlechter bzw. besser ist.\relax }}{32}{figure.caption.20}}
+\newlabel{fig:Segments}{{4.4}{32}{In \cite {bib:Segmentation1} wird gezeigt, dass die Segmentierung einer Punktwolke zu einem besseren Ergebnis der Bodenpunktanalyse führt. Die obere Abbildung ist dabei ohne Segmentierung und die untere mit Segmentierung. Bodenpunkte sind blau und Objektpunkte in grün dargestellt. Die roten Rechtecke kennzeichnen den Bereich in dem die Analyse schlechter bzw. besser ist.\relax }{figure.caption.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Bei zu wenigen Bodenpunkten in einem Segment passt sich die Ebene den falschen Punkten an.\relax }}{32}{figure.caption.21}}
+\newlabel{fig:WrongFit}{{4.5}{32}{Bei zu wenigen Bodenpunkten in einem Segment passt sich die Ebene den falschen Punkten an.\relax }{figure.caption.21}{}}
 \citation{bib:Segmentation1}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces In \cite  {bib:Segmentation1} wird gezeigt, dass die Segmentierung einer Punktwolke zu einem besseren Ergebnis der Bodenpunktanalyse führt. Die obere Abbildung ist dabei ohne Segmentierung und die untere mit Segmentierung. Bodenpunkte sind blau und Objektpunkte in grün dargestellt. Die roten Rechtecke kennzeichnen den Bereich in dem die Analyse schlechter bzw. besser ist.\relax }}{31}{figure.caption.20}}
-\newlabel{fig:Segments}{{4.4}{31}{In \cite {bib:Segmentation1} wird gezeigt, dass die Segmentierung einer Punktwolke zu einem besseren Ergebnis der Bodenpunktanalyse führt. Die obere Abbildung ist dabei ohne Segmentierung und die untere mit Segmentierung. Bodenpunkte sind blau und Objektpunkte in grün dargestellt. Die roten Rechtecke kennzeichnen den Bereich in dem die Analyse schlechter bzw. besser ist.\relax }{figure.caption.20}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Algorithmus zur Einteilung einer Punktwolke in $N_{segs}$ Segmente\relax }}{33}{algorithm.1}}
+\newlabel{alg:Segmentation}{{1}{33}{Algorithmus zur Einteilung einer Punktwolke in $N_{segs}$ Segmente\relax }{algorithm.1}{}}
 \citation{bib:Segmentation1}
 \citation{bib:Segmentation1}
-\citation{bib:Segmentation1}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Segmentierung anhand potentieller Bodenpunkten\relax }}{32}{figure.caption.21}}
-\newlabel{fig:WrongSegments}{{\caption@xref {fig:WrongSegments}{ on input line 135}}{32}{Bodenpunkt-Analyse}{figure.caption.21}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Segmentierung anhand Koordinaten entlang der $x$-Achse\relax }}{32}{figure.caption.21}}
-\newlabel{fig:Oculus}{{\caption@xref {fig:Oculus}{ on input line 141}}{32}{Bodenpunkt-Analyse}{figure.caption.21}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces Vergleich der Segmentierungsmethoden zur Bodenpunktanalyse aus \cite  {bib:Segmentation1} und C.LABEL-VR. Bodenpunkte sind rot, alle anderen schwarz. Die blauen Linien stellen die Trennung der Segmente dar. Die grünen Boxen markieren den Bereich, in dem man den Unterschied der beiden Methoden bei der Bodenpunkterkennung sieht.\relax }}{32}{figure.caption.21}}
-\newlabel{fig:Segmentation}{{\caption@xref {fig:Segmentation}{ on input line 145}}{32}{Bodenpunkt-Analyse}{figure.caption.21}{}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Algorithmus zur Identifizierung von Bodenpunkten eines Punktwolken-Segments\relax }}{33}{algorithm.1}}
-\newlabel{alg:GroundPoints}{{1}{33}{Algorithmus zur Identifizierung von Bodenpunkten eines Punktwolken-Segments\relax }{algorithm.1}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Cluster-Analyse}{34}{algorithm.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.5}User Interface}{34}{section.4.5}}
-\newlabel{sec:UIMenu}{{4.5}{34}{User Interface}{section.4.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}Ingame Menu}{34}{subsection.4.5.1}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Schluss}{35}{chapter.5}}
+\newlabel{fig:WrongSegments}{{4.6a}{34}{Subfigure 4 4.6a}{subfigure.4.6.1}{}}
+\newlabel{sub@fig:WrongSegments}{{(a)}{a}{Subfigure 4 4.6a\relax }{subfigure.4.6.1}{}}
+\newlabel{fig:RightSegments}{{4.6b}{34}{Subfigure 4 4.6b}{subfigure.4.6.2}{}}
+\newlabel{sub@fig:RightSegments}{{(b)}{b}{Subfigure 4 4.6b\relax }{subfigure.4.6.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Vergleich der Segmentierungsmethoden zur Bodenpunktanalyse aus \cite  {bib:Segmentation1} und C.LABEL-VR. Bodenpunkte sind rot, alle anderen schwarz. Die blauen Linien stellen die Trennung der Segmente dar. Die grünen Boxen markieren den Bereich, in dem man den Unterschied der beiden Methoden bei der Bodenpunkterkennung sieht.\relax }}{34}{figure.caption.22}}
+\newlabel{fig:Segmentation}{{4.6}{34}{Vergleich der Segmentierungsmethoden zur Bodenpunktanalyse aus \cite {bib:Segmentation1} und C.LABEL-VR. Bodenpunkte sind rot, alle anderen schwarz. Die blauen Linien stellen die Trennung der Segmente dar. Die grünen Boxen markieren den Bereich, in dem man den Unterschied der beiden Methoden bei der Bodenpunkterkennung sieht.\relax }{figure.caption.22}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Segmentierung anhand potentieller Bodenpunkten}}}{34}{subfigure.6.1}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Segmentierung anhand Koordinaten entlang der $x$-Achse}}}{34}{subfigure.6.2}}
+\citation{bib:Decomposion}
+\citation{bib:SVD}
+\citation{bib:SVDforFitting}
+\citation{bib:g3sharp}
+\newlabel{eq:Covar}{{4.1}{35}{Bodenpunkt-Analyse}{equation.4.4.1}{}}
+\newlabel{eq:SVD}{{4.2}{35}{Bodenpunkt-Analyse}{equation.4.4.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Cluster-Analyse}{36}{algorithm.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}User Interface}{36}{section.4.5}}
+\newlabel{sec:UIMenu}{{4.5}{36}{User Interface}{section.4.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}Ingame Menu}{36}{subsection.4.5.1}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Algorithmus zur Identifizierung von Bodenpunkten eines Punktwolken-Segments\relax }}{37}{algorithm.2}}
+\newlabel{alg:GroundPoints}{{2}{37}{Algorithmus zur Identifizierung von Bodenpunkten eines Punktwolken-Segments\relax }{algorithm.2}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Schluss}{38}{chapter.5}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Zusammenfassung}{35}{section.5.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Herausforderungen}{35}{section.5.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Ausblick}{35}{section.5.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Zusammenfassung}{38}{section.5.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Herausforderungen}{38}{section.5.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Ausblick}{38}{section.5.3}}
 \bibstyle{IEEEtran}
 \bibdata{Masterarbeit}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Appendix Title}{36}{appendix.A}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Appendix Title}{39}{appendix.A}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
@@ -354,6 +366,10 @@
 \bibcite{bib:Segmentation1}{20}
 \bibcite{bib:Segmentation2}{21}
 \bibcite{bib:Segmentation3}{22}
+\bibcite{bib:Decomposion}{23}
+\bibcite{bib:SVD}{24}
+\bibcite{bib:SVDforFitting}{25}
+\bibcite{bib:g3sharp}{26}
 \global\csname @altsecnumformattrue\endcsname
 \global\@namedef{scr@dte@chapter@lastmaxnumwidth}{15.79192pt}
 \global\@namedef{scr@dte@section@lastmaxnumwidth}{21.7919pt}

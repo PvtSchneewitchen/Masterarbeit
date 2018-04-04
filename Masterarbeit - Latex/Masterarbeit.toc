@@ -50,11 +50,11 @@
 \contentsline {subsection}{\numberline {4.4.1}Einfache Pointer Annotation}{29}{subsection.4.4.1}
 \contentsline {subsection}{\numberline {4.4.2}Cluster Annotation}{29}{subsection.4.4.2}
 \contentsline {subsubsection}{Bodenpunkt-Analyse}{30}{figure.caption.19}
-\contentsline {subsubsection}{Cluster-Analyse}{34}{algorithm.1}
-\contentsline {section}{\numberline {4.5}User Interface}{34}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}Ingame Menu}{34}{subsection.4.5.1}
-\contentsline {chapter}{\numberline {5}Schluss}{35}{chapter.5}
-\contentsline {section}{\numberline {5.1}Zusammenfassung}{35}{section.5.1}
-\contentsline {section}{\numberline {5.2}Herausforderungen}{35}{section.5.2}
-\contentsline {section}{\numberline {5.3}Ausblick}{35}{section.5.3}
-\contentsline {chapter}{\numberline {A}Appendix Title}{36}{appendix.A}
+\contentsline {subsubsection}{Cluster-Analyse}{36}{algorithm.2}
+\contentsline {section}{\numberline {4.5}User Interface}{36}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Ingame Menu}{36}{subsection.4.5.1}
+\contentsline {chapter}{\numberline {5}Schluss}{38}{chapter.5}
+\contentsline {section}{\numberline {5.1}Zusammenfassung}{38}{section.5.1}
+\contentsline {section}{\numberline {5.2}Herausforderungen}{38}{section.5.2}
+\contentsline {section}{\numberline {5.3}Ausblick}{38}{section.5.3}
+\contentsline {chapter}{\numberline {A}Appendix Title}{39}{appendix.A}

@@ -34,28 +34,30 @@ public static class Labeling
 
         _standardColors = new List<Color32>
         {
-            new Color32(255,15,15,255)
-            //new Color32(210, 240, 225, 225),
-            //new Color32(0, 213, 43, 225),
-            //new Color32(190, 255, 255, 225),
-            //new Color32(0, 255, 0, 225),
-            //new Color32(150, 12, 150, 225),
-            //new Color32(255, 0, 255, 225),
-            //new Color32(120, 120, 200, 225),
-            //new Color32(40, 140, 50, 225),
-            //new Color32(24, 24, 147, 225),
-            //new Color32(120, 120, 2, 225),
-            //new Color32(170, 90, 50, 225),
-            //new Color32(200, 200, 200, 225),
-            //new Color32(255, 100, 0, 225),
-            //new Color32(100, 255, 100, 225),
-            //new Color32(255, 255, 0, 225),
-            //new Color32(90, 130, 140, 225),
-            //new Color32(0, 0, 255, 225),
-            //new Color32(200, 20, 135, 225),
-            //new Color32(0, 255, 255, 225),
-            //new Color32(255, 0, 0, 225),
-            //new Color32(10, 150, 150, 225)
+            new Color32(210, 240, 225, 225),
+            new Color32(255,15,15,255),
+            new Color32(0, 213, 43, 225),
+            new Color32(190, 255, 255, 225),
+            new Color32(0, 255, 0, 225),
+            new Color32(150, 12, 150, 225),
+            new Color32(255, 0, 255, 225),
+            new Color32(120, 120, 200, 225),
+            new Color32(40, 140, 50, 225),
+            new Color32(24, 24, 147, 225),
+            new Color32(120, 120, 2, 225),
+            new Color32(170, 90, 50, 225),
+            new Color32(200, 200, 200, 225),
+            new Color32(255, 100, 0, 225),
+            new Color32(100, 255, 100, 225),
+            new Color32(255, 255, 0, 225),
+            new Color32(90, 130, 140, 225),
+            new Color32(0, 0, 255, 225),
+            new Color32(200, 20, 135, 225),
+            new Color32(0, 255, 255, 225),
+            new Color32(255, 0, 0, 225),
+            new Color32(10, 150, 150, 225)
+            
+
         };
 
         SetNewLabelClasses(new Dictionary<uint, string> { { 1, _dummyClassName } });

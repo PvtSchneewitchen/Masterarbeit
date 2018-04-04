@@ -89,9 +89,9 @@ Methoden zur FPS-Steigerung
 \label{sec:SimplePointerAnnotation}
 
 \subsection{Cluster Annotation}
-In einer Punktwolke mit mehreren tausend Punkten wird es für den Benutzer auf Dauer mühsam jeden Punkt einzeln zu Annotieren. Bei diesem Problem soll die \textit{Cluster Annotation} Abhilfe schaffen. Diese Art der Annotation soll selbstständig die Punkte in einen Cluster aufnehmen und sie mit der gleichen Klasse labeln, die zum gleichen Objekt gehören. Der Benutzer wählt hierfür, wie im vorherigen Kapitel \ref{sec:SimplePointerAnnotation} einen Punkt mit Hilfe des Pointers aus. Ausgehend davon werden umliegende Punkte untersucht, ob sie zum gleichen Objekt gehören wie der ausgewählte Startpunkt. Ist dies der Fall werden sie in den Cluster aufgenommen. Werden keine Punkte mehr aufgenommen bleibt der Endcluster übrig, welcher dann einem Objekt entspricht, zum Beispiel einem Auto. \\
+In einer Punktwolke mit mehreren tausend Punkten wird es für den Benutzer auf Dauer mühsam jeden Punkt einzeln zu Annotieren. Bei diesem Problem soll die \textit{Cluster Annotation} Abhilfe schaffen. Diese Art der Annotation soll selbstständig diejenigen Punkte in einen Cluster aufnehmen und sie mit der gleichen Klasse labeln, die zum gleichen Objekt gehören. Der Benutzer wählt hierfür, wie im vorherigen Kapitel \ref{sec:SimplePointerAnnotation} einen Punkt mit Hilfe des Pointers aus. Ausgehend davon werden umliegende Punkte untersucht, ob sie zum gleichen Objekt gehören wie der ausgewählte Startpunkt. Ist dies der Fall werden sie in den Cluster aufgenommen. Werden keine Punkte mehr aufgenommen bleibt der Endcluster übrig, welcher dann einem Objekt entspricht, zum Beispiel einem Auto. \\
 
-Wissenschaftler beschäftigen sich intensiv mit solchen Verfahren zur Objektidentifizierung in dreidimensionalen Punktwolken. Ansätze, wie sie in \cite{bib:Segmentation1}, \cite{bib:Segmentation2} oder \cite{bib:Segmentation3} vorgestellt werden sind nur wenige von vielen. Die meisten haben aber ein ähnliches Vorgehen. Zuerst werden all diejenigen Punkte in der Wolke entfernt, die zum Boden gehören. So bleiben anschließend nur noch Punkte übrig, welche zu Objekten wie beispielsweise Autos, Häuser oder Straßenschilder gehören. Die übrig gebliebenen Punkte können nun mit diversen Algorithmen zu Clustern zusammengefasst werden. Ein Beispiel für das Ergebnis eines solchen Verfahrens bietet die Abbildung \ref{fig:ClusteredCloud}. Im Folgenden wird vorgestellt wie die Cluster-Analyse in C.LABEL-VR funktioniert.
+Wissenschaftler beschäftigen sich intensiv mit solchen Verfahren zur Objektidentifizierung in dreidimensionalen Punktwolken. Ansätze, wie sie in \cite{bib:Segmentation1}, \cite{bib:Segmentation2} oder \cite{bib:Segmentation3} vorgestellt werden sind nur wenige von vielen. Die meisten haben aber ein ähnliches Vorgehen. Zuerst werden all diejenigen Punkte in der Wolke entfernt, die zum Boden gehören. So bleiben anschließend nur noch Punkte übrig, welche zu Objekten wie beispielsweise Autos, Häuser oder Straßenschilder gehören. Die übrigen Punkte können nun mit diversen Algorithmen zu Clustern zusammengefasst werden. Ein Beispiel für das Ergebnis eines solchen Verfahrens bietet die Abbildung \ref{fig:ClusteredCloud}. Im Folgenden wird vorgestellt wie die Cluster-Analyse in C.LABEL-VR funktioniert.
 
 \begin{figure}%
 	\centering
@@ -104,84 +104,108 @@ Wissenschaftler beschäftigen sich intensiv mit solchen Verfahren zur Objektiden
 Wie schon erwähnt werden bei vielen Verfahren der Cluster-Analyse von Punktwolken zuerst die Bodenpunkte identifiziert. Dieses Verfahren wird auch in dieser Arbeit angewendet. Der Grund dafür ist, dass die Bodenpunkte nicht in das Suchverfahren nach Objektpunkten aufgenommen werden dürfen. Sie würden nicht nur die Suche nach echten Objektpunkten erschweren sondern auch das Ergebnis der Objektcluster verfälschen. Als Erklärung soll folgender, simpler Cluster-Algorithmus dienen:
 
 \begin{enumerate}
-\item Definiere einen Startpunkt.
-\item Suche alle Punkte innerhalb von Radius \(x\). 
-\item Führe 2. für jeden gefundenen Punkt aus bis keine Punkte mehr gefunden werden.
+\item Definiere einen Startpunkt $p$.
+\item Ausgehend von $p$, suche alle Punkte innerhalb von Radius \(x\). 
+\item Jeder gefundene Punkt ist ein neuer Startpunkt $p$.
+\item Führe 2. aus bis es keine neuen Punkte $p$ mehr gibt.
 \end{enumerate} 
 
-Alle Objekte die auf dem Boden stehen, also deren Punkte nahe an Bodenpunkten sind, würden mit dem obigen Algorithmus die Bodenpunkte mit in den Cluster aufnehmen. Dies kann sogar dazu führen, dass 2 Objekte, die mittels Bodenpunkten miteinander verbunden sind zu einem Cluster zusammengefügt werden. Die Segmentierung des Bodens wird in C.LABEL-VR nach dem Einlesen des internen Datenformates ausgeführt, also zwischen Import Addons und PCL Generator (siehe Abbildung \ref{fig:ImportExport}). Beim Erstellen der Punktwolken ist also schon bekannt welcher Punkt ein Bodenpunkt ist und welcher nicht. Dazu wird im internen Datenformat das Attribut für die Bodenpunktkennzeichnung mit dem entsprechenden Wert versehen. Wie diese Werte ermittelt werden ist im Folgenden erklärt.\\
+Alle Objekte die auf dem Boden stehen, also deren Punkte nahe an Bodenpunkten sind, würden mit dem obigen Algorithmus die Bodenpunkte mit in den Cluster aufnehmen. Dies kann sogar dazu führen, dass 2 Objekte, die mittels Bodenpunkten miteinander verbunden sind zu einem Cluster zusammengefügt werden. Darum müssen die Bodenpunkte von den Objektpunkten getrennt werden um eine exakte Objekterkennung zu garantieren.
 
-Als Basis für die Bodenpunktanalyse in C.LABEL-VR wurde das \textit{Ground Plane Fitting}-Verfahren (GPF) aus \cite{bib:Segmentation1} verwendet. Ist im Folgenden die Rede von GPF, ist immer der Ansatz der eben zietierten Arbeit gemeint. Ziel dieses Verfahrens ist es ein mathematisches Modell einer Ebene zu errechnen, welches den Boden repräsentieren soll. Anschließend kann von jedem Punkt der Abstand zu dieser Ebene errechnet werden. Ist der Abstand eines Punktes kleiner als ein definierter Wert, so handelt es sich bei ihm um einen Bodenpunkt. Die Punktwolke, die analysiert werden soll, wird dabei zunächst in eine Anzahl an $N_{segs}$ Segmenten aufgeteilt. Der Algorithmus zur Identifizierung der Bodenpunkte wird für jedes dieser Segmente ausgeführt. Der Grund für diese Segmentierung ist die mögliche Unebenheit der Bodenfläche. Eine Ebene kann schließlich keine ungleichmäßige Fläche repräsentieren. Wird aber für jedes Segment der Punktwolke eine eigene Ebene ermittelt so verbessert sich das Ergebnis der Bodenpunktanalyse, wie in Abbildung \ref{fig:Segments} zu sehen ist.\\
+Die Segmentierung des Bodens wird in C.LABEL-VR nach dem Einlesen des internen Datenformates ausgeführt, also zwischen Import Addons und PCL Generator (siehe Abbildung \ref{fig:ImportExport}). Beim Erstellen der Punktwolken ist also schon bekannt welcher Punkt ein Bodenpunkt ist und welcher nicht. Dazu wird im internen Datenformat das Attribut für die Bodenpunktkennzeichnung mit dem entsprechenden Wert versehen. Wie diese Werte ermittelt werden ist im Folgenden erklärt.\\
+
+Als Basis für die Bodenpunktanalyse in C.LABEL-VR wurde das \textit{Ground Plane Fitting}-Verfahren (GPF) aus \cite{bib:Segmentation1} verwendet. Ist im Folgenden die Rede von GPF, ist immer der Ansatz der eben zietierten Arbeit gemeint. Ziel dieses Verfahrens ist es ein mathematisches Modell einer Ebene zu errechnen, welches den Boden repräsentieren soll. Anschließend kann von jedem Punkt der Abstand zu dieser Ebene ermittelt werden. Ist der Abstand eines Punktes kleiner als ein definierter Wert, so handelt es sich bei ihm um einen Bodenpunkt. Die Punktwolke, die analysiert werden soll, wird dabei zunächst in eine Anzahl an $N_{segs}$ Segmenten aufgeteilt. Der Algorithmus zur Identifizierung der Bodenpunkte wird für jedes dieser Segmente ausgeführt. Der Grund für diese Segmentierung ist die mögliche Unebenheit der Bodenfläche. Soll eine wellige Oberfläche von einer Ebene repräsentiert werden kommt es zu ungenauen Ergebnissen. Wird aber für jedes Segment der Punktwolke eine eigene Ebene ermittelt so verbessert sich das Ergebnis der Bodenpunktanalyse, wie in Abbildung \ref{fig:Segments} zu sehen ist.\\
 
 \begin{figure}%
 	\centering
-    \includegraphics[width=12cm,height=7cm]{Segments}
+    \includegraphics[width=14cm,height=6cm]{Segments}
     \caption{In \cite{bib:Segmentation1} wird gezeigt, dass die Segmentierung einer Punktwolke zu einem besseren Ergebnis der Bodenpunktanalyse führt. Die obere Abbildung ist dabei ohne Segmentierung und die untere mit Segmentierung. Bodenpunkte sind blau und Objektpunkte in grün dargestellt. Die roten Rechtecke kennzeichnen den Bereich in dem die Analyse schlechter bzw. besser ist.}
     \label{fig:Segments}
 \end{figure}
 
-Beim GPF-Verfahren in \cite{bib:Segmentation1} wurden Punktwolken in 3 große Segmente entlang der $x$-Achse eingeteilt, da diese Achse der Fahrtrichtung des Autos entspricht. Damit wurden für die Testdaten, die CMORE für diese Arbeit zur Verfügung stellte, keine zufriedenstellenden Ergebnisse erzielt (vgl. Abbildung \ref{fig:WrongSegments}). Das Problem ist, dass sich durch eine zu simple Segmentierung entweder zu viele oder zu wenige Bodenpunkte in einem Sektor befinden können. Bei zu vielen Bodenpunkten kann es sein, dass der Boden nicht linear verläuft. Auf der linken Seite des Autos könnte sich beispielsweise eine Anhöhe befinden und auf der rechten Seite ein flaches Gelände. In diese Unebenheit kann keine richtige Ebene eingesetzt werden.
-!!!!!!BILDER!!!!!!!!!
-Bei zu wenigen Bodenpunkten kann es sein, dass der Algorithmus die Ebene an Objekte annähert. Handelt es sich bei solchen Objekten beispielsweise um eine senkrechte Wand, könnten die vielen hohen Punkte die Ebene senkrecht werden lassen.\\
+Beim GPF-Verfahren wurden Punktwolken in 3 große Segmente entlang der $x$-Achse eingeteilt, da diese Achse der Fahrtrichtung des Autos entspricht. Damit wurden für die Testdaten, die CMORE für diese Arbeit zur Verfügung stellte, keine zufriedenstellenden Ergebnisse erzielt (vgl. Abbildung \ref{fig:WrongSegments}). Das Problem ist, dass sich durch eine zu simple Segmentierung entweder zu viele oder zu wenige Bodenpunkte in einem Sektor befinden können. Bei zu vielen Bodenpunkten kann es sein, dass der Boden nicht linear verläuft. Auf der linken Seite des Autos könnte sich beispielsweise eine Anhöhe befinden und auf der rechten Seite ein flaches Gelände. In diese Unebenheit kann keine richtige Ebene eingesetzt werden. Bei zu wenigen Bodenpunkten kann es sein, dass der Algorithmus die Ebene an Objekte annähert. Handelt es sich bei solchen Objekten beispielsweise um eine senkrechte Wand, können die vielen hohen Punkte die Ebene senkrecht werden lassen(siehe Abbildung \ref{fig:WrongFit}).\\
 
-Darum wurde in dieser Arbeit ein Verfahren entwickelt, dass die Segmente nicht anhand ihrer Größe einteilt sondern nach der Anzahl der potentiellen Bodenpunkte, welche die Segmente enthalten. Potentielle Bodenpunkte sind diejenigen Punkte, welche sich in einem bestimmten Höhenbereich befinden. Der Höhenbereich wurde auf -0.5m bis 0.5m festgelegt. Das bedeutet alle Punkte, deren Höhenwert sich innerhalb des Wertebereichs befindet, sind potentielle Bodenpunkte. Das Segmentierungsverfahren erstellt nun die Segmente so, dass sich in jedem Segment gleich viele dieser potentiellen Bodenpunkte befinden. Zusätzlich zu der Segmentierung aus \cite{bib:Segmentation1} wurden die Segmente noch durch die $y$-Achse geteilt, um den vorher angesprochenen Problemfall der unterschiedlichen Geländebeschaffenheiten links bzw. rechts vom Auto auszugleichen. Das Ergebnis und der direkte Vergleich mit der normalen GPF-Methode ist in Abbildung \ref{fig:RightSegments} zu sehen. 
-
-\begin{figure}[!tbp]
-  \centering
-  \begin{minipage}[b]{0.4\textwidth}
-    \includegraphics[width=\textwidth]{GroundSeg_BirdeyeWithSectors2}
-    \tiny{\caption{Segmentierung anhand potentieller Bodenpunkten}}
-    \label{fig:WrongSegments}
-  \end{minipage}
-  \hfill
-  \begin{minipage}[b]{0.4\textwidth}
-    \includegraphics[width=\textwidth]{GroundSeg_BirdeyeWithWrongSectors2}
-    \tiny{\caption{Segmentierung anhand Koordinaten entlang der $x$-Achse}}
-    \label{fig:RightSegments}
-  \end{minipage}
-  
-  \small{\caption {Vergleich der Segmentierungsmethoden zur Bodenpunktanalyse aus \cite{bib:Segmentation1} und C.LABEL-VR. Bodenpunkte sind rot, alle anderen schwarz. Die blauen Linien stellen die Trennung der Segmente dar. Die grünen Boxen markieren den Bereich, in dem man den Unterschied der beiden Methoden bei der Bodenpunkterkennung sieht.}}
-    \label{fig:Segmentation}%
+\begin{figure}%
+	\centering
+    \includegraphics[width=15cm,height=5cm]{WrongFit}
+    \caption{Bei zu wenigen Bodenpunkten in einem Segment passt sich die Ebene den falschen Punkten an.}
+    \label{fig:WrongFit}
 \end{figure}
 
+Darum wurde in dieser Arbeit ein Verfahren entwickelt, dass die Segmente nicht anhand ihrer Größe einteilt sondern nach der Anzahl der potentiellen Bodenpunkte, welche die Segmente enthalten (siehe Algorithmus \ref{alg:Segmentation}). Potentielle Bodenpunkte sind diejenigen Punkte, welche sich in einem bestimmten Höhenbereich befinden. Der Höhenbereich wurde auf -0.5m bis 0.5m festgelegt. Das bedeutet alle Punkte, deren Höhenwert sich innerhalb des Wertebereichs befindet, sind potentielle Bodenpunkte. Das Segmentierungsverfahren erstellt nun die Segmente so, dass sich in jedem Segment gleich viele dieser potentiellen Bodenpunkte befinden. Dazu werden alle Punkte nach ihrem $x$-Wert sortiert und anschließend wird durch diese Menge an sortierten Punkten iteriert. Bei jeder Iteration wird geprüft ob der aktuell betrachtete Punkt ein potentieller Bodenpunkt ist oder nicht. Ist das der Fall wird eine Zählvariable erhöht. Übersteigt der Wert dieser Variable die Anzahl an potentiellen Bodenpunkten, die in einem Segment sein sollen, wird das aktuelle Segment erhöht. So werden zukünftige Punkte in neue Segmente aufgenommen.  
+
 \begin{algorithm}
-  \caption{Algorithmus zur Einteilung einer Punktwolke in $N_{Segs}$ Segmente}
+  \caption{Algorithmus zur Einteilung einer Punktwolke in $N_{segs}$ Segmente}
 \label{alg:Segmentation}
   \begin{algorithmic}[1]
     \Inputs{\textbf{$\textbf{P}$} : Menge aller Punkte\\
-    $N_{Segs}$} : Anzahl der Segmente}
-    \Initialize{$\textbf{S}$ : Menge aller Segmente mit den jeweiligen Punkten
-    $\textbf{P}_{pot}$} : Menge aller potentiellen Bodenpunkte\\
-    $C_{segs} :$ Zähler des aktuellen Segments\\
+    				$N_{segs}$ : Anzahl der Segmente}
+    \Initialize{$\textbf{S}$ : Menge aller Segmente mit den jeweiligen Punkten\\
+    			$\textbf{P}_{pot}$ : Menge aller potentiellen Bodenpunkte\\
+    			$C_{segs} :$ Zähler des aktuellen Segments\\
     			$C_{points} :$ Zähler der Bodenpunkte des aktuellen Segments\\
+    			$N_{gpps} :$ Anzahl der potentiellen Bodenpunkte pro Segment\\}
 
    	\State \textbf{MainLoop:}
-   	\State $\textbf{P} = \Call{SortAscendingByXValue}{\textbf{P}}$
-  	\State $\textbf{P}_{pot} = \Call{GetPotentialGroundPointsBetween}{-0.5, 0.5, \textbf{|P|}} $;
+   	\State $\textbf{P}_{sorted} = \Call{\textbf{SortAscendingOnXValue}}{\textbf{P}}$;
+  	\State $\textbf{P}_{pot} = \Call{\textbf{GetPointsBetweenHeightValues}}{-0.5, 0.5, \textbf{P}_{sorted}} $;
+  	\State $N_{gpps} = \ceil*{\frac{|\textbf{P}_{pot}|}{N_{segs}}}$; 
   	\State $C_{segs} = C_{segs} = 0$;
-    \For{$i=1 : |P|$}
+    \For{$i=1 : |\textbf{P}_{sorted}| $}
       	\If{$p_i.yValue \geq 0$}
-      		\State $\textbf{S}[C_{segs}] gets p_i$
+      		\State $\textbf{S}[C_{segs}] \gets p_i$;
       	\Else
-      		\State $\textbf{S}[C_{segs}+1] gets p_i$
+      		\State $\textbf{S}[C_{segs}+1] \gets p_i$;
       	\EndIf
-      	\If{$p_i.zValue \geq $}
+
+      	\If{$p_i \in \textbf{P}_{pot}$}
+      		\State $C_{points}++$;
       	\EndIf
-      \EndFor
+      	
+		\If{$C_{points} \geq N_{pps}$}
+      		\State $C_{points} = 0$;
+      		\State $C_{segs} += 2$;
+      	\EndIf      	
+    \EndFor
 
   \end{algorithmic}
 \end{algorithm}
 
+Zusätzlich zu der Segmentierung aus \cite{bib:Segmentation1} wurden die Segmente noch durch die $y$-Achse geteilt, um den vorher angesprochenen Problemfall der unterschiedlichen Geländebeschaffenheiten links bzw. rechts vom Auto auszugleichen. Dazu wird bei jeder Iteration der $y$-Wert des betrachteten Punktes geprüft. Punkte mit einem größeren Wert als Null werden in ein anderes Segment aufgenommen als solche mit kleinerem Wert. Das Ergebnis und der direkte Vergleich mit der normalen GPF-Methode ist in Abbildung \ref{fig:RightSegments} zu sehen. 
 
+\begin{figure}%
+    \centering
+    \subfloat[Segmentierung anhand potentieller Bodenpunkten]{{\includegraphics[width=7cm]{GroundSeg_BirdeyeWithSectors2}\label{fig:WrongSegments}}}%
+    \qquad
+    \subfloat[Segmentierung anhand Koordinaten entlang der $x$-Achse]{{\includegraphics[width=7cm]{GroundSeg_BirdeyeWithWrongSectors2}\label{fig:RightSegments}}}%
+    \caption{Vergleich der Segmentierungsmethoden zur Bodenpunktanalyse aus \cite{bib:Segmentation1} und C.LABEL-VR. Bodenpunkte sind rot, alle anderen schwarz. Die blauen Linien stellen die Trennung der Segmente dar. Die grünen Boxen markieren den Bereich, in dem man den Unterschied der beiden Methoden bei der Bodenpunkterkennung sieht.}\label{fig:Segmentation}%
+\end{figure}
 
+Nach dem die Segmentierung der Punktwolke vorgenommen wurde, muss nun die Bodenebene für jedes Segment berechnet werden. Die Definition dieses Vorgehens ist in Algorithmus \ref{alg:GroundPoints} gegeben. Es wurde sich dabei weitestgehend an das Vorgehen der GPF-Methode gehalten. Zuerst werden gewisse Startpunkte ermittelt, welche auch \textit{Seedpoints} bzw- \textit{Seed-Punkte} genannt werden. Laut GPF werden diese Punkte durch durch den \textit{LPR}-Wert (\textit{lowest point representative}) ermittelt. Dabei wird zunächst eine Anzahl $N_{LPR}$ an Punkten definiert. Danach werden die $N_{LPR}$ tiefsten Punkte des Segments genommen und der Durchschnitt der Höhenwerte dieser Punkte berechnet. Alle Punkte des Sektors die eine maximale Höhendifferenz $T_{init}$ zu diesem Wert haben sind Seed-Punkte. 
 
+Dieses Vorgehen ist allerdings anfällig für Rauschen in Form von sehr tiefen Punkten. Befinden sich im Segment also fälschlicherweise Punkte, die tief unter dem Boden sind, verfälschen diese die richtige Berechnung des Durchschnittshöhenwerts. Deshalb wurdeen in C.LABEL-VR für den Durchschnittshöhenwert nicht die $N_{LPR}$ tiefsten Punkte hergenommen, sondern alle potentiellen Bodenpunkte die sich in dem Segment befinden. Aus diesem Wert und der maximal zulässigen Differenz $T_{init}$ werden, wie schon beschrieben, die Startpunkte ermittelt.\\
 
+Mit diesen Startpunkten kann nun die erste von $N_{iter}$ Schätzungen für die Bodenebene berechnet werden. Eine Ebene $E$ kann definiert werden durch einen Vektor $\vec{n}$ der Senkrecht auf der Ebene steht (Normalenvektor) und einem Punkt $p$ der auf der Ebene liegt. Ziel ist es nun diese beiden Komponenten so zu berechnen, dass die dadurch definierte Ebene bestmöglich an die Seed-Punkte angepasst wird. Für den Punkt $p$ kann man den Durchschnitt $\hat{s}$ aller Startpunkte $s$ aus der Menge der Startpunkte $S$ nehmen. Dieser Punkt repräsentiert den Ursprung der Ebene und bietet sich deshalb an weil man ihn bei folgenden Berechnungen wiederverwenden kann (siehe Gleichung \ref{eq:Covar}).\\
 
+Den Normalenvektor $\vec{n}$ kann man aus der Streuung der aller Punkte $s$ berechnen. Dazu wird eine Kovarianzmatrix $C$ des Ranges $R^{3x3}$ berechnet, welche die Streuung der Seedpoints repräsentiert. Bei der Berechnung von $C$ steht $S$ für die Menge an Seed-Punkten und $\hat{s}$ ist der Durchschnitt von allen $s_i \in S$
 
+\begin{equation} 
+C=\sum_{i=1:\vert S\vert }(s_{i}-\hat{s})(s_{i}-\hat{s})^{T}
+\label{eq:Covar} 
+\end{equation}
 
+Im Allgemeinen gilt für eine Matrix Folgendes: \glqq \textit{Eine Matrix definiert durch $y=A*x$ eine lineare Abbildung $R^m \to R^n$. Der Hauptberuf einer Matrix ist, aus einem Vektor einen anderen zu machen. Im Allgemeinen ändert die Matrix dadurch Richtung, Betrag (und sogar
+Dimension) eines Vektors. Matrixzerlegungen spalten die Aktion der Matrix in leichter zu durchblickende Einzelschritte auf}\grqq \cite{bib:Decomposion}. Aus diesen Einzelschritten können geometrische Informationen extrahiert werden. Bei der GPF-Methode wird hierzu die Singulärwertzerlegung verwendet. Wie in \cite{bib:SVD} gezeigt, wird dabei eine Matrix $A \in R^{mxn}$ in 2 orthogonale Matrizen $U \in R^{mxm}$ und $V\in R^{nxn}$ und eine diagonal Matrix $\Sigma$ zerlegt, sodass die Gleichung \ref{eq:SVD} erfüllt wird. Der Normalenvektor $\vec{n}$ der gesuchten Ebene ist gegeben durch die dritte Spalte der Matrix $U$ \cite{bib:SVDforFitting}.
 
+\begin{equation} 
+A=U \Sigma V^T
+\label{eq:SVD}
+\end{equation}
 
+Die Singulärwertzerlegung kann, wie schon angesprochen, für beliebige Matrizen in $R^(nxm)$ verwendet werden. Da die berechnete Kovarianzmatrix $C$ aus der Gleichung \ref{eq:Covar} immer eine $3x3$ Matrix ist, kann die Matrix aber auch in ihre Eigenwerte zerlegt werden. 
+Dieses Vorgehen nennt man Spektralzerlegung oder auch Schur-Zerlegung und ist eine gängige Praktik zur Matrixzerlegung. Der kleinste Eigenwert dieser Zerlegung entspricht dem gesuchten Normalenvektor $\vec{n}$. Wie man \ref{eq:SVD} sehen kann, ist ein Schritt zur Singulärwertzerlegung die Berechnung der Eigenwerte einer Matrix. Die reine Berechnung der Eigenwerte erfordert also weniger Rechenschritte als die Singulärwertzerlegung und bietet bei der Analyse vieler Punktwolken eine kürzere Dauer der Berechnungen. Auch Quellcode-Bibliotheken wie \textit{Geometric Tools Engine} benutzten dieses Verfahren um eine Ebenenmodell in einer Menge von Punkten zu berechnen \cite{bib:g3sharp}. Deshalb wurde es auch in C.LABEL verwendet.\\
 
+Die gesuchte Ebene ist nun durch den Punkt $p$ und den Vektor $\vec{n}$ eindeutig definiert. Nun kann der Abstand jedes Punktes des Segments zu seiner orthogonalen Projektion auf der definierten Ebene berechnet werden. Dieser Abstand wird dann mit einem Schwellwert $T_{plane}$ verglichen, welcher zu Beginn der Berechnung definiert werden muss. Ist der Abstand eines Punktes kleiner als der Schwellwert so handelt es sich bei ihm um einen Bodenpunkt. In C.LABEL-VR wird solch ein Punkt vorläufig als Bodenpunkt markiert und in die Menge an neuen Seed-Punkten aufgenommen. Mit diesen neuen Seed-Punkten wird anschließend die nächste von $N_{iter}$ Berechnungen der Bodenebene getätigt.
 
 \begin{algorithm}
   \caption{Algorithmus zur Identifizierung von Bodenpunkten eines Punktwolken-Segments}
@@ -204,7 +228,7 @@ Darum wurde in dieser Arbeit ein Verfahren entwickelt, dass die Segmente nicht a
       		\State $p_k.groundpoint = true$;
       		\State $\textbf{P}_{seeds} \gets p_k$
       	\Else
-      		\State $p_k.groundpoint = true$;
+      		\State $p_k.groundpoint = false$;
       	\EndIf
       \EndFor
     \EndFor
@@ -226,11 +250,6 @@ Darum wurde in dieser Arbeit ein Verfahren entwickelt, dass die Segmente nicht a
   \end{algorithmic}
 \end{algorithm}
 
-
-
-
-%https://en.wikipedia.org/wiki/Singular-value_decomposition
-%https://www.ltu.se/cms_fs/1.51590!/svd-fitting.pdf
 \subsubsection{Cluster-Analyse}
 
 

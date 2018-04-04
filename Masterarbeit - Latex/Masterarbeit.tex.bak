@@ -12,6 +12,8 @@
 \usepackage{setspace}
 \usepackage{xcolor}
 \usepackage{float}
+\usepackage[justification=RaggedRight, singlelinecheck=false]{caption} 
+
 
 \usepackage{algorithm,algpseudocode}% http://ctan.org/pkg/{algorithms,algorithmx}
 \algnewcommand{\Inputs}[1]{%
@@ -26,6 +28,10 @@
   \State \textbf{Main Loop:}
   \Statex \hspace*{\algorithmicindent}\parbox[t]{.8\linewidth}{\raggedright #1}
 }
+
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
 \usepackage{geometry}
 \geometry{a4paper, top=15mm, left=35mm, right=25mm, bottom=15mm, includefoot}
@@ -54,6 +60,7 @@
 
 
 \begin{document}
+\captionsetup[figure]{labelfont={sf,bf},margin=0cm,format=plain,justification=RaggedRight,singlelinecheck=true} 
 \onehalfspacing
 %\sffamily
 

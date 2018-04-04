@@ -8,14 +8,15 @@ public static class CloudSegmentation
 {
     public static void SetGroundLabels(List<InternalDataFormat> listOfDataLists)
     {
-        int segmentCount = 3;
+        int segmentCount = 6;
         float initialSeedDistanceThreshold = 0.3f;
         float seedDistanceThreshold = 0.2f;
         float covarIterations = 1;
         InternalDataFormat seed = new InternalDataFormat(0, Vector3.zero, 0, 2);
         List<InternalDataFormat> seedPoints = new List<InternalDataFormat>();
 
-        //List<List<InternalDataFormat>> cloudSegments = GetCloudSegmentsSegmentedByYAndXAxis(listOfDataLists, segmentCount);
+        //List<List<InternalDataFormat>> cloudSegments = GetSimpleCloudSegments(listOfDataLists);
+        //List<List<InternalDataFormat>> cloudSegments = GetCloudSegmentsSegmentedByYAxis(listOfDataLists, segmentCount);
         List<List<InternalDataFormat>> cloudSegments = GetCloudSegmentsSegmentedByYAndXAxis(listOfDataLists, segmentCount);
 
         for (int i = 0; i < cloudSegments.Count; i++)
@@ -112,13 +113,31 @@ public static class CloudSegmentation
         float lprHeight_out;
         List<float> lowestAvgPoints = new List<float>();
 
+        //for (int i = 0; i < segmentData_inp.Count; i++)
+        //{
+        //    float height = segmentData_inp[i]._position.z;
+
+        //    if (height < 0.5 && height > -0.5)
+        //    {
+        //        lowestAvgPoints.Add(height);
+        //    }
+        //}
+
         for (int i = 0; i < segmentData_inp.Count; i++)
         {
-            float height = segmentData_inp[i]._position.z;
-
-            if (height < 0.5 && height > -0.5)
+            if (i < 100)
             {
-                lowestAvgPoints.Add(height);
+                lowestAvgPoints.Add(segmentData_inp[i]._position.z);
+            }
+            else
+            {
+                var min = lowestAvgPoints.Min();
+                if (segmentData_inp[i]._position.z < min)
+                {
+                    var index = lowestAvgPoints.IndexOf(min);
+                    lowestAvgPoints.RemoveAt(index);
+                    lowestAvgPoints.Add(segmentData_inp[i]._position.z);
+                }
             }
         }
 
@@ -144,42 +163,42 @@ public static class CloudSegmentation
         return lowestPoints_out;
     }
 
-    //private static List<List<InternalDataFormat>> GetSimpleCloudSegments(List<InternalDataFormat> dataList_inp)
-    //{
-    //    List<List<InternalDataFormat>> listOfSegments_out = new List<List<InternalDataFormat>>(3)
-    //    {
-    //        new List<InternalDataFormat>(),
-    //        new List<InternalDataFormat>(),
-    //        new List<InternalDataFormat>()
-    //    };
+    private static List<List<InternalDataFormat>> GetSimpleCloudSegments(List<InternalDataFormat> dataList_inp)
+    {
+        List<List<InternalDataFormat>> listOfSegments_out = new List<List<InternalDataFormat>>(3)
+        {
+            new List<InternalDataFormat>(),
+            new List<InternalDataFormat>(),
+            new List<InternalDataFormat>()
+        };
 
-    //    var biggestdistance = GetBiggestDistance(dataList_inp);
-    //    var boarder = 25;
+        var biggestdistance = GetBiggestDistance(dataList_inp);
+        var boarder = 25;
 
-    //    Debug.DrawLine(new Vector3(-boarder, -100, 0), new Vector3(-boarder, 100, 0),Color.blue,300);
-    //    Debug.DrawLine(new Vector3(boarder, -100, 0), new Vector3(boarder, 100, 0), Color.blue, 300);
+        Debug.DrawLine(new Vector3(-boarder, -100, 0), new Vector3(-boarder, 100, 0), Color.blue, 300);
+        Debug.DrawLine(new Vector3(boarder, -100, 0), new Vector3(boarder, 100, 0), Color.blue, 300);
 
-    //    for (int i = 0; i < dataList_inp.Count; i++)
-    //    {
-    //        var xval = dataList_inp[i]._position.x;
-    //        if (xval < -boarder)
-    //        {
-    //            listOfSegments_out.ElementAt(0).Add(dataList_inp[i]);
-    //        }
-    //        else if (xval < boarder && xval >= -boarder)
-    //        {
-    //            listOfSegments_out.ElementAt(1).Add(dataList_inp[i]);
-    //        }
-    //        else
-    //        {
-    //            listOfSegments_out.ElementAt(2).Add(dataList_inp[i]);
-    //        }
+        for (int i = 0; i < dataList_inp.Count; i++)
+        {
+            var xval = dataList_inp[i]._position.x;
+            if (xval < -boarder)
+            {
+                listOfSegments_out.ElementAt(0).Add(dataList_inp[i]);
+            }
+            else if (xval < boarder && xval >= -boarder)
+            {
+                listOfSegments_out.ElementAt(1).Add(dataList_inp[i]);
+            }
+            else
+            {
+                listOfSegments_out.ElementAt(2).Add(dataList_inp[i]);
+            }
 
 
-    //    }
+        }
 
-    //    return listOfSegments_out;
-    //}
+        return listOfSegments_out;
+    }
 
     private static List<List<InternalDataFormat>> GetCloudSegmentsSegmentedByYAxis(List<InternalDataFormat> dataList_inp, int segmentCount_inp)
     {
@@ -243,13 +262,13 @@ public static class CloudSegmentation
             }
         }
 
-        int potentialGroundPointsPerSegment = (int)Mathf.Floor(potentialGroundPointCounter / (segmentCount_inp)) + 1;
+        int potentialGroundPointsPerSegment = (int)Mathf.Ceil(potentialGroundPointCounter / (segmentCount_inp));
 
         int pointsInSegmentCounter = 0;
         int currentSegment = 0;
 
-        Debug.DrawLine(new Vector3(dataList_inp[0]._position.x, -100, 0), new Vector3(dataList_inp[0]._position.x, 100, 0), Color.blue, 300);
-        Debug.DrawLine(new Vector3(-100, 0, 0), new Vector3(100, 0, 0), Color.blue, 300);
+        //Debug.DrawLine(new Vector3(dataList_inp[0]._position.x, -100, 0), new Vector3(dataList_inp[0]._position.x, 100, 0), Color.blue, 300);
+        //Debug.DrawLine(new Vector3(-100, 0, 0), new Vector3(100, 0, 0), Color.blue, 300);
 
         listOfSegments_out.Add(new List<InternalDataFormat>());
         listOfSegments_out.Add(new List<InternalDataFormat>());
@@ -272,7 +291,7 @@ public static class CloudSegmentation
 
             if (pointsInSegmentCounter >= potentialGroundPointsPerSegment)
             {
-                Debug.DrawLine(new Vector3(dataList_inp[i]._position.x, -100, 0), new Vector3(dataList_inp[i]._position.x, 100, 0), Color.blue, 300);
+                //Debug.DrawLine(new Vector3(dataList_inp[i]._position.x, -100, 0), new Vector3(dataList_inp[i]._position.x, 100, 0), Color.blue, 300);
 
                 pointsInSegmentCounter = 0;
                 currentSegment += 2;

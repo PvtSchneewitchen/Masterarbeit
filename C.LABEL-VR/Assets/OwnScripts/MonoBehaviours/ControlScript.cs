@@ -17,14 +17,14 @@ public class ControlScript : MonoBehaviour
     void Awake()
     {
 #if UNITY_EDITOR
-        Util.DataLoadInfo._dataType = Util.Datatype.pcd;
+        Util.DataLoadInfo._dataType = Util.Datatype.hdf5_DaimlerLidar;
         Util.DataLoadInfo._accessMode = Util.AccesMode.Create;
         Util.DataLoadInfo._sessionName = "EditorDev";
 
         if (Util.DataLoadInfo._dataType == Util.Datatype.pcd)
             Util.DataLoadInfo._sourceDataPath = "C:\\Users\\gruepazu\\Desktop\\PointClouds\\000000000_LidarImage_000000002.pcd";
         else if (Util.DataLoadInfo._dataType == Util.Datatype.hdf5_DaimlerLidar)
-            Util.DataLoadInfo._sourceDataPath = "C:\\Users\\gruepazu\\Desktop\\LidarDaten\\DatenDAG\\2017-08-18_090334\\LidarImages_03_05\\LidarImage_000001723.hdf5";
+            Util.DataLoadInfo._sourceDataPath = "C:\\Users\\gruepazu\\Desktop\\LidarDaten\\DatenDAG\\2017-08-18_090334\\LidarImages_03_05\\LidarImage_000003049.hdf5";
 #endif
 
         if (Util.DataLoadInfo._accessMode == Util.AccesMode.Create)
