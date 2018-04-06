@@ -41,5 +41,8 @@ public class CustomAttributes : MonoBehaviour
         }
     }
 
+    //0=nonGround, 1=ground, 2=notYetDefined
     public int _groundPoint { get; set; }
+
+    public int _clusterLabel { get; set; }
 }

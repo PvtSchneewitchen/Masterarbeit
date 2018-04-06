@@ -283,6 +283,27 @@
     <Reference Include="OpenCvSharp">
       <HintPath>Assets/OwnScripts/OpenCVSharp/OpenCvSharp.dll</HintPath>
     </Reference>
+    <Reference Include="Accord">
+      <HintPath>Assets/Plugins/Accord/Accord.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.MachineLearning">
+      <HintPath>Assets/Plugins/Accord/Accord.MachineLearning.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.MachineLearning.GPL">
+      <HintPath>Assets/Plugins/Accord/Accord.MachineLearning.GPL.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Math.Core">
+      <HintPath>Assets/Plugins/Accord/Accord.Math.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Math">
+      <HintPath>Assets/Plugins/Accord/Accord.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Statistics">
+      <HintPath>Assets/Plugins/Accord/Accord.Statistics.dll</HintPath>
+    </Reference>
+    <Reference Include="alglibnet2">
+      <HintPath>Assets/Plugins/alglibnet2.0.0.0/lib/alglibnet2.dll</HintPath>
+    </Reference>
     <Reference Include="geometry3Sharp">
       <HintPath>Assets/Plugins/geometry3Sharp.1.0.144/geometry3Sharp.dll</HintPath>
     </Reference>

@@ -110,56 +110,52 @@ public class PointerLabeler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_bPointerActivated)
+        if (_bPointerActivated && _bPointerSelectionActivated)
         {
-            if (_bPointerSelectionActivated)
+            GameObject collidedObject = new GameObject();
+            try
             {
-                Collider collidedObject = _pointerRenderer.GetDestinationHit().collider;
-                if (collidedObject != null && collidedObject.name.Contains("Label"))
+                collidedObject = _pointerRenderer.GetDestinationHit().collider.gameObject;
+            }
+            catch
+            {
+                return;
+            }
+
+            if (collidedObject != null && collidedObject.name.Contains("Label"))
+            {
+                _collidedObjectAttributes = collidedObject.GetComponent<CustomAttributes>();
+
+                if (OVRInput.Get(OVRInput.Button.SecondaryThumbstick))
                 {
-                    _collidedObjectAttributes = collidedObject.gameObject.GetComponent<CustomAttributes>();
-
-                    if (OVRInput.Get(OVRInput.Button.SecondaryThumbstick))
+                    //adjacent labeling
+                    if (_collidedObjectAttributes._label != Labeling.currentLabelClassID)
                     {
-                        //adjacent labeling
-                        if (_collidedObjectAttributes._label != Labeling.currentLabelClassID)
+                        //List<GameObject> adjacentObjects = Clustering.ClusterByRadiusSearch(collidedObject, collidedObject.GetComponent<SphereCollider>().radius, true);
+                        List<GameObject> adjacentObjects = Clustering.ClusterByRadiusSearch(collidedObject, 5.5f, false);
+                        for (int i = 0; i < adjacentObjects.Count; i++)
                         {
-                            float t = Time.realtimeSinceStartup;
-                            List<GameObject> adjacentObjects = GetAdjacentLabelPointsAndTheirAdjacentPoints(collidedObject.gameObject);
-
-                            for (int i = 0; i < adjacentObjects.Count; i++)
+                            if (adjacentObjects[i].GetComponent<CustomAttributes>()._label != Labeling.currentLabelClassID)
                             {
-                                if (adjacentObjects[i].GetComponent<CustomAttributes>()._label != Labeling.currentLabelClassID)
-                                {
-                                    adjacentObjects[i].GetComponent<CustomAttributes>()._label = Labeling.currentLabelClassID;
-                                }
+                                adjacentObjects[i].GetComponent<CustomAttributes>()._label = Labeling.currentLabelClassID;
                             }
-
-                            print(t - Time.realtimeSinceStartup + "s");
                         }
                     }
-                    else
+                }
+                else
+                {
+                    //simple single point labeling
+                    var objectsAroundTarget = Clustering.RadiusSearch(collidedObject, collidedObject.GetComponent<SphereCollider>().radius);
+
+                    for (int i = 0; i < objectsAroundTarget.Count; i++)
                     {
-                        //simple single point labeling
+                        var attr = objectsAroundTarget[i].GetComponent<CustomAttributes>();
 
-                        var objectsColidingWithPointer = GetAdjacentLabelPoints(collidedObject.gameObject);
-                        objectsColidingWithPointer.Add(collidedObject.gameObject);
-
-                        for (int i = 0; i < objectsColidingWithPointer.Count; i++)
+                        if (attr._label != Labeling.currentLabelClassID)
                         {
-                            var attr = objectsColidingWithPointer[i].GetComponent<CustomAttributes>();
-                            try
-                            {
-                                if (attr._label != Labeling.currentLabelClassID)
-                                {
-                                    attr._label = Labeling.currentLabelClassID;
-                                }
-                            }
-                            catch
-                            {
-                                //The Cursor is also a collider but has no CustomAttributes
-                            }
+                            attr._label = Labeling.currentLabelClassID;
                         }
+
                     }
                 }
             }
@@ -184,63 +180,5 @@ public class PointerLabeler : MonoBehaviour
     private void SetPointerSelectionDeactivated(object sender, ControllerInteractionEventArgs e)
     {
         _bPointerSelectionActivated = false;
-    }
-
-    private List<GameObject> GetAdjacentLabelPoints(GameObject startPoint_inp)
-    {
-        List<GameObject> adjacentPoints_out = new List<GameObject>();
-        float radius = 0;
-
-        try
-        {
-            radius = startPoint_inp.GetComponent<SphereCollider>().radius * startPoint_inp.transform.localScale.x;
-        }
-        catch
-        {
-            return adjacentPoints_out;
-        }
-
-        Collider[] collidersInRadius = Physics.OverlapSphere(startPoint_inp.transform.position, radius);
-
-        for (int i = 0; i < collidersInRadius.Length; i++)
-        {
-            adjacentPoints_out.Add(collidersInRadius[i].gameObject);
-        }
-
-        return adjacentPoints_out;
-    }
-
-    private List<GameObject> GetAdjacentLabelPointsAndTheirAdjacentPoints(GameObject startPoint_inp)
-    {
-        Dictionary<int, GameObject> adjacentObjects = new Dictionary<int, GameObject>();
-        float radius = startPoint_inp.GetComponent<SphereCollider>().radius * startPoint_inp.transform.localScale.x;
-
-        RecursiveRadiusSearch(ref adjacentObjects, new List<GameObject> { startPoint_inp }, radius);
-
-        return adjacentObjects.Values.ToList();
-    }
-
-    private void RecursiveRadiusSearch(ref Dictionary<int, GameObject> outputObjects, List<GameObject> objectsToCheck_inp, float radius_inp)
-    {
-        List<GameObject> newObjectsToCheck = new List<GameObject>();
-
-        for (int i = 0; i < objectsToCheck_inp.Count; i++)
-        {
-            Collider[] collidersInRadius = Physics.OverlapSphere(objectsToCheck_inp[i].transform.position, radius_inp);
-
-            for (int j = 0; j < collidersInRadius.Length; j++)
-            {
-                if (!outputObjects.ContainsKey(collidersInRadius[j].gameObject.GetInstanceID()) && collidersInRadius[j].gameObject.name.Contains("Label"))
-                {
-                    outputObjects.Add(collidersInRadius[j].gameObject.GetInstanceID(), collidersInRadius[j].gameObject);
-                    newObjectsToCheck.Add(collidersInRadius[j].gameObject);
-                }
-            }
-        }
-
-        if (newObjectsToCheck.Count > 0)
-        {
-            RecursiveRadiusSearch(ref outputObjects, newObjectsToCheck, radius_inp);
-        }
     }
 }

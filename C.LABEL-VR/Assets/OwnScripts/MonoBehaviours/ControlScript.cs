@@ -17,7 +17,7 @@ public class ControlScript : MonoBehaviour
     void Awake()
     {
 #if UNITY_EDITOR
-        Util.DataLoadInfo._dataType = Util.Datatype.pcd;
+        Util.DataLoadInfo._dataType = Util.Datatype.hdf5_DaimlerLidar;
         Util.DataLoadInfo._accessMode = Util.AccesMode.Create;
         Util.DataLoadInfo._sessionName = "EditorDev";
 
@@ -80,26 +80,47 @@ public class ControlScript : MonoBehaviour
 
         //ground testing
 
-        var test = Labeling.GetLabelClassColor(Labeling.currentLabelClassID);
+        //var test = Labeling.GetLabelClassColor(Labeling.currentLabelClassID);
 
-        var clouds = _session._pointClouds;
-        for (int i = 0; i < clouds.Count; i++)
-        {
-            var points = clouds[i]._validPoints;
+        //var clouds = _session._pointClouds;
+        //for (int i = 0; i < clouds.Count; i++)
+        //{
+        //    var points = clouds[i]._validPoints;
 
-            for (int j = 0; j < points.Count; j++)
-            {
-                var attr = points[j].GetComponent<CustomAttributes>();
+        //    for (int j = 0; j < points.Count; j++)
+        //    {
+        //        var attr = points[j].GetComponent<CustomAttributes>();
 
-                if (attr._groundPoint == 1)
-                {
-                    attr._label = Labeling.currentLabelClassID;
-                }
-            }
+        //        if (attr._groundPoint == 1)
+        //        {
+        //            attr._label = Labeling.currentLabelClassID;
+        //        }
+        //    }
 
-        }
+        //}
 
 
+
+        //var nonGrounds = _session.GetCurrentPointCloud()._validPoints.FindAll(x => x.GetComponent<CustomAttributes>()._groundPoint == 0);
+        //Debug.Log(nonGrounds.Count);
+        //Clustering.SetClusterLabelsByKmeans(nonGrounds,30);
+
+        //List<Color32> testcolors = new List<Color32>();
+        //for (int i = 0; i < 100; i++)
+        //{
+        //    System.Random ran = new System.Random(i);
+        //    var r = Convert.ToByte(ran.Next(0, 255));
+        //    var g = Convert.ToByte(ran.Next(0, 255));
+        //    var b = Convert.ToByte(ran.Next(0, 255));
+        //    testcolors.Add(new Color32(r, g, b, Convert.ToByte(255)));
+        //}
+
+        //for (int i = 0; i < nonGrounds.Count; i++)
+        //{
+        //    var attr = nonGrounds[i].GetComponent<CustomAttributes>();
+
+        //    nonGrounds[i].GetComponent<MeshRenderer>().material.color = testcolors[attr._clusterLabel];
+        //}
     }
 
     private void CreateSessionFolder()

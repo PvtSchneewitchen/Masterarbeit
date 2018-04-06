@@ -4,6 +4,8 @@ using UnityEditor;
 using PostProcess;
 using System.Collections.Generic;
 using MathNet.Numerics.LinearAlgebra;
+using System;
+using System.Linq;
 
 public static class Util
 {
@@ -40,7 +42,10 @@ public static class Util
         num.transform.position = pointOnPlane + normal;
     }
 
-    
+    public static IList<T> CloneList<T>(this IList<T> listToClone) where T : ICloneable
+    {
+        return listToClone.Select(item => (T)item.Clone()).ToList();
+    }
 
     public static void EnableLoadingScreen(GameObject loadingScreen_inp, string screenMessage_inp)
     {

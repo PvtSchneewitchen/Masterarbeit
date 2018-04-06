@@ -56,8 +56,6 @@ public static class Labeling
             new Color32(0, 255, 255, 225),
             new Color32(255, 0, 0, 225),
             new Color32(10, 150, 150, 225)
-            
-
         };
 
         SetNewLabelClasses(new Dictionary<uint, string> { { 1, _dummyClassName } });
