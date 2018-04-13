@@ -36,7 +36,7 @@ class OVREngineConfigurationUpdater
 	static void ToggleUtilities()
 	{
 		setPrefsForUtilities = !setPrefsForUtilities;
-		Menu.SetChecked(menuItemName, setPrefsForUtilities);
+        UnityEditor.Menu.SetChecked(menuItemName, setPrefsForUtilities);
 
 		int newValue = (setPrefsForUtilities) ? 1 : 0;
 		PlayerPrefs.SetInt(prefName, newValue);
@@ -99,7 +99,7 @@ class OVREngineConfigurationUpdater
 	static void OnDelayCall()
 	{
 		setPrefsForUtilities = PlayerPrefs.GetInt(prefName, 1) != 0;
-		Menu.SetChecked(menuItemName, setPrefsForUtilities);
+        UnityEditor.Menu.SetChecked(menuItemName, setPrefsForUtilities);
 
 		if (!setPrefsForUtilities)
 			return;

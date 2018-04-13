@@ -122,7 +122,7 @@ public class PointerLabeler : MonoBehaviour
                 return;
             }
 
-            if (collidedObject != null && collidedObject.name.Contains("Label"))
+            if (collidedObject != null && collidedObject.name.Contains("DefaultLabelpoint"))
             {
                 _collidedObjectAttributes = collidedObject.GetComponent<CustomAttributes>();
 
@@ -132,7 +132,7 @@ public class PointerLabeler : MonoBehaviour
                     if (_collidedObjectAttributes._label != Labeling.currentLabelClassID)
                     {
                         //List<GameObject> adjacentObjects = Clustering.ClusterByRadiusSearch(collidedObject, collidedObject.GetComponent<SphereCollider>().radius, true);
-                        List<GameObject> adjacentObjects = Clustering.ClusterByRadiusSearch(collidedObject, 5.5f, false);
+                        List<GameObject> adjacentObjects = Clustering.GetClusterByRadiusSearch(collidedObject, 5.5f, false);
                         for (int i = 0; i < adjacentObjects.Count; i++)
                         {
                             if (adjacentObjects[i].GetComponent<CustomAttributes>()._label != Labeling.currentLabelClassID)
@@ -155,7 +155,6 @@ public class PointerLabeler : MonoBehaviour
                         {
                             attr._label = Labeling.currentLabelClassID;
                         }
-
                     }
                 }
             }

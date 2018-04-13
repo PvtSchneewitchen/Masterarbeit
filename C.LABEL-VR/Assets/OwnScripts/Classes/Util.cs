@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEditor;
 using PostProcess;
 using System.Collections.Generic;
 using MathNet.Numerics.LinearAlgebra;
@@ -35,11 +34,6 @@ public static class Util
         Debug.DrawLine(corner2, corner3, Color.blue, 300);
         Debug.DrawLine(corner3, corner0, Color.blue, 300);
         Debug.DrawRay(pointOnPlane, normal, Color.red, 300);
-
-        GameObject num = new GameObject(number.ToString());
-        num.AddComponent<TextMesh>();
-        num.GetComponent<TextMesh>().text = number.ToString();
-        num.transform.position = pointOnPlane + normal;
     }
 
     public static IList<T> CloneList<T>(this IList<T> listToClone) where T : ICloneable
@@ -234,7 +228,6 @@ public static class Util
     public enum Datatype
     {
         pcd,
-        lidar,
         hdf5_DaimlerLidar
     }
 

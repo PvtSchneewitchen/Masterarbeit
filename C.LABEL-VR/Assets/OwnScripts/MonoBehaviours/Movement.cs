@@ -8,10 +8,11 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class Movement : MonoBehaviour
 {
+    public static Movement Instance { get; set; }
+
     //in some situations (in game option menu is shown) the movement needs to be disabled
     public bool _bMovementEnabled { get; set; }
     public Transform _cameraRig;
-    public InGameOptionsController _inGameOptions;
     public ControlScript _controlScript;
 
     //this semaphor is to check if a stick is shifted or not
@@ -31,25 +32,32 @@ public class Movement : MonoBehaviour
 
     void Awake()
     {
+        Instance = this;
+
         //init values
         _iStickShiftSemaphor = 0;
-        _bMovementEnabled = true;
+        Instance._bMovementEnabled = true;
+    }
+
+    private void OnDestroy()
+    {
+        Instance = null;
     }
 
     void Update()
     {
-        if (_bMovementEnabled)
+        if (Instance._bMovementEnabled)
         {
             UpdateValues();
 
-            if (InGameOptions._movementMode == Util.MovementMode.FreeFly)
+            if (MovementOptions.MoveMode == Util.MovementMode.FreeFly)
             {
                 UpdateCameraPositionAndRotation_FreeFly();
 
                 //if (InGameOptions._bDecreasePointsWhenMoving)
                 //DecreasePointsWhenMoving();
             }
-            else if (InGameOptions._movementMode == Util.MovementMode.TeleportMode)
+            else if (MovementOptions.MoveMode == Util.MovementMode.TeleportMode)
             {
                 UpdateMovement_SicknessPrevention();
             }
@@ -73,7 +81,7 @@ public class Movement : MonoBehaviour
         _leftStickMovement = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
         _rightStickMovement = OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick);
 
-        if (InGameOptions._movementMode == Util.MovementMode.TeleportMode)
+        if (MovementOptions.MoveMode == Util.MovementMode.TeleportMode)
         {
             //TEST auf BOARDERS
             if (Mathf.Abs(_leftStickMovement.x) > InternValues._stickActivationBoarderSPM || Mathf.Abs(_leftStickMovement.y) > InternValues._stickActivationBoarderSPM
@@ -261,7 +269,7 @@ public class Movement : MonoBehaviour
             }
 
             //simulate a human eye blink
-            if (InGameOptions._bSicknessPrevention_TeleportWithBlink)
+            if (MovementOptions.Twinkle)
                 Util.EyeBlink.Blink();
 
             _cameraRig.Translate(new Vector3(x, y, z));
@@ -293,32 +301,32 @@ public class Movement : MonoBehaviour
 
         private static float GetMaxSpeedTrans()
         {
-            return InGameOptions._fFreeFly_MaxSpeedTrans / scaleFactorTrans;
+            return MovementOptions.TransSpeed / scaleFactorTrans;
         }
 
         private static float GetAccelerationTrans()
         {
-            return InGameOptions._fFreeFly_AccelerationTrans / (scaleFactorTrans * 150);
+            return MovementOptions.TransAcceleration / (scaleFactorTrans * 150);
         }
 
         private static float GetMaxSpeedRot()
         {
-            return InGameOptions._fFreeFly_MaxSpeedRot / scaleFactorRot;
+            return MovementOptions.RotSpeed / scaleFactorRot;
         }
 
         private static float GetAccelerationRot()
         {
-            return InGameOptions._fFreeFly_AccelerationRot / (scaleFactorRot * 170);
+            return MovementOptions.RotAcceleration / (scaleFactorRot * 170);
         }
 
         private static float GetTeleportDistance()
         {
-            return InGameOptions._fSicknessPrevention_TeleportDistance / scaleFactorTeleport;
+            return MovementOptions.TeleportDistance / scaleFactorTeleport;
         }
 
         private static float GetTurnAngle()
         {
-            return InGameOptions._fSicknessPrevention_TurnAngle;
+            return MovementOptions.TeleportAngle;
         }
     }
 }

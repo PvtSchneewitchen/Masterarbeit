@@ -34,13 +34,13 @@ public class PointerTeleport : MonoBehaviour
         _teleportActivated = false;
         _teleportEnabled = true;
 
-        if (InGameOptions._movementMode != Util.MovementMode.TeleportMode)
+        if (MovementOptions.MoveMode != Util.MovementMode.TeleportMode)
             _controllerPointerRenderer.enabled = false;
     }
 
     private void Update()
     {
-        if (_teleportActivated && InGameOptions._movementMode == Util.MovementMode.TeleportMode)
+        if (_teleportActivated && MovementOptions.MoveMode == Util.MovementMode.TeleportMode)
         {
             _leftStickMovement = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
             UpdatePointerLength();
@@ -52,7 +52,7 @@ public class PointerTeleport : MonoBehaviour
 
     private void TeleportOnClick()
     {
-        if (InGameOptions._bSicknessPrevention_TeleportWithBlink)
+        if (MovementOptions.Twinkle)
         {
             Util.EyeBlink.Blink();
             _mainCameraRig.position = _controllerPointerRenderer.actualCursor.transform.position;
@@ -81,7 +81,7 @@ public class PointerTeleport : MonoBehaviour
 
     private void PointerTeleport_SelectionButtonPressed(object sender, ControllerInteractionEventArgs e)
     {
-        if (InGameOptions._movementMode == Util.MovementMode.TeleportMode && _teleportEnabled)
+        if (MovementOptions.MoveMode == Util.MovementMode.TeleportMode && _teleportEnabled)
         {
             TeleportOnClick();
             _controllerPointerRenderer.maximumLength = _iDefaultPointerLength;
@@ -90,7 +90,7 @@ public class PointerTeleport : MonoBehaviour
 
     private void PointerTeleport_ActivationButtonReleased(object sender, ControllerInteractionEventArgs e)
     {
-        if (InGameOptions._movementMode == Util.MovementMode.TeleportMode)
+        if (MovementOptions.MoveMode == Util.MovementMode.TeleportMode)
         {
             _movementController._bMovementEnabled = true;
             _teleportActivated = false;
@@ -101,7 +101,7 @@ public class PointerTeleport : MonoBehaviour
 
     private void PointerTeleport_ActivationButtonPressed(object sender, ControllerInteractionEventArgs e)
     {
-        if (InGameOptions._movementMode == Util.MovementMode.TeleportMode)
+        if (MovementOptions.MoveMode == Util.MovementMode.TeleportMode)
         {
             _movementController._bMovementEnabled = false;
             _teleportActivated = true;

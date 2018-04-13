@@ -68,13 +68,13 @@ public static class Labeling
         keyList.Sort();
         var currentListIndex = keyList.IndexOf(currentLabelClassID);
 
-        if(currentListIndex <= 0)
+        if (currentListIndex <= 0)
         {
             currentLabelClassID = keyList.Last();
         }
         else
         {
-            currentLabelClassID = keyList[currentListIndex-1];
+            currentLabelClassID = keyList[currentListIndex - 1];
         }
     }
 
@@ -84,7 +84,7 @@ public static class Labeling
         keyList.Sort();
         var currentListIndex = keyList.IndexOf(currentLabelClassID);
 
-        if (currentListIndex+1 >= keyList.Count)
+        if (currentListIndex + 1 >= keyList.Count)
         {
             currentLabelClassID = keyList[0];
         }
@@ -96,7 +96,7 @@ public static class Labeling
 
     public static void EditLabelClass(uint oldID_inp, uint newID_inp, string newName_inp, Color newColor_inp)
     {
-        if (oldID_inp != 0)
+        if (oldID_inp != 0 && _labelClassInformations.ContainsKey(oldID_inp))
         {
             _labelClassInformations.Remove(oldID_inp);
 
@@ -155,10 +155,15 @@ public static class Labeling
 
     public static void AddNewLabelClass(uint id_inp, string name_inp, Color color_inp)
     {
-        Material mat = new Material(_standardMaterial);
-        mat.color = color_inp;
+        if (!_labelClassInformations.ContainsKey(id_inp))
+        {
+            Material mat = new Material(_standardMaterial)
+            {
+                color = color_inp
+            };
 
-        _labelClassInformations.Add(id_inp, new Tuple<string, Material>(name_inp, mat));
+            _labelClassInformations.Add(id_inp, new Tuple<string, Material>(name_inp, mat));
+        }
     }
 
     public static void SetNewLabelClasses(Dictionary<uint, string> labelWorkingSet_inp)

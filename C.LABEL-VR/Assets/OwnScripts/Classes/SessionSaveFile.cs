@@ -7,13 +7,13 @@ using UnityEngine;
 public class SessionSaveFile
 {
     public SessionSave_LabelSession _labelsession { get; set; }
-    public Sessionsave_InGameOptions _ingameOptions { get; set; }
+    public Sessionsave_MovementOptions _ingameOptions { get; set; }
     public SessionSave_MetaData _exportMetaData { get; set; }
 
     public SessionSaveFile()
     {
         _labelsession = new SessionSave_LabelSession();
-        _ingameOptions = new Sessionsave_InGameOptions();
+        _ingameOptions = new Sessionsave_MovementOptions();
         _exportMetaData = new SessionSave_MetaData();
     }
 
@@ -131,7 +131,7 @@ public class SessionSaveFile
     }
 
     [Serializable]
-    public class Sessionsave_InGameOptions
+    public class Sessionsave_MovementOptions
     {
         public Util.MovementMode _movementMode { get; set; }
         public float _fFreeFly_MaxSpeedTrans { get; set; }
@@ -141,21 +141,19 @@ public class SessionSaveFile
         public float _fSicknessPrevention_TeleportDistance { get; set; }
         public float _fSicknessPrevention_TurnAngle { get; set; }
         public bool _bSicknessPrevention_TeleportWithBlink { get; set; }
-        public bool _bAttachOptionsToCamera { get; set; }
         public bool _bDecreasePointsWhenMoving { get; set; }
 
         public void AssignInGameOptionValues()
         {
-            _movementMode = InGameOptions._movementMode;
-            _bAttachOptionsToCamera = InGameOptions._bAttachOptionsToCamera;
-            _bDecreasePointsWhenMoving = InGameOptions._bDecreasePointsWhenMoving;
-            _bSicknessPrevention_TeleportWithBlink = InGameOptions._bSicknessPrevention_TeleportWithBlink;
-            _fFreeFly_AccelerationRot = InGameOptions._fFreeFly_AccelerationRot;
-            _fFreeFly_AccelerationTrans = InGameOptions._fFreeFly_AccelerationTrans;
-            _fFreeFly_MaxSpeedRot = InGameOptions._fFreeFly_MaxSpeedRot;
-            _fFreeFly_MaxSpeedTrans = InGameOptions._fFreeFly_MaxSpeedTrans;
-            _fSicknessPrevention_TeleportDistance = InGameOptions._fSicknessPrevention_TeleportDistance;
-            _fSicknessPrevention_TurnAngle = InGameOptions._fSicknessPrevention_TurnAngle;
+            _movementMode = MovementOptions.MoveMode;
+            _bDecreasePointsWhenMoving = MovementOptions.ReducePoints;
+            _bSicknessPrevention_TeleportWithBlink = MovementOptions.Twinkle;
+            _fFreeFly_AccelerationRot = MovementOptions.RotAcceleration;
+            _fFreeFly_AccelerationTrans = MovementOptions.TransAcceleration;
+            _fFreeFly_MaxSpeedRot = MovementOptions.RotSpeed;
+            _fFreeFly_MaxSpeedTrans = MovementOptions.TransSpeed;
+            _fSicknessPrevention_TeleportDistance = MovementOptions.TeleportDistance;
+            _fSicknessPrevention_TurnAngle = MovementOptions.TeleportAngle;
         }
     }
 
@@ -264,7 +262,7 @@ public class SessionSaveFile
         ControlScript ctrl = GameObject.Find("AppController").GetComponent<ControlScript>();
 
         SessionSave_LabelSession labelSession = new SessionSave_LabelSession();
-        Sessionsave_InGameOptions ingameOptions = new Sessionsave_InGameOptions();
+        Sessionsave_MovementOptions ingameOptions = new Sessionsave_MovementOptions();
 
         labelSession.AssignLabelSessionValues();
         ingameOptions.AssignInGameOptionValues();

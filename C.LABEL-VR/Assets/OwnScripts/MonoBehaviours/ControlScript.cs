@@ -7,7 +7,6 @@ using System.IO;
 public class ControlScript : MonoBehaviour
 {
     public LabelSession _session { get; private set; }
-    public InGameOptionsController _inGameOptions;
     public Camera _centerEyeAnchor;
     public LabelClassDisplayUpdate LabelClassDisplay;
 
@@ -17,7 +16,7 @@ public class ControlScript : MonoBehaviour
     void Awake()
     {
 #if UNITY_EDITOR
-        Util.DataLoadInfo._dataType = Util.Datatype.hdf5_DaimlerLidar;
+        Util.DataLoadInfo._dataType = Util.Datatype.pcd;
         Util.DataLoadInfo._accessMode = Util.AccesMode.Create;
         Util.DataLoadInfo._sessionName = "EditorDev";
 
@@ -30,7 +29,7 @@ public class ControlScript : MonoBehaviour
         if (Util.DataLoadInfo._accessMode == Util.AccesMode.Create)
         {
             CreateSessionFolder();
-            InGameOptions.LoadOptions(Util.DataLoadInfo._sessionFolderPath);
+            MovementOptions.LoadFromSessionPath(Util.DataLoadInfo._sessionFolderPath);
 
             List<PointCloud> pointClouds = new List<PointCloud>();
 
@@ -42,17 +41,12 @@ public class ControlScript : MonoBehaviour
             {
                 pointClouds = Import.ImportHdf5_DaimlerLidar(Util.DataLoadInfo._sourceDataPath);
             }
-            else if (Util.DataLoadInfo._dataType == Util.Datatype.lidar)
-            {
-                //TODO Implement lidar Import and call it here
-            }
 
             Debug.Log(pointClouds.Count);
             _session = new LabelSession(pointClouds, 0);
         }
         else
         {
-            Debug.Log("4");
             SessionSaveFile saveFile;
 
             using (Stream stream = File.Open(Util.DataLoadInfo._sourceDataPath, FileMode.Open))
@@ -64,15 +58,7 @@ public class ControlScript : MonoBehaviour
             _session = new LabelSession(saveFile);
         }
 
-
-
-
         _optionModeActive = false;
-
-        //Debug.Log("Path: " + _sLoadPath + "  Type: " + _dataTypeToLoad);
-
-
-
 
         _session.GetCurrentPointCloud().EnableAllPoints();
         _session._sessionName = Util.DataLoadInfo._sessionName;
@@ -103,10 +89,10 @@ public class ControlScript : MonoBehaviour
 
         //var nonGrounds = _session.GetCurrentPointCloud()._validPoints.FindAll(x => x.GetComponent<CustomAttributes>()._groundPoint == 0);
         //Debug.Log(nonGrounds.Count);
-        //Clustering.SetClusterLabelsByKmeans(nonGrounds,30);
+        //var clusters = Clustering.GetClustersByGmeans(nonGrounds);
 
         //List<Color32> testcolors = new List<Color32>();
-        //for (int i = 0; i < 100; i++)
+        //for (int i = 0; i < clusters.Count; i++)
         //{
         //    System.Random ran = new System.Random(i);
         //    var r = Convert.ToByte(ran.Next(0, 255));
@@ -114,6 +100,17 @@ public class ControlScript : MonoBehaviour
         //    var b = Convert.ToByte(ran.Next(0, 255));
         //    testcolors.Add(new Color32(r, g, b, Convert.ToByte(255)));
         //}
+
+        //for (int i = 0; i < clusters.Count; i++)
+        //{
+        //    for (int j = 0; j < clusters[i].Count; j++)
+        //    {
+        //        clusters[i][j].GetComponent<CustomAttributes>()._clusterLabel = i;
+        //        clusters[i][j].GetComponent<MeshRenderer>().material.color = testcolors[i];
+        //    }
+        //}
+
+        
 
         //for (int i = 0; i < nonGrounds.Count; i++)
         //{
@@ -133,7 +130,6 @@ public class ControlScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckOptionMenuButton();
         CheckCloudChangeButton();
         CheckLabelClassChangeButton();
     }
@@ -163,75 +159,4 @@ public class ControlScript : MonoBehaviour
             LabelClassDisplay.UpdatePointerDisplay();
         }
     }
-
-    private void CheckOptionMenuButton()
-    {
-        if (!_optionModeActive)
-        {
-            if (OVRInput.GetDown(OVRInput.Button.Start))
-            {
-                _optionModeActive = true;
-                _inGameOptions.EnableOptionMenu();
-            }
-        }
-        else
-        {
-            if (OVRInput.GetDown(OVRInput.Button.Start))
-            {
-                _optionModeActive = false;
-                _inGameOptions.OnCloseMainOptionsClick();
-            }
-        }
-    }
 }
-//int segments = 4;
-//int potentialgroundcounter = 0;
-
-//List<GameObject> testpoints = new List<GameObject>();
-
-//System.Random random = new System.Random(88);
-//random.Next(-50, 50);
-
-//        for (int i = 0; i< 1000; i++)
-//        {
-//            GameObject testpoint = Util.CreateDefaultLabelPoint();
-//testpoint.transform.position = new Vector3(random.Next(-10, 10), random.Next(-10, 10), random.Next(-10, 10));
-//            testpoints.Add(testpoint);
-
-//            if(testpoint.transform.position.y< 1 && testpoint.transform.position.y> -1)
-//            {
-//                potentialgroundcounter++;
-//            }
-//        }
-
-//        //testpoints.OrderBy(x => x.transform.position.x).ThenBy(x => x.transform.position.z);
-
-//        List<Tuple<float, GameObject>> mortonCurvedPointList = new List<Tuple<float, GameObject>>();
-
-//        for (int i = 0; i<testpoints.Count; i++)
-//        {
-//            var pos = testpoints[i].transform.position;
-//mortonCurvedPointList.Add(new Tuple<float, GameObject>(pos.x + pos.z, testpoints[i]));
-//        }
-
-//        mortonCurvedPointList.OrderBy(x => x.Item1);
-
-
-//        int pointsInSegmentcounter = 0;
-//int pointsInSegment = potentialgroundcounter / segments + 1;
-//Color color = new Color((float)random.NextDouble(), (float)random.NextDouble(), (float)random.NextDouble());
-//        for (int i = 0; i<mortonCurvedPointList.Count; i++)
-//        {
-
-//            if (mortonCurvedPointList[i].Item2.transform.position.y< 1 && mortonCurvedPointList[i].Item2.transform.position.y> -1)
-//            {
-//                mortonCurvedPointList[i].Item2.GetComponent<MeshRenderer>().material.color = color;
-//                pointsInSegmentcounter++;
-//            }
-
-//            if (pointsInSegmentcounter >= pointsInSegment)
-//            {
-//                pointsInSegmentcounter = 0;
-//                color = new Color((float) random.NextDouble(), (float) random.NextDouble(), (float) random.NextDouble());
-//            }
-//        }

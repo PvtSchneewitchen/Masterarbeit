@@ -342,6 +342,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="C.LABEL-VR.Plugins.csproj">
+      <Project>{278B8CD1-6165-392F-ED36-C368938A6C16}</Project>
+      <Name>C.LABEL-VR.Plugins</Name>
+    </ProjectReference>
     <ProjectReference Include="C.LABEL-VR.csproj">
       <Project>{39D97D7E-8035-C73B-6A6C-A25A1037AEBD}</Project>
       <Name>C.LABEL-VR</Name>
@@ -375,9 +379,6 @@
   <ItemGroup>
     <None Include="Assets\Eye Blink Effect\Shaders\Blink Curved.shader" />
     <None Include="Assets\Eye Blink Effect\Shaders\Blink Straight.shader" />
-    <None Include="Assets\GracesGames\SimpleFileBrowser\DemoFiles\DemoText.txt" />
-    <None Include="Assets\GracesGames\SimpleFileBrowser\DemoFiles\TextFileWithNewLines.txt" />
-    <None Include="Assets\GracesGames\SimpleFileBrowser\ReadMe.txt" />
     <None Include="Assets\OVR\Editor\AndroidManifest.OVRSubmission.xml" />
     <None Include="Assets\OVR\Plugins\placeholder.txt" />
     <None Include="Assets\OVR\Resources\Cubemap Blit.shader" />
@@ -401,6 +402,7 @@
     <None Include="Assets\Plugins\RhinoCommon.6.2.18065.11031\Eto-LICENSE.txt" />
     <None Include="Assets\Plugins\RhinoCommon.6.2.18065.11031\lib\net45\Eto.xml" />
     <None Include="Assets\Plugins\RhinoCommon.6.2.18065.11031\lib\net45\RhinoCommon.XML" />
+    <None Include="Assets\Plugins\SimpleFileBrowser\README.txt" />
     <None Include="Assets\Plugins\hdf5\HDF.PInvoke.XML" />
     <None Include="Assets\Shaders\ColorHue.shader" />
     <None Include="Assets\Shaders\ColorSaturationBrightness.shader" />

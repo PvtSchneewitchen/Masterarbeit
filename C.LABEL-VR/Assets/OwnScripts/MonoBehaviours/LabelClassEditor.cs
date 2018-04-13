@@ -3,112 +3,119 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using VRTK;
 
-public class LabelClassEditor : MonoBehaviour
+public class LabelClassEditor : Menu<LabelClassEditor>
 {
-    public KeyboardController _numpad;
-    public GameObject _labelPanel;
-    public LabelClassContent labelClassContent;
+    public LabelClassItem labelClassItemPrefab;
+    public InputField className;
+    public InputField classID;
+    public Image classColor;
+    public Text userInfo;
 
-    private InputField _className;
-    private InputField _classID;
-    private Image _classColorImage;
-    private AccessMode accessMode;
+    private LabelCLassItemStruct currentItemToEdit;
+    private AccessMode currentAccessMode;
+    private static Action<LabelCLassItemStruct> callBackMethod;
 
-    private string _oldName;
-    private uint _oldID;
-    private Color _oldColor;
-
-    void Start()
+    public enum AccessMode
     {
-        InputField[] inputFields = GetComponentsInChildren<InputField>();
-        Image[] images = GetComponentsInChildren<Image>();
-
-        _className = inputFields[0];
-        _classID = inputFields[1];
-        _classColorImage = images[3];
-
-        gameObject.SetActive(false);
+        Create,
+        Edit
     }
 
-    public void OnAddClick()
+    public struct LabelCLassItemStruct
     {
-        accessMode = AccessMode.Create;
-        EnableLabelClassEditor();
-    }
+        public uint ID { get; set; }
+        public string Name { get; set; }
+        public Color Color { get; set; }
 
-    public void OnEditClick()
-    {
-        accessMode = AccessMode.Edit;
-
-        if(labelClassContent._currentSelectedItem)
+        public LabelCLassItemStruct(uint id, string name, Color color)
         {
-            var itemContent = labelClassContent._currentSelectedItem.GetComponent<ItemContent>();
-
-             _oldName = itemContent._className.text;
-            _oldID = Convert.ToUInt32(itemContent._classID.text);
-            _oldColor = itemContent._classImage.color;
-
-            EnableLabelClassEditor(_oldName, _oldID, _oldColor);
+            ID = id;
+            Name = name;
+            Color = color;
         }
+    }
+
+    public static void Show(Action<LabelCLassItemStruct> callBackMethod_inp, AccessMode accessMode, LabelCLassItemStruct editInfos, string userInfo_inp)
+    {
+        callBackMethod = callBackMethod_inp;
+
+        Open();
+        Instance.userInfo.text = userInfo_inp;
+        Instance.currentAccessMode = accessMode;
+
+        if (accessMode == AccessMode.Edit)
+        {
+            Instance.InitEditor(editInfos);
+        }
+        else
+        {
+            Instance.InitEditor();
+        }
+    }
+
+    public void OnInputFieldClick(object obj, UIPointerEventArgs args)
+    {
+        GameObject clickedObject = args.currentTarget;
+
+        if (MenuManager.Instance.menuStack.Peek() != Instance)
+        {
+            //this menu is not visible
+            return;
+        }
+
+        InputField clickedInputField = clickedObject.GetComponent<InputField>();
+
+        if (clickedInputField != null)
+        {
+            if (clickedInputField.name.Contains("ID"))
+            {
+                NumPad.Show(EditID, "Set desired ID!");
+            }
+            else if (clickedInputField.name.Contains("Name"))
+            {
+                KeyboardManager.Show(EditName, "Set desired Name!");
+            }
+        }
+    }
+
+    private void EditName(string name_inp)
+    {
+        Instance.className.text = name_inp;
+    }
+
+    private void EditID(string ID_inp)
+    {
+        Instance.classID.text = ID_inp;
+    }
+
+    private void InitEditor(LabelCLassItemStruct itemToEdit_inp)
+    {
+        Instance.className.text = itemToEdit_inp.Name;
+        Instance.classID.text = itemToEdit_inp.ID.ToString();
+        Instance.classColor.color = itemToEdit_inp.Color;
+
+        Instance.currentItemToEdit = itemToEdit_inp;
+    }
+
+    private void InitEditor()
+    {
+        Instance.className.text = "";
+        Instance.classID.text = "";
+        Instance.classColor.color = Color.white;
     }
 
     public void OnConfirmClick()
     {
-        if (accessMode == AccessMode.Create)
+        LabelCLassItemStruct item_out = new LabelCLassItemStruct
         {
-            var labelClassInfos = Labeling.GetAllLabelClassInfos();
-            if (labelClassInfos.ContainsKey(Convert.ToUInt32(_classID.text)))
-            {
-                Debug.Log("This key already exists!");
-                return;
-            }
-            else
-            {
-                Labeling.AddNewLabelClass(Convert.ToUInt32(_classID.text), _className.text, _classColorImage.color);
-                labelClassContent.UpdateContent();
-                DisableLabelClassEditor();
-            }
-        }
-        else
-        {
-            Labeling.EditLabelClass(_oldID, Convert.ToUInt32(_classID.text), _className.text, _classColorImage.color);
-            labelClassContent.UpdateContent();
-            DisableLabelClassEditor();
-        }
-    }
+            Name = className.text,
+            ID = Convert.ToUInt32(classID.text),
+            Color = classColor.color
+        };
 
-    private void DisableLabelClassEditor()
-    {
-        _className.text = "";
-        _classID.text = "";
-        _classColorImage.color = new Color(0, 0, 0, 255);
-        gameObject.SetActive(false);
-    }
-
-    private void EnableLabelClassEditor()
-    {
-        print("EnableClassEditor");
-        transform.rotation = _labelPanel.transform.rotation;
-        transform.position = _labelPanel.transform.position - _labelPanel.transform.transform.forward - _labelPanel.transform.transform.right;
-        gameObject.SetActive(true);
-    }
-
-    private void EnableLabelClassEditor(string name_inp, uint id_inp, Color color_inp)
-    {
-        print("EnableClassEditor");
-        transform.rotation = _labelPanel.transform.rotation;
-        transform.position = _labelPanel.transform.position - _labelPanel.transform.transform.forward - _labelPanel.transform.transform.right;
-        gameObject.SetActive(true);
-
-        _className.text = name_inp;
-        _classID.text = id_inp.ToString() ;
-        _classColorImage.color = color_inp;
-    }
-
-    private enum AccessMode
-    {
-        Create,
-        Edit
+        Close();
+        callBackMethod(item_out);
     }
 }

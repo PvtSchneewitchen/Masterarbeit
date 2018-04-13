@@ -238,11 +238,44 @@
     <Reference Include="OpenCvSharp">
       <HintPath>Assets/OwnScripts/OpenCVSharp/OpenCvSharp.dll</HintPath>
     </Reference>
+    <Reference Include="Accord">
+      <HintPath>Assets/Plugins/Accord/Accord.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.MachineLearning">
+      <HintPath>Assets/Plugins/Accord/Accord.MachineLearning.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.MachineLearning.GPL">
+      <HintPath>Assets/Plugins/Accord/Accord.MachineLearning.GPL.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Math.Core">
+      <HintPath>Assets/Plugins/Accord/Accord.Math.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Math">
+      <HintPath>Assets/Plugins/Accord/Accord.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Statistics">
+      <HintPath>Assets/Plugins/Accord/Accord.Statistics.dll</HintPath>
+    </Reference>
+    <Reference Include="alglibnet2">
+      <HintPath>Assets/Plugins/alglibnet2.0.0.0/lib/alglibnet2.dll</HintPath>
+    </Reference>
+    <Reference Include="geometry3Sharp">
+      <HintPath>Assets/Plugins/geometry3Sharp.1.0.144/geometry3Sharp.dll</HintPath>
+    </Reference>
     <Reference Include="HDF.PInvoke">
       <HintPath>Assets/Plugins/hdf5/HDF.PInvoke.dll</HintPath>
     </Reference>
     <Reference Include="MathNet.Numerics">
       <HintPath>Assets/Plugins/Math.net/MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="Eto">
+      <HintPath>Assets/Plugins/RhinoCommon.6.2.18065.11031/lib/net45/Eto.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.UI">
+      <HintPath>Assets/Plugins/RhinoCommon.6.2.18065.11031/lib/net45/Rhino.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="RhinoCommon">
+      <HintPath>Assets/Plugins/RhinoCommon.6.2.18065.11031/lib/net45/RhinoCommon.dll</HintPath>
     </Reference>
     <Reference Include="sharpHDF">
       <HintPath>Assets/Plugins/sharphdf/sharpHDF.dll</HintPath>
@@ -255,23 +288,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Plugins\IngameDebugConsole\Scripts\ConsoleMethodAttribute.cs" />
-    <Compile Include="Assets\Plugins\IngameDebugConsole\Scripts\DebugLogConsole.cs" />
-    <Compile Include="Assets\Plugins\IngameDebugConsole\Scripts\DebugLogEntry.cs" />
-    <Compile Include="Assets\Plugins\IngameDebugConsole\Scripts\DebugLogIndexList.cs" />
-    <Compile Include="Assets\Plugins\IngameDebugConsole\Scripts\DebugLogItem.cs" />
-    <Compile Include="Assets\Plugins\IngameDebugConsole\Scripts\DebugLogLogcatListener.cs" />
-    <Compile Include="Assets\Plugins\IngameDebugConsole\Scripts\DebugLogManager.cs" />
-    <Compile Include="Assets\Plugins\IngameDebugConsole\Scripts\DebugLogPopup.cs" />
-    <Compile Include="Assets\Plugins\IngameDebugConsole\Scripts\DebugLogRecycledListView.cs" />
-    <Compile Include="Assets\Plugins\IngameDebugConsole\Scripts\DebugsOnScrollListener.cs" />
+    <Compile Include="Assets\Plugins\SimpleFileBrowser\Android\FBPermissionCallbackAndroid.cs" />
+    <Compile Include="Assets\Plugins\SimpleFileBrowser\Scripts\FileBrowser.cs" />
+    <Compile Include="Assets\Plugins\SimpleFileBrowser\Scripts\FileBrowserItem.cs" />
+    <Compile Include="Assets\Plugins\SimpleFileBrowser\Scripts\FileBrowserMovement.cs" />
+    <Compile Include="Assets\Plugins\SimpleFileBrowser\Scripts\FileBrowserQuickLink.cs" />
+    <Compile Include="Assets\Plugins\SimpleFileBrowser\Scripts\SimpleRecycledListView\IListViewAdapter.cs" />
+    <Compile Include="Assets\Plugins\SimpleFileBrowser\Scripts\SimpleRecycledListView\ListItem.cs" />
+    <Compile Include="Assets\Plugins\SimpleFileBrowser\Scripts\SimpleRecycledListView\RecycledListView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Eye Blink Effect\Shaders\Blink Curved.shader" />
     <None Include="Assets\Eye Blink Effect\Shaders\Blink Straight.shader" />
-    <None Include="Assets\GracesGames\SimpleFileBrowser\DemoFiles\DemoText.txt" />
-    <None Include="Assets\GracesGames\SimpleFileBrowser\DemoFiles\TextFileWithNewLines.txt" />
-    <None Include="Assets\GracesGames\SimpleFileBrowser\ReadMe.txt" />
     <None Include="Assets\OVR\Editor\AndroidManifest.OVRSubmission.xml" />
     <None Include="Assets\OVR\Plugins\placeholder.txt" />
     <None Include="Assets\OVR\Resources\Cubemap Blit.shader" />
@@ -291,15 +319,23 @@
     <None Include="Assets\OvrAvatar\Content\Materials\AvatarSurfaceShader.shader" />
     <None Include="Assets\OvrAvatar\Content\Materials\AvatarSurfaceShaderPBS.shader" />
     <None Include="Assets\OvrAvatar\Content\Materials\AvatarSurfaceShaderSelfOccluding.shader" />
-    <None Include="Assets\Plugins\IngameDebugConsole\README.txt" />
     <None Include="Assets\Plugins\Math.net\MathNet.Numerics.xml" />
+    <None Include="Assets\Plugins\RhinoCommon.6.2.18065.11031\Eto-LICENSE.txt" />
+    <None Include="Assets\Plugins\RhinoCommon.6.2.18065.11031\lib\net45\Eto.xml" />
+    <None Include="Assets\Plugins\RhinoCommon.6.2.18065.11031\lib\net45\RhinoCommon.XML" />
+    <None Include="Assets\Plugins\SimpleFileBrowser\README.txt" />
     <None Include="Assets\Plugins\hdf5\HDF.PInvoke.XML" />
+    <None Include="Assets\Shaders\ColorHue.shader" />
+    <None Include="Assets\Shaders\ColorSaturationBrightness.shader" />
+    <None Include="Assets\Shaders\SolidColor.shader" />
+    <None Include="Assets\StreamingAssets\build_info.txt" />
     <None Include="Assets\VRKeyboard\README.txt" />
     <None Include="Assets\VRTK\Scripts\Internal\Shaders\AdaptiveQualityDebugVisualization.shader" />
     <None Include="Assets\VRTK\Scripts\Internal\Shaders\TransparentFresnelBehind.shader" />
     <None Include="Assets\VRTK\Scripts\Internal\Shaders\UIOverlay.shader" />
     <None Include="Assets\VRTK\Scripts\Internal\Shaders\Unlit_TransparentColor.shader" />
     <None Include="Assets\VRTK\Scripts\Internal\Shaders\VRTK_OutlineBasic.shader" />
+    <None Include="Assets\readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

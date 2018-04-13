@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using GracesGames.SimpleFileBrowser.Scripts;
 
 public class TutirialAccess : MonoBehaviour
 {
-    public MainMenuController _mainMenu;
 
     private float _time;
     private Slider _slider;
@@ -33,7 +31,7 @@ public class TutirialAccess : MonoBehaviour
 
         if(_slider.value >= 1)
         {
-            _mainMenu.OnButtonCLick_Tutorial();
+           // _mainMenu.OnButtonCLick_Tutorial();
         }
     }
 }

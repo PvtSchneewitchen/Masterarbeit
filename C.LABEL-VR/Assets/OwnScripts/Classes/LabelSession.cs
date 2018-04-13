@@ -28,18 +28,16 @@ public class LabelSession
         Util.DataLoadInfo._sessionName = saveFile_inp._labelsession.GetSessionName();
         Util.DataLoadInfo._sessionFolderPath = Application.persistentDataPath + "/" + Util.DataLoadInfo._sessionName;
 
-        InGameOptions._bAttachOptionsToCamera = saveFile_inp._ingameOptions._bAttachOptionsToCamera;
-        InGameOptions._bDecreasePointsWhenMoving = saveFile_inp._ingameOptions._bDecreasePointsWhenMoving;
-        InGameOptions._bSicknessPrevention_TeleportWithBlink = saveFile_inp._ingameOptions._bSicknessPrevention_TeleportWithBlink;
-        InGameOptions._fFreeFly_AccelerationRot = saveFile_inp._ingameOptions._fFreeFly_AccelerationRot;
-        InGameOptions._fFreeFly_AccelerationTrans = saveFile_inp._ingameOptions._fFreeFly_AccelerationTrans;
-        InGameOptions._fFreeFly_MaxSpeedRot = saveFile_inp._ingameOptions._fFreeFly_MaxSpeedRot;
-        InGameOptions._fFreeFly_MaxSpeedTrans = saveFile_inp._ingameOptions._fFreeFly_MaxSpeedTrans;
-        InGameOptions._fSicknessPrevention_TeleportDistance = saveFile_inp._ingameOptions._fSicknessPrevention_TeleportDistance;
-        InGameOptions._fSicknessPrevention_TurnAngle = saveFile_inp._ingameOptions._fSicknessPrevention_TurnAngle;
-        InGameOptions._movementMode = saveFile_inp._ingameOptions._movementMode;
-
-        InGameOptions.InitUiComponentValues();
+        MovementOptions.ReducePoints = saveFile_inp._ingameOptions._bDecreasePointsWhenMoving;
+        MovementOptions.Twinkle = saveFile_inp._ingameOptions._bSicknessPrevention_TeleportWithBlink;
+        MovementOptions.RotAcceleration = saveFile_inp._ingameOptions._fFreeFly_AccelerationRot;
+        MovementOptions.TransAcceleration = saveFile_inp._ingameOptions._fFreeFly_AccelerationTrans;
+        MovementOptions.RotSpeed = saveFile_inp._ingameOptions._fFreeFly_MaxSpeedRot;
+        MovementOptions.TransSpeed = saveFile_inp._ingameOptions._fFreeFly_MaxSpeedTrans;
+        MovementOptions.TeleportDistance = saveFile_inp._ingameOptions._fSicknessPrevention_TeleportDistance;
+        MovementOptions.TeleportAngle = saveFile_inp._ingameOptions._fSicknessPrevention_TurnAngle;
+        MovementOptions.MoveMode = saveFile_inp._ingameOptions._movementMode;
+        MovementOptions.SaveOptions();
 
         if (Util.DataLoadInfo._dataType == Util.Datatype.hdf5_DaimlerLidar)
         {
