@@ -3,24 +3,37 @@
 /// <summary>
 /// This script has to be attached to the Toucher Prefab which has to be attached to a hand of the avatar
 /// </summary>
-public class TouchLabeler : MonoBehaviour {
+public class TouchLabeler : MonoBehaviour
+{
 
-    public GameObject _labelPointPrefab;
+    public static TouchLabeler Instance { get; private set; }
 
-    private CustomAttributes _collidedObjectAttributes;
+    public bool TouchLabelingEnabled { get; set; }
+
     private OVRHapticsClip _vibration;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    private void OnDestroy()
+    {
+        Instance = null;
+    }
 
     private void Start()
     {
+        TouchLabelingEnabled = true;
         InitVibrationClip();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == _labelPointPrefab.name)
+        if (other.gameObject.GetComponent<CustomAttributes>() && TouchLabelingEnabled)
         {
-            _collidedObjectAttributes = other.gameObject.GetComponent<CustomAttributes>();
-            if (_collidedObjectAttributes._label != Labeling.currentLabelClassID)
+            CustomAttributes colidedObjectAttributes = other.gameObject.GetComponent<CustomAttributes>();
+            if (colidedObjectAttributes._label != Labeling.currentLabelClassID)
             {
                 if (gameObject.transform.parent.name.Contains("left"))
                 {
@@ -31,7 +44,7 @@ public class TouchLabeler : MonoBehaviour {
                     OVRHaptics.RightChannel.Queue(_vibration);
                 }
 
-                _collidedObjectAttributes._label = Labeling.currentLabelClassID;
+                colidedObjectAttributes._label = Labeling.currentLabelClassID;
             }
         }
     }

@@ -24,9 +24,8 @@ public class AppMenu_Movement : Menu<AppMenu_Movement>
 
     public static void Show()
     {
-        Movement.Instance._bMovementEnabled = false;
-
         Open();
+        MenuManager.Instance.OnMenuOpenRoutine();
         Instance.SetupUiComponents();
     }
 
@@ -90,7 +89,7 @@ public class AppMenu_Movement : Menu<AppMenu_Movement>
     {
         LoadingScreen.Show();
         MovementOptions.SaveOptions();
-        SessionSaveFile.SaveSession(Util.DataLoadInfo._sessionFolderPath);
+        SessionSave.SaveSession(Util.DataLoadInfo._sessionFolderPath);
         Labeling.Reset();
         MetaData.Reset();
 
@@ -99,12 +98,7 @@ public class AppMenu_Movement : Menu<AppMenu_Movement>
 
     public void OnResumeClick()
     {
-        MenuManager.Instance.optionModeActive = false;
-
-        Movement.Instance._bMovementEnabled = true;
-
-        MovementOptions.SaveOptions();
-
+        MenuManager.Instance.OnMenuCloseRoutine();
         Close();
         AppMenu_Labeling.Close();
     }

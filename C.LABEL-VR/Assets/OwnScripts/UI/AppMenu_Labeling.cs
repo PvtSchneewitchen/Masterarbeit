@@ -24,6 +24,7 @@ public class AppMenu_Labeling : Menu<AppMenu_Labeling>
     public static void Show()
     {
         Open();
+        MenuManager.Instance.OnMenuCloseRoutine();
         Instance.RefreshLabelClassView();
     }
 
@@ -92,7 +93,7 @@ public class AppMenu_Labeling : Menu<AppMenu_Labeling>
     {
         LoadingScreen.Show();
         MovementOptions.SaveOptions();
-        SessionSaveFile.SaveSession(Util.DataLoadInfo._sessionFolderPath);
+        SessionSave.SaveSession(Util.DataLoadInfo._sessionFolderPath);
         Labeling.Reset();
         MetaData.Reset();
 
@@ -101,11 +102,7 @@ public class AppMenu_Labeling : Menu<AppMenu_Labeling>
 
     public void OnResumeClick()
     {
-        MenuManager.Instance.optionModeActive = false;
-
-        Movement.Instance._bMovementEnabled = true;
-
-        MovementOptions.SaveOptions();
+        MenuManager.Instance.OnMenuCloseRoutine();
 
         Close();
         AppMenu_Movement.Close();

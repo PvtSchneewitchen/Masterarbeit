@@ -6,107 +6,113 @@ using VRTK;
 
 public class PointerTeleport : MonoBehaviour
 {
-    public bool _bTeleportWithBlink;
-    public bool _teleportEnabled;
+    public static PointerTeleport Instance { get; private set; }
 
-    public GameObject _pointerLenghtDisplay;
-    public TextMesh _pointerLengthDisplayText;
-    public Transform _mainCameraRig;
-    public Movement _movementController;
-    public VRTK_Pointer _controllerPointer;
-    public VRTK_StraightPointerRenderer _controllerPointerRenderer;
-    
-    private bool _teleportActivated;
-    private int _iDefaultPointerLength;
-    private Vector2 _leftStickMovement;
+    public bool PointerTeleportEnabled { get; set; }
 
-    // Use this for initialization
+    private VRTK_Pointer leftPointer;
+    private VRTK_StraightPointerRenderer leftPointerRenderer;
+    private bool pointerTeleportActivated = false;
+    private int _iDefaultPointerLength = 10;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    private void OnDestroy()
+    {
+        Instance = null;
+    }
+
+
     void Start()
     {
-        _controllerPointer.ActivationButtonPressed += PointerTeleport_ActivationButtonPressed;
-        _controllerPointer.ActivationButtonReleased += PointerTeleport_ActivationButtonReleased;
-        _controllerPointer.SelectionButtonPressed += PointerTeleport_SelectionButtonPressed;
+        leftPointer = ReferenceHandler.Instance.GetLeftPointer();
+        leftPointerRenderer = ReferenceHandler.Instance.GetLeftPointerRenderer();
 
-        //_pointerLenghtDisplay.transform.position = _leftController.transform.position + _leftController.transform.up * 0.1f;
-        _pointerLenghtDisplay.SetActive(false);
-        _iDefaultPointerLength = 10;
-        _controllerPointerRenderer.maximumLength = _iDefaultPointerLength;
-        _teleportActivated = false;
-        _teleportEnabled = true;
+        leftPointer.ActivationButtonPressed += PointerTeleport_ActivationButtonPressed;
+        leftPointer.ActivationButtonReleased += PointerTeleport_ActivationButtonReleased;
+        leftPointer.SelectionButtonPressed += PointerTeleport_SelectionButtonPressed;
+
+        PointerLengthDisplay.Instance.Disable();
+        leftPointerRenderer.maximumLength = _iDefaultPointerLength;
+        PointerTeleportEnabled = true;
 
         if (MovementOptions.MoveMode != Util.MovementMode.TeleportMode)
-            _controllerPointerRenderer.enabled = false;
+            leftPointerRenderer.enabled = false;
     }
 
     private void Update()
-    {
-        if (_teleportActivated && MovementOptions.MoveMode == Util.MovementMode.TeleportMode)
+    {        
+        if (PointerTeleportEnabled && pointerTeleportActivated)
         {
-            _leftStickMovement = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
-            UpdatePointerLength();
+            Vector2 leftPointerValue = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
+            UpdatePointerLength(leftPointerValue);
             UpdatePointerLengthDisplay();
         }
     }
-
-
 
     private void TeleportOnClick()
     {
         if (MovementOptions.Twinkle)
         {
             Util.EyeBlink.Blink();
-            _mainCameraRig.position = _controllerPointerRenderer.actualCursor.transform.position;
+            OVRManager.instance.transform.position = leftPointerRenderer.actualCursor.transform.position;
         }
         else
         {
-            _mainCameraRig.position = _controllerPointerRenderer.actualCursor.transform.position;
+            OVRManager.instance.transform.position = leftPointerRenderer.actualCursor.transform.position;
         }
     }
 
-    private void UpdatePointerLength()
+    private void UpdatePointerLength(Vector2 leftPointerValue)
     {
-        if (Mathf.Abs(_leftStickMovement.y) > 0)
-            _controllerPointerRenderer.maximumLength += _leftStickMovement.y / 2;
+        if (Mathf.Abs(leftPointerValue.y) > 0)
+            leftPointerRenderer.maximumLength += leftPointerValue.y / 2;
 
-        if (_controllerPointerRenderer.maximumLength <= 0)
+        if (leftPointerRenderer.maximumLength <= 0)
         {
-            _controllerPointerRenderer.maximumLength = 0;
+            leftPointerRenderer.maximumLength = 0;
         }
     }
 
     private void UpdatePointerLengthDisplay()
     {
-        _pointerLengthDisplayText.text = Convert.ToString((int)_controllerPointerRenderer.tracerLength);
+        PointerLengthDisplay.Instance.PointerLength = Convert.ToString((int)leftPointerRenderer.tracerLength);
     }
 
     private void PointerTeleport_SelectionButtonPressed(object sender, ControllerInteractionEventArgs e)
     {
-        if (MovementOptions.MoveMode == Util.MovementMode.TeleportMode && _teleportEnabled)
+        if (MovementOptions.MoveMode == Util.MovementMode.TeleportMode && PointerTeleportEnabled)
         {
             TeleportOnClick();
-            _controllerPointerRenderer.maximumLength = _iDefaultPointerLength;
+            leftPointerRenderer.maximumLength = _iDefaultPointerLength;
         }
     }
 
     private void PointerTeleport_ActivationButtonReleased(object sender, ControllerInteractionEventArgs e)
     {
-        if (MovementOptions.MoveMode == Util.MovementMode.TeleportMode)
+        if (MovementOptions.MoveMode == Util.MovementMode.TeleportMode && PointerTeleportEnabled)
         {
-            _movementController._bMovementEnabled = true;
-            _teleportActivated = false;
+            pointerTeleportActivated = false;
+            Movement.Instance.MovementEnabled = true;
+            PointerLengthDisplay.Instance.Disable();
         }
-        _controllerPointerRenderer.enabled = false;
-        _pointerLenghtDisplay.SetActive(false);
+        leftPointerRenderer.enabled = false;
     }
 
     private void PointerTeleport_ActivationButtonPressed(object sender, ControllerInteractionEventArgs e)
     {
-        if (MovementOptions.MoveMode == Util.MovementMode.TeleportMode)
+        if (MovementOptions.MoveMode == Util.MovementMode.TeleportMode && PointerTeleportEnabled)
         {
-            _movementController._bMovementEnabled = false;
-            _teleportActivated = true;
-            _pointerLenghtDisplay.SetActive(true);
-            _controllerPointerRenderer.enabled = true;
+            pointerTeleportActivated = true;
+            PointerLengthDisplay.Instance.Enable();
+
+            Movement.Instance.MovementEnabled = false;
+            
+
+            leftPointerRenderer.enabled = true;
         }
     }
 }

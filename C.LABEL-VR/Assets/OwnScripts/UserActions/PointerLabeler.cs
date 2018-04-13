@@ -9,113 +9,51 @@ using System.Linq;
 /// </summary>
 public class PointerLabeler : MonoBehaviour
 {
-    #region self pointer
-    //private GameObject _pointerTracer;
-    //private GameObject _pointerCursor;
+    public static PointerLabeler Instance { get; private set; }
 
-    //public float _tracerLength
-    //{
-    //    get
-    //    {
-    //        return _pointerTracer.transform.localScale.z;
-    //    }
-    //    set
-    //    {
-    //        _pointerTracer.transform.localScale = new Vector3(0, 0, value);
-    //        _pointerTracer.transform.localPosition = new Vector3(0, 0, value / 2);
-    //        _pointerCursor.transform.localPosition = new Vector3(0, 0, value);
-    //    }
-    //}
+    public bool ClusterLabelingEnabled { get; set; }
+    public bool PointerLabelingEnabled { get; set; }
 
-    //private float _TracerScale { get; set; }
-    //private float _tracerScale
-    //{
-    //    get
-    //    {
-    //        return _TracerScale;
-    //    }
-    //    set
-    //    {
-    //        _TracerScale = value;
-    //        _pointerTracer.transform.localScale = new Vector3(value, value, _tracerLength);
-    //    }
-    //}
+    private bool pointerActivated;
+    private bool pointerSelectionActivated;
 
-    //private float _CursorScale { get; set; }
-    //private float _cursorScale
-    //{
-    //    get
-    //    {
-    //        return _CursorScale;
-    //    }
-    //    set
-    //    {
-    //        _CursorScale = value;
-    //        _pointerCursor.transform.localScale = new Vector3(value, value, value);
-    //    }
-    //}
+    private VRTK_Pointer rightPointer;
+    private VRTK_StraightPointerRenderer rightPointerRenderer;
 
-    //private float _cursorRadius { get { return _pointerCursor.GetComponent<SphereCollider>().radius; } }
+    private void Awake()
+    {
+        Instance = this;
+    }
 
-    //private void Start()
-    //{
-
-    //    InitPointer();
-    //}
-
-    //private void InitPointer()
-    //{
-    //    Object tr = Resources.Load("DefaultTracer");
-    //    Object cu = Resources.Load("DefaultCursor");
-
-    //    _pointerTracer = Instantiate(tr) as GameObject;
-    //    _pointerCursor = Instantiate(cu) as GameObject;
-
-    //    _pointerTracer.transform.parent = gameObject.transform;
-    //    _pointerCursor.transform.parent = gameObject.transform;
-
-    //    _tracerLength = 10;
-    //    _tracerScale = 0.002f;
-    //    _cursorScale = 0.1f;
-    //}
-
-    //public void HandleTracerCollision(GameObject collisionObject_inp)
-    //{
-    //    float fDistance = Vector3.Distance(collisionObject_inp.transform.position, _pointerTracer.transform.position);
-    //    _tracerLength = fDistance - _cursorRadius;
-    //}
-    #endregion
-
-    public ControlScript _controlScript;
-
-    private bool _bPointerActivated;
-    private bool _bPointerSelectionActivated;
-
-    private VRTK_Pointer _pointer;
-    private VRTK_StraightPointerRenderer _pointerRenderer;
-    private CustomAttributes _collidedObjectAttributes;
+    private void OnDestroy()
+    {
+        Instance = null;
+    }
 
     // Use this for initialization
     void Start()
     {
-        _pointer = GetComponent<VRTK_Pointer>();
-        _pointerRenderer = GetComponent<VRTK_StraightPointerRenderer>();
+        ClusterLabelingEnabled = true;
+        PointerLabelingEnabled = true;
 
-        _pointer.ActivationButtonPressed += SetPointerActivated;
-        _pointer.ActivationButtonReleased += SetPointerDeactivated;
-        _pointer.SelectionButtonPressed += SetPointerSelectionActivated;
-        _pointer.SelectionButtonReleased += SetPointerSelectionDeactivated;
+        rightPointer = ReferenceHandler.Instance.GetRightPointer();
+        rightPointerRenderer = ReferenceHandler.Instance.GetRightPointerRenderer();
+
+        rightPointer.ActivationButtonPressed += SetPointerActivated;
+        rightPointer.ActivationButtonReleased += SetPointerDeactivated;
+        rightPointer.SelectionButtonPressed += SetPointerSelectionActivated;
+        rightPointer.SelectionButtonReleased += SetPointerSelectionDeactivated;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_bPointerActivated && _bPointerSelectionActivated)
+        if (pointerActivated && pointerSelectionActivated)
         {
             GameObject collidedObject = new GameObject();
             try
             {
-                collidedObject = _pointerRenderer.GetDestinationHit().collider.gameObject;
+                collidedObject = rightPointerRenderer.GetDestinationHit().collider.gameObject;
             }
             catch
             {
@@ -124,20 +62,19 @@ public class PointerLabeler : MonoBehaviour
 
             if (collidedObject != null && collidedObject.name.Contains("DefaultLabelpoint"))
             {
-                _collidedObjectAttributes = collidedObject.GetComponent<CustomAttributes>();
+                CustomAttributes collidedObjectAttributes = collidedObject.GetComponent<CustomAttributes>();
 
                 if (OVRInput.Get(OVRInput.Button.SecondaryThumbstick))
                 {
-                    //adjacent labeling
-                    if (_collidedObjectAttributes._label != Labeling.currentLabelClassID)
+                    //Clustering
+                    if (collidedObjectAttributes._label != Labeling.currentLabelClassID && ClusterLabelingEnabled)
                     {
-                        //List<GameObject> adjacentObjects = Clustering.ClusterByRadiusSearch(collidedObject, collidedObject.GetComponent<SphereCollider>().radius, true);
-                        List<GameObject> adjacentObjects = Clustering.GetClusterByRadiusSearch(collidedObject, 5.5f, false);
-                        for (int i = 0; i < adjacentObjects.Count; i++)
+                        List<GameObject> clusteredObjects = Clustering.GetClusterByRadiusSearch(collidedObject, 5.5f, false);
+                        for (int i = 0; i < clusteredObjects.Count; i++)
                         {
-                            if (adjacentObjects[i].GetComponent<CustomAttributes>()._label != Labeling.currentLabelClassID)
+                            if (clusteredObjects[i].GetComponent<CustomAttributes>()._label != Labeling.currentLabelClassID)
                             {
-                                adjacentObjects[i].GetComponent<CustomAttributes>()._label = Labeling.currentLabelClassID;
+                                clusteredObjects[i].GetComponent<CustomAttributes>()._label = Labeling.currentLabelClassID;
                             }
                         }
                     }
@@ -145,15 +82,18 @@ public class PointerLabeler : MonoBehaviour
                 else
                 {
                     //simple single point labeling
-                    var objectsAroundTarget = Clustering.RadiusSearch(collidedObject, collidedObject.GetComponent<SphereCollider>().radius);
-
-                    for (int i = 0; i < objectsAroundTarget.Count; i++)
+                    if (PointerLabelingEnabled)
                     {
-                        var attr = objectsAroundTarget[i].GetComponent<CustomAttributes>();
+                        var objectsAroundTarget = Clustering.RadiusSearch(collidedObject, collidedObject.GetComponent<SphereCollider>().radius);
 
-                        if (attr._label != Labeling.currentLabelClassID)
+                        for (int i = 0; i < objectsAroundTarget.Count; i++)
                         {
-                            attr._label = Labeling.currentLabelClassID;
+                            var attr = objectsAroundTarget[i].GetComponent<CustomAttributes>();
+
+                            if (attr._label != Labeling.currentLabelClassID)
+                            {
+                                attr._label = Labeling.currentLabelClassID;
+                            }
                         }
                     }
                 }
@@ -163,21 +103,21 @@ public class PointerLabeler : MonoBehaviour
 
     public void SetPointerActivated(object sender, ControllerInteractionEventArgs e)
     {
-        _bPointerActivated = true;
+        pointerActivated = true;
     }
 
     private void SetPointerDeactivated(object sender, ControllerInteractionEventArgs e)
     {
-        _bPointerActivated = false;
+        pointerActivated = false;
     }
 
     private void SetPointerSelectionActivated(object sender, ControllerInteractionEventArgs e)
     {
-        _bPointerSelectionActivated = true;
+        pointerSelectionActivated = true;
     }
 
     private void SetPointerSelectionDeactivated(object sender, ControllerInteractionEventArgs e)
     {
-        _bPointerSelectionActivated = false;
+        pointerSelectionActivated = false;
     }
 }

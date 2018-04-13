@@ -28,6 +28,20 @@ public class LabelClassDisplayUpdate : MonoBehaviour
         _enabled = true;
     }
 
+    private void Update()
+    {
+        if (OVRInput.GetDown(OVRInput.Button.Two))
+        {
+            Labeling.SwitchToNextLabelClass();
+            UpdatePointerDisplay();
+        }
+        else if (OVRInput.GetDown(OVRInput.Button.One))
+        {
+            Labeling.SwitchToPreviousLabelClass();
+            UpdatePointerDisplay();
+        }
+    }
+
     public void UpdatePointerDisplay()
     {
         var info = Labeling.GetLabelClassNameAndColor(Labeling.currentLabelClassID);

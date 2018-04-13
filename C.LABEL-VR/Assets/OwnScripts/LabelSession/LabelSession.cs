@@ -15,7 +15,7 @@ public class LabelSession
         _currentCLoud = iCurrentCloud;
     }
 
-    public LabelSession(SessionSaveFile saveFile_inp)
+    public LabelSession(SessionSave saveFile_inp)
     {
         Labeling.SetNewLabelClasses(saveFile_inp._labelsession.GetLabelWorkingSet());
         _sessionName = saveFile_inp._labelsession.GetSessionName();
@@ -54,7 +54,6 @@ public class LabelSession
 
     public PointCloud GetCurrentPointCloud()
     {
-        Debug.Log(_pointClouds.Count);
         return _pointClouds.ElementAt(_currentCLoud);
     }
 

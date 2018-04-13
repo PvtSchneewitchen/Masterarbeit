@@ -161,6 +161,28 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    public void OnMenuOpenRoutine()
+    {
+        optionModeActive = true;
+        Movement.Instance.MovementEnabled = false;
+        PointerLabeler.Instance.ClusterLabelingEnabled = false;
+        PointerLabeler.Instance.PointerLabelingEnabled = false;
+        PointerTeleport.Instance.PointerTeleportEnabled = false;
+        TouchLabeler.Instance.TouchLabelingEnabled = false;
+    }
+
+    public void OnMenuCloseRoutine()
+    {
+        optionModeActive = false;
+        Movement.Instance.MovementEnabled = true;
+        PointerLabeler.Instance.ClusterLabelingEnabled = true;
+        PointerLabeler.Instance.PointerLabelingEnabled = true;
+        PointerTeleport.Instance.PointerTeleportEnabled = true;
+        TouchLabeler.Instance.TouchLabelingEnabled = true;
+
+        MovementOptions.SaveOptions();
+    }
+
     private void Update()
     {
         if (sceneName.Contains("Application"))
@@ -169,20 +191,20 @@ public class MenuManager : MonoBehaviour
             {
                 if (OVRInput.GetDown(OVRInput.Button.Start))
                 {
-                    optionModeActive = true;
                     AppMenu_Movement.Show();
+                    OnMenuOpenRoutine();
                 }
             }
             else
             {
                 if (OVRInput.GetDown(OVRInput.Button.Start))
                 {
-                    optionModeActive = false;
-                    MovementOptions.SaveOptions();
                     for (int i = 0; i < menuStack.Count; i++)
                     {
                         CloseTopMenu();
                     }
+
+                    OnMenuCloseRoutine();
                 }
             }
         }

@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.VR;
+using VRTK;
+
 
 /// <summary>
 /// This Monobehaviour Class implements the functionality of movement through the scene.
@@ -11,9 +14,7 @@ public class Movement : MonoBehaviour
     public static Movement Instance { get; set; }
 
     //in some situations (in game option menu is shown) the movement needs to be disabled
-    public bool _bMovementEnabled { get; set; }
-    public Transform _cameraRig;
-    public ControlScript _controlScript;
+    public bool MovementEnabled { get; set; }
 
     //this semaphor is to check if a stick is shifted or not
     private int _iStickShiftSemaphor;
@@ -30,13 +31,16 @@ public class Movement : MonoBehaviour
     private Vector3 _lastCameraRotation = Vector3.zero;
     private bool _bPointsEnabled = true;
 
-    void Awake()
+    private void Awake()
     {
         Instance = this;
+    }
 
+    private void Start()
+    {
         //init values
         _iStickShiftSemaphor = 0;
-        Instance._bMovementEnabled = true;
+        Instance.MovementEnabled = true;
     }
 
     private void OnDestroy()
@@ -46,16 +50,15 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        if (Instance._bMovementEnabled)
+        if (Instance.MovementEnabled)
         {
             UpdateValues();
-
             if (MovementOptions.MoveMode == Util.MovementMode.FreeFly)
             {
                 UpdateCameraPositionAndRotation_FreeFly();
 
-                //if (InGameOptions._bDecreasePointsWhenMoving)
-                //DecreasePointsWhenMoving();
+                if (MovementOptions.ReducePoints)
+                    DecreasePointsWhenMoving();
             }
             else if (MovementOptions.MoveMode == Util.MovementMode.TeleportMode)
             {
@@ -131,23 +134,26 @@ public class Movement : MonoBehaviour
         }
 
         //compute the speed for each direction
+        if (_rightStickMovement != Vector2.zero || _leftStickMovement != Vector2.zero ||
+            _fActualSpeedLateral != 0 || _fActualSpeedLongitudinal != 0 ||
+            _fActualSpeedVertical != 0 || _fActualSpeedRotational != 0)
+        {
+            float maxSpeedTrans = InternValues._fMaxSpeedTrans;
+            float maxSpeedRot = InternValues._fMaxSpeedRot;
+            float accTrans = InternValues._fAccelerationTrans;
+            float accRot = InternValues._fAccelerationRot;
+            float decTrans = InternValues._fDecelerationTrans;
+            float decRot = InternValues._fDecelerationRot;
 
-        float maxSpeedTrans = InternValues._fMaxSpeedTrans;
-        float maxSpeedRot = InternValues._fMaxSpeedRot;
-        float accTrans = InternValues._fAccelerationTrans;
-        float accRot = InternValues._fAccelerationRot;
-        float decTrans = InternValues._fDecelerationTrans;
-        float decRot = InternValues._fDecelerationRot;
+            ComputeSpeed(ref _fActualSpeedLateral, directionLateral, maxSpeedTrans, accTrans, decTrans);
+            ComputeSpeed(ref _fActualSpeedLongitudinal, directionLongitudinal, maxSpeedTrans, accTrans, decTrans);
+            ComputeSpeed(ref _fActualSpeedVertical, directionVertical, maxSpeedTrans, accTrans, decTrans);
+            ComputeSpeed(ref _fActualSpeedRotational, directionRotaional, maxSpeedRot, accRot, decRot);
 
-        ComputeSpeed(ref _fActualSpeedLateral, directionLateral, maxSpeedTrans, accTrans, decTrans);
-        ComputeSpeed(ref _fActualSpeedLongitudinal, directionLongitudinal, maxSpeedTrans, accTrans, decTrans);
-        ComputeSpeed(ref _fActualSpeedVertical, directionVertical, maxSpeedTrans, accTrans, decTrans);
-        ComputeSpeed(ref _fActualSpeedRotational, directionRotaional, maxSpeedRot, accRot, decRot);
-
-        //translate and rotate by the calculatet values
-
-        _cameraRig.Translate(new Vector3(_fActualSpeedLateral, _fActualSpeedVertical, _fActualSpeedLongitudinal) * Time.deltaTime);
-        _cameraRig.Rotate(Vector3.up, _fActualSpeedRotational * Time.deltaTime);
+            //translate and rotate by the calculatet values
+            OVRManager.instance.transform.Translate(new Vector3(_fActualSpeedLateral, _fActualSpeedVertical, _fActualSpeedLongitudinal) * Time.deltaTime);
+            OVRManager.instance.transform.Rotate(Vector3.up, _fActualSpeedRotational * Time.deltaTime);
+        }
     }
 
     /// <summary>
@@ -211,12 +217,12 @@ public class Movement : MonoBehaviour
     /// </summary>
     private void DecreasePointsWhenMoving()
     {
-        if (_lastCameraPosition == _cameraRig.position && _lastCameraRotation == _cameraRig.rotation.eulerAngles
+        if (_lastCameraPosition == OVRManager.instance.transform.position && _lastCameraRotation == OVRManager.instance.transform.rotation.eulerAngles
             && _leftStickMovement == Vector2.zero && _rightStickMovement == Vector2.zero)
         {
             if (!_bPointsEnabled)
             {
-                _controlScript._session.GetCurrentPointCloud().EnableAllPoints();
+                ControlScript.Instance.Session.GetCurrentPointCloud().EnableAllPoints();
                 _bPointsEnabled = true;
             }
         }
@@ -224,14 +230,13 @@ public class Movement : MonoBehaviour
         {
             if (_bPointsEnabled)
             {
-                _controlScript._session.GetCurrentPointCloud().DecreasePoints();
-
+                ControlScript.Instance.Session.GetCurrentPointCloud().DecreasePoints();
                 _bPointsEnabled = false;
             }
         }
 
-        _lastCameraPosition = _cameraRig.position;
-        _lastCameraRotation = _cameraRig.rotation.eulerAngles;
+        _lastCameraPosition = OVRManager.instance.transform.position;
+        _lastCameraRotation = OVRManager.instance.transform.eulerAngles;
     }
 
     /// <summary>
@@ -272,8 +277,8 @@ public class Movement : MonoBehaviour
             if (MovementOptions.Twinkle)
                 Util.EyeBlink.Blink();
 
-            _cameraRig.Translate(new Vector3(x, y, z));
-            _cameraRig.Rotate(_cameraRig.up, r);
+            OVRManager.instance.transform.Translate(new Vector3(x, y, z));
+            OVRManager.instance.transform.Rotate(OVRManager.instance.transform.up, r);
         }
     }
 

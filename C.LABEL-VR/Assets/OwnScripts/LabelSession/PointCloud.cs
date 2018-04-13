@@ -78,7 +78,7 @@ public class PointCloud
         {
             if (i % 2 == 0 || i % 3 == 0 || i % 5 == 0 || i % 7 == 0)
             {
-                _validPoints[i].SetActive(true);
+                _validPoints[i].SetActive(false);
             }
             
         }

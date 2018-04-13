@@ -1,19 +1,24 @@
-﻿using System;
-using System.Linq;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
 public class ControlScript : MonoBehaviour
 {
-    public LabelSession _session { get; private set; }
-    public Camera _centerEyeAnchor;
-    public LabelClassDisplayUpdate LabelClassDisplay;
+    public static ControlScript Instance { get; private set; }
 
-    public bool _optionModeActive { get; set; }
+    public LabelSession Session { get; private set; }
 
-    // Use this for initialization
-    void Awake()
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    private void OnDestroy()
+    {
+        Instance = null;
+    }
+
+    private void Start()
     {
 #if UNITY_EDITOR
         Util.DataLoadInfo._dataType = Util.Datatype.pcd;
@@ -42,26 +47,23 @@ public class ControlScript : MonoBehaviour
                 pointClouds = Import.ImportHdf5_DaimlerLidar(Util.DataLoadInfo._sourceDataPath);
             }
 
-            Debug.Log(pointClouds.Count);
-            _session = new LabelSession(pointClouds, 0);
+            Session = new LabelSession(pointClouds, 0);
         }
         else
         {
-            SessionSaveFile saveFile;
+            SessionSave saveFile;
 
             using (Stream stream = File.Open(Util.DataLoadInfo._sourceDataPath, FileMode.Open))
             {
                 var binaryFormatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
-                saveFile = binaryFormatter.Deserialize(stream) as SessionSaveFile;
+                saveFile = binaryFormatter.Deserialize(stream) as SessionSave;
             }
 
-            _session = new LabelSession(saveFile);
+            Session = new LabelSession(saveFile);
         }
 
-        _optionModeActive = false;
-
-        _session.GetCurrentPointCloud().EnableAllPoints();
-        _session._sessionName = Util.DataLoadInfo._sessionName;
+        Session.GetCurrentPointCloud().EnableAllPoints();
+        Session._sessionName = Util.DataLoadInfo._sessionName;
 
 
         //ground testing
@@ -131,32 +133,17 @@ public class ControlScript : MonoBehaviour
     void Update()
     {
         CheckCloudChangeButton();
-        CheckLabelClassChangeButton();
     }
 
     private void CheckCloudChangeButton()
     {
         if (OVRInput.GetDown(OVRInput.Button.Four))
         {
-            _session.ShowNextPointCloud();
+            Session.ShowNextPointCloud();
         }
         else if (OVRInput.GetDown(OVRInput.Button.Three))
         {
-            _session.ShowPreviousPointCloud();
-        }
-    }
-
-    private void CheckLabelClassChangeButton()
-    {
-        if (OVRInput.GetDown(OVRInput.Button.Two))
-        {
-            Labeling.SwitchToNextLabelClass();
-            LabelClassDisplay.UpdatePointerDisplay();
-        }
-        else if (OVRInput.GetDown(OVRInput.Button.One))
-        {
-            Labeling.SwitchToPreviousLabelClass();
-            LabelClassDisplay.UpdatePointerDisplay();
+            Session.ShowPreviousPointCloud();
         }
     }
 }

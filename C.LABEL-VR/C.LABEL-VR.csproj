@@ -478,7 +478,6 @@
     <Compile Include="Assets\OwnScripts\Clustering\GroundPointSegmentation.cs" />
     <Compile Include="Assets\OwnScripts\ControlScript.cs" />
     <Compile Include="Assets\OwnScripts\CustomStack.cs" />
-    <Compile Include="Assets\OwnScripts\Import&amp;Export&amp;Save\DataPersistance.cs" />
     <Compile Include="Assets\OwnScripts\Import&amp;Export&amp;Save\Export.cs" />
     <Compile Include="Assets\OwnScripts\Import&amp;Export&amp;Save\HDF5Addon.cs" />
     <Compile Include="Assets\OwnScripts\Import&amp;Export&amp;Save\Import.cs" />
@@ -487,11 +486,12 @@
     <Compile Include="Assets\OwnScripts\Import&amp;Export&amp;Save\MovementData.cs" />
     <Compile Include="Assets\OwnScripts\Import&amp;Export&amp;Save\MovementOptions.cs" />
     <Compile Include="Assets\OwnScripts\Import&amp;Export&amp;Save\PcdAddon.cs" />
-    <Compile Include="Assets\OwnScripts\Import&amp;Export&amp;Save\SessionSaveFile.cs" />
+    <Compile Include="Assets\OwnScripts\Import&amp;Export&amp;Save\SessionSave.cs" />
     <Compile Include="Assets\OwnScripts\LabelSession\CustomAttributes.cs" />
     <Compile Include="Assets\OwnScripts\LabelSession\LabelSession.cs" />
     <Compile Include="Assets\OwnScripts\LabelSession\PointCloud.cs" />
     <Compile Include="Assets\OwnScripts\PlatformManager.cs" />
+    <Compile Include="Assets\OwnScripts\ReferenceHandler.cs" />
     <Compile Include="Assets\OwnScripts\Tutorial\ContinueEvent.cs" />
     <Compile Include="Assets\OwnScripts\Tutorial\TutirialAccess.cs" />
     <Compile Include="Assets\OwnScripts\Tutorial\TutorialManager.cs" />
@@ -510,7 +510,7 @@
     <Compile Include="Assets\OwnScripts\UI\Menu.cs" />
     <Compile Include="Assets\OwnScripts\UI\MenuManager.cs" />
     <Compile Include="Assets\OwnScripts\UI\NumPad.cs" />
-    <Compile Include="Assets\OwnScripts\UI\PointerLengthDisplayControl.cs" />
+    <Compile Include="Assets\OwnScripts\UI\PointerLengthDisplay.cs" />
     <Compile Include="Assets\OwnScripts\UserActions\Labeling.cs" />
     <Compile Include="Assets\OwnScripts\UserActions\Movement.cs" />
     <Compile Include="Assets\OwnScripts\UserActions\PointerLabeler.cs" />

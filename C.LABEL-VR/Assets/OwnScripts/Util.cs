@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using MathNet.Numerics.LinearAlgebra;
 using System;
 using System.Linq;
+using VRTK;
 
 public static class Util
 {
@@ -39,13 +40,6 @@ public static class Util
     public static IList<T> CloneList<T>(this IList<T> listToClone) where T : ICloneable
     {
         return listToClone.Select(item => (T)item.Clone()).ToList();
-    }
-
-    public static void EnableLoadingScreen(GameObject loadingScreen_inp, string screenMessage_inp)
-    {
-        var textObjects = loadingScreen_inp.GetComponentsInChildren<Text>();
-        textObjects[1].text = screenMessage_inp;
-        AlignToCamera(GameObject.Find("CenterEyeAnchor"), loadingScreen_inp, 0.5f);
     }
 
     public static Vector3 MultiplyVectorValues(Vector3 vectorOne_inp, Vector3 vectorTwo_inp)
@@ -247,22 +241,6 @@ public static class Util
 
     #region Nested Classes
 
-    public static class PlaneTesting
-    {
-        public static List<Vector3> PlaneNormals { get; }
-
-        static PlaneTesting()
-        {
-            PlaneNormals = new List<Vector3>();
-        }
-
-        public static void AddPlaneNormal(Vector<float> normal_inp)
-        {
-            Vector3 unityNormal = new Vector3(normal_inp[0], normal_inp[1], normal_inp[2]);
-            PlaneNormals.Add(unityNormal);
-        }
-    }
-
     public static class ClippingDistances
     {
         public static float _distanceToCamera_IngameOptions { get { return 5.0f; } }
@@ -273,7 +251,7 @@ public static class Util
 
     public static class EyeBlink
     {
-        public static BlinkEffect _blinker = GameObject.Find("CenterEyeAnchor").GetComponent<BlinkEffect>();
+        public static BlinkEffect _blinker = VRTK_DeviceFinder.DeviceTransform(VRTK_DeviceFinder.Devices.Headset).GetComponent<BlinkEffect>();
 
         public static void EyeLidDown()
         {

@@ -14,12 +14,12 @@ public class Export
     {
         _ctrl = GameObject.Find("AppController").GetComponent<ControlScript>();
 
-        for (int i = 0; i < _ctrl._session._pointClouds.Count; i++)
+        for (int i = 0; i < _ctrl.Session._pointClouds.Count; i++)
         {
             var container = MetaData.Hdf5_DaimlerLidar._importedContainers[i];
             var indexToID = MetaData.Hdf5_DaimlerLidar._tableIndexToID[i];
 
-            PointCloud cloud = _ctrl._session._pointClouds[i];
+            PointCloud cloud = _ctrl.Session._pointClouds[i];
             List<GameObject> pointList = cloud._validPoints;
 
             string[] filePaths;
@@ -57,9 +57,9 @@ public class Export
 
         _ctrl = GameObject.Find("AppController").GetComponent<ControlScript>();
 
-        for (int i = 0; i < _ctrl._session._pointClouds.Count; i++)
+        for (int i = 0; i < _ctrl.Session._pointClouds.Count; i++)
         {
-            PointCloud cloud = _ctrl._session._pointClouds[i];
+            PointCloud cloud = _ctrl.Session._pointClouds[i];
             List<GameObject> pointList = cloud._validPoints;
 
             string[] filePaths = Directory.GetFiles(exportPath_inp);
