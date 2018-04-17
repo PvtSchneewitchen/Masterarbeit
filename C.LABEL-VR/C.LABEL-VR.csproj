@@ -268,15 +268,6 @@
     <Reference Include="MathNet.Numerics">
       <HintPath>Assets/Plugins/Math.net/MathNet.Numerics.dll</HintPath>
     </Reference>
-    <Reference Include="Eto">
-      <HintPath>Assets/Plugins/RhinoCommon.6.2.18065.11031/lib/net45/Eto.dll</HintPath>
-    </Reference>
-    <Reference Include="Rhino.UI">
-      <HintPath>Assets/Plugins/RhinoCommon.6.2.18065.11031/lib/net45/Rhino.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="RhinoCommon">
-      <HintPath>Assets/Plugins/RhinoCommon.6.2.18065.11031/lib/net45/RhinoCommon.dll</HintPath>
-    </Reference>
     <Reference Include="sharpHDF">
       <HintPath>Assets/Plugins/sharphdf/sharpHDF.dll</HintPath>
     </Reference>
@@ -476,7 +467,6 @@
     <Compile Include="Assets\OvrAvatar\Scripts\OvrAvatarTouchController.cs" />
     <Compile Include="Assets\OwnScripts\Clustering\Clustering.cs" />
     <Compile Include="Assets\OwnScripts\Clustering\GroundPointSegmentation.cs" />
-    <Compile Include="Assets\OwnScripts\ControlScript.cs" />
     <Compile Include="Assets\OwnScripts\CustomStack.cs" />
     <Compile Include="Assets\OwnScripts\Import&amp;Export&amp;Save\Export.cs" />
     <Compile Include="Assets\OwnScripts\Import&amp;Export&amp;Save\HDF5Addon.cs" />
@@ -492,6 +482,7 @@
     <Compile Include="Assets\OwnScripts\LabelSession\PointCloud.cs" />
     <Compile Include="Assets\OwnScripts\PlatformManager.cs" />
     <Compile Include="Assets\OwnScripts\ReferenceHandler.cs" />
+    <Compile Include="Assets\OwnScripts\SessionHandler.cs" />
     <Compile Include="Assets\OwnScripts\Tutorial\ContinueEvent.cs" />
     <Compile Include="Assets\OwnScripts\Tutorial\TutirialAccess.cs" />
     <Compile Include="Assets\OwnScripts\Tutorial\TutorialManager.cs" />
@@ -809,9 +800,6 @@
     <None Include="Assets\OvrAvatar\Content\Materials\AvatarSurfaceShaderPBS.shader" />
     <None Include="Assets\OvrAvatar\Content\Materials\AvatarSurfaceShaderSelfOccluding.shader" />
     <None Include="Assets\Plugins\Math.net\MathNet.Numerics.xml" />
-    <None Include="Assets\Plugins\RhinoCommon.6.2.18065.11031\Eto-LICENSE.txt" />
-    <None Include="Assets\Plugins\RhinoCommon.6.2.18065.11031\lib\net45\Eto.xml" />
-    <None Include="Assets\Plugins\RhinoCommon.6.2.18065.11031\lib\net45\RhinoCommon.XML" />
     <None Include="Assets\Plugins\SimpleFileBrowser\README.txt" />
     <None Include="Assets\Plugins\hdf5\HDF.PInvoke.XML" />
     <None Include="Assets\Shaders\ColorHue.shader" />

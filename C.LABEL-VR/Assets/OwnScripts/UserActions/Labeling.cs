@@ -7,7 +7,7 @@ public static class Labeling
 {
     public static uint currentLabelClassID;
 
-    private static Dictionary<uint, Tuple<string, Material>> _labelClassInformations;
+    private static Dictionary<uint, Tuple<string, Material>> labelClassInformations;
     private static Material _standardMaterial;
     private static List<Color32> _standardColors;
     private static string _dummyClassName = "Dummy Class";
@@ -27,7 +27,7 @@ public static class Labeling
         Material unlabeledMaterial = Resources.Load("Materials/Unlabeled") as Material;
         _standardMaterial = unlabeledMaterial;
 
-        _labelClassInformations = new Dictionary<uint, Tuple<string, Material>>
+        labelClassInformations = new Dictionary<uint, Tuple<string, Material>>
             {
                 {0 , new Tuple<string, Material>("unlabeled" ,unlabeledMaterial) }
             };
@@ -59,12 +59,12 @@ public static class Labeling
         };
 
         SetNewLabelClasses(new Dictionary<uint, string> { { 1, _dummyClassName } });
-        SetCurrentLabelClassID(_labelClassInformations.ElementAt(1).Key);
+        SetCurrentLabelClassID(labelClassInformations.ElementAt(1).Key);
     }
 
     public static void SwitchToPreviousLabelClass()
     {
-        var keyList = _labelClassInformations.Keys.ToList();
+        var keyList = labelClassInformations.Keys.ToList();
         keyList.Sort();
         var currentListIndex = keyList.IndexOf(currentLabelClassID);
 
@@ -80,7 +80,7 @@ public static class Labeling
 
     public static void SwitchToNextLabelClass()
     {
-        var keyList = _labelClassInformations.Keys.ToList();
+        var keyList = labelClassInformations.Keys.ToList();
         keyList.Sort();
         var currentListIndex = keyList.IndexOf(currentLabelClassID);
 
@@ -94,13 +94,13 @@ public static class Labeling
         }
     }
 
-    public static void EditLabelClass(uint oldID_inp, uint newID_inp, string newName_inp, Color newColor_inp)
+    public static void EditSingleLabelClass(uint oldID_inp, uint newID_inp, string newName_inp, Color newColor_inp)
     {
-        if (oldID_inp != 0 && _labelClassInformations.ContainsKey(oldID_inp))
+        if (oldID_inp != 0 && labelClassInformations.ContainsKey(oldID_inp))
         {
-            _labelClassInformations.Remove(oldID_inp);
+            labelClassInformations.Remove(oldID_inp);
 
-            _labelClassInformations.Add(newID_inp, new Tuple<string, Material>(newName_inp, CreateNewMaterial(newColor_inp)));
+            labelClassInformations.Add(newID_inp, new Tuple<string, Material>(newName_inp, CreateNewMaterial(newColor_inp)));
         }
     }
 
@@ -108,7 +108,7 @@ public static class Labeling
     {
         Tuple<string, Material> info;
 
-        if (_labelClassInformations.TryGetValue(ID_inp, out info))
+        if (labelClassInformations.TryGetValue(ID_inp, out info))
         {
             return info.Item1;
         }
@@ -119,16 +119,29 @@ public static class Labeling
         }
     }
 
-    public static Dictionary<uint, Tuple<string, Material>> GetAllLabelClassInfos()
+    public static Dictionary<uint, Tuple<string, SessionSave.SerializableColor>> GetAllIdsNamesAndSerializedColors()
     {
-        return _labelClassInformations;
+        Dictionary<uint, Tuple<string, SessionSave.SerializableColor>> infos_out = new Dictionary<uint, Tuple<string, SessionSave.SerializableColor>>();
+
+        foreach (var item in labelClassInformations)
+        {
+            Color c = new Color(item.Value.Item2.color.r, item.Value.Item2.color.g, item.Value.Item2.color.b, item.Value.Item2.color.a);
+            infos_out.Add(item.Key, new Tuple<string, SessionSave.SerializableColor>(item.Value.Item1, new SessionSave.SerializableColor(c.r, c.g, c.b, c.a)));
+        }
+
+        return infos_out;
     }
 
-    public static Tuple<string, Material> GetLabelClassNameAndColor(uint ID_inp)
+    public static Dictionary<uint, Tuple<string, Material>> GetAllIdsNamesAndMaterials()
+    {
+        return labelClassInformations;
+    }
+
+    public static Tuple<string, Material> GetLabelClassNameAndMaterial(uint ID_inp)
     {
         Tuple<string, Material> info;
 
-        if (_labelClassInformations.TryGetValue(ID_inp, out info))
+        if (labelClassInformations.TryGetValue(ID_inp, out info))
         {
             return info;
         }
@@ -139,53 +152,68 @@ public static class Labeling
         }
     }
 
-    public static Dictionary<uint, string> GetLabelWorkingSet()
+    public static Dictionary<uint, string> GetAllIdsAndNames()
     {
         Dictionary<uint, string> lws = new Dictionary<uint, string>();
 
-        for (int i = 0; i < _labelClassInformations.Count; i++)
+        for (int i = 0; i < labelClassInformations.Count; i++)
         {
-            uint id = _labelClassInformations.ElementAt(i).Key;
-            string name = _labelClassInformations.ElementAt(i).Value.Item1;
+            uint id = labelClassInformations.ElementAt(i).Key;
+            string name = labelClassInformations.ElementAt(i).Value.Item1;
             lws.Add(id, name);
         }
 
         return lws;
     }
 
-    public static void AddNewLabelClass(uint id_inp, string name_inp, Color color_inp)
+    public static void AddSingleLabelClass(uint id_inp, string name_inp, Color color_inp)
     {
-        if (!_labelClassInformations.ContainsKey(id_inp))
+        if (!labelClassInformations.ContainsKey(id_inp))
         {
             Material mat = new Material(_standardMaterial)
             {
                 color = color_inp
             };
 
-            _labelClassInformations.Add(id_inp, new Tuple<string, Material>(name_inp, mat));
+            labelClassInformations.Add(id_inp, new Tuple<string, Material>(name_inp, mat));
         }
+    }
+
+    public static void SetSavedLabelClasses(Dictionary<uint, Tuple<string, SessionSave.SerializableColor>> labelWorkingSet_inp)
+    {
+        labelClassInformations.Clear();
+
+        foreach (var entry in labelWorkingSet_inp)
+        {
+            Color c = new Color(entry.Value.Item2.R, entry.Value.Item2.G, entry.Value.Item2.B, entry.Value.Item2.A);
+            Material m = CreateNewMaterial(c);
+            labelClassInformations.Add(entry.Key, new Tuple<string, Material>(entry.Value.Item1, m));
+        }
+
+        if (labelClassInformations.Count > 1)
+            SetCurrentLabelClassID(labelClassInformations.ElementAt(1).Key);
     }
 
     public static void SetNewLabelClasses(Dictionary<uint, string> labelWorkingSet_inp)
     {
-        if (_labelClassInformations.ContainsKey(1))
+        if (labelClassInformations.ContainsKey(1))
         {
             Tuple<string, Material> info;
-            _labelClassInformations.TryGetValue(1, out info);
+            labelClassInformations.TryGetValue(1, out info);
 
             if (info.Item1 == _dummyClassName)
-                _labelClassInformations.Remove(1);
+                labelClassInformations.Remove(1);
         }
 
         for (int i = 0; i < labelWorkingSet_inp.Count; i++)
         {
             uint key = labelWorkingSet_inp.ElementAt(i).Key;
             string value = labelWorkingSet_inp.ElementAt(i).Value;
-            if (value != "unlabeled" && key != 0 && !_labelClassInformations.ContainsKey(key))
+            if (value != "unlabeled" && key != 0 && !labelClassInformations.ContainsKey(key))
             {
                 try
                 {
-                    _labelClassInformations.Add(key, new Tuple<string, Material>(value, CreateNewMaterial()));
+                    labelClassInformations.Add(key, new Tuple<string, Material>(value, CreateNewRandomMaterial()));
                 }
                 catch
                 {
@@ -194,15 +222,15 @@ public static class Labeling
             }
         }
 
-        if (_labelClassInformations.Count > 1)
-            SetCurrentLabelClassID(_labelClassInformations.ElementAt(1).Key);
+        if (labelClassInformations.Count > 1)
+            SetCurrentLabelClassID(labelClassInformations.ElementAt(1).Key);
     }
 
     public static Material GetLabelClassMaterial(uint ID_inp)
     {
         Tuple<string, Material> info;
 
-        if (_labelClassInformations.TryGetValue(ID_inp, out info))
+        if (labelClassInformations.TryGetValue(ID_inp, out info))
         {
             return info.Item2;
         }
@@ -215,7 +243,7 @@ public static class Labeling
 
     public static void SetCurrentLabelClassID(uint label_inp)
     {
-        if (_labelClassInformations.ContainsKey(label_inp))
+        if (labelClassInformations.ContainsKey(label_inp))
         {
             currentLabelClassID = label_inp;
         }
@@ -229,7 +257,7 @@ public static class Labeling
     {
         Tuple<string, Material> info;
 
-        if (_labelClassInformations.TryGetValue(ID_inp, out info))
+        if (labelClassInformations.TryGetValue(ID_inp, out info))
         {
             return info.Item2.color;
         }
@@ -242,14 +270,15 @@ public static class Labeling
 
     private static Material CreateNewMaterial(Color color_inp)
     {
-        Material outMat = new Material(_standardMaterial);
-
-        outMat.color = color_inp;
+        Material outMat = new Material(_standardMaterial)
+        {
+            color = color_inp
+        };
 
         return outMat;
     }
 
-    private static Material CreateNewMaterial()
+    private static Material CreateNewRandomMaterial()
     {
         Material outMat = new Material(_standardMaterial);
 

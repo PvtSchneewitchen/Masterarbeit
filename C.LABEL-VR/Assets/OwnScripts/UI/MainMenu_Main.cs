@@ -16,7 +16,10 @@ public class MainMenu_Main : SimpleMenu<MainMenu_Main>
 
     public void OnQuitClick()
     {
-        Application.Quit();
+        //Application.Quit();
+
+        if (!Application.isEditor)
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
     }
 
     private void LoadSessionFromPath(string path_inp)

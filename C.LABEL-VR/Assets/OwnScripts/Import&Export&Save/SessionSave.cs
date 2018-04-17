@@ -6,6 +6,23 @@ using UnityEngine;
 [Serializable]
 public class SessionSave
 {
+    [Serializable]
+    public struct SerializableColor
+    {
+        public float R { get; set; }
+        public float G { get; set; }
+        public float B { get; set; }
+        public float A { get; set; }
+
+        public SerializableColor(float r, float g, float b, float a)
+        {
+            R = r;
+            G = g;
+            B = b;
+            A = a;
+        }
+    }
+
     public SessionSave_LabelSession _labelsession { get; set; }
     public Sessionsave_MovementOptions _ingameOptions { get; set; }
     public SessionSave_MetaData _exportMetaData { get; set; }
@@ -27,7 +44,7 @@ public class SessionSave
         private List<List<int>> _IDs;
         private List<List<uint>> _Label;
         private List<List<int>> _groundPoint;
-        private Dictionary<uint, string> _labelWorkingSet;
+        private Dictionary<uint, Tuple<string, SerializableColor>> _labelWorkingSet;
         private List<string> _pathToPointCloudData;
         private int _currentCLoud;
         private Util.Datatype _sessionDataType;
@@ -42,21 +59,21 @@ public class SessionSave
             _groundPoint = new List<List<int>>();
             _IDs = new List<List<int>>();
             _Label = new List<List<uint>>();
-            _labelWorkingSet = new Dictionary<uint, string>();
+            _labelWorkingSet = new Dictionary<uint, Tuple<string, SerializableColor>>();
             _pathToPointCloudData = new List<string>();
         }
 
         public void AssignLabelSessionValues()
         {
-            ControlScript ctrl = GameObject.Find("AppController").GetComponent<ControlScript>();
+            SessionHandler sessionHandler = ReferenceHandler.Instance.GetSessionHandler();
 
             _sessionDataType = Util.DataLoadInfo._dataType;
             _sessionSourcePath = Util.DataLoadInfo._sourceDataPath;
-            _sessionName = ctrl.Session._sessionName;
-            _currentCLoud = ctrl.Session.GetCurrentPointCloudIndex();
-            _labelWorkingSet = Labeling.GetLabelWorkingSet();
+            _sessionName = sessionHandler.Session._sessionName;
+            _currentCLoud = sessionHandler.Session.GetCurrentPointCloudIndex();
+            _labelWorkingSet = Labeling.GetAllIdsNamesAndSerializedColors();
 
-            List<PointCloud> _pointClouds = ctrl.Session._pointClouds;
+            List<PointCloud> _pointClouds = sessionHandler.Session._pointClouds;
 
             for (int i = 0; i < _pointClouds.Count; i++)
             {
@@ -104,7 +121,7 @@ public class SessionSave
             return clouds_out;
         }
 
-        public Dictionary<uint, string> GetLabelWorkingSet()
+        public Dictionary<uint, Tuple<string, SerializableColor>> GetLabelWorkingSet()
         {
             return _labelWorkingSet;
         }
@@ -259,7 +276,7 @@ public class SessionSave
         SessionSave saveFile = new SessionSave();
 
         //labelsession
-        ControlScript ctrl = GameObject.Find("AppController").GetComponent<ControlScript>();
+        SessionHandler sessionHandler = ReferenceHandler.Instance.GetSessionHandler();
 
         SessionSave_LabelSession labelSession = new SessionSave_LabelSession();
         Sessionsave_MovementOptions ingameOptions = new Sessionsave_MovementOptions();
@@ -279,7 +296,7 @@ public class SessionSave
             saveFile._exportMetaData._hdf5_DaimlerLidar = hdf5DL;
         }
 
-        string dataPath = path_inp + "/" + ctrl.Session._sessionName + "SaveFile.dat";
+        string dataPath = path_inp + "/" + sessionHandler.Session._sessionName + "SaveFile.dat";
         using (Stream stream = File.Open(dataPath, FileMode.Create))
         {
             var binaryFormatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();

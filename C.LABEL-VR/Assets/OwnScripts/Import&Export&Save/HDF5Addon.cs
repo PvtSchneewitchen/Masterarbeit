@@ -320,7 +320,7 @@ public class HDF5Addon
 
         public static void WriteLabelWorkingSet(long fileId_inp, bool overwrite_inp)
         {
-            var LabelClassInfos = Labeling.GetAllLabelClassInfos();
+            var LabelClassInfos = Labeling.GetAllIdsNamesAndMaterials();
 
             int status = 0;
             ulong[] dims = new ulong[2];

@@ -36,7 +36,7 @@ public class AppMenu_Labeling : Menu<AppMenu_Labeling>
         }
         Instance.labelClassItems.Clear();
 
-        var classInfos = Labeling.GetAllLabelClassInfos();
+        var classInfos = Labeling.GetAllIdsNamesAndMaterials();
         foreach (var classInfo in classInfos)
         {
             GameObject classItem = Instantiate(labelClassItemPrefab, Instance.labelClassView.content.transform);
@@ -86,7 +86,7 @@ public class AppMenu_Labeling : Menu<AppMenu_Labeling>
     public void OnExportClick()
     {
         string userInfo = "Choose the directory you want for the export!";
-        FileBrowserScript.Show(Util.DataLoadInfo._sessionFolderPath, "", StartExport, userInfo);
+        FileBrowserScript.Show(Util.DataLoadInfo._sourceDataPath, "", StartExport, userInfo);
     }
 
     public void OnMainMenuClick()
@@ -142,7 +142,7 @@ public class AppMenu_Labeling : Menu<AppMenu_Labeling>
 
     private void AddNewLabelClass(LabelClassEditor.LabelCLassItemStruct newLabelCLass)
     {
-        Labeling.AddNewLabelClass(newLabelCLass.ID, newLabelCLass.Name, newLabelCLass.Color);
+        Labeling.AddSingleLabelClass(newLabelCLass.ID, newLabelCLass.Name, newLabelCLass.Color);
         RefreshLabelClassView();
     }
 
@@ -163,7 +163,8 @@ public class AppMenu_Labeling : Menu<AppMenu_Labeling>
 
     private void ChangeLabelClass(LabelClassEditor.LabelCLassItemStruct editedLabelClass)
     {
-        Labeling.EditLabelClass(oldID, editedLabelClass.ID, editedLabelClass.Name, editedLabelClass.Color);
+        Labeling.EditSingleLabelClass(oldID, editedLabelClass.ID, editedLabelClass.Name, editedLabelClass.Color);
+        ReferenceHandler.Instance.GetSessionHandler().Session.GetCurrentPointCloud().RefreshPointsOfLabelCLass(oldID, editedLabelClass.ID);
         RefreshLabelClassView();
     }
     #endregion
@@ -218,6 +219,7 @@ public class AppMenu_Labeling : Menu<AppMenu_Labeling>
     #region Callbacks
     private void StartExport(string path)
     {
+        LoadingScreen.Show();
         FileAttributes attr = File.GetAttributes(path);
 
         if (!attr.HasFlag(FileAttributes.Directory))
@@ -231,6 +233,7 @@ public class AppMenu_Labeling : Menu<AppMenu_Labeling>
         {
             Export.ExportHdf5_DaimlerLidar(path);
         }
+        LoadingScreen.Close();
     }
     #endregion
 }

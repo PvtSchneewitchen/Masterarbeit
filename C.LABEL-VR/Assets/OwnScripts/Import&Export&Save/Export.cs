@@ -7,19 +7,19 @@ using HDF.PInvoke;
 
 public class Export
 {
-    private static ControlScript _ctrl;
-    private static string _exportDataPath;
+    private static SessionHandler sessionHandler;
+    private static string exportDataPath;
 
     public static void ExportHdf5_DaimlerLidar(string exportPath_inp)
     {
-        _ctrl = GameObject.Find("AppController").GetComponent<ControlScript>();
+        sessionHandler = ReferenceHandler.Instance.GetSessionHandler();
 
-        for (int i = 0; i < _ctrl.Session._pointClouds.Count; i++)
+        for (int i = 0; i < sessionHandler.Session._pointClouds.Count; i++)
         {
             var container = MetaData.Hdf5_DaimlerLidar._importedContainers[i];
             var indexToID = MetaData.Hdf5_DaimlerLidar._tableIndexToID[i];
 
-            PointCloud cloud = _ctrl.Session._pointClouds[i];
+            PointCloud cloud = sessionHandler.Session._pointClouds[i];
             List<GameObject> pointList = cloud._validPoints;
 
             string[] filePaths;
@@ -34,19 +34,19 @@ public class Export
                 filePaths = Directory.GetFiles(exportPath_inp);
             }
 
-            _exportDataPath = Path.Combine(exportPath_inp, Path.GetFileName(cloud._pathToPointCloudData));
+            exportDataPath = Path.Combine(exportPath_inp, Path.GetFileName(cloud._pathToPointCloudData));
 
-            if (filePaths.ToList().Contains(_exportDataPath))
+            if (filePaths.ToList().Contains(exportDataPath))
             {
                 //overwrite
-                HDF5Addon.OverwriteHdf5_DaimlerLidar(i, indexToID, container, pointList, _exportDataPath);
+                HDF5Addon.OverwriteHdf5_DaimlerLidar(i, indexToID, container, pointList, exportDataPath);
             }
             else
             {
                 //create new
-                HDF5Addon.CreateNewHdf5File_DaimlerLidar(i, indexToID, container, pointList, _exportDataPath);
+                HDF5Addon.CreateNewHdf5File_DaimlerLidar(i, indexToID, container, pointList, exportDataPath);
             }
-            Debug.Log("hdf5-Files exported to " + _exportDataPath);
+            Debug.Log("hdf5-Files exported to " + exportDataPath);
         }
         
     }
@@ -55,25 +55,25 @@ public class Export
     {
         Quaternion UnityToPcdCs = Quaternion.Euler(-90, 90, 0);
 
-        _ctrl = GameObject.Find("AppController").GetComponent<ControlScript>();
+        sessionHandler = ReferenceHandler.Instance.GetSessionHandler();
 
-        for (int i = 0; i < _ctrl.Session._pointClouds.Count; i++)
+        for (int i = 0; i < sessionHandler.Session._pointClouds.Count; i++)
         {
-            PointCloud cloud = _ctrl.Session._pointClouds[i];
+            PointCloud cloud = sessionHandler.Session._pointClouds[i];
             List<GameObject> pointList = cloud._validPoints;
 
             string[] filePaths = Directory.GetFiles(exportPath_inp);
 
             if (filePaths.ToList().Contains(Path.Combine(exportPath_inp, Path.GetFileName(cloud._pathToPointCloudData))))
             {
-                _exportDataPath = cloud._pathToPointCloudData;
+                exportDataPath = cloud._pathToPointCloudData;
             }
             else
             {
-                _exportDataPath = Path.Combine(exportPath_inp, Path.GetFileName(cloud._pathToPointCloudData));
+                exportDataPath = Path.Combine(exportPath_inp, Path.GetFileName(cloud._pathToPointCloudData));
             }
 
-            using (StreamWriter pcdFileWriter = new StreamWriter(_exportDataPath, false))
+            using (StreamWriter pcdFileWriter = new StreamWriter(exportDataPath, false))
             {
                 pcdFileWriter.WriteLine("FIELDS x y z label");
                 pcdFileWriter.WriteLine("DATA ascii");
@@ -93,6 +93,6 @@ public class Export
                 }
             }
         }
-        Debug.Log("Pcd-Files exported to " + _exportDataPath);
+        Debug.Log("Pcd-Files exported to " + exportDataPath);
     }
 }

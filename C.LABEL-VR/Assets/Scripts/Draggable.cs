@@ -3,12 +3,20 @@ using VRTK;
 
 public class Draggable : MonoBehaviour
 {
-    public VRTK_UIPointer uiPointer;
-    public VRTK_StraightPointerRenderer pointerRenderer;
+    
     public bool fixX;
     public bool fixY;
     public Transform thumb;
     bool dragging;
+
+    private VRTK_UIPointer uiPointer;
+    private VRTK_StraightPointerRenderer pointerRenderer;
+
+    private void Start()
+    {
+        uiPointer = ReferenceHandler.Instance.GetRightUiPointer();
+        pointerRenderer = ReferenceHandler.Instance.GetRightPointerRenderer();
+    }
 
     void FixedUpdate()
     {

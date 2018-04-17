@@ -222,7 +222,7 @@ public class Movement : MonoBehaviour
         {
             if (!_bPointsEnabled)
             {
-                ControlScript.Instance.Session.GetCurrentPointCloud().EnableAllPoints();
+                SessionHandler.Instance.Session.GetCurrentPointCloud().EnableAllPoints();
                 _bPointsEnabled = true;
             }
         }
@@ -230,7 +230,7 @@ public class Movement : MonoBehaviour
         {
             if (_bPointsEnabled)
             {
-                ControlScript.Instance.Session.GetCurrentPointCloud().DecreasePoints();
+                SessionHandler.Instance.Session.GetCurrentPointCloud().DecreasePoints();
                 _bPointsEnabled = false;
             }
         }

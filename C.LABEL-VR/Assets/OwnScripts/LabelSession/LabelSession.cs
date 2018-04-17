@@ -17,7 +17,7 @@ public class LabelSession
 
     public LabelSession(SessionSave saveFile_inp)
     {
-        Labeling.SetNewLabelClasses(saveFile_inp._labelsession.GetLabelWorkingSet());
+        Labeling.SetSavedLabelClasses(saveFile_inp._labelsession.GetLabelWorkingSet());
         _sessionName = saveFile_inp._labelsession.GetSessionName();
         _currentCLoud = saveFile_inp._labelsession.GetCurrentCloudID();
         _pointClouds = saveFile_inp._labelsession.GetPointClouds();

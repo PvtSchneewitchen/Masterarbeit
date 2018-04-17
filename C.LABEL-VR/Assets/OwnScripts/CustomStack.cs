@@ -58,4 +58,9 @@ public class CustomStack<T>
     {
         return stack.Contains(item);
     }
+
+    public T ElementAt(int index)
+    {
+        return stack.ElementAt(index);
+    }
 }

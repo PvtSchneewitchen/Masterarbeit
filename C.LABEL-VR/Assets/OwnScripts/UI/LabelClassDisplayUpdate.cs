@@ -5,27 +5,40 @@ using VRTK;
 
 public class LabelClassDisplayUpdate : MonoBehaviour
 {
-    public VRTK_Pointer _rightControllerPointer;
-    public VRTK_StraightPointerRenderer _rightControllerPointerRenderer;
-    public bool _enabled;
+    public Text displayText;
 
+    public static LabelClassDisplayUpdate Instance { get; set; }
+
+    public bool DisplayEnabled { get; set; }
+
+    private VRTK_Pointer rightPointer;
+    private VRTK_StraightPointerRenderer rightPointerRenderer;
     private RectTransform _displayTransform;
-    private Text _displayText;
     private Color32 _oldPointerColor;
-    
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    private void OnDestroy()
+    {
+        Instance = null;
+    }
 
     void Start()
     {
-        _rightControllerPointer.ActivationButtonPressed += PointerEnabled;
-        _rightControllerPointer.ActivationButtonReleased += PointerDisabled;
+        rightPointer = ReferenceHandler.Instance.GetRightPointer();
+        rightPointerRenderer = ReferenceHandler.Instance.GetRightPointerRenderer();
 
-        _displayText = GetComponentInChildren<Text>();
+        rightPointer.ActivationButtonPressed += PointerEnabled;
+        rightPointer.ActivationButtonReleased += PointerDisabled;
 
         _displayTransform = GetComponent<RectTransform>();
         Transform parent = _displayTransform.parent.transform;
         _displayTransform.position = parent.position + (parent.up * 0.1f);
         gameObject.SetActive(false);
-        _enabled = true;
+        DisplayEnabled = true;
     }
 
     private void Update()
@@ -44,16 +57,16 @@ public class LabelClassDisplayUpdate : MonoBehaviour
 
     public void UpdatePointerDisplay()
     {
-        var info = Labeling.GetLabelClassNameAndColor(Labeling.currentLabelClassID);
+        var info = Labeling.GetLabelClassNameAndMaterial(Labeling.currentLabelClassID);
 
-        _displayText.text = info.Item1;
-        _oldPointerColor = _rightControllerPointerRenderer.validCollisionColor;
-        _rightControllerPointerRenderer.validCollisionColor = info.Item2.color;
+        displayText.text = info.Item1;
+        _oldPointerColor = rightPointerRenderer.validCollisionColor;
+        rightPointerRenderer.validCollisionColor = info.Item2.color;
     }
 
     private void PointerEnabled(object sender, ControllerInteractionEventArgs e)
     {
-        if(_enabled)
+        if(DisplayEnabled)
         {
             UpdatePointerDisplay();
             gameObject.SetActive(true);
@@ -63,9 +76,9 @@ public class LabelClassDisplayUpdate : MonoBehaviour
 
     private void PointerDisabled(object sender, ControllerInteractionEventArgs e)
     {
-        if (_enabled)
+        if (DisplayEnabled)
         {
-            _rightControllerPointerRenderer.validCollisionColor = _oldPointerColor;
+            rightPointerRenderer.validCollisionColor = _oldPointerColor;
             gameObject.SetActive(false);
         }
     }

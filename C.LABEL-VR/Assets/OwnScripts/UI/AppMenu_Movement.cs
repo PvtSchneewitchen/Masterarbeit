@@ -82,7 +82,7 @@ public class AppMenu_Movement : Menu<AppMenu_Movement>
     public void OnExportClick()
     {
         string userInfo = "Choose the directory you want for the export!";
-        FileBrowserScript.Show(Util.DataLoadInfo._sessionFolderPath, "", StartExport, userInfo);
+        FileBrowserScript.Show(Util.DataLoadInfo._sourceDataPath, "", StartExport, userInfo);
     }
 
     public void OnMainMenuClick()
@@ -155,6 +155,7 @@ public class AppMenu_Movement : Menu<AppMenu_Movement>
     #region Callbacks
     private void StartExport(string path)
     {
+        LoadingScreen.Show();
         FileAttributes attr = File.GetAttributes(path);
 
         if (!attr.HasFlag(FileAttributes.Directory))
@@ -168,6 +169,7 @@ public class AppMenu_Movement : Menu<AppMenu_Movement>
         {
             Export.ExportHdf5_DaimlerLidar(path);
         }
+        LoadingScreen.Close();
     }
 
     private void FillInputfield(string enteredValue)

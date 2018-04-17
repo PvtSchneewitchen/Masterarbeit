@@ -268,15 +268,6 @@
     <Reference Include="MathNet.Numerics">
       <HintPath>Assets/Plugins/Math.net/MathNet.Numerics.dll</HintPath>
     </Reference>
-    <Reference Include="Eto">
-      <HintPath>Assets/Plugins/RhinoCommon.6.2.18065.11031/lib/net45/Eto.dll</HintPath>
-    </Reference>
-    <Reference Include="Rhino.UI">
-      <HintPath>Assets/Plugins/RhinoCommon.6.2.18065.11031/lib/net45/Rhino.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="RhinoCommon">
-      <HintPath>Assets/Plugins/RhinoCommon.6.2.18065.11031/lib/net45/RhinoCommon.dll</HintPath>
-    </Reference>
     <Reference Include="sharpHDF">
       <HintPath>Assets/Plugins/sharphdf/sharpHDF.dll</HintPath>
     </Reference>
@@ -320,9 +311,6 @@
     <None Include="Assets\OvrAvatar\Content\Materials\AvatarSurfaceShaderPBS.shader" />
     <None Include="Assets\OvrAvatar\Content\Materials\AvatarSurfaceShaderSelfOccluding.shader" />
     <None Include="Assets\Plugins\Math.net\MathNet.Numerics.xml" />
-    <None Include="Assets\Plugins\RhinoCommon.6.2.18065.11031\Eto-LICENSE.txt" />
-    <None Include="Assets\Plugins\RhinoCommon.6.2.18065.11031\lib\net45\Eto.xml" />
-    <None Include="Assets\Plugins\RhinoCommon.6.2.18065.11031\lib\net45\RhinoCommon.XML" />
     <None Include="Assets\Plugins\SimpleFileBrowser\README.txt" />
     <None Include="Assets\Plugins\hdf5\HDF.PInvoke.XML" />
     <None Include="Assets\Shaders\ColorHue.shader" />

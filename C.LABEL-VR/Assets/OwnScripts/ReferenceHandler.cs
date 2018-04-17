@@ -10,10 +10,23 @@ class ReferenceHandler : MonoBehaviour
 {
     public static ReferenceHandler Instance { get; private set; }
 
-    public VRTK_Pointer LeftPointer;
-    public VRTK_Pointer RightPointer;
-    public VRTK_StraightPointerRenderer LeftPointerRenderer;
-    public VRTK_StraightPointerRenderer RightPointerRenderer;
+    [SerializeField]
+    private SessionHandler SessionHandler;
+
+    [SerializeField]
+    private VRTK_Pointer LeftPointer;
+
+    [SerializeField]
+    private VRTK_Pointer RightPointer;
+
+    [SerializeField]
+    private VRTK_StraightPointerRenderer LeftPointerRenderer;
+
+    [SerializeField]
+    private VRTK_StraightPointerRenderer RightPointerRenderer;
+
+    [SerializeField]
+    private VRTK_UIPointer RightUiPointer;
 
     private void Awake()
     {
@@ -43,6 +56,16 @@ class ReferenceHandler : MonoBehaviour
     public VRTK_StraightPointerRenderer GetRightPointerRenderer()
     {
         return RightPointerRenderer;
+    }
+
+    public VRTK_UIPointer GetRightUiPointer()
+    {
+        return RightUiPointer;
+    }
+
+    public SessionHandler GetSessionHandler()
+    {
+        return SessionHandler;
     }
 }
 

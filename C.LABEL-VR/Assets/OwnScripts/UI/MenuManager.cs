@@ -14,7 +14,7 @@ public class MenuManager : MonoBehaviour
     public AppMenu_Labeling appMenuLabeling;
 
     [Header("General")]
-    public GameObject cameraRig;
+    public Transform vrCamera;
     public NumPad numpadPrefab;
     public LabelClassEditor labelClassEditorPrefab;
     public KeyboardManager keyBoardManagerPrefab;
@@ -76,11 +76,19 @@ public class MenuManager : MonoBehaviour
         {
             if (instance.DisableMenusUnderneath)
             {
-                foreach (var menu in menuStack)
-                {
-                    menu.gameObject.SetActive(false);
+                //foreach (var menu in menuStack)
+                //{
+                //    menu.gameObject.SetActive(false);
 
-                    if (menu.DisableMenusUnderneath)
+                //    if (menu.DisableMenusUnderneath)
+                //        break;
+                //}
+
+                for (int i = menuStack.Count-1; i >= 0 ; i--)
+                {
+                    menuStack.ElementAt(i).gameObject.SetActive(false);
+
+                    if (menuStack.ElementAt(i).DisableMenusUnderneath)
                         break;
                 }
             }
@@ -90,11 +98,10 @@ public class MenuManager : MonoBehaviour
             topCanvas.sortingOrder = previousCanvas.sortingOrder + 1;
         }
         
-        
-
         menuStack.Push(instance);
 
-        instance.transform.position = cameraRig.transform.position + cameraRig.transform.forward * distanceToCamera;
+        instance.transform.position = vrCamera.position + vrCamera.forward * distanceToCamera;
+        instance.transform.rotation = vrCamera.rotation;
     }
 
     public void CloseAll()
@@ -152,11 +159,19 @@ public class MenuManager : MonoBehaviour
 
         // Re-activate top menu
         // If a re-activated menu is an overlay we need to activate the menu under it
-        foreach (var menu in menuStack)
-        {
-            menu.gameObject.SetActive(true);
+        //foreach (var menu in menuStack)
+        //{
+        //    menu.gameObject.SetActive(true);
 
-            if (menu.DisableMenusUnderneath)
+        //    if (menu.DisableMenusUnderneath)
+        //        break;
+        //}
+
+        for (int i = menuStack.Count - 1; i >= 0; i--)
+        {
+            menuStack.ElementAt(i).gameObject.SetActive(true);
+
+            if (menuStack.ElementAt(i).DisableMenusUnderneath)
                 break;
         }
     }

@@ -4,7 +4,8 @@ using UnityEngine;
 public class CustomAttributes : MonoBehaviour
 {
     //public int _ID { get; set; }
-    public int editor_id;
+    [SerializeField]
+    private int editor_id;
     public int _ID { get { return editor_id; } set { editor_id = value; } }
 
     private uint _Label;

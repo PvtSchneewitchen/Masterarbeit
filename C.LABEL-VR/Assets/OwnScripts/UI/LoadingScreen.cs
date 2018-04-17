@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LoadingScreen : SimpleMenu<LoadingScreen>
+public class LoadingScreen : Menu<LoadingScreen>
 {
+    public static void Show()
+    {
+        Open();
+    }
 }

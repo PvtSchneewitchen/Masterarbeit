@@ -84,6 +84,18 @@ public class PointCloud
         }
     }
 
+    public void RefreshPointsOfLabelCLass(uint oldLabelId, uint newLabelId)
+    {
+        for (int i = 0; i < _validPoints.Count; i++)
+        {
+            var attr = _validPoints[i].GetComponent<CustomAttributes>();
+            if(attr._label == oldLabelId)
+            {
+                attr._label = newLabelId;
+            }
+        }
+    }
+
     private GameObject CreateOrigin()
     {
         UnityEngine.Object o = Resources.Load("Prefabs/Origin");
