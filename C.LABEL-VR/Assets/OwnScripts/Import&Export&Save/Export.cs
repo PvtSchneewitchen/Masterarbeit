@@ -5,11 +5,18 @@ using UnityEngine;
 using System;
 using HDF.PInvoke;
 
+/// <summary>
+/// Class that calls all specific export functions from the Data Addons
+/// </summary>
 public class Export
 {
     private static SessionHandler sessionHandler;
     private static string exportDataPath;
 
+    /// <summary>
+    /// Calls the Exportfunction of the Daimler hdf5 addon that all files that were imorted get exorted to the given path
+    /// </summary>
+    /// <param name="exportPath_inp">Export path inp.</param>
     public static void ExportHdf5_DaimlerLidar(string exportPath_inp)
     {
         sessionHandler = ReferenceHandler.Instance.GetSessionHandler();
@@ -51,6 +58,10 @@ public class Export
         
     }
 
+	/// <summary>
+    /// Calls the Exportfunction of the pcd addon that all files that were imorted get exorted to the given path
+    /// </summary>
+    /// <param name="exportPath_inp">Export path inp.</param>
     public static void ExportPcd(string exportPath_inp)
     {
         Quaternion UnityToPcdCs = Quaternion.Euler(-90, 90, 0);

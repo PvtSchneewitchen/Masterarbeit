@@ -1,11 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-
 using g3;
 
+/// <summary>
+/// Class for detecting ground points
+/// </summary>
 public static class GroundPointSegmentation
 {
+
+/// <summary>
+/// this method sets the ground point attribute of the given internal data list to the right value
+/// </summary>
+/// <param name="listOfDataLists">List of internal data</param>
     public static void SetGroundLabels(List<InternalDataFormat> listOfDataLists)
     {
         int segmentCount = 3;
@@ -65,39 +72,12 @@ public static class GroundPointSegmentation
         }
     }
 
-    //private static Matrix<float> ComputeCovarianceMat(List<InternalDataFormat> segmentData_inp)
-    //{
-    //    Matrix<float> covariance_out = CreateMatrix.Dense<float>(3, 3);
-    //    Vector<float> avgSeedPosition = CreateVector.Dense<float>(3);
-    //    Vector<float> seedPosition = CreateVector.Dense<float>(3);
-    //    Vector<float> positionDifference = CreateVector.Dense<float>(3);
-    //    Vector<float> sum = CreateVector.Dense<float>(3);
-
-    //    for (int i = 0; i < segmentData_inp.Count; i++)
-    //    {
-    //        Vector3 pos = segmentData_inp.ElementAt(i)._position;
-    //        sum[0] = pos.x;
-    //        sum[1] = pos.y;
-    //        sum[2] = pos.z;
-    //    }
-    //    avgSeedPosition = sum / segmentData_inp.Count;
-
-    //    for (int i = 0; i < segmentData_inp.Count; i++)
-    //    {
-    //        Matrix<float> seedVariance = CreateMatrix.Dense<float>(3, 3);
-    //        Vector3 position = segmentData_inp.ElementAt(i)._position;
-    //        seedPosition[0] = position.x;
-    //        seedPosition[1] = position.y;
-    //        seedPosition[2] = position.z;
-
-    //        positionDifference = seedPosition - avgSeedPosition;
-    //        seedVariance = positionDifference.ToColumnMatrix() * positionDifference.ToRowMatrix();
-    //        covariance_out += seedVariance;
-    //    }
-
-    //    return covariance_out;
-    //}
-
+    /// <summary>
+    /// This method delivers the startpoints for the ground plane fittin algorithm 
+    /// </summary>
+    /// <returns>The initial seed points</returns>
+    /// <param name="segmentData_inp">Segment data inp.</param>
+    /// <param name="initialSeedsThresh_inp">Initial seeds thresh inp.</param>
     private static List<InternalDataFormat> GetInitialSeedPoints(List<InternalDataFormat> segmentData_inp, float initialSeedsThresh_inp)
     {
         List<InternalDataFormat> initialSeeds_out = new List<InternalDataFormat>();
@@ -108,6 +88,11 @@ public static class GroundPointSegmentation
         return initialSeeds_out;
     }
 
+    /// <summary>
+    /// Gets the average height of all points within a certain height range
+    /// </summary>
+    /// <returns>The lpr height (lowest point represantative)</returns>
+    /// <param name="segmentData_inp">Segment data inp.</param>
     private static float GetLprHeight(List<InternalDataFormat> segmentData_inp)
     {
         float lprHeight_out;
@@ -146,6 +131,13 @@ public static class GroundPointSegmentation
         return lprHeight_out;
     }
 
+    /// <summary>
+    /// Gets the points within the lpr height and a threshold
+    /// </summary>
+    /// <returns>The points in lpr thresh.</returns>
+    /// <param name="segmentData_inp">Segment data inp.</param>
+    /// <param name="lprHeightValue_inp">Lpr height value inp.</param>
+    /// <param name="initialSeedsThresh_inp">Initial seeds thresh inp.</param>
     private static List<InternalDataFormat> GetPointsInLprThresh(List<InternalDataFormat> segmentData_inp, float lprHeightValue_inp, float initialSeedsThresh_inp)
     {
         List<InternalDataFormat> lowestPoints_out = new List<InternalDataFormat>();
@@ -163,89 +155,97 @@ public static class GroundPointSegmentation
         return lowestPoints_out;
     }
 
-    private static List<List<InternalDataFormat>> GetSimpleCloudSegments(List<InternalDataFormat> dataList_inp)
-    {
-        List<List<InternalDataFormat>> listOfSegments_out = new List<List<InternalDataFormat>>(3)
-        {
-            new List<InternalDataFormat>(),
-            new List<InternalDataFormat>(),
-            new List<InternalDataFormat>()
-        };
 
-        var biggestdistance = GetBiggestDistance(dataList_inp);
-        var boarder = 25;
+//    private static List<List<InternalDataFormat>> GetSimpleCloudSegments(List<InternalDataFormat> dataList_inp)
+//    {
+//        List<List<InternalDataFormat>> listOfSegments_out = new List<List<InternalDataFormat>>(3)
+//        {
+//            new List<InternalDataFormat>(),
+//            new List<InternalDataFormat>(),
+//            new List<InternalDataFormat>()
+//        };
+//
+//        var biggestdistance = GetBiggestDistance(dataList_inp);
+//        var boarder = 25;
+//
+//        Debug.DrawLine(new Vector3(-boarder, -100, 0), new Vector3(-boarder, 100, 0), Color.blue, 300);
+//        Debug.DrawLine(new Vector3(boarder, -100, 0), new Vector3(boarder, 100, 0), Color.blue, 300);
+//
+//        for (int i = 0; i < dataList_inp.Count; i++)
+//        {
+//            var xval = dataList_inp[i]._position.x;
+//            if (xval < -boarder)
+//            {
+//                listOfSegments_out.ElementAt(0).Add(dataList_inp[i]);
+//            }
+//            else if (xval < boarder && xval >= -boarder)
+//            {
+//                listOfSegments_out.ElementAt(1).Add(dataList_inp[i]);
+//            }
+//            else
+//            {
+//                listOfSegments_out.ElementAt(2).Add(dataList_inp[i]);
+//            }
+//
+//
+//        }
+//
+//        return listOfSegments_out;
+//    }
 
-        Debug.DrawLine(new Vector3(-boarder, -100, 0), new Vector3(-boarder, 100, 0), Color.blue, 300);
-        Debug.DrawLine(new Vector3(boarder, -100, 0), new Vector3(boarder, 100, 0), Color.blue, 300);
 
-        for (int i = 0; i < dataList_inp.Count; i++)
-        {
-            var xval = dataList_inp[i]._position.x;
-            if (xval < -boarder)
-            {
-                listOfSegments_out.ElementAt(0).Add(dataList_inp[i]);
-            }
-            else if (xval < boarder && xval >= -boarder)
-            {
-                listOfSegments_out.ElementAt(1).Add(dataList_inp[i]);
-            }
-            else
-            {
-                listOfSegments_out.ElementAt(2).Add(dataList_inp[i]);
-            }
+//    private static List<List<InternalDataFormat>> GetCloudSegmentsSegmentedByYAxis(List<InternalDataFormat> dataList_inp, int segmentCount_inp)
+//    {
+//        List<List<InternalDataFormat>> listOfSegments_out = new List<List<InternalDataFormat>>();
+//
+//        dataList_inp.Sort((a, b) => a._position.x.CompareTo(b._position.x));
+//
+//        int potentialGroundPointCounter = 0;
+//        for (int i = 0; i < dataList_inp.Count; i++)
+//        {
+//            float height = dataList_inp[i]._position.z;
+//            if (height < 0.5 && height > -0.5)
+//            {
+//                potentialGroundPointCounter++;
+//            }
+//        }
+//
+//        int potentialGroundPointsPerSegment = (int)Mathf.Floor(potentialGroundPointCounter / (segmentCount_inp)) + 1;
+//
+//        int pointsInSegmentCounter = 0;
+//        int currentSegment = 0;
+//
+//        Debug.DrawLine(new Vector3(dataList_inp[0]._position.x, -100, 0), new Vector3(dataList_inp[0]._position.x, 100, 0), Color.blue, 300);
+//
+//        listOfSegments_out.Add(new List<InternalDataFormat>());
+//        for (int i = 0; i < dataList_inp.Count; i++)
+//        {
+//            listOfSegments_out.ElementAt(currentSegment).Add(dataList_inp[i]);
+//
+//            float height = dataList_inp[i]._position.z;
+//            if (height < 0.5 && height > -0.5)
+//            {
+//                pointsInSegmentCounter++;
+//            }
+//
+//            if (pointsInSegmentCounter >= potentialGroundPointsPerSegment)
+//            {
+//                Debug.DrawLine(new Vector3(dataList_inp[i]._position.x, -100, 0), new Vector3(dataList_inp[i]._position.x, 100, 0), Color.blue, 300);
+//
+//                pointsInSegmentCounter = 0;
+//                currentSegment++;
+//                listOfSegments_out.Add(new List<InternalDataFormat>());
+//            }
+//        }
+//        return listOfSegments_out;
+//    }
 
-
-        }
-
-        return listOfSegments_out;
-    }
-
-    private static List<List<InternalDataFormat>> GetCloudSegmentsSegmentedByYAxis(List<InternalDataFormat> dataList_inp, int segmentCount_inp)
-    {
-        List<List<InternalDataFormat>> listOfSegments_out = new List<List<InternalDataFormat>>();
-
-        dataList_inp.Sort((a, b) => a._position.x.CompareTo(b._position.x));
-
-        int potentialGroundPointCounter = 0;
-        for (int i = 0; i < dataList_inp.Count; i++)
-        {
-            float height = dataList_inp[i]._position.z;
-            if (height < 0.5 && height > -0.5)
-            {
-                potentialGroundPointCounter++;
-            }
-        }
-
-        int potentialGroundPointsPerSegment = (int)Mathf.Floor(potentialGroundPointCounter / (segmentCount_inp)) + 1;
-
-        int pointsInSegmentCounter = 0;
-        int currentSegment = 0;
-
-        Debug.DrawLine(new Vector3(dataList_inp[0]._position.x, -100, 0), new Vector3(dataList_inp[0]._position.x, 100, 0), Color.blue, 300);
-
-        listOfSegments_out.Add(new List<InternalDataFormat>());
-        for (int i = 0; i < dataList_inp.Count; i++)
-        {
-            listOfSegments_out.ElementAt(currentSegment).Add(dataList_inp[i]);
-
-            float height = dataList_inp[i]._position.z;
-            if (height < 0.5 && height > -0.5)
-            {
-                pointsInSegmentCounter++;
-            }
-
-            if (pointsInSegmentCounter >= potentialGroundPointsPerSegment)
-            {
-                Debug.DrawLine(new Vector3(dataList_inp[i]._position.x, -100, 0), new Vector3(dataList_inp[i]._position.x, 100, 0), Color.blue, 300);
-
-                pointsInSegmentCounter = 0;
-                currentSegment++;
-                listOfSegments_out.Add(new List<InternalDataFormat>());
-            }
-        }
-        return listOfSegments_out;
-    }
-
+/// <summary>
+/// Devides a list of given points in segments that are devided by the x and y axis. each segments has the same amount of points that are within a certain height range (potential ground points)
+/// </summary>
+/// <returns>The cloud segments segmented by Y and X axis.</returns>
+/// <param name="dataList_inp">Data list inp.</param>
+/// <param name="segmentCount_inp">Segment count inp.</param>
     private static List<List<InternalDataFormat>> GetCloudSegmentsSegmentedByYAndXAxis(List<InternalDataFormat> dataList_inp, int segmentCount_inp)
     {
         List<List<InternalDataFormat>> listOfSegments_out = new List<List<InternalDataFormat>>();
@@ -304,7 +304,11 @@ public static class GroundPointSegmentation
     }
 
 
-
+    /// <summary>
+    /// Gets the biggest distance of two points within a list of points
+    /// </summary>
+    /// <returns>The biggest distance.</returns>
+    /// <param name="data_inp">Data inp.</param>
     private static float GetBiggestDistance(List<InternalDataFormat> data_inp)
     {
         List<Vector3> lowestValuePoints = new List<Vector3>(4);
