@@ -60,32 +60,20 @@ public class HDF5Addon
 
         uint[,] labels = container._labels;
 
+//        pointList.OrderBy(x => x.GetComponent<CustomAttributes>()._ID);
+//        indexToID.OrderBy(x => x.Value);
+//        for (int i = 0; i < pointList.Count; i++)
+//        {
+//            var attr = pointList[i].GetComponent<CustomAttributes>();
+//            labels[indexToID.ElementAt(i).Key.Item1, indexToID.ElementAt(i).Key.Item2] = attr._label;
+//        }
+
         for (int i = 0; i < pointList.Count; i++)
         {
             var attr = pointList[i].GetComponent<CustomAttributes>();
             var index = indexToID.First(indx => indx.Value == attr._ID).Key;
             labels[index.Item1, index.Item2] = attr._label;
         }
-
-        //uint[,] labels = new uint[rows, cols];
-        //var pointValid = container._pointValid;
-
-        //for (int i = 0; i < rows; i++)
-        //{
-        //    for (int j = 0; j < cols; j++)
-        //    {
-        //        if (pointValid[i, j] == 0)
-        //        {
-        //            labels[i, j] = container._labels[i, j];
-        //        }
-        //        else
-        //        {
-        //            int pointID = MetaData.Hdf5_DaimlerLidar.GetIdByTableIndex(fileIndex_inp, i, j);
-        //            GameObject point = pointList.First(p => p.GetComponent<CustomAttributes>()._ID == pointID);
-        //            labels[i, j] = point.GetComponent<CustomAttributes>()._label;
-        //        }
-        //    }
-        //}
 
         Hdf5IO.WriteUIntDataset(file_id, "labels", labels, false);
         Hdf5IO.WriteLabelWorkingSet(file_id, false);
@@ -118,6 +106,14 @@ public class HDF5Addon
         var pointValid = container._pointValid;
 
         labels = container._labels;
+
+        //        pointList.OrderBy(x => x.GetComponent<CustomAttributes>()._ID);
+        //        indexToID.OrderBy(x => x.Value);
+        //        for (int i = 0; i < pointList.Count; i++)
+        //        {
+        //            var attr = pointList[i].GetComponent<CustomAttributes>();
+        //            labels[indexToID.ElementAt(i).Key.Item1, indexToID.ElementAt(i).Key.Item2] = attr._label;
+        //        }
 
         for (int i = 0; i < pointList.Count; i++)
         {
