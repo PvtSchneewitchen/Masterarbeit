@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -33,13 +34,13 @@ public static class MetaData
         public static int GetIdByTableIndex(int fileIndex_inp, int row_inp, int col_inp)
         {
             int ID_out;
-            if(_tableIndexToID[fileIndex_inp].TryGetValue(new Tuple<int, int>(row_inp,col_inp),out ID_out))
+            if (_tableIndexToID[fileIndex_inp].TryGetValue(new Tuple<int, int>(row_inp, col_inp), out ID_out))
             {
                 return ID_out;
             }
             else
             {
-                Debug.Log("GetIdByTableIndex: no index like "+  new Tuple<int, int>(row_inp, col_inp));
+                Debug.Log("GetIdByTableIndex: no index like " + new Tuple<int, int>(row_inp, col_inp));
                 return -1;
             }
         }

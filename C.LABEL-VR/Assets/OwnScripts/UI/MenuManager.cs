@@ -181,9 +181,11 @@ public class MenuManager : MonoBehaviour
         optionModeActive = true;
         Movement.Instance.MovementEnabled = false;
         PointerLabeler.Instance.ClusterLabelingEnabled = false;
-        PointerLabeler.Instance.PointerLabelingEnabled = false;
+        PointerLabeler.Instance.LabelingEnabled = false;
         PointerTeleport.Instance.PointerTeleportEnabled = false;
         TouchLabeler.Instance.TouchLabelingEnabled = false;
+        LabelClassDisplayUpdate.Instance.DisplayEnabled = false;
+        LabelClassPipette.Instance.enabled = false;
     }
 
     public void OnMenuCloseRoutine()
@@ -191,9 +193,11 @@ public class MenuManager : MonoBehaviour
         optionModeActive = false;
         Movement.Instance.MovementEnabled = true;
         PointerLabeler.Instance.ClusterLabelingEnabled = true;
-        PointerLabeler.Instance.PointerLabelingEnabled = true;
+        PointerLabeler.Instance.LabelingEnabled = true;
         PointerTeleport.Instance.PointerTeleportEnabled = true;
         TouchLabeler.Instance.TouchLabelingEnabled = true;
+        LabelClassDisplayUpdate.Instance.DisplayEnabled = true;
+        LabelClassPipette.Instance.enabled = true;
 
         MovementOptions.SaveOptions();
     }

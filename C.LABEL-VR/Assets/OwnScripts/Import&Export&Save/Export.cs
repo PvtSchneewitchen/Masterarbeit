@@ -55,7 +55,6 @@ public class Export
             }
             Debug.Log("hdf5-Files exported to " + exportDataPath);
         }
-        
     }
 
 	/// <summary>

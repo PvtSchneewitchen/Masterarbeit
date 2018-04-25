@@ -5,7 +5,7 @@ using UnityEngine;
 
 public static class Labeling
 {
-    public static uint currentLabelClassID;
+    public static uint currentLabelClassID { get; private set; }
 
     private static Dictionary<uint, Tuple<string, Material>> labelClassInformations;
     private static Material _standardMaterial;
@@ -62,35 +62,47 @@ public static class Labeling
         SetCurrentLabelClassID(labelClassInformations.ElementAt(1).Key);
     }
 
-    public static void SwitchToPreviousLabelClass()
+    public static void SwitchToNextLabelClass()
     {
-        var keyList = labelClassInformations.Keys.ToList();
-        keyList.Sort();
-        var currentListIndex = keyList.IndexOf(currentLabelClassID);
-
-        if (currentListIndex <= 0)
+        List<string> nameList = new List<string>();
+        for (int i = 0; i < labelClassInformations.Count; i++)
         {
-            currentLabelClassID = keyList.Last();
+            nameList.Add(labelClassInformations.ElementAt(i).Value.Item1);
+        }
+        nameList.Sort();
+
+        var currentClassName = labelClassInformations[currentLabelClassID].Item1;
+        var currentIndex = nameList.IndexOf(currentClassName);
+
+        if (currentIndex <= 0)
+        {
+            currentLabelClassID = labelClassInformations.First(entry => entry.Value.Item1 == nameList.Last()).Key;
         }
         else
         {
-            currentLabelClassID = keyList[currentListIndex - 1];
+            currentLabelClassID = labelClassInformations.First(entry => entry.Value.Item1 == nameList[currentIndex - 1]).Key;
         }
     }
 
-    public static void SwitchToNextLabelClass()
+    public static void SwitchToPreviousLabelClass()
     {
-        var keyList = labelClassInformations.Keys.ToList();
-        keyList.Sort();
-        var currentListIndex = keyList.IndexOf(currentLabelClassID);
-
-        if (currentListIndex + 1 >= keyList.Count)
+        List<string> nameList = new List<string>();
+        for (int i = 0; i < labelClassInformations.Count; i++)
         {
-            currentLabelClassID = keyList[0];
+            nameList.Add(labelClassInformations.ElementAt(i).Value.Item1);
+        }
+        nameList.Sort();
+
+        var currentClassName = labelClassInformations[currentLabelClassID].Item1;
+        var currentIndex = nameList.IndexOf(currentClassName);
+
+        if (currentIndex + 1 >= nameList.Count)
+        {
+            currentLabelClassID = labelClassInformations.First(entry => entry.Value.Item1 == nameList.First()).Key;
         }
         else
         {
-            currentLabelClassID = keyList[currentListIndex + 1];
+            currentLabelClassID = labelClassInformations.First(entry => entry.Value.Item1 == nameList[currentIndex + 1]).Key;
         }
     }
 
@@ -246,6 +258,15 @@ public static class Labeling
         if (labelClassInformations.ContainsKey(label_inp))
         {
             currentLabelClassID = label_inp;
+            try
+            {
+                LabelClassDisplayUpdate.Instance.UpdatePointerDisplay();
+            }
+            catch
+            {
+
+                Debug.Log("LabelClassDisplayUpdate not ready");
+            }
         }
         else
         {

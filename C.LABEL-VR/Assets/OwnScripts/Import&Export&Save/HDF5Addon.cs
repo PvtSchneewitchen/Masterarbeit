@@ -40,7 +40,7 @@ public class HDF5Addon
         for (int i = 0; i < filePaths.Length; i++)
         {
             Hdf5Container_LidarDaimler container = ReadContainer(filePaths[i]);
-            List<InternalDataFormat> listOfData = Processhdf5Containers_DaimlerLidar(i, container);
+            List<InternalDataFormat> listOfData = Processhdf5Container_DaimlerLidar(i, container);
 
             Labeling.SetNewLabelClasses(container._labelWorkingSet);
             listOfDataLists_out.Add(listOfData);
@@ -60,20 +60,20 @@ public class HDF5Addon
 
         uint[,] labels = container._labels;
 
-//        pointList.OrderBy(x => x.GetComponent<CustomAttributes>()._ID);
-//        indexToID.OrderBy(x => x.Value);
-//        for (int i = 0; i < pointList.Count; i++)
-//        {
-//            var attr = pointList[i].GetComponent<CustomAttributes>();
-//            labels[indexToID.ElementAt(i).Key.Item1, indexToID.ElementAt(i).Key.Item2] = attr._label;
-//        }
-
+        pointList.OrderBy(x => x.GetComponent<CustomAttributes>()._ID);
+        indexToID.OrderBy(x => x.Value);
         for (int i = 0; i < pointList.Count; i++)
         {
             var attr = pointList[i].GetComponent<CustomAttributes>();
-            var index = indexToID.First(indx => indx.Value == attr._ID).Key;
-            labels[index.Item1, index.Item2] = attr._label;
+            labels[indexToID.ElementAt(i).Key.Item1, indexToID.ElementAt(i).Key.Item2] = attr._label;
         }
+
+        //for (int i = 0; i < pointList.Count; i++)
+        //{
+        //    var attr = pointList[i].GetComponent<CustomAttributes>();
+        //    var index = indexToID.First(indx => indx.Value == attr._ID).Key;
+        //    labels[index.Item1, index.Item2] = attr._label;
+        //}
 
         Hdf5IO.WriteUIntDataset(file_id, "labels", labels, false);
         Hdf5IO.WriteLabelWorkingSet(file_id, false);
@@ -95,6 +95,12 @@ public class HDF5Addon
 
     public static void OverwriteHdf5_DaimlerLidar(int fileIndex_inp, Dictionary<Tuple<int, int>, int> indexToID, Hdf5Container_LidarDaimler container, List<GameObject> pointList, string pathToFile_inp)
     {
+        var previousTime = Time.realtimeSinceStartup;
+
+        var duration = Time.realtimeSinceStartup - previousTime;
+        previousTime = Time.realtimeSinceStartup;
+        Debug.Log("Start: " + duration);
+
         int status = 0;
 
         long file_id = H5F.open(pathToFile_inp, H5F.ACC_RDWR);
@@ -107,20 +113,23 @@ public class HDF5Addon
 
         labels = container._labels;
 
-        //        pointList.OrderBy(x => x.GetComponent<CustomAttributes>()._ID);
-        //        indexToID.OrderBy(x => x.Value);
-        //        for (int i = 0; i < pointList.Count; i++)
-        //        {
-        //            var attr = pointList[i].GetComponent<CustomAttributes>();
-        //            labels[indexToID.ElementAt(i).Key.Item1, indexToID.ElementAt(i).Key.Item2] = attr._label;
-        //        }
+        pointList.OrderBy(x => x.GetComponent<CustomAttributes>()._ID);
+        indexToID.OrderBy(x => x.Value);
 
         for (int i = 0; i < pointList.Count; i++)
         {
             var attr = pointList[i].GetComponent<CustomAttributes>();
-            var index = indexToID.First(indx => indx.Value == attr._ID).Key;
-            labels[index.Item1, index.Item2] = attr._label;
+            var key = indexToID.ElementAt(i).Key;
+
+            labels[key.Item1, key.Item2] = attr._label;
         }
+
+        //for (int i = 0; i < pointList.Count; i++)
+        //{
+        //    var attr = pointList[i].GetComponent<CustomAttributes>();
+        //    var index = indexToID.First(indx => indx.Value == attr._ID).Key;
+        //    labels[index.Item1, index.Item2] = attr._label;
+        //}
 
         Hdf5IO.WriteUIntDataset(file_id, "labels", labels, true);
         Hdf5IO.WriteLabelWorkingSet(file_id, true);
@@ -128,7 +137,7 @@ public class HDF5Addon
         status = H5F.close(file_id);
     }
 
-    private static List<InternalDataFormat> Processhdf5Containers_DaimlerLidar(int fileIndex, Hdf5Container_LidarDaimler hdf5Container_inp)
+    private static List<InternalDataFormat> Processhdf5Container_DaimlerLidar(int fileIndex, Hdf5Container_LidarDaimler hdf5Container_inp)
     {
         List<InternalDataFormat> listOfData_out = new List<InternalDataFormat>();
         MetaData.Hdf5_DaimlerLidar._importedContainers.Add(hdf5Container_inp);
@@ -149,7 +158,6 @@ public class HDF5Addon
                     listOfData_out.Add(data);
             }
         }
-
         return listOfData_out;
     }
 

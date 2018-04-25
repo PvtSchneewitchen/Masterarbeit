@@ -40,17 +40,13 @@ public static class Clustering
     {
         List<GameObject> foundPoints_out = new List<GameObject>() { startPoint_inp };
 
-        float realRadius = radiusInMeter_inp * startPoint_inp.transform.localScale.x;
-
-        Collider[] collidersInRadius = Physics.OverlapSphere(startPoint_inp.transform.position, realRadius);
+        Collider[] collidersInRadius = Physics.OverlapSphere(startPoint_inp.transform.position, radiusInMeter_inp * startPoint_inp.transform.localScale.x);
 
         for (int i = 0; i < collidersInRadius.Length; i++)
         {
-            GameObject currentObject = collidersInRadius[i].gameObject;
-            if (currentObject.name.Contains("Label"))
-                foundPoints_out.Add(currentObject);
+            if (collidersInRadius[i].gameObject.name.Contains("Label"))
+                foundPoints_out.Add(collidersInRadius[i].gameObject);
         }
-
         return foundPoints_out;
     }
 
