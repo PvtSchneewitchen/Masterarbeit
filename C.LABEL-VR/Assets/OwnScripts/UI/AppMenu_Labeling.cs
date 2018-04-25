@@ -134,6 +134,10 @@ public class AppMenu_Labeling : Menu<AppMenu_Labeling>
         }
     }
 
+    public void OnResetClick()
+    {
+        ReferenceHandler.Instance.GetSessionHandler().Session.GetCurrentPointCloud().ResetLabels();
+    }
 
     public void OnAddClick()
     {

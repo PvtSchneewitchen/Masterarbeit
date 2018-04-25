@@ -11,9 +11,40 @@
 \usepackage{subfig}
 \usepackage{setspace}
 \usepackage{xcolor}
+\usepackage{amsmath}
 \usepackage{float}
 \usepackage[justification=RaggedRight, singlelinecheck=false]{caption} 
 
+\usepackage{listings}
+\lstdefinestyle{csharp}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=[Sharp]C,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{blue!40!black},
+  commentstyle=\itshape\color{green!40!black},
+  stringstyle=\color{red},
+}
+
+\lstset{
+	style=csharp,
+	emph=[1]%
+    {%
+        TestObject,
+        MonoBehaviour,
+        Start,
+        Update
+    }, emphstyle=[1]{\color{cyan}},
+    morekeywords={set,get},
+    frame=top,frame=bottom,
+    xleftmargin=0pt,
+}
+
+\usepackage{caption}
+\captionsetup[lstlisting]{format=plain, aboveskip=0.2cm, belowskip=0.5cm, labelfont=bf}
 
 \usepackage{algorithm,algpseudocode}% http://ctan.org/pkg/{algorithms,algorithmx}
 \algnewcommand{\Inputs}[1]{%
@@ -63,6 +94,9 @@
 \captionsetup[figure]{labelfont={sf,bf},margin=0cm,format=plain,justification=RaggedRight,singlelinecheck=true} 
 \onehalfspacing
 %\sffamily
+
+
+
 
 
 \titlehead{
@@ -127,10 +161,10 @@ I want to thank...
 \input{Kapitel/Kapitel1_Einleitung/Einleitung}
 
 \chapter{Grundlagen}
-\input{Kapitel/Kapitel3_Grundlagen/Grundlagen}
+\input{Kapitel/Kapitel2_Grundlagen/Grundlagen}
 
 \chapter{Systembeschreibung}
-\input{Kapitel/Kapitel2_Vorbereitungen/Vorbereitungen}
+\input{Kapitel/Kapitel3_Systembeschreibung/Systembeschreibung}
 
 \chapter{C.LABEL VR}
 \input{Kapitel/Kapitel4_Hauptteil/Hauptteil}

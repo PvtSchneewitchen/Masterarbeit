@@ -4,57 +4,54 @@
 \contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Motivation}{2}{section.1.1}
 \contentsline {section}{\numberline {1.2}Ziel der Arbeit}{3}{section.1.2}
-\contentsline {chapter}{\numberline {2}Grundlagen}{5}{chapter.2}
-\contentsline {section}{\numberline {2.1}Annotation}{5}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Maschinelles Lernen}{5}{subsection.2.1.1}
-\contentsline {subsubsection}{Künstliche Neuronale Netze}{5}{figure.caption.9}
-\contentsline {subsubsection}{Trainieren von künstlichen neuronalen Netzen}{10}{figure.caption.12}
-\contentsline {section}{\numberline {2.2}Virtual Reality}{12}{section.2.2}
-\contentsline {section}{\numberline {2.3}Evtl Lidar-Sesnor}{12}{section.2.3}
-\contentsline {chapter}{\numberline {3}Systembeschreibung}{13}{chapter.3}
-\contentsline {section}{\numberline {3.1}Oculus Rift}{13}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Warum VR?}{13}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Warum Oculus}{13}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}VR-Fahiger Rechner}{13}{section.3.2}
-\contentsline {section}{\numberline {3.3}Entwicklungsplattform}{13}{section.3.3}
-\contentsline {section}{\numberline {3.4}Wahl des passenden Mediums}{13}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Augmented Reality und Virtual Reality}{13}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Eignung von \acrlong {acr:AR} und \acrlong {acr:VR} im Bezug auf 3D-Datennotation}{14}{subsection.3.4.2}
-\contentsline {subsubsection}{Eignung von \acrlong {acr:AR}}{14}{subsection.3.4.2}
-\contentsline {subsubsection}{Eignung von \acrlong {acr:VR}}{15}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}\acrshort {acr:AR}-Brillen im Vergleich}{16}{subsection.3.4.3}
-\contentsline {subsubsection}{Microsoft Hololens}{16}{figure.caption.13}
-\contentsline {subsubsection}{Meta 2}{18}{figure.caption.14}
-\contentsline {subsection}{\numberline {3.4.4}\acrshort {acr:VR}-Brillen im Vergleich}{18}{subsection.3.4.4}
-\contentsline {subsubsection}{Oculus Rift}{19}{figure.caption.15}
-\contentsline {subsubsection}{HTC Vive}{20}{figure.caption.15}
-\contentsline {subsection}{\numberline {3.4.5}Zusammenfassung und Entscheidung}{20}{subsection.3.4.5}
-\contentsline {section}{\numberline {3.5}Wahl des passenden Rechners}{21}{section.3.5}
-\contentsline {section}{\numberline {3.6}Wahl der passenden Entwicklungsplattform}{22}{section.3.6}
-\contentsline {subsubsection}{Entscheidung}{23}{section.3.6}
-\contentsline {chapter}{\numberline {4}C.LABEL VR}{24}{chapter.4}
-\contentsline {section}{\numberline {4.1}Import und Export von Daten}{25}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Architektur}{26}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}HDF5-Beispiel}{28}{subsection.4.1.2}
-\contentsline {subsubsection}{HDF5 Daten}{28}{subsection.4.1.2}
-\contentsline {subsubsection}{Beispiel}{28}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Generierung einer Punktwolke}{28}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Interne Datenstruktur}{28}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Generierung}{28}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Optimierung}{28}{subsection.4.2.3}
-\contentsline {section}{\numberline {4.3}Navigation}{28}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}VR-Krankheit}{28}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Freier Flug}{28}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Teleport}{28}{subsection.4.3.3}
-\contentsline {section}{\numberline {4.4}Annotieren der Punktwolke}{28}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Einfache Pointer Annotation}{28}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Cluster Annotation}{28}{subsection.4.4.2}
-\contentsline {subsubsection}{Bodenpunkt-Analyse}{29}{figure.caption.19}
-\contentsline {subsubsection}{Cluster-Analyse}{34}{algorithm.2}
-\contentsline {section}{\numberline {4.5}User Interface}{34}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}Ingame Menu}{34}{subsection.4.5.1}
-\contentsline {chapter}{\numberline {5}Schluss}{36}{chapter.5}
-\contentsline {section}{\numberline {5.1}Zusammenfassung}{36}{section.5.1}
-\contentsline {section}{\numberline {5.2}Herausforderungen}{36}{section.5.2}
-\contentsline {section}{\numberline {5.3}Ausblick}{36}{section.5.3}
-\contentsline {chapter}{\numberline {A}Appendix Title}{37}{appendix.A}
+\contentsline {section}{\numberline {1.3}Umfeld der Arbeit}{4}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}CMORE Automotive GmbH}{4}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}C.LABEL}{4}{subsection.1.3.2}
+\contentsline {chapter}{\numberline {2}Grundlagen}{6}{chapter.2}
+\contentsline {section}{\numberline {2.1}Annotation}{6}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Maschinelles Lernen}{6}{subsection.2.1.1}
+\contentsline {subsubsection}{Künstliche Neuronale Netze}{6}{figure.caption.10}
+\contentsline {subsubsection}{Trainieren von künstlichen neuronalen Netzen}{11}{figure.caption.13}
+\contentsline {section}{\numberline {2.2}Virtual Reality}{13}{section.2.2}
+\contentsline {section}{\numberline {2.3}LiDAR}{16}{section.2.3}
+\contentsline {chapter}{\numberline {3}Systembeschreibung}{20}{chapter.3}
+\contentsline {section}{\numberline {3.1}Komponente 1: Die VR-Brille}{20}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Warum VR die passende Technologie für C.LABEL-VR ist}{21}{subsection.3.1.1}
+\contentsline {subsubsection}{Eignung von \acrlong {acr:AR} für 3D-Annotation}{21}{figure.caption.17}
+\contentsline {subsubsection}{Eignung von \acrlong {acr:VR} für 3D-Annotation}{23}{figure.caption.17}
+\contentsline {subsubsection}{Entscheidung}{23}{figure.caption.17}
+\contentsline {subsection}{\numberline {3.1.2}Warum die Oculus Rift verwendet wurde}{24}{subsection.3.1.2}
+\contentsline {subsubsection}{Oculus Rift}{24}{figure.caption.18}
+\contentsline {subsubsection}{HTC Vive}{25}{figure.caption.18}
+\contentsline {subsubsection}{Entscheidung}{26}{figure.caption.18}
+\contentsline {section}{\numberline {3.2}Komponente 2: Der Rechner}{26}{section.3.2}
+\contentsline {section}{\numberline {3.3}Komponente 3: Die Spiel-Engine}{28}{section.3.3}
+\contentsline {subsubsection}{Vergleich zwischen Unreal und Unity}{28}{section.3.3}
+\contentsline {subsubsection}{Entscheidung}{29}{section.3.3}
+\contentsline {subsubsection}{Konzepte der Unity Engine}{29}{section.3.3}
+\contentsline {chapter}{\numberline {4}C.LABEL VR}{32}{chapter.4}
+\contentsline {section}{\numberline {4.1}Import und Export von Daten}{33}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Architektur}{34}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}HDF5-Beispiel}{36}{subsection.4.1.2}
+\contentsline {subsubsection}{HDF5 Daten}{36}{subsection.4.1.2}
+\contentsline {subsubsection}{Beispiel}{36}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Generierung einer Punktwolke}{36}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Interne Datenstruktur}{36}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Generierung}{36}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Optimierung}{36}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3}Navigation}{36}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}VR-Krankheit}{36}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Freier Flug}{36}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Teleport}{36}{subsection.4.3.3}
+\contentsline {section}{\numberline {4.4}Annotieren der Punktwolke}{36}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Einfache Pointer Annotation}{36}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Cluster Annotation}{36}{subsection.4.4.2}
+\contentsline {subsubsection}{Bodenpunkt-Analyse}{37}{figure.caption.23}
+\contentsline {subsubsection}{Cluster-Analyse}{42}{algorithm.2}
+\contentsline {section}{\numberline {4.5}User Interface}{42}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Ingame Menu}{42}{subsection.4.5.1}
+\contentsline {chapter}{\numberline {5}Schluss}{44}{chapter.5}
+\contentsline {section}{\numberline {5.1}Zusammenfassung}{44}{section.5.1}
+\contentsline {section}{\numberline {5.2}Herausforderungen}{44}{section.5.2}
+\contentsline {section}{\numberline {5.3}Ausblick}{44}{section.5.3}
+\contentsline {chapter}{\numberline {A}Appendix Title}{45}{appendix.A}

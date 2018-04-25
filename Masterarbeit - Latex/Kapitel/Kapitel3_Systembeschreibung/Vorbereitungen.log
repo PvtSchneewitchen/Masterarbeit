@@ -1,0 +1,3101 @@
+This is LuaTeX, Version 1.06.2 (MiKTeX 2.9.6500 64-bit)  (format=lualatex 2017.12.19)  19 DEC 2017 12:04
+ restricted system commands enabled.
+**Vorbereitungen.tex
+(./Vorbereitungen.tex
+LaTeX2e <2017-04-15>
+Lua module: luaotfload-main 2017/01/29 2.80001 OpenType layout system.
+Lua module: lualibs 2017-02-01 2.5 ConTeXt Lua standard libraries.
+Lua module: lualibs-extended 2017-02-01 2.5 ConTeXt Lua libraries -- extended co
+llection.(using cache: C:/Users/gruepazu/AppData/Local/MiKTeX/2.9/luatex-cache/g
+eneric)
+luaotfload | conf : Root cache directory is C:/Users/gruepazu/AppData/Local/MiKT
+eX/2.9/luatex-cache/generic/names.
+luaotfload | init : Loading fontloader “fontloader-2017-02-11.lua” from kpse
+-resolved path “C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/luatex
+/luaotfload/fontloader-2017-02-11.lua”.
+Lua-only attribute luaotfload@state = 1
+Lua-only attribute luaotfload@noligature = 2
+Lua-only attribute luaotfload@syllabe = 3
+luaotfload | init : Context OpenType loader version “3.027”
+Inserting `luaotfload.node_processor' at position 1 in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' at position 1 in `hpack_filter'.
+Inserting `luaotfload.define_font' at position 1 in `define_font'.
+Lua-only attribute luaotfload_color_attribute = 4
+luaotfload | conf : Root cache directory is C:/Users/gruepazu/AppData/Local/MiKT
+eX/2.9/luatex-cache/generic/names.
+Inserting `luaotfload.aux.set_sscale_dimens' at position 1 in `luaotfload.patch_
+font'.
+Inserting `luaotfload.aux.patch_cambria_domh' at position 2 in `luaotfload.patch
+_font'.
+Inserting `luaotfload.aux.fixup_fontdata' at position 1 in `luaotfload.patch_fon
+t_unsafe'.
+Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
+'.
+Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
+.
+luaotfload | main : initialization completed in 0.500 seconds
+Babel <3.15> and hyphenation patterns for 1 language(s) loaded.
+! Undefined control sequence.
+l.1 \graphicspath
+               {{Kapitel/Kapitel_Vorbereitungen/Images/}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \graphicspath{{K
+                  apitel/Kapitel_Vorbereitungen/Images/}}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing $ inserted.
+<inserted text> 
+$
+l.1 \graphicspath{{Kapitel/Kapitel_
+                                 Vorbereitungen/Images/}}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 1.
+! Extra }, or forgotten $.
+l.1 ...path{{Kapitel/Kapitel_Vorbereitungen/Images/}
+                                                  }
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+l.1 ...ath{{Kapitel/Kapitel_Vorbereitungen/Images/}}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+$
+l.2 
+  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (133.2637pt too wide) in paragraph at lines 1--2
+[]Kapitel/Kapitel$[][]\OML/cmm/m/it/10 orbereitungen=Images=$ 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4 K
+   urze Einleitung was alles vorbereitet wurde.
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 4--5
+[]Kurze
+ []
+
+! Undefined control sequence.
+l.6 \section
+          {Das C.LABEL Tool}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.6 \section{D
+            as C.LABEL Tool}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 6--10
+[]Das
+ []
+
+! Undefined control sequence.
+l.11 \section
+           {Wahl des passenden Mediums}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11 \section{W
+             ahl des passenden Mediums}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.12 Um das \glslink
+                  {glos:Labeling}{Labeling} von Daten, insbesondere Punktwol...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.12 ...ür relevant erscheinen. Diese sind \acrfull
+                                                  {acr:AR} und \acrfull{acr:...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.12 ...en. Diese sind \acrfull{acr:AR} und \acrfull
+                                                  {acr:VR}.\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 11--13
+[]Wahl
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 U
+    nter \acrlong{acr:AR} versteht man die direkte oder indirekte Sicht auf ...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.14 Unter \acrlong
+                 {acr:AR} versteht man die direkte oder indirekte Sicht auf ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.14 ...d vor allem durch Smartphones oder \acrshort
+                                                  {acr:AR}-Brillen realisier...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+luaotfload | db : Font names database loaded from C:/Users/gruepazu/AppData/Loca
+l/MiKTeX/2.9/luatex-cache/generic/names/luaotfload-names.luc(save: C:/Users/grue
+pazu/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts/otl/lmroman10-regular.l
+ua)(save: C:/Users/gruepazu/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts/
+otl/lmroman10-regular.luc)(save: C:/Users/gruepazu/AppData/Local/MiKTeX/2.9/luat
+ex-cache/generic/fonts/otl/lmroman10-bold.lua)(save: C:/Users/gruepazu/AppData/L
+ocal/MiKTeX/2.9/luatex-cache/generic/fonts/otl/lmroman10-bold.luc)
+! Undefined control sequence.
+<write> ...g: Reference `fig:AR-Brillen' on page \thepage 
+                                                  \space undefined\on@line .
+l.14 ... Brille (vgl. Abbildung \ref{fig:AR-Brillen}
+                                                  ) sieht man durch die Glä...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `fig:AR-Brillen' on page  undefined on input line 14.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 14--15
+[]Unter
+ []
+
+
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 14--15
+[])
+ []
+
+! Undefined control sequence.
+l.16 \acrlong
+           {acr:VR} ist eine Technologie bei der spezielle \acrshort{acr:VR}...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.16 \acrlong{a
+             cr:VR} ist eine Technologie bei der spezielle \acrshort{acr:VR}...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.16 ...eine Technologie bei der spezielle \acrshort
+                                                  {acr:VR}-Brillen zum Einsa...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<write> ...g: Reference `fig:VR-Brillen' on page \thepage 
+                                                  \space undefined\on@line .
+l.16 ...glichen (vgl. Abbildung \ref{fig:VR-Brillen}
+                                                  ). Das Blickfeld des Mensc...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `fig:VR-Brillen' on page  undefined on input line 16.
+
+! Undefined control sequence.
+<write> ...rning: Reference `fig:Oculus' on page \thepage 
+                                                  \space undefined\on@line .
+l.16 ...Controllern (vgl. Abbildung \ref{fig:Oculus}
+                                                  ) kann sich durch diese We...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `fig:Oculus' on page  undefined on input line 16.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 16--17
+[]acr:VR
+ []
+
+
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 16--17
+[]).
+ []
+
+
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 16--17
+[])
+ []
+
+! Undefined control sequence.
+l.19 \subsection
+              {Eignung von \acrlong{acr:AR} und \acrlong{acr:VR} im Bezug au...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.19 \subsection{E
+                ignung von \acrlong{acr:AR} und \acrlong{acr:VR} im Bezug au...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.19 \subsection{Eignung von \acrlong
+                                   {acr:AR} und \acrlong{acr:VR} im Bezug au...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.19 ...on{Eignung von \acrlong{acr:AR} und \acrlong
+                                                  {acr:VR} im Bezug auf 3D-D...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.20 ...n, um abzuwägen welche besser für \glslink
+                                                  {glos:Labeling}{3D-Labelin...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 19--21
+[]Eignung
+ []
+
+! Undefined control sequence.
+l.22 \subsubsection
+                 {Eignung von \acrlong{acr:AR}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.22 \subsubsection{E
+                   ignung von \acrlong{acr:AR}}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.22 \subsubsection{Eignung von \acrlong
+                                      {acr:AR}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.23 ...er Arbeit, entwickelte Prototyp zur \glslink
+                                                  {glos:Labeling}{3D-Datenno...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.23 ...e Tatsache in Betracht, eignet sich \acrlong
+                                                  {acr:AR} sehr gut für die...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.23 ...olographischer Inhalte, durch eine \acrshort
+                                                  {acr:AR}-Brille, zum Zeitp...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+\citation{bib:HololensVerkaufszahlen}
+! Undefined control sequence.
+<write> ... Warning: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.23 ...l verkauft \cite{bib:HololensVerkaufszahlen}
+                                                  ), was bei unwissenden Ben...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `bib:HololensVerkaufszahlen' on page  undefined on input
+ line 23.
+
+! Undefined control sequence.
+l.23 ...ekt führt. Des Weiteren bietet die \acrlong
+                                                  {acr:AR} Technologie viele...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.23 ...Technologie viele, für zukünftige \glslink
+                                                  {glos:Labeling}{Labeling}-...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.23 ...ante, Möglichkeiten. Den heutigen \acrshort
+                                                  {acr:AR}-Brillen ist es du...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.23 ...acrshort{acr:AR}-Brillen ist es durch \glspl
+                                                  {glos:Tiefenkamera} mögli...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<write> ...ning: Reference `sec:C.LABEL' on page \thepage 
+                                                  \space undefined\on@line .
+l.23 ...e der Umgebung, wie sie in \ref{sec:C.LABEL}
+                                                   zu sehen ist, mit einer \...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `sec:C.LABEL' on page  undefined on input line 23.
+
+! Undefined control sequence.
+l.23 ...c:C.LABEL} zu sehen ist, mit einer \acrshort
+                                                  {acr:AR}-Brille zu erstell...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 22--24
+[]Eignung
+ []
+
+
+Overfull \hbox (5.43pt too wide) in paragraph at lines 22--24
+[[]]),
+ []
+
+
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 22--24
+[]
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.25 E
+    in wichtiger Punkt der ebenfalls betrachtet werden muss ist die Bedienun...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.25 ...d Informationen. Die Steuerung von \acrshort
+                                                  {acr:AR}-Brillen erfolgt h...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.25 ... nur gegeben werden indem man einen \glslink
+                                                  {glos:Labeling}{Labeling}-...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 25--26
+[]Ein
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.27 D
+    arüber hinaus gibt es natürlich auch Aspekte die gegen die \acrshort{a...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.27 ...ürlich auch Aspekte die gegen die \acrshort
+                                                  {acr:AR}-Technologie sprec...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.27 ...t{acr:AR}-Technologie sprechen. Die \glslink
+                                                  {glos:Labeling}{Klassifizi...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.27 ...ebung und so würde Darstellung des \glslink
+                                                  {glos:Umfeldmodell}{Umfeld...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.27 ...lke bewegen. Des Weiteren sind bei \acrshort
+                                                  {acr:AR}-Brillen die vorhe...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.27 ...Objekt reflektiert, kann dieses von der \gls
+                                                  {glos:Tiefenkamera} der Br...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.27 ...ichtig erfasst werden. Somit stimmt das \gls
+                                                  {glos:Umfeldmodell} nicht ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.27 ...ch sehr teuer. Der Preis für eine \acrshort
+                                                  {acr:AR}-Brille kann dabei...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<write> ...: Reference `sec:ARVergleich' on page \thepage 
+                                                  \space undefined\on@line .
+l.27 ...ten, wie im  Abschnitt \ref{sec:ARVergleich}
+                                                   näher erläutert wird.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `sec:ARVergleich' on page  undefined on input line 27.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 27--28
+[]Darüber
+ []
+
+
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 27--28
+[]
+ []
+
+! Undefined control sequence.
+l.29 \subsubsection
+                 {Eignung von \acrlong{acr:VR}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.29 \subsubsection{E
+                   ignung von \acrlong{acr:VR}}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.29 \subsubsection{Eignung von \acrlong
+                                      {acr:VR}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 29--30
+[]Eignung
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.31 D
+    ie \acrlong{acr:VR} Technologie bietet den großen Vorteil, beliebig gro...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.31 Die \acrlong
+               {acr:VR} Technologie bietet den großen Vorteil, beliebig gro...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.31 ...s weiteren wirkt die Steuerung der \acrshort
+                                                  {acr:VR}-Brillen mittels d...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+(save: C:/Users/gruepazu/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts/otl
+/lmroman10-italic.lua)(save: C:/Users/gruepazu/AppData/Local/MiKTeX/2.9/luatex-c
+ache/generic/fonts/otl/lmroman10-italic.luc)
+! Undefined control sequence.
+<recently read> \glqq 
+      
+l.31 ...d als \textit{\glqq äußerst präzise\grqq}
+                                                   beschrieben \cite{bib:Con...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \glqq äußerst präzise\grqq 
+                              
+l.31 ...d als \textit{\glqq äußerst präzise\grqq}
+                                                   beschrieben \cite{bib:Con...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+\citation{bib:ControllerTest}
+! Undefined control sequence.
+<write> ... Warning: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.31 ...\grqq} beschrieben \cite{bib:ControllerTest}
+                                                  . Dies ist sehr wichtig um...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `bib:ControllerTest' on page  undefined on input line 31
+.
+
+! Undefined control sequence.
+l.31 ...u machen. Für die Entwicklung von \acrshort
+                                                  {acr:VR}-Applikationen sel...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.31 ...ge zu den jeweiligen Plattformen und \glspl
+                                                  {acr:SDK} gibt. Dies häng...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.31 ...ängt damit zusammen, dass sich die \acrlong
+                                                  {acr:VR} Technologie schon...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.31 ...t und die Zahl der Entwickler für \acrshort
+                                                  {acr:VR}-Applikationen ste...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.31 ...zu verdanken, dass die Preise für \acrshort
+                                                  {acr:VR}-Brillen gesunken ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<write> ...: Reference `sec:ARVergleich' on page \thepage 
+                                                  \space undefined\on@line .
+l.31 ...chreibenden, Abschnitt \ref{sec:ARVergleich}
+                                                   gezeigt, beträgt der akt...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `sec:ARVergleich' on page  undefined on input line 31.
+
+! Undefined control sequence.
+l.31 ...nannten Aspekten, für die Wahl von \acrlong
+                                                  {acr:VR} als Plattform fü...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.31 ...attform für die Entwicklung von 3D-\glslink
+                                                  {glos:Labeling}{Labeling}.\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 31--32
+[]Die
+ []
+
+
+Overfull \hbox (32.08pt too wide) in paragraph at lines 31--32
+\TU/lmr/m/it/10 äußerst
+ []
+
+
+Overfull \hbox (29.78001pt too wide) in paragraph at lines 31--32
+\TU/lmr/m/it/10 präzise
+ []
+
+
+Overfull \hbox (5.43pt too wide) in paragraph at lines 31--32
+[[]].
+ []
+
+
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 31--32
+[]
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.33 W
+    as mit der \acrshort{acr:VR}-Technologie nicht ohne Weiteres funktionier...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.33 Was mit der \acrshort
+                        {acr:VR}-Technologie nicht ohne Weiteres funktionier...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.33 ...st die physische Begehung einer, zu \glslink
+                                                  {glos:Labeling}{klassifizi...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.33 ...spekt ist, dass viele Benutzer von \acrshort
+                                                  {acr:VR}-Brillen über Üb...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+\citation{bib:VRSickness}
+! Undefined control sequence.
+<write> ... Warning: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.33 ...sich um Frauen handelt \cite{bib:VRSickness}
+                                                  .
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `bib:VRSickness' on page  undefined on input line 33.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 33--34
+[]Was
+ []
+
+
+Overfull \hbox (5.43pt too wide) in paragraph at lines 33--34
+[[]]. 
+ []
+
+! Undefined control sequence.
+l.36 \subsection
+              {\acrshort{acr:AR}-Brillen im Vergleich}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.36 \subsection{\acrshort
+                        {acr:AR}-Brillen im Vergleich}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.36 \subsection{\acrshort{a
+                          cr:AR}-Brillen im Vergleich}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.38 ... der Recherche über eine passende \acrshort
+                                                  {acr:AR}-Brille, gibt es z...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.38 ...n, im Hinblick auf die Nutzung für \glslink
+                                                  {glos:Labeling}{3D-Datenno...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 36--39
+[]acr:AR-
+ []
+
+! Undefined control sequence.
+l.40 \subsubsection
+                 {Microsoft Hololens}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.40 \subsubsection{M
+                   icrosoft Hololens}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+<write> ...ing: Reference `fig:Hololens' on page \thepage 
+                                                  \space undefined\on@line .
+l.41 ...Microsoft (vgl. Abbildung \ref{fig:Hololens}
+                                                  ) punktet vorwiegend in Sa...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `fig:Hololens' on page  undefined on input line 41.
+
+! Undefined control sequence.
+l.41 ...en und somit eine gute Methode für \glslink
+                                                  {glos:Labeling}{3D-Datenno...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 40--43
+[]Microsoft
+ []
+
+
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 40--43
+[])
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.44 D
+    ie Gestensteuerung der Hololens wäre für den Prozess der \glslink{glos...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.44 ...Hololens wäre für den Prozess der \glslink
+                                                  {glos:Labeling}{Klassifizi...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+\citation{bib:HololensTest}
+! Undefined control sequence.
+<write> ... Warning: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.44 ...bis 40 Grad beträgt \cite{bib:HololensTest}
+                                                  . Der Mensch kann dagegen ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `bib:HololensTest' on page  undefined on input line 44.
+
+! Undefined control sequence.
+l.44 ... des Reizes verloren gehen, den die \glslink
+                                                  {glos:Labeling}{3D-Datenno...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+\citation{bib:HololensPreis}
+! Undefined control sequence.
+<write> ... Warning: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.44 ...le sogar 5.489 Euro \cite{bib:HololensPreis}
+                                                  . Für eine prototypische ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `bib:HololensPreis' on page  undefined on input line 44.
+
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 44--45
+[]Die
+ []
+
+
+Overfull \hbox (5.43pt too wide) in paragraph at lines 44--45
+[[]].
+ []
+
+
+Overfull \hbox (5.43pt too wide) in paragraph at lines 44--45
+[[]].
+ []
+
+! Undefined control sequence.
+l.46 \subsubsection
+                 {Meta 2}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.46 \subsubsection{M
+                   eta 2}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+<write> ...arning: Reference `fig:Meta2' on page \thepage 
+                                                  \space undefined\on@line .
+l.47 ...eta 2-Brille (vgl. Abbildung \ref{fig:Meta2}
+                                                  ) spricht das hohe Sichtfe...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `fig:Meta2' on page  undefined on input line 47.
+
+! Undefined control sequence.
+<recently read> \glqq 
+      
+l.47 ...\textit{\glqq hält, was es verspricht\grqq}
+                                                   \cite{bib:Meta2Test}. Wie...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \glqq hält, was es verspricht\grqq 
+                                    
+l.47 ...\textit{\glqq hält, was es verspricht\grqq}
+                                                   \cite{bib:Meta2Test}. Wie...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+\citation{bib:Meta2Test}
+! Undefined control sequence.
+<write> ... Warning: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.47 ...was es verspricht\grqq} \cite{bib:Meta2Test}
+                                                  . Wie im vorherigen Abschn...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `bib:Meta2Test' on page  undefined on input line 47.
+
+\citation{bib:Meta2Preis}
+! Undefined control sequence.
+<write> ... Warning: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.47 ... noch ein hoher Betrag \cite{bib:Meta2Preis}
+                                                  .\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `bib:Meta2Preis' on page  undefined on input line 47.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 46--48
+[]Meta
+ []
+
+
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 46--48
+[])
+ []
+
+
+Overfull \hbox (19.17001pt too wide) in paragraph at lines 46--48
+\TU/lmr/m/it/10 hält,
+ []
+
+
+Overfull \hbox (15.84pt too wide) in paragraph at lines 46--48
+\TU/lmr/m/it/10 was
+ []
+
+
+Overfull \hbox (8.69pt too wide) in paragraph at lines 46--48
+\TU/lmr/m/it/10 es
+ []
+
+
+Overfull \hbox (17.00002pt too wide) in paragraph at lines 46--48
+\TU/lmr/m/it/10 ver-
+ []
+
+
+Overfull \hbox (29.52002pt too wide) in paragraph at lines 46--48
+\TU/lmr/m/it/10 spricht
+ []
+
+
+Overfull \hbox (5.43pt too wide) in paragraph at lines 46--48
+[[]].
+ []
+
+
+Overfull \hbox (5.43pt too wide) in paragraph at lines 46--48
+[[]]. 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.49 D
+    eutlich schlechter als die Hololens schneidet die Meta 2 bei der Perform...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+\citation{bib:Meta2Preis}
+! Undefined control sequence.
+<write> ... Warning: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.49 ...an ihnen vorbei bewegt \cite{bib:Meta2Preis}
+                                                  . Auch der, schon angespro...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `bib:Meta2Preis' on page  undefined on input line 49.
+
+\citation{bib:Meta2Test2}
+! Undefined control sequence.
+<write> ... Warning: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.49 ...lässig greifen lassen \cite{bib:Meta2Test2}
+                                                  . Die Markierung vieler di...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `bib:Meta2Test2' on page  undefined on input line 49.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 49--50
+[]Deutlich
+ []
+
+
+Overfull \hbox (5.43pt too wide) in paragraph at lines 49--50
+[[]].
+ []
+
+
+Overfull \hbox (5.43pt too wide) in paragraph at lines 49--50
+[[]].
+ []
+
+
+! LaTeX Error: Environment figure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.51 \begin{figure}
+                 %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+l.53     \subfloat
+                [Microsoft Hololens \acrshort{acr:AR}-Brille]{{\includegraph...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.53     \subfloat[
+                 Microsoft Hololens \acrshort{acr:AR}-Brille]{{\includegraph...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.53     \subfloat[Microsoft Hololens \acrshort
+                                             {acr:AR}-Brille]{{\includegraph...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.53 ... \acrshort{acr:AR}-Brille]{{\includegraphics
+                                                  [width=5cm]{Hololens}\labe...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.55     \subfloat
+                [Meta 2 \acrshort{acr:AR}-Brille]{{\includegraphics[width=4c...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.55     \subfloat[Meta 2 \acrshort
+                                 {acr:AR}-Brille]{{\includegraphics[width=4c...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.55 ... \acrshort{acr:AR}-Brille]{{\includegraphics
+                                                  [width=4cm]{Meta2}\label{f...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: \caption outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.56     \caption
+               {Die zwei potentiellen \acrshort{acr:AR}-Brillen}\label{fig:A...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.56     \caption{Die zwei potentiellen \acrshort
+                                               {acr:AR}-Brillen}\label{fig:A...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: \begin{document} ended by \end{figure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.57 \end{figure}
+               
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+l.59 \subsection
+              {\acrshort{acr:VR}-Brillen im Vergleich}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.59 \subsection{\acrshort
+                        {acr:VR}-Brillen im Vergleich}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.59 \subsection{\acrshort{a
+                          cr:VR}-Brillen im Vergleich}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.60 ...ser Arbeit, entwickelte Methode zur \glslink
+                                                  {glos:Labeling}{3D-Datenno...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.60 ...hat. Deswegen macht es keinen Sinn \acrshort
+                                                  {acr:VR}-Brillen in Betrac...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 59--61
+[]acr:VR-
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.62 F
+    ür das \glslink{glos:Labeling}{Klassifizieren} im dreidimensionalen Rau...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.62 Für das \glslink
+                    {glos:Labeling}{Klassifizieren} im dreidimensionalen Rau...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.62 ...llung und Bedienung notwendig. Bei \acrshort
+                                                  {acr:VR}-Brillen, die eine...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.62 ...uerung über Controller kommt einem \glslink
+                                                  {glos:Labeling}{Labeling}-...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 62--63
+[]Für
+ []
+
+! Undefined control sequence.
+l.64 \subsubsection
+                 {Oculus Rift}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.64 \subsubsection{O
+                   culus Rift}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+<write> ...rning: Reference `fig:Oculus' on page \thepage 
+                                                  \space undefined\on@line .
+l.65 ...Oculus Rift (vgl. Abbildung \ref{fig:Oculus}
+                                                  ) deutlich leichter als an...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `fig:Oculus' on page  undefined on input line 65.
+
+\citation{bib:OculusTestTragekomfort}
+! Undefined control sequence.
+<write> ... Warning: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.65 ... 610 Gramm \cite{bib:OculusTestTragekomfort}
+                                                  . Dies ist für längeres ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `bib:OculusTestTragekomfort' on page  undefined on input
+ line 65.
+
+! Undefined control sequence.
+<recently read> \glqq 
+      
+l.65 ...nen Schritt in alle Richtungen bewegen\grqq}
+                                                   \cite{bib:OculusTouchTest...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> ... einen Schritt in alle Richtungen bewegen\grqq 
+                                                  
+l.65 ...nen Schritt in alle Richtungen bewegen\grqq}
+                                                   \cite{bib:OculusTouchTest...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+\citation{bib:OculusTouchTest}
+! Undefined control sequence.
+<write> ... Warning: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.65 ...gen bewegen\grqq} \cite{bib:OculusTouchTest}
+                                                  . Auch in Sachen Steuerung...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `bib:OculusTouchTest' on page  undefined on input line 6
+5.
+
+! Undefined control sequence.
+<recently read> \glqq 
+      
+l.65 ...xtit{\glqq deutlich feinere Bewegungen\grqq}
+                                                   als beispielsweise der HT...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \glqq deutlich feinere Bewegungen\grqq 
+                                       
+l.65 ...xtit{\glqq deutlich feinere Bewegungen\grqq}
+                                                   als beispielsweise der HT...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+\citation{bib:OculusTouchTest}
+! Undefined control sequence.
+<write> ... Warning: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.65 ...eise der HTC Vive \cite{bib:OculusTouchTest}
+                                                  . Dies bietet für die Ent...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `bib:OculusTouchTest' on page  undefined on input line 6
+5.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 64--66
+[]Oculus
+ []
+
+
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 64--66
+[])
+ []
+
+
+Overfull \hbox (5.43pt too wide) in paragraph at lines 64--66
+[[]].
+ []
+
+
+Overfull \hbox (21.22pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 Ocu-
+ []
+
+
+Overfull \hbox (12.01999pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 lus
+ []
+
+
+Overfull \hbox (21.47pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 emp-
+ []
+
+
+Overfull \hbox (24.28001pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 fiehlt,
+ []
+
+
+Overfull \hbox (12.78001pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 die
+ []
+
+
+Overfull \hbox (24.05pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 Kam-
+ []
+
+
+Overfull \hbox (17.51001pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 eras
+ []
+
+
+Overfull \hbox (11.25pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 im
+ []
+
+
+Overfull \hbox (15.1pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 Ab-
+ []
+
+
+Overfull \hbox (23.25pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 stand
+ []
+
+
+Overfull \hbox (15.33pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 von
+ []
+
+
+Overfull \hbox (18.40001pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 zwei
+ []
+
+
+Overfull \hbox (17.15001pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 Me-
+ []
+
+
+Overfull \hbox (17.76001pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 tern
+ []
+
+
+Overfull \hbox (52.13002pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 nebeneinan-
+ []
+
+
+Overfull \hbox (13.93001pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 der
+ []
+
+
+Overfull \hbox (9.45999pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 zu
+ []
+
+
+Overfull \hbox (41.79002pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 platzieren
+ []
+
+
+Overfull \hbox (5.11pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 –
+ []
+
+
+Overfull \hbox (11.76003pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 bei
+ []
+
+
+Overfull \hbox (26.07pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 einem
+ []
+
+
+Overfull \hbox (19.94pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 klas-
+ []
+
+
+Overfull \hbox (14.83pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 sis-
+ []
+
+
+Overfull \hbox (19.93001pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 chen
+ []
+
+
+Overfull \hbox (17.52pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 PC-
+ []
+
+
+Overfull \hbox (50.50003pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 Arbeitsplatz
+ []
+
+
+Overfull \hbox (16.87pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 also
+ []
+
+
+Overfull \hbox (19.94pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 links
+ []
+
+
+Overfull \hbox (16.09999pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 und
+ []
+
+
+Overfull \hbox (24.92003pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 rechts
+ []
+
+
+Overfull \hbox (24.53001pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 neben
+ []
+
+
+Overfull \hbox (17.89pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 dem
+ []
+
+
+Overfull \hbox (23.28pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 Mon-
+ []
+
+
+Overfull \hbox (6.65001pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 i-
+ []
+
+
+Overfull \hbox (15.72002pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 tor.
+ []
+
+
+Overfull \hbox (16.75pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 Das
+ []
+
+
+Overfull \hbox (22.24pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 funk-
+ []
+
+
+Overfull \hbox (20.70001pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 tion-
+ []
+
+
+Overfull \hbox (15.21002pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 iert
+ []
+
+
+Overfull \hbox (8.69pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 in
+ []
+
+
+Overfull \hbox (13.93001pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 der
+ []
+
+
+Overfull \hbox (27.40001pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 Praxis
+ []
+
+
+Overfull \hbox (16.36002pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 gut,
+ []
+
+
+Overfull \hbox (18.90999pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 man
+ []
+
+
+Overfull \hbox (20.95pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 kann
+ []
+
+
+Overfull \hbox (16.87001pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 sich
+ []
+
+
+Overfull \hbox (14.57pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 mit
+ []
+
+
+Overfull \hbox (29.65001pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 diesem
+ []
+
+
+Overfull \hbox (18.94pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 Auf-
+ []
+
+
+Overfull \hbox (14.57pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 bau
+ []
+
+
+Overfull \hbox (23.77pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 unge-
+ []
+
+
+Overfull \hbox (17.51001pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 fähr
+ []
+
+
+Overfull \hbox (17.89001pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 jew-
+ []
+
+
+Overfull \hbox (14.32pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 eils
+ []
+
+
+Overfull \hbox (23.51001pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 einen
+ []
+
+
+Overfull \hbox (29.26003pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 Schritt
+ []
+
+
+Overfull \hbox (8.69pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 in
+ []
+
+
+Overfull \hbox (15.6pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 alle
+ []
+
+
+Overfull \hbox (23.39001pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 Rich-
+ []
+
+
+Overfull \hbox (17.89pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 tun-
+ []
+
+
+Overfull \hbox (14.82pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 gen
+ []
+
+
+Overfull \hbox (12.27002pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 be-
+ []
+
+
+Overfull \hbox (14.82pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 we-
+ []
+
+
+Overfull \hbox (14.82pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 gen
+ []
+
+
+Overfull \hbox (5.43pt too wide) in paragraph at lines 64--66
+[[]].
+ []
+
+
+Overfull \hbox (21.98001pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 deut-
+ []
+
+
+Overfull \hbox (15.34001pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 lich
+ []
+
+
+Overfull \hbox (29.27003pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 feinere
+ []
+
+
+Overfull \hbox (15.22pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 Be-
+ []
+
+
+Overfull \hbox (14.82pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 we-
+ []
+
+
+Overfull \hbox (19.17pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 gun-
+ []
+
+
+Overfull \hbox (14.82pt too wide) in paragraph at lines 64--66
+\TU/lmr/m/it/10 gen
+ []
+
+
+Overfull \hbox (5.43pt too wide) in paragraph at lines 64--66
+[[]].
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.67 W
+    as bei der Oculus Rift nicht so gut funktioniert, wie bei anderen Brille...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.67 ...oniert, wie bei anderen Brillen ist das \gls
+                                                  {glos:Roomscaling}, also d...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+\citation{bib:OculusTouchTest}
+! Undefined control sequence.
+<write> ... Warning: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.67 ... bei der HTC Vive \cite{bib:OculusTouchTest}
+                                                  .
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `bib:OculusTouchTest' on page  undefined on input line 6
+7.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 67--68
+[]Was
+ []
+
+
+Overfull \hbox (5.43pt too wide) in paragraph at lines 67--68
+[[]]. 
+ []
+
+! Undefined control sequence.
+l.69 \subsubsection
+                 {HTC Vive}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.69 \subsubsection{H
+                   TC Vive}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+<write> ...Warning: Reference `fig:Vive' on page \thepage 
+                                                  \space undefined\on@line .
+l.70 Die HTC Vive (vgl. Abbildung \ref{fig:Vive}
+                                              ) punktet mit dem ausgeklügel...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `fig:Vive' on page  undefined on input line 70.
+
+\citation{bib:Lighthouse}
+! Undefined control sequence.
+<write> ... Warning: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.70 ...VALVE entwickelt wurde \cite{bib:Lighthouse}
+                                                  . Das System kann die Kopf...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `bib:Lighthouse' on page  undefined on input line 70.
+
+\citation{bib:ViveTest}
+! Undefined control sequence.
+<write> ... Warning: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.70 ...ntel eines Grades messen \cite{bib:ViveTest}
+                                                  . Auch die Controller werd...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `bib:ViveTest' on page  undefined on input line 70.
+
+! Undefined control sequence.
+<recently read> \glqq 
+      
+l.70 ... Bildes (\textit{\glqq lens distortion\grqq}
+                                                   \cite{bib:ViveTest}) noch...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \glqq lens distortion\grqq 
+                           
+l.70 ... Bildes (\textit{\glqq lens distortion\grqq}
+                                                   \cite{bib:ViveTest}) noch...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+\citation{bib:ViveTest}
+! Undefined control sequence.
+<write> ... Warning: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.70 ...qq lens distortion\grqq} \cite{bib:ViveTest}
+                                                  ) noch zu Pixelfehlern. Eb...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `bib:ViveTest' on page  undefined on input line 70.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 69--71
+[]HTC
+ []
+
+
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 69--71
+[])
+ []
+
+
+Overfull \hbox (5.43pt too wide) in paragraph at lines 69--71
+[[]].
+ []
+
+
+Overfull \hbox (5.43pt too wide) in paragraph at lines 69--71
+[[]].
+ []
+
+
+Overfull \hbox (16.87pt too wide) in paragraph at lines 69--71
+(\TU/lmr/m/it/10 lens
+ []
+
+
+Overfull \hbox (15.85pt too wide) in paragraph at lines 69--71
+\TU/lmr/m/it/10 dis-
+ []
+
+
+Overfull \hbox (16.23001pt too wide) in paragraph at lines 69--71
+\TU/lmr/m/it/10 tor-
+ []
+
+
+Overfull \hbox (17.12001pt too wide) in paragraph at lines 69--71
+\TU/lmr/m/it/10 tion
+ []
+
+
+Overfull \hbox (5.43pt too wide) in paragraph at lines 69--71
+[[]])
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.72 D
+    er große Unterschied zwischen Vive und Rift liegt bei der Bedienung dur...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 72--73
+[]Der
+ []
+
+
+! LaTeX Error: Environment figure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.74 \begin{figure}
+                 %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+l.76     \subfloat
+                [HTC Vive \acrshort{acr:AR}-Brille mit Controllern]{{\includ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.76     \subfloat[
+                 HTC Vive \acrshort{acr:AR}-Brille mit Controllern]{{\includ...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.76     \subfloat[HTC Vive \acrshort
+                                   {acr:AR}-Brille mit Controllern]{{\includ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.76 ...R}-Brille mit Controllern]{{\includegraphics
+                                                  [width=5cm]{Vive}\label{fi...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.78     \subfloat
+                [Oculus Rift \acrshort{acr:VR}-Brille mit Controllern]{{\inc...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.78     \subfloat[Oculus Rift \acrshort
+                                      {acr:VR}-Brille mit Controllern]{{\inc...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.78 ...R}-Brille mit Controllern]{{\includegraphics
+                                                  [width=3cm]{Oculus}\label{...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: \caption outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.79     \caption
+               {Die zwei potentiellen \acrshort{acr:VR}-Brillen}\label{fig:V...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.79     \caption{Die zwei potentiellen \acrshort
+                                               {acr:VR}-Brillen}\label{fig:V...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: \begin{document} ended by \end{figure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.80 \end{figure}
+               
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+l.82 \subsection
+              {Zusammenfassung und Entscheidung}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.82 \subsection{Z
+                usammenfassung und Entscheidung}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.83 ...diums, auf dem das dreidimensionale \glslink
+                                                  {glos:Labeling}{Labeling} ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.83 ...ßstab darzustellen. Hier kommt die \acrlong
+                                                  {acr:AR}-Technologie, durc...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 82--84
+[]Zusammenfassung
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.85 A
+    uch die Steuerung spricht für den Einsatz von \acrlong{acr:VR}. Zwar is...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.85 ...uerung spricht für den Einsatz von \acrlong
+                                                  {acr:VR}. Zwar ist das Kon...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.85 ...die Steuerung durch Controller bei \acrshort
+                                                  {acr:VR}-Brillen deutlich ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.85 ...ert werden wogegen die Gesten für \acrshort
+                                                  {acr:AR}-Brillen nicht ver...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+\citation{bib:NewGesture}
+! Undefined control sequence.
+<write> ... Warning: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.85 ...rstellt werden sollten \cite{bib:NewGesture}
+                                                  .
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `bib:NewGesture' on page  undefined on input line 85.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 85--86
+[]Auch
+ []
+
+
+Overfull \hbox (22.00002pt too wide) in paragraph at lines 85--86
+\TU/lmr/m/it/10 Meta
+ []
+
+
+Overfull \hbox (5.11pt too wide) in paragraph at lines 85--86
+\TU/lmr/m/it/10 2
+ []
+
+
+Overfull \hbox (5.43pt too wide) in paragraph at lines 85--86
+[[]]. 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.87 Z
+    udem gibt es, durch die deutlich frühere Markteinführung, viel mehr Do...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.87 ...onen und Hilfestellungen im Bereich \acrlong
+                                                  {acr:VR}, was die Entwickl...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 87--88
+[]Zudem
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.89 A
+    ufgrund der eben genannten Vorteile von \acrshort{acr:VR} gegenüber \ac...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.89 ...nd der eben genannten Vorteile von \acrshort
+                                                  {acr:VR} gegenüber \acrsh...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.89 ...e von \acrshort{acr:VR} gegenüber \acrshort
+                                                  {acr:AR} wird für die Ent...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \acrlong 
+         
+l.89 ...men dieser Arbeit, \textbf{\acrlong{acr:VR}}
+                                                   verwendet.\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 89--90
+[]Aufgrund
+ []
+
+
+Overfull \hbox (35.95001pt too wide) in paragraph at lines 89--90
+\TU/lmr/bx/n/10 acr:VR
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.91 B
+    leibt noch die Frage zu klären welche Brille verwendet werden soll. Die...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.91 ...e vorherige. Die zwei potentiellen \acrshort
+                                                  {acr:VR}-Brillen, also Ocu...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.91 ...andidaten. Die Vive punktet durch gutes \gls
+                                                  {glos:Roomscaling} und gut...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 91--92
+[]Bleibt
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.93 W
+    ichtig für die Entwicklung einer \glslink{glos:Labeling}{3D-Datennotati...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.93 Wichtig für die Entwicklung einer \glslink
+                                              {glos:Labeling}{3D-Datennotati...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.93 ...cht, ob man sich physisch, also mittels \gls
+                                                  {glos:Roomscaling} durch d...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.93 ...en wird für die Entwicklung eines \acrshort
+                                                  {acr:VR}-\glslink{glos:Lab...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.93 ...Entwicklung eines \acrshort{acr:VR}-\glslink
+                                                  {glos:Labeling}{Labeling}-...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 93--94
+[]Wichtig
+ []
+
+
+Overfull \hbox (23.97pt too wide) in paragraph at lines 93--94
+\TU/lmr/bx/n/10 Ocu-
+ []
+
+
+Overfull \hbox (14.12pt too wide) in paragraph at lines 93--94
+\TU/lmr/bx/n/10 lus
+ []
+
+
+Overfull \hbox (19.8pt too wide) in paragraph at lines 93--94
+\TU/lmr/bx/n/10 Rift
+ []
+
+! Undefined control sequence.
+l.95 \section
+           {Wahl des passenden Rechners}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.95 \section{W
+             ahl des passenden Rechners}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.96 ... dazu verwendet werden eine solche \acrshort
+                                                  {acr:VR}-Brille zu betreib...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 95--97
+[]Wahl
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.98 W
+    ichtig sind also zunächst die Basiskomponenten wie ein schneller Prozes...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+\citation{bib:OculusSpecs}
+! Undefined control sequence.
+<write> ... Warning: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.98 ...ommended System Specs \cite{bib:OculusSpecs}
+                                                  ). Diese sind jedoch vorwi...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `bib:OculusSpecs' on page  undefined on input line 98.
+
+! Undefined control sequence.
+l.98 ...twicklungsumgebung und zusätzliche \glslink
+                                                  {glos:Debugger}{Debugging-...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 98--99
+[]Wichtig
+ []
+
+
+Overfull \hbox (5.43pt too wide) in paragraph at lines 98--99
+[[]]).
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.100 S
+     ind die Basiskomponenten ausgewählt, sollte noch geprüft werden ob no...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.100 ...eiben. Da gerade Prozessoren mit hoher \gls
+                                                  {glos:Taktrate} viel Wärm...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+\citation{bib:OculusSpecs}
+! Undefined control sequence.
+<write> ... Warning: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.100 ...Mainboard haben muss \cite{bib:OculusSpecs}
+                                                  . Ebenfalls muss das Board...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `bib:OculusSpecs' on page  undefined on input line 100.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 100--101
+[]Sind
+ []
+
+
+Overfull \hbox (5.43pt too wide) in paragraph at lines 100--101
+[[]].
+ []
+
+! Undefined control sequence.
+l.102 \textcolor
+              {red}{Eventuell grafikkarte anpassen}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.102 \textcolor{r
+                ed}{Eventuell grafikkarte anpassen}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Environment table undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.103 \begin{table}
+                 [h]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: \caption outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.119  \caption
+             {Rechner-Konfiguration für die Entwicklungen dieser Arbeit}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: \begin{document} ended by \end{table}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.121  \end{table}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 102--122
+[]redEventuell
+ []
+
+
+Overfull \hbox (277.38002pt too wide) in paragraph at lines 102--122
+[]
+ []
+
+! Undefined control sequence.
+l.123 \section
+            {Wahl der passenden Entwicklungsplattform}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.123 \section{W
+              ahl der passenden Entwicklungsplattform}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.124 Für die Erstellung von \acrlong
+                                    {acr:VR} Software gibt es zwei Entwicklu...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.124 ...n, die gut für das Entwickeln von \acrlong
+                                                  {acr:VR} geeignet sind, we...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.124 ...nd, weil sie schon seit längerem \acrshort
+                                                  {acr:VR}-Support bieten un...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.124 ...attformen bieten alles nötige um \acrshort
+                                                  {acr:VR}-Software zu entwi...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 123--125
+[]Wahl
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.126 I
+     m Allgemeinen kann man sagen, dass die Unreal Engine mehr Möglichkeite...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.126 ...wird, beispielsweise durch integrierte \gls
+                                                  {glos:PostPr}-Techniken un...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.126 ...gls{glos:PostPr}-Techniken und bessere \gls
+                                                  {glos:Shader}. Sie bietet ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.126 ...gls{glos:Shader}. Sie bietet neben dem \gls
+                                                  {glos:Scripting} auch die ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.126 ...eue hinzuzufügen. Das gestalten von \glspl
+                                                  {glos:UI} ist mit dem UMG ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+\citation{bib:UEvsUE4}
+! Undefined control sequence.
+<write> ... Warning: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.126 ...er ebenfalls gut gelöst \cite{bib:UEvsUE4}
+                                                  .
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `bib:UEvsUE4' on page  undefined on input line 126.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 126--127
+[]Im
+ []
+
+
+Overfull \hbox (5.43pt too wide) in paragraph at lines 126--127
+[[]]. 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.128 D
+     ie Unity Engine bietet vor allem Anfängern einen leichten Einstieg in ...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 128--129
+[]Die
+ []
+
+! Undefined control sequence.
+l.130 \subsubsection
+                  {Entscheidung}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.130 \subsubsection{E
+                    ntscheidung}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.131 ...Arbeit, bietet ist Nutzung von C\# als \gls
+                                                  {glos:Scripting}-Sprache. Da
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<write> ...ning: Reference `sec:C.LABEL' on page \thepage 
+                                                  \space undefined\on@line .
+l.132 C.LABEL (vgl. \ref{sec:C.LABEL}
+                                   ) ebenfalls in C\# programmiert wurde kö...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `sec:C.LABEL' on page  undefined on input line 132.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 130--133
+[]Entscheidung
+ []
+
+
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 130--133
+[])
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.134 F
+     ür die Entwicklung der, in dieser Arbeit, angestrebten Anwendung spiel...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 134--135
+[]Für
+ []
+
+
+Overfull \hbox (28.65001pt too wide) in paragraph at lines 134--135
+\TU/lmr/bx/n/10 Unity
+ []
+
+
+Overfull \hbox (17.78pt too wide) in paragraph at lines 134--135
+\TU/lmr/bx/n/10 En-
+ []
+
+
+Overfull \hbox (20.6pt too wide) in paragraph at lines 134--135
+\TU/lmr/bx/n/10 gine
+ []
+
+)
+! Emergency stop.
+<*> Vorbereitungen.tex
+                   
+*** (job aborted, no legal \end found)
+
+
+
+Here is how much of LuaTeX's memory you used:
+ 58 strings out of 494456
+ 244179,89155 words of node,token memory allocated 194810 words of node memory still in use:
+   359 hlist, 1 vlist, 12 rule, 122 disc, 41 local_par, 1 dir, 4 math, 4133 glue
+, 65 kern, 148 penalty, 22635 glyph, 360 attribute, 35 glue_spec, 360 attribute_
+list, 9 write nodes
+   avail lists: 2:5,4:257,5:9,7:80,8:11,10:256
+ 4298 multiletter control sequences out of 65536+200000
+ 27 fonts using 1608167 bytes
+ 18i,7n,21p,1980b,183s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!

@@ -21,6 +21,58 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{bib:AzureCs}
+Microsoft, ``Machine learning – cheat sheet für algorithmen für microsoft
+  azure machine learning studio,'' Internetquelle(abgerufen am 21.03.2018),
+  Dec. 2017.
+
+\bibitem{bib:UebereblickNN}
+\BIBentryALTinterwordspacing
+D.~Kriesel, \emph{Ein kleiner \"{U}berblick \"{u}ber Neuronale Netze}, 2007.
+  [Online]. Available: \url{erh\"{a}ltlich auf http://www.dkriesel.com}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:Perzeptron}
+C.~V.~D. Malsburg, ``Frank rosenblatt: Principles of neurodynamics: Perceptrons
+  and the theory of brain mechanisms,'' in \emph{Brain Theory}.\hskip 1em plus
+  0.5em minus 0.4em\relax Springer Berlin Heidelberg, 1986, pp. 245--248.
+
+\bibitem{bib:UltimateDisplay}
+I.~E. Sutherland, ``The ultimate display,'' in \emph{Proceedings of the IFIP
+  Congress}, 1965, pp. 506--508.
+
+\bibitem{bib:VRReport}
+G.~Enrico, ``Virtual reality: Past, present and future,'' \emph{Studies in
+  Health Technology and Informatics}, vol.~58, no. Virtual Environments in
+  Clinical Psychology and Neuroscience, pp. 3--20, 1998.
+
+\bibitem{bib:NasaVr}
+S.~S. Fisher, M.~McGreevy, J.~Humphries, and W.~Robinett, ``Virtual environment
+  display system,'' in \emph{Proceedings of the 1986 workshop on Interactive 3D
+  graphics - {SI}3D {\textquotesingle}86}.\hskip 1em plus 0.5em minus
+  0.4em\relax {ACM} Press, 1987.
+
+\bibitem{bib:RiftHistorical}
+C.~Gammage, ``Exploring oculus rift: A historical analysis of the ‘virtual
+  reality’paradigm,'' \emph{ART 108: Introduction to Games Studies}, 2017.
+
+\bibitem{bib:LidarArcheology}
+K.~M. Johnson and W.~B. Ouimet, ``Rediscovering the lost archaeological
+  landscape of southern new england using airborne light detection and ranging
+  ({LiDAR}),'' \emph{Journal of Archaeological Science}, vol.~43, pp. 9--20,
+  mar 2014.
+
+\bibitem{bib:LidarSpace}
+D.~E. Smith, ``The global topography of mars and implications for surface
+  evolution,'' \emph{Science}, vol. 284, no. 5419, pp. 1495--1503, may 1999.
+
+\bibitem{bib:LidarRobotic}
+S.~K. Reddy and P.~K. Pal, ``Segmentation of point cloud from a 3d {LIDAR}
+  using range difference between neighbouring beams,'' in \emph{Proceedings of
+  the 2015 Conference on Advances In Robotics - {AIR}
+  {\textquotesingle}15}.\hskip 1em plus 0.5em minus 0.4em\relax {ACM} Press,
+  2015.
+
 \bibitem{bib:FastGroundSeg}
 P.~Chu, S.~Cho, S.~Sim, K.~Kwak, and K.~Cho, ``A fast ground segmentation
   method for 3d point cloud,'' \emph{Journal of information processing
@@ -32,6 +84,13 @@ P.~Gothard, ``Microsoft hololens: Firm admits sales figures are in the
   'thousands','' Internetquelle (abgerufen am 24.11.2017), Jan. 2017. [Online].
   Available:
   \url{https://www.theinquirer.net/inquirer/news/3003380/microsoft-hololens-firm-admits-sales-figures-are-in-the-thousands}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:HololensPreis}
+\BIBentryALTinterwordspacing
+Microsoft, ``Microsoft hololens choose the option that best suits your
+  purpose.'' Internetquelle (abgerufen am 27.11.2017), Nov. 2017. [Online].
+  Available: \url{https://www.microsoft.com/de-de/hololens/buy}
 \BIBentrySTDinterwordspacing
 
 \bibitem{bib:ControllerTest}
@@ -47,41 +106,11 @@ J.~Munafo, M.~Diedrick, and T.~A. Stoffregen, ``The virtual reality
   effects,'' \emph{Experimental Brain Research}, vol. 235, no.~3, pp. 889--901,
   dec 2016.
 
-\bibitem{bib:HololensTest}
+\bibitem{bib:NewGesture}
 \BIBentryALTinterwordspacing
-J.-K.~J. Hannes A.~Czerulla, ``Microsoft hololens im test: Tolle software,
-  schwaches display,'' Internetquelle (angerufen am 27.11.2017), Jun. 2016.
-  [Online]. Available:
-  \url{https://www.heise.de/ct/artikel/Microsoft-HoloLens-im-Test-Tolle-Software-schwaches-Display-3248670.html}
-\BIBentrySTDinterwordspacing
-
-\bibitem{bib:HololensPreis}
-\BIBentryALTinterwordspacing
-Microsoft, ``Microsoft hololens choose the option that best suits your
-  purpose.'' Internetquelle (abgerufen am 27.11.2017), Nov. 2017. [Online].
-  Available: \url{https://www.microsoft.com/de-de/hololens/buy}
-\BIBentrySTDinterwordspacing
-
-\bibitem{bib:Meta2Test}
-\BIBentryALTinterwordspacing
-T.~Kammann, ``Augmented reality: Ar-brille meta 2 im test – besser als
-  hololens?'' Internetquelle (abgerufen am 27.11.2017), Nov. 2017. [Online].
-  Available:
-  \url{https://vrodo.de/augmented-reality-ar-brille-meta-2-im-test-besser-als-hololens/}
-\BIBentrySTDinterwordspacing
-
-\bibitem{bib:Meta2Preis}
-\BIBentryALTinterwordspacing
-Metavision, ``Meta 2 augmented reality development kit,'' Internetquelle
-  (abgerufen am 27.11.2017), Nov. 2017. [Online]. Available:
-  \url{https://buy.metavision.com/products/meta2?hsCtaTracking=f279363d-13d6-49b1-ac86-3b857cdab7af%7Ce791c1c8-d612-476a-9ed0-d31641c628f1}
-\BIBentrySTDinterwordspacing
-
-\bibitem{bib:Meta2Test2}
-\BIBentryALTinterwordspacing
-J.~Durbin, ``Meta 2: Hands-on with the ar startup’s latest kit,''
-  Internetquelle (abgerufen am 27.11.2017), Apr. 2017. [Online]. Available:
-  \url{https://uploadvr.com/meta-2-hands-ar-svvr/}
+W.~M. R.~D. Forum, ``Creating a new gesture,'' Internetquelle (abgerufen am
+  28.11.2017), Apr. 2016. [Online]. Available:
+  \url{https://forums.hololens.com/discussion/549/creating-a-new-gesture}
 \BIBentrySTDinterwordspacing
 
 \bibitem{bib:OculusTestTragekomfort}
@@ -112,13 +141,6 @@ L.~Painter, ``Htc vive review,'' Internetquelle (abgerufen am 28.11.2017), Aug.
   \url{http://www.techadvisor.co.uk/review/wearable-tech/htc-vive-review-2017-3635648/}
 \BIBentrySTDinterwordspacing
 
-\bibitem{bib:NewGesture}
-\BIBentryALTinterwordspacing
-W.~M. R.~D. Forum, ``Creating a new gesture,'' Internetquelle (abgerufen am
-  28.11.2017), Apr. 2016. [Online]. Available:
-  \url{https://forums.hololens.com/discussion/549/creating-a-new-gesture}
-\BIBentrySTDinterwordspacing
-
 \bibitem{bib:OculusSpecs}
 \BIBentryALTinterwordspacing
 O.~R. Support, ``Was sind die empfohlenen mindestsystemvoraussetzungen, die
@@ -134,22 +156,6 @@ P.~Gora and L.~Leibetseder, ``Unreal vs unity: Ein vergleich zwischen zwei
   Oct. 2016, 1. [Online]. Available:
   \url{https://www.cg.tuwien.ac.at/research/publications/2016/Przemyslaw_Gora_2016_UVU/}
 \BIBentrySTDinterwordspacing
-
-\bibitem{bib:AzureCs}
-Microsoft, ``Machine learning – cheat sheet für algorithmen für microsoft
-  azure machine learning studio,'' Internetquelle(abgerufen am 21.03.2018),
-  Dec. 2017.
-
-\bibitem{bib:UebereblickNN}
-\BIBentryALTinterwordspacing
-D.~Kriesel, \emph{Ein kleiner \"{U}berblick \"{u}ber Neuronale Netze}, 2007.
-  [Online]. Available: \url{erh\"{a}ltlich auf http://www.dkriesel.com}
-\BIBentrySTDinterwordspacing
-
-\bibitem{bib:Perzeptron}
-C.~V.~D. Malsburg, ``Frank rosenblatt: Principles of neurodynamics: Perceptrons
-  and the theory of brain mechanisms,'' in \emph{Brain Theory}.\hskip 1em plus
-  0.5em minus 0.4em\relax Springer Berlin Heidelberg, 1986, pp. 245--248.
 
 \bibitem{bib:Segmentation1}
 D.~Zermas, I.~Izzat, and N.~Papanikolopoulos, ``Fast segmentation of 3d point
@@ -179,9 +185,5 @@ D.~Kalman, ``A singularly valuable decomposition: The svd of a matrix,''
 \bibitem{bib:SVDforFitting}
 I.~Söderkvist, ``Using svd for some fitting problems,'' Lulea Univerity of
   Technology.
-
-\bibitem{bib:g3sharp}
-D.~Eberly, ``Least squares fitting of data,'' Geometric Tools, Redmond WA
-  98052, Jul. 1999, last Modified: December 12, 2017.
 
 \end{thebibliography}

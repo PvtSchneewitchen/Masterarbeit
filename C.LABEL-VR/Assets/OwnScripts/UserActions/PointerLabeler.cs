@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
-using System.Linq;
-
 
 /// <summary>
 /// Attach this to Controller to annotate points with Pointer
@@ -19,6 +17,7 @@ public class PointerLabeler : MonoBehaviour
 
     private VRTK_Pointer rightPointer;
     private VRTK_StraightPointerRenderer rightPointerRenderer;
+
 
     private void Awake()
     {

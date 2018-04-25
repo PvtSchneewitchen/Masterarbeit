@@ -211,15 +211,14 @@ Das Inteview handelt von den Verkaufszahlen der Hololens},
 }
 
 @Article{bib:FastGroundSeg,
-  author        = {Chu, Phuong and Cho, Seoungjae and Sim, Sungdae and Kwak, Kiho and Cho, Kyungeun},
-  title         = {A Fast Ground Segmentation Method for 3D Point Cloud},
-  journal       = {Journal of information processing systems},
-  year          = {2017},
-  volume        = {13},
-  number        = {3},
-  pages         = {491--499},
-  __markedentry = {[gruepazu:6]},
-  publisher     = {한국정보처리학회},
+  author    = {Chu, Phuong and Cho, Seoungjae and Sim, Sungdae and Kwak, Kiho and Cho, Kyungeun},
+  title     = {A Fast Ground Segmentation Method for 3D Point Cloud},
+  journal   = {Journal of information processing systems},
+  year      = {2017},
+  volume    = {13},
+  number    = {3},
+  pages     = {491--499},
+  publisher = {한국정보처리학회},
 }
 
 @Misc{bib:AzureCS,
@@ -301,6 +300,94 @@ Das Inteview handelt von den Verkaufszahlen der Hololens},
   month   = jul,
   year    = {1999},
   note    = {Last Modified: December 12, 2017},
+}
+
+@InProceedings{bib:UltimateDisplay,
+  author    = {Ivan E. Sutherland},
+  title     = {The Ultimate Display},
+  booktitle = {Proceedings of the IFIP Congress},
+  year      = {1965},
+  pages     = {506--508},
+}
+
+@Article{bib:VRReport,
+  author    = {Gobbetti Enrico},
+  title     = {VIRTUAL REALITY: PAST, PRESENT AND FUTURE},
+  journal   = {Studies in Health Technology and Informatics},
+  year      = {1998},
+  volume    = {58},
+  number    = {Virtual Environments in Clinical Psychology and Neuroscience},
+  pages     = {3--20},
+  issn      = {0926-9630},
+  doi       = {10.3233/978-1-60750-902-8-3},
+  publisher = {IOS Press},
+}
+
+@Book{Brewster1856,
+  title     = {The Stereoscope; Its History, Theory and Construction, with Its Application to the Fine and Useful Arts and to Education, Etc},
+  publisher = {John Murray},
+  year      = {1856},
+  author    = {Brewster, David},
+}
+
+@InProceedings{bib:NasaVr,
+  author    = {S. S. Fisher and M. McGreevy and J. Humphries and W. Robinett},
+  title     = {Virtual environment display system},
+  booktitle = {Proceedings of the 1986 workshop on Interactive 3D graphics - {SI}3D {\textquotesingle}86},
+  year      = {1987},
+  publisher = {{ACM} Press},
+  doi       = {10.1145/319120.319127},
+}
+
+@Article{bib:LidarArcheology,
+  author    = {Katharine M. Johnson and William B. Ouimet},
+  title     = {Rediscovering the lost archaeological landscape of southern New England using airborne light detection and ranging ({LiDAR})},
+  journal   = {Journal of Archaeological Science},
+  year      = {2014},
+  volume    = {43},
+  pages     = {9--20},
+  month     = {mar},
+  doi       = {10.1016/j.jas.2013.12.004},
+  publisher = {Elsevier {BV}},
+}
+
+@Article{bib:LidarSpace,
+  author    = {D. E. Smith},
+  title     = {The Global Topography of Mars and Implications for Surface Evolution},
+  journal   = {Science},
+  year      = {1999},
+  volume    = {284},
+  number    = {5419},
+  pages     = {1495--1503},
+  month     = {may},
+  doi       = {10.1126/science.284.5419.1495},
+  publisher = {American Association for the Advancement of Science ({AAAS})},
+}
+
+@InProceedings{bib:LidarRobotic,
+  author    = {Satish K. Reddy and Prabir K. Pal},
+  title     = {Segmentation of point cloud from a 3D {LIDAR} using range difference between neighbouring beams},
+  booktitle = {Proceedings of the 2015 Conference on Advances In Robotics - {AIR} {\textquotesingle}15},
+  year      = {2015},
+  publisher = {{ACM} Press},
+  doi       = {10.1145/2783449.2783504},
+}
+
+@Article{bib:RiftHistorical,
+  author        = {Gammage, Chastin},
+  title         = {Exploring Oculus Rift: A Historical Analysis of the ‘Virtual Reality’Paradigm},
+  journal       = {ART 108: Introduction to Games Studies},
+  year          = {2017},
+  __markedentry = {[gruepazu:6]},
+}
+
+@Misc{bib:Unity34Percent,
+  author       = {Unity Technologies},
+  title        = {Die weltweit führende Software der Game-Industrie},
+  howpublished = {Internetquelle (abgerufen am 24.04.2018)},
+  month        = apr,
+  year         = {2018},
+  url          = {https://unity3d.com/de/public-relations},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

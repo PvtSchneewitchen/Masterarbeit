@@ -84,6 +84,14 @@ public class PointCloud
         }
     }
 
+    public void ResetLabels()
+    {
+        for (int i = 0; i < _validPoints.Count; i++)
+        {
+            _validPoints[i].GetComponent<CustomAttributes>()._label = 0;
+        }
+    }
+
     public void RefreshPointsOfLabelCLass(uint oldLabelId, uint newLabelId)
     {
         for (int i = 0; i < _validPoints.Count; i++)
