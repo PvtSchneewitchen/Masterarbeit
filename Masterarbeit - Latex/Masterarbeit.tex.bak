@@ -36,10 +36,9 @@
         TestObject,
         MonoBehaviour,
         Start,
-        Update,
-        get,
-        set
+        Update
     }, emphstyle=[1]{\color{cyan}},
+    morekeywords={set,get},
     frame=top,frame=bottom,
     xleftmargin=0pt,
 }
