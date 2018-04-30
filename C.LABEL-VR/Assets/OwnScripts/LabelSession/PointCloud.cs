@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using System;
-
+using System.Linq;
 
 public class PointCloud
 {
@@ -34,27 +34,6 @@ public class PointCloud
             _validPoints.Add(point);
         }
     }
-
-    //public PointCloud(List<Tuple<Vector3, bool>> coordinatesWithGroundLabel_inp, Quaternion rotationToUnityCs)
-    //{
-    //    _validPoints = new List<GameObject>();
-
-    //    _origin = CreateOrigin();
-
-    //    for (int i = 0; i < coordinatesWithGroundLabel_inp.Count; i++)
-    //    {
-    //        GameObject point = Util.CreateDefaultLabelPoint();
-    //        CustomAttributes attributes = point.GetComponent<CustomAttributes>();
-    //        Vector3 pointPosition = coordinatesWithGroundLabel_inp.ElementAt(i).Item1;
-    //        bool groundPoint = coordinatesWithGroundLabel_inp.ElementAt(i).Item2;
-
-    //        attributes._pointPosition = rotationToUnityCs * pointPosition;
-    //        attributes._groundPoint = (groundPoint) ? 1 : 0;
-    //        attributes._ID = point.GetInstanceID();
-    //        point.SetActive(false);
-    //        _validPoints.Add(point);
-    //    }
-    //}
 
     public void EnableAllPoints()
     {

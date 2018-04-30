@@ -285,7 +285,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\ColorPicker\CUIColorPicker.cs" />
     <Compile Include="Assets\Eye Blink Effect\Scripts\BlinkEffect.cs" />
     <Compile Include="Assets\OculusPlatform\Scripts\AchievementType.cs" />
     <Compile Include="Assets\OculusPlatform\Scripts\AndroidPlatform.cs" />
@@ -502,6 +501,7 @@
     <Compile Include="Assets\OwnScripts\UI\MenuManager.cs" />
     <Compile Include="Assets\OwnScripts\UI\NumPad.cs" />
     <Compile Include="Assets\OwnScripts\UI\PointerLengthDisplay.cs" />
+    <Compile Include="Assets\OwnScripts\UserActions\LabelClassPipette.cs" />
     <Compile Include="Assets\OwnScripts\UserActions\Labeling.cs" />
     <Compile Include="Assets\OwnScripts\UserActions\Movement.cs" />
     <Compile Include="Assets\OwnScripts\UserActions\PointerLabeler.cs" />
