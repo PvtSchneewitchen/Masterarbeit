@@ -157,6 +157,27 @@ P.~Gora and L.~Leibetseder, ``Unreal vs unity: Ein vergleich zwischen zwei
   \url{https://www.cg.tuwien.ac.at/research/publications/2016/Przemyslaw_Gora_2016_UVU/}
 \BIBentrySTDinterwordspacing
 
+\bibitem{bib:Unity34Percent}
+\BIBentryALTinterwordspacing
+U.~Technologies, ``Die weltweit führende software der game-industrie,''
+  Internetquelle (abgerufen am 24.04.2018), Apr. 2018. [Online]. Available:
+  \url{https://unity3d.com/de/public-relations}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:Singleton}
+\BIBentryALTinterwordspacing
+C.~Games, ``Unity3d tips 2 – the singleton pattern,'' Internetquelle
+  (abgerufen am 01.05.2018). [Online]. Available:
+  \url{http://clearcutgames.net/home/?p=437}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:MonoBehaviour}
+\BIBentryALTinterwordspacing
+Unity, ``Monobehaviour,'' Internetquelle (abgerufen am 01.05.2018), May 2018.
+  [Online]. Available:
+  \url{https://docs.unity3d.com/ScriptReference/MonoBehaviour.html}
+\BIBentrySTDinterwordspacing
+
 \bibitem{bib:Segmentation1}
 D.~Zermas, I.~Izzat, and N.~Papanikolopoulos, ``Fast segmentation of 3d point
   clouds: A paradigm on {LiDAR} data for autonomous vehicle applications,'' in

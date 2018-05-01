@@ -29,29 +29,29 @@
 \contentsline {subsubsection}{Vergleich zwischen Unreal und Unity}{28}{section.3.3}
 \contentsline {subsubsection}{Entscheidung}{29}{section.3.3}
 \contentsline {subsubsection}{Konzepte der Unity Engine}{29}{section.3.3}
-\contentsline {chapter}{\numberline {4}C.LABEL VR}{32}{chapter.4}
-\contentsline {section}{\numberline {4.1}Import und Export von Daten}{33}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Architektur}{34}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}HDF5-Beispiel}{36}{subsection.4.1.2}
-\contentsline {subsubsection}{HDF5 Daten}{36}{subsection.4.1.2}
-\contentsline {subsubsection}{Beispiel}{36}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Generierung einer Punktwolke}{36}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Interne Datenstruktur}{36}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Generierung}{36}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Optimierung}{36}{subsection.4.2.3}
-\contentsline {section}{\numberline {4.3}Navigation}{36}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}VR-Krankheit}{36}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Freier Flug}{36}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Teleport}{36}{subsection.4.3.3}
-\contentsline {section}{\numberline {4.4}Annotieren der Punktwolke}{36}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Einfache Pointer Annotation}{36}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Cluster Annotation}{36}{subsection.4.4.2}
-\contentsline {subsubsection}{Bodenpunkt-Analyse}{37}{figure.caption.23}
-\contentsline {subsubsection}{Cluster-Analyse}{42}{algorithm.2}
-\contentsline {section}{\numberline {4.5}User Interface}{42}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}Ingame Menu}{42}{subsection.4.5.1}
-\contentsline {chapter}{\numberline {5}Schluss}{44}{chapter.5}
-\contentsline {section}{\numberline {5.1}Zusammenfassung}{44}{section.5.1}
-\contentsline {section}{\numberline {5.2}Herausforderungen}{44}{section.5.2}
-\contentsline {section}{\numberline {5.3}Ausblick}{44}{section.5.3}
-\contentsline {chapter}{\numberline {A}Appendix Title}{45}{appendix.A}
+\contentsline {chapter}{\numberline {4}C.LABEL VR}{33}{chapter.4}
+\contentsline {section}{\numberline {4.1}Import und Export von Daten}{34}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Architektur}{35}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}HDF5-Beispiel}{37}{subsection.4.1.2}
+\contentsline {subsubsection}{HDF5 Daten}{37}{subsection.4.1.2}
+\contentsline {subsubsection}{Beispiel}{37}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Generierung einer Punktwolke}{37}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Interne Datenstruktur}{37}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Generierung}{37}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Optimierung}{37}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3}Navigation}{37}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}VR-Krankheit}{37}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Freier Flug}{37}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Teleport}{37}{subsection.4.3.3}
+\contentsline {section}{\numberline {4.4}Annotieren der Punktwolke}{37}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Einfache Pointer Annotation}{37}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Cluster Annotation}{37}{subsection.4.4.2}
+\contentsline {subsubsection}{Bodenpunkt-Analyse}{38}{figure.caption.23}
+\contentsline {subsubsection}{Cluster-Analyse}{43}{algorithm.2}
+\contentsline {section}{\numberline {4.5}User Interface}{43}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Ingame Menu}{43}{subsection.4.5.1}
+\contentsline {chapter}{\numberline {5}Schluss}{45}{chapter.5}
+\contentsline {section}{\numberline {5.1}Zusammenfassung}{45}{section.5.1}
+\contentsline {section}{\numberline {5.2}Herausforderungen}{45}{section.5.2}
+\contentsline {section}{\numberline {5.3}Ausblick}{45}{section.5.3}
+\contentsline {chapter}{\numberline {A}Appendix Title}{46}{appendix.A}
