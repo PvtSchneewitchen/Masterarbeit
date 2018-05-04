@@ -26,6 +26,23 @@ Microsoft, ``Machine learning – cheat sheet für algorithmen für microsoft
   azure machine learning studio,'' Internetquelle(abgerufen am 21.03.2018),
   Dec. 2017.
 
+\bibitem{bib:NasaVr}
+S.~S. Fisher, M.~McGreevy, J.~Humphries, and W.~Robinett, ``Virtual environment
+  display system,'' in \emph{Proceedings of the 1986 workshop on Interactive 3D
+  graphics - {SI}3D {\textquotesingle}86}.\hskip 1em plus 0.5em minus
+  0.4em\relax {ACM} Press, 1987.
+
+\bibitem{bib:FastGroundSeg}
+P.~Chu, S.~Cho, S.~Sim, K.~Kwak, and K.~Cho, ``A fast ground segmentation
+  method for 3d point cloud,'' \emph{Journal of information processing
+  systems}, vol.~13, no.~3, pp. 491--499, 2017.
+
+\bibitem{bib:Segmentation1}
+D.~Zermas, I.~Izzat, and N.~Papanikolopoulos, ``Fast segmentation of 3d point
+  clouds: A paradigm on {LiDAR} data for autonomous vehicle applications,'' in
+  \emph{2017 {IEEE} International Conference on Robotics and Automation
+  ({ICRA})}.\hskip 1em plus 0.5em minus 0.4em\relax {IEEE}, may 2017.
+
 \bibitem{bib:UebereblickNN}
 \BIBentryALTinterwordspacing
 D.~Kriesel, \emph{Ein kleiner \"{U}berblick \"{u}ber Neuronale Netze}, 2007.
@@ -45,12 +62,6 @@ I.~E. Sutherland, ``The ultimate display,'' in \emph{Proceedings of the IFIP
 G.~Enrico, ``Virtual reality: Past, present and future,'' \emph{Studies in
   Health Technology and Informatics}, vol.~58, no. Virtual Environments in
   Clinical Psychology and Neuroscience, pp. 3--20, 1998.
-
-\bibitem{bib:NasaVr}
-S.~S. Fisher, M.~McGreevy, J.~Humphries, and W.~Robinett, ``Virtual environment
-  display system,'' in \emph{Proceedings of the 1986 workshop on Interactive 3D
-  graphics - {SI}3D {\textquotesingle}86}.\hskip 1em plus 0.5em minus
-  0.4em\relax {ACM} Press, 1987.
 
 \bibitem{bib:RiftHistorical}
 C.~Gammage, ``Exploring oculus rift: A historical analysis of the ‘virtual
@@ -72,11 +83,6 @@ S.~K. Reddy and P.~K. Pal, ``Segmentation of point cloud from a 3d {LIDAR}
   the 2015 Conference on Advances In Robotics - {AIR}
   {\textquotesingle}15}.\hskip 1em plus 0.5em minus 0.4em\relax {ACM} Press,
   2015.
-
-\bibitem{bib:FastGroundSeg}
-P.~Chu, S.~Cho, S.~Sim, K.~Kwak, and K.~Cho, ``A fast ground segmentation
-  method for 3d point cloud,'' \emph{Journal of information processing
-  systems}, vol.~13, no.~3, pp. 491--499, 2017.
 
 \bibitem{bib:HololensVerkaufszahlen}
 \BIBentryALTinterwordspacing
@@ -164,25 +170,26 @@ U.~Technologies, ``Die weltweit führende software der game-industrie,''
   \url{https://unity3d.com/de/public-relations}
 \BIBentrySTDinterwordspacing
 
+\bibitem{bib:Blender}
+\BIBentryALTinterwordspacing
+Unity, ``Importing objects from blender,'' Internetquelle (aufgerufen am
+  04.05.2018), May 2018. [Online]. Available:
+  \url{https://docs.unity3d.com/560/Documentation/Manual/HOWTO-ImportObjectBlender.html}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:MonoBehaviour}
+\BIBentryALTinterwordspacing
+------, ``Monobehaviour,'' Internetquelle (abgerufen am 01.05.2018), May 2018.
+  [Online]. Available:
+  \url{https://docs.unity3d.com/ScriptReference/MonoBehaviour.html}
+\BIBentrySTDinterwordspacing
+
 \bibitem{bib:Singleton}
 \BIBentryALTinterwordspacing
 C.~Games, ``Unity3d tips 2 – the singleton pattern,'' Internetquelle
   (abgerufen am 01.05.2018). [Online]. Available:
   \url{http://clearcutgames.net/home/?p=437}
 \BIBentrySTDinterwordspacing
-
-\bibitem{bib:MonoBehaviour}
-\BIBentryALTinterwordspacing
-Unity, ``Monobehaviour,'' Internetquelle (abgerufen am 01.05.2018), May 2018.
-  [Online]. Available:
-  \url{https://docs.unity3d.com/ScriptReference/MonoBehaviour.html}
-\BIBentrySTDinterwordspacing
-
-\bibitem{bib:Segmentation1}
-D.~Zermas, I.~Izzat, and N.~Papanikolopoulos, ``Fast segmentation of 3d point
-  clouds: A paradigm on {LiDAR} data for autonomous vehicle applications,'' in
-  \emph{2017 {IEEE} International Conference on Robotics and Automation
-  ({ICRA})}.\hskip 1em plus 0.5em minus 0.4em\relax {IEEE}, may 2017.
 
 \bibitem{bib:Segmentation2}
 M.~Hoy, J.~Dauwels, and J.~Yuan, ``Efficient ground object segmentation in 3d

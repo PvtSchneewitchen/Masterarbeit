@@ -26,15 +26,15 @@
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Die zwei potentiellen \acrshort {acr:VR}-Brillen\relax }}{26}{figure.caption.17}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {HTC Vive \acrshort {acr:AR}-Brille mit Controllern}}}{26}{subfigure.2.1}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Oculus Rift \acrshort {acr:VR}-Brille mit Controllern}}}{26}{subfigure.2.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Unity Editor, der C.LABEL-VR im Play Mode ausführt.\relax }}{33}{figure.caption.19}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Unity Editor, der C.LABEL-VR im Play Mode ausführt.\relax }}{31}{figure.caption.19}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces \glslink {glos:Workflow} in C.LABEL-VR vom Import bis zum Export\relax }}{35}{figure.caption.20}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Das Import-Export-Prinzip in C.LABEL-VR\relax }}{37}{figure.caption.21}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Objektidentifizierung einer 3D-Punktwolke aus \cite {bib:Segmentation1}. Die Bodenpunkte der Wolke sind blau dargestellt und die Objekte sind mit Boxen gekennzeichnet.\relax }}{40}{figure.caption.22}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces In \cite {bib:Segmentation1} wird gezeigt, dass die Segmentierung einer Punktwolke zu einem besseren Ergebnis der Bodenpunktanalyse führt. Die obere Abbildung ist dabei ohne Segmentierung und die untere mit Segmentierung. Bodenpunkte sind blau und Objektpunkte in grün dargestellt. Die roten Rechtecke kennzeichnen den Bereich in dem die Analyse schlechter bzw. besser ist.\relax }}{41}{figure.caption.23}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Vergleich der Segmentierungsmethoden zur Bodenpunktanalyse aus \cite {bib:Segmentation1} und C.LABEL-VR. Bodenpunkte sind rot, alle anderen schwarz. Die blauen Linien stellen die Trennung der Segmente dar. Die grünen Boxen markieren den Bereich, in dem man den Unterschied der beiden Methoden bei der Bodenpunkterkennung sieht.\relax }}{42}{figure.caption.24}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Segmentierung anhand potentieller Bodenpunkten}}}{42}{subfigure.5.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Segmentierung anhand Koordinaten entlang der $x$-Achse}}}{42}{subfigure.5.2}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Bei zu wenigen Bodenpunkten in einem Segment passt sich die Ebene den falschen Punkten an.\relax }}{42}{figure.caption.25}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces \glslink {glos:Workflow} in C.LABEL-VR vom Import bis zum Export\relax }}{36}{figure.caption.20}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Das Import-Export-Prinzip in C.LABEL-VR\relax }}{38}{figure.caption.21}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Objektidentifizierung einer 3D-Punktwolke aus \cite {bib:Segmentation1}. Die Bodenpunkte der Wolke sind blau dargestellt und die Objekte sind mit Boxen gekennzeichnet.\relax }}{41}{figure.caption.22}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces In \cite {bib:Segmentation1} wird gezeigt, dass die Segmentierung einer Punktwolke zu einem besseren Ergebnis der Bodenpunktanalyse führt. Die obere Abbildung ist dabei ohne Segmentierung und die untere mit Segmentierung. Bodenpunkte sind blau und Objektpunkte in grün dargestellt. Die roten Rechtecke kennzeichnen den Bereich in dem die Analyse schlechter bzw. besser ist.\relax }}{42}{figure.caption.23}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Vergleich der Segmentierungsmethoden zur Bodenpunktanalyse aus \cite {bib:Segmentation1} und C.LABEL-VR. Bodenpunkte sind rot, alle anderen schwarz. Die blauen Linien stellen die Trennung der Segmente dar. Die grünen Boxen markieren den Bereich, in dem man den Unterschied der beiden Methoden bei der Bodenpunkterkennung sieht.\relax }}{43}{figure.caption.24}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Segmentierung anhand potentieller Bodenpunkten}}}{43}{subfigure.5.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Segmentierung anhand Koordinaten entlang der $x$-Achse}}}{43}{subfigure.5.2}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Bei zu wenigen Bodenpunkten in einem Segment passt sich die Ebene den falschen Punkten an.\relax }}{43}{figure.caption.25}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
