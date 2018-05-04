@@ -390,4 +390,20 @@ Das Inteview handelt von den Verkaufszahlen der Hololens},
   url          = {https://unity3d.com/de/public-relations},
 }
 
+@Misc{bib:MonoBehaviour,
+  author       = {Unity},
+  title        = {MonoBehaviour},
+  howpublished = {Internetquelle (abgerufen am 01.05.2018)},
+  month        = may,
+  year         = {2018},
+  url          = {https://docs.unity3d.com/ScriptReference/MonoBehaviour.html},
+}
+
+@Misc{bib:Singleton,
+  author       = {ClearCut Games},
+  title        = {Unity3D Tips 2 – The Singleton Pattern},
+  howpublished = {Internetquelle (abgerufen am 01.05.2018)},
+  url          = {http://clearcutgames.net/home/?p=437},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}

@@ -16,6 +16,7 @@
 \usepackage[justification=RaggedRight, singlelinecheck=false]{caption} 
 
 \usepackage{listings}
+\renewcommand{\lstlistingname}{Auflistung}
 \lstdefinestyle{csharp}{
   belowcaptionskip=1\baselineskip,
   breaklines=true,
@@ -24,11 +25,10 @@
   language=[Sharp]C,
   showstringspaces=false,
   basicstyle=\footnotesize\ttfamily,
-  keywordstyle=\bfseries\color{blue!40!black},
+  keywordstyle=\bfseries\color{blue!40!blue},
   commentstyle=\itshape\color{green!40!black},
   stringstyle=\color{red},
 }
-
 \lstset{
 	style=csharp,
 	emph=[1]%
@@ -37,9 +37,9 @@
         MonoBehaviour,
         Start,
         Update,
-        get,
-        set
+        Awake
     }, emphstyle=[1]{\color{cyan}},
+    morekeywords={set,get},
     frame=top,frame=bottom,
     xleftmargin=0pt,
 }

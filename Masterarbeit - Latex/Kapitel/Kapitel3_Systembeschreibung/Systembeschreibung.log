@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.06.2 (MiKTeX 2.9.6500 64-bit)  (format=lualatex 2017.12.19)  24 APR 2018 12:09
+This is LuaTeX, Version 1.06.2 (MiKTeX 2.9.6500 64-bit)  (format=lualatex 2017.11.29)  30 APR 2018 18:23
  restricted system commands enabled.
 **Systembeschreibung.tex
 (./Systembeschreibung.tex
@@ -33,7 +33,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.666 seconds
+luaotfload | main : initialization completed in 0.729 seconds
 Babel <3.15> and hyphenation patterns for 1 language(s) loaded.
 ! Undefined control sequence.
 l.1 \graphicspath
@@ -134,7 +134,7 @@ LaTeX Warning: Reference `sec:VRBrille' on page  undefined on input line 3.
 <write> ...g: Reference `sec:VR-Rechner' on page \thepage 
                                                   \space undefined\on@line .
 l.3 ...chtig war ist in Kapitel \ref{sec:VR-Rechner}
-                                                   beschrieben. Mit diesen K...
+                                                   beschrieben. Mit den eben...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -197,7 +197,7 @@ Overfull \hbox (10.85999pt too wide) in paragraph at lines 3--4
 
 ! Undefined control sequence.
 l.5 \section
-          {Komponente 1: VR-Brille}
+          {Komponente 1: Die VR-Brille}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -212,7 +212,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.5 \section{K
-            omponente 1: VR-Brille}
+            omponente 1: Die VR-Brille}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -3177,9 +3177,19 @@ Missing character: There is no M (U+004D) in font nullfont!
 Missing character: There is no i (U+0069) in font nullfont!
 Missing character: There is no t (U+0074) in font nullfont!
 Missing character: There is no d (U+0064) in font nullfont!
-Missing character: There is no i (U+0069) in font nullfont!
 Missing character: There is no e (U+0065) in font nullfont!
-Missing character: There is no s (U+0073) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no b (U+0062) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no g (U+0067) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no a (U+0061) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
 Missing character: There is no e (U+0065) in font nullfont!
 Missing character: There is no n (U+006E) in font nullfont!
 Missing character: There is no K (U+004B) in font nullfont!
@@ -3220,6 +3230,10 @@ Missing character: There is no t (U+0074) in font nullfont!
 Missing character: There is no i (U+0069) in font nullfont!
 Missing character: There is no o (U+006F) in font nullfont!
 Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no z (U+007A) in font nullfont!
+Missing character: There is no w (U+0077) in font nullfont!
+Missing character: There is no a (U+0061) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
 Missing character: There is no a (U+0061) in font nullfont!
 Missing character: There is no u (U+0075) in font nullfont!
 Missing character: There is no s (U+0073) in font nullfont!
@@ -3479,6 +3493,9 @@ Missing character: There is no t (U+0074) in font nullfont!
 Missing character: There is no e (U+0065) in font nullfont!
 Missing character: There is no 1 (U+0031) in font nullfont!
 Missing character: There is no : (U+003A) in font nullfont!
+Missing character: There is no D (U+0044) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
 Missing character: There is no V (U+0056) in font nullfont!
 Missing character: There is no R (U+0052) in font nullfont!
 Missing character: There is no - (U+002D) in font nullfont!
@@ -19601,7 +19618,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 <write> ...ning: Reference `sec:C.LABEL' on page \thepage 
                                                   \space undefined\on@line .
-l.126 C.LABEL (vgl. \ref{sec:C.LABEL}
+l.127 C.LABEL (vgl. \ref{sec:C.LABEL}
                                    ) ebenfalls in C\# programmiert wurde kö...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19610,15 +19627,15 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `sec:C.LABEL' on page  undefined on input line 126.
+LaTeX Warning: Reference `sec:C.LABEL' on page  undefined on input line 127.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 124--127
+Overfull \hbox (20.0pt too wide) in paragraph at lines 124--128
 []Entscheidung
  []
 
 
-Overfull \hbox (10.85999pt too wide) in paragraph at lines 124--127
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 124--128
 [])
  []
 
@@ -19629,33 +19646,33 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.128 F
+l.129 F
      ür die Entwicklung der angestrebten Anwendung spielen jedoch Dinge wie...
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 128--129
+Overfull \hbox (20.0pt too wide) in paragraph at lines 129--130
 []Für
  []
 
 
-Overfull \hbox (28.65001pt too wide) in paragraph at lines 128--129
+Overfull \hbox (28.65001pt too wide) in paragraph at lines 129--130
 \TU/lmr/bx/n/10 Unity
  []
 
 
-Overfull \hbox (17.78pt too wide) in paragraph at lines 128--129
+Overfull \hbox (17.78pt too wide) in paragraph at lines 129--130
 \TU/lmr/bx/n/10 En-
  []
 
 
-Overfull \hbox (20.6pt too wide) in paragraph at lines 128--129
+Overfull \hbox (20.6pt too wide) in paragraph at lines 129--130
 \TU/lmr/bx/n/10 gine
  []
 
 ! Undefined control sequence.
-l.130 \subsubsection
+l.131 \subsubsection
                   {Konzepte der Unity Engine}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -19670,14 +19687,481 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.130 \subsubsection{K
+l.131 \subsubsection{K
                     onzepte der Unity Engine}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 130--131
+Overfull \hbox (20.0pt too wide) in paragraph at lines 131--132
 []Konzepte
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.133 D
+     ie Unity Engine ist eine der am häufigsten benutzten Spiel-Engines. Ge...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+\citation{bib:Unity34Percent}
+! Undefined control sequence.
+<write> ... Warning: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.133 ...it Unity erstellt \cite{bib:Unity34Percent}
+                                                  . Sie ist ebenfalls bei be...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `bib:Unity34Percent' on page  undefined on input line 13
+3.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 133--134
+[]Die
+ []
+
+
+Overfull \hbox (5.43pt too wide) in paragraph at lines 133--134
+[[]].
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.135 B
+     ei der Entwicklung mit Unity werden Anwendungen mittels Szenen konzipie...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 135--136
+[]Bei
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.137 J
+     ede Szene besteht wiederum aus Objekten, welche in Unity \textit{Gameob...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 137--138
+[]Jede
+ []
+
+
+Overfull \hbox (38.41002pt too wide) in paragraph at lines 137--138
+\TU/lmr/m/it/10 Gameob-
+ []
+
+
+Overfull \hbox (19.17003pt too wide) in paragraph at lines 137--138
+\TU/lmr/m/it/10 jects
+ []
+
+
+Overfull \hbox (28.5pt too wide) in paragraph at lines 137--138
+\TU/lmr/m/it/10 Trans-
+ []
+
+
+Overfull \hbox (20.58pt too wide) in paragraph at lines 137--138
+\TU/lmr/m/it/10 form
+ []
+
+
+Overfull \hbox (22.77pt too wide) in paragraph at lines 137--138
+\TU/lmr/m/it/10 Mesh
+ []
+
+
+Overfull \hbox (20.58pt too wide) in paragraph at lines 137--138
+\TU/lmr/m/it/10 Ren-
+ []
+
+
+Overfull \hbox (23.11002pt too wide) in paragraph at lines 137--138
+\TU/lmr/m/it/10 derer\nullfont -
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.139 S
+     olche Komponenten bestehen aus einem Skript, das mit einer bestimmten S...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+<write> ...Reference `sec:UnityDecision' on page \thepage 
+                                                  \space undefined\on@line .
+l.139 ... schon im Abschnitt \ref{sec:UnityDecision}
+                                                   erläutert, wird bei dies...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `sec:UnityDecision' on page  undefined on input line 13
+9.
+
+! Undefined control sequence.
+<write> ...g: Reference `lst:GameObject' on page \thepage 
+                                                  \space undefined\on@line .
+l.139 ...det. In der Auflistung \ref{lst:GameObject}
+                                                   ist eine Basisimplementie...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `lst:GameObject' on page  undefined on input line 139.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 139--140
+[]Solche
+ []
+
+
+Overfull \hbox (29.52002pt too wide) in paragraph at lines 139--140
+\TU/lmr/m/it/10 Script-
+ []
+
+
+Overfull \hbox (13.29001pt too wide) in paragraph at lines 139--140
+\TU/lmr/m/it/10 ing
+ []
+
+
+Overfull \hbox (15.34pt too wide) in paragraph at lines 139--140
+\TU/lmr/m/it/10 C#
+ []
+
+
+Overfull \hbox (46.01003pt too wide) in paragraph at lines 139--140
+\TU/lmr/m/it/10 JavaScript\nullfont .
+ []
+
+
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 139--140
+[]
+ []
+
+
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 139--140
+[]
+ []
+
+
+! LaTeX Error: Environment lstlisting undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.141 \begin{lstlisting}
+                      [caption={Grundaufbei eines Gameobjects in Unity}, cap...
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.141 \begin{lstlisting}[
+                       caption={Grundaufbei eines Gameobjects in Unity}, cap...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 141--143
+[][caption=Grundaufbei
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.144 p
+     ublic class FirstObject : MonoBehaviour
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 144--148
+[]public
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.149     p
+         rivate void Start()
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 149--162
+[]private
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.163 p
+     ublic class SecondObject : MonoBehaviour
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 163--167
+[]public
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.168     p
+         rivate void Start()
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: \begin{document} ended by \end{lstlisting}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.181 \end{lstlisting}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 168--183
+[]private
+ []
+
+
+! LaTeX Error: Environment figure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.184 \begin{figure}
+                  %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+l.186     \includegraphics
+                        [width=16cm]{UnityEditor}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.186     \includegraphics[
+                         width=16cm]{UnityEditor}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: \caption outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.187     \caption
+                {Unity Editor, der C.LABEL-VR im Play Mode ausführt.}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: \begin{document} ended by \end{figure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.189 \end{figure}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.191 E
+     in Großteil der Entwicklung mit der Unity Engine geschieht, wie in der...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+<write> ...: Reference `fig:UnityEditor' on page \thepage 
+                                                  \space undefined\on@line .
+l.191 ...r einen Editor (siehe \ref{fig:UnityEditor}
+                                                  ). In diesem Editor können
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `fig:UnityEditor' on page  undefined on input line 191.
+
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 191--192
+[]Ein
+ []
+
+
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 191--192
+[]).
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.194 D
+     ie Anordnung der Fenster in diesem Editor kann je nach Belieben geände...
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+<write> ...: Reference `fig:UnityEditor' on page \thepage 
+                                                  \space undefined\on@line .
+l.194 ...den. In der Abbildung \ref{fig:UnityEditor}
+                                                   sind die wichtigsten Fens...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `fig:UnityEditor' on page  undefined on input line 194.
+
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 194--195
+[]Die
+ []
+
+
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 194--195
+[]
+ []
+
+
+Overfull \hbox (14.08pt too wide) in paragraph at lines 194--195
+\TU/lmr/m/it/10 Hi-
+ []
+
+
+Overfull \hbox (12.40001pt too wide) in paragraph at lines 194--195
+\TU/lmr/m/it/10 er-
+ []
+
+
+Overfull \hbox (12.91pt too wide) in paragraph at lines 194--195
+\TU/lmr/m/it/10 ar-
+ []
+
+
+Overfull \hbox (14.57pt too wide) in paragraph at lines 194--195
+\TU/lmr/m/it/10 chy\nullfont ,
+ []
+
+
+Overfull \hbox (30.68004pt too wide) in paragraph at lines 194--195
+\TU/lmr/m/it/10 Project
+ []
+
+
+Overfull \hbox (13.06pt too wide) in paragraph at lines 194--195
+\TU/lmr/m/it/10 In-
+ []
+
+
+Overfull \hbox (20.96002pt too wide) in paragraph at lines 194--195
+\TU/lmr/m/it/10 spec-
+ []
+
+
+Overfull \hbox (12.65001pt too wide) in paragraph at lines 194--195
+\TU/lmr/m/it/10 tor
  []
 
 )
@@ -19689,13 +20173,13 @@ Overfull \hbox (20.0pt too wide) in paragraph at lines 130--131
 
 
 Here is how much of LuaTeX's memory you used:
- 58 strings out of 494456
- 156265,89155 words of node,token memory allocated 37471 words of node memory still in use:
-   107 hlist, 1 vlist, 12 rule, 40 disc, 11 local_par, 1 dir, 2 math, 841 glue, 
-40 kern, 40 penalty, 4128 glyph, 132 attribute, 35 glue_spec, 132 attribute_list
-, 2 write nodes
-   avail lists: 1:1,2:379,3:101,4:168,5:52,6:23,7:15793,8:15,9:233,10:167,11:79
- 4297 multiletter control sequences out of 65536+200000
+ 64 strings out of 494456
+ 156265,89155 words of node,token memory allocated 69696 words of node memory still in use:
+   186 hlist, 1 vlist, 12 rule, 56 disc, 23 local_par, 1 dir, 2 math, 1567 glue,
+ 57 kern, 80 penalty, 7803 glyph, 194 attribute, 35 glue_spec, 194 attribute_lis
+t, 4 write nodes
+   avail lists: 1:1,2:255,3:59,4:168,5:35,6:11,7:11413,8:15,9:154,10:167,11:63
+ 4303 multiletter control sequences out of 65536+200000
  27 fonts using 1608167 bytes
  18i,7n,21p,1401b,185s stack positions out of 5000i,500n,10000p,200000b,50000s
 !  ==> Fatal error occurred, no output PDF file produced!

@@ -122,50 +122,64 @@ In \cite{bib:UEvsUE4} wurden diese beiden Entwicklungsplattformen gegenübergest
 Die Unity Engine bietet vor allem Anfängern einen leichten Einstieg in die Welt der Grafik- und Spieleprogrammierung. Im Editor können ganz einfach sogenannte \textit{Game Objects} erstellt werden, denen dann Funktionalitäten und Eigenschaften angehängt werden können. Dies geschieht meist in Form von Skripten, welche oft schon vorgefertigt zur Verfügung stehen. Wenn dies nicht der Fall ist können diese angepasst oder neu erstellt werden. Die große Community der Unity Engine ist hierbei eine große Hilfe.
 
 \subsubsection{Entscheidung}
+\label{sec:UnityDecision}
 Ein Vorteil den die Unity Engine, im Falle dieser Arbeit, bietet ist Nutzung von C\# als Skript-Sprache. Da  
 C.LABEL (vgl. \ref{sec:C.LABEL}) ebenfalls in C\# programmiert wurde können Komponenten, wie etwa das Einlesen von Daten, leicht in die VR-Anwendung übernommen werden. Des Weiteren habe ich selbst, im Rahmen eines Universitätsprojekts, mit dieser Plattform gearbeitet. Ein längeres einarbeiten in die Entwicklungsumgebung wäre demnach nicht nötig. Die Vorteile der Unreal Engine sind, wie schon erwähnt, die visuelle Präsentation und die dabei gebotene Performance. Diese sind vor allem für das Erstellen aufwändiger Landschaften und deren Inhalten von Vorteil. \\
 
 Für die Entwicklung der angestrebten Anwendung spielen jedoch Dinge wie Objekt- und Landschaftsdarstellung keine große Rolle. Viel wichtiger ist sowohl die Möglichkeit der Kompatibilität zur C.LABEL-Anwendung, als auch die vorhandene Entwicklungserfahrung mit einer Plattform. Gerade letzteres ist auf Grund des begrenzten Zeitrahmens einer Masterarbeit von Vorteil, da ohne große Einarbeitung mehr Zeit zum Entwickeln von Funktionalität und Optimierungen bleibt. Aus diesen Gründen wird im weiteren Verlauf dieser Arbeit die \textbf{Unity Engine} als Entwicklungsumgebung verwendet.
 
-\subsubsection{Konzepte der Unity Engine}
+\subsubsection{Entwickeln mit Unity}
 
 Die Unity Engine ist eine der am häufigsten benutzten Spiel-Engines. Gerade im Bereich der mobilen Geräte wurden 34 Prozent der 1000 beliebtesten Spiele mit Unity erstellt \cite{bib:Unity34Percent}. Sie ist ebenfalls bei bei Neueinsteigern und Hobbyprogrammierern beliebt, da sie über umfangreiche Lernmaterialien und eine große Entwicklergemeinschaft verfügt. Die Unity Engine unterstützt sowohl alle gängigen großen Plattformen wie PC, Playstation und XBOX, als auch die kleinen mobilen Geräte wie Android, iOS, Nintendo 3DS und PS Vita. Darüber hinaus kann man mit ihr auch Anwendungen für, in der Applikationsentwicklung, weniger gebräuchliche Plattformen wie Samsung SMART TV, oder tvOS erstellen. Wichtig für diese Arbeit ist die umfangreiche Unterstützung von Virtual Reality Brillen, speziell der Oculus Rift.\\ 
 
-Bei der Entwicklung mit Unity werden Anwendungen mittels Szenen konzipiert. Eine Anwendung besteht aus mindestens einer Szene, in der Regel sind es aber mehrere. Jede Szene kann dabei eigene Objekte und Logiken beinhalten und es kann je nach Programmierung des Entwicklers zwischen den Szenen gewechselt werden. Ein klassischer Fall dafür wäre eine Applikation mit einer Hauptmenü- und einer Spielszene. In größeren Spielen ist es üblich jeden abgetrennten Bereich im Spiel mit einer extra Szene zu erstellen. Dies dient der Übersicht und der Wartbarkeit, die in Szenen mit zu vielen Objekten nicht mehr gegeben wäre.
+Bei der Entwicklung mit Unity werden Anwendungen mittels Szenen konzipiert. Eine Anwendung besteht aus mindestens einer Szene, in der Regel sind es aber mehrere. Jede Szene kann dabei eigene Objekte und Logiken beinhalten und es kann je nach Programmierung des Entwicklers zwischen den Szenen gewechselt werden. Ein klassischer Fall dafür wäre eine Applikation mit einer Hauptmenü- und einer Spielszene. In größeren Spielen ist es üblich jeden abgetrennten Bereich im Spiel mit einer extra Szene zu erstellen. Dies dient der Übersicht und der Wartbarkeit, die in Szenen mit zu vielen Objekten nicht mehr gegeben wäre.\\
 
-Jede Szene besteht wiederum aus Objekten, welche in Unity \textit{Gameobjects} genannt werden. Ein Gameobject ist die übergeordnete Klasse für alle Arten von Objekten in Unity, beispielsweise 2D- und 3D-Objekte, aber auch Elemente von Benutzeroberflächen. Jedes Objekt in Unity ist also ein Gameobject und es ist möglich diesen Objekten bestimmte Komponenten zuzuordnen. Damit lassen sich die Eigenschaften und Aktionen der Objekte festlegen. Jedes Gameobject in Unity hat standardmäßig eine, nicht entfernbare, Komponente die sich \textit{Transform} nennt. Diese legt die Position und die Orientierung des Objekts in der Szene fest. Sichtbare Objekte müssen beispielsweise eine \textit{Mesh Renderer}-Komponente haben, welche die Materialeigenschaften des Objektes festlegen. Es kann aber auch unsichtbare Objekte geben, die nur eine Logik-Komponente haben, welche beispielsweise Aktionen anderer Objekte überwacht.\\
+Jede Szene besteht wiederum aus Objekten, welche in Unity \textit{Gameobjects} genannt werden. Ein Gameobject ist die übergeordnete Klasse für alle Arten von Objekten in Unity, beispielsweise 2D- und 3D-Objekte, aber auch Elemente von Benutzeroberflächen. Jedes Objekt in Unity ist also ein Gameobject und es ist möglich diesen Objekten bestimmte Komponenten zuzuordnen. Damit lassen sich Eigenschaften und Verhaltensweisen der Objekte festlegen. Jedes Gameobject in Unity hat standardmäßig eine, nicht entfernbare, Komponente die sich \textit{Transform} nennt. Diese legt die Position, Orientierung und Größe des Objekts in der Szene fest. Sichtbare Objekte müssen beispielsweise eine \textit{Mesh Renderer}-Komponente haben, welche die Materialeigenschaften des Objektes festlegen. Es kann aber auch unsichtbare Objekte geben, die nur eine Logik-Komponente haben, welche beispielsweise Aktionen anderer Objekte überwacht.\\
 
-Komponenten bestehen aus einem Skript, das mit einer bestimmten Skriptsprache programmiert wird. Das Programmieren dieser Skripte wird meistens \textit{Scripting} genannt. In Unity hat man bei der Sprache die Wahl zwischen \textit{C\#} und \textit{JavaScript}. 
+Solche Komponenten bestehen aus einem Skript, welches mit einer bestimmten Programmiersprache erstellt wird. In Unity stehen die Sprachen C\# und JavaScript zur Verfügung. Das Implementieren dieser Skripte wird meistens \textit{Scripting} genannt. Dadurch kann der Programmierer, wie schon erwähnt, die Eigenschaften und das Verhalten von Objekten festlegen und beeinflussen. Zur Veranschaulichung dieses Vorgangs dient die Auflistung \ref{lst:GameObject}, in der eine minimalistische Implementierung eines solchen Verhaltens gezeigt wird. Im Folgenden soll diese erläutert werden.\\
 
-\begin{lstlisting}[caption={My Caption}, captionpos=t]
+\begin{lstlisting}[caption={Grundaufbei eines Gameobjects in Unity}, captionpos=t, label=lst:GameObject]
 using UnityEngine;
 
 public class TestObject : MonoBehaviour
 {
     public static TestObject Instance { get; set; }
-    public float Property1 { get; set; }
-    public float Property2 { get; set; }
+    public bool EnableGrowing { get; set; }
 
+    private void Awake()
+    {
+        Instance = this;
+    }
     private void Start()
     {
-        //This is for initialization. Start is called before
-        //any of the Update methods are called the first time.
+        Instance.EnableGrowing = true;
     }
     private void Update()
     {
-        //This is for the logic of the script.
-        //Update is called once per frame.
+    	if(Instance.EnableGrowing)
+        	Instance.transform.localScale += new Vector3(1, 1, 1);
     }
 }
 \end{lstlisting}
 \quad
+
+
+
+Ein Skript besteht in der Regel aus einer Klasse, wie beispielsweise \textit{TestObject} in Auflistung \ref{lst:GameObject}, die von der Unity-Basisklasse \textit{MonoBehaviour} erbt. Diese Vererbung führt dazu, dass der Klasse TestObject diverse Funktionen zugeordnet werden, die von der Unity Engine zu gewissen Zeitpunkten aufgerufen werden. Dadurch kann das Verhalten des Objekt gezielt gesteuert werden. Diese Funktionen werden jedoch nur aufgerufen, wenn sie innerhalb der erbenden Klasse auch implementiert werden. Die Klasse TestObject implementiert zum Beispiel die drei Funktionen \textit{Awake()}, \textit{Start()} und \textit{Update()}.
+
+Awake wird als erstes aufgerufen, sobald alle Objekte in Unity geldaen sind und kann somit zur Initialisierung von Referenzen verwendet werden bevor die Szene startet. Im Beispiel wird der statischen Instanz von TestObject die Referenz des geladenen Skripts Testobject zugewiesen. Dieses Vorgehen nennt sich \textit{Singleton-Pattern} und ist eine übliche Methode zum verwalten von Referenzen in Unity \cite{bib:Singleton}. Dadurch ist es für andere Skripte sehr einfach möglich auf dieses Skript zuzugreifen.
+
+Die Methode Start wird vor dem ersten Aufruf von Update ausgeführt, also kurz vor dem Start der Szene. Hier können also noch Werte zugewiesen werden. \textit{EnableGrowing} wird im Skript TestObject auf den boolschen Wert \glqq wahr\grqq gesetzt. Dieser kann dann von anderen Skripten durch das eben beschriebene Singleton-Pattern geändert werden (\textit{TestObject.Instance.EnableGrowing = false}).  
+
+Die Update-Methode ist eine Art Endlosschleife die von der Unity Engine immer wieder aufgerufen wird solange das Skript in einem aktiven Zustand ist. Im Beispiel wird die Größe des Objektes, dem das Skript angehängt ist, erhöht solange die Variable EnableGrowing den boolschen Wert \glqq wahr\grqq hat. Es gibt noch einige weitere dieser Methoden innerhalb der MonoBehaviour-Klasse, beispielsweise die Methode \textit{OnEnable()}, die aufgerufen wird wenn das Skript vom inaktiven in den aktiven Zustand wechselt. Alle diese Methoden sind in der Dokumentation der Unity Engine beschrieben \cite{bib:MonoBehaviour}.
+
 
 \begin{figure}%
 	\centering
     \includegraphics[width=16cm]{UnityEditor}
     \caption{Unity Editor, der C.LABEL-VR im Play Mode ausführt.}
     \label{fig:UnityEditor}
-\end{figure}
+\end{figure}6
 
 Ein Großteil der Entwicklung mit der Unity Engine geschieht, wie in der Regel mit jeder Spiel-Engine, über einen Editor (siehe \ref{fig:UnityEditor}). In diesem Editor können 
 
