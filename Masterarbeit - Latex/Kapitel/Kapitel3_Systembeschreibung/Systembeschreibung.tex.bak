@@ -130,7 +130,7 @@ Für die Entwicklung der angestrebten Anwendung spielen jedoch Dinge wie Objekt-
 
 \subsubsection{Entwickeln mit Unity}
 
-Die Unity Engine ist eine der am häufigsten benutzten Spiel-Engines. Gerade im Bereich der mobilen Geräte wurden 34 Prozent der 1000 beliebtesten Spiele mit Unity erstellt \cite{bib:Unity34Percent}. Sie ist ebenfalls bei bei Neueinsteigern und Hobbyprogrammierern beliebt, da sie über umfangreiche Lernmaterialien und eine große Entwicklergemeinschaft verfügt. Die Unity Engine unterstützt sowohl alle gängigen großen Plattformen wie PC, Playstation und XBOX, als auch die kleinen mobilen Geräte wie Android, iOS, Nintendo 3DS und PS Vita. Darüber hinaus kann man mit ihr auch Anwendungen für, in der Applikationsentwicklung, weniger gebräuchliche Plattformen wie Samsung SMART TV, oder tvOS erstellen. Wichtig für diese Arbeit ist die umfangreiche Unterstützung von Virtual Reality Brillen, speziell der Oculus Rift.\\ 
+Die Unity Engine ist eine der am häufigsten benutzten Spiel-Engines. Gerade im Bereich der mobilen Geräte wurden 34 Prozent der 1000 beliebtesten Spiele mit Unity erstellt \cite{bib:Unity34Percent}. Sie ist ebenfalls bei bei Neueinsteigern und Hobbyprogrammierern beliebt, da sie über umfangreiche Lernmaterialien und eine große Entwicklergemeinschaft verfügt. Die Unity Engine unterstützt sowohl alle gängigen großen Plattformen wie PC, Playstation und XBOX, als auch die kleinen mobilen Geräte wie Android, iOS, Nintendo 3DS und PS Vita. Darüber hinaus kann man mit ihr auch Anwendungen für, in der Applikationsentwicklung, weniger gebräuchliche Plattformen wie Samsung SMART TV, oder tvOS erstellen. Wichtig für diese Arbeit ist die umfangreiche Unterstützung von Virtual Reality Brillen, speziell der Oculus Rift. Um die Vorgänge von C.LABEL-VR, die in Kapitel \ref{sec:C.LABEL-VR} beschrieben sind, besser zu verstehen, werden im Folgenden die Grundlagen für die Entwicklung mit Unity etwas näher erläutert.\\ 
 
 Bei der Entwicklung mit Unity werden Anwendungen mittels Szenen konzipiert. Eine Anwendung besteht aus mindestens einer Szene, in der Regel sind es aber mehrere. Jede Szene kann dabei eigene Objekte und Logiken beinhalten und es kann je nach Programmierung des Entwicklers zwischen den Szenen gewechselt werden. Ein klassischer Fall dafür wäre eine Applikation mit einer Hauptmenü- und einer Spielszene. In größeren Spielen ist es üblich jeden abgetrennten Bereich im Spiel mit einer extra Szene zu erstellen. Dies dient der Übersicht und der Wartbarkeit, die in Szenen mit zu vielen Objekten nicht mehr gegeben wäre.\\
 
@@ -164,14 +164,13 @@ public class TestObject : MonoBehaviour
 \quad
 
 
-
 Ein Skript besteht in der Regel aus einer Klasse, wie beispielsweise \textit{TestObject} in Auflistung \ref{lst:GameObject}, die von der Unity-Basisklasse \textit{MonoBehaviour} erbt. Diese Vererbung führt dazu, dass der Klasse TestObject diverse Funktionen zugeordnet werden, die von der Unity Engine zu gewissen Zeitpunkten aufgerufen werden. Dadurch kann das Verhalten des Objekt gezielt gesteuert werden. Diese Funktionen werden jedoch nur aufgerufen, wenn sie innerhalb der erbenden Klasse auch implementiert werden. Die Klasse TestObject implementiert zum Beispiel die drei Funktionen \textit{Awake()}, \textit{Start()} und \textit{Update()}.
 
 Awake wird als erstes aufgerufen, sobald alle Objekte in Unity geldaen sind und kann somit zur Initialisierung von Referenzen verwendet werden bevor die Szene startet. Im Beispiel wird der statischen Instanz von TestObject die Referenz des geladenen Skripts Testobject zugewiesen. Dieses Vorgehen nennt sich \textit{Singleton-Pattern} und ist eine übliche Methode zum verwalten von Referenzen in Unity \cite{bib:Singleton}. Dadurch ist es für andere Skripte sehr einfach möglich auf dieses Skript zuzugreifen.
 
 Die Methode Start wird vor dem ersten Aufruf von Update ausgeführt, also kurz vor dem Start der Szene. Hier können also noch Werte zugewiesen werden. \textit{EnableGrowing} wird im Skript TestObject auf den boolschen Wert \glqq wahr\grqq gesetzt. Dieser kann dann von anderen Skripten durch das eben beschriebene Singleton-Pattern geändert werden (\textit{TestObject.Instance.EnableGrowing = false}).  
 
-Die Update-Methode ist eine Art Endlosschleife die von der Unity Engine immer wieder aufgerufen wird solange das Skript in einem aktiven Zustand ist. Im Beispiel wird die Größe des Objektes, dem das Skript angehängt ist, erhöht solange die Variable EnableGrowing den boolschen Wert \glqq wahr\grqq hat. Es gibt noch einige weitere dieser Methoden innerhalb der MonoBehaviour-Klasse, beispielsweise die Methode \textit{OnEnable()}, die aufgerufen wird wenn das Skript vom inaktiven in den aktiven Zustand wechselt. Alle diese Methoden sind in der Dokumentation der Unity Engine beschrieben \cite{bib:MonoBehaviour}.
+Die Update-Methode ist eine Art Endlosschleife die von der Unity Engine immer wieder aufgerufen wird solange das Skript in einem aktiven Zustand ist. Im Beispiel wird die Größe des Objektes, dem das Skript angehängt ist, erhöht solange die Variable EnableGrowing den boolschen Wert \glqq wahr\grqq hat. Es gibt noch einige weitere dieser Methoden innerhalb der MonoBehaviour-Klasse, beispielsweise die Methode \textit{OnEnable()}, die aufgerufen wird wenn das Skript vom inaktiven in den aktiven Zustand wechselt. All diese Funktionen sind in der Dokumentation der Unity Engine aufgelistet und beschrieben \cite{bib:MonoBehaviour}. Mit Hilfe all dieser Funktionen lassen sich also Objekte und deren Verhalten manipulieren. Auf diese Weise werden gewünschte Vorgänge in Unity implementiert. \\
 
 
 \begin{figure}%
@@ -181,10 +180,12 @@ Die Update-Methode ist eine Art Endlosschleife die von der Unity Engine immer wi
     \label{fig:UnityEditor}
 \end{figure}6
 
-Ein Großteil der Entwicklung mit der Unity Engine geschieht, wie in der Regel mit jeder Spiel-Engine, über einen Editor (siehe \ref{fig:UnityEditor}). In diesem Editor können 
+TODO Beschreibung des Editors
+
+%Die Konzeption der gesamten Szene geschieht, wie in der Regel in mit jeder Spiel-Engine, über einen Editor (siehe \ref{fig:UnityEditor}). Die Konzeption beinhaltet 
 
 
-Die Anordnung der Fenster in diesem Editor kann je nach Belieben geändert werden. In der Abbildung \ref{fig:UnityEditor} sind die wichtigsten Fenster, die zum Entwickeln benötigt werden, dargestellt. Auf der rechten Seite sind drei Paneele zu sehen, die über ihnen jeweils mit \textit{Hierarchy}, \textit{Project} und \textit{Inspector} gekennzeichnet sind. Das Hierarchy-Paneel zeigt alle Objekte, die sich in einer Szene 
+%Die Anordnung der Fenster in diesem Editor kann je nach Belieben geändert werden. In der Abbildung \ref{fig:UnityEditor} sind die wichtigsten Fenster, die zum Entwickeln benötigt werden, dargestellt. Auf der rechten Seite sind drei Paneele zu sehen, die über ihnen jeweils mit \textit{Hierarchy}, \textit{Project} und \textit{Inspector} gekennzeichnet sind. Das Hierarchy-Paneel zeigt alle Objekte, die sich in einer Szene 
 
 %\subsection{\acrshort{acr:AR}-Brillen im Vergleich}
 %\label{sec:ARVergleich}

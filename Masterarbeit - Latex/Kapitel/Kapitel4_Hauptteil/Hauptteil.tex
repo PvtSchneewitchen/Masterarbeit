@@ -43,16 +43,22 @@ Zusammenfassend ist also folgendes zu tun, um die Benutzung ein neues Datenforma
 \subsection{HDF5-Beispiel}
 \subsubsection{HDF5 Daten}
 \label{sec:HDF5}
-\subsubsection{Beispiel}
+TODO Evtl. den Import und Exportvorgang anhand eines minimalistischen HDF5-Beispiel erklären
 
 \section{Generierung einer Punktwolke}
 \label{sec:Generierung}
+TODO Kurze einleitung
 
 \subsection{Interne Datenstruktur}
 \label{sec:IDS}
+TODO 
+-Wie sieht die interne Datenstruktur aus die Konzipiert wurde um die Importierten Daten zu vereinheitlichen.
+-Was passiert mit den Daten, die über diese Struktur hinaus gehen (Metadaten)
 
 \subsection{Generierung}
 \label{sec:PclGenerate}
+TODO Wie wird aus der internen Struktur eine Punktwolke in Unity ezeugt?
+
 %session
 %pointcloud
 %...
@@ -60,8 +66,7 @@ Zusammenfassend ist also folgendes zu tun, um die Benutzung ein neues Datenforma
 %Koordinatensysteme
 
 \subsection{Optimierung}
-TODO
-Methoden zur FPS-Steigerung
+TODO Was ist bei der Erzeugung der Punktwolken zu beachten, damit die vielen Tausend Punkte der Wolke keinen massiven FPS-Einsturz verursachen
 
 %-generell nichts teures in update mehthode
 %	
@@ -80,14 +85,24 @@ Methoden zur FPS-Steigerung
 
 \section{Navigation}
 \label{sec:Navigation}
+TODO kurze Einleitung
+
 \subsection{VR-Krankheit}
+TODO kurze Erläuterung von Motion Sickness
+
 \subsection{Freier Flug}
+TODO Erklärung der FreeFly-Modus und des Funktionsprinzips dahinter
+
 \subsection{Teleport}
+TODO Erklärung des Teleport Modus und des Funktionsprinzips dahinter
 
 \section{Annotieren der Punktwolke}
 \label{sec:Annotation}
+TODO kurze Einleitung
+
 \subsection{Einfache Pointer Annotation}
 \label{sec:SimplePointerAnnotation}
+TODO Erklärung der Pointer Annotation und des Funktionsprinzips dahinter
 
 \subsection{Cluster Annotation}
 In einer Punktwolke mit mehreren tausend Punkten wird es für den Benutzer auf Dauer mühsam jeden Punkt einzeln zu Annotieren. Bei diesem Problem soll die \textit{Cluster Annotation} Abhilfe schaffen. Diese Art der Annotation soll selbstständig diejenigen Punkte in einen Cluster aufnehmen und sie mit der gleichen Klasse labeln, die zum gleichen Objekt gehören. Der Benutzer wählt hierfür, wie im vorherigen Kapitel \ref{sec:SimplePointerAnnotation} einen Punkt mit Hilfe des Pointers aus. Ausgehend davon werden umliegende Punkte untersucht, ob sie zum gleichen Objekt gehören wie der ausgewählte Startpunkt. Ist dies der Fall werden sie in den Cluster aufgenommen. Werden keine Punkte mehr aufgenommen bleibt der Endcluster übrig, welcher dann einem Objekt entspricht, zum Beispiel einem Auto. \\
@@ -255,11 +270,16 @@ Die gesuchte Ebene ist nun durch den Punkt $p$ und den Vektor $\vec{n}$ nun eind
 \end{algorithm}
 
 \subsubsection{Cluster-Analyse}
-
+TODO Erklärung des Cluster-Algorithmus (Recursive Radius Search)
 
 \section{User Interface}
 \label{sec:UIMenu}
+TODO 
+-kurze Einleitung
+-Erklärung der Architektur hinter dem UI-System
+
 \subsection{Ingame Menu}
+TODO Erklärung der Einstellbaren Parameter im Ingame Menü
 %\subsection{Movement}
 %\subsection{Labelclasses}
 
