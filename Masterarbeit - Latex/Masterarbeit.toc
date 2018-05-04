@@ -28,7 +28,7 @@
 \contentsline {section}{\numberline {3.3}Komponente 3: Die Spiel-Engine}{28}{section.3.3}
 \contentsline {subsubsection}{Vergleich zwischen Unreal und Unity}{28}{section.3.3}
 \contentsline {subsubsection}{Entscheidung}{29}{section.3.3}
-\contentsline {subsubsection}{Konzepte der Unity Engine}{29}{section.3.3}
+\contentsline {subsubsection}{Entwickeln mit Unity}{29}{section.3.3}
 \contentsline {chapter}{\numberline {4}C.LABEL VR}{33}{chapter.4}
 \contentsline {section}{\numberline {4.1}Import und Export von Daten}{34}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Architektur}{35}{subsection.4.1.1}

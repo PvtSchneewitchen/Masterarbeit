@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.06.2 (MiKTeX 2.9.6500 64-bit)  (format=lualatex 2017.11.29)  1 MAY 2018 12:10
+This is LuaTeX, Version 1.06.2 (MiKTeX 2.9.6500 64-bit)  (format=lualatex 2017.12.19)  4 MAY 2018 11:58
  restricted system commands enabled.
 **Masterarbeit.tex
 (./Masterarbeit.tex
@@ -33,7 +33,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 1.325 seconds
+luaotfload | main : initialization completed in 0.724 seconds
 Babel <3.15> and hyphenation patterns for 1 language(s) loaded.
 
 ("C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/latex/koma-script/scr
@@ -149,11 +149,11 @@ ec.sty"
 se/xparse.sty"
 ("C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/latex/l3kernel/expl3.
 sty"
-Package: expl3 2017/11/14 L3 programming layer (loader) 
+Package: expl3 2017/12/16 L3 programming layer (loader) 
 
 ("C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/latex/l3kernel/expl3-
 code.tex"
-Package: expl3 2017/11/14 L3 programming layer (code)
+Package: expl3 2017/12/16 L3 programming layer (code)
 \ucharcat@table=\catcodetable5
 \c_max_int=\count89
 \l_tmpa_int=\count90
@@ -301,7 +301,7 @@ File: l3pdfmode.def 2017/03/18 v L3 Experimental driver: PDF mode
 \l__driver_color_stack_int=\count170
 \l__driver_tmp_box=\box43
 ))
-Package: xparse 2017/11/14 L3 Experimental document command parser
+Package: xparse 2017/12/16 L3 Experimental document command parser
 \l__xparse_current_arg_int=\count171
 \g__xparse_grabber_int=\count172
 \l__xparse_m_args_int=\count173
@@ -891,7 +891,7 @@ Package: mfirstuc 2017/11/14 v2.06 (NLCT)
 
 ("C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/latex/etoolbox/etoolb
 ox.sty"
-Package: etoolbox 2017/01/02 v2.4 e-TeX tools for LaTeX (JAW)
+Package: etoolbox 2017/11/22 v2.5 e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count198
 )
 \@glsmfirst=\toks21
@@ -1054,12 +1054,10 @@ Package: tracklang 2017/03/25 v1.3.4 (NLCT) Track Languages
 
 ("C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/generic/tracklang/tra
 cklang.tex"))
-("C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/latex/beamer/translat
-or/translator.sty"
-Package: translator 2010/06/12 ver 1.10
-
-("C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/latex/beamer/translat
-or/translator-language-mappings.tex"))
+("C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/latex/translator/tran
+slator.sty"
+Package: translator 2017/11/30 v1.11
+)
 ("C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/latex/glossaries-germ
 an/glossaries-german.ldf"
 File: glossaries-german.ldf 2014/11/23 v1.0
@@ -3456,14 +3454,14 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 192.
 )
 
 Here is how much of LuaTeX's memory you used:
- 43434 strings out of 494456
+ 43510 strings out of 494456
  100000,1373583 words of node,token memory allocated
  846 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 31 attribute, 93 glue_spec, 31 attr
 ibute_list, 1 write, 12 pdf_action nodes
    avail lists: 1:1,2:1170,3:222,4:117,5:1916,6:47,7:5394,8:568,9:1491,10:25,11:
 630
- 45346 multiletter control sequences out of 65536+200000
+ 45428 multiletter control sequences out of 65536+200000
  91 fonts using 16023391 bytes
  67i,10n,108p,8853b,996s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathi
@@ -3488,7 +3486,7 @@ ts/type1/public/lm/lmr12.pfb><C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.
 9/fonts/type1/public/lm/lmr8.pfb><C:/Users/gruepazu/AppData/Local/Programs/MiKTe
 X 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/gruepazu/AppData/Local/Programs
 /MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb>
-Output written on Masterarbeit.pdf (57 pages, 5404398 bytes).
+Output written on Masterarbeit.pdf (57 pages, 5404390 bytes).
 
 PDF statistics: 1229 PDF objects out of 1440 (max. 8388607)
  242 named destinations out of 1000 (max. 131072)
