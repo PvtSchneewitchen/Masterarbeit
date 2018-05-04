@@ -4,14 +4,16 @@
 
 \section{Annotation}
 \label{sec:Annotation}
-warum?
-was für arten?
+TODO
+-Anntation im allgemeinen
+-Für welche zwecke wird es verwendet
+-Hinleitung zum maschinellen Lernen, für das Annotierte Daten notwendig sind
 
 \subsection{Maschinelles Lernen}
 \label{sec:MLearning}
 Der Ausdruck Maschinelles Lernen (engl.: \textit{Machine Learning}) ist heutzutage ein Überbegriff für Methoden, die versuchen durch Optimierung eine Funktion zu erlernen. Bei solch einer Funktion kann es sich sowohl um eine simple binäre Entscheidung auf eine Fragestellung handeln als auch um komplexere Dinge wie das Übersetzen von Texten in eine andere Sprache, das Erkennen von Personen auf Bildern, oder eben das Klassifizieren von Objekten in einer Punktwolke. Letzteres ist speziell für diese Arbeit relevant. Die Komplexität der Funktion bestimmt auch die zu verwendende Methode zur Lösung des Problems. Im Zuge des \textit{Azure Machine Learning Studios} veröffentlichte Microsoft eine Graphik (vgl. Abbildung \ref{fig:MLCS}), mit der man den richtigen Lernalgorithmus für gewisse Vorhersage-Methoden bestimmen kann. Für die Objektklassifizierung im Automobilbereich ist es wichtig die Klasse eines Objekts mit hoher Genauigkeit aus einer großen Anzahl verschiedener Klassen zu bestimmen. Basierend auf der Graphik \ref{fig:MLCS} ist die beste Methode dafür die Verwendung eines künstlichen neuronalen Netzes(\acrshort{acr:knn}). Die Benutzung solcher Netze ist üblich, wenn es um Klassifikation von vielen verschiedenen Dingen geht und soll im Folgenden näher erläutert werden.\\
 
-TODO Grafik von Bild und wolkenerkennung\\
+TODO Grafik von Bild- und Wolkenerkennung\\
 
 \begin{figure}%
 	\centering
@@ -161,7 +163,7 @@ Ein Grund dafür war die Entwicklung der zwei, derzeit geläufigsten VR-Brillen 
 
 Die, aus der Großproduktion der führenden VR-Konzerne resultierende, Massentauglichkeit und die Erschwinglichkeit der Technologie machen diese aber auch für die Industrie interessant. Vor allem Im Zuge der \textit{Industrie 4.0} ist VR für Digitalisierung des industriellen Umfelds von Nutzen. Es werden Leistungsfähige und qualitativ immer bessere Lösungen zur virtuellen Datenerfassung und -visualisierung entwickelt. Mittels VR lassen sich Arbeitssituationen simulieren und gefahrlos testen. Industriearbeiter können in Umgebungen agieren, die in der Form noch gar nicht existieren. So können zum Beispiel Arbeitsumfelder und -prozesse effizient geplant werden. Schadens- und Störfälle lassen sich dank VR schnell und in Gänze erfassen und aus der Ferne warten. Es können auch Dinge räumlich begehbar gemacht werden, die es in der physischen Welt nicht gibt, wie beispielsweise Sensordaten. Im Rahmen dieser Arbeit werden Daten eines Lidarsensors als Punktwolke dargestellt, durch die man sich dann Bewegen kann.  
 
-\section{LiDAR}
+\section{Aufnahme von Punktwolken mit LiDAR}
 
 Punktwolken, wie sie in dieser Arbeit behandelt werden, bestehen aus vielen einzelnen Abstandsmessungen, wobei jeder Punkt einer dieser Messungen entspricht. LiDAR (\textit{Light Detection and Ranging}) ist eine Methode zur Abstandsmessung mit Hilfe von Licht, welche in der Automobilbranche häufig verwendet wird. In den letzten Jahrzehnten wurde der LiDAR-Sensor aber auch in vielen anderen Bereichen zur herkömmlichen Methode, wenn es um die Messung von Abstandsinformationen geht. Im Bereich Archeologie benutzten Johnson und Oiumet diese Technologie um die Landschaft von New England in den USA zu analysieren \cite{bib:LidarArcheology}. Die Analyse von Landschaften ist durch LiDAR aber nicht nur auf dem Planeten Erde möglich. In \cite{bib:LidarSpace} wurde LiDAR benutzt um Oberflächenmessungen auf dem Mars durchzuführen. In der Robotik wird es häufig verwendet um Hindernisse für mobile Roboter zu identifizieren, wie in \cite{bib:LidarRobotic}.\\
 

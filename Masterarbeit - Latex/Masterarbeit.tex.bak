@@ -146,15 +146,17 @@ I declare that..
 I want to thank...
 \newpage
 
-\newpage
-\printnoidxglossary[style=altlist,title=Glossar]
+\listoffigures
 
-\newpage
-\deftranslation[to=German]{Acronyms}{Abkürzungsverzeichnis}
-\printnoidxglossary[type=\acronymtype,style=long]
+%\newpage
+%\printnoidxglossary[style=altlist,title=Glossar]
 
-\newpage
-\printnoidxglossary[type=symbolslist,style=long]
+%\newpage
+%\deftranslation[to=German]{Acronyms}{Abkürzungsverzeichnis}
+%\printnoidxglossary[type=\acronymtype,style=long]
+
+%\newpage
+%\printnoidxglossary[type=symbolslist,style=long]
 
 \pagenumbering{arabic}
 
@@ -167,7 +169,8 @@ I want to thank...
 \chapter{Systembeschreibung}
 \input{Kapitel/Kapitel3_Systembeschreibung/Systembeschreibung}
 
-\chapter{C.LABEL VR}
+\chapter{C.LABEL-VR}
+\label{sec:C.LABEL-VR}
 \input{Kapitel/Kapitel4_Hauptteil/Hauptteil}
 
 \chapter{Schluss}
