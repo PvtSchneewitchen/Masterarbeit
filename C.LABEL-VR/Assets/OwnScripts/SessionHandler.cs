@@ -64,62 +64,6 @@ public class SessionHandler : MonoBehaviour
 
         Session.GetCurrentPointCloud().EnableAllPoints();
         Session._sessionName = Util.DataLoadInfo._sessionName;
-
-
-        //ground testing
-
-        //var test = Labeling.GetLabelClassColor(Labeling.currentLabelClassID);
-
-        //var clouds = _session._pointClouds;
-        //for (int i = 0; i < clouds.Count; i++)
-        //{
-        //    var points = clouds[i]._validPoints;
-
-        //    for (int j = 0; j < points.Count; j++)
-        //    {
-        //        var attr = points[j].GetComponent<CustomAttributes>();
-
-        //        if (attr._groundPoint == 1)
-        //        {
-        //            attr._label = Labeling.currentLabelClassID;
-        //        }
-        //    }
-
-        //}
-
-
-
-        //var nonGrounds = _session.GetCurrentPointCloud()._validPoints.FindAll(x => x.GetComponent<CustomAttributes>()._groundPoint == 0);
-        //Debug.Log(nonGrounds.Count);
-        //var clusters = Clustering.GetClustersByGmeans(nonGrounds);
-
-        //List<Color32> testcolors = new List<Color32>();
-        //for (int i = 0; i < clusters.Count; i++)
-        //{
-        //    System.Random ran = new System.Random(i);
-        //    var r = Convert.ToByte(ran.Next(0, 255));
-        //    var g = Convert.ToByte(ran.Next(0, 255));
-        //    var b = Convert.ToByte(ran.Next(0, 255));
-        //    testcolors.Add(new Color32(r, g, b, Convert.ToByte(255)));
-        //}
-
-        //for (int i = 0; i < clusters.Count; i++)
-        //{
-        //    for (int j = 0; j < clusters[i].Count; j++)
-        //    {
-        //        clusters[i][j].GetComponent<CustomAttributes>()._clusterLabel = i;
-        //        clusters[i][j].GetComponent<MeshRenderer>().material.color = testcolors[i];
-        //    }
-        //}
-
-        
-
-        //for (int i = 0; i < nonGrounds.Count; i++)
-        //{
-        //    var attr = nonGrounds[i].GetComponent<CustomAttributes>();
-
-        //    nonGrounds[i].GetComponent<MeshRenderer>().material.color = testcolors[attr._clusterLabel];
-        //}
     }
 
     private void CreateSessionFolder()

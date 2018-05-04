@@ -49,6 +49,7 @@ public class MainMenu_CreateSession : SimpleMenu<MainMenu_CreateSession>
         Util.DataLoadInfo._sourceDataPath = loadPath;
         //Util.DataLoadInfo._sessionFolderPath = Application.persistentDataPath + "/" + Util.DataLoadInfo._sessionName;
 
+        ReferenceHandler.Instance.GetRightPointerRenderer().enabled = false;
         LoadingScreen.Show();
         SceneManager.LoadScene("ApplicationScene");
     }

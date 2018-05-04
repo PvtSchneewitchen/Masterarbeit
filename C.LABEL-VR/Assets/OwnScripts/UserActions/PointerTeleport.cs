@@ -96,7 +96,7 @@ public class PointerTeleport : MonoBehaviour
         if (MovementOptions.MoveMode == Util.MovementMode.TeleportMode && PointerTeleportEnabled)
         {
             pointerTeleportActivated = false;
-            Movement.Instance.MovementEnabled = true;
+            Movement.Instance.enabled = true;
             PointerLengthDisplay.Instance.Disable();
         }
         leftPointerRenderer.enabled = false;
@@ -109,7 +109,7 @@ public class PointerTeleport : MonoBehaviour
             pointerTeleportActivated = true;
             PointerLengthDisplay.Instance.Enable();
 
-            Movement.Instance.MovementEnabled = false;
+            Movement.Instance.enabled = false;
             
 
             leftPointerRenderer.enabled = true;

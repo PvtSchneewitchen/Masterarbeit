@@ -15,6 +15,11 @@ public static class MovementOptions
     public static float TeleportAngle { get; set; }
     public static bool Twinkle { get; set; }
 
+    static MovementOptions()
+    {
+        SetDefaultValues();
+    }
+
     private static void SetDefaultValues()
     {
         MoveMode = (int)Util.MovementMode.FreeFly;
@@ -23,8 +28,8 @@ public static class MovementOptions
         TransAcceleration = 40;
         RotSpeed = 50;
         RotAcceleration = 40;
-        TeleportDistance = 400;
-        TeleportAngle = 20;
+        TeleportDistance = 200;
+        TeleportAngle = 15;
         Twinkle = false;
     }
 
@@ -98,7 +103,7 @@ public static class MovementOptions
         }
         else
         {
-            UnityEngine.Debug.Log("Something strange happened, no default values");
+            Debug.Log("Something strange happened, no default values");
         }
     }
 

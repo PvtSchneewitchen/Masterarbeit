@@ -1,22 +1,25 @@
-﻿using System.Collections.Generic;
+﻿using System.Linq;
+using System.IO;
 using System.Reflection;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class MenuManager : MonoBehaviour
 {
     [Header("Main Menu Specific")]
     public MainMenu_Main mainMenuMainPrefab;
     public MainMenu_CreateSession mainMenuCreateSessionPrefab;
+    public MainMenu_Demo mainMenuDemoPrefab;
 
     [Header("Application Menu Specific")]
     public AppMenu_Movement appMenuMovement;
     public AppMenu_Labeling appMenuLabeling;
+    public NumPad numpadPrefab;
+    public LabelClassEditor labelClassEditorPrefab;
 
     [Header("General")]
     public Transform vrCamera;
-    public NumPad numpadPrefab;
-    public LabelClassEditor labelClassEditorPrefab;
     public KeyboardManager keyBoardManagerPrefab;
     public FileBrowserScript fileBrowserPrefab;
     public LoadingScreen loadingScreen;
@@ -37,9 +40,10 @@ public class MenuManager : MonoBehaviour
         optionModeActive = false;
         sceneName = SceneManager.GetActiveScene().name;
 
-        if(sceneName.Contains("Menu"))
+        if(sceneName.Contains("MainMenu"))
         {
             MainMenu_Main.Show();
+            //MainMenu_Demo.Show();
         }
     }
 
@@ -179,7 +183,7 @@ public class MenuManager : MonoBehaviour
     public void OnMenuOpenRoutine()
     {
         optionModeActive = true;
-        Movement.Instance.MovementEnabled = false;
+        Movement.Instance.enabled = false;
         PointerLabeler.Instance.ClusterLabelingEnabled = false;
         PointerLabeler.Instance.LabelingEnabled = false;
         PointerTeleport.Instance.PointerTeleportEnabled = false;
@@ -191,7 +195,7 @@ public class MenuManager : MonoBehaviour
     public void OnMenuCloseRoutine()
     {
         optionModeActive = false;
-        Movement.Instance.MovementEnabled = true;
+        Movement.Instance.enabled = true;
         PointerLabeler.Instance.ClusterLabelingEnabled = true;
         PointerLabeler.Instance.LabelingEnabled = true;
         PointerTeleport.Instance.PointerTeleportEnabled = true;
@@ -206,26 +210,35 @@ public class MenuManager : MonoBehaviour
     {
         if (sceneName.Contains("Application"))
         {
-            if (!optionModeActive)
+            if (OVRInput.GetDown(OVRInput.Button.Start))
             {
-                if (OVRInput.GetDown(OVRInput.Button.Start))
+                if(menuStack.Count==0)
                 {
                     AppMenu_Movement.Show();
                     OnMenuOpenRoutine();
                 }
             }
-            else
-            {
-                if (OVRInput.GetDown(OVRInput.Button.Start))
-                {
-                    for (int i = 0; i < menuStack.Count; i++)
-                    {
-                        CloseTopMenu();
-                    }
 
-                    OnMenuCloseRoutine();
-                }
-            }
+            //if (!optionModeActive)
+            //{
+            //    if (OVRInput.GetDown(OVRInput.Button.Start))
+            //    {
+            //        AppMenu_Movement.Show();
+            //        OnMenuOpenRoutine();
+            //    }
+            //}
+            //else
+            //{
+            //    if (OVRInput.GetDown(OVRInput.Button.Start))
+            //    {
+            //        for (int i = 0; i < menuStack.Count; i++)
+            //        {
+            //            CloseTopMenu();
+            //        }
+
+            //        OnMenuCloseRoutine();
+            //    }
+            //}
         }
     }
 }

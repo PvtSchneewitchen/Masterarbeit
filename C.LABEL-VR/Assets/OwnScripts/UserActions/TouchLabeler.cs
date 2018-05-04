@@ -35,7 +35,7 @@ public class TouchLabeler : MonoBehaviour
             CustomAttributes colidedObjectAttributes = other.gameObject.GetComponent<CustomAttributes>();
             if (colidedObjectAttributes._label != Labeling.currentLabelClassID)
             {
-                if (gameObject.transform.parent.name.Contains("left"))
+                if (gameObject.transform.parent.name.Contains("Left"))
                 {
                     OVRHaptics.LeftChannel.Queue(_vibration);
                 }
