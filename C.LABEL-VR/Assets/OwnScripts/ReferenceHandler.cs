@@ -11,6 +11,9 @@ class ReferenceHandler : MonoBehaviour
     public static ReferenceHandler Instance { get; private set; }
 
     [SerializeField]
+    private TutorialSessionHandler TutorialSessionHandler;
+
+    [SerializeField]
     private SessionHandler SessionHandler;
 
     [SerializeField]
@@ -66,6 +69,11 @@ class ReferenceHandler : MonoBehaviour
     public SessionHandler GetSessionHandler()
     {
         return SessionHandler;
+    }
+
+    public TutorialSessionHandler GetTutorialSessionHandler()
+    {
+        return TutorialSessionHandler;
     }
 }
 

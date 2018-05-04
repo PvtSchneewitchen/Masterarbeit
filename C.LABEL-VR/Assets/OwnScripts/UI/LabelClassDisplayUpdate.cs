@@ -16,9 +16,14 @@ public class LabelClassDisplayUpdate : MonoBehaviour
     private RectTransform _displayTransform;
     private Color32 _oldPointerColor;
 
+    int startcounter = 0;
+    int updatecounter = 0;
+
+
     private void Awake()
     {
         Instance = this;
+        
     }
 
     private void OnDestroy()
@@ -26,19 +31,31 @@ public class LabelClassDisplayUpdate : MonoBehaviour
         Instance = null;
     }
 
+    private void OnDisable()
+    {
+        displayText.enabled = false;
+    }
+
+    private void OnEnable()
+    {
+        displayText.enabled = true;
+        UpdatePointerDisplay();
+    }
+
     void Start()
     {
         rightPointer = ReferenceHandler.Instance.GetRightPointer();
         rightPointerRenderer = ReferenceHandler.Instance.GetRightPointerRenderer();
 
-        rightPointer.ActivationButtonPressed += PointerEnabled;
-        rightPointer.ActivationButtonReleased += PointerDisabled;
+        //rightPointer.ActivationButtonPressed += PointerEnabled;
+        //rightPointer.ActivationButtonReleased += PointerDisabled;
 
         _displayTransform = GetComponent<RectTransform>();
         Transform parent = _displayTransform.parent.transform;
         _displayTransform.position = parent.position + (parent.up * 0.1f);
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
         DisplayEnabled = true;
+        UpdatePointerDisplay();
     }
 
     private void Update()
@@ -57,29 +74,33 @@ public class LabelClassDisplayUpdate : MonoBehaviour
 
     public void UpdatePointerDisplay()
     {
-        var info = Labeling.GetLabelClassNameAndMaterial(Labeling.currentLabelClassID);
+        try
+        {
+            var info = Labeling.GetLabelClassNameAndMaterial(Labeling.currentLabelClassID);
 
-        displayText.text = info.Item1;
-        _oldPointerColor = rightPointerRenderer.validCollisionColor;
-        rightPointerRenderer.validCollisionColor = info.Item2.color;
+            displayText.text = info.Item1;
+            _oldPointerColor = rightPointerRenderer.validCollisionColor;
+            rightPointerRenderer.validCollisionColor = info.Item2.color;
+        }
+        catch { }
     }
 
-    private void PointerEnabled(object sender, ControllerInteractionEventArgs e)
-    {
-        if(DisplayEnabled)
-        {
-            UpdatePointerDisplay();
-            gameObject.SetActive(true);
-        }
+    //private void PointerEnabled(object sender, ControllerInteractionEventArgs e)
+    //{
+    //    if(DisplayEnabled)
+    //    {
+    //        UpdatePointerDisplay();
+    //        gameObject.SetActive(true);
+    //    }
         
-    }
+    //}
 
-    private void PointerDisabled(object sender, ControllerInteractionEventArgs e)
-    {
-        if (DisplayEnabled)
-        {
-            rightPointerRenderer.validCollisionColor = _oldPointerColor;
-            gameObject.SetActive(false);
-        }
-    }
+    //private void PointerDisabled(object sender, ControllerInteractionEventArgs e)
+    //{
+    //    if (DisplayEnabled)
+    //    {
+    //        rightPointerRenderer.validCollisionColor = _oldPointerColor;
+    //        gameObject.SetActive(false);
+    //    }
+    //}
 }

@@ -13,9 +13,6 @@ public class Movement : MonoBehaviour
 {
     public static Movement Instance { get; set; }
 
-    //in some situations (in game option menu is shown) the movement needs to be disabled
-    public bool MovementEnabled { get; set; }
-
     //this semaphor is to check if a stick is shifted or not
     private int _iStickShiftSemaphor;
 
@@ -40,7 +37,6 @@ public class Movement : MonoBehaviour
     {
         //init values
         _iStickShiftSemaphor = 0;
-        Instance.MovementEnabled = true;
     }
 
     private void OnDestroy()
@@ -50,20 +46,17 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        if (Instance.MovementEnabled)
+        UpdateValues();
+        if (MovementOptions.MoveMode == Util.MovementMode.FreeFly)
         {
-            UpdateValues();
-            if (MovementOptions.MoveMode == Util.MovementMode.FreeFly)
-            {
-                UpdateCameraPositionAndRotation_FreeFly();
+            UpdateCameraPositionAndRotation_FreeFly();
 
-                if (MovementOptions.ReducePoints)
-                    DecreasePointsWhenMoving();
-            }
-            else if (MovementOptions.MoveMode == Util.MovementMode.TeleportMode)
-            {
-                UpdateMovement_SicknessPrevention();
-            }
+            if (MovementOptions.ReducePoints)
+                DecreasePointsWhenMoving();
+        }
+        else if (MovementOptions.MoveMode == Util.MovementMode.TeleportMode)
+        {
+            UpdateMovement_SicknessPrevention();
         }
     }
 

@@ -58,7 +58,7 @@ public static class Labeling
             new Color32(10, 150, 150, 225)
         };
 
-        SetNewLabelClasses(new Dictionary<uint, string> { { 1, _dummyClassName } });
+        SetNewLabelClasses(CreateDefaultClasses());
         SetCurrentLabelClassID(labelClassInformations.ElementAt(1).Key);
     }
 
@@ -208,14 +208,19 @@ public static class Labeling
 
     public static void SetNewLabelClasses(Dictionary<uint, string> labelWorkingSet_inp)
     {
-        if (labelClassInformations.ContainsKey(1))
-        {
-            Tuple<string, Material> info;
-            labelClassInformations.TryGetValue(1, out info);
+        //if (labelClassInformations.ContainsKey(1))
+        //{
+        //    Tuple<string, Material> info;
+        //    labelClassInformations.TryGetValue(1, out info);
 
-            if (info.Item1 == _dummyClassName)
-                labelClassInformations.Remove(1);
-        }
+        //    if (info.Item1 == _dummyClassName)
+        //        labelClassInformations.Remove(1);
+        //}
+
+        labelClassInformations = new Dictionary<uint, Tuple<string, Material>>
+            {
+                {0 , new Tuple<string, Material>("unlabeled" ,_standardMaterial) }
+            };
 
         for (int i = 0; i < labelWorkingSet_inp.Count; i++)
         {
@@ -317,5 +322,16 @@ public static class Labeling
         }
 
         return outMat;
+    }
+
+    private static Dictionary<uint, string> CreateDefaultClasses()
+    {
+        return new Dictionary<uint, string> {
+            { 10, "Human" },
+            { 20, "Car" },
+            { 30, "Road" },
+            { 40, "Vegetation" },
+            { 50, "Building" },
+        };
     }
 }

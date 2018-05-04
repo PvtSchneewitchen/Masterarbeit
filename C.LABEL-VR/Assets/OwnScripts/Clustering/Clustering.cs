@@ -199,7 +199,8 @@ public static class Clustering
             for (int j = 0; j < collidersInRadius.Length; j++)
             {
                 GameObject currentPoint = collidersInRadius[j].gameObject;
-                if (!currentPoint.name.Contains("Label") || !includeGround && currentPoint.GetComponent<CustomAttributes>()._groundPoint == 1)
+
+                if (!currentPoint.name.Contains("Labelpoint") || !includeGround && currentPoint.GetComponent<CustomAttributes>()._groundPoint == 1)
                 {
                     continue;
                 }

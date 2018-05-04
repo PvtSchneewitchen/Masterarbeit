@@ -24,7 +24,6 @@ public class AppMenu_Labeling : Menu<AppMenu_Labeling>
     public static void Show()
     {
         Open();
-        MenuManager.Instance.OnMenuCloseRoutine();
         Instance.RefreshLabelClassView();
     }
 
@@ -223,6 +222,7 @@ public class AppMenu_Labeling : Menu<AppMenu_Labeling>
     #region Callbacks
     private void StartExport(string path)
     {
+        ReferenceHandler.Instance.GetRightPointerRenderer().enabled = false;
         LoadingScreen.Show();
         FileAttributes attr = File.GetAttributes(path);
 
@@ -238,6 +238,7 @@ public class AppMenu_Labeling : Menu<AppMenu_Labeling>
             Export.ExportHdf5_DaimlerLidar(path);
         }
         LoadingScreen.Close();
+        ReferenceHandler.Instance.GetRightPointerRenderer().enabled = true;
     }
     #endregion
 }

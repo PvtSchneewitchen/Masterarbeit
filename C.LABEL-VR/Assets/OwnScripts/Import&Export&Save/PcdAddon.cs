@@ -7,6 +7,8 @@ using UnityEngine;
 
 public static class PcdAddon
 {
+    private static CultureInfo cultureInfo;
+
     /// <summary>
     /// Reads one or multiple pcd-files and delivers the coordinates from it. 
     /// It adds a label class to the global label classes
@@ -19,20 +21,18 @@ public static class PcdAddon
         List<Vector3> pcdCoordinates = new List<Vector3>();
         List<StreamReader> pcdFileStreams = new List<StreamReader>();
 
-        CultureInfo cultureInfo = (CultureInfo)CultureInfo.CurrentCulture.Clone();
+        cultureInfo = (CultureInfo)CultureInfo.CurrentCulture.Clone();
         cultureInfo.NumberFormat.CurrencyDecimalSeparator = ".";
 
         if (loadPath.Substring(loadPath.Length - 4) == ".pcd")
         {
             //single file
-
             pcdFileStreams.Add(new StreamReader(loadPath));
             paths_ref.Add(loadPath);
         }
         else
         {
             //directory
-
             string[] filePaths = Directory.GetFiles(loadPath, "*.pcd");
             foreach (var path in filePaths)
             {
@@ -44,40 +44,35 @@ public static class PcdAddon
         for (int i = 0; i < pcdFileStreams.Count; i++)
         {
             List<Vector3> coordinatesFromFile = new List<Vector3>();
-            bool firstLineSkipped = false;
+            bool startPositionReading = false;
 
+            //check if the line has position info
+            while (!startPositionReading)
+            {
+                var line = pcdFileStreams[i].ReadLine();
+                //if the line doesn't have any letter it must be a position info
+                if (!line.Any(character => char.IsLetter(character)))
+                {
+                    startPositionReading = true;
+
+                    Vector3 vector = GetPositionFromPCDLine(line);
+                    if (vector != Vector3.zero)
+                        coordinatesFromFile.Add(vector);
+                }
+            }
+
+            //go through the rest of the file and read positions
             while (!pcdFileStreams[i].EndOfStream)
             {
                 var line = pcdFileStreams[i].ReadLine();
-                if (firstLineSkipped)
-                {
-                    var coordinates = line.Split(' ');
 
-                    float x = 0;
-                    float y = 0;
-                    float z = 0;
-
-                    try
-                    {
-                        x = float.Parse(coordinates[0], NumberStyles.Any, cultureInfo);
-                        y = float.Parse(coordinates[1], NumberStyles.Any, cultureInfo);
-                        z = float.Parse(coordinates[2], NumberStyles.Any, cultureInfo);
-                    }
-                    catch (Exception e)
-                    {
-                        Debug.Log(e.Source + " " + e.Message);
-                    }
-                    coordinatesFromFile.Add(new Vector3(-x, y, z));
-                }
-                else
-                {
-                    firstLineSkipped = true;
-                }
+                Vector3 vector = GetPositionFromPCDLine(line);
+                if (vector != Vector3.zero)
+                    coordinatesFromFile.Add(vector);
             }
             outputCoordinates.Add(coordinatesFromFile);
         }
 
-        //InitializeLabelClasses();
         return outputCoordinates;
     }
 
@@ -98,5 +93,27 @@ public static class PcdAddon
         }
 
         return dataList_out;
+    }
+
+    private static Vector3 GetPositionFromPCDLine(string lineWithPositions)
+    {
+        var coordinates = lineWithPositions.Split(' ');
+
+        float x = 0;
+        float y = 0;
+        float z = 0;
+
+        try
+        {
+            x = float.Parse(coordinates[0], NumberStyles.Any, cultureInfo);
+            y = float.Parse(coordinates[1], NumberStyles.Any, cultureInfo);
+            z = float.Parse(coordinates[2], NumberStyles.Any, cultureInfo);
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e.Source + " " + e.Message);
+        }
+
+        return new Vector3(x, y, z);
     }
 }
