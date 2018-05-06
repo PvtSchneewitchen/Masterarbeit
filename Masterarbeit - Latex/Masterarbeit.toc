@@ -37,13 +37,13 @@
 \contentsline {subsection}{\numberline {4.2.2}Generierung}{39}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}Optimierung}{39}{subsection.4.2.3}
 \contentsline {section}{\numberline {4.3}Navigation}{39}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}VR-Krankheit}{39}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Freier Flug}{39}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.1}VR-Krankheit}{40}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Freier Flug}{40}{subsection.4.3.2}
 \contentsline {subsection}{\numberline {4.3.3}Teleport}{40}{subsection.4.3.3}
 \contentsline {section}{\numberline {4.4}Annotieren der Punktwolke}{40}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}Einfache Pointer Annotation}{40}{subsection.4.4.1}
 \contentsline {subsection}{\numberline {4.4.2}Cluster Annotation}{40}{subsection.4.4.2}
-\contentsline {subsubsection}{Bodenpunkt-Analyse}{40}{figure.caption.22}
+\contentsline {subsubsection}{Bodenpunkt-Analyse}{41}{figure.caption.22}
 \contentsline {subsubsection}{Cluster-Analyse}{46}{algorithm.2}
 \contentsline {section}{\numberline {4.5}User Interface}{46}{section.4.5}
 \contentsline {subsection}{\numberline {4.5.1}Ingame Menu}{46}{subsection.4.5.1}
