@@ -94,9 +94,9 @@ public class Export
                     Vector3 position = UnityToPcdCs * attr._pointPosition;
                     position.x *= -1;
 
-                    string lineContent = position.y.ToString() + " "
-                                            + position.z.ToString() + " "
-                                                + position.x.ToString() + " "
+                    string lineContent = position.x.ToString() + " "
+                                            + (-position.y).ToString() + " "
+                                                + position.z.ToString() + " "
                                                      + attr._label.ToString();
 
                     pcdFileWriter.WriteLine(lineContent);

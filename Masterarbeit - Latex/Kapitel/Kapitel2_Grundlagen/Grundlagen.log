@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.06.2 (MiKTeX 2.9.6500 64-bit)  (format=lualatex 2017.11.29)  1 MAY 2018 20:08
+This is LuaTeX, Version 1.06.2 (MiKTeX 2.9.6500 64-bit)  (format=lualatex 2017.12.19)  7 MAY 2018 17:05
  restricted system commands enabled.
 **Grundlagen.tex
 (./Grundlagen.tex
@@ -33,7 +33,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 1.226 seconds
+luaotfload | main : initialization completed in 0.661 seconds
 Babel <3.15> and hyphenation patterns for 1 language(s) loaded.
 ! Undefined control sequence.
 l.1 \graphicspath
@@ -121,12 +121,12 @@ You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 5--9
+Overfull \hbox (20.0pt too wide) in paragraph at lines 5--11
 []Annotation
  []
 
 ! Undefined control sequence.
-l.10 \subsection
+l.12 \subsection
               {Maschinelles Lernen}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -141,7 +141,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.10 \subsection{M
+l.12 \subsection{M
                 aschinelles Lernen}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -155,7 +155,7 @@ eX/2.9/luatex-cache/generic/fonts/otl/lmroman10-bold.luc)
 ! Undefined control sequence.
 <write> ...Warning: Reference `fig:MLCS' on page \thepage 
                                                   \space undefined\on@line .
-l.12 ... eine Graphik (vgl. Abbildung \ref{fig:MLCS}
+l.14 ... eine Graphik (vgl. Abbildung \ref{fig:MLCS}
                                                   ), mit der man den richtig...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -164,12 +164,12 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `fig:MLCS' on page  undefined on input line 12.
+LaTeX Warning: Reference `fig:MLCS' on page  undefined on input line 14.
 
 ! Undefined control sequence.
 <write> ...Warning: Reference `fig:MLCS' on page \thepage 
                                                   \space undefined\on@line .
-l.12 ...en. Basierend auf der Graphik \ref{fig:MLCS}
+l.14 ...en. Basierend auf der Graphik \ref{fig:MLCS}
                                                    ist die beste Methode daf...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -178,10 +178,10 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `fig:MLCS' on page  undefined on input line 12.
+LaTeX Warning: Reference `fig:MLCS' on page  undefined on input line 14.
 
 ! Undefined control sequence.
-l.12 ...nes künstlichen neuronalen Netzes(\acrshort
+l.14 ...nes künstlichen neuronalen Netzes(\acrshort
                                                   {acr:knn}). Die Benutzung ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -190,72 +190,72 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 10--13
+Overfull \hbox (20.0pt too wide) in paragraph at lines 12--15
 []Maschinelles
  []
 
 
-Overfull \hbox (17.66pt too wide) in paragraph at lines 10--13
+Overfull \hbox (17.66pt too wide) in paragraph at lines 12--15
 \TU/lmr/m/it/10 Ma-
  []
 
 
-Overfull \hbox (23.00002pt too wide) in paragraph at lines 10--13
+Overfull \hbox (23.00002pt too wide) in paragraph at lines 12--15
 \TU/lmr/m/it/10 chine
  []
 
 
-Overfull \hbox (28.38002pt too wide) in paragraph at lines 10--13
+Overfull \hbox (28.38002pt too wide) in paragraph at lines 12--15
 \TU/lmr/m/it/10 Learn-
  []
 
 
-Overfull \hbox (13.76001pt too wide) in paragraph at lines 10--13
+Overfull \hbox (13.76001pt too wide) in paragraph at lines 12--15
 \TU/lmr/m/it/10 ing\nullfont )
  []
 
 
-Overfull \hbox (24.69pt too wide) in paragraph at lines 10--13
+Overfull \hbox (24.69pt too wide) in paragraph at lines 12--15
 \TU/lmr/m/it/10 Azure
  []
 
 
-Overfull \hbox (17.66pt too wide) in paragraph at lines 10--13
+Overfull \hbox (17.66pt too wide) in paragraph at lines 12--15
 \TU/lmr/m/it/10 Ma-
  []
 
 
-Overfull \hbox (23.00002pt too wide) in paragraph at lines 10--13
+Overfull \hbox (23.00002pt too wide) in paragraph at lines 12--15
 \TU/lmr/m/it/10 chine
  []
 
 
-Overfull \hbox (28.38002pt too wide) in paragraph at lines 10--13
+Overfull \hbox (28.38002pt too wide) in paragraph at lines 12--15
 \TU/lmr/m/it/10 Learn-
  []
 
 
-Overfull \hbox (13.29001pt too wide) in paragraph at lines 10--13
+Overfull \hbox (13.29001pt too wide) in paragraph at lines 12--15
 \TU/lmr/m/it/10 ing
  []
 
 
-Overfull \hbox (17.89pt too wide) in paragraph at lines 10--13
+Overfull \hbox (17.89pt too wide) in paragraph at lines 12--15
 \TU/lmr/m/it/10 Stu-
  []
 
 
-Overfull \hbox (17.38pt too wide) in paragraph at lines 10--13
+Overfull \hbox (17.38pt too wide) in paragraph at lines 12--15
 \TU/lmr/m/it/10 dios
  []
 
 
-Overfull \hbox (10.85999pt too wide) in paragraph at lines 10--13
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 12--15
 []),
  []
 
 
-Overfull \hbox (10.85999pt too wide) in paragraph at lines 10--13
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 12--15
 []
  []
 
@@ -266,13 +266,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.14 T
-    ODO Grafik von Bild und wolkenerkennung\\
+l.16 T
+    ODO Grafik von Bild- und Wolkenerkennung\\
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 14--15
+Overfull \hbox (20.0pt too wide) in paragraph at lines 16--17
 []TODO
  []
 
@@ -283,14 +283,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.16 \begin{figure}
+l.18 \begin{figure}
                  %
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Undefined control sequence.
-l.18     \includegraphics
+l.20     \includegraphics
                        [width=19cm, angle=270]{MLCS}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -305,7 +305,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.18     \includegraphics[
+l.20     \includegraphics[
                         width=19cm, angle=270]{MLCS}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -317,13 +317,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.19     \caption
+l.21     \caption
                {Diagramm um den besten Machine Learning Algorithmus für ein...
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 ! Undefined control sequence.
-l.19 ... Machine Learning Algorithmus für eine \gls
+l.21 ... Machine Learning Algorithmus für eine \gls
                                                   {glos:PredAna}-Methoden zu...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -335,7 +335,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <write> ... Warning: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.19 ...edAna}-Methoden zu finden \cite{bib:AzureCs}
+l.21 ...edAna}-Methoden zu finden \cite{bib:AzureCs}
                                                   }
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -344,7 +344,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `bib:AzureCs' on page  undefined on input line 19.
+LaTeX Warning: Citation `bib:AzureCs' on page  undefined on input line 21.
 
 
 ! LaTeX Error: \begin{document} ended by \end{figure}.
@@ -353,19 +353,19 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.21 \end{figure}
+l.23 \end{figure}
                
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (5.43pt too wide) in paragraph at lines 18--22
+Overfull \hbox (5.43pt too wide) in paragraph at lines 20--24
 [[]]
  []
 
 ! Undefined control sequence.
-l.23 \subsubsection
+l.25 \subsubsection
                  {Künstliche Neuronale Netze}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -380,7 +380,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.23 \subsubsection{K
+l.25 \subsubsection{K
                    ünstliche Neuronale Netze}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -389,7 +389,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 <write> ... Warning: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.25 David Kriesel hat in \cite{bib:UebereblickNN}
+l.27 David Kriesel hat in \cite{bib:UebereblickNN}
                                                  den Zusammenhang zwischen p...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -398,16 +398,16 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `bib:UebereblickNN' on page  undefined on input line 25.
+LaTeX Warning: Citation `bib:UebereblickNN' on page  undefined on input line 27.
 
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 23--26
+Overfull \hbox (20.0pt too wide) in paragraph at lines 25--28
 []Künstliche
  []
 
 
-Overfull \hbox (5.43pt too wide) in paragraph at lines 23--26
+Overfull \hbox (5.43pt too wide) in paragraph at lines 25--28
 [[]]
  []
 
@@ -418,13 +418,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.27 D
+l.29 D
     ieses, vereinfacht dargestellte Prinzip, wird auch bei den  \acrshort{ac...
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 ! Undefined control sequence.
-l.27 ...tellte Prinzip, wird auch bei den  \acrshort
+l.29 ...tellte Prinzip, wird auch bei den  \acrshort
                                                   {acr:knn}s verwendet. Übe...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -433,12 +433,12 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 27--28
+Overfull \hbox (20.0pt too wide) in paragraph at lines 29--30
 []Dieses,
  []
 
 
-Overfull \hbox (25.18002pt too wide) in paragraph at lines 27--28
+Overfull \hbox (25.18002pt too wide) in paragraph at lines 29--30
 \TU/lmr/m/it/10 feuert\nullfont .
  []
 
@@ -449,14 +449,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.29 \begin{figure}
+l.31 \begin{figure}
                  %
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Undefined control sequence.
-l.31     \includegraphics
+l.33     \includegraphics
                        [width=9cm]{Neurons}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -471,7 +471,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.31     \includegraphics[
+l.33     \includegraphics[
                         width=9cm]{Neurons}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -483,7 +483,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.32     \caption
+l.34     \caption
                {Abbildung des Übertragungsprinzips von Reizen zwischen Neur...
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -492,7 +492,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 <write> ... Warning: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.32 ... Reizen zwischen Neuronen \cite{bib:Neurons}
+l.34 ... Reizen zwischen Neuronen \cite{bib:Neurons}
                                                   }
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -501,7 +501,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `bib:Neurons' on page  undefined on input line 32.
+LaTeX Warning: Citation `bib:Neurons' on page  undefined on input line 34.
 
 
 ! LaTeX Error: \begin{document} ended by \end{figure}.
@@ -510,14 +510,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.34 \end{figure}
+l.36 \end{figure}
                
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (5.43pt too wide) in paragraph at lines 31--35
+Overfull \hbox (5.43pt too wide) in paragraph at lines 33--37
 [[]]
  []
 
@@ -528,23 +528,23 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.36 D
+l.38 D
     ie entscheidende Komponente dieses Prinzips ist die adaptive Gewichtung ...
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 36--37
+Overfull \hbox (20.0pt too wide) in paragraph at lines 38--39
 []Die
  []
 
 
-Overfull \hbox (43.14003pt too wide) in paragraph at lines 36--37
+Overfull \hbox (43.14003pt too wide) in paragraph at lines 38--39
 \TU/lmr/m/it/10 Gefahren-
  []
 
 
-Overfull \hbox (42.06pt too wide) in paragraph at lines 36--37
+Overfull \hbox (42.06pt too wide) in paragraph at lines 38--39
 \TU/lmr/m/it/10 Neuronen
  []
 
@@ -555,14 +555,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.38 \begin{figure}
+l.40 \begin{figure}
                  %
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Undefined control sequence.
-l.40     \includegraphics
+l.42     \includegraphics
                        [width=13cm]{Perceptron}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -577,7 +577,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.40     \includegraphics[
+l.42     \includegraphics[
                         width=13cm]{Perceptron}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -589,7 +589,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.41     \caption
+l.43     \caption
                {Einfaches Perzeptron nach dem Prinzip von Frank Rosenblatt}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -601,7 +601,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.43 \end{figure}
+l.45 \end{figure}
                
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -614,7 +614,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.45 K
+l.47 K
     ünstliche Neuronale Netze basieren auf dem Prinzip des Perzeptrons, das...
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -623,7 +623,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 <write> ... Warning: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.45 ...1958 vorgestellt wurde \cite{bib:Perzeptron}
+l.47 ...1958 vorgestellt wurde \cite{bib:Perzeptron}
                                                   . Dieses Perzeptron reprä...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -632,12 +632,12 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `bib:Perzeptron' on page  undefined on input line 45.
+LaTeX Warning: Citation `bib:Perzeptron' on page  undefined on input line 47.
 
 ! Undefined control sequence.
 <write> ...g: Reference `fig:Perceptron' on page \thepage 
                                                   \space undefined\on@line .
-l.45 ...thematische Weise (vgl. \ref{fig:Perceptron}
+l.47 ...thematische Weise (vgl. \ref{fig:Perceptron}
                                                   ). Die Eingangsdaten eines...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -646,45 +646,45 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `fig:Perceptron' on page  undefined on input line 45.
+LaTeX Warning: Reference `fig:Perceptron' on page  undefined on input line 47.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 45--46
+Overfull \hbox (20.0pt too wide) in paragraph at lines 47--48
 []Künstliche
  []
 
 
-Overfull \hbox (5.43pt too wide) in paragraph at lines 45--46
+Overfull \hbox (5.43pt too wide) in paragraph at lines 47--48
 [[]].
  []
 
 
-Overfull \hbox (10.85999pt too wide) in paragraph at lines 45--46
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 47--48
 []).
  []
 
 
-Overfull \hbox (6.00235pt too wide) in paragraph at lines 45--46
+Overfull \hbox (6.00235pt too wide) in paragraph at lines 47--48
 \OML/cmm/m/it/10 n$\nullfont -
  []
 
 
-Overfull \hbox (36.35986pt too wide) in paragraph at lines 45--46
+Overfull \hbox (36.35986pt too wide) in paragraph at lines 47--48
 \OML/cmm/m/it/10 x[] [] x[]$\nullfont ,
  []
 
 
-Overfull \hbox (43.8182pt too wide) in paragraph at lines 45--46
+Overfull \hbox (43.8182pt too wide) in paragraph at lines 47--48
 \OML/cmm/m/it/10 W[] [] W[]$
  []
 
 
-Overfull \hbox (6.00235pt too wide) in paragraph at lines 45--46
+Overfull \hbox (6.00235pt too wide) in paragraph at lines 47--48
 \OML/cmm/m/it/10 n$
  []
 
 
-Overfull \hbox (5.0903pt too wide) in paragraph at lines 45--46
+Overfull \hbox (5.0903pt too wide) in paragraph at lines 47--48
 \OML/cmm/m/it/10 z$
  []
 
@@ -695,18 +695,18 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.47 \begin{equation}
+l.49 \begin{equation}
                    
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 47--47
+Overfull \hbox (20.0pt too wide) in paragraph at lines 49--49
 [] 
  []
 
 
-Overfull \hbox (59.13069pt too wide) detected at line 49
+Overfull \hbox (59.13069pt too wide) detected at line 51
 \OML/cmm/m/it/10 z \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 W[] \OMS/cmsy/m/n/10 
  \OML/cmm/m/it/10 x[]
  []
@@ -718,7 +718,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.51 I
+l.53 I
     m biologischen Vorbild repräsentiert diese Summe den eingehenden Reiz i...
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -727,7 +727,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 <write> ... Warning: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.51 ...argestellt. Wie in \cite{bib:NeuronaleNetze}
+l.53 ...argestellt. Wie in \cite{bib:NeuronaleNetze}
                                                    beschrieben gibt es dafü...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -736,13 +736,13 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `bib:NeuronaleNetze' on page  undefined on input line 51
+LaTeX Warning: Citation `bib:NeuronaleNetze' on page  undefined on input line 53
 .
 
 ! Undefined control sequence.
 <write> ...Warning: Reference `eq:Fermi' on page \thepage 
                                                   \space undefined\on@line .
-l.51 .... Die \textit{Fermifunktion} (\ref{eq:Fermi}
+l.53 .... Die \textit{Fermifunktion} (\ref{eq:Fermi}
                                                   ) , auch Logische Funktion...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -751,12 +751,12 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `eq:Fermi' on page  undefined on input line 51.
+LaTeX Warning: Reference `eq:Fermi' on page  undefined on input line 53.
 
 ! Undefined control sequence.
 <write> ...ing: Reference `sec:Training' on page \thepage 
                                                   \space undefined\on@line .
-l.51 ...edeutet wird in Abschnitt \ref{sec:Training}
+l.53 ...edeutet wird in Abschnitt \ref{sec:Training}
                                                    näher erläutert. Wenn d...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -765,121 +765,121 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `sec:Training' on page  undefined on input line 51.
+LaTeX Warning: Reference `sec:Training' on page  undefined on input line 53.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 51--52
+Overfull \hbox (20.0pt too wide) in paragraph at lines 53--54
 []Im
  []
 
 
-Overfull \hbox (5.71527pt too wide) in paragraph at lines 51--52
+Overfull \hbox (5.71527pt too wide) in paragraph at lines 53--54
 \OML/cmm/m/it/10 x$\nullfont -
  []
 
 
-Overfull \hbox (10.83334pt too wide) in paragraph at lines 51--52
+Overfull \hbox (10.83334pt too wide) in paragraph at lines 53--54
 \OML/cmm/m/it/10 W$\nullfont -
  []
 
 
-Overfull \hbox (18.94101pt too wide) in paragraph at lines 51--52
+Overfull \hbox (18.94101pt too wide) in paragraph at lines 53--54
 \OML/cmm/m/it/10 \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 z\OT1/cmr/m/n/10 )$
  []
 
 
-Overfull \hbox (5.43pt too wide) in paragraph at lines 51--52
+Overfull \hbox (5.43pt too wide) in paragraph at lines 53--54
 [[]]
  []
 
 
-Overfull \hbox (18.16pt too wide) in paragraph at lines 51--52
+Overfull \hbox (18.16pt too wide) in paragraph at lines 53--54
 \TU/lmr/m/it/10 Fer-
  []
 
 
-Overfull \hbox (14.83pt too wide) in paragraph at lines 51--52
+Overfull \hbox (14.83pt too wide) in paragraph at lines 53--54
 \TU/lmr/m/it/10 mi-
  []
 
 
-Overfull \hbox (22.24pt too wide) in paragraph at lines 51--52
+Overfull \hbox (22.24pt too wide) in paragraph at lines 53--54
 \TU/lmr/m/it/10 funk-
  []
 
 
-Overfull \hbox (17.12001pt too wide) in paragraph at lines 51--52
+Overfull \hbox (17.12001pt too wide) in paragraph at lines 53--54
 \TU/lmr/m/it/10 tion
  []
 
 
-Overfull \hbox (10.85999pt too wide) in paragraph at lines 51--52
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 53--54
 ([])
  []
 
 
-Overfull \hbox (20.7pt too wide) in paragraph at lines 51--52
+Overfull \hbox (20.7pt too wide) in paragraph at lines 53--54
 \TU/lmr/m/it/10 Tan-
  []
 
 
-Overfull \hbox (18.91pt too wide) in paragraph at lines 51--52
+Overfull \hbox (18.91pt too wide) in paragraph at lines 53--54
 \TU/lmr/m/it/10 gens
  []
 
 
-Overfull \hbox (15.87pt too wide) in paragraph at lines 51--52
+Overfull \hbox (15.87pt too wide) in paragraph at lines 53--54
 \TU/lmr/m/it/10 Hy-
  []
 
 
-Overfull \hbox (17.00002pt too wide) in paragraph at lines 51--52
+Overfull \hbox (17.00002pt too wide) in paragraph at lines 53--54
 \TU/lmr/m/it/10 per-
  []
 
 
-Overfull \hbox (18.41002pt too wide) in paragraph at lines 51--52
+Overfull \hbox (18.41002pt too wide) in paragraph at lines 53--54
 \TU/lmr/m/it/10 boli-
  []
 
 
-Overfull \hbox (14.06pt too wide) in paragraph at lines 51--52
+Overfull \hbox (14.06pt too wide) in paragraph at lines 53--54
 \TU/lmr/m/it/10 cus
  []
 
 
-Overfull \hbox (33.52904pt too wide) in paragraph at lines 51--52
+Overfull \hbox (33.52904pt too wide) in paragraph at lines 53--54
 ($\OML/cmm/m/it/10 tanh\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 z\OT1/cmr/m/n/10 )$\nu
 llfont )
  []
 
 
-Overfull \hbox (24.93001pt too wide) in paragraph at lines 51--52
+Overfull \hbox (24.93001pt too wide) in paragraph at lines 53--54
 \TU/lmr/m/it/10 Back-
  []
 
 
-Overfull \hbox (22.62001pt too wide) in paragraph at lines 51--52
+Overfull \hbox (22.62001pt too wide) in paragraph at lines 53--54
 \TU/lmr/m/it/10 prop-
  []
 
 
-Overfull \hbox (8.69pt too wide) in paragraph at lines 51--52
+Overfull \hbox (8.69pt too wide) in paragraph at lines 53--54
 \TU/lmr/m/it/10 a-
  []
 
 
-Overfull \hbox (13.29001pt too wide) in paragraph at lines 51--52
+Overfull \hbox (13.29001pt too wide) in paragraph at lines 53--54
 \TU/lmr/m/it/10 ga-
  []
 
 
-Overfull \hbox (17.12001pt too wide) in paragraph at lines 51--52
+Overfull \hbox (17.12001pt too wide) in paragraph at lines 53--54
 \TU/lmr/m/it/10 tion
  []
 
 
-Overfull \hbox (10.85999pt too wide) in paragraph at lines 51--52
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 53--54
 []
  []
 
@@ -890,18 +890,18 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.53 \begin{equation}
+l.55 \begin{equation}
                    
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 53--53
+Overfull \hbox (20.0pt too wide) in paragraph at lines 55--55
 [] 
  []
 
 
-Overfull \hbox (67.41034pt too wide) detected at line 56
+Overfull \hbox (67.41034pt too wide) detected at line 58
 \OML/cmm/m/it/10 \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 z\OT1/cmr/m/n/10 ) = [][]
  []
 
@@ -912,13 +912,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.58 I
+l.60 I
     n \acrshort{acr:knn}s können mehrere dieser Perzeptrons eine sogenannte...
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 ! Undefined control sequence.
-l.58 In \acrshort
+l.60 In \acrshort
                {acr:knn}s können mehrere dieser Perzeptrons eine sogenannte...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -927,7 +927,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.58 ...efes Lernen. In der Regel bestehen \acrshort
+l.60 ...efes Lernen. In der Regel bestehen \acrshort
                                                   {acr:knn}s aus mindestens ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -938,7 +938,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <write> ...Reference `fig:Bilderkennung' on page \thepage 
                                                   \space undefined\on@line .
-l.58 ...aulicht in Abbildung \ref{fig:Bilderkennung}
+l.60 ...aulicht in Abbildung \ref{fig:Bilderkennung}
                                                   ). Die einzelnen Schichten...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -947,36 +947,36 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `fig:Bilderkennung' on page  undefined on input line 58
+LaTeX Warning: Reference `fig:Bilderkennung' on page  undefined on input line 60
 .
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 58--59
+Overfull \hbox (20.0pt too wide) in paragraph at lines 60--61
 []In
  []
 
 
-Overfull \hbox (22.88004pt too wide) in paragraph at lines 58--59
+Overfull \hbox (22.88004pt too wide) in paragraph at lines 60--61
 \TU/lmr/m/it/10 tiefer
  []
 
 
-Overfull \hbox (21.35002pt too wide) in paragraph at lines 58--59
+Overfull \hbox (21.35002pt too wide) in paragraph at lines 60--61
 \TU/lmr/m/it/10 Deep
  []
 
 
-Overfull \hbox (28.38002pt too wide) in paragraph at lines 58--59
+Overfull \hbox (28.38002pt too wide) in paragraph at lines 60--61
 \TU/lmr/m/it/10 Learn-
  []
 
 
-Overfull \hbox (13.29001pt too wide) in paragraph at lines 58--59
+Overfull \hbox (13.29001pt too wide) in paragraph at lines 60--61
 \TU/lmr/m/it/10 ing\nullfont ,
  []
 
 
-Overfull \hbox (10.85999pt too wide) in paragraph at lines 58--59
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 60--61
 []).
  []
 
@@ -987,63 +987,63 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.60 \begin{itemize}
+l.62 \begin{itemize}
                   
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 60--60
+Overfull \hbox (20.0pt too wide) in paragraph at lines 62--62
 [] 
  []
 
 
-Overfull \hbox (20.97pt too wide) in paragraph at lines 61--63
+Overfull \hbox (20.97pt too wide) in paragraph at lines 63--65
 \TU/lmr/bx/n/10 Ein-
  []
 
 
-Overfull \hbox (36.38998pt too wide) in paragraph at lines 61--63
+Overfull \hbox (36.38998pt too wide) in paragraph at lines 63--65
 \TU/lmr/bx/n/10 gangss-
  []
 
 
-Overfull \hbox (29.69998pt too wide) in paragraph at lines 61--63
+Overfull \hbox (29.69998pt too wide) in paragraph at lines 63--65
 \TU/lmr/bx/n/10 chicht 
  []
 
 
-Overfull \hbox (26.9pt too wide) in paragraph at lines 64--66
+Overfull \hbox (26.9pt too wide) in paragraph at lines 66--68
 \TU/lmr/bx/n/10 Zwis-
  []
 
 
-Overfull \hbox (26.67pt too wide) in paragraph at lines 64--66
+Overfull \hbox (26.67pt too wide) in paragraph at lines 66--68
 \TU/lmr/bx/n/10 chen-
  []
 
 
-Overfull \hbox (34.23997pt too wide) in paragraph at lines 64--66
+Overfull \hbox (34.23997pt too wide) in paragraph at lines 66--68
 \TU/lmr/bx/n/10 schicht 
  []
 
 
-Overfull \hbox (16.87001pt too wide) in paragraph at lines 64--66
+Overfull \hbox (16.87001pt too wide) in paragraph at lines 66--68
 \TU/lmr/m/it/10 hid-
  []
 
 
-Overfull \hbox (15.33pt too wide) in paragraph at lines 64--66
+Overfull \hbox (15.33pt too wide) in paragraph at lines 66--68
 \TU/lmr/m/it/10 den
  []
 
 
-Overfull \hbox (22.22pt too wide) in paragraph at lines 64--66
+Overfull \hbox (22.22pt too wide) in paragraph at lines 66--68
 \TU/lmr/m/it/10 layer\nullfont )
  []
 
 ! Undefined control sequence.
-l.68 ...t des Informationsflusses in einem \acrshort
+l.70 ...t des Informationsflusses in einem \acrshort
                                                   {acr:knn} dar und enthält...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1054,7 +1054,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <write> ...Reference `fig:Bilderkennung' on page \thepage 
                                                   \space undefined\on@line .
-l.68 ...e handelt. Abbildung \ref{fig:Bilderkennung}
+l.70 ...e handelt. Abbildung \ref{fig:Bilderkennung}
                                                    soll dieses Prinzip veran...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1063,36 +1063,36 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `fig:Bilderkennung' on page  undefined on input line 68
+LaTeX Warning: Reference `fig:Bilderkennung' on page  undefined on input line 70
 .
 
 
-Overfull \hbox (23.12999pt too wide) in paragraph at lines 67--69
+Overfull \hbox (23.12999pt too wide) in paragraph at lines 69--71
 \TU/lmr/bx/n/10 Aus-
  []
 
 
-Overfull \hbox (36.38998pt too wide) in paragraph at lines 67--69
+Overfull \hbox (36.38998pt too wide) in paragraph at lines 69--71
 \TU/lmr/bx/n/10 gangss-
  []
 
 
-Overfull \hbox (29.69998pt too wide) in paragraph at lines 67--69
+Overfull \hbox (29.69998pt too wide) in paragraph at lines 69--71
 \TU/lmr/bx/n/10 chicht 
  []
 
 
-Overfull \hbox (6.00235pt too wide) in paragraph at lines 67--69
+Overfull \hbox (6.00235pt too wide) in paragraph at lines 69--71
 \OML/cmm/m/it/10 n$
  []
 
 
-Overfull \hbox (6.00235pt too wide) in paragraph at lines 67--69
+Overfull \hbox (6.00235pt too wide) in paragraph at lines 69--71
 \OML/cmm/m/it/10 n$
  []
 
 
-Overfull \hbox (10.85999pt too wide) in paragraph at lines 67--69
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 69--71
 []
  []
 
@@ -1103,14 +1103,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.71 \begin{figure}
+l.73 \begin{figure}
                  %
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Undefined control sequence.
-l.73     \includegraphics
+l.75     \includegraphics
                        [width=13cm]{Bilderkennung}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1125,13 +1125,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.74     \caption
+l.76     \caption
                {Stark vereinfachte Darstellung eines \acrshort{acr:knn}s zur...
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 ! Undefined control sequence.
-l.74 ...ark vereinfachte Darstellung eines \acrshort
+l.76 ...ark vereinfachte Darstellung eines \acrshort
                                                   {acr:knn}s zur Erkennung v...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1146,14 +1146,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.76 \end{figure}
+l.78 \end{figure}
                
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Undefined control sequence.
-l.78 \subsubsection
+l.80 \subsubsection
                  {Trainieren von künstlichen neuronalen Netzen}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1162,93 +1162,38 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 78--80
+Overfull \hbox (20.0pt too wide) in paragraph at lines 80--82
 []Trainieren
  []
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 81--82
+Overfull \hbox (20.0pt too wide) in paragraph at lines 83--84
 []Damit
  []
 
 
-Overfull \hbox (45.50003pt too wide) in paragraph at lines 81--82
+Overfull \hbox (45.50003pt too wide) in paragraph at lines 83--84
 \TU/lmr/m/it/10 Trainieren
  []
 
 
-Overfull \hbox (43.8182pt too wide) in paragraph at lines 81--82
+Overfull \hbox (43.8182pt too wide) in paragraph at lines 83--84
 \OML/cmm/m/it/10 W[] [] W[]$\nullfont .
  []
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 83--83
+Overfull \hbox (20.0pt too wide) in paragraph at lines 85--85
 [] 
  []
 
 
-Overfull \hbox (16.62999pt too wide) in paragraph at lines 84--85
+Overfull \hbox (16.62999pt too wide) in paragraph at lines 86--87
 (\TU/lmr/m/it/10 Un-
  []
 
 
-Overfull \hbox (13.04pt too wide) in paragraph at lines 84--85
+Overfull \hbox (13.04pt too wide) in paragraph at lines 86--87
 \TU/lmr/m/it/10 su-
- []
-
-
-Overfull \hbox (17.00002pt too wide) in paragraph at lines 84--85
-\TU/lmr/m/it/10 per-
- []
-
-
-Overfull \hbox (20.96002pt too wide) in paragraph at lines 84--85
-\TU/lmr/m/it/10 vised
- []
-
-
-Overfull \hbox (28.38002pt too wide) in paragraph at lines 84--85
-\TU/lmr/m/it/10 Learn-
- []
-
-
-Overfull \hbox (13.76001pt too wide) in paragraph at lines 84--85
-\TU/lmr/m/it/10 ing\nullfont ) 
- []
-
-
-Overfull \hbox (14.96pt too wide) in paragraph at lines 85--86
-(\TU/lmr/m/it/10 Re-
- []
-
-
-Overfull \hbox (12.27pt too wide) in paragraph at lines 85--86
-\TU/lmr/m/it/10 in-
- []
-
-
-Overfull \hbox (24.16003pt too wide) in paragraph at lines 85--86
-\TU/lmr/m/it/10 force-
- []
-
-
-Overfull \hbox (21.72pt too wide) in paragraph at lines 85--86
-\TU/lmr/m/it/10 ment
- []
-
-
-Overfull \hbox (28.38002pt too wide) in paragraph at lines 85--86
-\TU/lmr/m/it/10 Learn-
- []
-
-
-Overfull \hbox (13.76001pt too wide) in paragraph at lines 85--86
-\TU/lmr/m/it/10 ing\nullfont ) 
- []
-
-
-Overfull \hbox (14.56999pt too wide) in paragraph at lines 86--87
-(\TU/lmr/m/it/10 Su-
  []
 
 
@@ -1272,208 +1217,263 @@ Overfull \hbox (13.76001pt too wide) in paragraph at lines 86--87
  []
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 89--90
-[]Für
+Overfull \hbox (14.96pt too wide) in paragraph at lines 87--88
+(\TU/lmr/m/it/10 Re-
+ []
+
+
+Overfull \hbox (12.27pt too wide) in paragraph at lines 87--88
+\TU/lmr/m/it/10 in-
+ []
+
+
+Overfull \hbox (24.16003pt too wide) in paragraph at lines 87--88
+\TU/lmr/m/it/10 force-
+ []
+
+
+Overfull \hbox (21.72pt too wide) in paragraph at lines 87--88
+\TU/lmr/m/it/10 ment
+ []
+
+
+Overfull \hbox (28.38002pt too wide) in paragraph at lines 87--88
+\TU/lmr/m/it/10 Learn-
+ []
+
+
+Overfull \hbox (13.76001pt too wide) in paragraph at lines 87--88
+\TU/lmr/m/it/10 ing\nullfont ) 
+ []
+
+
+Overfull \hbox (14.56999pt too wide) in paragraph at lines 88--89
+(\TU/lmr/m/it/10 Su-
+ []
+
+
+Overfull \hbox (17.00002pt too wide) in paragraph at lines 88--89
+\TU/lmr/m/it/10 per-
+ []
+
+
+Overfull \hbox (20.96002pt too wide) in paragraph at lines 88--89
+\TU/lmr/m/it/10 vised
+ []
+
+
+Overfull \hbox (28.38002pt too wide) in paragraph at lines 88--89
+\TU/lmr/m/it/10 Learn-
+ []
+
+
+Overfull \hbox (13.76001pt too wide) in paragraph at lines 88--89
+\TU/lmr/m/it/10 ing\nullfont ) 
  []
 
 
 Overfull \hbox (20.0pt too wide) in paragraph at lines 91--92
-[]Der
- []
-
-
-Overfull \hbox (7.80904pt too wide) in paragraph at lines 91--92
-\OML/cmm/m/it/10 P$
+[]Für
  []
 
 
 Overfull \hbox (20.0pt too wide) in paragraph at lines 93--94
+[]Der
+ []
+
+
+Overfull \hbox (7.80904pt too wide) in paragraph at lines 93--94
+\OML/cmm/m/it/10 P$
+ []
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 95--96
 []Die
  []
 
 
-Overfull \hbox (43.8182pt too wide) in paragraph at lines 93--94
+Overfull \hbox (43.8182pt too wide) in paragraph at lines 95--96
 \OML/cmm/m/it/10 W[] [] W[]$
  []
 
 
-Overfull \hbox (24.93001pt too wide) in paragraph at lines 93--94
+Overfull \hbox (24.93001pt too wide) in paragraph at lines 95--96
 \TU/lmr/m/it/10 Back-
  []
 
 
-Overfull \hbox (22.62001pt too wide) in paragraph at lines 93--94
+Overfull \hbox (22.62001pt too wide) in paragraph at lines 95--96
 \TU/lmr/m/it/10 prop-
  []
 
 
-Overfull \hbox (8.69pt too wide) in paragraph at lines 93--94
+Overfull \hbox (8.69pt too wide) in paragraph at lines 95--96
 \TU/lmr/m/it/10 a-
  []
 
 
-Overfull \hbox (13.29001pt too wide) in paragraph at lines 93--94
+Overfull \hbox (13.29001pt too wide) in paragraph at lines 95--96
 \TU/lmr/m/it/10 ga-
  []
 
 
-Overfull \hbox (17.12001pt too wide) in paragraph at lines 93--94
+Overfull \hbox (17.12001pt too wide) in paragraph at lines 95--96
 \TU/lmr/m/it/10 tion\nullfont .
  []
 
 
-Overfull \hbox (12.77373pt too wide) in paragraph at lines 93--94
+Overfull \hbox (12.77373pt too wide) in paragraph at lines 95--96
 \OML/cmm/m/it/10 W[]$
  []
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 95--95
+Overfull \hbox (20.0pt too wide) in paragraph at lines 97--97
 [] 
  []
 
 
-Overfull \hbox (66.36053pt too wide) detected at line 98
+Overfull \hbox (66.36053pt too wide) detected at line 100
 \OMS/cmsy/m/n/10 4\OML/cmm/m/it/10 w[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10  \OML
 /cmm/m/it/10 []o[][]
  []
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 100--100
+Overfull \hbox (20.0pt too wide) in paragraph at lines 102--102
 [] 
  []
 
 
-Overfull \hbox (23.09091pt too wide) in paragraph at lines 101--102
+Overfull \hbox (23.09091pt too wide) in paragraph at lines 103--104
 \OMS/cmsy/m/n/10 4\OML/cmm/m/it/10 w[]$
  []
 
 
-Overfull \hbox (14.20201pt too wide) in paragraph at lines 101--102
+Overfull \hbox (14.20201pt too wide) in paragraph at lines 103--104
 \OML/cmm/m/it/10 w[]$
  []
 
 
-Overfull \hbox (3.44513pt too wide) in paragraph at lines 101--102
+Overfull \hbox (3.44513pt too wide) in paragraph at lines 103--104
 \OML/cmm/m/it/10 i$
  []
 
 
-Overfull \hbox (4.69049pt too wide) in paragraph at lines 101--102
+Overfull \hbox (4.69049pt too wide) in paragraph at lines 103--104
 \OML/cmm/m/it/10 j$ 
  []
 
 
-Overfull \hbox (5.32408pt too wide) in paragraph at lines 102--103
+Overfull \hbox (5.32408pt too wide) in paragraph at lines 104--105
 \OML/cmm/m/it/10 $
  []
 
 
-Overfull \hbox (8.658pt too wide) in paragraph at lines 103--104
+Overfull \hbox (8.658pt too wide) in paragraph at lines 105--106
 \OML/cmm/m/it/10 []$
  []
 
 
-Overfull \hbox (4.69049pt too wide) in paragraph at lines 103--104
+Overfull \hbox (4.69049pt too wide) in paragraph at lines 105--106
 \OML/cmm/m/it/10 j$
  []
 
 
-Overfull \hbox (22.59517pt too wide) in paragraph at lines 103--104
+Overfull \hbox (22.59517pt too wide) in paragraph at lines 105--106
 []$
  []
 
 
-Overfull \hbox (7.95831pt too wide) in paragraph at lines 105--106
+Overfull \hbox (7.95831pt too wide) in paragraph at lines 107--108
 \OML/cmm/m/it/10 E$
  []
 
 
-Overfull \hbox (18.51382pt too wide) in paragraph at lines 105--106
+Overfull \hbox (18.51382pt too wide) in paragraph at lines 107--108
 \OML/cmm/m/it/10 E \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (31.56143pt too wide) in paragraph at lines 105--106
+Overfull \hbox (31.56143pt too wide) in paragraph at lines 107--108
 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t[] \OMS/cmsy/m/n/10  
  []
 
 
-Overfull \hbox (16.55154pt too wide) in paragraph at lines 105--106
+Overfull \hbox (16.55154pt too wide) in paragraph at lines 107--108
 \OML/cmm/m/it/10 o[]\OT1/cmr/m/n/10 )[]$
  []
 
 
-Overfull \hbox (6.9404pt too wide) in paragraph at lines 107--108
+Overfull \hbox (6.9404pt too wide) in paragraph at lines 109--110
 \OML/cmm/m/it/10 t[]$
  []
 
 
-Overfull \hbox (18.48329pt too wide) in paragraph at lines 109--110
+Overfull \hbox (18.48329pt too wide) in paragraph at lines 111--112
 \OML/cmm/m/it/10 net[]$
  []
 
 
-Overfull \hbox (37.86752pt too wide) in paragraph at lines 109--110
+Overfull \hbox (37.86752pt too wide) in paragraph at lines 111--112
 [] \OML/cmm/m/it/10 x[]w[]$ 
  []
 
 
-Overfull \hbox (8.17651pt too wide) in paragraph at lines 112--113
+Overfull \hbox (8.17651pt too wide) in paragraph at lines 114--115
 \OML/cmm/m/it/10 o[]$
  []
 
 
-Overfull \hbox (23.09091pt too wide) in paragraph at lines 112--113
+Overfull \hbox (23.09091pt too wide) in paragraph at lines 114--115
 \OMS/cmsy/m/n/10 4\OML/cmm/m/it/10 w[]$\nullfont ,
  []
 
 
-Overfull \hbox (7.95831pt too wide) in paragraph at lines 112--113
+Overfull \hbox (7.95831pt too wide) in paragraph at lines 114--115
 \OML/cmm/m/it/10 E$
  []
 
 
-Overfull \hbox (3.44513pt too wide) in paragraph at lines 112--113
+Overfull \hbox (3.44513pt too wide) in paragraph at lines 114--115
 \OML/cmm/m/it/10 i$ 
  []
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 115--116
+Overfull \hbox (20.0pt too wide) in paragraph at lines 117--118
 []Zusammenfassend
  []
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 117--117
+Overfull \hbox (20.0pt too wide) in paragraph at lines 119--119
 [] 
  []
 
 
-Overfull \hbox (40.46pt too wide) in paragraph at lines 118--119
+Overfull \hbox (40.46pt too wide) in paragraph at lines 120--121
 \TU/lmr/bx/n/10 Eingabe
  []
 
 
-Overfull \hbox (5.03125pt too wide) in paragraph at lines 118--119
+Overfull \hbox (5.03125pt too wide) in paragraph at lines 120--121
 \OML/cmm/m/it/10 p$
  []
 
 
-Overfull \hbox (7.80904pt too wide) in paragraph at lines 118--119
+Overfull \hbox (7.80904pt too wide) in paragraph at lines 120--121
 \OML/cmm/m/it/10 P$
  []
 
 
-Overfull \hbox (22.05pt too wide) in paragraph at lines 119--120
+Overfull \hbox (22.05pt too wide) in paragraph at lines 121--122
 \TU/lmr/bx/n/10 Vor-
  []
 
 
-Overfull \hbox (26.62pt too wide) in paragraph at lines 119--120
+Overfull \hbox (26.62pt too wide) in paragraph at lines 121--122
 \TU/lmr/bx/n/10 wärt-
  []
 
 
-Overfull \hbox (70.88pt too wide) in paragraph at lines 119--120
+Overfull \hbox (70.88pt too wide) in paragraph at lines 121--122
 \TU/lmr/bx/n/10 spropagierung
  []
 
@@ -1485,7 +1485,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.120 \item \textbf
+l.122 \item \textbf
                  {Vergleich} des Ergebnisses mit der richtigen Lösung und B...
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1523,7 +1523,7 @@ Missing character: There is no n (U+006E) in font nullfont!
 ! Undefined control sequence.
 <write> \newlabel{sec:Annotation}{{}{\thepage 
                                       }}
-l.120 \item \textbf
+l.122 \item \textbf
                  {Vergleich} des Ergebnisses mit der richtigen Lösung und B...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1532,24 +1532,131 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 \newlabel{sec:Annotation}{{}{}}
-Missing character: There is no w (U+0077) in font nullfont!
+Missing character: There is no T (U+0054) in font nullfont!
+Missing character: There is no O (U+004F) in font nullfont!
+Missing character: There is no D (U+0044) in font nullfont!
+Missing character: There is no O (U+004F) in font nullfont!
+Missing character: There is no - (U+002D) in font nullfont!
+Missing character: There is no A (U+0041) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
 Missing character: There is no a (U+0061) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no o (U+006F) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no m (U+006D) in font nullfont!
+Missing character: There is no a (U+0061) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no g (U+0067) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no m (U+006D) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no - (U+002D) in font nullfont!
+Missing character: There is no F (U+0046) in font nullfont!
+Missing character: There is no ü (U+00FC) in font nullfont!
 Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no w (U+0077) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no c (U+0063) in font nullfont!
+Missing character: There is no h (U+0068) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no z (U+007A) in font nullfont!
+Missing character: There is no w (U+0077) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no c (U+0063) in font nullfont!
+Missing character: There is no k (U+006B) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no w (U+0077) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no s (U+0073) in font nullfont!
+Missing character: There is no v (U+0076) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no w (U+0077) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no - (U+002D) in font nullfont!
+Missing character: There is no H (U+0048) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no u (U+0075) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no g (U+0067) in font nullfont!
+Missing character: There is no z (U+007A) in font nullfont!
 Missing character: There is no u (U+0075) in font nullfont!
 Missing character: There is no m (U+006D) in font nullfont!
-Missing character: There is no ? (U+003F) in font nullfont!
-Missing character: There is no w (U+0077) in font nullfont!
+Missing character: There is no m (U+006D) in font nullfont!
 Missing character: There is no a (U+0061) in font nullfont!
 Missing character: There is no s (U+0073) in font nullfont!
+Missing character: There is no c (U+0063) in font nullfont!
+Missing character: There is no h (U+0068) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no l (U+006C) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no L (U+004C) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no , (U+002C) in font nullfont!
 Missing character: There is no f (U+0066) in font nullfont!
 Missing character: There is no ü (U+00FC) in font nullfont!
 Missing character: There is no r (U+0072) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
 Missing character: There is no a (U+0061) in font nullfont!
+Missing character: There is no s (U+0073) in font nullfont!
+Missing character: There is no A (U+0041) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no o (U+006F) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
 Missing character: There is no r (U+0072) in font nullfont!
 Missing character: There is no t (U+0074) in font nullfont!
 Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no D (U+0044) in font nullfont!
+Missing character: There is no a (U+0061) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
 Missing character: There is no n (U+006E) in font nullfont!
-Missing character: There is no ? (U+003F) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no o (U+006F) in font nullfont!
+Missing character: There is no t (U+0074) in font nullfont!
+Missing character: There is no w (U+0077) in font nullfont!
+Missing character: There is no e (U+0065) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no g (U+0067) in font nullfont!
+Missing character: There is no s (U+0073) in font nullfont!
+Missing character: There is no i (U+0069) in font nullfont!
+Missing character: There is no n (U+006E) in font nullfont!
+Missing character: There is no d (U+0064) in font nullfont!
 Missing character: There is no M (U+004D) in font nullfont!
 Missing character: There is no a (U+0061) in font nullfont!
 Missing character: There is no s (U+0073) in font nullfont!
@@ -1571,7 +1678,7 @@ Missing character: There is no n (U+006E) in font nullfont!
 ! Undefined control sequence.
 <write> \newlabel{sec:MLearning}{{}{\thepage 
                                      }}
-l.120 \item \textbf
+l.122 \item \textbf
                  {Vergleich} des Ergebnisses mit der richtigen Lösung und B...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2613,10 +2720,11 @@ Missing character: There is no B (U+0042) in font nullfont!
 Missing character: There is no i (U+0069) in font nullfont!
 Missing character: There is no l (U+006C) in font nullfont!
 Missing character: There is no d (U+0064) in font nullfont!
+Missing character: There is no - (U+002D) in font nullfont!
 Missing character: There is no u (U+0075) in font nullfont!
 Missing character: There is no n (U+006E) in font nullfont!
 Missing character: There is no d (U+0064) in font nullfont!
-Missing character: There is no w (U+0077) in font nullfont!
+Missing character: There is no W (U+0057) in font nullfont!
 Missing character: There is no o (U+006F) in font nullfont!
 Missing character: There is no l (U+006C) in font nullfont!
 Missing character: There is no k (U+006B) in font nullfont!
@@ -2743,7 +2851,7 @@ Missing character: There is no ] (U+005D) in font nullfont!
 ! Undefined control sequence.
 <write> \newlabel{fig:MLCS}{{}{\thepage 
                                 }}
-l.120 \item \textbf
+l.122 \item \textbf
                  {Vergleich} des Ergebnisses mit der richtigen Lösung und B...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2779,7 +2887,7 @@ Missing character: There is no e (U+0065) in font nullfont!
 ! Undefined control sequence.
 <write> \newlabel{sec:KNN}{{}{\thepage 
                                }}
-l.120 \item \textbf
+l.122 \item \textbf
                  {Vergleich} des Ergebnisses mit der richtigen Lösung und B...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4385,7 +4493,7 @@ Missing character: There is no ] (U+005D) in font nullfont!
 ! Undefined control sequence.
 <write> \newlabel{fig:MLCS}{{}{\thepage 
                                 }}
-l.120 \item \textbf
+l.122 \item \textbf
                  {Vergleich} des Ergebnisses mit der richtigen Lösung und B...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5117,7 +5225,7 @@ Missing character: There is no t (U+0074) in font nullfont!
 ! Undefined control sequence.
 <write> \newlabel{fig:Perceptron}{{}{\thepage 
                                       }}
-l.120 \item \textbf
+l.122 \item \textbf
                  {Vergleich} des Ergebnisses mit der richtigen Lösung und B...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6413,7 +6521,7 @@ Missing character: There is no . (U+002E) in font nullfont!
 ! Undefined control sequence.
 <write> \newlabel{eq:Fermi}{{2}{\thepage 
                                  }}
-l.120 \item \textbf
+l.122 \item \textbf
                  {Vergleich} des Ergebnisses mit der richtigen Lösung und B...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -8365,7 +8473,7 @@ Missing character: There is no n (U+006E) in font nullfont!
 ! Undefined control sequence.
 <write> \newlabel{fig:Bilderkennung}{{}{\thepage 
                                          }}
-l.120 \item \textbf
+l.122 \item \textbf
                  {Vergleich} des Ergebnisses mit der richtigen Lösung und B...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -8417,7 +8525,7 @@ Missing character: There is no n (U+006E) in font nullfont!
 ! Undefined control sequence.
 <write> \newlabel{sec:Training}{{}{\thepage 
                                     }}
-l.120 \item \textbf
+l.122 \item \textbf
                  {Vergleich} des Ergebnisses mit der richtigen Lösung und B...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -10837,7 +10945,7 @@ Missing character: There is no : (U+003A) in font nullfont!
 ! Undefined control sequence.
 <write> \newlabel{eq:BackProb}{{3}{\thepage 
                                     }}
-l.120 \item \textbf
+l.122 \item \textbf
                  {Vergleich} des Ergebnisses mit der richtigen Lösung und B...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11413,32 +11521,32 @@ Missing character: There is no n (U+006E) in font nullfont!
 Missing character: There is no t (U+0074) in font nullfont!
 Missing character: There is no s (U+0073) in font nullfont!
 ]
-Overfull \hbox (21.57pt too wide) in paragraph at lines 120--121
+Overfull \hbox (21.57pt too wide) in paragraph at lines 122--123
 \TU/lmr/bx/n/10 Ver-
  []
 
 
-Overfull \hbox (18.04001pt too wide) in paragraph at lines 120--121
+Overfull \hbox (18.04001pt too wide) in paragraph at lines 122--123
 \TU/lmr/bx/n/10 gle-
  []
 
 
-Overfull \hbox (14.37pt too wide) in paragraph at lines 120--121
+Overfull \hbox (14.37pt too wide) in paragraph at lines 122--123
 \TU/lmr/bx/n/10 ich
  []
 
 
-Overfull \hbox (39.24pt too wide) in paragraph at lines 121--122
+Overfull \hbox (39.24pt too wide) in paragraph at lines 123--124
 \TU/lmr/bx/n/10 Zurück-
  []
 
 
-Overfull \hbox (59.47002pt too wide) in paragraph at lines 121--122
+Overfull \hbox (59.47002pt too wide) in paragraph at lines 123--124
 \TU/lmr/bx/n/10 propagieren
  []
 
 ! Undefined control sequence.
-l.124 ...lemente im Trainingssatz gemeint. \acrshort
+l.126 ...lemente im Trainingssatz gemeint. \acrshort
                                                   {acr:knn}s verbessern ihre...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11447,17 +11555,17 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 124--125
+Overfull \hbox (20.0pt too wide) in paragraph at lines 126--127
 []Wie
  []
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 126--127
+Overfull \hbox (20.0pt too wide) in paragraph at lines 128--129
 []Zur
  []
 
 ! Undefined control sequence.
-l.129 \section
+l.131 \section
             {Virtual Reality}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11466,12 +11574,12 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 129--131
+Overfull \hbox (20.0pt too wide) in paragraph at lines 131--133
 []Virtual
  []
 
 ! Undefined control sequence.
-l.132 ... zurückverfolgen als Ivan Sutherland \glqq
+l.134 ... zurückverfolgen als Ivan Sutherland \glqq
                                                    \textit{The Ultimate Disp...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11482,7 +11590,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <recently read> \grqq 
       
-l.132 ...nd \glqq \textit{The Ultimate Display}\grqq
+l.134 ...nd \glqq \textit{The Ultimate Display}\grqq
                                                    \cite{bib:UltimateDisplay...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11494,7 +11602,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <write> ... Warning: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.132 ...te Display}\grqq \cite{bib:UltimateDisplay}
+l.134 ...te Display}\grqq \cite{bib:UltimateDisplay}
                                                    vorstellte. Diese Arbeit ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11504,13 +11612,13 @@ and I'll forget about whatever was undefined.
 
 
 LaTeX Warning: Citation `bib:UltimateDisplay' on page  undefined on input line 1
-32.
+34.
 
 \citation{bib:VRReport}
 ! Undefined control sequence.
 <write> ... Warning: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.132 ...len Welt miteinbeziehen \cite{bib:VRReport}
+l.134 ...len Welt miteinbeziehen \cite{bib:VRReport}
                                                   .\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11519,45 +11627,45 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `bib:VRReport' on page  undefined on input line 132.
+LaTeX Warning: Citation `bib:VRReport' on page  undefined on input line 134.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 132--133
+Overfull \hbox (20.0pt too wide) in paragraph at lines 134--135
 []Das
  []
 
 
-Overfull \hbox (16.87001pt too wide) in paragraph at lines 132--133
+Overfull \hbox (16.87001pt too wide) in paragraph at lines 134--135
 \TU/lmr/m/it/10 The
  []
 
 
-Overfull \hbox (13.56999pt too wide) in paragraph at lines 132--133
+Overfull \hbox (13.56999pt too wide) in paragraph at lines 134--135
 \TU/lmr/m/it/10 Ul-
  []
 
 
-Overfull \hbox (9.97002pt too wide) in paragraph at lines 132--133
+Overfull \hbox (9.97002pt too wide) in paragraph at lines 134--135
 \TU/lmr/m/it/10 ti-
  []
 
 
-Overfull \hbox (21.21pt too wide) in paragraph at lines 132--133
+Overfull \hbox (21.21pt too wide) in paragraph at lines 134--135
 \TU/lmr/m/it/10 mate
  []
 
 
-Overfull \hbox (18.29001pt too wide) in paragraph at lines 132--133
+Overfull \hbox (18.29001pt too wide) in paragraph at lines 134--135
 \TU/lmr/m/it/10 Dis-
  []
 
 
-Overfull \hbox (23.56999pt too wide) in paragraph at lines 132--133
+Overfull \hbox (23.56999pt too wide) in paragraph at lines 134--135
 \TU/lmr/m/it/10 play\nullfont [[]]
  []
 
 
-Overfull \hbox (5.43pt too wide) in paragraph at lines 132--133
+Overfull \hbox (5.43pt too wide) in paragraph at lines 134--135
 [[]]. 
  []
 
@@ -11565,7 +11673,7 @@ Overfull \hbox (5.43pt too wide) in paragraph at lines 132--133
 ! Undefined control sequence.
 <write> ... Warning: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.134 ...der NASA entwickelt wurde \cite{bib:NasaVr}
+l.136 ...der NASA entwickelt wurde \cite{bib:NasaVr}
                                                   . Dieses System beinhaltet...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11574,10 +11682,10 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `bib:NasaVr' on page  undefined on input line 134.
+LaTeX Warning: Citation `bib:NasaVr' on page  undefined on input line 136.
 
 ! Undefined control sequence.
-l.134 ...tigte Brille, mit einem integrierten 2,7\dq
+l.136 ...tigte Brille, mit einem integrierten 2,7\dq
                                                   {} großen LCD-Display (Ab...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11588,7 +11696,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <write> ...eference `fig:FirstVrConcept' on page \thepage 
                                                   \space undefined\on@line .
-l.134 ...Display (Abbildung \ref{fig:FirstVrConcept}
+l.136 ...Display (Abbildung \ref{fig:FirstVrConcept}
                                                   ). Durch Weitwinkelobjekti...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11598,12 +11706,12 @@ and I'll forget about whatever was undefined.
 
 
 LaTeX Warning: Reference `fig:FirstVrConcept' on page  undefined on input line 1
-34.
+36.
 
 ! Undefined control sequence.
 <write> ...ference `fig:FirstVrUserView' on page \thepage 
                                                   \space undefined\on@line .
-l.134 ...tellen (Abbildung \ref{fig:FirstVrUserView}
+l.136 ...tellen (Abbildung \ref{fig:FirstVrUserView}
                                                   ).
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11613,75 +11721,75 @@ and I'll forget about whatever was undefined.
 
 
 LaTeX Warning: Reference `fig:FirstVrUserView' on page  undefined on input line 
-134.
+136.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 134--135
+Overfull \hbox (20.0pt too wide) in paragraph at lines 136--137
 []Anfang
  []
 
 
-Overfull \hbox (17.92pt too wide) in paragraph at lines 134--135
+Overfull \hbox (17.92pt too wide) in paragraph at lines 136--137
 (\TU/lmr/m/it/10 Vir-
  []
 
 
-Overfull \hbox (16.36pt too wide) in paragraph at lines 134--135
+Overfull \hbox (16.36pt too wide) in paragraph at lines 136--137
 \TU/lmr/m/it/10 tual
  []
 
 
-Overfull \hbox (13.7pt too wide) in paragraph at lines 134--135
+Overfull \hbox (13.7pt too wide) in paragraph at lines 136--137
 \TU/lmr/m/it/10 Vi-
  []
 
 
-Overfull \hbox (17.12999pt too wide) in paragraph at lines 134--135
+Overfull \hbox (17.12999pt too wide) in paragraph at lines 136--137
 \TU/lmr/m/it/10 sual
  []
 
 
-Overfull \hbox (15.98pt too wide) in paragraph at lines 134--135
+Overfull \hbox (15.98pt too wide) in paragraph at lines 136--137
 \TU/lmr/m/it/10 En-
  []
 
 
-Overfull \hbox (11.25002pt too wide) in paragraph at lines 134--135
+Overfull \hbox (11.25002pt too wide) in paragraph at lines 136--137
 \TU/lmr/m/it/10 vi-
  []
 
 
-Overfull \hbox (18.02pt too wide) in paragraph at lines 134--135
+Overfull \hbox (18.02pt too wide) in paragraph at lines 136--137
 \TU/lmr/m/it/10 ron-
  []
 
 
-Overfull \hbox (21.72pt too wide) in paragraph at lines 134--135
+Overfull \hbox (21.72pt too wide) in paragraph at lines 136--137
 \TU/lmr/m/it/10 ment
  []
 
 
-Overfull \hbox (18.29001pt too wide) in paragraph at lines 134--135
+Overfull \hbox (18.29001pt too wide) in paragraph at lines 136--137
 \TU/lmr/m/it/10 Dis-
  []
 
 
-Overfull \hbox (18.14pt too wide) in paragraph at lines 134--135
+Overfull \hbox (18.14pt too wide) in paragraph at lines 136--137
 \TU/lmr/m/it/10 play\nullfont ),
  []
 
 
-Overfull \hbox (5.43pt too wide) in paragraph at lines 134--135
+Overfull \hbox (5.43pt too wide) in paragraph at lines 136--137
 [[]].
  []
 
 
-Overfull \hbox (10.85999pt too wide) in paragraph at lines 134--135
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 136--137
 []).
  []
 
 
-Overfull \hbox (10.85999pt too wide) in paragraph at lines 134--135
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 136--137
 []). 
  []
 
@@ -11689,7 +11797,7 @@ Overfull \hbox (10.85999pt too wide) in paragraph at lines 134--135
 ! Undefined control sequence.
 <write> ... Warning: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.136 ...opie verursacht wird \cite{bib:Stereoscopy}
+l.138 ...opie verursacht wird \cite{bib:Stereoscopy}
                                                   . Dieses Prinzip beruht da...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11698,22 +11806,22 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `bib:Stereoscopy' on page  undefined on input line 136.
+LaTeX Warning: Citation `bib:Stereoscopy' on page  undefined on input line 138.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 136--137
+Overfull \hbox (20.0pt too wide) in paragraph at lines 138--139
 []Die
  []
 
 
-Overfull \hbox (5.43pt too wide) in paragraph at lines 136--137
+Overfull \hbox (5.43pt too wide) in paragraph at lines 138--139
 [[]].
  []
 
 ! Undefined control sequence.
 <write> ...ence `fig:FirstVrOutsideView' on page \thepage 
                                                   \space undefined\on@line .
-l.138 ...ren (Abbildung \ref{fig:FirstVrOutsideView}
+l.140 ...ren (Abbildung \ref{fig:FirstVrOutsideView}
                                                   ), da das System die Beweg...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11723,22 +11831,22 @@ and I'll forget about whatever was undefined.
 
 
 LaTeX Warning: Reference `fig:FirstVrOutsideView' on page  undefined on input li
-ne 138.
+ne 140.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 138--139
+Overfull \hbox (20.0pt too wide) in paragraph at lines 140--141
 []Als
  []
 
 
-Overfull \hbox (10.85999pt too wide) in paragraph at lines 138--139
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 140--141
 []),
  []
 
 ! Undefined control sequence.
 <write> ...erence `fig:RiftConstruction' on page \thepage 
                                                   \space undefined\on@line .
-l.140 ...splay (Abbildung \ref{fig:RiftConstruction}
+l.142 ...splay (Abbildung \ref{fig:RiftConstruction}
                                                   ). Diese beinhaltet, ebens...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11748,15 +11856,15 @@ and I'll forget about whatever was undefined.
 
 
 LaTeX Warning: Reference `fig:RiftConstruction' on page  undefined on input line
- 140.
+ 142.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 140--141
+Overfull \hbox (20.0pt too wide) in paragraph at lines 142--143
 []Am
  []
 
 
-Overfull \hbox (10.85999pt too wide) in paragraph at lines 140--141
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 142--143
 []).
  []
 
@@ -11767,14 +11875,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.142 \begin{figure}
+l.144 \begin{figure}
                   %
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Undefined control sequence.
-l.144     \subfloat
+l.146     \subfloat
                  [VIVED Displayaufbau]{{\includegraphics[width=4cm]{FirstVrC...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11783,7 +11891,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.144 ...loat[VIVED Displayaufbau]{{\includegraphics
+l.146 ...loat[VIVED Displayaufbau]{{\includegraphics
                                                   [width=4cm]{FirstVrConcept...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11792,7 +11900,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.146     \subfloat
+l.148     \subfloat
                  [Sicht eines VIVED Benutzers]{{\includegraphics[width=4cm]{...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11801,7 +11909,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.146 ...ht eines VIVED Benutzers]{{\includegraphics
+l.148 ...ht eines VIVED Benutzers]{{\includegraphics
                                                   [width=4cm]{FirstVrUserVie...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11810,7 +11918,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.148     \subfloat
+l.150     \subfloat
                  [Sicht auf einen VIVED Benutzer]{{\includegraphics[width=4c...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11819,7 +11927,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.148 ...auf einen VIVED Benutzer]{{\includegraphics
+l.150 ...auf einen VIVED Benutzer]{{\includegraphics
                                                   [width=4cm]{FirstVrOutside...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11828,16 +11936,31 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.150     \subfloat
-                 [Rift Displayaufbau]{{\includegraphics[width=4cm]{RiftConst...
+l.152     \subfloat
+                 [Rift Displayaufbau \cite{bib:RiftReview}]{{\includegraphic...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+\citation{bib:RiftReview}
 ! Undefined control sequence.
-l.150 ...float[Rift Displayaufbau]{{\includegraphics
+<write> ... Warning: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.152 ...at[Rift Displayaufbau \cite{bib:RiftReview}
+                                                  ]{{\includegraphics[width=...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `bib:RiftReview' on page  undefined on input line 152.
+
+! Undefined control sequence.
+l.152 ...au \cite{bib:RiftReview}]{{\includegraphics
                                                   [width=4cm]{RiftConstructi...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11846,16 +11969,31 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.152     \subfloat
-                 [Sicht auf einen Rift Benutzer]{{\includegraphics[width=4cm...
+l.154     \subfloat
+                 [Sicht auf einen Rift Benutzer \cite{bib:RiftUser}]{{\inclu...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+\citation{bib:RiftUser}
 ! Undefined control sequence.
-l.152 ... auf einen Rift Benutzer]{{\includegraphics
+<write> ... Warning: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.154 ...auf einen Rift Benutzer \cite{bib:RiftUser}
+                                                  ]{{\includegraphics[width=...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `bib:RiftUser' on page  undefined on input line 154.
+
+! Undefined control sequence.
+l.154 ...tzer \cite{bib:RiftUser}]{{\includegraphics
                                                   [width=4cm]{RiftAvatar}\la...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11864,16 +12002,31 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.154     \subfloat
-                 [Sicht eines Rift Benutzers]{{\includegraphics[width=4cm]{R...
+l.156     \subfloat
+                 [Sicht eines Rift Benutzers \cite{bib:AvatarHands}]{{\inclu...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+\citation{bib:AvatarHands}
 ! Undefined control sequence.
-l.154 ...cht eines Rift Benutzers]{{\includegraphics
+<write> ... Warning: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.156 ...eines Rift Benutzers \cite{bib:AvatarHands}
+                                                  ]{{\includegraphics[width=...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `bib:AvatarHands' on page  undefined on input line 156.
+
+! Undefined control sequence.
+l.156 ...s \cite{bib:AvatarHands}]{{\includegraphics
                                                   [width=4cm]{RiftUser}\labe...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11888,7 +12041,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.155     \caption
+l.157     \caption
                 {Vergleich zwischen den Anfängen der VR-Technologie und dem...
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -11897,7 +12050,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 <write> ... Warning: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.155 ... Fisher vorgestellt wurde \cite{bib:NasaVr}
+l.157 ... Fisher vorgestellt wurde \cite{bib:NasaVr}
                                                   . Die Unteren zeigen Bilde...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11906,7 +12059,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `bib:NasaVr' on page  undefined on input line 155.
+LaTeX Warning: Citation `bib:NasaVr' on page  undefined on input line 157.
 
 
 ! LaTeX Error: \begin{document} ended by \end{figure}.
@@ -11915,21 +12068,36 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.156 \end{figure}
+l.158 \end{figure}
                 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (5.43pt too wide) in paragraph at lines 144--157
+Overfull \hbox (5.43pt too wide) in paragraph at lines 146--159
+[[]]][width=4cm]RiftConstruction[]
+ []
+
+
+Overfull \hbox (5.43pt too wide) in paragraph at lines 146--159
+[[]]][width=4cm]RiftAvatar[]
+ []
+
+
+Overfull \hbox (5.43pt too wide) in paragraph at lines 146--159
+[[]]][width=4cm]RiftUser[]Vergleich
+ []
+
+
+Overfull \hbox (5.43pt too wide) in paragraph at lines 146--159
 [[]].
  []
 
 ! Undefined control sequence.
 <write> ...g: Reference `fig:RiftAvatar' on page \thepage 
                                                   \space undefined\on@line .
-l.158 ...ellt werden (Abbildung \ref{fig:RiftAvatar}
+l.160 ...ellt werden (Abbildung \ref{fig:RiftAvatar}
                                                   ). Die Brille und die Eing...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11938,15 +12106,15 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `fig:RiftAvatar' on page  undefined on input line 158.
+LaTeX Warning: Reference `fig:RiftAvatar' on page  undefined on input line 160.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 158--159
+Overfull \hbox (20.0pt too wide) in paragraph at lines 160--161
 []Die
  []
 
 
-Overfull \hbox (10.85999pt too wide) in paragraph at lines 158--159
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 160--161
 []).
  []
 
@@ -11954,7 +12122,7 @@ Overfull \hbox (10.85999pt too wide) in paragraph at lines 158--159
 ! Undefined control sequence.
 <write> ... Warning: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.160 ...n davon wurden in \cite{bib:RiftHistorical}
+l.162 ...n davon wurden in \cite{bib:RiftHistorical}
                                                    gesammelt. 2010 wurde der...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11964,96 +12132,96 @@ and I'll forget about whatever was undefined.
 
 
 LaTeX Warning: Citation `bib:RiftHistorical' on page  undefined on input line 16
-0.
+2.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 160--161
+Overfull \hbox (20.0pt too wide) in paragraph at lines 162--163
 []Ein
  []
 
 
-Overfull \hbox (21.22pt too wide) in paragraph at lines 160--161
+Overfull \hbox (21.22pt too wide) in paragraph at lines 162--163
 \TU/lmr/m/it/10 Ocu-
  []
 
 
-Overfull \hbox (12.01999pt too wide) in paragraph at lines 160--161
+Overfull \hbox (12.01999pt too wide) in paragraph at lines 162--163
 \TU/lmr/m/it/10 lus
  []
 
 
-Overfull \hbox (16.49002pt too wide) in paragraph at lines 160--161
+Overfull \hbox (16.49002pt too wide) in paragraph at lines 162--163
 \TU/lmr/m/it/10 Rift
  []
 
 
-Overfull \hbox (21.75pt too wide) in paragraph at lines 160--161
+Overfull \hbox (21.75pt too wide) in paragraph at lines 162--163
 \TU/lmr/m/it/10 HTC
  []
 
 
-Overfull \hbox (19.32pt too wide) in paragraph at lines 160--161
+Overfull \hbox (19.32pt too wide) in paragraph at lines 162--163
 \TU/lmr/m/it/10 Vive\nullfont .
  []
 
 
-Overfull \hbox (5.43pt too wide) in paragraph at lines 160--161
+Overfull \hbox (5.43pt too wide) in paragraph at lines 162--163
 [[]]
  []
 
 
-Overfull \hbox (21.09001pt too wide) in paragraph at lines 160--161
+Overfull \hbox (21.09001pt too wide) in paragraph at lines 162--163
 \TU/lmr/m/it/10 Low-
  []
 
 
-Overfull \hbox (49.36003pt too wide) in paragraph at lines 160--161
+Overfull \hbox (49.36003pt too wide) in paragraph at lines 162--163
 \TU/lmr/m/it/10 Persistence\nullfont -
  []
 
 
-Overfull \hbox (31.31003pt too wide) in paragraph at lines 160--161
+Overfull \hbox (31.31003pt too wide) in paragraph at lines 162--163
 \TU/lmr/m/it/10 geringe
  []
 
 
-Overfull \hbox (19.95999pt too wide) in paragraph at lines 160--161
+Overfull \hbox (19.95999pt too wide) in paragraph at lines 162--163
 \TU/lmr/m/it/10 Aus-
  []
 
 
-Overfull \hbox (25.28pt too wide) in paragraph at lines 160--161
+Overfull \hbox (25.28pt too wide) in paragraph at lines 162--163
 \TU/lmr/m/it/10 dauer\nullfont )
  []
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 162--163
+Overfull \hbox (20.0pt too wide) in paragraph at lines 164--165
 []Die,
  []
 
 
-Overfull \hbox (13.06pt too wide) in paragraph at lines 162--163
+Overfull \hbox (13.06pt too wide) in paragraph at lines 164--165
 \TU/lmr/m/it/10 In-
  []
 
 
-Overfull \hbox (18.15pt too wide) in paragraph at lines 162--163
+Overfull \hbox (18.15pt too wide) in paragraph at lines 164--165
 \TU/lmr/m/it/10 dus-
  []
 
 
-Overfull \hbox (15.21002pt too wide) in paragraph at lines 162--163
+Overfull \hbox (15.21002pt too wide) in paragraph at lines 164--165
 \TU/lmr/m/it/10 trie
  []
 
 
-Overfull \hbox (13.29001pt too wide) in paragraph at lines 162--163
+Overfull \hbox (13.29001pt too wide) in paragraph at lines 164--165
 \TU/lmr/m/it/10 4.0
  []
 
 ! Undefined control sequence.
-l.164 \section
-            {LiDAR}
+l.166 \section
+            {Aufnahme von Punktwolken mit LiDAR}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -12061,15 +12229,15 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 164--165
-[]LiDAR 
+Overfull \hbox (20.0pt too wide) in paragraph at lines 166--167
+[]Aufnahme
  []
 
 \citation{bib:LidarArcheology}
 ! Undefined control sequence.
 <write> ... Warning: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.166 ...A zu analysieren \cite{bib:LidarArcheology}
+l.168 ...A zu analysieren \cite{bib:LidarArcheology}
                                                   . Die Analyse von Landscha...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12079,13 +12247,13 @@ and I'll forget about whatever was undefined.
 
 
 LaTeX Warning: Citation `bib:LidarArcheology' on page  undefined on input line 1
-66.
+68.
 
 \citation{bib:LidarSpace}
 ! Undefined control sequence.
 <write> ... Warning: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.166 ...ten Erde möglich. In \cite{bib:LidarSpace}
+l.168 ...ten Erde möglich. In \cite{bib:LidarSpace}
                                                    wurde LiDAR benutzt um Ob...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12094,13 +12262,13 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `bib:LidarSpace' on page  undefined on input line 166.
+LaTeX Warning: Citation `bib:LidarSpace' on page  undefined on input line 168.
 
 \citation{bib:LidarRobotic}
 ! Undefined control sequence.
 <write> ... Warning: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.166 ...ntifizieren, wie in \cite{bib:LidarRobotic}
+l.168 ...ntifizieren, wie in \cite{bib:LidarRobotic}
                                                   .\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12109,68 +12277,68 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `bib:LidarRobotic' on page  undefined on input line 166.
+LaTeX Warning: Citation `bib:LidarRobotic' on page  undefined on input line 168.
 
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 166--167
+Overfull \hbox (20.0pt too wide) in paragraph at lines 168--169
 []Punktwolken,
  []
 
 
-Overfull \hbox (22.37003pt too wide) in paragraph at lines 166--167
+Overfull \hbox (22.37003pt too wide) in paragraph at lines 168--169
 (\TU/lmr/m/it/10 Light
  []
 
 
-Overfull \hbox (15.73001pt too wide) in paragraph at lines 166--167
+Overfull \hbox (15.73001pt too wide) in paragraph at lines 168--169
 \TU/lmr/m/it/10 De-
  []
 
 
-Overfull \hbox (15.59003pt too wide) in paragraph at lines 166--167
+Overfull \hbox (15.59003pt too wide) in paragraph at lines 168--169
 \TU/lmr/m/it/10 tec-
  []
 
 
-Overfull \hbox (17.12001pt too wide) in paragraph at lines 166--167
+Overfull \hbox (17.12001pt too wide) in paragraph at lines 168--169
 \TU/lmr/m/it/10 tion
  []
 
 
-Overfull \hbox (15.84pt too wide) in paragraph at lines 166--167
+Overfull \hbox (15.84pt too wide) in paragraph at lines 168--169
 \TU/lmr/m/it/10 and
  []
 
 
-Overfull \hbox (25.69pt too wide) in paragraph at lines 166--167
+Overfull \hbox (25.69pt too wide) in paragraph at lines 168--169
 \TU/lmr/m/it/10 Rang-
  []
 
 
-Overfull \hbox (13.76001pt too wide) in paragraph at lines 166--167
+Overfull \hbox (13.76001pt too wide) in paragraph at lines 168--169
 \TU/lmr/m/it/10 ing\nullfont )
  []
 
 
-Overfull \hbox (5.43pt too wide) in paragraph at lines 166--167
+Overfull \hbox (5.43pt too wide) in paragraph at lines 168--169
 [[]].
  []
 
 
-Overfull \hbox (5.43pt too wide) in paragraph at lines 166--167
+Overfull \hbox (5.43pt too wide) in paragraph at lines 168--169
 [[]]
  []
 
 
-Overfull \hbox (5.43pt too wide) in paragraph at lines 166--167
+Overfull \hbox (5.43pt too wide) in paragraph at lines 168--169
 [[]]. 
  []
 
 ! Undefined control sequence.
 <write> ... Reference `eq:LidarDistance' on page \thepage 
                                                   \space undefined\on@line .
-l.168 ...nimmt man die Formel \ref{eq:LidarDistance}
+l.170 ...nimmt man die Formel \ref{eq:LidarDistance}
                                                   , in der $c$ für die Gesc...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12179,48 +12347,48 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `eq:LidarDistance' on page  undefined on input line 168
+LaTeX Warning: Reference `eq:LidarDistance' on page  undefined on input line 170
 .
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 168--169
+Overfull \hbox (20.0pt too wide) in paragraph at lines 170--171
 []Für
  []
 
 
-Overfull \hbox (3.61111pt too wide) in paragraph at lines 168--169
+Overfull \hbox (3.61111pt too wide) in paragraph at lines 170--171
 \OML/cmm/m/it/10 t$
  []
 
 
-Overfull \hbox (5.20486pt too wide) in paragraph at lines 168--169
+Overfull \hbox (5.20486pt too wide) in paragraph at lines 170--171
 \OML/cmm/m/it/10 d$
  []
 
 
-Overfull \hbox (10.85999pt too wide) in paragraph at lines 168--169
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 170--171
 [],
  []
 
 
-Overfull \hbox (4.32756pt too wide) in paragraph at lines 168--169
+Overfull \hbox (4.32756pt too wide) in paragraph at lines 170--171
 \OML/cmm/m/it/10 c$
  []
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 170--170
+Overfull \hbox (20.0pt too wide) in paragraph at lines 172--172
 [] 
  []
 
 
-Overfull \hbox (44.43224pt too wide) detected at line 173
+Overfull \hbox (44.43224pt too wide) detected at line 175
 []\OML/cmm/m/it/10 d \OT1/cmr/m/n/10 = []
  []
 
 ! Undefined control sequence.
 <write> ...arning: Reference `fig:Lidar' on page \thepage 
                                                   \space undefined\on@line .
-l.175 ...drehen, wie es in Abbildung \ref{fig:Lidar}
+l.177 ...drehen, wie es in Abbildung \ref{fig:Lidar}
                                                    gezeigt wird. In der ober...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12229,15 +12397,15 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `fig:Lidar' on page  undefined on input line 175.
+LaTeX Warning: Reference `fig:Lidar' on page  undefined on input line 177.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 175--176
+Overfull \hbox (20.0pt too wide) in paragraph at lines 177--178
 []Mit
  []
 
 
-Overfull \hbox (10.85999pt too wide) in paragraph at lines 175--176
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 177--178
 []
  []
 
@@ -12248,14 +12416,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.177 \begin{figure}
+l.179 \begin{figure}
                   %
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Undefined control sequence.
-l.179     \subfloat
+l.181     \subfloat
                  []{{\includegraphics[width=4cm]{Lidar1}\label{fig:Lidar1}}}%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12264,7 +12432,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.179     \subfloat[]{{\includegraphics
+l.181     \subfloat[]{{\includegraphics
                                      [width=4cm]{Lidar1}\label{fig:Lidar1}}}%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12273,7 +12441,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.181     \subfloat
+l.183     \subfloat
                  []{{\includegraphics[width=4cm]{Lidar2Phi}\label{fig:Lidar2...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12282,7 +12450,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.181     \subfloat[]{{\includegraphics
+l.183     \subfloat[]{{\includegraphics
                                      [width=4cm]{Lidar2Phi}\label{fig:Lidar2...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12291,7 +12459,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.183     \subfloat
+l.185     \subfloat
                  []{{\includegraphics[width=4cm]{Lidar3}\label{fig:Lidar3}}}%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12300,7 +12468,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.183     \subfloat[]{{\includegraphics
+l.185     \subfloat[]{{\includegraphics
                                      [width=4cm]{Lidar3}\label{fig:Lidar3}}}%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12315,7 +12483,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.184     \caption
+l.186     \caption
                 {Ablauf einer LiDAR-Messung von einem Sensor, der die Messim...
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -12324,7 +12492,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 <write> ... Warning: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.184 ...Bilder stammen von \cite{bib:LidarPictures}
+l.186 ...Bilder stammen von \cite{bib:LidarPictures}
                                                    und \ref {fig:Lidar2} wur...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12333,13 +12501,13 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `bib:LidarPictures' on page  undefined on input line 184
+LaTeX Warning: Citation `bib:LidarPictures' on page  undefined on input line 186
 .
 
 ! Undefined control sequence.
 <write> ...rning: Reference `fig:Lidar2' on page \thepage 
                                                   \space undefined\on@line .
-l.184 ...te{bib:LidarPictures} und \ref {fig:Lidar2}
+l.186 ...te{bib:LidarPictures} und \ref {fig:Lidar2}
                                                    wurde um den Winkel $\var...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12348,7 +12516,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `fig:Lidar2' on page  undefined on input line 184.
+LaTeX Warning: Reference `fig:Lidar2' on page  undefined on input line 186.
 
 
 ! LaTeX Error: \begin{document} ended by \end{figure}.
@@ -12357,31 +12525,31 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.185 \end{figure}
+l.187 \end{figure}
                 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (5.43pt too wide) in paragraph at lines 179--186
+Overfull \hbox (5.43pt too wide) in paragraph at lines 181--188
 [[]]
  []
 
 
-Overfull \hbox (10.85999pt too wide) in paragraph at lines 179--186
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 181--188
 []
  []
 
 
-Overfull \hbox (6.54167pt too wide) in paragraph at lines 179--186
+Overfull \hbox (6.54167pt too wide) in paragraph at lines 181--188
 \OML/cmm/m/it/10 '$
  []
 
 ! Undefined control sequence.
 <write> ...Reference `fig:LidarVertical' on page \thepage 
                                                   \space undefined\on@line .
-l.187 ...hält. In Abbildung \ref{fig:LidarVertical}
+l.189 ...hält. In Abbildung \ref{fig:LidarVertical}
                                                    ist die seitliche Sicht a...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12391,15 +12559,15 @@ and I'll forget about whatever was undefined.
 
 
 LaTeX Warning: Reference `fig:LidarVertical' on page  undefined on input line 18
-7.
+9.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 187--188
+Overfull \hbox (20.0pt too wide) in paragraph at lines 189--190
 []Diese
  []
 
 
-Overfull \hbox (10.85999pt too wide) in paragraph at lines 187--188
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 189--190
 []
  []
 
@@ -12410,14 +12578,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.189 \begin{figure}
+l.191 \begin{figure}
                   %
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Undefined control sequence.
-l.191     \includegraphics
+l.193     \includegraphics
                         [width=14cm]{LidarVerticalTheta}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12432,7 +12600,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.192     \caption
+l.194     \caption
                 {Seitliche Sicht auf eine LiDAR-Messung mit mehreren, verita...
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -12441,7 +12609,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Undefined control sequence.
 <write> ... Warning: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.192 ...mmt aus der Arbeit \cite{bib:FastGroundSeg}
+l.194 ...mmt aus der Arbeit \cite{bib:FastGroundSeg}
                                                    und wurde durch die Einze...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12450,7 +12618,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `bib:FastGroundSeg' on page  undefined on input line 192
+LaTeX Warning: Citation `bib:FastGroundSeg' on page  undefined on input line 194
 .
 
 
@@ -12460,79 +12628,79 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.194 \end{figure}
+l.196 \end{figure}
                 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (5.43pt too wide) in paragraph at lines 191--195
+Overfull \hbox (5.43pt too wide) in paragraph at lines 193--197
 [[]]
  []
 
 
-Overfull \hbox (4.97223pt too wide) in paragraph at lines 191--195
+Overfull \hbox (4.97223pt too wide) in paragraph at lines 193--197
 \OML/cmm/m/it/10 $
  []
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 196--197
+Overfull \hbox (20.0pt too wide) in paragraph at lines 198--199
 []Wie
  []
 
 
-Overfull \hbox (46.64001pt too wide) in paragraph at lines 196--197
+Overfull \hbox (46.64001pt too wide) in paragraph at lines 198--199
 \TU/lmr/m/it/10 Sphärische
  []
 
 
-Overfull \hbox (15.87001pt too wide) in paragraph at lines 196--197
+Overfull \hbox (15.87001pt too wide) in paragraph at lines 198--199
 \TU/lmr/m/it/10 Ko-
  []
 
 
-Overfull \hbox (12.91pt too wide) in paragraph at lines 196--197
+Overfull \hbox (12.91pt too wide) in paragraph at lines 198--199
 \TU/lmr/m/it/10 or-
  []
 
 
-Overfull \hbox (11.76001pt too wide) in paragraph at lines 196--197
+Overfull \hbox (11.76001pt too wide) in paragraph at lines 198--199
 \TU/lmr/m/it/10 di-
  []
 
 
-Overfull \hbox (27.85pt too wide) in paragraph at lines 196--197
+Overfull \hbox (27.85pt too wide) in paragraph at lines 198--199
 \TU/lmr/m/it/10 naten-
  []
 
 
-Overfull \hbox (16.62pt too wide) in paragraph at lines 196--197
+Overfull \hbox (16.62pt too wide) in paragraph at lines 198--199
 \TU/lmr/m/it/10 sys-
  []
 
 
-Overfull \hbox (16.1pt too wide) in paragraph at lines 196--197
+Overfull \hbox (16.1pt too wide) in paragraph at lines 198--199
 \TU/lmr/m/it/10 tem
  []
 
 
-Overfull \hbox (4.78937pt too wide) in paragraph at lines 196--197
+Overfull \hbox (4.78937pt too wide) in paragraph at lines 198--199
 \OML/cmm/m/it/10 r$
  []
 
 
-Overfull \hbox (6.54167pt too wide) in paragraph at lines 196--197
+Overfull \hbox (6.54167pt too wide) in paragraph at lines 198--199
 \OML/cmm/m/it/10 '$\nullfont )
  []
 
 
-Overfull \hbox (4.97223pt too wide) in paragraph at lines 196--197
+Overfull \hbox (4.97223pt too wide) in paragraph at lines 198--199
 \OML/cmm/m/it/10 $\nullfont ). 
  []
 
 ! Undefined control sequence.
-l.198 Nimmt man den Punkt \glqq
+l.200 Nimmt man den Punkt \glqq
                               1\grqq{} aus der Abbildung \ref{fig:LidarVerti...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12541,7 +12709,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.198 Nimmt man den Punkt \glqq 1\grqq
+l.200 Nimmt man den Punkt \glqq 1\grqq
                                     {} aus der Abbildung \ref{fig:LidarVerti...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12552,7 +12720,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <write> ...Reference `fig:LidarVertical' on page \thepage 
                                                   \space undefined\on@line .
-l.198 ...} aus der Abbildung \ref{fig:LidarVertical}
+l.200 ...} aus der Abbildung \ref{fig:LidarVertical}
                                                    als Beispiel, entspräche...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12561,11 +12729,11 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `fig:LidarVertical' on page  undefined on input line 19
-8.
+LaTeX Warning: Reference `fig:LidarVertical' on page  undefined on input line 20
+0.
 
 ! Undefined control sequence.
-l.198 ...er roten Linie an, die den Sensor und \glqq
+l.200 ...er roten Linie an, die den Sensor und \glqq
                                                    1\grqq{} verbindet. Diese...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12574,7 +12742,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.198 ...n Linie an, die den Sensor und \glqq 1\grqq
+l.200 ...n Linie an, die den Sensor und \glqq 1\grqq
                                                   {} verbindet. Diese rote L...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12585,7 +12753,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <write> ...rning: Reference `fig:Lidar2' on page \thepage 
                                                   \space undefined\on@line .
-l.198 ...l. $\varphi$ in Abbildung \ref {fig:Lidar2}
+l.200 ...l. $\varphi$ in Abbildung \ref {fig:Lidar2}
                                                   ). Dieser wird vom Sensor ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12594,10 +12762,10 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `fig:Lidar2' on page  undefined on input line 198.
+LaTeX Warning: Reference `fig:Lidar2' on page  undefined on input line 200.
 
 ! Undefined control sequence.
-l.198 ...nen Abstand $r$ zum Sensor, der Punkt \glqq
+l.200 ...nen Abstand $r$ zum Sensor, der Punkt \glqq
                                                    1\grqq{} genau im Raum de...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12606,7 +12774,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.198 ...tand $r$ zum Sensor, der Punkt \glqq 1\grqq
+l.200 ...tand $r$ zum Sensor, der Punkt \glqq 1\grqq
                                                   {} genau im Raum definiert...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12615,87 +12783,13 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 198--199
-[]Nimmt
- []
-
-
-Overfull \hbox (10.85999pt too wide) in paragraph at lines 198--199
-[]
- []
-
-
-Overfull \hbox (4.97223pt too wide) in paragraph at lines 198--199
-\OML/cmm/m/it/10 $
- []
-
-
-Overfull \hbox (6.54167pt too wide) in paragraph at lines 198--199
-\OML/cmm/m/it/10 '$
- []
-
-
-Overfull \hbox (10.85999pt too wide) in paragraph at lines 198--199
-[]).
- []
-
-
-Overfull \hbox (4.97223pt too wide) in paragraph at lines 198--199
-\OML/cmm/m/it/10 $
- []
-
-
-Overfull \hbox (6.54167pt too wide) in paragraph at lines 198--199
-\OML/cmm/m/it/10 '$
- []
-
-
-Overfull \hbox (4.78937pt too wide) in paragraph at lines 198--199
-\OML/cmm/m/it/10 r$
- []
-
-! Undefined control sequence.
-<write> ...ing: Reference `eq:SphToKart' on page \thepage 
-                                                  \space undefined\on@line .
-l.200 ...ten durch die Formeln in \ref{eq:SphToKart}
-                                                   berechnet werden. Auch hi...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-LaTeX Warning: Reference `eq:SphToKart' on page  undefined on input line 200.
-
-
 Overfull \hbox (20.0pt too wide) in paragraph at lines 200--201
-[]Viele
- []
-
-
-Overfull \hbox (5.71527pt too wide) in paragraph at lines 200--201
-\OML/cmm/m/it/10 x$\nullfont -
- []
-
-
-Overfull \hbox (5.2616pt too wide) in paragraph at lines 200--201
-\OML/cmm/m/it/10 y$\nullfont -
- []
-
-
-Overfull \hbox (5.0903pt too wide) in paragraph at lines 200--201
-\OML/cmm/m/it/10 z$\nullfont -
+[]Nimmt
  []
 
 
 Overfull \hbox (10.85999pt too wide) in paragraph at lines 200--201
 []
- []
-
-
-Overfull \hbox (4.78937pt too wide) in paragraph at lines 200--201
-\OML/cmm/m/it/10 r$
  []
 
 
@@ -12709,13 +12803,87 @@ Overfull \hbox (6.54167pt too wide) in paragraph at lines 200--201
  []
 
 
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 200--201
+[]).
+ []
+
+
+Overfull \hbox (4.97223pt too wide) in paragraph at lines 200--201
+\OML/cmm/m/it/10 $
+ []
+
+
+Overfull \hbox (6.54167pt too wide) in paragraph at lines 200--201
+\OML/cmm/m/it/10 '$
+ []
+
+
+Overfull \hbox (4.78937pt too wide) in paragraph at lines 200--201
+\OML/cmm/m/it/10 r$
+ []
+
+! Undefined control sequence.
+<write> ...ing: Reference `eq:SphToKart' on page \thepage 
+                                                  \space undefined\on@line .
+l.202 ...ten durch die Formeln in \ref{eq:SphToKart}
+                                                   berechnet werden. Auch hi...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `eq:SphToKart' on page  undefined on input line 202.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 202--203
+[]Viele
+ []
+
+
+Overfull \hbox (5.71527pt too wide) in paragraph at lines 202--203
+\OML/cmm/m/it/10 x$\nullfont -
+ []
+
+
+Overfull \hbox (5.2616pt too wide) in paragraph at lines 202--203
+\OML/cmm/m/it/10 y$\nullfont -
+ []
+
+
+Overfull \hbox (5.0903pt too wide) in paragraph at lines 202--203
+\OML/cmm/m/it/10 z$\nullfont -
+ []
+
+
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 202--203
+[]
+ []
+
+
+Overfull \hbox (4.78937pt too wide) in paragraph at lines 202--203
+\OML/cmm/m/it/10 r$
+ []
+
+
+Overfull \hbox (4.97223pt too wide) in paragraph at lines 202--203
+\OML/cmm/m/it/10 $
+ []
+
+
+Overfull \hbox (6.54167pt too wide) in paragraph at lines 202--203
+\OML/cmm/m/it/10 '$
+ []
+
+
 ! LaTeX Error: Environment subequations undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.202 \begin{subequations}
+l.204 \begin{subequations}
                         
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -12728,14 +12896,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.203 \begin{align}
+l.205 \begin{align}
                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Misplaced alignment tab character &.
-l.204         &
+l.206         &
              x = r\sin\theta\cos\varphi \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -12747,7 +12915,7 @@ might try typing `S' now just to see what is salvageable.
 ! Missing $ inserted.
 <inserted text> 
 $
-l.204         &x = r\sin
+l.206         &x = r\sin
                       \theta\cos\varphi \\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -12755,7 +12923,7 @@ you left one out. Proceed, with fingers crossed.
 ! Misplaced alignment tab character &.
 <recently read> &
  
-l.205 		&
+l.207 		&
        y = r\sin\theta\sin\varphi \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -12767,7 +12935,7 @@ might try typing `S' now just to see what is salvageable.
 ! Misplaced alignment tab character &.
 <recently read> &
  
-l.206 		&
+l.208 		&
        z = r\sin\theta
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -12783,7 +12951,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.207 \end{align}
+l.209 \end{align}
                
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -12792,7 +12960,7 @@ or  <return>  to continue without it.
 ! Missing $ inserted.
 <inserted text> 
 $
-l.207 \end{align}
+l.209 \end{align}
                
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -12807,46 +12975,46 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.209 \end{subequations}
+l.211 \end{subequations}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 204--210
+Overfull \hbox (20.0pt too wide) in paragraph at lines 206--212
 []x
  []
 
 
-Overfull \hbox (42.18048pt too wide) in paragraph at lines 204--210
+Overfull \hbox (42.18048pt too wide) in paragraph at lines 206--212
 r$[] \OML/cmm/m/it/10  [] '[] 
  []
 
 
-Overfull \hbox (15.81711pt too wide) in paragraph at lines 204--210
+Overfull \hbox (15.81711pt too wide) in paragraph at lines 206--212
 \OML/cmm/m/it/10 y \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (47.52538pt too wide) in paragraph at lines 204--210
+Overfull \hbox (47.52538pt too wide) in paragraph at lines 206--212
 \OML/cmm/m/it/10 r []  [] '[] 
  []
 
 
-Overfull \hbox (15.64581pt too wide) in paragraph at lines 204--210
+Overfull \hbox (15.64581pt too wide) in paragraph at lines 206--212
 \OML/cmm/m/it/10 z \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (25.37265pt too wide) in paragraph at lines 204--210
+Overfull \hbox (25.37265pt too wide) in paragraph at lines 206--212
 \OML/cmm/m/it/10 r [] $
  []
 
 ! Undefined control sequence.
 <write> ...g: Reference `sec:Annotation' on page \thepage 
                                                   \space undefined\on@line .
-l.211 ...Annotation aus Kapitel \ref{sec:Annotation}
+l.213 ...Annotation aus Kapitel \ref{sec:Annotation}
                                                   ). Mit den annotierten Dat...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12855,12 +13023,12 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `sec:Annotation' on page  undefined on input line 211.
+LaTeX Warning: Reference `sec:Annotation' on page  undefined on input line 213.
 
 ! Undefined control sequence.
 <write> ... Warning: Reference `sec:KNN' on page \thepage 
                                                   \space undefined\on@line .
-l.211 ...neuronale Netze (vgl. Kapitel \ref{sec:KNN}
+l.213 ...neuronale Netze (vgl. Kapitel \ref{sec:KNN}
                                                   ), lernen welche Zusammenh...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12869,20 +13037,20 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Reference `sec:KNN' on page  undefined on input line 211.
+LaTeX Warning: Reference `sec:KNN' on page  undefined on input line 213.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 211--212
+Overfull \hbox (20.0pt too wide) in paragraph at lines 213--214
 []Durch
  []
 
 
-Overfull \hbox (10.85999pt too wide) in paragraph at lines 211--212
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 213--214
 []).
  []
 
 
-Overfull \hbox (10.85999pt too wide) in paragraph at lines 211--212
+Overfull \hbox (10.85999pt too wide) in paragraph at lines 213--214
 []),
  []
 
@@ -12895,13 +13063,13 @@ Overfull \hbox (10.85999pt too wide) in paragraph at lines 211--212
 
 
 Here is how much of LuaTeX's memory you used:
- 75 strings out of 494456
- 125007,89155 words of node,token memory allocated 105696 words of node memory still in use:
-   289 hlist, 1 vlist, 1 rule, 61 disc, 28 local_par, 1 dir, 23 math, 2301 glue,
- 47 kern, 136 penalty, 12039 glyph, 191 attribute, 35 glue_spec, 191 attribute_l
+ 78 strings out of 494456
+ 125007,89155 words of node,token memory allocated 106149 words of node memory still in use:
+   299 hlist, 1 vlist, 1 rule, 61 disc, 28 local_par, 1 dir, 23 math, 2315 glue,
+ 47 kern, 137 penalty, 12073 glyph, 197 attribute, 35 glue_spec, 197 attribute_l
 ist, 15 write nodes
-   avail lists: 1:1,2:200,3:68,4:148,5:88,6:15,7:161,8:33,9:117,10:147
- 4314 multiletter control sequences out of 65536+200000
+   avail lists: 1:1,2:188,3:67,4:148,5:88,6:15,7:161,8:33,9:107,10:147
+ 4317 multiletter control sequences out of 65536+200000
  27 fonts using 1608167 bytes
  18i,4n,21p,1322b,231s stack positions out of 5000i,500n,10000p,200000b,50000s
 !  ==> Fatal error occurred, no output PDF file produced!

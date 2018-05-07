@@ -286,7 +286,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Eye Blink Effect\Scripts\BlinkEffect.cs" />
-    <Compile Include="Assets\MainMenu_Demo.cs" />
     <Compile Include="Assets\OculusPlatform\Scripts\AchievementType.cs" />
     <Compile Include="Assets\OculusPlatform\Scripts\AndroidPlatform.cs" />
     <Compile Include="Assets\OculusPlatform\Scripts\ApplicationOptions.cs" />
@@ -483,6 +482,15 @@
     <Compile Include="Assets\OwnScripts\PlatformManager.cs" />
     <Compile Include="Assets\OwnScripts\ReferenceHandler.cs" />
     <Compile Include="Assets\OwnScripts\SessionHandler.cs" />
+    <Compile Include="Assets\OwnScripts\Tutorial\Step1_UiInteraction.cs" />
+    <Compile Include="Assets\OwnScripts\Tutorial\Step2_Labeling_LabelClass.cs" />
+    <Compile Include="Assets\OwnScripts\Tutorial\Step3_Labeling_PointerLabeler.cs" />
+    <Compile Include="Assets\OwnScripts\Tutorial\Step4_Labeling_ClusterLabeling.cs" />
+    <Compile Include="Assets\OwnScripts\Tutorial\Step5_Labeling_TouchLabeling.cs" />
+    <Compile Include="Assets\OwnScripts\Tutorial\Step6_InGameMenu.cs" />
+    <Compile Include="Assets\OwnScripts\Tutorial\Step7_MovementFreeFly.cs" />
+    <Compile Include="Assets\OwnScripts\Tutorial\Step8_MovementTeleport.cs" />
+    <Compile Include="Assets\OwnScripts\Tutorial\TutorialMenuManager.cs" />
     <Compile Include="Assets\OwnScripts\Tutorial\TutorialSessionHandler.cs" />
     <Compile Include="Assets\OwnScripts\Tutorial\TutorialStep.cs" />
     <Compile Include="Assets\OwnScripts\UI\AppMenu_Labeling.cs" />
@@ -495,6 +503,7 @@
     <Compile Include="Assets\OwnScripts\UI\LabelClassItem.cs" />
     <Compile Include="Assets\OwnScripts\UI\LoadingScreen.cs" />
     <Compile Include="Assets\OwnScripts\UI\MainMenu_CreateSession.cs" />
+    <Compile Include="Assets\OwnScripts\UI\MainMenu_Demo.cs" />
     <Compile Include="Assets\OwnScripts\UI\MainMenu_Main.cs" />
     <Compile Include="Assets\OwnScripts\UI\Menu.cs" />
     <Compile Include="Assets\OwnScripts\UI\MenuManager.cs" />
@@ -513,15 +522,6 @@
     <Compile Include="Assets\Scripts\Draggable.cs" />
     <Compile Include="Assets\Scripts\ExampleColorReceiver.cs" />
     <Compile Include="Assets\Scripts\HSBColor.cs" />
-    <Compile Include="Assets\Step1_UiInteraction.cs" />
-    <Compile Include="Assets\Step2_Labeling_LabelClass.cs" />
-    <Compile Include="Assets\Step3_Labeling_PointerLabeler.cs" />
-    <Compile Include="Assets\Step4_Labeling_ClusterLabeling.cs" />
-    <Compile Include="Assets\Step5_Labeling_TouchLabeling.cs" />
-    <Compile Include="Assets\Step6_InGameMenu.cs" />
-    <Compile Include="Assets\Step7_MovementFreeFly.cs" />
-    <Compile Include="Assets\Step8_MovementTeleport.cs" />
-    <Compile Include="Assets\TutorialMenuManager.cs" />
     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\MultiKeyDictionary.cs" />
     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\Reporter.cs" />
     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\ReporterGUI.cs" />

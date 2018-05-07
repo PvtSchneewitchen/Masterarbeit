@@ -68,7 +68,13 @@ public static class PcdAddon
 
                 Vector3 vector = GetPositionFromPCDLine(line);
                 if (vector != Vector3.zero)
+                {
+                    vector = new Vector3(vector.x, -vector.y, vector.z);
+                    vector = Quaternion.Euler(0, 0, 90) * vector;
+
                     coordinatesFromFile.Add(vector);
+                }
+
             }
             outputCoordinates.Add(coordinatesFromFile);
         }

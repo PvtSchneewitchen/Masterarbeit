@@ -46,10 +46,10 @@ public static class GroundPointSegmentation
                 Vector3 planeNormal = new Vector3((float)estimatedGroundPlane.Normal.x, (float)estimatedGroundPlane.Normal.y, (float)estimatedGroundPlane.Normal.z);
                 Plane estimatedGroundPlaneUnity = new Plane(planeNormal, planeOriginPoint);
 
-                if (j == covarIterations - 1)
-                {
-                    Util.DrawPlane(planeOriginPoint, planeNormal, planeNormal.magnitude * 2, i);
-                }
+                //if (j == covarIterations - 1)
+                //{
+                //    Util.DrawPlane(planeOriginPoint, planeNormal, planeNormal.magnitude * 2, i);
+                //}
 
 
                 for (int k = 0; k < segmentData.Count; k++)

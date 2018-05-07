@@ -11,9 +11,9 @@
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {VIVED Displayaufbau}}}{16}{subfigure.5.1}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Sicht eines VIVED Benutzers}}}{16}{subfigure.5.2}
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Sicht auf einen VIVED Benutzer}}}{16}{subfigure.5.3}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Rift Displayaufbau}}}{16}{subfigure.5.4}
-\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Sicht auf einen Rift Benutzer}}}{16}{subfigure.5.5}
-\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {Sicht eines Rift Benutzers}}}{16}{subfigure.5.6}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Rift Displayaufbau \cite {bib:RiftReview}}}}{16}{subfigure.5.4}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Sicht eines Rift Benutzers \cite {bib:AvatarHands}}}}{16}{subfigure.5.5}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {Sicht auf einen Rift Benutzer \cite {bib:RiftUser}}}}{16}{subfigure.5.6}
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Ablauf einer LiDAR-Messung von einem Sensor, der die Messimpulse im Uhrzeigersinn abgibt. Die Bilder stammen von \cite {bib:LidarPictures} und \ref {fig:Lidar2} wurde um den Winkel $\varphi $ erweitert.\relax }}{18}{figure.caption.14}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{18}{subfigure.6.1}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{18}{subfigure.6.2}
@@ -24,8 +24,8 @@
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Microsoft Hololens \acrshort {acr:AR}-Brille}}}{22}{subfigure.1.1}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Meta 2 \acrshort {acr:AR}-Brille}}}{22}{subfigure.1.2}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Die zwei potentiellen \acrshort {acr:VR}-Brillen\relax }}{26}{figure.caption.17}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {HTC Vive \acrshort {acr:AR}-Brille mit Controllern}}}{26}{subfigure.2.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Oculus Rift \acrshort {acr:VR}-Brille mit Controllern}}}{26}{subfigure.2.2}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {HTC Vive \acrshort {acr:VR}-Brille mit Controllern \cite {bib:VivePic}}}}{26}{subfigure.2.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Oculus Rift \acrshort {acr:VR}-Brille mit Controllern \cite {bib:OculusPic}}}}{26}{subfigure.2.2}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Unity Editor, der C.LABEL-VR im Play Mode ausführt.\relax }}{31}{figure.caption.19}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces \glslink {glos:Workflow} in C.LABEL-VR vom Import bis zum Export\relax }}{36}{figure.caption.20}

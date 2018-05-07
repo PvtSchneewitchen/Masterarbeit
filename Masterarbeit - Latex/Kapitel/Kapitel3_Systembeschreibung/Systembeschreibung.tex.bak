@@ -54,9 +54,9 @@ Für das \glslink{glos:Labeling}{Klassifizieren} im dreidimensionalen Raum ist e
 
 \begin{figure}%
     \centering
-    \subfloat[HTC Vive \acrshort{acr:AR}-Brille mit Controllern]{{\includegraphics[width=5cm]{Vive}\label{fig:Vive}}}%
+    \subfloat[HTC Vive \acrshort{acr:VR}-Brille mit Controllern \cite{bib:VivePic}]{{\includegraphics[width=5cm]{Vive}\label{fig:Vive}}}%
     \qquad
-    \subfloat[Oculus Rift \acrshort{acr:VR}-Brille mit Controllern]{{\includegraphics[width=3cm]{Oculus}\label{fig:Oculus}}}%
+    \subfloat[Oculus Rift \acrshort{acr:VR}-Brille mit Controllern \cite{bib:OculusPic}]{{\includegraphics[width=3cm]{Oculus}\label{fig:Oculus}}}%
     \caption{Die zwei potentiellen \acrshort{acr:VR}-Brillen}\label{fig:VR-Brillen}%
 \end{figure}
 
