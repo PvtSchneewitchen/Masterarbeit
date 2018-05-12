@@ -56,7 +56,7 @@ public class Movement : MonoBehaviour
         }
         else if (MovementOptions.MoveMode == Util.MovementMode.TeleportMode)
         {
-            UpdateMovement_SicknessPrevention();
+            UpdateMovement_TeleportMode();
         }
     }
 
@@ -193,7 +193,7 @@ public class Movement : MonoBehaviour
         }
         else
         {
-            //the speed decreases as long as the speed value is bigger than the deceleration value which is the smalles unit which is subtracted from the speed per frame
+            //the speed decreases as long as the speed value is bigger than the deceleration value which is the smallest unit which is subtracted from the speed per frame
             if (Mathf.Abs(actualSpeed_inp) > deceleration_inp)
             {
                 actualSpeed_inp -= (actualSpeed_inp > 0) ? deceleration_inp : -deceleration_inp;
@@ -235,7 +235,7 @@ public class Movement : MonoBehaviour
     /// <summary>
     /// This method checks the stick input if a stick is pressed and due to the input it initiates a teleport of the users position or rotation
     /// </summary>
-    private void UpdateMovement_SicknessPrevention()
+    private void UpdateMovement_TeleportMode()
     {
         if (_iStickShiftSemaphor == 1)
         {

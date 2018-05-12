@@ -91,13 +91,13 @@ public class Export
                 for (int j = 0; j < pointList.Count; j++)
                 {
                     CustomAttributes attr = pointList[j].GetComponent<CustomAttributes>();
-                    Vector3 position = UnityToPcdCs * attr._pointPosition;
+                    Vector3 position = UnityToPcdCs * attr.PointPosition;
                     position.x *= -1;
 
                     string lineContent = position.x.ToString() + " "
                                             + (-position.y).ToString() + " "
                                                 + position.z.ToString() + " "
-                                                     + attr._label.ToString();
+                                                     + attr.Label.ToString();
 
                     pcdFileWriter.WriteLine(lineContent);
                 }

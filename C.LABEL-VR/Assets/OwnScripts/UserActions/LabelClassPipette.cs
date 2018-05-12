@@ -43,8 +43,8 @@ class LabelClassPipette : MonoBehaviour
                 var attr = collidedObject.GetComponent<CustomAttributes>();
                 if(attr)
                 {
-                    if(Labeling.currentLabelClassID != attr._label)
-                        Labeling.SetCurrentLabelClassID(attr._label);
+                    if(Labeling.currentLabelClassID != attr.Label)
+                        Labeling.SetCurrentLabelClassID(attr.Label);
                 }
             }
         }

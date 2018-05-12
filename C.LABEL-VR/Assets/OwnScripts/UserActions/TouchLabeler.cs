@@ -33,7 +33,7 @@ public class TouchLabeler : MonoBehaviour
         if (other.gameObject.GetComponent<CustomAttributes>() && TouchLabelingEnabled)
         {
             CustomAttributes colidedObjectAttributes = other.gameObject.GetComponent<CustomAttributes>();
-            if (colidedObjectAttributes._label != Labeling.currentLabelClassID)
+            if (colidedObjectAttributes.Label != Labeling.currentLabelClassID)
             {
                 if (gameObject.transform.parent.name.Contains("Left"))
                 {
@@ -44,7 +44,7 @@ public class TouchLabeler : MonoBehaviour
                     OVRHaptics.RightChannel.Queue(_vibration);
                 }
 
-                colidedObjectAttributes._label = Labeling.currentLabelClassID;
+                colidedObjectAttributes.Label = Labeling.currentLabelClassID;
             }
         }
     }

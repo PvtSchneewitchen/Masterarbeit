@@ -80,14 +80,14 @@ public class PointerLabeler : MonoBehaviour
                         return;
 
                     //Clustering
-                    if (collidedObject.GetComponent<CustomAttributes>()._label != Labeling.currentLabelClassID && ClusterLabelingEnabled)
+                    if (collidedObject.GetComponent<CustomAttributes>().Label != Labeling.currentLabelClassID && ClusterLabelingEnabled)
                     {
                         List<GameObject> clusteredObjects = Clustering.GetClusterByRadiusSearch(collidedObject, 5.5f, false);
                         for (int i = 0; i < clusteredObjects.Count; i++)
                         {
-                            if (clusteredObjects[i].GetComponent<CustomAttributes>()._label != Labeling.currentLabelClassID)
+                            if (clusteredObjects[i].GetComponent<CustomAttributes>().Label != Labeling.currentLabelClassID)
                             {
-                                clusteredObjects[i].GetComponent<CustomAttributes>()._label = Labeling.currentLabelClassID;
+                                clusteredObjects[i].GetComponent<CustomAttributes>().Label = Labeling.currentLabelClassID;
                             }
                         }
                     }
@@ -110,9 +110,9 @@ public class PointerLabeler : MonoBehaviour
 
                         if (attr)
                         {
-                            if (attr._label != Labeling.currentLabelClassID)
+                            if (attr.Label != Labeling.currentLabelClassID)
                             {
-                                attr._label = Labeling.currentLabelClassID;
+                                attr.Label = Labeling.currentLabelClassID;
                             }
                         }
                     }

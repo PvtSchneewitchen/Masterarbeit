@@ -200,7 +200,7 @@ public static class Clustering
             {
                 GameObject currentPoint = collidersInRadius[j].gameObject;
 
-                if (!currentPoint.name.Contains("Labelpoint") || !includeGround && currentPoint.GetComponent<CustomAttributes>()._groundPoint == 1)
+                if (!currentPoint.name.Contains("Labelpoint") || !includeGround && currentPoint.GetComponent<CustomAttributes>().GroundPoint == 1)
                 {
                     continue;
                 }
@@ -252,7 +252,7 @@ public static class Clustering
         for (int i = 0; i < numberOfPoints; i++)
         {
             attributes.Add(points_inp[i].GetComponent<CustomAttributes>());
-            coordinatesOfPoints[i] = new double[] { attributes[i]._pointPosition.x, attributes[i]._pointPosition.y, attributes[i]._pointPosition.z };
+            coordinatesOfPoints[i] = new double[] { attributes[i].PointPosition.x, attributes[i].PointPosition.y, attributes[i].PointPosition.z };
         }
 
         return coordinatesOfPoints;

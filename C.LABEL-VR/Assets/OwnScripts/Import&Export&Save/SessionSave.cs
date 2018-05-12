@@ -92,9 +92,9 @@ public class SessionSave
                     _positionsX[i].Add(pos.x);
                     _positionsY[i].Add(pos.y);
                     _positionsZ[i].Add(pos.z);
-                    _IDs[i].Add(attr._ID);
-                    _Label[i].Add(attr._label);
-                    _groundPoint[i].Add(attr._groundPoint);
+                    _IDs[i].Add(attr.ID);
+                    _Label[i].Add(attr.Label);
+                    _groundPoint[i].Add(attr.GroundPoint);
                 }
             }
         }

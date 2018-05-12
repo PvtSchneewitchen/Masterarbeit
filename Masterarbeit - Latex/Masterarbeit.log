@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.06.2 (MiKTeX 2.9.6500 64-bit)  (format=lualatex 2018.5.6)  11 MAY 2018 23:50
+This is LuaTeX, Version 1.06.2 (MiKTeX 2.9.6500 64-bit)  (format=lualatex 2018.5.6)  12 MAY 2018 23:12
  restricted system commands enabled.
 **Masterarbeit.tex
 (./Masterarbeit.tex
@@ -33,7 +33,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.522 seconds
+luaotfload | main : initialization completed in 0.523 seconds
 Babel <3.15> and hyphenation patterns for 1 language(s) loaded.
 
 ("C:/Users/Patrick/AppData/Local/Programs/MiKTeX 2.9/tex/latex/koma-script/scrr
@@ -1360,7 +1360,7 @@ Class scrreprt Warning: Usage of package `titlesec' together
 (scrreprt)              the extended optional argument of the section
 (scrreprt)              commands.
 (scrreprt)              Nevertheless, using requested
-(scrreprt)              package `titlesec' on input line 73.
+(scrreprt)              package `titlesec' on input line 75.
 
 
 ("C:/Users/Patrick/AppData/Local/Programs/MiKTeX 2.9/tex/latex/titlesec/titlese
@@ -1399,7 +1399,7 @@ Package titlesec Warning: Non standard sectioning command detected
 )
 
 Class scrreprt Warning: Activating an ugly workaround for a missing
-(scrreprt)              feature of package `titlesec` on input line 73.
+(scrreprt)              feature of package `titlesec` on input line 75.
 
 
 ("C:/Users/Patrick/AppData/Local/Programs/MiKTeX 2.9/tex/latex/pgf/frontendlaye
@@ -1762,7 +1762,7 @@ ata/Local/MiKTeX/2.9/luatex-cache/generic/fonts/otl/minionpro-it.luc)
 . - 'bold italic small caps'  (bx/itsc) with NFSS spec.:
 . <->"MinionPro/BI:mode=node;script=latn;language=DFLT;+tlig;+smcp;"
 .................................................
-LaTeX Info: Redefining \rmfamily on input line 85.
+LaTeX Info: Redefining \rmfamily on input line 87.
 (load luc: C:/Users/Patrick/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts/
 otl/myriadpro-regular.luc)
 \g__fontspec_family_MyriadPro_int=\count373
@@ -1803,7 +1803,7 @@ luaotfload | aux : no font with id 39
 . <->"MyriadPro/BI:mode=node;script=latn;language=DFLT;+tlig;"
 . - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
 .................................................
-LaTeX Info: Redefining \sffamily on input line 86.
+LaTeX Info: Redefining \sffamily on input line 88.
  (./GlosSymbAcr.tex)
 \@indexfile=\write4
 
@@ -1820,23 +1820,23 @@ LaTeX Warning: Label `sec:Annotation' multiply defined.
 )
 \openout1 = Masterarbeit.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Info: Redefining \microtypecontext on input line 94.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Info: Redefining \microtypecontext on input line 96.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1882,7 +1882,7 @@ Package grfext Info: Graphics extension search list:
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 \AtBeginShipoutBox=\box67
-Package hyperref Info: Link coloring OFF on input line 94.
+Package hyperref Info: Link coloring OFF on input line 96.
 
 ("C:/Users/Patrick/AppData/Local/Programs/MiKTeX 2.9/tex/latex/hyperref/nameref
 .sty"
@@ -1894,9 +1894,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count380
 )
-LaTeX Info: Redefining \ref on input line 94.
-LaTeX Info: Redefining \pageref on input line 94.
-LaTeX Info: Redefining \nameref on input line 94.
+LaTeX Info: Redefining \ref on input line 96.
+LaTeX Info: Redefining \pageref on input line 96.
+LaTeX Info: Redefining \nameref on input line 96.
  (./Masterarbeit.out) (./Masterarbeit.out)
 \@outlinefile=\write5
 
@@ -1906,7 +1906,7 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package caption Info: We need package `ragged2e' on input line 94.
+Package caption Info: We need package `ragged2e' on input line 96.
 
 ("C:/Users/Patrick/AppData/Local/Programs/MiKTeX 2.9/tex/latex/ms/ragged2e.sty"
 Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
@@ -1971,7 +1971,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `MyriadPro' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 130.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 132.
 
 ("C:/Users/Patrick/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1985,51 +1985,51 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmr' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 130.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 132.
 
 ("C:/Users/Patrick/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 130.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 132.
 
 
 ("C:/Users/Patrick/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 130.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 132.
 
 
 ("C:/Users/Patrick/AppData/Local/Programs/MiKTeX 2.9/tex/latex/lm/omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 130.
+(Font)              <17.28> on input line 132.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 130.
+(Font)              <12> on input line 132.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 130.
-<Main_Images/LogoCmore.png, id=162, pagebox=cropbox, 518.93875pt x 183.68625pt>
+(Font)              <10> on input line 132.
+<Main_Images/LogoCmore.png, id=166, pagebox=cropbox, 518.93875pt x 183.68625pt>
 File: Main_Images/LogoCmore.png Graphic file (type png)
 <use Main_Images/LogoCmore.png>
-Package luatex.def Info: Main_Images/LogoCmore.png  used on input line 130. on i
-nput line 130.
+Package luatex.def Info: Main_Images/LogoCmore.png  used on input line 132. on i
+nput line 132.
 Package luatex.def Info: Requested size: 142.26378pt x 50.3555pt on input line 1
-30.
-<Main_Images/LogoIsse.png, id=163, pagebox=cropbox, 64.0794pt x 43.8438pt>
+32.
+<Main_Images/LogoIsse.png, id=167, pagebox=cropbox, 64.0794pt x 43.8438pt>
 File: Main_Images/LogoIsse.png Graphic file (type png)
 <use Main_Images/LogoIsse.png>
-Package luatex.def Info: Main_Images/LogoIsse.png  used on input line 130. on in
-put line 130.
+Package luatex.def Info: Main_Images/LogoIsse.png  used on input line 132. on in
+put line 132.
 Package luatex.def Info: Requested size: 85.35826pt x 58.40381pt on input line 1
-30.
+32.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 130.
+(babel)             in language  on input line 132.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 130.
+(babel)             in language  on input line 132.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 130.
+(babel)             in language  on input line 132.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 130.
+(babel)             in language  on input line 132.
 
 [1
 
@@ -2037,7 +2037,7 @@ Package babel Info: Redefining ngerman shorthand "~
 
 {C:/Users/Patrick/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}<./Main_Imag
 es/LogoCmore.png><./Main_Images/LogoIsse.png>]
-Package tocbasic Info: character protrusion at toc deactivated on input line 133
+Package tocbasic Info: character protrusion at toc deactivated on input line 135
 .
  (./Masterarbeit.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -2059,49 +2059,49 @@ Package babel Info: Redefining ngerman shorthand "~
 
 \openout6 = Masterarbeit.toc
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 135.
+(babel)             in language  on input line 137.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 135.
+(babel)             in language  on input line 137.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 135.
+(babel)             in language  on input line 137.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 135.
+(babel)             in language  on input line 137.
 
 [2]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 142.
+(babel)             in language  on input line 144.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 142.
+(babel)             in language  on input line 144.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 142.
+(babel)             in language  on input line 144.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 142.
+(babel)             in language  on input line 144.
  [3
 
 ]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 145.
+(babel)             in language  on input line 147.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 145.
+(babel)             in language  on input line 147.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 145.
+(babel)             in language  on input line 147.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 145.
+(babel)             in language  on input line 147.
  [4
 
 ]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 147.
+(babel)             in language  on input line 149.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 147.
+(babel)             in language  on input line 149.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 147.
+(babel)             in language  on input line 149.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 147.
+(babel)             in language  on input line 149.
  [5
 
 ]
-Package tocbasic Info: character protrusion at lof deactivated on input line 149
+Package tocbasic Info: character protrusion at lof deactivated on input line 151
 .
  (./Masterarbeit.lof
 
@@ -2112,13 +2112,13 @@ LaTeX Warning: Citation `bib:LidarPictures' on page vi undefined on input line 1
 7.
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 35.
+(babel)             in language  on input line 36.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 35.
+(babel)             in language  on input line 36.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 35.
+(babel)             in language  on input line 36.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 35.
+(babel)             in language  on input line 36.
 [6
 
 ])
@@ -2126,21 +2126,21 @@ Package babel Info: Redefining ngerman shorthand "~
 
 \openout7 = Masterarbeit.lof
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 163.
+(babel)             in language  on input line 165.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 163.
+(babel)             in language  on input line 165.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 163.
+(babel)             in language  on input line 165.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 163.
+(babel)             in language  on input line 165.
 
 warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 [1]
 chapter 1.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 163.
+(babel)             in language  on input line 165.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 163.
+(babel)             in language  on input line 165.
 
 Class scrreprt Warning: \float@addtolists detected!
 (scrreprt)              Implementation of \float@addtolist became
@@ -2166,7 +2166,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
  []
 
-<Kapitel/Kapitel1_Einleitung/Images/Punktwolke.png, id=332, pagebox=cropbox, 756
+<Kapitel/Kapitel1_Einleitung/Images/Punktwolke.png, id=341, pagebox=cropbox, 756
 .57657pt x 670.75594pt>
 File: Kapitel/Kapitel1_Einleitung/Images/Punktwolke.png Graphic file (type png)
 <use Kapitel/Kapitel1_Einleitung/Images/Punktwolke.png>
@@ -2255,7 +2255,7 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 60.
  [5]
-<Kapitel/Kapitel1_Einleitung/Images/LabelingMethoden.png, id=367, pagebox=cropbo
+<Kapitel/Kapitel1_Einleitung/Images/LabelingMethoden.png, id=376, pagebox=cropbo
 x, 836.3747pt x 177.66376pt>
 File: Kapitel/Kapitel1_Einleitung/Images/LabelingMethoden.png Graphic file (type
  png)
@@ -2266,19 +2266,19 @@ Package luatex.def Info: Requested size: 398.33858pt x 84.61617pt on input line
 62.
 )
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 166.
+(babel)             in language  on input line 168.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 166.
+(babel)             in language  on input line 168.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 166.
+(babel)             in language  on input line 168.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 166.
+(babel)             in language  on input line 168.
  [6<./Kapitel/Kapitel1_Einleitung/Images/LabelingMethoden.png>]
 chapter 2.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 166.
+(babel)             in language  on input line 168.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 166.
+(babel)             in language  on input line 168.
 (./Kapitel/Kapitel2_Grundlagen/Grundlagen.tex
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 5.
@@ -2298,7 +2298,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--17
 
  []
 
-<Kapitel/Kapitel2_Grundlagen/Images/MLCS.pdf, id=377, pagebox=cropbox, 1228.59pt
+<Kapitel/Kapitel2_Grundlagen/Images/MLCS.pdf, id=386, pagebox=cropbox, 1228.59pt
  x 794.97pt>
 File: Kapitel/Kapitel2_Grundlagen/Images/MLCS.pdf Graphic file (type pdf)
 <use Kapitel/Kapitel2_Grundlagen/Images/MLCS.pdf>
@@ -2335,7 +2335,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 29--30
 
  []
 
-<Kapitel/Kapitel2_Grundlagen/Images/Neurons.jpg, id=552, pagebox=cropbox, 853.18
+<Kapitel/Kapitel2_Grundlagen/Images/Neurons.jpg, id=561, pagebox=cropbox, 853.18
 75pt x 901.3675pt>
 File: Kapitel/Kapitel2_Grundlagen/Images/Neurons.jpg Graphic file (type jpg)
 <use Kapitel/Kapitel2_Grundlagen/Images/Neurons.jpg>
@@ -2354,7 +2354,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 38--39
 
  []
 
-<Kapitel/Kapitel2_Grundlagen/Images/Perceptron.png, id=553, pagebox=cropbox, 828
+<Kapitel/Kapitel2_Grundlagen/Images/Perceptron.png, id=562, pagebox=cropbox, 828
 .09375pt x 460.72125pt>
 File: Kapitel/Kapitel2_Grundlagen/Images/Perceptron.png Graphic file (type png)
 <use Kapitel/Kapitel2_Grundlagen/Images/Perceptron.png>
@@ -2398,7 +2398,7 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 68.
 [11]
-<Kapitel/Kapitel2_Grundlagen/Images/Bilderkennung.png, id=588, pagebox=cropbox, 
+<Kapitel/Kapitel2_Grundlagen/Images/Bilderkennung.png, id=597, pagebox=cropbox, 
 542.025pt x 308.65312pt>
 File: Kapitel/Kapitel2_Grundlagen/Images/Bilderkennung.png Graphic file (type pn
 g)
@@ -2493,7 +2493,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 142--143
 
  []
 
-<Kapitel/Kapitel2_Grundlagen/Images/FirstVrConcept.png, id=623, pagebox=cropbox,
+<Kapitel/Kapitel2_Grundlagen/Images/FirstVrConcept.png, id=632, pagebox=cropbox,
  590.205pt x 438.8897pt>
 File: Kapitel/Kapitel2_Grundlagen/Images/FirstVrConcept.png Graphic file (type p
 ng)
@@ -2502,7 +2502,7 @@ Package luatex.def Info: Kapitel/Kapitel2_Grundlagen/Images/FirstVrConcept.png
 used on input line 146. on input line 146.
 Package luatex.def Info: Requested size: 113.81102pt x 84.62883pt on input line 
 146.
-<Kapitel/Kapitel2_Grundlagen/Images/FirstVrUserView.png, id=624, pagebox=cropbox
+<Kapitel/Kapitel2_Grundlagen/Images/FirstVrUserView.png, id=633, pagebox=cropbox
 , 458.46281pt x 328.22626pt>
 File: Kapitel/Kapitel2_Grundlagen/Images/FirstVrUserView.png Graphic file (type 
 png)
@@ -2511,7 +2511,7 @@ Package luatex.def Info: Kapitel/Kapitel2_Grundlagen/Images/FirstVrUserView.png
  used on input line 148. on input line 148.
 Package luatex.def Info: Requested size: 113.81102pt x 81.4804pt on input line 1
 48.
-<Kapitel/Kapitel2_Grundlagen/Images/FirstVrOutsideView.png, id=625, pagebox=crop
+<Kapitel/Kapitel2_Grundlagen/Images/FirstVrOutsideView.png, id=634, pagebox=crop
 box, 523.9575pt x 361.35pt>
 File: Kapitel/Kapitel2_Grundlagen/Images/FirstVrOutsideView.png Graphic file (ty
 pe png)
@@ -2520,7 +2520,7 @@ Package luatex.def Info: Kapitel/Kapitel2_Grundlagen/Images/FirstVrOutsideView.p
 ng  used on input line 150. on input line 150.
 Package luatex.def Info: Requested size: 113.81102pt x 78.48822pt on input line 
 150.
-<Kapitel/Kapitel2_Grundlagen/Images/RiftConstruction.png, id=626, pagebox=cropbo
+<Kapitel/Kapitel2_Grundlagen/Images/RiftConstruction.png, id=635, pagebox=cropbo
 x, 867.99281pt x 554.07pt>
 File: Kapitel/Kapitel2_Grundlagen/Images/RiftConstruction.png Graphic file (type
  png)
@@ -2529,7 +2529,7 @@ Package luatex.def Info: Kapitel/Kapitel2_Grundlagen/Images/RiftConstruction.png
   used on input line 152. on input line 152.
 Package luatex.def Info: Requested size: 113.81102pt x 72.64879pt on input line 
 152.
-<Kapitel/Kapitel2_Grundlagen/Images/RiftAvatar.png, id=629, pagebox=cropbox, 321
+<Kapitel/Kapitel2_Grundlagen/Images/RiftAvatar.png, id=638, pagebox=cropbox, 321
 .2pt x 180.675pt>
 File: Kapitel/Kapitel2_Grundlagen/Images/RiftAvatar.png Graphic file (type png)
 <use Kapitel/Kapitel2_Grundlagen/Images/RiftAvatar.png>
@@ -2537,7 +2537,7 @@ Package luatex.def Info: Kapitel/Kapitel2_Grundlagen/Images/RiftAvatar.png  used
  on input line 154. on input line 154.
 Package luatex.def Info: Requested size: 113.81102pt x 64.01738pt on input line 
 154.
-<Kapitel/Kapitel2_Grundlagen/Images/RiftUser.png, id=632, pagebox=cropbox, 853.1
+<Kapitel/Kapitel2_Grundlagen/Images/RiftUser.png, id=641, pagebox=cropbox, 853.1
 875pt x 505.89pt>
 File: Kapitel/Kapitel2_Grundlagen/Images/RiftUser.png Graphic file (type png)
 <use Kapitel/Kapitel2_Grundlagen/Images/RiftUser.png>
@@ -2602,7 +2602,7 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 178.
 [17]
-<Kapitel/Kapitel2_Grundlagen/Images/Lidar1.png, id=678, pagebox=cropbox, 289.08p
+<Kapitel/Kapitel2_Grundlagen/Images/Lidar1.png, id=687, pagebox=cropbox, 289.08p
 t x 630.85687pt>
 File: Kapitel/Kapitel2_Grundlagen/Images/Lidar1.png Graphic file (type png)
 <use Kapitel/Kapitel2_Grundlagen/Images/Lidar1.png>
@@ -2610,7 +2610,7 @@ Package luatex.def Info: Kapitel/Kapitel2_Grundlagen/Images/Lidar1.png  used on
 input line 181. on input line 181.
 Package luatex.def Info: Requested size: 113.81102pt x 248.3627pt on input line 
 181.
-<Kapitel/Kapitel2_Grundlagen/Images/Lidar2Phi.png, id=679, pagebox=cropbox, 288.
+<Kapitel/Kapitel2_Grundlagen/Images/Lidar2Phi.png, id=688, pagebox=cropbox, 288.
 3272pt x 630.85687pt>
 File: Kapitel/Kapitel2_Grundlagen/Images/Lidar2Phi.png Graphic file (type png)
 <use Kapitel/Kapitel2_Grundlagen/Images/Lidar2Phi.png>
@@ -2618,7 +2618,7 @@ Package luatex.def Info: Kapitel/Kapitel2_Grundlagen/Images/Lidar2Phi.png  used
 on input line 183. on input line 183.
 Package luatex.def Info: Requested size: 113.81102pt x 249.01727pt on input line
  183.
-<Kapitel/Kapitel2_Grundlagen/Images/Lidar3.png, id=680, pagebox=cropbox, 287.574
+<Kapitel/Kapitel2_Grundlagen/Images/Lidar3.png, id=689, pagebox=cropbox, 287.574
 37pt x 631.60968pt>
 File: Kapitel/Kapitel2_Grundlagen/Images/Lidar3.png Graphic file (type png)
 <use Kapitel/Kapitel2_Grundlagen/Images/Lidar3.png>
@@ -2640,7 +2640,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 189--190
 
  []
 
-<Kapitel/Kapitel2_Grundlagen/Images/LidarVerticalTheta.png, id=684, pagebox=crop
+<Kapitel/Kapitel2_Grundlagen/Images/LidarVerticalTheta.png, id=693, pagebox=crop
 box, 892.83563pt x 288.3272pt>
 File: Kapitel/Kapitel2_Grundlagen/Images/LidarVerticalTheta.png Graphic file (ty
 pe png)
@@ -2675,19 +2675,19 @@ Package babel Info: Redefining ngerman shorthand "~
 
 [19<./Kapitel/Kapitel2_Grundlagen/Images/LidarVerticalTheta.png>])
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 169.
+(babel)             in language  on input line 171.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 169.
+(babel)             in language  on input line 171.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 169.
+(babel)             in language  on input line 171.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 169.
+(babel)             in language  on input line 171.
  [20]
 chapter 3.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 169.
+(babel)             in language  on input line 171.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 169.
+(babel)             in language  on input line 171.
 (./Kapitel/Kapitel3_Systembeschreibung/Systembeschreibung.tex
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 5.
@@ -2713,7 +2713,7 @@ Package babel Info: Redefining ngerman shorthand "~
 [21
 
 ]
-<Kapitel/Kapitel3_Systembeschreibung/Images/Hololens.jpg, id=732, pagebox=cropbo
+<Kapitel/Kapitel3_Systembeschreibung/Images/Hololens.jpg, id=741, pagebox=cropbo
 x, 754.82pt x 424.58624pt>
 File: Kapitel/Kapitel3_Systembeschreibung/Images/Hololens.jpg Graphic file (type
  jpg)
@@ -2722,7 +2722,7 @@ Package luatex.def Info: Kapitel/Kapitel3_Systembeschreibung/Images/Hololens.jpg
   used on input line 17. on input line 17.
 Package luatex.def Info: Requested size: 142.26378pt x 80.01787pt on input line 
 17.
-<Kapitel/Kapitel3_Systembeschreibung/Images/Meta2.jpg, id=735, pagebox=cropbox, 
+<Kapitel/Kapitel3_Systembeschreibung/Images/Meta2.jpg, id=744, pagebox=cropbox, 
 592.2125pt x 439.6425pt>
 File: Kapitel/Kapitel3_Systembeschreibung/Images/Meta2.jpg Graphic file (type jp
 g)
@@ -2795,7 +2795,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 48.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 48.
-<Kapitel/Kapitel3_Systembeschreibung/Images/Vive.jpg, id=818, pagebox=cropbox, 5
+<Kapitel/Kapitel3_Systembeschreibung/Images/Vive.jpg, id=827, pagebox=cropbox, 5
 23.9575pt x 339.2675pt>
 File: Kapitel/Kapitel3_Systembeschreibung/Images/Vive.jpg Graphic file (type jpg
 )
@@ -2804,7 +2804,7 @@ Package luatex.def Info: Kapitel/Kapitel3_Systembeschreibung/Images/Vive.jpg  us
 ed on input line 57. on input line 57.
 Package luatex.def Info: Requested size: 142.26378pt x 92.11594pt on input line 
 57.
-<Kapitel/Kapitel3_Systembeschreibung/Images/Oculus.jpg, id=823, pagebox=cropbox,
+<Kapitel/Kapitel3_Systembeschreibung/Images/Oculus.jpg, id=832, pagebox=cropbox,
  426.59375pt x 397.485pt>
 File: Kapitel/Kapitel3_Systembeschreibung/Images/Oculus.jpg Graphic file (type j
 pg)
@@ -2909,71 +2909,71 @@ Underfull \hbox (badness 10000) in paragraph at lines 126--128
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 133--134
+Underfull \hbox (badness 10000) in paragraph at lines 134--135
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--136
+Underfull \hbox (badness 10000) in paragraph at lines 136--137
 
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 136.
+(babel)             in language  on input line 137.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 136.
+(babel)             in language  on input line 137.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 136.
+(babel)             in language  on input line 137.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 136.
+(babel)             in language  on input line 137.
 [30]
-<Kapitel/Kapitel3_Systembeschreibung/Images/UnityEditor2Circle.png, id=916, page
+<Kapitel/Kapitel3_Systembeschreibung/Images/UnityEditor2Circle.png, id=925, page
 box=cropbox, 1443.14156pt x 749.80125pt>
 File: Kapitel/Kapitel3_Systembeschreibung/Images/UnityEditor2Circle.png Graphic 
 file (type png)
 <use Kapitel/Kapitel3_Systembeschreibung/Images/UnityEditor2Circle.png>
 Package luatex.def Info: Kapitel/Kapitel3_Systembeschreibung/Images/UnityEditor2
-Circle.png  used on input line 139. on input line 139.
+Circle.png  used on input line 140. on input line 140.
 Package luatex.def Info: Requested size: 455.24408pt x 236.52043pt on input line
- 139.
+ 140.
 
-Overfull \hbox (28.45273pt too wide) in paragraph at lines 139--140
+Overfull \hbox (28.45273pt too wide) in paragraph at lines 140--141
  [][] 
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 149.
+(babel)             in language  on input line 150.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 149.
+(babel)             in language  on input line 150.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 149.
+(babel)             in language  on input line 150.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 149.
+(babel)             in language  on input line 150.
 [31<./Kapitel/Kapitel3_Systembeschreibung/Images/UnityEditor2Circle.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 149--150
+Underfull \hbox (badness 10000) in paragraph at lines 150--151
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--152
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 153--154
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
 
  []
 
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on in
-put line 155.
+put line 156.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 155.
+(babel)             in language  on input line 156.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 155.
+(babel)             in language  on input line 156.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 155.
+(babel)             in language  on input line 156.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 155.
+(babel)             in language  on input line 156.
 [32](load luc: C:/Users/Patrick/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fo
 nts/otl/lmmono10-regular.luc)
 Package microtype Info: Loading generic protrusion settings for font family
@@ -2981,47 +2981,47 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 156.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 157.
 (load luc: C:/Users/Patrick/AppData/Local/MiKTeX/2.9/luatex-cache/generic/fonts/
 otl/lmmonolt10-bold.luc)
-Underfull \hbox (badness 10000) in paragraph at lines 181--182
+Underfull \hbox (badness 10000) in paragraph at lines 182--183
 
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 187.
+(babel)             in language  on input line 188.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 187.
+(babel)             in language  on input line 188.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 187.
+(babel)             in language  on input line 188.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 187.
+(babel)             in language  on input line 188.
 [33]
-Underfull \hbox (badness 10000) in paragraph at lines 187--188
+Underfull \hbox (badness 10000) in paragraph at lines 188--189
 
  []
 
 )
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 172.
+(babel)             in language  on input line 174.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 172.
+(babel)             in language  on input line 174.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 172.
+(babel)             in language  on input line 174.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 172.
+(babel)             in language  on input line 174.
  [34]
 chapter 4.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 172.
+(babel)             in language  on input line 174.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 172.
+(babel)             in language  on input line 174.
 (./Kapitel/Kapitel4_Hauptteil/Hauptteil.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
-<Kapitel/Kapitel4_Hauptteil/Images/Workflow.png, id=982, pagebox=cropbox, 906.38
+<Kapitel/Kapitel4_Hauptteil/Images/Workflow.png, id=991, pagebox=cropbox, 906.38
 625pt x 765.86125pt>
 File: Kapitel/Kapitel4_Hauptteil/Images/Workflow.png Graphic file (type png)
 <use Kapitel/Kapitel4_Hauptteil/Images/Workflow.png>
@@ -3096,7 +3096,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--33
 
  []
 
-<Kapitel/Kapitel4_Hauptteil/Images/Import_Export_Architecture.png, id=1016, page
+<Kapitel/Kapitel4_Hauptteil/Images/Import_Export_Architecture.png, id=1025, page
 box=cropbox, 864.22874pt x 573.14125pt>
 File: Kapitel/Kapitel4_Hauptteil/Images/Import_Export_Architecture.png Graphic f
 ile (type png)
@@ -3118,258 +3118,358 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 43.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 43.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 49.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 49.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 54.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 54.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 60.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 60.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 70.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 70.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 89.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 89.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 94.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 94.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 94.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 94.
 
+Underfull \hbox (badness 10000) in paragraph at lines 56--57
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 60.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 60.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 60.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 60.
 [39]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 97.
+(babel)             in language  on input line 60.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 97.
+(babel)             in language  on input line 60.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 67.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 67.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 73.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 73.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 83.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 83.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 102.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 102.
 
-
-LaTeX Warning: Citation `bib:VRSicknessLaviola' on page 40 undefined on input li
-ne 99.
-
-
-LaTeX Warning: Citation `bib:VRSicknessRebenitsch' on page 40 undefined on input
- line 99.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 99--100
-
- []
-
-
-LaTeX Warning: Citation `bib:VRSicknessKolanski' on page 40 undefined on input l
-ine 101.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 101--102
+Underfull \hbox (badness 10000) in paragraph at lines 104--105
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 103--104
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
 
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 104.
+(babel)             in language  on input line 109.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 104.
+(babel)             in language  on input line 109.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 104.
+(babel)             in language  on input line 109.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 104.
+(babel)             in language  on input line 109.
 [40]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 108.
+(babel)             in language  on input line 110.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 108.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 112.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 112.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 116.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 116.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 120.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 120.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 124.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 124.
+(babel)             in language  on input line 110.
 
-Underfull \hbox (badness 10000) in paragraph at lines 125--126
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--115
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
 
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 128.
+(babel)             in language  on input line 118.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 128.
+(babel)             in language  on input line 118.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 128.
+(babel)             in language  on input line 118.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 128.
+(babel)             in language  on input line 118.
 [41]
-<Kapitel/Kapitel4_Hauptteil/Images/ClusteredPointCloud.png, id=1052, pagebox=cro
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 121.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 121.
+<Kapitel/Kapitel4_Hauptteil/Images/OculusTouch.png, id=1073, pagebox=cropbox, 73
+1.23187pt x 332.74312pt>
+File: Kapitel/Kapitel4_Hauptteil/Images/OculusTouch.png Graphic file (type png)
+<use Kapitel/Kapitel4_Hauptteil/Images/OculusTouch.png>
+Package luatex.def Info: Kapitel/Kapitel4_Hauptteil/Images/OculusTouch.png  used
+ on input line 126. on input line 126.
+Package luatex.def Info: Requested size: 384.1122pt x 174.78922pt on input line 
+126.
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--132
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--134
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 136.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 136.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 136.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 136.
+[42<./Kapitel/Kapitel4_Hauptteil/Images/OculusTouch.png>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 149.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 149.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 149.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 149.
+ [43]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 166.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 166.
+
+Underfull \hbox (badness 10000) in paragraph at lines 168--169
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--171
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 173.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 173.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 173.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 173.
+[44]
+
+LaTeX Warning: Reference `fig:PointerTeleport' on page 45 undefined on input lin
+e 185.
+
+
+LaTeX Warning: Reference `fig:PointerTeleport' on page 45 undefined on input lin
+e 185.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--186
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 188.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 188.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 188.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 188.
+[45]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 190.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 190.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 194.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 194.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 198.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 198.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 202.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 202.
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--205
+
+ []
+
+<Kapitel/Kapitel4_Hauptteil/Images/ClusteredPointCloud.png, id=1145, pagebox=cro
 pbox, 980.16188pt x 639.13782pt>
 File: Kapitel/Kapitel4_Hauptteil/Images/ClusteredPointCloud.png Graphic file (ty
 pe png)
 <use Kapitel/Kapitel4_Hauptteil/Images/ClusteredPointCloud.png>
 Package luatex.def Info: Kapitel/Kapitel4_Hauptteil/Images/ClusteredPointCloud.p
-ng  used on input line 131. on input line 131.
+ng  used on input line 210. on input line 210.
 Package luatex.def Info: Requested size: 426.78575pt x 199.16443pt on input line
- 131.
-
-Underfull \hbox (badness 10000) in paragraph at lines 148--149
+ 210.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 218.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 218.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 218.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 218.
+[46]
+Underfull \hbox (badness 10000) in paragraph at lines 228--229
 
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 149.
+(babel)             in language  on input line 231.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 149.
+(babel)             in language  on input line 231.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 149.
+(babel)             in language  on input line 231.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 149.
-[42<./Kapitel/Kapitel4_Hauptteil/Images/ClusteredPointCloud.png>]
-<Kapitel/Kapitel4_Hauptteil/Images/Segments.png, id=1069, pagebox=cropbox, 1039.
+(babel)             in language  on input line 231.
+[47<./Kapitel/Kapitel4_Hauptteil/Images/ClusteredPointCloud.png>]
+<Kapitel/Kapitel4_Hauptteil/Images/Segments.png, id=1169, pagebox=cropbox, 1039.
 63406pt x 669.2503pt>
 File: Kapitel/Kapitel4_Hauptteil/Images/Segments.png Graphic file (type png)
 <use Kapitel/Kapitel4_Hauptteil/Images/Segments.png>
 Package luatex.def Info: Kapitel/Kapitel4_Hauptteil/Images/Segments.png  used on
- input line 156. on input line 156.
+ input line 236. on input line 236.
 Package luatex.def Info: Requested size: 398.33293pt x 170.71274pt on input line
- 156.
+ 236.
 
-Underfull \hbox (badness 10000) in paragraph at lines 161--162
+Underfull \hbox (badness 10000) in paragraph at lines 241--242
 
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 162.
+(babel)             in language  on input line 242.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 162.
+(babel)             in language  on input line 242.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 162.
+(babel)             in language  on input line 242.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 162.
-[43<./Kapitel/Kapitel4_Hauptteil/Images/Segments.png>]
-<Kapitel/Kapitel4_Hauptteil/Images/GroundSeg_BirdeyeWithSectors2.png, id=1081, p
+(babel)             in language  on input line 242.
+[48<./Kapitel/Kapitel4_Hauptteil/Images/Segments.png>]
+<Kapitel/Kapitel4_Hauptteil/Images/GroundSeg_BirdeyeWithSectors2.png, id=1181, p
 agebox=cropbox, 842.39719pt x 508.90125pt>
 File: Kapitel/Kapitel4_Hauptteil/Images/GroundSeg_BirdeyeWithSectors2.png Graphi
 c file (type png)
 <use Kapitel/Kapitel4_Hauptteil/Images/GroundSeg_BirdeyeWithSectors2.png>
 Package luatex.def Info: Kapitel/Kapitel4_Hauptteil/Images/GroundSeg_BirdeyeWith
-Sectors2.png  used on input line 165. on input line 165.
+Sectors2.png  used on input line 245. on input line 245.
 Package luatex.def Info: Requested size: 199.16928pt x 120.31396pt on input line
- 165.
-<Kapitel/Kapitel4_Hauptteil/Images/GroundSeg_BirdeyeWithWrongSectors2.png, id=10
+ 245.
+<Kapitel/Kapitel4_Hauptteil/Images/GroundSeg_BirdeyeWithWrongSectors2.png, id=11
 82, pagebox=cropbox, 842.39719pt x 508.90125pt>
 File: Kapitel/Kapitel4_Hauptteil/Images/GroundSeg_BirdeyeWithWrongSectors2.png G
 raphic file (type png)
 <use Kapitel/Kapitel4_Hauptteil/Images/GroundSeg_BirdeyeWithWrongSectors2.png>
 Package luatex.def Info: Kapitel/Kapitel4_Hauptteil/Images/GroundSeg_BirdeyeWith
-WrongSectors2.png  used on input line 167. on input line 167.
+WrongSectors2.png  used on input line 247. on input line 247.
 Package luatex.def Info: Requested size: 199.16928pt x 120.31396pt on input line
- 167.
+ 247.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 167.
+(Font)              <7> on input line 247.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 167.
-<Kapitel/Kapitel4_Hauptteil/Images/WrongFit.png, id=1085, pagebox=cropbox, 511.9
+(Font)              <5> on input line 247.
+<Kapitel/Kapitel4_Hauptteil/Images/WrongFit.png, id=1185, pagebox=cropbox, 511.9
 125pt x 239.39438pt>
 File: Kapitel/Kapitel4_Hauptteil/Images/WrongFit.png Graphic file (type png)
 <use Kapitel/Kapitel4_Hauptteil/Images/WrongFit.png>
 Package luatex.def Info: Kapitel/Kapitel4_Hauptteil/Images/WrongFit.png  used on
- input line 173. on input line 173.
+ input line 253. on input line 253.
 Package luatex.def Info: Requested size: 426.7932pt x 142.26425pt on input line 
-173.
+253.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 181.
+(babel)             in language  on input line 261.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 181.
+(babel)             in language  on input line 261.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 181.
+(babel)             in language  on input line 261.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 181.
- [44<./Kapitel/Kapitel4_Hauptteil/Images/GroundSeg_BirdeyeWithSectors2.png><./Ka
+(babel)             in language  on input line 261.
+ [49<./Kapitel/Kapitel4_Hauptteil/Images/GroundSeg_BirdeyeWithSectors2.png><./Ka
 pitel/Kapitel4_Hauptteil/Images/GroundSeg_BirdeyeWithWrongSectors2.png><./Kapite
 l/Kapitel4_Hauptteil/Images/WrongFit.png>]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on inp
-ut line 183.
+ut line 263.
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--220
-
- []
-
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 222.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 222.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 222.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 222.
-[45]
-Underfull \hbox (badness 10000) in paragraph at lines 223--224
+Underfull \hbox (badness 10000) in paragraph at lines 299--300
 
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 236.
+(babel)             in language  on input line 302.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 236.
+(babel)             in language  on input line 302.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 236.
+(babel)             in language  on input line 302.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 236.
-[46]
+(babel)             in language  on input line 302.
+[50]
+Underfull \hbox (badness 10000) in paragraph at lines 303--304
+
+ []
+
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 292.
+(babel)             in language  on input line 316.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 292.
+(babel)             in language  on input line 316.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 298.
+(babel)             in language  on input line 316.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 298.
+(babel)             in language  on input line 316.
+[51]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 372.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 372.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 378.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 378.
 )
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 176.
+(babel)             in language  on input line 178.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 176.
+(babel)             in language  on input line 178.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 176.
+(babel)             in language  on input line 178.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 176.
- [47]
+(babel)             in language  on input line 178.
+ [52]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 176.
+(babel)             in language  on input line 178.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 176.
+(babel)             in language  on input line 178.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 176.
+(babel)             in language  on input line 178.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 176.
- [48]
+(babel)             in language  on input line 178.
+ [53]
 chapter 5.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 176.
+(babel)             in language  on input line 178.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 176.
+(babel)             in language  on input line 178.
 (./Kapitel/Kapitel5_Schluss/Schluss.tex
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 2.
@@ -3385,21 +3485,21 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 6.
 )
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 187.
+(babel)             in language  on input line 189.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 187.
+(babel)             in language  on input line 189.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 187.
+(babel)             in language  on input line 189.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 187.
- [49
+(babel)             in language  on input line 189.
+ [54
 
 ]
 chapter A.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 187.
+(babel)             in language  on input line 189.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 187.
+(babel)             in language  on input line 189.
 (./Masterarbeit.bbl
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 2.
@@ -3409,44 +3509,45 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 2.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 2.
- [50
+ [55
 
 ]
-Overfull \hbox (29.77637pt too wide) in paragraph at lines 80--85
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 84.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 84.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 84.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 84.
+ [56
+
+]
+Overfull \hbox (29.77637pt too wide) in paragraph at lines 87--92
 \TU/MinionPro(0)/m/n/12 all-[]oculus-[]rift-[]users-[]left-[]in-[]the-[]dark-[]
 following-[]cant-[]reach-[]oculus-[]runtime-[]services-[]error/$[] 
  []
 
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 85.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 85.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 85.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 85.
-[51
 
-]
-Underfull \hbox (badness 1308) in paragraph at lines 117--122
+Underfull \hbox (badness 1308) in paragraph at lines 124--129
 []\TU/MinionPro(0)/m/n/12 P. Go-thard, ``Mi-cro-soft ho-lo-lens: Firm ad-mits s
 a-les fi-gu-res are
  []
 
 
-Underfull \hbox (badness 1077) in paragraph at lines 117--122
+Underfull \hbox (badness 1077) in paragraph at lines 124--129
 \TU/MinionPro(0)/m/n/12 in the ’thousands’,'' In-ter-net-quel-le (ab-ge-ru-
 fen am 24.11.2017), Jan.
  []
 
 
-Underfull \hbox (badness 1558) in paragraph at lines 132--136
+Underfull \hbox (badness 1558) in paragraph at lines 139--143
 []\TU/MinionPro(0)/m/n/12 R. Berg, ``Touch-controller ma-chen ocu-lus rift zur 
 bes-ten vr-
  []
 
 
-Underfull \hbox (badness 3780) in paragraph at lines 132--136
+Underfull \hbox (badness 3780) in paragraph at lines 139--143
 \TU/MinionPro(0)/m/n/12 brille,'' In-ter-net-quel-le (ab-ge-ru-fen am 24.11.201
 7), Dec. 2016.
  []
@@ -3459,26 +3560,26 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 156.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 156.
-[52]
-Underfull \hbox (badness 1147) in paragraph at lines 159--163
+[57]
+Underfull \hbox (badness 1147) in paragraph at lines 166--170
 []\TU/MinionPro(0)/m/n/12 Ama-zon, ``Ocu-lus rift + touch bund-le,'' In-ter-net
 -quel-le (ab-ge-ru-fen
  []
 
 
-Underfull \hbox (badness 2351) in paragraph at lines 173--177
+Underfull \hbox (badness 2351) in paragraph at lines 180--184
 []\TU/MinionPro(0)/m/n/12 ------, ``Ocu-lus touch im test: So echt kön-nen sic
 h hän-
  []
 
 
-Underfull \hbox (badness 2073) in paragraph at lines 173--177
+Underfull \hbox (badness 2073) in paragraph at lines 180--184
 \TU/MinionPro(0)/m/n/12 de in vr an-füh-len,'' In-ter-net-quel-le (ab-ge-ru-fe
 n am 27.11.2017),
  []
 
 
-Underfull \hbox (badness 8019) in paragraph at lines 173--177
+Underfull \hbox (badness 8019) in paragraph at lines 180--184
 \TU/MinionPro(0)/m/n/12 Dec. 2017. [On-line]. Avail-ab-le: []$https://www.heise
 .de/ct/artikel/
  []
@@ -3491,28 +3592,28 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 235.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 235.
-[53])
+[58])
 
 Package glossaries Warning: No \printnoidxglossary or \printnoidxglossaries
  found. (Remove \makenoidxglossaries if you don't want any glossaries.)
 This document will not have a glossary.
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 195.
+(babel)             in language  on input line 197.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 195.
+(babel)             in language  on input line 197.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 195.
+(babel)             in language  on input line 197.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 195.
-[54]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 195.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 195.
+(babel)             in language  on input line 197.
+[59]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 197.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 197.
  (./Masterarbeit.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 195.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 195.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 197.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 197.
 Package rerunfilecheck Info: File `Masterarbeit.out' has not changed.
-(rerunfilecheck)             Checksum: E7DC477A53E1BB580183648233DEC4B6;2606.
+(rerunfilecheck)             Checksum: A53316DD684DB97EE4AFCB195F1CE8B7;2687.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -3523,20 +3624,20 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 195.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 197.
 )
 
 Here is how much of LuaTeX's memory you used:
- 43958 strings out of 494456
+ 44061 strings out of 494456
  100000,1373583 words of node,token memory allocated
- 1021 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 48 attribute, 94 glue_spec, 48 attr
-ibute_list, 1 write, 29 pdf_action nodes
-   avail lists: 1:1,2:1264,3:226,4:117,5:1926,6:40,7:4441,8:682,9:1790,10:25,11:
+ 1051 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 51 attribute, 94 glue_spec, 51 attr
+ibute_list, 1 write, 32 pdf_action nodes
+   avail lists: 1:1,2:1258,3:230,4:117,5:1927,6:37,7:4597,8:682,9:1790,10:27,11:
 509
- 45852 multiletter control sequences out of 65536+200000
+ 45901 multiletter control sequences out of 65536+200000
  91 fonts using 16023391 bytes
- 67i,10n,108p,9121b,723s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 67i,10n,108p,9121b,905s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 warning  (pdf backend): unreferenced destination with name 'glo:acr:IDS'
 
@@ -3600,9 +3701,9 @@ ic/lm/lmr12.pfb><C:/Users/Patrick/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
 public/lm/lmr8.pfb><C:/Users/Patrick/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
 e1/public/lm/lmsy10.pfb><C:/Users/Patrick/AppData/Local/Programs/MiKTeX 2.9/font
 s/type1/public/lm/lmsy8.pfb>
-Output written on Masterarbeit.pdf (61 pages, 5404324 bytes).
+Output written on Masterarbeit.pdf (66 pages, 5591852 bytes).
 
-PDF statistics: 1282 PDF objects out of 1440 (max. 8388607)
- 251 named destinations out of 1000 (max. 131072)
- 328 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1390 PDF objects out of 1440 (max. 8388607)
+ 292 named destinations out of 1000 (max. 131072)
+ 336 words of extra memory for PDF output out of 10000 (max. 100000000)
 

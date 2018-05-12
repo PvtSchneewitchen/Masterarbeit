@@ -60,12 +60,12 @@ public class HDF5Addon
 
         uint[,] labels = container._labels;
 
-        pointList.OrderBy(x => x.GetComponent<CustomAttributes>()._ID);
+        pointList.OrderBy(x => x.GetComponent<CustomAttributes>().ID);
         indexToID.OrderBy(x => x.Value);
         for (int i = 0; i < pointList.Count; i++)
         {
             var attr = pointList[i].GetComponent<CustomAttributes>();
-            labels[indexToID.ElementAt(i).Key.Item1, indexToID.ElementAt(i).Key.Item2] = attr._label;
+            labels[indexToID.ElementAt(i).Key.Item1, indexToID.ElementAt(i).Key.Item2] = attr.Label;
         }
 
         //for (int i = 0; i < pointList.Count; i++)
@@ -113,7 +113,7 @@ public class HDF5Addon
 
         labels = container._labels;
 
-        pointList.OrderBy(x => x.GetComponent<CustomAttributes>()._ID);
+        pointList.OrderBy(x => x.GetComponent<CustomAttributes>().ID);
         indexToID.OrderBy(x => x.Value);
 
         for (int i = 0; i < pointList.Count; i++)
@@ -121,7 +121,7 @@ public class HDF5Addon
             var attr = pointList[i].GetComponent<CustomAttributes>();
             var key = indexToID.ElementAt(i).Key;
 
-            labels[key.Item1, key.Item2] = attr._label;
+            labels[key.Item1, key.Item2] = attr.Label;
         }
 
         //for (int i = 0; i < pointList.Count; i++)

@@ -509,12 +509,70 @@ Das Inteview handelt von den Verkaufszahlen der Hololens},
   publisher = {Springer Nature},
 }
 
-@Article{article,
+@Article{bib:VRSicknessKolanski,
   author = {M. Kolasinski, Eugenia},
   title  = {Simulator Sickness in Virtual Environments},
   year   = {1995},
   pages  = {68},
   month  = {05},
+}
+
+@Article{bib:VRSicknessPausch,
+  author     = {Pausch, Randy and Crea, Thomas and Conway, Matthew},
+  title      = {A Literature Survey for Virtual Environments: Military Flight Simulator Visual Systems and Simulator Sickness},
+  journal    = {Presence: Teleoper. Virtual Environ.},
+  year       = {1992},
+  volume     = {1},
+  number     = {3},
+  pages      = {344--363},
+  month      = jul,
+  issn       = {1054-7460},
+  acmid      = {195962},
+  address    = {Cambridge, MA, USA},
+  doi        = {10.1162/pres.1992.1.3.344},
+  issue_date = {Summer 1992},
+  numpages   = {20},
+  publisher  = {MIT Press},
+  url        = {http://dx.doi.org/10.1162/pres.1992.1.3.344},
+}
+
+@Misc{bib:90FpsMin,
+  author       = {IrisVR},
+  title        = {The Importance of Frame Rates},
+  howpublished = {Internetquelle (abgerufen am 12.05.2018)},
+  month        = may,
+  year         = {2018},
+  url          = {https://help.irisvr.com/hc/en-us/articles/215884547-The-Importance-of-Frame-Rates},
+}
+
+@Misc{bib:OculusTouchPic,
+  author       = {Oculus VR, LLC.},
+  title        = {OVRInput},
+  howpublished = {Internetquelle (abgerufen am 12.05.2018)},
+  month        = may,
+  year         = {2018},
+  url          = {https://developer.oculus.com/documentation/unity/latest/concepts/unity-ovrinput/},
+}
+
+@Article{bib:VRLocomotionReview,
+  author    = {Costas Boletsis},
+  title     = {The New Era of Virtual Reality Locomotion: A Systematic Literature Review of Techniques and a Proposed Typology},
+  journal   = {Multimodal Technologies and Interaction},
+  year      = {2017},
+  volume    = {1},
+  number    = {4},
+  pages     = {24},
+  month     = {sep},
+  doi       = {10.3390/mti1040024},
+  publisher = {{MDPI} {AG}},
+}
+
+@Unknown{bib:PointTeleport,
+  author = {Bozgeyikli, Evren and Raij, Andrew and Katkoori, Srinivas and Dubey, Rajiv},
+  title  = {Point \& Teleport Locomotion Technique for Virtual Reality},
+  month  = {10},
+  year   = {2016},
+  pages  = {205-216},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

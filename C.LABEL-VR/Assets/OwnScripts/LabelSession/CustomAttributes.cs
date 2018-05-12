@@ -5,11 +5,11 @@ public class CustomAttributes : MonoBehaviour
 {
     //public int _ID { get; set; }
     [SerializeField]
-    private int editor_id;
-    public int _ID { get { return editor_id; } set { editor_id = value; } }
+    private int EditorID;
+    public int ID { get { return EditorID; } set { EditorID = value; } }
 
     private uint _Label;
-    public uint _label
+    public uint Label
     {
         get
         {
@@ -18,18 +18,18 @@ public class CustomAttributes : MonoBehaviour
         set
         {
             _Label = value;
-            try { GetComponent<MeshRenderer>().material = Labeling.GetLabelClassMaterial(_label); }
+            try { GetComponent<MeshRenderer>().material = Labeling.GetLabelClassMaterial(Label); }
             catch { Debug.Log("PointAttribute: No Meshrenderer"); }
         }
     }
 
-    private Vector3 _POINTPOSITION;
-    public Vector3 _pointPosition
+    private Vector3 _PointPosition;
+    public Vector3 PointPosition
     {
         get
         {
             try { return transform.position; }
-            catch { return _POINTPOSITION; }
+            catch { return _PointPosition; }
         }
         set
         {
@@ -37,13 +37,11 @@ public class CustomAttributes : MonoBehaviour
             catch
             {
                 Debug.Log("CustomAttributes Set: Position Assignment not possible!");
-                _POINTPOSITION = value;
+                _PointPosition = value;
             }
         }
     }
 
     //0=nonGround, 1=ground, 2=notYetDefined
-    public int _groundPoint { get; set; }
-
-    public int _clusterLabel { get; set; }
+    public int GroundPoint { get; set; }
 }

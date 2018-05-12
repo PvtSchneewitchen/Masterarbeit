@@ -37,6 +37,13 @@ P.~Chu, S.~Cho, S.~Sim, K.~Kwak, and K.~Cho, ``A fast ground segmentation
   method for 3d point cloud,'' \emph{Journal of information processing
   systems}, vol.~13, no.~3, pp. 491--499, 2017.
 
+\bibitem{bib:OculusTouchPic}
+\BIBentryALTinterwordspacing
+L.~Oculus~VR, ``Ovrinput,'' Internetquelle (abgerufen am 12.05.2018), May 2018.
+  [Online]. Available:
+  \url{https://developer.oculus.com/documentation/unity/latest/concepts/unity-ovrinput/}
+\BIBentrySTDinterwordspacing
+
 \bibitem{bib:Segmentation1}
 D.~Zermas, I.~Izzat, and N.~Papanikolopoulos, ``Fast segmentation of 3d point
   clouds: A paradigm on {LiDAR} data for autonomous vehicle applications,'' in
@@ -232,6 +239,46 @@ C.~Games, ``Unity3d tips 2 – the singleton pattern,'' Internetquelle
   (abgerufen am 01.05.2018). [Online]. Available:
   \url{http://clearcutgames.net/home/?p=437}
 \BIBentrySTDinterwordspacing
+
+\bibitem{bib:VRSicknessLaviola}
+\BIBentryALTinterwordspacing
+J.~J. LaViola, Jr., ``A discussion of cybersickness in virtual environments,''
+  \emph{SIGCHI Bull.}, vol.~32, no.~1, pp. 47--56, Jan. 2000. [Online].
+  Available: \url{http://doi.acm.org/10.1145/333329.333344}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:VRSicknessRebenitsch}
+L.~Rebenitsch and C.~Owen, ``Review on cybersickness in applications and visual
+  displays,'' \emph{Virtual Reality}, vol.~20, no.~2, pp. 101--125, apr 2016.
+
+\bibitem{bib:VRSicknessKolanski}
+E.~M.~Kolasinski, ``Simulator sickness in virtual environments,'' p.~68, 05
+  1995.
+
+\bibitem{bib:VRSicknessPausch}
+\BIBentryALTinterwordspacing
+R.~Pausch, T.~Crea, and M.~Conway, ``A literature survey for virtual
+  environments: Military flight simulator visual systems and simulator
+  sickness,'' \emph{Presence: Teleoper. Virtual Environ.}, vol.~1, no.~3, pp.
+  344--363, Jul. 1992. [Online]. Available:
+  \url{http://dx.doi.org/10.1162/pres.1992.1.3.344}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:90FpsMin}
+\BIBentryALTinterwordspacing
+IrisVR, ``The importance of frame rates,'' Internetquelle (abgerufen am
+  12.05.2018), May 2018. [Online]. Available:
+  \url{https://help.irisvr.com/hc/en-us/articles/215884547-The-Importance-of-Frame-Rates}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:VRLocomotionReview}
+C.~Boletsis, ``The new era of virtual reality locomotion: A systematic
+  literature review of techniques and a proposed typology,'' \emph{Multimodal
+  Technologies and Interaction}, vol.~1, no.~4, p.~24, sep 2017.
+
+\bibitem{bib:PointTeleport}
+E.~Bozgeyikli, A.~Raij, S.~Katkoori, and R.~Dubey, ``Point \& teleport
+  locomotion technique for virtual reality,'' pp. 205--216, 10 2016.
 
 \bibitem{bib:Segmentation2}
 M.~Hoy, J.~Dauwels, and J.~Yuan, ``Efficient ground object segmentation in 3d

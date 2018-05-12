@@ -26,10 +26,10 @@ public class PointCloud
             GameObject point = Util.CreateDefaultLabelPoint();
             CustomAttributes attributes = point.GetComponent<CustomAttributes>();
 
-            attributes._pointPosition = Util.MultiplyVectorValues(rotationToUnityCs * dataList_inp[i]._position , mirroring_inp);
-            attributes._groundPoint = dataList_inp[i]._groundPointLabel;
-            attributes._ID = dataList_inp[i]._ID;
-            attributes._label = dataList_inp[i]._label;
+            attributes.PointPosition = Util.MultiplyVectorValues(rotationToUnityCs * dataList_inp[i]._position , mirroring_inp);
+            attributes.GroundPoint = dataList_inp[i]._groundPointLabel;
+            attributes.ID = dataList_inp[i]._ID;
+            attributes.Label = dataList_inp[i]._label;
             point.SetActive(false);
             _validPoints.Add(point);
         }
@@ -67,7 +67,7 @@ public class PointCloud
     {
         for (int i = 0; i < _validPoints.Count; i++)
         {
-            _validPoints[i].GetComponent<CustomAttributes>()._label = 0;
+            _validPoints[i].GetComponent<CustomAttributes>().Label = 0;
         }
     }
 
@@ -76,9 +76,9 @@ public class PointCloud
         for (int i = 0; i < _validPoints.Count; i++)
         {
             var attr = _validPoints[i].GetComponent<CustomAttributes>();
-            if(attr._label == oldLabelId)
+            if(attr.Label == oldLabelId)
             {
-                attr._label = newLabelId;
+                attr.Label = newLabelId;
             }
         }
     }

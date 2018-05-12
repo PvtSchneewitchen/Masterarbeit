@@ -38,15 +38,28 @@ Die Importierten Daten, beispielsweise HDF5, enthalten allerdings oft deutlich m
     \label{fig:ImportExport}
 \end{figure}
 
-Zusammenfassend ist also folgendes zu tun, um die Benutzung ein neues Datenformates oder einer neuen Datenstruktur zu gewährleisten: Zunächst muss eine Importfunktion programmiert werden, die alle Informationen aus den gewünschten Daten ausliest. Anschließend muss diese Funktion das genormte, interne Datenformat (Kapitel \ref{sec:IDS}) erstellen und alle nötigen Informationen aus den eingelesenen Daten darin speichern.  Daraus können die entsprechenden Punktwolken dann generiert werden können. Falls es Daten gibt, die über diejenigen in der \acrshort{acr:IDS} hinausgehen, muss eine Metadatenstruktur angelegt werden, in welche die zusätzlichen Daten abgelegt werden können. Zuletzt ist eine Exportfunktion zu implementieren, welche die \glslink{glos:Labeling}{Labeling}-Informationen aus der internen Datenstruktur in die eingelesenen Daten exportieren kann. Außerdem muss sie in der Lage sein aus den internen- und den Metadaten das Ausgangsdatenformat wiederherzustellen, um die Daten als neue Files exportieren zu können. Im folgenden Kapitel soll dieses Prinzip konkret an einem HDF5-Beispiel gezeigt werden.
+Zusammenfassend ist also folgendes zu tun, um die Benutzung ein neues Datenformates oder einer neuen Datenstruktur zu gewährleisten: Zunächst muss eine Importfunktion programmiert werden, die alle Informationen aus den gewünschten Daten ausliest. Anschließend muss diese Funktion das genormte, interne Datenformat (Kapitel \ref{sec:IDS}) erstellen und alle nötigen Informationen aus den eingelesenen Daten darin speichern. Daraus können die entsprechenden Punktwolken dann generiert werden können. Falls es Daten gibt, die über diejenigen in der \acrshort{acr:IDS} hinausgehen, muss eine Metadatenstruktur angelegt werden, in welche die zusätzlichen Daten abgelegt werden können. Zuletzt ist eine Exportfunktion zu implementieren, welche die \glslink{glos:Labeling}{Labeling}-Informationen aus der internen Datenstruktur in die eingelesenen Daten exportieren kann. Außerdem muss sie in der Lage sein aus den internen- und den Metadaten das Ausgangsdatenformat wiederherzustellen, um die Daten als neue Files exportieren zu können. Im folgenden Kapitel soll dieses Prinzip konkret an einem HDF5-Beispiel gezeigt werden.
 
 \subsection{Interne Datenstruktur}
 \label{sec:IDS}
-TODO 
--Wie sieht die interne Datenstruktur aus die Konzipiert wurde um die Importierten Daten zu vereinheitlichen.
--Was passiert mit den Daten, die über diese Struktur hinaus gehen (Metadaten)
+Wie im Kapitel \ref{sec:ImportExport} schon erwähnt, ist die interne Datenstruktur (\textit{IDS}) dafür da, um den Prozess des Imports und Exports von der Hautapplikation zu trennen. Dazu müssen aus den Daten die eingelesen werden sollen, alle Informationen extrahiert werden die für die interne Datenstruktur notwendig sind. Die IDS wird repräsentiert durch ein Skript, dass einem Objekt in Unity angehängt werden kann, also einer Komponente (vgl. Abschnitt \ref{sec:UnityDevelopment}). Jedem Punkt einer Wolke in C.LABEL-VR ist solch ein Skript zugeordnet. Das heißt aus jeder Punktinformation aus den Input-Daten wird ein IDS-Komponente erstellt. Eine solche Komponente besteht aus folgenden Eigenschaften:
 
-\subsection{HDF5-Beispiel}
+\begin{itemize}
+\item \textbf{ID}: Identifikationsnummer zur eindeutigen Erkennung des Punktes
+\item \textbf{Label}: Information, zu welcher Klassifikation der Punkt gehört
+\item \textbf{Position}: Dreidimensionale Position des Punktes
+\item \textbf{Ground Point}: Information, ob der Punkt ein Bodenpunkt ist oder nicht
+\end{itemize}
+
+Dadurch kann die Möglichkeit genutzt werden, dass auf jede aktive Komponente eines Objekts in Unity zugegriffen werden kann. Wenn man nun beispielsweise einen Punkt identifiziert, den man neu klassifizieren möchte, kann auf die IDS-Komponente dieses Objekts zugegriffen werden und das darin enthaltene Label geändert werden.\\
+
+Aus den Input-Daten wird meist nur die Position des Punktes ausgelesen und manchmal auch die Klassifikation des Punktes, falls diese schon vorhanden ist. Die ID wird innerhalb vom Import vergeben und dient dazu den Punkt eindeutig zu identifizieren. Werden beispielsweise Informationen eines Punktes als Metadaten abgespeichert, müssen diese später dem richtigen Punkt zugeordnet werden können. Dies geschieht über die eindeutige ID. Genauer erklärt wird dieser Vorgang im Abschnitt \ref{sec:HDF5Example}. Die Information, ob es sich um einen Bodenpunkt handelt oder nicht, wird nach dem Import von einem Algorithmus analysiert. Sie ist wichtig für die Cluster-Annotation, die später in Kapitel \ref{sec:ClusterLabeling} vorgestellt wird. Wie die Bodenpunkt-Analyse funktioniert wird in Abschnitt \ref{sec:GroundPointSegmentation} erklärt. \\
+
+Da die interne Datenstruktur nicht viele Informationen enthält ist es eine simple Methode die Punktwolken-Daten in C.LABEL-VR zu verwalten. Alles was darüber hinaus geht kann in einer separaten Meta-Datei gespeichert werden, um die Zusatzinformationen beim Export zur Verfügung zu haben. Darüber hinaus ist sie leicht erweiterbar. Im Skript der IDS-Komponente müsste lediglich eine neue Eigenschaft angelegt werden, um jedem Punkt einer eingelesenen Punktwolke die neue Eigenschaft zuzuordnen. Das genaue Vorgehen bei der Bearbeitung der internen Datenstruktur und der Metadaten ist im folgenden Kapitel \ref{sec:HDF5Example} näher erklärt.
+
+\subsection{HDF5 Beispiel}
+\label{sec:HDF5Example}
+
 \subsubsection{HDF5 Daten}
 \label{sec:HDF5}
 TODO Evtl. den Import und Exportvorgang anhand eines minimalistischen HDF5-Beispiel erklären
@@ -88,41 +101,106 @@ TODO Was ist bei der Erzeugung der Punktwolken zu beachten, damit die vielen Tau
 
 \section{Navigation}
 \label{sec:Navigation}
-Die Navigigation in Virtual Reality Inhalten ist ein entscheidendes Thema. Wird dieses Thema während der Entwicklung einer VR-Applikation nicht ausreichend berücksichtigt, so kann diese Applikation für manche Menschen unbenutzbar sein. Der Grund dafür ist die \textit{VR-Krankheit}. Diese Krankheit verursacht beim Benutzer Übelkeit, die bei manchen Nutzern mehr und bei manchen Nutzern weniger auftritt. Details dazu sind im Abschnitt \ref{sec:VRSickness} gegeben. 
+Die Navigigation in Virtual Reality-Anwendungen ist ein entscheidendes Thema. Wird dieses Thema während der Entwicklung einer VR-Applikation nicht ausreichend berücksichtigt, so kann dies große Auswirkung auf die Benutzererfahrung haben \cite{bib:PointTeleport}. Ein Grund dafür ist die \textit{VR-Krankheit}, die häufig auftritt wenn sich Benutzer durch eine virtuelle Umgebung bewegen \cite{bib:VRSicknessLaviola}. Diese Krankheit verursacht unter anderem Übelkeit und tritt bei manchen Nutzern mehr und bei manchen weniger auf. Details dazu sind im Abschnitt \ref{sec:VRSickness} gegeben. \\
 
-Um sich in C.LABEL durch Punktwolken zu Bewegen wurden zwei Navigationsmöglichkeiten entwickelt. Zum einen gibt es den Freien Flug Modus (\textit{Free Fly Mode}) (Abschnitt \ref{sec:FreeFlyMode}). In diesem Modus kann sich der Benutzer, mit Hilfe der Oculus Eingabegeräte intuitiv und frei durch die Punktwolke bewegen. Die Bewegung ist dabei durchgängig und wird durch Beschleunigung und Bremsen gestartet und beendet. Diese Art der Bewegung fördert jedoch bei manchen Nutzen den Effekt der VR-Krankheit.
+Um sich in C.LABEL durch Punktwolken zu Bewegen wurden zwei Navigationsmöglichkeiten entwickelt. Zum einen gibt es den Freien Flug Modus (Abschnitt \ref{sec:FreeFlyMode}). In diesem Modus kann sich der Benutzer, mit Hilfe der Oculus Eingabegeräte intuitiv und frei durch die Punktwolke bewegen. Die Bewegung ist dabei durchgängig und wird durch Beschleunigung und Bremsen gestartet und beendet. Diese Art der Bewegung fördert jedoch bei manchen Nutzen den Effekt der VR-Krankheit.\\
 
-Deshalb gibt es mit dem Teleportationsmodus (\textit{Teleport Mode}) noch eine zweite Navigationsart (\ref{sec:TeleportMode}). Das Grundprinzip der Steuerung ist ähnlich, allerdings gibt es keine durchgängige Bewegung. Stattdessen wird der Benutzer von einer Stelle zur anderen teleportiert. Dies wirkt dem Übelkeitseffekt entgegen.   
+Deshalb gibt es mit dem Teleportationsmodus (\textit{Teleport Mode}) noch eine alternative Navigationsart (\ref{sec:TeleportMode}). Das Grundprinzip der Steuerung ist ähnlich, allerdings gibt es keine durchgängige Bewegung. Stattdessen wird der Benutzer von einer Stelle zur anderen teleportiert. Dies wirkt dem Übelkeitseffekt entgegen.   
 
 \subsection{VR-Krankheit}
 \label{sec:VRSickness}
-Die VR-Krankheit ist ein Effekt der auftritt während oder nach dem Aufenthalt einer Person in einer virtuellen Umgebung. Sie äußert sich meistens durch Übelkeit, aber auch durch andere Symptome wie Kopfschmerzen oder Überanstrengung der Augen \cite{bib:VRSicknessLaviola}. Es wird geschätzt, dass bei dreißig bis achtzig Prozent der Menschen Symptome der VR-Krankheit auftreten \cite{bib:VRSicknessRebenitsch}. Die Erforschung der Ursache für die Krankheit ist noch nicht gänzlich abgeschlossen. Es gibt mehrere Theorien was der Auslöser für sie ist. \\
+Die VR-Krankheit ist ein Effekt der auftritt während oder nach dem Aufenthalt einer Person in einer virtuellen Umgebung. Sie äußert sich meistens durch Übelkeit, aber auch durch andere Symptome wie Kopfschmerzen oder Überanstrengung der Augen \cite{bib:VRSicknessLaviola}. Es wird geschätzt, dass bei dreißig bis achtzig Prozent der Menschen Symptome der VR-Krankheit auftreten wenn sie sich in einer virtuellen Umgebung befinden \cite{bib:VRSicknessRebenitsch}. Die Erforschung der Ursache für diese Krankheit ist noch nicht gänzlich abgeschlossen. Somit gibt es mehrere Theorien was der Auslöser für sie ist.\\
 
-Die gängigste Theorie dafür ist das Prinzip der Sinnestäuschung. Dieses Prinzip besagt, dass das menschliche Gehirn einen Konflikt feststellt, wenn sich die erwartete Wahrnehmung zweier Sinnesorgane voneinander unterscheiden. Im Falle der VR-Krankheit handelt es sich bei den Sinnesorganen um die visuelle Wahrnehmung und den Gleichgewichtssinn. Bewegt sich ein VR-Nutzer nun durch die virtuelle Welt, so registriert dies die visuelle Wahrnehmung als Bewegung in eine bestimmte Richtung. Positionsbedingte Bewegungen in der virtuellen Welt geschehen meist ohne Bewegung des Benutzers in der physischen Welt. Der Gleichgewichtssinn des Menschen registriert also keinerlei Bewegung im Gegensatz zur visuellen Wahrnehmung und es kommt zum Konflikt. \cite{bib:VRSicknessKolanski}. \\
+Die gängigste Theorie dafür ist das Prinzip der Sinnestäuschung. Dieses Prinzip besagt, dass das menschliche Gehirn einen Konflikt feststellt, wenn sich die erwartete Wahrnehmung zweier Sinnesorgane voneinander unterscheiden. Im Falle der VR-Krankheit handelt es sich bei den Sinnesorganen um die visuelle Wahrnehmung und den Gleichgewichtssinn. Bewegt sich ein VR-Nutzer nun durch die virtuelle Welt, so registriert dies die visuelle Wahrnehmung als Bewegung in eine bestimmte Richtung. Solche Bewegungen in der virtuellen Welt geschehen oft ohne Bewegung des Benutzers in der physischen Welt. Der Gleichgewichtssinn des Menschen registriert also keinerlei Bewegung im Gegensatz zur visuellen Wahrnehmung und somit kommt es zum Konflikt. \cite{bib:VRSicknessKolanski}. \\
 
-Dieser Konflikt kann jedoch nicht nur ausgelöst werden, wenn sich die Bewegung des Nutzers in der virtuellen und der realen Welt grundlegend unterscheiden. Symptome der VR-Krankheit können auch dann auftreten, wenn die Bewegungen gleich sind, jedoch leicht verzögert. Dies kann beispielsweise der Fall sein, wenn die Leistungsgrenze des betreibenden Rechners erreicht ist und somit keine flüssige Wiederholungsrate des Bildes mehr gewährleistet werden kann. Ist die Wiederholungsrate zu niedrig entsteht ein zu großer Zeitunterschied zwischen der Tätigkeit der Bewegung und dem Sehen der Bewegung. Lilienthal hat in einer frühen Forschung empfohlen einen maximalen Zeitunterschied von 35 Millisekunden zwischen den Wahrnehmungen der verschiedenen Sinne, was ungefähr 30 Bildern pro Sekunde entspricht. Aktuell empfehlen Hersteller von VR-Brillen sogar eine Wiederholungsrate von 90 Bildern pro Sekunde, um einen komfortablen Gebrauch des VR-Gerätes zu gewährleisten. Um der VR-Krankheit vorzubeugen ist also auch die Optimierung der Applikation (wie in Abschnitt \ref{sec:Optimierung}) für eine hohe Bildwiederholungsrate und Leistungsfähigkeit vom betreibenden Rechner des VR-Gerätes zu beachten.\\
----quellen für 35 msec und 90 fps fehlen noch ----
+Dieser Konflikt kann jedoch nicht nur ausgelöst werden, wenn sich die Bewegung des Nutzers in der virtuellen und der realen Welt grundlegend unterscheiden. Symptome der VR-Krankheit können auch dann auftreten, wenn die Bewegungen gleich sind, jedoch leicht verzögert. Dies kann beispielsweise der Fall sein, wenn die Leistungsgrenze des betreibenden Rechners erreicht ist und somit keine flüssige Wiederholungsrate des Bildes mehr gewährleistet werden kann. Ist die Wiederholungsrate zu niedrig entsteht ein zu großer Zeitunterschied zwischen der Tätigkeit der Bewegung und dem Sehen der Bewegung. Lilienthal hat in einer frühen Forschung empfohlen, einen maximalen Zeitunterschied von 35 Millisekunden zwischen den Wahrnehmungen der verschiedenen Sinne einzuhalten\cite{bib:VRSicknessPausch}. Das bedeutet das System muss mindestens eine Bildwiederholungsrate von ungefähr 30 Bildern pro Sekunde gewährleisten.  Aktuell empfehlen Hersteller von VR-Brillen sogar eine Wiederholungsrate von 90 Bildern pro Sekunde, um einen komfortablen Gebrauch des VR-Gerätes sicherzustellen \cite{bib:90FpsMin}. Um der VR-Krankheit vorzubeugen ist also auch die Optimierung der Applikation (wie in Abschnitt \ref{sec:Optimierung}) für eine hohe Bildwiederholungsrate und Leistungsfähigkeit vom betreibenden Rechner des VR-Gerätes zu beachten.\\
 
 Der häufigste Grund für das Auslösen der VR-Krankheit sind aber, wie Anfangs erwähnt, zu starke Bewegungen in der virtuellen Welt bei fehlenden Bewegungen in der realen Welt. Deshalb wurde in C.LABEL-VR dieser Aspekt bei den Navigationsmodi beachtet und versucht durch geeignete Methoden der VR-Krankheit vorzubeugen. 
 
 
-\subsection{Freier Flug}
+\subsection{Freier Flug-Modus}
 \label{sec:FreeFlyMode}
-TODO Erklärung der FreeFly-Modus und des Funktionsprinzips dahinter
 
-\subsection{Teleport}
+\begin{figure}%
+	\centering
+    \includegraphics[width=13.5cm]{OculusTouch}
+    \caption{Oculus Touch Controller mit der offiziellen Beschriftung von Oculus \cite{bib:OculusTouchPic}}
+    \label{fig:OculusTouchPic}
+\end{figure}
+
+Der freie Flug-Modus ist die erste Navigationsart, die für C.LABEL-VR entwickelt wurde. Hierbei wurde vor allem auf den praktischen Nutzen für die Bewegung wert gelegt. Das Ziel war es also einen Bewegungsmodus zu implementieren, der für den Benutzer leicht verständlich und schnell zu erlernen ist. Außerdem sollte es möglich sein sich präzise zu Bewegen um leicht an gewünschte Positionen in der Punktwolke zu kommen.\\
+
+Die Benutzereingabe für diesen Navigationsmodus erfolgt über die Analog-Sticks der Oculus Touch Controller (siehe \textit{Thumbstick} in Abbildung \ref{fig:OculusTouchPic}). Bewegt der Benutzer einen dieser Sticks, bewegt er sich auch in der virtuellen Welt. Wird der Stick wieder losgelassen, endet auch die Bewegung innerhalb der virtuellen Umgebung. Dies soll die gewünschte Intuitivität liefern. Die Längs- und die Lateral-Bewegung werden dabei mit dem linken Stick gesteuert. Durch Betätigung des rechten Sticks kann eine Vertikal-Bewegung oder eine Rotation um die eigene Achse ausgeführt werden. Die genauen Steueranweisungen sind in der Bedienungsanleitung zur Applikation zu finden (APPENDIX).\\
+
+Um die Bewegungen aus dem Stand oder Richtungswechsel angenehmer für den VR-Benutzer zu machen wird im freien Flugmodus Beschleunigung und Verzögerung simuliert. Wird ein Steuerbefehl vom Benutzer gegeben, bewegt sich dieser nicht sofort mit voller Geschwindigkeit. Dies wäre ein, für den Menschen unnatürliches Bewegungsverhalten und könnte, zusätzlich zu den Auslösern aus Abschnitt \ref{sec:VRSickness}, zu Symptomen der VR-Krankheit führen. Stattdessen kommt die Bewegung, durch die Beschleunigung, langsam ins Rollen, sodass der Benutzer eine bestimmte Zeit hat um sich an die Geschwindigkeitsveränderung zu gewöhnen. Endet der Bewegungsbefehl, also lässt der Benutzer den entsprechenden Stick los, endet die Bewegung nicht schlagartig, sondern die Geschwindigkeit wird wie beim Bremsen mit einem Auto immer weniger, sodass auch hier der Benutzer Zeit hat sich an den Bewegungsstopp zu gewöhnen.      Besonders wichtig wird dieses Prinzip bei Richtungswechseln. Würde der Benutzer bei voller Geschwindigkeit einen Richtungswechsel vollziehen, bei dem er sich in die neue Richtung ebenfalls sofort mit Höchstgeschwindigkeit bewegt, würde dies in den meisten fällen zu Übelkeit führen, da der Richtungswechsel zu schlagartig vollzogen werden würde. Durch die Verzögerung kommt, bei einem Richtungswechsel, der Benutzer erst langsam zum Stehen und wird danach in die neue Richtung beschleunigt. Der Wechsel der Bewegungsrichtung wird also übergangsweise ausgeführt, was der VR-Krankheit entgegenwirkt. \\
+
+Die Geschwindigkeit der Bewegung des Nutzers wird in jedem Update-Zyklus (erklärt in Abschnitt \ref{sec:UnityDevelopment}) der Applikation berechnet. Das heißt die Funktion \textit{ComputeSpeed} aus der Auflistung \ref{lst:FreeFly} wird in jedem dieser Zyklen aufgerufen. Die Beschleunigung wird nun so simuliert, dass ein bestimmter Beschleunigungswert auf den aktuellen Geschwindigkeitswert addiert wird, bis die Maximalgeschwindigkeit erreicht ist. Gibt es keinen Bewegungsbefehl mehr, wird vom aktuellen Geschwindigkeitswert solange ein Verzögerungswert abgezogen, bis die Geschwindigkeit null beträgt. Der Verzögerungswert ist in der Regel höher als der Beschleunigungswert, damit der Benutzer schneller zum Stehen kommt, als er Beschleunigt. Dies hat den Zweck dass der Anhaltevorgang präzise bleibt und der Benutzer so nicht zu weit verzögert bis er zum stehen kommt. Beide Werte können allerdings vom Benutzer selbst eingestellt werden (siehe Kapitel \ref{sec:AppMenu}). Der Richtungswechsel ist vom Prinzip her ähnlich implementiert. Hierbei wird allerdings ein noch höherer Subtrahend als der Verzögerungswert von der aktuellen Geschwindigkeit abgezogen, damit der Richtungswechsel schnell von statten geht, jedoch immer noch verzögert.
+
+\begin{lstlisting}[caption={Vereinfachte Implementierung des Beschleunigungs- und Verzögerungsprinzip in eine einzelne Richtung}, captionpos=t, label=lst:FreeFly]
+private float ComputeSpeed(bool move, float currentSpeed, float maxSpeed ,float accelerationValue, float decelerationValue)
+{
+	float newSpeed;	
+	
+	if(move == true)
+	{
+		if(currentSpeed < maxSpeed)
+			newSpeed = currentSpeed + accelerationValue;
+		else
+			newSpeed = maxSpeed;
+	}
+	else
+	{
+		if(currentSpeed > 0)
+			newSpeed = currentSpeed - decelerationValue;
+		else
+			newSpeed = 0;
+	}
+	
+	return newSpeed;
+}
+\end{lstlisting}
+\quad
+
+Durch den freien Flugmodus soll dem Benutzer eine Bewegungsart zur Verfügung gestellt werden, die den gewohnten Bewegungsabläufen des Menschen ähnelt. Dies ist mit der Simulation von Beschleunigung und Verzögerung gegeben. Durch einen höheren Verzögerungswert kann darüber hinaus sichergestellt werden, dass der Benutzer präzise an eine gewünschte Position navigieren kann. Nichts desto trotz kann es bei diesem Bewegungsmodus dazu kommen, dass Symptome der VR-Krankheit auftreten. Dies kommt daher, dass der Mensch eine konstante Bewegung visuell wahrnimmt, sie aber nicht körperlich fühlt (vgl. Abschnitt \ref{sec:VRSickness}). Um diesen Nachteil auszugleichen wurde zusätzlich noch ein zweiter Navigationsmodus entwickelt.
+ 
+\subsection{Teleport-Modus}
 \label{sec:TeleportMode}
-TODO Erklärung des Teleport Modus und des Funktionsprinzips dahinter
+Semaphor mit GetDown austauschen\\
+
+Der Teleport-Modus ist der zweite Navigationsmodus der für C.LABEL-VR entwickelt wurde. Der Zweck dieses Modus ist es, die Anfälligkeit des freien Flug-Modus (Abschnitt \ref{sec:FreeFlyMode}) für die VR-Krankheit auszugleichen. Symptome der VR-Krankheit treten beim freien Flug auf, da der Benutzer eine konstante Bewegung auf visuellem Weg wahrnimmt, jedoch nicht mit dem Gleichgewichtssinn spürt. Durch Teleportation, also den unverzögerten Sprung von einer Position zu einer anderen, gibt es keine konstante Bewegung. So soll nun der VR-Krankheit entgegen gewirkt werden. Diese Art der Bewegung ist aktuell die am weitesten verbreitet unter VR-Anwendungen \cite{bib:VRLocomotionReview}, da sie nachweislich weniger anfällig für die VR-Krankheit ist \cite{bib:PointTeleport}.\\
+
+Das Prinzip der Steuerung ist ähnlich wie das des freien Flug-Modus. Steuerungsbefehle kann der Benutzer zunächst mit den Sticks tätigen (siehe \textit{Thumbstick} in Abbildung \ref{fig:OculusTouchPic}). Auch hier wird die Längs- und die Lateral-Bewegung mit dem linken und die Vertikal- und Rotations-Bewegung mit dem Rechten Stick gesteuert. Die genauen Steueranweisungen sind in der Bedienungsanleitung zur Applikation zu finden (APPENDIX).\\
+
+Wie schon erwähnt gibt es, im Gegensatz zum freien Flug-Modus, keine konstante Bewegung durch die Benutzereingaben. Stattdessen wird die Position des Benutzers in der virtuellen Welt durch die Steuerbefehle unverzögert verschoben, sodass es einem Teleport gleicht. Die Implementation dieses Vorgangs ist dank der Transform-Komponente eines Gameobjects (siehe Abschnitt \ref{sec:UnityDevelopment}) nicht aufwändig. Wie in der Auflistung \ref{lst:Teleport} zu sehen ist, kann die Verschiebung des Objekts \textit{userView} um einen Vektor mit einem einzigen Befehl vollzogen werden. Dieses Objekt repräsentiert dabei die Augen des Benutzers in der virtuellen Welt. Wird es also verschoben, ist es für den Benutzer so, als würde er von einer zur anderen Position teleportiert werden. Der Vektor um den der Benutzer verschoben wird, kann von ihm selber eingestellt werden (siehe Kapitel \ref{sec:AppMenu}).
+
+\begin{lstlisting}[caption={Implementierung des Teleportationsbefehls}, captionpos=t, label=lst:Teleport]
+GameObject userView;
+
+userView.transform.Translate(new Vector3(xDirection, yDirection, zDirection));
+\end{lstlisting}
+\quad
+
+------------Bild mit pointer teleport einfügen---------
+
+Zusätzlich zu den Benutzereingaben durch den Stick, gibt es eine weitere Möglichkeit für den Benutzer sich an eine bestimmte Stelle in der virtuellen Welt zu teleportieren. Dazu kann er eine Art Laserstrahl aktivieren, der vom linken virtuellen Controller ausgeht (Abbildung \ref{fig:PointerTeleport}). Dieser Strahl fungiert wie eine Stange die der Benutzer in der Hand hält, sie bewegt sich also mit der Handbewegung des Nutzers mit. Der Strahl kann durch die Hand-Auslöser-Taste des linken Controllers aktiviert werden (siehe \textit{PrimaryHandTrigger} in Abbildung \ref{fig:OculusTouchPic}). Dabei wird auch die Länge des Strahls angezeigt, was ebenfalls in der Abbildung \ref{fig:PointerTeleport} zu sehen ist. Die Länge des Strahls kann anschließend vom Benutzer angepasst werden, indem er den linken Stick nach vorne (Strahl wird länger) oder nach hinten (Strahl wird kürzer) drückt. Betätigt der Benutzer die Index-Auslöser-Taste (\textit{PrimaryIndexTrigger} in Abbildung \ref{fig:OculusTouchPic}) wird er an die Spitze des Laserstrahls teleportiert. Mit Hilfe dieser Teleportationsart kann der Benutzer auch weite Distantzen in der virtuellen Welt schnell zurücklegen. Für die Implementation dieser Funktion kann ebenfalls der Befehl aus der Auflistung \ref{lst:Teleport} verwendet werden, wobei statt dem neu erzeugten Vektor die Position des Strahlendes verwendet wird.\\
+
+Durch die Bewegung mittels Teleport wird also der VR-Krankheit entgegengewirkt, da es keine konstante Bewegung für den Benutzer gibt. Durch den Teleport mittels Laserstrahl können hierbei auch große Distanzen vom Benutzer zurückgelegt werden. Der Nachteil dieses Bewegungsmodus ist es, dass durch feste Teleportationsdistanzen keine präzise Stuerung mehr garantiert werden kann. Da aber genau dafür der freie Flug-Modus Abhilfe schafft, ergänzen sich die beiden Navigationsmodi sehr gut und bieten dem Benutzer so passende Möglichkeiten sich durch die virtuelle Welt zu Bewegen.
+ 
 
 \section{Annotieren der Punktwolke}
 \label{sec:Annotation}
 TODO kurze Einleitung
 
-\subsection{Einfache Pointer Annotation}
+\subsection{Pointer Annotation}
 \label{sec:SimplePointerAnnotation}
 TODO Erklärung der Pointer Annotation und des Funktionsprinzips dahinter
 
+\subsection{Touch Annotation}
+\label{sec:TouchAnnotation}
+TODO Erklärung der Pointer Annotation und des Funktionsprinzips dahinter
+
 \subsection{Cluster Annotation}
+\label{sec:ClusterLabeling}
 In einer Punktwolke mit mehreren tausend Punkten wird es für den Benutzer auf Dauer mühsam jeden Punkt einzeln zu Annotieren. Bei diesem Problem soll die \textit{Cluster Annotation} Abhilfe schaffen. Diese Art der Annotation soll selbstständig diejenigen Punkte in einen Cluster aufnehmen und sie mit der gleichen Klasse labeln, die zum gleichen Objekt gehören. Der Benutzer wählt hierfür, wie im vorherigen Kapitel \ref{sec:SimplePointerAnnotation} einen Punkt mit Hilfe des Pointers aus. Ausgehend davon werden umliegende Punkte untersucht, ob sie zum gleichen Objekt gehören wie der ausgewählte Startpunkt. Ist dies der Fall werden sie in den Cluster aufgenommen. Werden keine Punkte mehr aufgenommen bleibt der Endcluster übrig, welcher dann einem Objekt entspricht, zum Beispiel einem Auto. \\
 
 Wissenschaftler beschäftigen sich intensiv mit solchen Verfahren zur Objektidentifizierung in dreidimensionalen Punktwolken. Ansätze, wie sie in \cite{bib:Segmentation1}, \cite{bib:Segmentation2} oder \cite{bib:Segmentation3} vorgestellt werden sind nur wenige von vielen. Die meisten haben aber ein ähnliches Vorgehen. Zuerst werden all diejenigen Punkte in der Wolke entfernt, die zum Boden gehören. So bleiben anschließend nur noch Punkte übrig, welche zu Objekten wie beispielsweise Autos, Häuser oder Straßenschilder gehören. Die übrigen Punkte können nun mit diversen Algorithmen zu Clustern zusammengefasst werden. Ein Beispiel für das Ergebnis eines solchen Verfahrens bietet die Abbildung \ref{fig:ClusteredCloud}. Im Folgenden wird vorgestellt wie die Cluster-Analyse in C.LABEL-VR funktioniert.
@@ -135,6 +213,7 @@ Wissenschaftler beschäftigen sich intensiv mit solchen Verfahren zur Objektiden
 \end{figure}
 
 \subsubsection{Bodenpunkt-Analyse}
+\label{sec:GroundPointSegmentation}
 Wie schon erwähnt werden bei vielen Verfahren der Cluster-Analyse von Punktwolken zuerst die Bodenpunkte identifiziert. Dieses Verfahren wird auch in dieser Arbeit angewendet. Der Grund dafür ist, dass die Bodenpunkte nicht in das Suchverfahren nach Objektpunkten aufgenommen werden dürfen. Sie würden nicht nur die Suche nach echten Objektpunkten erschweren sondern auch das Ergebnis der Objektcluster verfälschen. Als Erklärung soll folgender, simpler Cluster-Algorithmus dienen:
 
 \begin{enumerate}
@@ -296,7 +375,8 @@ TODO
 -kurze Einleitung
 -Erklärung der Architektur hinter dem UI-System
 
-\subsection{Ingame Menu}
+\subsection{Applikations-Menü}
+\label{sec:AppMenu}
 TODO Erklärung der Einstellbaren Parameter im Ingame Menü
 %\subsection{Movement}
 %\subsection{Labelclasses}
