@@ -40,6 +40,12 @@ Die Importierten Daten, beispielsweise HDF5, enthalten allerdings oft deutlich m
 
 Zusammenfassend ist also folgendes zu tun, um die Benutzung ein neues Datenformates oder einer neuen Datenstruktur zu gewährleisten: Zunächst muss eine Importfunktion programmiert werden, die alle Informationen aus den gewünschten Daten ausliest. Anschließend muss diese Funktion das genormte, interne Datenformat (Kapitel \ref{sec:IDS}) erstellen und alle nötigen Informationen aus den eingelesenen Daten darin speichern.  Daraus können die entsprechenden Punktwolken dann generiert werden können. Falls es Daten gibt, die über diejenigen in der \acrshort{acr:IDS} hinausgehen, muss eine Metadatenstruktur angelegt werden, in welche die zusätzlichen Daten abgelegt werden können. Zuletzt ist eine Exportfunktion zu implementieren, welche die \glslink{glos:Labeling}{Labeling}-Informationen aus der internen Datenstruktur in die eingelesenen Daten exportieren kann. Außerdem muss sie in der Lage sein aus den internen- und den Metadaten das Ausgangsdatenformat wiederherzustellen, um die Daten als neue Files exportieren zu können. Im folgenden Kapitel soll dieses Prinzip konkret an einem HDF5-Beispiel gezeigt werden.
 
+\subsection{Interne Datenstruktur}
+\label{sec:IDS}
+TODO 
+-Wie sieht die interne Datenstruktur aus die Konzipiert wurde um die Importierten Daten zu vereinheitlichen.
+-Was passiert mit den Daten, die über diese Struktur hinaus gehen (Metadaten)
+
 \subsection{HDF5-Beispiel}
 \subsubsection{HDF5 Daten}
 \label{sec:HDF5}
@@ -49,15 +55,11 @@ TODO Evtl. den Import und Exportvorgang anhand eines minimalistischen HDF5-Beisp
 \label{sec:Generierung}
 TODO Kurze einleitung
 
-\subsection{Interne Datenstruktur}
-\label{sec:IDS}
-TODO 
--Wie sieht die interne Datenstruktur aus die Konzipiert wurde um die Importierten Daten zu vereinheitlichen.
--Was passiert mit den Daten, die über diese Struktur hinaus gehen (Metadaten)
+
 
 \subsection{Generierung}
 \label{sec:PclGenerate}
-TODO Wie wird aus der internen Struktur eine Punktwolke in Unity ezeugt?
+TODO Wie wird aus der internen Struktur eine Punktwolke in Unity erzeugt?
 
 %session
 %pointcloud
@@ -66,6 +68,7 @@ TODO Wie wird aus der internen Struktur eine Punktwolke in Unity ezeugt?
 %Koordinatensysteme
 
 \subsection{Optimierung}
+\label{sec:Optimierung}
 TODO Was ist bei der Erzeugung der Punktwolken zu beachten, damit die vielen Tausend Punkte der Wolke keinen massiven FPS-Einsturz verursachen
 
 %-generell nichts teures in update mehthode
@@ -87,13 +90,21 @@ TODO Was ist bei der Erzeugung der Punktwolken zu beachten, damit die vielen Tau
 \label{sec:Navigation}
 Die Navigigation in Virtual Reality Inhalten ist ein entscheidendes Thema. Wird dieses Thema während der Entwicklung einer VR-Applikation nicht ausreichend berücksichtigt, so kann diese Applikation für manche Menschen unbenutzbar sein. Der Grund dafür ist die \textit{VR-Krankheit}. Diese Krankheit verursacht beim Benutzer Übelkeit, die bei manchen Nutzern mehr und bei manchen Nutzern weniger auftritt. Details dazu sind im Abschnitt \ref{sec:VRSickness} gegeben. 
 
-Um sich in C.LABEL durch Punktwolken zu Bewegen wurden zwei Navigationsmöglichkeiten entwickelt. Zum einen gibt es den Freien Flug Modus (\textit{Free Fly Mode}) (Abschnitt \ref{sec:FreeFlyMode}). In diesem Modus kann sich der Benutzer, mit Hilfe der Oculus Eingabegeräte, auf intuitive Weise frei durch die Punktwolke bewegen. Die Bewegung ist dabei durchgängig und wird durch Beschleunigung und Bremsen gestartet und beendet. Diese Art der Bewegung fördert jedoch bei manchen Nutzen den Effekt der VR-Krankheit.
+Um sich in C.LABEL durch Punktwolken zu Bewegen wurden zwei Navigationsmöglichkeiten entwickelt. Zum einen gibt es den Freien Flug Modus (\textit{Free Fly Mode}) (Abschnitt \ref{sec:FreeFlyMode}). In diesem Modus kann sich der Benutzer, mit Hilfe der Oculus Eingabegeräte intuitiv und frei durch die Punktwolke bewegen. Die Bewegung ist dabei durchgängig und wird durch Beschleunigung und Bremsen gestartet und beendet. Diese Art der Bewegung fördert jedoch bei manchen Nutzen den Effekt der VR-Krankheit.
 
 Deshalb gibt es mit dem Teleportationsmodus (\textit{Teleport Mode}) noch eine zweite Navigationsart (\ref{sec:TeleportMode}). Das Grundprinzip der Steuerung ist ähnlich, allerdings gibt es keine durchgängige Bewegung. Stattdessen wird der Benutzer von einer Stelle zur anderen teleportiert. Dies wirkt dem Übelkeitseffekt entgegen.   
 
 \subsection{VR-Krankheit}
 \label{sec:VRSickness}
-TODO kurze Erläuterung von Motion Sickness
+Die VR-Krankheit ist ein Effekt der auftritt während oder nach dem Aufenthalt einer Person in einer virtuellen Umgebung. Sie äußert sich meistens durch Übelkeit, aber auch durch andere Symptome wie Kopfschmerzen oder Überanstrengung der Augen \cite{bib:VRSicknessLaviola}. Es wird geschätzt, dass bei dreißig bis achtzig Prozent der Menschen Symptome der VR-Krankheit auftreten \cite{bib:VRSicknessRebenitsch}. Die Erforschung der Ursache für die Krankheit ist noch nicht gänzlich abgeschlossen. Es gibt mehrere Theorien was der Auslöser für sie ist. \\
+
+Die gängigste Theorie dafür ist das Prinzip der Sinnestäuschung. Dieses Prinzip besagt, dass das menschliche Gehirn einen Konflikt feststellt, wenn sich die erwartete Wahrnehmung zweier Sinnesorgane voneinander unterscheiden. Im Falle der VR-Krankheit handelt es sich bei den Sinnesorganen um die visuelle Wahrnehmung und den Gleichgewichtssinn. Bewegt sich ein VR-Nutzer nun durch die virtuelle Welt, so registriert dies die visuelle Wahrnehmung als Bewegung in eine bestimmte Richtung. Positionsbedingte Bewegungen in der virtuellen Welt geschehen meist ohne Bewegung des Benutzers in der physischen Welt. Der Gleichgewichtssinn des Menschen registriert also keinerlei Bewegung im Gegensatz zur visuellen Wahrnehmung und es kommt zum Konflikt. \cite{bib:VRSicknessKolanski}. \\
+
+Dieser Konflikt kann jedoch nicht nur ausgelöst werden, wenn sich die Bewegung des Nutzers in der virtuellen und der realen Welt grundlegend unterscheiden. Symptome der VR-Krankheit können auch dann auftreten, wenn die Bewegungen gleich sind, jedoch leicht verzögert. Dies kann beispielsweise der Fall sein, wenn die Leistungsgrenze des betreibenden Rechners erreicht ist und somit keine flüssige Wiederholungsrate des Bildes mehr gewährleistet werden kann. Ist die Wiederholungsrate zu niedrig entsteht ein zu großer Zeitunterschied zwischen der Tätigkeit der Bewegung und dem Sehen der Bewegung. Lilienthal hat in einer frühen Forschung empfohlen einen maximalen Zeitunterschied von 35 Millisekunden zwischen den Wahrnehmungen der verschiedenen Sinne, was ungefähr 30 Bildern pro Sekunde entspricht. Aktuell empfehlen Hersteller von VR-Brillen sogar eine Wiederholungsrate von 90 Bildern pro Sekunde, um einen komfortablen Gebrauch des VR-Gerätes zu gewährleisten. Um der VR-Krankheit vorzubeugen ist also auch die Optimierung der Applikation (wie in Abschnitt \ref{sec:Optimierung}) für eine hohe Bildwiederholungsrate und Leistungsfähigkeit vom betreibenden Rechner des VR-Gerätes zu beachten.\\
+---quellen für 35 msec und 90 fps fehlen noch ----
+
+Der häufigste Grund für das Auslösen der VR-Krankheit sind aber, wie Anfangs erwähnt, zu starke Bewegungen in der virtuellen Welt bei fehlenden Bewegungen in der realen Welt. Deshalb wurde in C.LABEL-VR dieser Aspekt bei den Navigationsmodi beachtet und versucht durch geeignete Methoden der VR-Krankheit vorzubeugen. 
+
 
 \subsection{Freier Flug}
 \label{sec:FreeFlyMode}
