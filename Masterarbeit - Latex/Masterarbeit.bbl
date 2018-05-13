@@ -240,6 +240,50 @@ C.~Games, ``Unity3d tips 2 – the singleton pattern,'' Internetquelle
   \url{http://clearcutgames.net/home/?p=437}
 \BIBentrySTDinterwordspacing
 
+\bibitem{bib:UnityPrefab}
+\BIBentryALTinterwordspacing
+Unity, ``Prefabs,'' Internetquelle (abgerufen am 13.05.2018), May 2018.
+  [Online]. Available: \url{https://docs.unity3d.com/Manual/Prefabs.html}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:MeshRenderer}
+\BIBentryALTinterwordspacing
+------, ``Mesh renderer,'' Internetquelle (abgerufen am 13.05.2018), May 2018.
+  [Online]. Available:
+  \url{https://docs.unity3d.com/Manual/class-MeshRenderer.html}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:Instantiate}
+\BIBentryALTinterwordspacing
+------, ``Object.instantiate,'' Internetquelle (abgerufen am 13.05.2018), May
+  2018. [Online]. Available:
+  \url{https://docs.unity3d.com/ScriptReference/Object.Instantiate.html}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:LightProbes}
+\BIBentryALTinterwordspacing
+------, ``Light probes,'' Internetquelle (abgerufen am 13.05.2018), May 2018.
+  [Online]. Available: \url{https://docs.unity3d.com/Manual/LightProbes.html}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:Collider}
+\BIBentryALTinterwordspacing
+------, ``Colliders,'' Internetquelle (abgerufen am 13.05.2018), May 2018.
+  [Online]. Available:
+  \url{https://docs.unity3d.com/560/Documentation/Manual/CollidersOverview.html}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:DrawCall}
+\BIBentryALTinterwordspacing
+------, ``Draw call batching,'' Internetquelle (abgerufen am 13.05.2018), May
+  2018. [Online]. Available:
+  \url{https://docs.unity3d.com/Manual/DrawCallBatching.html}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:PointTeleport}
+E.~Bozgeyikli, A.~Raij, S.~Katkoori, and R.~Dubey, ``Point \& teleport
+  locomotion technique for virtual reality,'' pp. 205--216, 10 2016.
+
 \bibitem{bib:VRSicknessLaviola}
 \BIBentryALTinterwordspacing
 J.~J. LaViola, Jr., ``A discussion of cybersickness in virtual environments,''
@@ -275,10 +319,6 @@ IrisVR, ``The importance of frame rates,'' Internetquelle (abgerufen am
 C.~Boletsis, ``The new era of virtual reality locomotion: A systematic
   literature review of techniques and a proposed typology,'' \emph{Multimodal
   Technologies and Interaction}, vol.~1, no.~4, p.~24, sep 2017.
-
-\bibitem{bib:PointTeleport}
-E.~Bozgeyikli, A.~Raij, S.~Katkoori, and R.~Dubey, ``Point \& teleport
-  locomotion technique for virtual reality,'' pp. 205--216, 10 2016.
 
 \bibitem{bib:Segmentation2}
 M.~Hoy, J.~Dauwels, and J.~Yuan, ``Efficient ground object segmentation in 3d

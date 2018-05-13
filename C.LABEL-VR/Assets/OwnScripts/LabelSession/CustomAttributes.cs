@@ -18,7 +18,7 @@ public class CustomAttributes : MonoBehaviour
         set
         {
             _Label = value;
-            try { GetComponent<MeshRenderer>().material = Labeling.GetLabelClassMaterial(Label); }
+            try { GetComponent<MeshRenderer>().material = Labeling.GetLabelClassMaterial(_Label); }
             catch { Debug.Log("PointAttribute: No Meshrenderer"); }
         }
     }

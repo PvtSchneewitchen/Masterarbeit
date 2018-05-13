@@ -66,38 +66,82 @@ TODO Evtl. den Import und Exportvorgang anhand eines minimalistischen HDF5-Beisp
 
 \section{Generierung einer Punktwolke}
 \label{sec:Generierung}
-TODO Kurze einleitung
+Nach dem man die Informationen über die internen Datenstrukturen durch den Import gesammelt hat, kann man mit der Generierung der Punktwolken anfangen. Ziel davon ist es die Punktwolkendaten zu visualisieren, damit der Benutzer sie sehen und mit ihnen interagieren kann. In der Regel wird dafür, in einer passenden Visualisierungsumgebung, für jede Position eines Punktes ein Objekt eingezeichnet. Meistens sind dies zweidimensionale Punkte, die lediglich eine quadratische Einfärbung von Pixeln sind. 
+
+------------Bild Punktwolke normal und VR-------------
+
+In C.Label-VR wird jeder Punkt durch eine dreidimensionale Kugel repräsentiert. Dadurch wird für den Benutzer der Eindruck erzeugt, dass die Sensordaten durch echte Objekte im Raum repräsentiert werden. Diese Objekte, sind durch ihre dreidimensionale Eigenschaft gut sichtbar sind und wirken für den Benutzer greifbar. Dies ist ein großer Unterschied zu bisherigen Visualisierungen und bietet einen erheblichen optischen Mehrwert. Die Unity Engine, als Visualisierungsumgebung, bietet nämlich die richtige Darstellung der räumlichen Proportionen an jeder Position. Diese Proportionen, also auch die Darstellung der Sensordaten im richtigen Maßstab, werden durch das Rendering der Unity Engine für jedes Bild berechnet (erklärt in Abschnitt \ref{sec:UnityDevelopment}) und somit immer richtig für den Benutzer dargestellt.\\
+
+Die dreidimensionalen Punkte sind dabei vorgefertigte Objekte. Dieses Vorfertigen von Objekten bietet sich bei der Entwicklung mit Unity immer dann an, wenn mehrere gleiche Objekte zur gleichen Zeit existieren sollen, wie es beispielsweise bei einer Punktwolke der Fall ist. Die Erstellung solcher Objekte, die in Unity \textit{Prafabs} genannt werden, ist eine herkömmliche Methode bei der Entwicklung mit Unity \cite{bib:UnityPrefab}.\\ 
+
+\begin{figure}%
+    \centering
+    \subfloat[Mesh Filter- und Collider-Komponente]{{\includegraphics[width=8cm, height=5.5cm]{ComponentMeshCollider}\label{fig:MeshCollider}}}%
+    \qquad
+    \subfloat[Mesh Renderer-Komponente]{{\includegraphics[width=6cm, height=5.5cm]{ComponentMeshRenderer}\label{fig:MeshRenderer}}}%
+    \caption{Beide Bilder zeigen Komponenten aus der Unity Editor, die dem Punkt-Prefab zugeordnet sind.}
+    \label{fig:Components}%
+\end{figure}
 
 
+Das Punkt-Prefab, das für C.LABEL-VR vorgefertigt wurde um einen Punkt in der Punktwolke zu repräsentieren, besteht dabei aus mehreren Komponenten. Eine Komponente ist dabei die Transform-Komponente (siehe Abschnitt \ref{sec:UnityDevelopment}), welche die Position des Punktes festlegt. Eine weitere ist die \textit{Mesh Renderer}-Komponente. Ein Mesh (zu deutsch: Gewebe/Netz) ist in der Spielentwicklung ein gängiger Begriff für das dreidimensionale Modell eines Objektes \cite{bib:Meshes}. Für das Punkt-Prefab wird das Modell einer Kugel verwendet (\textit{Sphere} als Mesh in Abbildung \ref{fig:MeshCollider}). Der Mesh-Renderer legt dabei die Materialeigenschaften des Objektes fest \cite{bib:MeshRenderer}. Diese Eigenschaften enthalten beispielsweise die Textur, also das Aussehen der Oberfläche des Objektes, die Reflexionseigenschaften oder wie die Art wie das Objekt Lichteinwirkungen auf die Umgebung verteilt. Das Standard-Material das beim Punkt-Prefab verwendet wird ist ein vorgefertigtes Material \textit{Unlabeled} (siehe Abbildung \ref{fig:MeshRenderer}), welches eine einfarbige, schwarze Oberfläche hat. Schwarze Punkte repräsentieren also diejenigen Punkte, die noch nicht annotiert wurden. Andere Eigenschaften wie Licht, Reflexionen oder Schatten wurden mit Parametern belegt, die so wenig wie möglich Berechnungen erfordern, damit die Bildwiederholungsrate der Applikation so hoch wie möglich gehalten werden kann. Genauer ist dies im folgenden Abschnitt \ref{sec:Optimierung} erklärt. \\
 
-\subsection{Generierung}
-\label{sec:PclGenerate}
-TODO Wie wird aus der internen Struktur eine Punktwolke in Unity erzeugt?
+Eine weitere wichtige Komponente ist der \textit{Sphere Collider} (siehe Abbildung \ref{fig:MeshCollider}). Sie ist notwendig um mit dem Punkt zu interagieren, da der Sphere Collider die Kollisionseigenschaften des Objektes festlegt. Möchte man mit dem Punkt beispielsweise durch einen anderen virtuellen Gegenstand interagieren, muss die Kollision zwischen Punkt und dem Gegenstand detektiert werden. Das geschieht durch die Collider-Komponenten beider Objekte. Ebenfalls wichtig für die Leistungsfähigkeit von C.LABEL-VR ist es, dass die \textit{Is Trigger}-Eigenschaft des Punkt-Colliders deaktiviert ist. Im aktiven Zustand besagt diese Eigenschaft, dass das Objekt welches diesen Collider hat, der Auslöser für Kollisionen ist. Das heißt die Collider-Komponente überprüft durchgehend ob eine Kollision vorliegt. Wenn alle Punkte der Wolke diese Überprüfung durchgehen machen würden, würde sich das negativ auf die Leistung der Applikation auswirken.\\
 
-%session
-%pointcloud
-%...
+Zuletzt enthält das Punkt-Prefab doch die Komponente der internen Datenstruktur (vgl. Abschnitt \ref{sec:IDS}). Diese enthält die Informationen die man bei der Interaktion mit dem Punkt wissen muss, wie das Label und die Position. Die Label-Eigenschaft der IDS-Komponente wurde so implementiert, dass sie mit der Mesh-Renderer Komponente verknüpft ist. Dies dient dem Zweck, dass sich bei Änderung des Labels automatisch die Material-Farbe des Punktes ändert. Eine ähnliche Verknüpfung gibt es bei der Positionseigenschaft der internen Datenstruktur. Diese ist mit der Transform-Komponente verknüpft, sodass bei Änderung der Positionseigenschaft auch wirklich die Position geändert wird, da dies nur mit der Transform-Komponente möglich ist. Beide Implementationen sind in der Auflistung \ref{lst:ComponentConnection} zu sehen.
 
-%Koordinatensysteme
+\begin{lstlisting}[caption={Verknupfung von Label- und Positionseigenschaft der IDS-Komponente mit anderen Komponenten}, captionpos=t, label=lst:ComponentConnection]
+private uint _Label;
+public uint Label
+{
+    get
+    {
+        return _Label;
+    }
+    set
+    {
+        _Label = value;
+        GetComponent<MeshRenderer>().material = 
+        	Labeling.GetLabelClassMaterial(_Label);
+    }
+}
 
-\subsection{Optimierung}
+private Vector3 _PointPosition;
+public Vector3 PointPosition
+{
+    get
+    {
+        return transform.position;
+    }
+    set
+    {
+        transform.position = value;
+    }
+}
+\end{lstlisting}
+\quad
+
+----Evtl. Koordinatensystem anpassung-----------------
+
+Das Punkt-Prefab, mit all seinen Komponenten und deren richtig festgelegten Eigenschaften, kann nun für jeden Punkt aus den Input-Daten instantiiert werden. Dafür gitb es in Unity die spezielle Funktion \textit{Instantiate} \cite{bib:Instantiate}. Die Unity Engine klont dadurch für jede Instanz das vorgefertigte Ausgangsobjekt, wobei jedes der Klone nach der Instantiierung individuell veränderbar ist. Nachdem die Instanz eines Punktes erstellt wurde kann also seine Position festgelegt werden und, wenn beim Import schon vorhanden, das Label des Punktes gesetzt werden. Durch das Vorgehen, das in diesem Abschnitt beschrieben wurde entsteht eine Punktwolke, welche in einer virtuellen Umgebung betrachtet werden kann. 
+
+--------------------Abbildung Punktwolke mit pre labels----------------
+
+
+\subsection{Optimierung der Bildwiederholungsrate}
 \label{sec:Optimierung}
-TODO Was ist bei der Erzeugung der Punktwolken zu beachten, damit die vielen Tausend Punkte der Wolke keinen massiven FPS-Einsturz verursachen
 
-%-generell nichts teures in update mehthode
-%	
-%-gameobject find
-%-getcomponent
-%
-%keine update oder start mehtode bei skripten der punkte
-%collider trigger nicht bei den punkten sondern beim anderen object
-%generell alle pollenden aktionen von den punkten entfernen
-%
-%
-%(-clonen von prefabs statt neue instanzen von inbuilts)
-%shared materials verwenden   kein material.color weil das eine kopie des materials erzeugt, welches dann einzeln gecallt werden muss
-%
-%gpu instancing bei den materials verwenden und forward rendering options
+Die Bildwiederholungsrate einer Applikation ist wesentlich entscheidend für die Benutzererfahrung mit ihr. Geringe Wiederholungsraten führen zu einer nicht flüssigen Darstellung des Applikationsinhaltes, was sehr störend für den Benutzer sein kann. Gerade bei VR-Apllikationen sind konstant hohe Bildwiederholungsraten wichtig um dem Benutzer eine angenehme visuelle Präsentation zu bieten und keine Symptome der VR-Krankheit hervorzurufen. Nähere Informationen zur VR-Krankheit werden im folgenden Abschnitt \ref{sec:VRSickness} gegeben. In C.LABEL-VR werden keine komplexen 3D-Objekte oder hochauflösende Texturen dargestellt, deswegen könnte hier der Eindruck entstehen, dass die Applikation, bei einem Leistungsstarken Rechner wie in Abschnitt \ref{sec:VR-Rechner}, keine Performance-Probleme haben sollte. Da aber Punktwolkendaten oft über 30.000 Punkte enthalten können, ist die große Anzahl an Objekten selbst, die dargestellt werden muss, auch für leistungsstarke Rechenmaschinen eine Herausforderung. Deswegen muss bei der Erstellung der Punktwolken auf einige Dinge geachtet werden, um keine Einbrüche bei der Bildwiederholungsrate zu verursachen.\\
+
+Im Abschnitt \ref{sec:UnityDevelopment} wurde die Update-Funktion erwähnt, die bei jedem Bildwiederholungszyklus in Unity ausgeführt wird. Durch diese hohe Ausführungsrate ist es generell ratsam, so wenig wie möglich Leistungsintesiven Programm-Code in diesen Methoden zu verwenden, da dieser ständig ausgeführt wird. Bei der Erstellung von Punktwolken in C.LABEL-VR ist es außerdem wichtig, dass das Punkt-Prefab über keine dieser Update Methoden verfügt. Diese würde nämlich von allen Punkten durchgehend ausgeführt werden, was bei einer hohen Anzahl an Punkten zu einem großen Leistungsverlust führen würde.\\
+
+Wichtig bei der Erstellung des vorgefertigten Punktes ist es auch, die Materialeigenschaften richtig zu wählen. Das Material selbst, das dem Punkt-Prefab zugeordnet ist, ist ebenfalls vorgefertigt (Material \textit{Unlabeled} in Abbildung \ref{fig:MeshRenderer}). Der Unity Engine ist somit bekannt, dass jeder darzustellende Punkt das gleiche Material hat. Die Engine muss somit nicht für jeden neuen Punkt eine neue Information über das Material anfordern. Vergleichbar ist dieser Vorgang mit dem Bohren eines Loches. Ist die Größe des Loches bekanntermaßen immer gleich, so muss der Bohrkopf nie gewechselt werden. Das spart Zeit und schlägt sich in C.LABEL-VR durch weniger Berechnungszeit und damit eine höhere Bildwiederholungsrate nieder.\\
+
+Bei den Eigenschaften der Mesh Renderer-Komponente (siehe Abbildung \ref{fig:MeshRenderer}) kann ebenfalls darauf geachtet werden, keine unnötigen Berechnungen zuzulassen. Die Optionen \textit{Light Probes} und \textit{Lightmap Static} sind für die Lichtverteilung des Objektes in der Szene zuständig \cite{bib:LightProbes}. Da eine Lichtverteilung des Objektes keinen optischen Mehrwert bringt, da der Hintergrund weiß ist, können diese Optionen deaktiviert werden um Rechenzeit zu sparen. Auch die Option \textit{Cast Shadows} wird deaktiviert, da das Anzeigen von Schatten bei der Berechnung aufwendig und bei der Darstellung der Punktwolke nicht erwünscht ist. Lediglich die Eigenschaft \textit{Reflection Probes} wird mit der Option \textit{Simple} belegt. Diese Eigenschaft legt die Reflexion, die vom Objekt zurückgegeben wird fest. Solch eine Reflexion ist in C.LABEL-VR gewünscht, da dies die Punkte für den Benutzer räumlicher darstellt, da sie Reflexionen wie echte Objekte haben. Damit die Berechnungen dafür aber nicht zu aufwendig werden, wird hier nur die Option Simple gewählt.\\
+
+Auch bei der Sphere Collider-Komponente ist auf eine Eigenschaft zu achten. Wie schon in Abschnitt \ref{sec:Generierung} erwähnt, ist diese Komponente für die Interaktion mit dem Objekt zuständig. Durch diese Komponente kann nämlich detektiert werden, ob  es eine Kollision mit einem anderen Objekt gibt, welches ebenfalls einen Collider besitzt \cite{bib:Collider}. Eine der beiden Collider-Komponenten muss dabei der Auslöser der Kollision sein. Um dies zu gewährleisten kann die Eigenschaft \textit{Is Trigger} aktiviert werden (siehe Abbildung \ref{fig:MeshCollider}). Ist diese im aktiven Zustand, so überprüft die Collider-Komponente durchgehend, ob eine Kollision mit einem anderen Objekt vorliegt. Ist dies bei jedem Punkt in der Punktwolke der Fall, gibt es durchgehend von allen Punkten diese Überprüfung, was zu einem erheblichen Performance-Verlust führt. Möchte man also durch ein Objekt mit einem Punkt interagieren, muss das Objekt der Auslöser der Kollision sein. Somit gibt es nur ein Objekt in der Szene, welches eine Kollisionsprüfung vollzieht.\\
+
+Trotz all dieser Einstellungen zur Verbesserung der Anwendungs-Performance kann es bei zu vielen Punkten im Sichtfeld des Benutzers zu einer niedrigen Bildwiederholungsrate kommen. Der Grund dafür ist, dass für jedes anzuzeigende Objekt ein Zeichnungs-Befehl an die Grafikkomponente des Rechners gegeben werden muss. Dies wird in der Fachsprache \textit{Draw Call} genannt \cite{bib:DrawCall}. Bei einer zu hohen Anzahl an Punkten in einer Punktwolke, kann es somit zu einer zu hohen Anzahl an Zeichnungs-Befehlen kommen. Dies führt dann zu einer niedrigen Bildwiederholungsrate. In diesem Fall hilft die Verbesserung der Leistungskomponenten des VR-Rechners (vgl. Abschnitt \ref{sec:VR-Rechner}). Für C.LABEL-VR wurde als zusätzliche Leistungsoptimierung eine Funktion implementiert, die dieses Problem umgeht. Diese Funktion verringert die Anzahl der angezeigten Punkte während der Bewegung des Benutzers, um die Anzahl an Draw-Calls zu verringern und somit die Bildwiederholungsrate zu erhöhen. Diese Funktion wird näher im Abschnitt \ref{sec:AppMenu} erklärt. 
 
 \section{Navigation}
 \label{sec:Navigation}

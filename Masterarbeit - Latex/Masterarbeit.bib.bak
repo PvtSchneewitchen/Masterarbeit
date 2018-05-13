@@ -575,4 +575,67 @@ Das Inteview handelt von den Verkaufszahlen der Hololens},
   pages  = {205-216},
 }
 
+@Misc{bib:UnityPrefab,
+  author       = {Unity},
+  title        = {Prefabs},
+  howpublished = {Internetquelle (abgerufen am 13.05.2018)},
+  month        = may,
+  year         = {2018},
+  url          = {https://docs.unity3d.com/Manual/Prefabs.html},
+}
+
+@Misc{bib:Instantiate,
+  author       = {Unity},
+  title        = {Object.Instantiate},
+  howpublished = {Internetquelle (abgerufen am 13.05.2018)},
+  month        = may,
+  year         = {2018},
+  url          = {https://docs.unity3d.com/ScriptReference/Object.Instantiate.html},
+}
+
+@Misc{bib:Collider,
+  author       = {Unity},
+  title        = {Colliders},
+  howpublished = {Internetquelle (abgerufen am 13.05.2018)},
+  month        = may,
+  year         = {2018},
+  url          = {https://docs.unity3d.com/560/Documentation/Manual/CollidersOverview.html},
+}
+
+@Misc{bib:LightProbes,
+  author       = {Unity},
+  title        = {Light Probes},
+  howpublished = {Internetquelle (abgerufen am 13.05.2018)},
+  month        = may,
+  year         = {2018},
+  url          = {https://docs.unity3d.com/Manual/LightProbes.html},
+}
+
+@Misc{bib:MeshRenderer,
+  author       = {Unity},
+  title        = {Mesh Renderer},
+  howpublished = {Internetquelle (abgerufen am 13.05.2018)},
+  month        = may,
+  year         = {2018},
+  url          = {https://docs.unity3d.com/Manual/class-MeshRenderer.html},
+}
+
+@Misc{bib:DrawCall,
+  author       = {Unity},
+  title        = {Draw call batching},
+  howpublished = {Internetquelle (abgerufen am 13.05.2018)},
+  month        = may,
+  year         = {2018},
+  url          = {https://docs.unity3d.com/Manual/DrawCallBatching.html},
+}
+
+@Misc{bib:Meshes,
+  author       = {Unity},
+  title        = {Meshes},
+  howpublished = {Internetquelle (abgerufen am 13.05.2018)},
+  month        = may,
+  year         = {2018},
+  url          = {https://docs.unity3d.com/Manual/class-Mesh.html},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
