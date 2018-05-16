@@ -24,23 +24,23 @@ public class MenuManager : MonoBehaviour
     public FileBrowserScript fileBrowserPrefab;
     public LoadingScreen loadingScreen;
 
-    public bool optionModeActive;
+    public bool OptionModeActive;
 
     public static MenuManager Instance { get; set; }
 
-    public CustomStack<Menu> menuStack = new CustomStack<Menu>();
+    public CustomStack<Menu> MenuStack = new CustomStack<Menu>();
 
-    private string sceneName;
+    private string SceneName;
 
-    private float distanceToCamera = 5;
+    private float DistanceToCamera = 5;
 
     private void Awake()
     {
         Instance = this;
-        optionModeActive = false;
-        sceneName = SceneManager.GetActiveScene().name;
+        OptionModeActive = false;
+        SceneName = SceneManager.GetActiveScene().name;
 
-        if(sceneName.Contains("MainMenu"))
+        if(SceneName.Contains("MainMenu"))
         {
             MainMenu_Main.Show();
             //MainMenu_Demo.Show();
@@ -59,24 +59,24 @@ public class MenuManager : MonoBehaviour
         Instantiate(prefab, transform);
     }
 
-    public GameObject CreateInstance<T>(bool withReturnValue = true) where T : Menu
-    {
-        var prefab = GetPrefab<T>();
-
-        var instantiatedObject = Instantiate(prefab, transform);
-
-        return instantiatedObject as GameObject;
-    }
+ //   public GameObject CreateInstance<T>(bool withReturnValue = true) where T : Menu
+ //   {
+ //       var prefab = GetPrefab<T>();
+ //
+ //       var instantiatedObject = Instantiate(prefab, transform);
+ //
+ //       return instantiatedObject as GameObject;
+ //   }
 
     public void OpenMenu(Menu instance)
     {
-        if (menuStack.Contains(instance))
+        if (MenuStack.Contains(instance))
         {
-            menuStack.Remove(instance);
+            MenuStack.Remove(instance);
         }
 
         // De-activate top menu
-        if (menuStack.Count > 0)
+        if (MenuStack.Count > 0)
         {
             if (instance.DisableMenusUnderneath)
             {
@@ -88,31 +88,31 @@ public class MenuManager : MonoBehaviour
                 //        break;
                 //}
 
-                for (int i = menuStack.Count-1; i >= 0 ; i--)
+                for (int i = MenuStack.Count-1; i >= 0 ; i--)
                 {
-                    menuStack.ElementAt(i).gameObject.SetActive(false);
+                    MenuStack.ElementAt(i).gameObject.SetActive(false);
 
-                    if (menuStack.ElementAt(i).DisableMenusUnderneath)
+                    if (MenuStack.ElementAt(i).DisableMenusUnderneath)
                         break;
                 }
             }
 
             var topCanvas = instance.GetComponent<Canvas>();
-            var previousCanvas = menuStack.Peek().GetComponent<Canvas>();
+            var previousCanvas = MenuStack.Peek().GetComponent<Canvas>();
             topCanvas.sortingOrder = previousCanvas.sortingOrder + 1;
         }
         
-        menuStack.Push(instance);
+        MenuStack.Push(instance);
 
-        instance.transform.position = vrCamera.position + vrCamera.forward * distanceToCamera;
+        instance.transform.position = vrCamera.position + vrCamera.forward * DistanceToCamera;
         instance.transform.rotation = vrCamera.rotation;
     }
 
     public void CloseAll()
     {
-        for (int i = 0; i < menuStack.Count; i++)
+        for (int i = 0; i < MenuStack.Count; i++)
         {
-            var instance = menuStack.Pop();
+            var instance = MenuStack.Pop();
 
             instance.gameObject.SetActive(false);
         }
@@ -137,13 +137,13 @@ public class MenuManager : MonoBehaviour
 
     public void CloseMenu(Menu menu)
     {
-        if (menuStack.Count == 0)
+        if (MenuStack.Count == 0)
         {
             Debug.LogErrorFormat(menu, "{0} cannot be closed because menu stack is empty", menu.GetType());
             return;
         }
 
-        if (menuStack.Peek() != menu)
+        if (MenuStack.Peek() != menu)
         {
             Debug.LogErrorFormat(menu, "{0} cannot be closed because it is not on top of stack", menu.GetType());
             return;
@@ -154,7 +154,7 @@ public class MenuManager : MonoBehaviour
 
     public void CloseTopMenu()
     {
-        var instance = menuStack.Pop();
+        var instance = MenuStack.Pop();
 
         if (instance.DestroyWhenClosed)
             Destroy(instance.gameObject);
@@ -171,18 +171,18 @@ public class MenuManager : MonoBehaviour
         //        break;
         //}
 
-        for (int i = menuStack.Count - 1; i >= 0; i--)
+        for (int i = MenuStack.Count - 1; i >= 0; i--)
         {
-            menuStack.ElementAt(i).gameObject.SetActive(true);
+            MenuStack.ElementAt(i).gameObject.SetActive(true);
 
-            if (menuStack.ElementAt(i).DisableMenusUnderneath)
+            if (MenuStack.ElementAt(i).DisableMenusUnderneath)
                 break;
         }
     }
 
     public void OnMenuOpenRoutine()
     {
-        optionModeActive = true;
+        OptionModeActive = true;
         Movement.Instance.enabled = false;
         PointerLabeler.Instance.ClusterLabelingEnabled = false;
         PointerLabeler.Instance.LabelingEnabled = false;
@@ -194,7 +194,7 @@ public class MenuManager : MonoBehaviour
 
     public void OnMenuCloseRoutine()
     {
-        optionModeActive = false;
+        OptionModeActive = false;
         Movement.Instance.enabled = true;
         PointerLabeler.Instance.ClusterLabelingEnabled = true;
         PointerLabeler.Instance.LabelingEnabled = true;
@@ -208,11 +208,11 @@ public class MenuManager : MonoBehaviour
 
     private void Update()
     {
-        if (sceneName.Contains("Application"))
+        if (SceneName.Contains("Application"))
         {
             if (OVRInput.GetDown(OVRInput.Button.Start))
             {
-                if(menuStack.Count==0)
+                if(MenuStack.Count==0)
                 {
                     AppMenu_Movement.Show();
                     OnMenuOpenRoutine();

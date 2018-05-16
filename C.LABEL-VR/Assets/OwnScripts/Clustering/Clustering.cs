@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 using Accord.MachineLearning;
-using Accord.Math;
-using Accord.Statistics;
 
 /// <summary>
 /// This is a static class that provides methods to cluster groups of points in a 3D-Pointcloud 

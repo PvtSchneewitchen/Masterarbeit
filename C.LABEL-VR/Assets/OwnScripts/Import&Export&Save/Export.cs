@@ -21,13 +21,13 @@ public class Export
     {
         sessionHandler = ReferenceHandler.Instance.GetSessionHandler();
 
-        for (int i = 0; i < sessionHandler.Session._pointClouds.Count; i++)
+        for (int i = 0; i < sessionHandler.Session.PointClouds.Count; i++)
         {
             var container = MetaData.Hdf5_DaimlerLidar._importedContainers[i];
             var indexToID = MetaData.Hdf5_DaimlerLidar._tableIndexToID[i];
 
-            PointCloud cloud = sessionHandler.Session._pointClouds[i];
-            List<GameObject> pointList = cloud._validPoints;
+            PointCloud cloud = sessionHandler.Session.PointClouds[i];
+            List<GameObject> pointList = cloud.ValidPoints;
 
             string[] filePaths;
             try
@@ -41,7 +41,7 @@ public class Export
                 filePaths = Directory.GetFiles(exportPath_inp);
             }
 
-            exportDataPath = Path.Combine(exportPath_inp, Path.GetFileName(cloud._pathToPointCloudData));
+            exportDataPath = Path.Combine(exportPath_inp, Path.GetFileName(cloud.PathToInputFiles));
 
             if (filePaths.ToList().Contains(exportDataPath))
             {
@@ -67,20 +67,20 @@ public class Export
 
         sessionHandler = ReferenceHandler.Instance.GetSessionHandler();
 
-        for (int i = 0; i < sessionHandler.Session._pointClouds.Count; i++)
+        for (int i = 0; i < sessionHandler.Session.PointClouds.Count; i++)
         {
-            PointCloud cloud = sessionHandler.Session._pointClouds[i];
-            List<GameObject> pointList = cloud._validPoints;
+            PointCloud cloud = sessionHandler.Session.PointClouds[i];
+            List<GameObject> pointList = cloud.ValidPoints;
 
             string[] filePaths = Directory.GetFiles(exportPath_inp);
 
-            if (filePaths.ToList().Contains(Path.Combine(exportPath_inp, Path.GetFileName(cloud._pathToPointCloudData))))
+            if (filePaths.ToList().Contains(Path.Combine(exportPath_inp, Path.GetFileName(cloud.PathToInputFiles))))
             {
-                exportDataPath = cloud._pathToPointCloudData;
+                exportDataPath = cloud.PathToInputFiles;
             }
             else
             {
-                exportDataPath = Path.Combine(exportPath_inp, Path.GetFileName(cloud._pathToPointCloudData));
+                exportDataPath = Path.Combine(exportPath_inp, Path.GetFileName(cloud.PathToInputFiles));
             }
 
             using (StreamWriter pcdFileWriter = new StreamWriter(exportDataPath, false))

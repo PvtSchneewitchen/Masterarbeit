@@ -246,6 +246,12 @@ Unity, ``Prefabs,'' Internetquelle (abgerufen am 13.05.2018), May 2018.
   [Online]. Available: \url{https://docs.unity3d.com/Manual/Prefabs.html}
 \BIBentrySTDinterwordspacing
 
+\bibitem{bib:Meshes}
+\BIBentryALTinterwordspacing
+------, ``Meshes,'' Internetquelle (abgerufen am 13.05.2018), May 2018.
+  [Online]. Available: \url{https://docs.unity3d.com/Manual/class-Mesh.html}
+\BIBentrySTDinterwordspacing
+
 \bibitem{bib:MeshRenderer}
 \BIBentryALTinterwordspacing
 ------, ``Mesh renderer,'' Internetquelle (abgerufen am 13.05.2018), May 2018.
@@ -342,5 +348,12 @@ D.~Kalman, ``A singularly valuable decomposition: The svd of a matrix,''
 \bibitem{bib:SVDforFitting}
 I.~Söderkvist, ``Using svd for some fitting problems,'' Lulea Univerity of
   Technology.
+
+\bibitem{bib:EuclideanCluster}
+\BIBentryALTinterwordspacing
+Pointclouds.org, ``Euclidean cluster extraction,'' Internetquelle (abgerufen am
+  14.05.2018), May 2018. [Online]. Available:
+  \url{http://www.pointclouds.org/documentation/tutorials/cluster_extraction.php}
+\BIBentrySTDinterwordspacing
 
 \end{thebibliography}

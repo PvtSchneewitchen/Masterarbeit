@@ -363,7 +363,7 @@ A=U \Sigma V^T
 \label{eq:SVD}
 \end{equation}
 
-%Die Singulärwertzerlegung kann, wie schon angesprochen, für beliebige Matrizen in $R^{nxm}$ verwendet werden. Da die berechnete Kovarianzmatrix $C$ aus der Gleichung \ref{eq:Covar} immer eine $3x3$ Matrix ist, kann die Matrix aber auch in ihre Eigenwerte und Eigenvektoren zerlegt werden. Der kleinste Eigenwert dieser Zerlegung entspricht dem gesuchten Normalenvektor $\vec{n}$. Wie man in \cite{bib:SVD} sehen kann, ist ein Schritt zur Singulärwertzerlegung die Berechnung der Eigenwerte einer Matrix. Die reine Berechnung der Eigenwerte erfordert also weniger Rechenschritte als die Singulärwertzerlegung und bietet bei der Analyse vieler Punktwolken eine kürzere Dauer der Berechnungen. Auch Quellcode-Bibliotheken wie \textit{Geometric Tools Engine} benutzten dieses Verfahren um eine Ebenenmodell in einer Menge von Punkten zu berechnen \cite{bib:g3sharp}. Deshalb wurde es auch in C.LABEL verwendet.\\
+%Die Singulärwertzerlegung kann, wie schon angesprochen, für beliebige Matrizen in $R^{nxm}$ verwendet werden. Da die berechnete Kovarianzmatrix $C$ aus der Gleichung \ref{eq:Covar} immer eine $3x3$ Matrix ist, kann die Matrix aber auch in ihre Eigenwerte und Eigenvektoren zerlegt werden. Der kleinste Eigenwert dieser Zerlegung entspricht dem gesuchten Normalenvektor $\vec{n}$. Wie man in \cite{bib:SVD} sehen kann, ist ein Schritt zur Singulärwertzerlegung die Berechnung der Eigenwerte einer Matrix. Die reine Berechnung der Eigenwerte erfordert also weniger Rechenschritte als die Singulärwertzerlegung und bietet bei der Analyse vieler Punktwolken eine kürzere Dauer der Berechnungen. Auch Quellcode-Bibliotheken wie \textit{Geometric Tools Engine} benutzten dieses Verfahren um eine Ebenenmodell in einer Menge von Punkten zu berechnen \cite{bib:g3sharp}. Deshalb wurde es auch in C.LABEL-VR verwendet.\\
 
 Die gesuchte Ebene ist nun durch den Punkt $p$ und den Vektor $\vec{n}$ nun eindeutig definiert. Nun kann der Abstand jedes Punktes des Segments zu seiner orthogonalen Projektion auf der definierten Ebene berechnet werden. Dieser Abstand wird dann mit einem Schwellwert $T_{plane}$ verglichen, welcher zu Beginn der Berechnung definiert werden muss. Ist der Abstand eines Punktes kleiner als der Schwellwert so handelt es sich bei ihm um einen Bodenpunkt. In C.LABEL-VR wird solch ein Punkt vorläufig als Bodenpunkt markiert und in die Menge an neuen Seed-Punkten aufgenommen. Mit diesen neuen Seed-Punkten wird anschließend die nächste von $N_{iter}$ Berechnungen der Bodenebene getätigt(vgl. Algorithmus \ref{alg:GroundPoints}).
 
@@ -412,6 +412,43 @@ Die gesuchte Ebene ist nun durch den Punkt $p$ und den Vektor $\vec{n}$ nun eind
 
 \subsubsection{Cluster-Analyse}
 TODO Erklärung des Cluster-Algorithmus (Recursive Radius Search)
+
+Für die Analyse von Clustern wurde eine rekursive Radius-Suche (RRS) implementiert. Das Prinzip ähnelt dem \textit{Euclidean Clustering} \cite{bib:EuclideanCluster}, das auch in C.LABEL verwendet wird um Cluster zu bilden. Die RRS sucht von einem Startpunkt aus alle Punkte in einem gewissen Radius. Für alle gefundenen Punkte wird diese Suche mit dem jeweiligen gefundenen Punkt wiederholt, bis keine neuen Punkte mehr gefunden wurden. Alle insgesamt gefundenen Punkte bilden einen zusammengehörigen Cluster. Der genaue Algorithmus ist in \ref{alg:RecursivRadiusSearch} beschrieben.
+
+\begin{algorithm}
+  \caption{Rekursive Radius-Suche zum Finden eines Clusters von einem Startpunkt aus}
+\label{alg:RecursivRadiusSearch}
+  \begin{algorithmic}[1]
+  	\State \Call{\textbf{RecursiveRadiusSearch}}{$\textbf{P}$, $\textbf{P}_c$, $\textbf{P}_{s}$, $r$}:
+    \Inputs{\textbf{$\textbf{P}$} : Menge aller Punkte der Wolke\\
+    		$p_s$ : Startpunkt der Suche\\
+    		$r$ : Radius der Suche\\
+    		$\textbf{P}_c$ : Referenz auf die Menge aller gefundenen Cluster-Punkte}
+    \Initialize{$\textbf{P}_{s}$ : Menge aller neuen Startpunkte\\
+    			$\textbf{P}_{f}$ : Menge aller gefundenen Punkte\\}
+   	
+	\State $\textbf{P}_{s} \gets p_s$;   	
+    \For{$i=1 : \textbf{P}_{s}$}
+    	\State $\textbf{P}_{f}$ = \Call{\textbf{GetPointsInRadius}}{$p_i$, $r$};
+      	\For{$j=1 : \textbf{P}_{f}$}
+			\If{$p_j \not \in \textbf{P}_c \And p_j.Label \neq CurrentLabel \And p_j \neq GroundPoint$ } \label{alg:RecursivRadiusSearch:IfLine}
+				\State $\textbf{P}_s \gets p_j$;
+				\State $\textbf{P}_c \gets p_j$;
+			\EndIf
+		 \EndFor
+	\EndFor
+	
+	\If{$\textbf{P}_{s} > 0$}
+		\State \Call{\textbf{RecursiveRadiusSearch}}{$\textbf{P}$, $\textbf{P}_c$, $\textbf{P}_{s}$, $r$};
+	\EndIf
+  \end{algorithmic}
+\end{algorithm}
+
+Wichtig bei diesem Algorithmus ist die Überprüfung in Zeile \ref{alg:RecursivRadiusSearch:IfLine}, die aus drei einzelnen Bedingungen besteht und für jedes gefundene Objekt durchgeführt wird. Nur wenn alle drei Bedingungen erfüllt sind handelt es sich um einen Punkt des Clusters und das Objekt wird in die Menge der Cluster-Punkte und in die Menge der neuen Startpunkte aufgenommen. \\
+
+Die erste Bedingung ist, dass das gefundene Objekt kein Element der bereits gefundenen Cluster-Punkte sein darf. Ist das Objekt in der Menge enthalten wurde bereits eine Radius-Suche für diesen Punkt durchgeführt. Außerdem terminiert die Rekursive Suche nie, wenn schon gefundene Objekte immer wieder neu in die Startpunkt-Menge aufgenommen werden. Die zweite Bedingung besagt, dass das Label des gefundenen Objekts nicht dem Label entsprechen darf, mit dem der Cluster annotiert werden soll. Dadurch kann Rechenzeit eingespart werden, da für Objekte mit richtigem Label nicht unnötigerweise eine Radius-Suche ausgeführt wird. Die Letzte Bedingung besagt, dass der gefundene Punkt kein Bodenpunkt sein darf. Die Cluster-Analyse ist dafür gedacht Objekte in einer Punktwolke als Ganzes erfassen zu können und dazu gehört der Boden nicht. Aus diesem Grund wurde die Bodenpunkt-Analyse aus Abschnitt \ref{sec:GroundPointSegmentation} implementiert.\\
+
+Alle Punkte die diese Bedingungen erfüllen werden in die Menge Cluster-Punkte aufgenommen. Diese Menge bildet am Ende der rekursiven Suche den finalen Cluster. Zusätzlich werden diese auch in die Menge der neuen Startpunkte aufgenommen. Mit dieser Menge wird die rekursive Radius-Suche erneut aufgerufen. Dies geschieht solange, bis beim Durchlauf der rekursiven Suche kein gefundener Punkt die genannten Bedingungen erfüllt und somit kein Punkt in die Menge der neuen Startpunkte aufgenommen wird. Ist dies der Fall ist die rekursive Radius-Suche am Ende, da kein neuer Punkt mehr gefunden wurde der im richtigen Radius ist. Wie schon erwähnt bilden alle Punkte in der Menge der Cluster-Punkte den finalen Cluster.  
 
 \section{User Interface}
 \label{sec:UIMenu}

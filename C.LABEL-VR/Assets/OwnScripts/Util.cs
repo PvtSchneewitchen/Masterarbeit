@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using PostProcess;
 using System.Collections.Generic;
-using MathNet.Numerics.LinearAlgebra;
 using System;
 using System.Linq;
 using VRTK;

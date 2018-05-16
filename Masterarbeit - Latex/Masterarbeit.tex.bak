@@ -37,9 +37,11 @@
         MonoBehaviour,
         Start,
         Update,
-        Awake
+        Awake,
+        Vector3,
+        GameObject
     }, emphstyle=[1]{\color{cyan}},
-    morekeywords={set,get},
+    morekeywords={set,get, value},
     frame=top,frame=bottom,
     xleftmargin=0pt,
 }

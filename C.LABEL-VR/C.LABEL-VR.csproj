@@ -14,6 +14,7 @@
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <TargetFrameworkProfile></TargetFrameworkProfile>
     <CompilerResponseFile></CompilerResponseFile>
+    <UnityProjectGenerator>VSTU</UnityProjectGenerator>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2017.2.1f1</UnityVersion>
@@ -202,6 +203,9 @@
     <Reference Include="UnityEngine.WindModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.WindModule.dll</HintPath>
     </Reference>
+    <Reference Include="Vuforia.UnityExtensions">
+      <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Runtime/Vuforia.UnityExtensions.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -229,9 +233,6 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
-    <Reference Include="Vuforia.UnityExtensions">
-      <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Runtime/Vuforia.UnityExtensions.dll</HintPath>
-    </Reference>
     <Reference Include="OpenCvSharp.Blob">
       <HintPath>Assets/OwnScripts/OpenCVSharp/OpenCvSharp.Blob.dll</HintPath>
     </Reference>
@@ -255,9 +256,6 @@
     </Reference>
     <Reference Include="Accord.Statistics">
       <HintPath>Assets/Plugins/Accord/Accord.Statistics.dll</HintPath>
-    </Reference>
-    <Reference Include="alglibnet2">
-      <HintPath>Assets/Plugins/alglibnet2.0.0.0/lib/alglibnet2.dll</HintPath>
     </Reference>
     <Reference Include="geometry3Sharp">
       <HintPath>Assets/Plugins/geometry3Sharp.1.0.144/geometry3Sharp.dll</HintPath>
@@ -516,12 +514,12 @@
     <Compile Include="Assets\OwnScripts\UserActions\PointerTeleport.cs" />
     <Compile Include="Assets\OwnScripts\UserActions\TouchLabeler.cs" />
     <Compile Include="Assets\OwnScripts\Util.cs" />
-    <Compile Include="Assets\Scripts\ColorHuePicker.cs" />
-    <Compile Include="Assets\Scripts\ColorIndicator.cs" />
-    <Compile Include="Assets\Scripts\ColorSaturationBrightnessPicker.cs" />
-    <Compile Include="Assets\Scripts\Draggable.cs" />
-    <Compile Include="Assets\Scripts\ExampleColorReceiver.cs" />
-    <Compile Include="Assets\Scripts\HSBColor.cs" />
+    <Compile Include="Assets\SimpleColorPicker\Scripts\ColorHuePicker.cs" />
+    <Compile Include="Assets\SimpleColorPicker\Scripts\ColorIndicator.cs" />
+    <Compile Include="Assets\SimpleColorPicker\Scripts\ColorSaturationBrightnessPicker.cs" />
+    <Compile Include="Assets\SimpleColorPicker\Scripts\Draggable.cs" />
+    <Compile Include="Assets\SimpleColorPicker\Scripts\ExampleColorReceiver.cs" />
+    <Compile Include="Assets\SimpleColorPicker\Scripts\HSBColor.cs" />
     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\MultiKeyDictionary.cs" />
     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\Reporter.cs" />
     <Compile Include="Assets\Unity-Logs-Viewer\Reporter\ReporterGUI.cs" />
@@ -810,9 +808,9 @@
     <None Include="Assets\Plugins\Math.net\MathNet.Numerics.xml" />
     <None Include="Assets\Plugins\SimpleFileBrowser\README.txt" />
     <None Include="Assets\Plugins\hdf5\HDF.PInvoke.XML" />
-    <None Include="Assets\Shaders\ColorHue.shader" />
-    <None Include="Assets\Shaders\ColorSaturationBrightness.shader" />
-    <None Include="Assets\Shaders\SolidColor.shader" />
+    <None Include="Assets\SimpleColorPicker\Shaders\ColorHue.shader" />
+    <None Include="Assets\SimpleColorPicker\Shaders\ColorSaturationBrightness.shader" />
+    <None Include="Assets\SimpleColorPicker\Shaders\SolidColor.shader" />
     <None Include="Assets\StreamingAssets\build_info.txt" />
     <None Include="Assets\VRKeyboard\README.txt" />
     <None Include="Assets\VRTK\Scripts\Internal\Shaders\AdaptiveQualityDebugVisualization.shader" />

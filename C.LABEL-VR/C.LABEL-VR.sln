@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
+# Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C.LABEL-VR", "C.LABEL-VR.csproj", "{39D97D7E-8035-C73B-6A6C-A25A1037AEBD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C.LABEL-VR.Plugins", "C.LABEL-VR.Plugins.csproj", "{278B8CD1-6165-392F-ED36-C368938A6C16}"

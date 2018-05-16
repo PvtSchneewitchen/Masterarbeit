@@ -5,21 +5,17 @@ using System.Linq;
 
 public class PointCloud
 {
-    public List<GameObject> _validPoints { get; private set; }
-    public string _pathToPointCloudData { get; private set; }
+    public List<GameObject> ValidPoints { get; private set; }
+    public string PathToInputFiles { get; private set; }
 
-    public GameObject _origin { get; set; }
-
-    private const float _alphaMax = 45;
-    private const float _hMin = 0.1f;
-    private List<Tuple<Vector3, bool>> list;
+    public GameObject Origin { get; set; }
 
 
     public PointCloud(List<InternalDataFormat> dataList_inp, string dataPath_inp, Quaternion rotationToUnityCs, Vector3 mirroring_inp)
     {
-        _validPoints = new List<GameObject>();
-        _pathToPointCloudData = dataPath_inp;
-        _origin = CreateOrigin();
+        ValidPoints = new List<GameObject>();
+        PathToInputFiles = dataPath_inp;
+        Origin = CreateOrigin();
 
         for (int i = 0; i < dataList_inp.Count; i++)
         {
@@ -31,33 +27,33 @@ public class PointCloud
             attributes.ID = dataList_inp[i]._ID;
             attributes.Label = dataList_inp[i]._label;
             point.SetActive(false);
-            _validPoints.Add(point);
+            ValidPoints.Add(point);
         }
     }
 
     public void EnableAllPoints()
     {
-        for (int i = 0; i < _validPoints.Count; i++)
+        for (int i = 0; i < ValidPoints.Count; i++)
         {
-            _validPoints[i].SetActive(true);
+            ValidPoints[i].SetActive(true);
         }
     }
 
     public void DisableAllPoints()
     {
-        for (int i = 0; i < _validPoints.Count; i++)
+        for (int i = 0; i < ValidPoints.Count; i++)
         {
-            _validPoints[i].SetActive(false);
+            ValidPoints[i].SetActive(false);
         }
     }
 
     public void DecreasePoints()
     {
-        for (int i = 0; i < _validPoints.Count; i++)
+        for (int i = 0; i < ValidPoints.Count; i++)
         {
             if (i % 2 == 0 || i % 3 == 0 || i % 5 == 0 || i % 7 == 0)
             {
-                _validPoints[i].SetActive(false);
+                ValidPoints[i].SetActive(false);
             }
             
         }
@@ -65,17 +61,17 @@ public class PointCloud
 
     public void ResetLabels()
     {
-        for (int i = 0; i < _validPoints.Count; i++)
+        for (int i = 0; i < ValidPoints.Count; i++)
         {
-            _validPoints[i].GetComponent<CustomAttributes>().Label = 0;
+            ValidPoints[i].GetComponent<CustomAttributes>().Label = 0;
         }
     }
 
     public void RefreshPointsOfLabelCLass(uint oldLabelId, uint newLabelId)
     {
-        for (int i = 0; i < _validPoints.Count; i++)
+        for (int i = 0; i < ValidPoints.Count; i++)
         {
-            var attr = _validPoints[i].GetComponent<CustomAttributes>();
+            var attr = ValidPoints[i].GetComponent<CustomAttributes>();
             if(attr.Label == oldLabelId)
             {
                 attr.Label = newLabelId;
