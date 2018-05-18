@@ -51,7 +51,7 @@ public class Export
             else
             {
                 //create new
-                HDF5Addon.CreateNewHdf5File_DaimlerLidar(i, indexToID, container, pointList, exportDataPath);
+                HDF5Addon.WriteHdf5File_DaimlerLidar(i, indexToID, container, pointList, exportDataPath);
             }
             Debug.Log("hdf5-Files exported to " + exportDataPath);
         }

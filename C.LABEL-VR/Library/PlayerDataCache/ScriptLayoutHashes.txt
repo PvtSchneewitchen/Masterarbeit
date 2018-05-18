@@ -168,7 +168,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 6af7378a45ad6da4992a71ef50ddc2eb UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 6af7378a45ad6da4992a71ef50ddc2eb UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 af723155c251fcfa0e66530a75f3ea4c UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
-06d6d8e59a0b98281ea2ef8a55b13e6c Assembly-CSharp.dll:.MenuManager
+30c9cc97320300b17881cbd11c7d9902 Assembly-CSharp.dll:.MenuManager
 9f53af4f3fc0b83f2b210736bf172e7b Assembly-CSharp.dll:VRTK.VRTK_ControllerRigidbodyActivator
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:VRTK.Examples.UI_Keyboard
 7e88701ae48eddc3c9fbd32f129474bd Assembly-CSharp.dll:VRTK.Examples.Controller_Hand
@@ -205,7 +205,7 @@ b35cf8cc712455101d67344e8ddac64a Assembly-CSharp.dll:VRTK.VRTK_SimplePointer
 09d61cdff45e76140b9abbeb65432cf8 Assembly-CSharp.dll:VRTK.VRTK_HeightAdjustTeleport
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:VRTK.SDK_FallbackHeadset
 86d695f48e30d2ff27ca3a5eaba0b006 Assembly-CSharp.dll:VRTK.VRTK_InteractGrab
-e1e7ed2a1f5964fb91231e1bbf180c88 Assembly-CSharp.dll:.CustomAttributes
+87b9ae69ecf3b4e3105b9ca941d8e0ae Assembly-CSharp.dll:.CustomAttributes
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Step4_Labeling_ClusterLabeling
 5c89570bd5d0748a2ee0e511100829fc Assembly-CSharp.dll:VRTK.VRTK_ControllerEvents
 62a4e11f4e9ca0e6261d137bd90e3914 Assembly-CSharp-firstpass.dll:SimpleFileBrowser.FileBrowserQuickLink

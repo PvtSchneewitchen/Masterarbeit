@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.IO;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -37,6 +38,24 @@ public class MainMenu_Main : SimpleMenu<MainMenu_Main>
             tutorialSlider.value = 0;
             startTime = Time.realtimeSinceStartup;
         }
+    }
+
+    public void OnClickStartDemo()
+    {
+        Util.DataLoadInfo._accessMode = Util.AccesMode.Create;
+        Util.DataLoadInfo._dataType = Util.Datatype.pcd;
+        Util.DataLoadInfo._sessionName = "DemoSession"; 
+
+#if UNITY_EDITOR
+        Util.DataLoadInfo._sourceDataPath = "C:\\Users\\gruepazu\\Desktop\\CmoreDemoBuild\\DemoData\\";
+#else
+        Util.DataLoadInfo._sourceDataPath = Path.Combine(Directory.GetParent(Application.dataPath).FullName, "DemoData\\"); 
+#endif
+        //Util.DataLoadInfo._sessionFolderPath = Application.persistentDataPath + "/" + Util.DataLoadInfo._sessionName;
+
+        ReferenceHandler.Instance.GetRightPointerRenderer().enabled = false;
+        LoadingScreen.Show();
+        SceneManager.LoadScene(1);
     }
 
     public void OnCreateClick()
