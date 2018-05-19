@@ -30,7 +30,6 @@ public class SessionHandler : MonoBehaviour
 //        else if (Util.DataLoadInfo._dataType == Util.Datatype.hdf5_DaimlerLidar)
 //            Util.DataLoadInfo._sourceDataPath = "C:\\Users\\gruepazu\\Desktop\\LidarDaten\\DatenDAG\\2017-08-18_090334\\LidarImages_03_05\\LidarImage_000003049.hdf5";
 //#endif
-
         if (Util.DataLoadInfo._accessMode == Util.AccesMode.Create)
         {
             CreateSessionFolder();
@@ -63,7 +62,7 @@ public class SessionHandler : MonoBehaviour
         }
 
         Session.GetCurrentPointCloud().EnableAllPoints();
-        Session._sessionName = Util.DataLoadInfo._sessionName;
+        Session.SessionName = Util.DataLoadInfo._sessionName;
     }
 
     private void CreateSessionFolder()

@@ -69,16 +69,16 @@ public class SessionSave
 
             _sessionDataType = Util.DataLoadInfo._dataType;
             _sessionSourcePath = Util.DataLoadInfo._sourceDataPath;
-            _sessionName = sessionHandler.Session._sessionName;
+            _sessionName = sessionHandler.Session.SessionName;
             _currentCLoud = sessionHandler.Session.GetCurrentPointCloudIndex();
             _labelWorkingSet = Labeling.GetAllIdsNamesAndSerializedColors();
 
-            List<PointCloud> _pointClouds = sessionHandler.Session._pointClouds;
+            List<PointCloud> _pointClouds = sessionHandler.Session.PointClouds;
 
             for (int i = 0; i < _pointClouds.Count; i++)
             {
-                List<GameObject> points = _pointClouds[i]._validPoints;
-                _pathToPointCloudData.Add(_pointClouds[i]._pathToPointCloudData);
+                List<GameObject> points = _pointClouds[i].ValidPoints;
+                _pathToPointCloudData.Add(_pointClouds[i].PathToInputFiles);
                 _positionsX.Add(new List<float>());
                 _positionsY.Add(new List<float>());
                 _positionsZ.Add(new List<float>());
@@ -296,7 +296,7 @@ public class SessionSave
             saveFile._exportMetaData._hdf5_DaimlerLidar = hdf5DL;
         }
 
-        string dataPath = path_inp + "/" + sessionHandler.Session._sessionName + "SaveFile.dat";
+        string dataPath = path_inp + "/" + sessionHandler.Session.SessionName + "SaveFile.dat";
         using (Stream stream = File.Open(dataPath, FileMode.Create))
         {
             var binaryFormatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();

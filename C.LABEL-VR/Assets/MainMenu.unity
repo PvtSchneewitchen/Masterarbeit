@@ -843,7 +843,7 @@ MonoBehaviour:
     type: 2}
   loadingScreen: {fileID: 114265893049401320, guid: 7f5bf5079dde88d4e9acf56d0f323366,
     type: 2}
-  optionModeActive: 0
+  OptionModeActive: 0
 --- !u!4 &1475643127
 Transform:
   m_ObjectHideFlags: 0

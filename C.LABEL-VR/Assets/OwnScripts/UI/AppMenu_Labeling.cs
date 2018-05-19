@@ -111,7 +111,7 @@ public class AppMenu_Labeling : Menu<AppMenu_Labeling>
     {
         GameObject clickedObject = args.currentTarget;
 
-        if (MenuManager.Instance.menuStack.Peek() != Instance)
+        if (MenuManager.Instance.MenuStack.Peek() != Instance)
         {
             //this menu is not visible
             return;

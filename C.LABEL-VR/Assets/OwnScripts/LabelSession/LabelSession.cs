@@ -5,22 +5,22 @@ using UnityEngine;
 
 public class LabelSession
 {
-    public string _sessionName { get; set; }
-    public List<PointCloud> _pointClouds { get; set; }
-    private int _currentCLoud { get; set; }
+    public string SessionName { get; set; }
+    public List<PointCloud> PointClouds { get; set; }
+    private int currentCloud { get; set; }
 
     public LabelSession(List<PointCloud> pointClouds_inp, int iCurrentCloud)
     {
-        _pointClouds = pointClouds_inp;
-        _currentCLoud = iCurrentCloud;
+        PointClouds = pointClouds_inp;
+        currentCloud = iCurrentCloud;
     }
 
     public LabelSession(SessionSave saveFile_inp)
     {
         Labeling.SetSavedLabelClasses(saveFile_inp._labelsession.GetLabelWorkingSet());
-        _sessionName = saveFile_inp._labelsession.GetSessionName();
-        _currentCLoud = saveFile_inp._labelsession.GetCurrentCloudID();
-        _pointClouds = saveFile_inp._labelsession.GetPointClouds();
+        SessionName = saveFile_inp._labelsession.GetSessionName();
+        currentCloud = saveFile_inp._labelsession.GetCurrentCloudID();
+        PointClouds = saveFile_inp._labelsession.GetPointClouds();
 
         Util.DataLoadInfo._accessMode = Util.AccesMode.Load;
         Util.DataLoadInfo._dataType = saveFile_inp._labelsession.GetSessionDataType();
@@ -49,44 +49,44 @@ public class LabelSession
 
     public int GetCurrentPointCloudIndex()
     {
-        return _currentCLoud;
+        return currentCloud;
     }
 
     public PointCloud GetCurrentPointCloud()
     {
-        return _pointClouds.ElementAt(_currentCLoud);
+        return PointClouds.ElementAt(currentCloud);
     }
 
     public PointCloud GetPointcloud(int index_inp)
     {
-        return _pointClouds.ElementAt(index_inp);
+        return PointClouds.ElementAt(index_inp);
     }
 
     public void ShowNextPointCloud()
     {
-        if (_pointClouds.Count > 1)
+        if (PointClouds.Count > 1)
         {
-            _pointClouds.ElementAt(_currentCLoud).DisableAllPoints();
+            PointClouds.ElementAt(currentCloud).DisableAllPoints();
 
-            _currentCLoud++;
-            if (_currentCLoud >= _pointClouds.Count)
-                _currentCLoud = 0;
+            currentCloud++;
+            if (currentCloud >= PointClouds.Count)
+                currentCloud = 0;
 
-            _pointClouds.ElementAt(_currentCLoud).EnableAllPoints();
+            PointClouds.ElementAt(currentCloud).EnableAllPoints();
         }
     }
 
     public void ShowPreviousPointCloud()
     {
-        if (_pointClouds.Count > 1)
+        if (PointClouds.Count > 1)
         {
-            _pointClouds.ElementAt(_currentCLoud).DisableAllPoints();
+            PointClouds.ElementAt(currentCloud).DisableAllPoints();
 
-            _currentCLoud--;
-            if (_currentCLoud <= 0)
-                _currentCLoud = _pointClouds.Count-1;
+            currentCloud--;
+            if (currentCloud <= 0)
+                currentCloud = PointClouds.Count-1;
 
-            _pointClouds.ElementAt(_currentCLoud).EnableAllPoints();
+            PointClouds.ElementAt(currentCloud).EnableAllPoints();
         }
     }
 }

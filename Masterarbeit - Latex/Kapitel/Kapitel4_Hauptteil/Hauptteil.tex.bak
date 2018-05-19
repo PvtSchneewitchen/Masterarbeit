@@ -38,80 +38,213 @@ Die Importierten Daten, beispielsweise HDF5, enthalten allerdings oft deutlich m
     \label{fig:ImportExport}
 \end{figure}
 
-Zusammenfassend ist also folgendes zu tun, um die Benutzung ein neues Datenformates oder einer neuen Datenstruktur zu gewährleisten: Zunächst muss eine Importfunktion programmiert werden, die alle Informationen aus den gewünschten Daten ausliest. Anschließend muss diese Funktion das genormte, interne Datenformat (Kapitel \ref{sec:IDS}) erstellen und alle nötigen Informationen aus den eingelesenen Daten darin speichern.  Daraus können die entsprechenden Punktwolken dann generiert werden können. Falls es Daten gibt, die über diejenigen in der \acrshort{acr:IDS} hinausgehen, muss eine Metadatenstruktur angelegt werden, in welche die zusätzlichen Daten abgelegt werden können. Zuletzt ist eine Exportfunktion zu implementieren, welche die \glslink{glos:Labeling}{Labeling}-Informationen aus der internen Datenstruktur in die eingelesenen Daten exportieren kann. Außerdem muss sie in der Lage sein aus den internen- und den Metadaten das Ausgangsdatenformat wiederherzustellen, um die Daten als neue Files exportieren zu können. Im folgenden Kapitel soll dieses Prinzip konkret an einem HDF5-Beispiel gezeigt werden.
+Zusammenfassend ist also folgendes zu tun, um die Benutzung ein neues Datenformates oder einer neuen Datenstruktur zu gewährleisten: Zunächst muss eine Importfunktion programmiert werden, die alle Informationen aus den gewünschten Daten ausliest. Anschließend muss diese Funktion das genormte, interne Datenformat (Kapitel \ref{sec:IDS}) erstellen und alle nötigen Informationen aus den eingelesenen Daten darin speichern. Daraus können die entsprechenden Punktwolken dann generiert werden können. Falls es Daten gibt, die über diejenigen in der \acrshort{acr:IDS} hinausgehen, muss eine Metadatenstruktur angelegt werden, in welche die zusätzlichen Daten abgelegt werden können. Zuletzt ist eine Exportfunktion zu implementieren, welche die \glslink{glos:Labeling}{Labeling}-Informationen aus der internen Datenstruktur in die eingelesenen Daten exportieren kann. Außerdem muss sie in der Lage sein aus den internen- und den Metadaten das Ausgangsdatenformat wiederherzustellen, um die Daten als neue Files exportieren zu können. Im folgenden Kapitel soll dieses Prinzip konkret an einem HDF5-Beispiel gezeigt werden.
 
-\subsection{HDF5-Beispiel}
+\subsection{Interne Datenstruktur}
+\label{sec:IDS}
+Wie im Kapitel \ref{sec:ImportExport} schon erwähnt, ist die interne Datenstruktur (\textit{IDS}) dafür da, um den Prozess des Imports und Exports von der Hautapplikation zu trennen. Dazu müssen aus den Daten die eingelesen werden sollen, alle Informationen extrahiert werden die für die interne Datenstruktur notwendig sind. Die IDS wird repräsentiert durch ein Skript, dass einem Objekt in Unity angehängt werden kann, also einer Komponente (vgl. Abschnitt \ref{sec:UnityDevelopment}). Jedem Punkt einer Wolke in C.LABEL-VR ist solch ein Skript zugeordnet. Das heißt aus jeder Punktinformation aus den Input-Daten wird ein IDS-Komponente erstellt. Eine solche Komponente besteht aus folgenden Eigenschaften:
+
+\begin{itemize}
+\item \textbf{ID}: Identifikationsnummer zur eindeutigen Erkennung des Punktes
+\item \textbf{Label}: Information, zu welcher Klassifikation der Punkt gehört
+\item \textbf{Position}: Dreidimensionale Position des Punktes
+\item \textbf{Ground Point}: Information, ob der Punkt ein Bodenpunkt ist oder nicht
+\end{itemize}
+
+Dadurch kann die Möglichkeit genutzt werden, dass auf jede aktive Komponente eines Objekts in Unity zugegriffen werden kann. Wenn man nun beispielsweise einen Punkt identifiziert, den man neu klassifizieren möchte, kann auf die IDS-Komponente dieses Objekts zugegriffen werden und das darin enthaltene Label geändert werden.\\
+
+Aus den Input-Daten wird meist nur die Position des Punktes ausgelesen und manchmal auch die Klassifikation des Punktes, falls diese schon vorhanden ist. Die ID wird innerhalb vom Import vergeben und dient dazu den Punkt eindeutig zu identifizieren. Werden beispielsweise Informationen eines Punktes als Metadaten abgespeichert, müssen diese später dem richtigen Punkt zugeordnet werden können. Dies geschieht über die eindeutige ID. Genauer erklärt wird dieser Vorgang im Abschnitt \ref{sec:HDF5Example}. Die Information, ob es sich um einen Bodenpunkt handelt oder nicht, wird nach dem Import von einem Algorithmus analysiert. Sie ist wichtig für die Cluster-Annotation, die später in Kapitel \ref{sec:ClusterLabeling} vorgestellt wird. Wie die Bodenpunkt-Analyse funktioniert wird in Abschnitt \ref{sec:GroundPointSegmentation} erklärt. \\
+
+Da die interne Datenstruktur nicht viele Informationen enthält ist es eine simple Methode die Punktwolken-Daten in C.LABEL-VR zu verwalten. Alles was darüber hinaus geht kann in einer separaten Meta-Datei gespeichert werden, um die Zusatzinformationen beim Export zur Verfügung zu haben. Darüber hinaus ist sie leicht erweiterbar. Im Skript der IDS-Komponente müsste lediglich eine neue Eigenschaft angelegt werden, um jedem Punkt einer eingelesenen Punktwolke die neue Eigenschaft zuzuordnen. Das genaue Vorgehen bei der Bearbeitung der internen Datenstruktur und der Metadaten ist im folgenden Kapitel \ref{sec:HDF5Example} näher erklärt.
+
+\subsection{HDF5 Beispiel}
+\label{sec:HDF5Example}
+
 \subsubsection{HDF5 Daten}
 \label{sec:HDF5}
 TODO Evtl. den Import und Exportvorgang anhand eines minimalistischen HDF5-Beispiel erklären
 
 \section{Generierung einer Punktwolke}
 \label{sec:Generierung}
-TODO Kurze einleitung
+Nach dem man die Informationen über die internen Datenstrukturen durch den Import gesammelt hat, kann man mit der Generierung der Punktwolken anfangen. Ziel davon ist es die Punktwolkendaten zu visualisieren, damit der Benutzer sie sehen und mit ihnen interagieren kann. In der Regel wird dafür, in einer passenden Visualisierungsumgebung, für jede Position eines Punktes ein Objekt eingezeichnet. Meistens sind dies zweidimensionale Punkte, die lediglich eine quadratische Einfärbung von Pixeln sind. 
 
-\subsection{Interne Datenstruktur}
-\label{sec:IDS}
-TODO 
--Wie sieht die interne Datenstruktur aus die Konzipiert wurde um die Importierten Daten zu vereinheitlichen.
--Was passiert mit den Daten, die über diese Struktur hinaus gehen (Metadaten)
+------------Bild Punktwolke normal und VR-------------
 
-\subsection{Generierung}
-\label{sec:PclGenerate}
-TODO Wie wird aus der internen Struktur eine Punktwolke in Unity ezeugt?
+In C.Label-VR wird jeder Punkt durch eine dreidimensionale Kugel repräsentiert. Dadurch wird für den Benutzer der Eindruck erzeugt, dass die Sensordaten durch echte Objekte im Raum repräsentiert werden. Diese Objekte, sind durch ihre dreidimensionale Eigenschaft gut sichtbar sind und wirken für den Benutzer greifbar. Dies ist ein großer Unterschied zu bisherigen Visualisierungen und bietet einen erheblichen optischen Mehrwert. Die Unity Engine, als Visualisierungsumgebung, bietet nämlich die richtige Darstellung der räumlichen Proportionen an jeder Position. Diese Proportionen, also auch die Darstellung der Sensordaten im richtigen Maßstab, werden durch das Rendering der Unity Engine für jedes Bild berechnet (erklärt in Abschnitt \ref{sec:UnityDevelopment}) und somit immer richtig für den Benutzer dargestellt.\\
 
-%session
-%pointcloud
-%...
+Die dreidimensionalen Punkte sind dabei vorgefertigte Objekte. Dieses Vorfertigen von Objekten bietet sich bei der Entwicklung mit Unity immer dann an, wenn mehrere gleiche Objekte zur gleichen Zeit existieren sollen, wie es beispielsweise bei einer Punktwolke der Fall ist. Die Erstellung solcher Objekte, die in Unity \textit{Prafabs} genannt werden, ist eine herkömmliche Methode bei der Entwicklung mit Unity \cite{bib:UnityPrefab}.\\ 
 
-%Koordinatensysteme
+\begin{figure}%
+    \centering
+    \subfloat[Mesh Filter- und Collider-Komponente]{{\includegraphics[width=8cm, height=5.5cm]{ComponentMeshCollider}\label{fig:MeshCollider}}}%
+    \qquad
+    \subfloat[Mesh Renderer-Komponente]{{\includegraphics[width=6cm, height=5.5cm]{ComponentMeshRenderer}\label{fig:MeshRenderer}}}%
+    \caption{Beide Bilder zeigen Komponenten aus der Unity Editor, die dem Punkt-Prefab zugeordnet sind.}
+    \label{fig:Components}%
+\end{figure}
 
-\subsection{Optimierung}
-TODO Was ist bei der Erzeugung der Punktwolken zu beachten, damit die vielen Tausend Punkte der Wolke keinen massiven FPS-Einsturz verursachen
 
-%-generell nichts teures in update mehthode
-%	
-%-gameobject find
-%-getcomponent
-%
-%keine update oder start mehtode bei skripten der punkte
-%collider trigger nicht bei den punkten sondern beim anderen object
-%generell alle pollenden aktionen von den punkten entfernen
-%
-%
-%(-clonen von prefabs statt neue instanzen von inbuilts)
-%shared materials verwenden   kein material.color weil das eine kopie des materials erzeugt, welches dann einzeln gecallt werden muss
-%
-%gpu instancing bei den materials verwenden und forward rendering options
+Das Punkt-Prefab, das für C.LABEL-VR vorgefertigt wurde um einen Punkt in der Punktwolke zu repräsentieren, besteht dabei aus mehreren Komponenten. Eine Komponente ist dabei die Transform-Komponente (siehe Abschnitt \ref{sec:UnityDevelopment}), welche die Position des Punktes festlegt. Eine weitere ist die \textit{Mesh Renderer}-Komponente. Ein Mesh (zu deutsch: Gewebe/Netz) ist in der Spielentwicklung ein gängiger Begriff für das dreidimensionale Modell eines Objektes \cite{bib:Meshes}. Für das Punkt-Prefab wird das Modell einer Kugel verwendet (\textit{Sphere} als Mesh in Abbildung \ref{fig:MeshCollider}). Der Mesh-Renderer legt dabei die Materialeigenschaften des Objektes fest \cite{bib:MeshRenderer}. Diese Eigenschaften enthalten beispielsweise die Textur, also das Aussehen der Oberfläche des Objektes, die Reflexionseigenschaften oder wie die Art wie das Objekt Lichteinwirkungen auf die Umgebung verteilt. Das Standard-Material das beim Punkt-Prefab verwendet wird ist ein vorgefertigtes Material \textit{Unlabeled} (siehe Abbildung \ref{fig:MeshRenderer}), welches eine einfarbige, schwarze Oberfläche hat. Schwarze Punkte repräsentieren also diejenigen Punkte, die noch nicht annotiert wurden. Andere Eigenschaften wie Licht, Reflexionen oder Schatten wurden mit Parametern belegt, die so wenig wie möglich Berechnungen erfordern, damit die Bildwiederholungsrate der Applikation so hoch wie möglich gehalten werden kann. Genauer ist dies im folgenden Abschnitt \ref{sec:Optimierung} erklärt. \\
+
+Eine weitere wichtige Komponente ist der \textit{Sphere Collider} (siehe Abbildung \ref{fig:MeshCollider}). Sie ist notwendig um mit dem Punkt zu interagieren, da der Sphere Collider die Kollisionseigenschaften des Objektes festlegt. Möchte man mit dem Punkt beispielsweise durch einen anderen virtuellen Gegenstand interagieren, muss die Kollision zwischen Punkt und dem Gegenstand detektiert werden. Das geschieht durch die Collider-Komponenten beider Objekte. Ebenfalls wichtig für die Leistungsfähigkeit von C.LABEL-VR ist es, dass die \textit{Is Trigger}-Eigenschaft des Punkt-Colliders deaktiviert ist. Im aktiven Zustand besagt diese Eigenschaft, dass das Objekt welches diesen Collider hat, der Auslöser für Kollisionen ist. Das heißt die Collider-Komponente überprüft durchgehend ob eine Kollision vorliegt. Wenn alle Punkte der Wolke diese Überprüfung durchgehen machen würden, würde sich das negativ auf die Leistung der Applikation auswirken.\\
+
+Zuletzt enthält das Punkt-Prefab doch die Komponente der internen Datenstruktur (vgl. Abschnitt \ref{sec:IDS}). Diese enthält die Informationen die man bei der Interaktion mit dem Punkt wissen muss, wie das Label und die Position. Die Label-Eigenschaft der IDS-Komponente wurde so implementiert, dass sie mit der Mesh-Renderer Komponente verknüpft ist. Dies dient dem Zweck, dass sich bei Änderung des Labels automatisch die Material-Farbe des Punktes ändert. Eine ähnliche Verknüpfung gibt es bei der Positionseigenschaft der internen Datenstruktur. Diese ist mit der Transform-Komponente verknüpft, sodass bei Änderung der Positionseigenschaft auch wirklich die Position geändert wird, da dies nur mit der Transform-Komponente möglich ist. Beide Implementationen sind in der Auflistung \ref{lst:ComponentConnection} zu sehen.
+
+\begin{lstlisting}[caption={Verknupfung von Label- und Positionseigenschaft der IDS-Komponente mit anderen Komponenten}, captionpos=t, label=lst:ComponentConnection]
+private uint _Label;
+public uint Label
+{
+    get
+    {
+        return _Label;
+    }
+    set
+    {
+        _Label = value;
+        GetComponent<MeshRenderer>().material = 
+        	Labeling.GetLabelClassMaterial(_Label);
+    }
+}
+
+private Vector3 _PointPosition;
+public Vector3 PointPosition
+{
+    get
+    {
+        return transform.position;
+    }
+    set
+    {
+        transform.position = value;
+    }
+}
+\end{lstlisting}
+\quad
+
+----Evtl. Koordinatensystem anpassung-----------------
+
+Das Punkt-Prefab, mit all seinen Komponenten und deren richtig festgelegten Eigenschaften, kann nun für jeden Punkt aus den Input-Daten instantiiert werden. Dafür gitb es in Unity die spezielle Funktion \textit{Instantiate} \cite{bib:Instantiate}. Die Unity Engine klont dadurch für jede Instanz das vorgefertigte Ausgangsobjekt, wobei jedes der Klone nach der Instantiierung individuell veränderbar ist. Nachdem die Instanz eines Punktes erstellt wurde kann also seine Position festgelegt werden und, wenn beim Import schon vorhanden, das Label des Punktes gesetzt werden. Durch das Vorgehen, das in diesem Abschnitt beschrieben wurde entsteht eine Punktwolke, welche in einer virtuellen Umgebung betrachtet werden kann. 
+
+--------------------Abbildung Punktwolke mit pre labels----------------
+
+
+\subsection{Optimierung der Bildwiederholungsrate}
+\label{sec:Optimierung}
+
+Die Bildwiederholungsrate einer Applikation ist wesentlich entscheidend für die Benutzererfahrung mit ihr. Geringe Wiederholungsraten führen zu einer nicht flüssigen Darstellung des Applikationsinhaltes, was sehr störend für den Benutzer sein kann. Gerade bei VR-Apllikationen sind konstant hohe Bildwiederholungsraten wichtig um dem Benutzer eine angenehme visuelle Präsentation zu bieten und keine Symptome der VR-Krankheit hervorzurufen. Nähere Informationen zur VR-Krankheit werden im folgenden Abschnitt \ref{sec:VRSickness} gegeben. In C.LABEL-VR werden keine komplexen 3D-Objekte oder hochauflösende Texturen dargestellt, deswegen könnte hier der Eindruck entstehen, dass die Applikation, bei einem Leistungsstarken Rechner wie in Abschnitt \ref{sec:VR-Rechner}, keine Performance-Probleme haben sollte. Da aber Punktwolkendaten oft über 30.000 Punkte enthalten können, ist die große Anzahl an Objekten selbst, die dargestellt werden muss, auch für leistungsstarke Rechenmaschinen eine Herausforderung. Deswegen muss bei der Erstellung der Punktwolken auf einige Dinge geachtet werden, um keine Einbrüche bei der Bildwiederholungsrate zu verursachen.\\
+
+Im Abschnitt \ref{sec:UnityDevelopment} wurde die Update-Funktion erwähnt, die bei jedem Bildwiederholungszyklus in Unity ausgeführt wird. Durch diese hohe Ausführungsrate ist es generell ratsam, so wenig wie möglich Leistungsintesiven Programm-Code in diesen Methoden zu verwenden, da dieser ständig ausgeführt wird. Bei der Erstellung von Punktwolken in C.LABEL-VR ist es außerdem wichtig, dass das Punkt-Prefab über keine dieser Update Methoden verfügt. Diese würde nämlich von allen Punkten durchgehend ausgeführt werden, was bei einer hohen Anzahl an Punkten zu einem großen Leistungsverlust führen würde.\\
+
+Wichtig bei der Erstellung des vorgefertigten Punktes ist es auch, die Materialeigenschaften richtig zu wählen. Das Material selbst, das dem Punkt-Prefab zugeordnet ist, ist ebenfalls vorgefertigt (Material \textit{Unlabeled} in Abbildung \ref{fig:MeshRenderer}). Der Unity Engine ist somit bekannt, dass jeder darzustellende Punkt das gleiche Material hat. Die Engine muss somit nicht für jeden neuen Punkt eine neue Information über das Material anfordern. Vergleichbar ist dieser Vorgang mit dem Bohren eines Loches. Ist die Größe des Loches bekanntermaßen immer gleich, so muss der Bohrkopf nie gewechselt werden. Das spart Zeit und schlägt sich in C.LABEL-VR durch weniger Berechnungszeit und damit eine höhere Bildwiederholungsrate nieder.\\
+
+Bei den Eigenschaften der Mesh Renderer-Komponente (siehe Abbildung \ref{fig:MeshRenderer}) kann ebenfalls darauf geachtet werden, keine unnötigen Berechnungen zuzulassen. Die Optionen \textit{Light Probes} und \textit{Lightmap Static} sind für die Lichtverteilung des Objektes in der Szene zuständig \cite{bib:LightProbes}. Da eine Lichtverteilung des Objektes keinen optischen Mehrwert bringt, da der Hintergrund weiß ist, können diese Optionen deaktiviert werden um Rechenzeit zu sparen. Auch die Option \textit{Cast Shadows} wird deaktiviert, da das Anzeigen von Schatten bei der Berechnung aufwendig und bei der Darstellung der Punktwolke nicht erwünscht ist. Lediglich die Eigenschaft \textit{Reflection Probes} wird mit der Option \textit{Simple} belegt. Diese Eigenschaft legt die Reflexion, die vom Objekt zurückgegeben wird fest. Solch eine Reflexion ist in C.LABEL-VR gewünscht, da dies die Punkte für den Benutzer räumlicher darstellt, da sie Reflexionen wie echte Objekte haben. Damit die Berechnungen dafür aber nicht zu aufwendig werden, wird hier nur die Option Simple gewählt.\\
+
+Auch bei der Sphere Collider-Komponente ist auf eine Eigenschaft zu achten. Wie schon in Abschnitt \ref{sec:Generierung} erwähnt, ist diese Komponente für die Interaktion mit dem Objekt zuständig. Durch diese Komponente kann nämlich detektiert werden, ob  es eine Kollision mit einem anderen Objekt gibt, welches ebenfalls einen Collider besitzt \cite{bib:Collider}. Eine der beiden Collider-Komponenten muss dabei der Auslöser der Kollision sein. Um dies zu gewährleisten kann die Eigenschaft \textit{Is Trigger} aktiviert werden (siehe Abbildung \ref{fig:MeshCollider}). Ist diese im aktiven Zustand, so überprüft die Collider-Komponente durchgehend, ob eine Kollision mit einem anderen Objekt vorliegt. Ist dies bei jedem Punkt in der Punktwolke der Fall, gibt es durchgehend von allen Punkten diese Überprüfung, was zu einem erheblichen Performance-Verlust führt. Möchte man also durch ein Objekt mit einem Punkt interagieren, muss das Objekt der Auslöser der Kollision sein. Somit gibt es nur ein Objekt in der Szene, welches eine Kollisionsprüfung vollzieht.\\
+
+Trotz all dieser Einstellungen zur Verbesserung der Anwendungs-Performance kann es bei zu vielen Punkten im Sichtfeld des Benutzers zu einer niedrigen Bildwiederholungsrate kommen. Der Grund dafür ist, dass für jedes anzuzeigende Objekt ein Zeichnungs-Befehl an die Grafikkomponente des Rechners gegeben werden muss. Dies wird in der Fachsprache \textit{Draw Call} genannt \cite{bib:DrawCall}. Bei einer zu hohen Anzahl an Punkten in einer Punktwolke, kann es somit zu einer zu hohen Anzahl an Zeichnungs-Befehlen kommen. Dies führt dann zu einer niedrigen Bildwiederholungsrate. In diesem Fall hilft die Verbesserung der Leistungskomponenten des VR-Rechners (vgl. Abschnitt \ref{sec:VR-Rechner}). Für C.LABEL-VR wurde als zusätzliche Leistungsoptimierung eine Funktion implementiert, die dieses Problem umgeht. Diese Funktion verringert die Anzahl der angezeigten Punkte während der Bewegung des Benutzers, um die Anzahl an Draw-Calls zu verringern und somit die Bildwiederholungsrate zu erhöhen. Diese Funktion wird näher im Abschnitt \ref{sec:AppMenu} erklärt. 
 
 \section{Navigation}
 \label{sec:Navigation}
-Die Navigigation in Virtual Reality Inhalten ist ein entscheidendes Thema. Wird dieses Thema während der Entwicklung einer VR-Applikation nicht ausreichend berücksichtigt, so kann diese Applikation für manche Menschen unbenutzbar sein. Der Grund dafür ist die \textit{VR-Krankheit}. Diese Krankheit verursacht beim Benutzer Übelkeit, die bei manchen Nutzern mehr und bei manchen Nutzern weniger auftritt. Details dazu sind im Abschnitt \ref{sec:VRSickness} gegeben. 
+Die Navigigation in Virtual Reality-Anwendungen ist ein entscheidendes Thema. Wird dieses Thema während der Entwicklung einer VR-Applikation nicht ausreichend berücksichtigt, so kann dies große Auswirkung auf die Benutzererfahrung haben \cite{bib:PointTeleport}. Ein Grund dafür ist die \textit{VR-Krankheit}, die häufig auftritt wenn sich Benutzer durch eine virtuelle Umgebung bewegen \cite{bib:VRSicknessLaviola}. Diese Krankheit verursacht unter anderem Übelkeit und tritt bei manchen Nutzern mehr und bei manchen weniger auf. Details dazu sind im Abschnitt \ref{sec:VRSickness} gegeben. \\
 
-Um sich in C.LABEL durch Punktwolken zu Bewegen wurden zwei Navigationsmöglichkeiten entwickelt. Zum einen gibt es den Freien Flug Modus (\textit{Free Fly Mode}) (Abschnitt \ref{sec:FreeFlyMode}). In diesem Modus kann sich der Benutzer, mit Hilfe der Oculus Eingabegeräte, auf intuitive Weise frei durch die Punktwolke bewegen. Die Bewegung ist dabei durchgängig und wird durch Beschleunigung und Bremsen gestartet und beendet. Diese Art der Bewegung fördert jedoch bei manchen Nutzen den Effekt der VR-Krankheit.
+Um sich in C.LABEL durch Punktwolken zu Bewegen wurden zwei Navigationsmöglichkeiten entwickelt. Zum einen gibt es den Freien Flug Modus (Abschnitt \ref{sec:FreeFlyMode}). In diesem Modus kann sich der Benutzer, mit Hilfe der Oculus Eingabegeräte intuitiv und frei durch die Punktwolke bewegen. Die Bewegung ist dabei durchgängig und wird durch Beschleunigung und Bremsen gestartet und beendet. Diese Art der Bewegung fördert jedoch bei manchen Nutzen den Effekt der VR-Krankheit.\\
 
-Deshalb gibt es mit dem Teleportationsmodus (\textit{Teleport Mode}) noch eine zweite Navigationsart (\ref{sec:TeleportMode}). Das Grundprinzip der Steuerung ist ähnlich, allerdings gibt es keine durchgängige Bewegung. Stattdessen wird der Benutzer von einer Stelle zur anderen teleportiert. Dies wirkt dem Übelkeitseffekt entgegen.   
+Deshalb gibt es mit dem Teleportationsmodus (\textit{Teleport Mode}) noch eine alternative Navigationsart (\ref{sec:TeleportMode}). Das Grundprinzip der Steuerung ist ähnlich, allerdings gibt es keine durchgängige Bewegung. Stattdessen wird der Benutzer von einer Stelle zur anderen teleportiert. Dies wirkt dem Übelkeitseffekt entgegen.   
 
 \subsection{VR-Krankheit}
 \label{sec:VRSickness}
-TODO kurze Erläuterung von Motion Sickness
+Die VR-Krankheit ist ein Effekt der auftritt während oder nach dem Aufenthalt einer Person in einer virtuellen Umgebung. Sie äußert sich meistens durch Übelkeit, aber auch durch andere Symptome wie Kopfschmerzen oder Überanstrengung der Augen \cite{bib:VRSicknessLaviola}. Es wird geschätzt, dass bei dreißig bis achtzig Prozent der Menschen Symptome der VR-Krankheit auftreten wenn sie sich in einer virtuellen Umgebung befinden \cite{bib:VRSicknessRebenitsch}. Die Erforschung der Ursache für diese Krankheit ist noch nicht gänzlich abgeschlossen. Somit gibt es mehrere Theorien was der Auslöser für sie ist.\\
 
-\subsection{Freier Flug}
+Die gängigste Theorie dafür ist das Prinzip der Sinnestäuschung. Dieses Prinzip besagt, dass das menschliche Gehirn einen Konflikt feststellt, wenn sich die erwartete Wahrnehmung zweier Sinnesorgane voneinander unterscheiden. Im Falle der VR-Krankheit handelt es sich bei den Sinnesorganen um die visuelle Wahrnehmung und den Gleichgewichtssinn. Bewegt sich ein VR-Nutzer nun durch die virtuelle Welt, so registriert dies die visuelle Wahrnehmung als Bewegung in eine bestimmte Richtung. Solche Bewegungen in der virtuellen Welt geschehen oft ohne Bewegung des Benutzers in der physischen Welt. Der Gleichgewichtssinn des Menschen registriert also keinerlei Bewegung im Gegensatz zur visuellen Wahrnehmung und somit kommt es zum Konflikt. \cite{bib:VRSicknessKolanski}. \\
+
+Dieser Konflikt kann jedoch nicht nur ausgelöst werden, wenn sich die Bewegung des Nutzers in der virtuellen und der realen Welt grundlegend unterscheiden. Symptome der VR-Krankheit können auch dann auftreten, wenn die Bewegungen gleich sind, jedoch leicht verzögert. Dies kann beispielsweise der Fall sein, wenn die Leistungsgrenze des betreibenden Rechners erreicht ist und somit keine flüssige Wiederholungsrate des Bildes mehr gewährleistet werden kann. Ist die Wiederholungsrate zu niedrig entsteht ein zu großer Zeitunterschied zwischen der Tätigkeit der Bewegung und dem Sehen der Bewegung. Lilienthal hat in einer frühen Forschung empfohlen, einen maximalen Zeitunterschied von 35 Millisekunden zwischen den Wahrnehmungen der verschiedenen Sinne einzuhalten\cite{bib:VRSicknessPausch}. Das bedeutet das System muss mindestens eine Bildwiederholungsrate von ungefähr 30 Bildern pro Sekunde gewährleisten.  Aktuell empfehlen Hersteller von VR-Brillen sogar eine Wiederholungsrate von 90 Bildern pro Sekunde, um einen komfortablen Gebrauch des VR-Gerätes sicherzustellen \cite{bib:90FpsMin}. Um der VR-Krankheit vorzubeugen ist also auch die Optimierung der Applikation (wie in Abschnitt \ref{sec:Optimierung}) für eine hohe Bildwiederholungsrate und Leistungsfähigkeit vom betreibenden Rechner des VR-Gerätes zu beachten.\\
+
+Der häufigste Grund für das Auslösen der VR-Krankheit sind aber, wie Anfangs erwähnt, zu starke Bewegungen in der virtuellen Welt bei fehlenden Bewegungen in der realen Welt. Deshalb wurde in C.LABEL-VR dieser Aspekt bei den Navigationsmodi beachtet und versucht durch geeignete Methoden der VR-Krankheit vorzubeugen. 
+
+
+\subsection{Freier Flug-Modus}
 \label{sec:FreeFlyMode}
-TODO Erklärung der FreeFly-Modus und des Funktionsprinzips dahinter
 
-\subsection{Teleport}
+\begin{figure}%
+	\centering
+    \includegraphics[width=13.5cm]{OculusTouch}
+    \caption{Oculus Touch Controller mit der offiziellen Beschriftung von Oculus \cite{bib:OculusTouchPic}}
+    \label{fig:OculusTouchPic}
+\end{figure}
+
+Der freie Flug-Modus ist die erste Navigationsart, die für C.LABEL-VR entwickelt wurde. Hierbei wurde vor allem auf den praktischen Nutzen für die Bewegung wert gelegt. Das Ziel war es also einen Bewegungsmodus zu implementieren, der für den Benutzer leicht verständlich und schnell zu erlernen ist. Außerdem sollte es möglich sein sich präzise zu Bewegen um leicht an gewünschte Positionen in der Punktwolke zu kommen.\\
+
+Die Benutzereingabe für diesen Navigationsmodus erfolgt über die Analog-Sticks der Oculus Touch Controller (siehe \textit{Thumbstick} in Abbildung \ref{fig:OculusTouchPic}). Bewegt der Benutzer einen dieser Sticks, bewegt er sich auch in der virtuellen Welt. Wird der Stick wieder losgelassen, endet auch die Bewegung innerhalb der virtuellen Umgebung. Dies soll die gewünschte Intuitivität liefern. Die Längs- und die Lateral-Bewegung werden dabei mit dem linken Stick gesteuert. Durch Betätigung des rechten Sticks kann eine Vertikal-Bewegung oder eine Rotation um die eigene Achse ausgeführt werden. Die genauen Steueranweisungen sind in der Bedienungsanleitung zur Applikation zu finden (APPENDIX).\\
+
+Um die Bewegungen aus dem Stand oder Richtungswechsel angenehmer für den VR-Benutzer zu machen wird im freien Flugmodus Beschleunigung und Verzögerung simuliert. Wird ein Steuerbefehl vom Benutzer gegeben, bewegt sich dieser nicht sofort mit voller Geschwindigkeit. Dies wäre ein, für den Menschen unnatürliches Bewegungsverhalten und könnte, zusätzlich zu den Auslösern aus Abschnitt \ref{sec:VRSickness}, zu Symptomen der VR-Krankheit führen. Stattdessen kommt die Bewegung, durch die Beschleunigung, langsam ins Rollen, sodass der Benutzer eine bestimmte Zeit hat um sich an die Geschwindigkeitsveränderung zu gewöhnen. Endet der Bewegungsbefehl, also lässt der Benutzer den entsprechenden Stick los, endet die Bewegung nicht schlagartig, sondern die Geschwindigkeit wird wie beim Bremsen mit einem Auto immer weniger, sodass auch hier der Benutzer Zeit hat sich an den Bewegungsstopp zu gewöhnen.      Besonders wichtig wird dieses Prinzip bei Richtungswechseln. Würde der Benutzer bei voller Geschwindigkeit einen Richtungswechsel vollziehen, bei dem er sich in die neue Richtung ebenfalls sofort mit Höchstgeschwindigkeit bewegt, würde dies in den meisten fällen zu Übelkeit führen, da der Richtungswechsel zu schlagartig vollzogen werden würde. Durch die Verzögerung kommt, bei einem Richtungswechsel, der Benutzer erst langsam zum Stehen und wird danach in die neue Richtung beschleunigt. Der Wechsel der Bewegungsrichtung wird also übergangsweise ausgeführt, was der VR-Krankheit entgegenwirkt. \\
+
+Die Geschwindigkeit der Bewegung des Nutzers wird in jedem Update-Zyklus (erklärt in Abschnitt \ref{sec:UnityDevelopment}) der Applikation berechnet. Das heißt die Funktion \textit{ComputeSpeed} aus der Auflistung \ref{lst:FreeFly} wird in jedem dieser Zyklen aufgerufen. Die Beschleunigung wird nun so simuliert, dass ein bestimmter Beschleunigungswert auf den aktuellen Geschwindigkeitswert addiert wird, bis die Maximalgeschwindigkeit erreicht ist. Gibt es keinen Bewegungsbefehl mehr, wird vom aktuellen Geschwindigkeitswert solange ein Verzögerungswert abgezogen, bis die Geschwindigkeit null beträgt. Der Verzögerungswert ist in der Regel höher als der Beschleunigungswert, damit der Benutzer schneller zum Stehen kommt, als er Beschleunigt. Dies hat den Zweck dass der Anhaltevorgang präzise bleibt und der Benutzer so nicht zu weit verzögert bis er zum stehen kommt. Beide Werte können allerdings vom Benutzer selbst eingestellt werden (siehe Kapitel \ref{sec:AppMenu}). Der Richtungswechsel ist vom Prinzip her ähnlich implementiert. Hierbei wird allerdings ein noch höherer Subtrahend als der Verzögerungswert von der aktuellen Geschwindigkeit abgezogen, damit der Richtungswechsel schnell von statten geht, jedoch immer noch verzögert.
+
+\begin{lstlisting}[caption={Vereinfachte Implementierung des Beschleunigungs- und Verzögerungsprinzip in eine einzelne Richtung}, captionpos=t, label=lst:FreeFly]
+private float ComputeSpeed(bool move, float currentSpeed, float maxSpeed ,float accelerationValue, float decelerationValue)
+{
+	float newSpeed;	
+	
+	if(move == true)
+	{
+		if(currentSpeed < maxSpeed)
+			newSpeed = currentSpeed + accelerationValue;
+		else
+			newSpeed = maxSpeed;
+	}
+	else
+	{
+		if(currentSpeed > 0)
+			newSpeed = currentSpeed - decelerationValue;
+		else
+			newSpeed = 0;
+	}
+	
+	return newSpeed;
+}
+\end{lstlisting}
+\quad
+
+Durch den freien Flugmodus soll dem Benutzer eine Bewegungsart zur Verfügung gestellt werden, die den gewohnten Bewegungsabläufen des Menschen ähnelt. Dies ist mit der Simulation von Beschleunigung und Verzögerung gegeben. Durch einen höheren Verzögerungswert kann darüber hinaus sichergestellt werden, dass der Benutzer präzise an eine gewünschte Position navigieren kann. Nichts desto trotz kann es bei diesem Bewegungsmodus dazu kommen, dass Symptome der VR-Krankheit auftreten. Dies kommt daher, dass der Mensch eine konstante Bewegung visuell wahrnimmt, sie aber nicht körperlich fühlt (vgl. Abschnitt \ref{sec:VRSickness}). Um diesen Nachteil auszugleichen wurde zusätzlich noch ein zweiter Navigationsmodus entwickelt.
+ 
+\subsection{Teleport-Modus}
 \label{sec:TeleportMode}
-TODO Erklärung des Teleport Modus und des Funktionsprinzips dahinter
+Semaphor mit GetDown austauschen\\
+
+Der Teleport-Modus ist der zweite Navigationsmodus der für C.LABEL-VR entwickelt wurde. Der Zweck dieses Modus ist es, die Anfälligkeit des freien Flug-Modus (Abschnitt \ref{sec:FreeFlyMode}) für die VR-Krankheit auszugleichen. Symptome der VR-Krankheit treten beim freien Flug auf, da der Benutzer eine konstante Bewegung auf visuellem Weg wahrnimmt, jedoch nicht mit dem Gleichgewichtssinn spürt. Durch Teleportation, also den unverzögerten Sprung von einer Position zu einer anderen, gibt es keine konstante Bewegung. So soll nun der VR-Krankheit entgegen gewirkt werden. Diese Art der Bewegung ist aktuell die am weitesten verbreitet unter VR-Anwendungen \cite{bib:VRLocomotionReview}, da sie nachweislich weniger anfällig für die VR-Krankheit ist \cite{bib:PointTeleport}.\\
+
+Das Prinzip der Steuerung ist ähnlich wie das des freien Flug-Modus. Steuerungsbefehle kann der Benutzer zunächst mit den Sticks tätigen (siehe \textit{Thumbstick} in Abbildung \ref{fig:OculusTouchPic}). Auch hier wird die Längs- und die Lateral-Bewegung mit dem linken und die Vertikal- und Rotations-Bewegung mit dem Rechten Stick gesteuert. Die genauen Steueranweisungen sind in der Bedienungsanleitung zur Applikation zu finden (APPENDIX).\\
+
+Wie schon erwähnt gibt es, im Gegensatz zum freien Flug-Modus, keine konstante Bewegung durch die Benutzereingaben. Stattdessen wird die Position des Benutzers in der virtuellen Welt durch die Steuerbefehle unverzögert verschoben, sodass es einem Teleport gleicht. Die Implementation dieses Vorgangs ist dank der Transform-Komponente eines Gameobjects (siehe Abschnitt \ref{sec:UnityDevelopment}) nicht aufwändig. Wie in der Auflistung \ref{lst:Teleport} zu sehen ist, kann die Verschiebung des Objekts \textit{userView} um einen Vektor mit einem einzigen Befehl vollzogen werden. Dieses Objekt repräsentiert dabei die Augen des Benutzers in der virtuellen Welt. Wird es also verschoben, ist es für den Benutzer so, als würde er von einer zur anderen Position teleportiert werden. Der Vektor um den der Benutzer verschoben wird, kann von ihm selber eingestellt werden (siehe Kapitel \ref{sec:AppMenu}).
+
+\begin{lstlisting}[caption={Implementierung des Teleportationsbefehls}, captionpos=t, label=lst:Teleport]
+GameObject userView;
+
+userView.transform.Translate(new Vector3(xDirection, yDirection, zDirection));
+\end{lstlisting}
+\quad
+
+------------Bild mit pointer teleport einfügen---------
+
+Zusätzlich zu den Benutzereingaben durch den Stick, gibt es eine weitere Möglichkeit für den Benutzer sich an eine bestimmte Stelle in der virtuellen Welt zu teleportieren. Dazu kann er eine Art Laserstrahl aktivieren, der vom linken virtuellen Controller ausgeht (Abbildung \ref{fig:PointerTeleport}). Dieser Strahl fungiert wie eine Stange die der Benutzer in der Hand hält, sie bewegt sich also mit der Handbewegung des Nutzers mit. Der Strahl kann durch die Hand-Auslöser-Taste des linken Controllers aktiviert werden (siehe \textit{PrimaryHandTrigger} in Abbildung \ref{fig:OculusTouchPic}). Dabei wird auch die Länge des Strahls angezeigt, was ebenfalls in der Abbildung \ref{fig:PointerTeleport} zu sehen ist. Die Länge des Strahls kann anschließend vom Benutzer angepasst werden, indem er den linken Stick nach vorne (Strahl wird länger) oder nach hinten (Strahl wird kürzer) drückt. Betätigt der Benutzer die Index-Auslöser-Taste (\textit{PrimaryIndexTrigger} in Abbildung \ref{fig:OculusTouchPic}) wird er an die Spitze des Laserstrahls teleportiert. Mit Hilfe dieser Teleportationsart kann der Benutzer auch weite Distantzen in der virtuellen Welt schnell zurücklegen. Für die Implementation dieser Funktion kann ebenfalls der Befehl aus der Auflistung \ref{lst:Teleport} verwendet werden, wobei statt dem neu erzeugten Vektor die Position des Strahlendes verwendet wird.\\
+
+Durch die Bewegung mittels Teleport wird also der VR-Krankheit entgegengewirkt, da es keine konstante Bewegung für den Benutzer gibt. Durch den Teleport mittels Laserstrahl können hierbei auch große Distanzen vom Benutzer zurückgelegt werden. Der Nachteil dieses Bewegungsmodus ist es, dass durch feste Teleportationsdistanzen keine präzise Stuerung mehr garantiert werden kann. Da aber genau dafür der freie Flug-Modus Abhilfe schafft, ergänzen sich die beiden Navigationsmodi sehr gut und bieten dem Benutzer so passende Möglichkeiten sich durch die virtuelle Welt zu Bewegen.
+ 
 
 \section{Annotieren der Punktwolke}
 \label{sec:Annotation}
 TODO kurze Einleitung
 
-\subsection{Einfache Pointer Annotation}
+\subsection{Pointer Annotation}
 \label{sec:SimplePointerAnnotation}
 TODO Erklärung der Pointer Annotation und des Funktionsprinzips dahinter
 
+\subsection{Touch Annotation}
+\label{sec:TouchAnnotation}
+TODO Erklärung der Pointer Annotation und des Funktionsprinzips dahinter
+
 \subsection{Cluster Annotation}
+\label{sec:ClusterLabeling}
 In einer Punktwolke mit mehreren tausend Punkten wird es für den Benutzer auf Dauer mühsam jeden Punkt einzeln zu Annotieren. Bei diesem Problem soll die \textit{Cluster Annotation} Abhilfe schaffen. Diese Art der Annotation soll selbstständig diejenigen Punkte in einen Cluster aufnehmen und sie mit der gleichen Klasse labeln, die zum gleichen Objekt gehören. Der Benutzer wählt hierfür, wie im vorherigen Kapitel \ref{sec:SimplePointerAnnotation} einen Punkt mit Hilfe des Pointers aus. Ausgehend davon werden umliegende Punkte untersucht, ob sie zum gleichen Objekt gehören wie der ausgewählte Startpunkt. Ist dies der Fall werden sie in den Cluster aufgenommen. Werden keine Punkte mehr aufgenommen bleibt der Endcluster übrig, welcher dann einem Objekt entspricht, zum Beispiel einem Auto. \\
 
 Wissenschaftler beschäftigen sich intensiv mit solchen Verfahren zur Objektidentifizierung in dreidimensionalen Punktwolken. Ansätze, wie sie in \cite{bib:Segmentation1}, \cite{bib:Segmentation2} oder \cite{bib:Segmentation3} vorgestellt werden sind nur wenige von vielen. Die meisten haben aber ein ähnliches Vorgehen. Zuerst werden all diejenigen Punkte in der Wolke entfernt, die zum Boden gehören. So bleiben anschließend nur noch Punkte übrig, welche zu Objekten wie beispielsweise Autos, Häuser oder Straßenschilder gehören. Die übrigen Punkte können nun mit diversen Algorithmen zu Clustern zusammengefasst werden. Ein Beispiel für das Ergebnis eines solchen Verfahrens bietet die Abbildung \ref{fig:ClusteredCloud}. Im Folgenden wird vorgestellt wie die Cluster-Analyse in C.LABEL-VR funktioniert.
@@ -124,6 +257,7 @@ Wissenschaftler beschäftigen sich intensiv mit solchen Verfahren zur Objektiden
 \end{figure}
 
 \subsubsection{Bodenpunkt-Analyse}
+\label{sec:GroundPointSegmentation}
 Wie schon erwähnt werden bei vielen Verfahren der Cluster-Analyse von Punktwolken zuerst die Bodenpunkte identifiziert. Dieses Verfahren wird auch in dieser Arbeit angewendet. Der Grund dafür ist, dass die Bodenpunkte nicht in das Suchverfahren nach Objektpunkten aufgenommen werden dürfen. Sie würden nicht nur die Suche nach echten Objektpunkten erschweren sondern auch das Ergebnis der Objektcluster verfälschen. Als Erklärung soll folgender, simpler Cluster-Algorithmus dienen:
 
 \begin{enumerate}
@@ -229,7 +363,7 @@ A=U \Sigma V^T
 \label{eq:SVD}
 \end{equation}
 
-%Die Singulärwertzerlegung kann, wie schon angesprochen, für beliebige Matrizen in $R^{nxm}$ verwendet werden. Da die berechnete Kovarianzmatrix $C$ aus der Gleichung \ref{eq:Covar} immer eine $3x3$ Matrix ist, kann die Matrix aber auch in ihre Eigenwerte und Eigenvektoren zerlegt werden. Der kleinste Eigenwert dieser Zerlegung entspricht dem gesuchten Normalenvektor $\vec{n}$. Wie man in \cite{bib:SVD} sehen kann, ist ein Schritt zur Singulärwertzerlegung die Berechnung der Eigenwerte einer Matrix. Die reine Berechnung der Eigenwerte erfordert also weniger Rechenschritte als die Singulärwertzerlegung und bietet bei der Analyse vieler Punktwolken eine kürzere Dauer der Berechnungen. Auch Quellcode-Bibliotheken wie \textit{Geometric Tools Engine} benutzten dieses Verfahren um eine Ebenenmodell in einer Menge von Punkten zu berechnen \cite{bib:g3sharp}. Deshalb wurde es auch in C.LABEL verwendet.\\
+%Die Singulärwertzerlegung kann, wie schon angesprochen, für beliebige Matrizen in $R^{nxm}$ verwendet werden. Da die berechnete Kovarianzmatrix $C$ aus der Gleichung \ref{eq:Covar} immer eine $3x3$ Matrix ist, kann die Matrix aber auch in ihre Eigenwerte und Eigenvektoren zerlegt werden. Der kleinste Eigenwert dieser Zerlegung entspricht dem gesuchten Normalenvektor $\vec{n}$. Wie man in \cite{bib:SVD} sehen kann, ist ein Schritt zur Singulärwertzerlegung die Berechnung der Eigenwerte einer Matrix. Die reine Berechnung der Eigenwerte erfordert also weniger Rechenschritte als die Singulärwertzerlegung und bietet bei der Analyse vieler Punktwolken eine kürzere Dauer der Berechnungen. Auch Quellcode-Bibliotheken wie \textit{Geometric Tools Engine} benutzten dieses Verfahren um eine Ebenenmodell in einer Menge von Punkten zu berechnen \cite{bib:g3sharp}. Deshalb wurde es auch in C.LABEL-VR verwendet.\\
 
 Die gesuchte Ebene ist nun durch den Punkt $p$ und den Vektor $\vec{n}$ nun eindeutig definiert. Nun kann der Abstand jedes Punktes des Segments zu seiner orthogonalen Projektion auf der definierten Ebene berechnet werden. Dieser Abstand wird dann mit einem Schwellwert $T_{plane}$ verglichen, welcher zu Beginn der Berechnung definiert werden muss. Ist der Abstand eines Punktes kleiner als der Schwellwert so handelt es sich bei ihm um einen Bodenpunkt. In C.LABEL-VR wird solch ein Punkt vorläufig als Bodenpunkt markiert und in die Menge an neuen Seed-Punkten aufgenommen. Mit diesen neuen Seed-Punkten wird anschließend die nächste von $N_{iter}$ Berechnungen der Bodenebene getätigt(vgl. Algorithmus \ref{alg:GroundPoints}).
 
@@ -279,13 +413,51 @@ Die gesuchte Ebene ist nun durch den Punkt $p$ und den Vektor $\vec{n}$ nun eind
 \subsubsection{Cluster-Analyse}
 TODO Erklärung des Cluster-Algorithmus (Recursive Radius Search)
 
+Für die Analyse von Clustern wurde eine rekursive Radius-Suche (RRS) implementiert. Das Prinzip ähnelt dem \textit{Euclidean Clustering} \cite{bib:EuclideanCluster}, das auch in C.LABEL verwendet wird um Cluster zu bilden. Die RRS sucht von einem Startpunkt aus alle Punkte in einem gewissen Radius. Für alle gefundenen Punkte wird diese Suche mit dem jeweiligen gefundenen Punkt wiederholt, bis keine neuen Punkte mehr gefunden wurden. Alle insgesamt gefundenen Punkte bilden einen zusammengehörigen Cluster. Der genaue Algorithmus ist in \ref{alg:RecursivRadiusSearch} beschrieben.
+
+\begin{algorithm}
+  \caption{Rekursive Radius-Suche zum Finden eines Clusters von einem Startpunkt aus}
+\label{alg:RecursivRadiusSearch}
+  \begin{algorithmic}[1]
+  	\State \Call{\textbf{RecursiveRadiusSearch}}{$\textbf{P}$, $\textbf{P}_c$, $\textbf{P}_{s}$, $r$}:
+    \Inputs{\textbf{$\textbf{P}$} : Menge aller Punkte der Wolke\\
+    		$p_s$ : Startpunkt der Suche\\
+    		$r$ : Radius der Suche\\
+    		$\textbf{P}_c$ : Referenz auf die Menge in die alle gefundenen Cluster geschrieben werden}
+    \Initialize{$\textbf{P}_{s}$ : Menge aller neuen Startpunkte\\
+    			$\textbf{P}_{f}$ : Menge aller gefundenen Punkte\\}
+   	
+	\State $\textbf{P}_{s} \gets p_s$;   	
+    \For{$i=1 : \textbf{P}_{s}$}
+    	\State $\textbf{P}_{f}$ = \Call{\textbf{GetPointsInRadius}}{$p_i$, $r$};
+      	\For{$j=1 : \textbf{P}_{f}$}
+			\If{$p_j \not \in \textbf{P}_c \And p_j.Label \neq CurrentLabel \And p_j \neq GroundPoint$ } \label{alg:RecursivRadiusSearch:IfLine}
+				\State $\textbf{P}_s \gets p_j$;
+				\State $\textbf{P}_c \gets p_j$;
+			\EndIf
+		 \EndFor
+	\EndFor
+	
+	\If{$\textbf{P}_{s} > 0$}
+		\State \Call{\textbf{RecursiveRadiusSearch}}{$\textbf{P}$, $\textbf{P}_c$, $\textbf{P}_{s}$, $r$};
+	\EndIf
+  \end{algorithmic}
+\end{algorithm}
+
+Wichtig bei diesem Algorithmus ist die Überprüfung in Zeile \ref{alg:RecursivRadiusSearch:IfLine}, die aus drei einzelnen Bedingungen besteht und für jedes gefundene Objekt durchgeführt wird. Nur wenn alle drei Bedingungen erfüllt sind handelt es sich um einen Punkt des Clusters und das Objekt wird in die Menge der Cluster-Punkte und in die Menge der neuen Startpunkte aufgenommen. \\
+
+Die erste Bedingung ist, dass das gefundene Objekt kein Element der bereits gefundenen Cluster-Punkte sein darf. Ist das Objekt in der Menge enthalten wurde bereits eine Radius-Suche für diesen Punkt durchgeführt. Außerdem terminiert die Rekursive Suche nie, wenn schon gefundene Objekte immer wieder neu in die Startpunkt-Menge aufgenommen werden. Die zweite Bedingung besagt, dass das Label des gefundenen Objekts nicht dem Label entsprechen darf, mit dem der Cluster annotiert werden soll. Dadurch kann Rechenzeit eingespart werden, da für Objekte mit richtigem Label nicht unnötigerweise eine Radius-Suche ausgeführt wird. Die Letzte Bedingung besagt, dass der gefundene Punkt kein Bodenpunkt sein darf. Die Cluster-Analyse ist dafür gedacht Objekte in einer Punktwolke als Ganzes erfassen zu können und dazu gehört der Boden nicht. Aus diesem Grund wurde die Bodenpunkt-Analyse aus Abschnitt \ref{sec:GroundPointSegmentation} implementiert.\\
+
+Alle Punkte die diese Bedingungen erfüllen werden in die Menge Cluster-Punkte aufgenommen. Diese Menge bildet am Ende der rekursiven Suche den finalen Cluster. Zusätzlich werden diese auch in die Menge der neuen Startpunkte aufgenommen. Mit dieser Menge wird die rekursive Radius-Suche erneut aufgerufen. Dies geschieht solange, bis beim Durchlauf der rekursiven Suche kein gefundener Punkt die
+
 \section{User Interface}
 \label{sec:UIMenu}
 TODO 
 -kurze Einleitung
 -Erklärung der Architektur hinter dem UI-System
 
-\subsection{Ingame Menu}
+\subsection{Applikations-Menü}
+\label{sec:AppMenu}
 TODO Erklärung der Einstellbaren Parameter im Ingame Menü
 %\subsection{Movement}
 %\subsection{Labelclasses}

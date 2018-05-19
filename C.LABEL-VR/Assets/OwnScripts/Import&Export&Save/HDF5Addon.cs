@@ -49,7 +49,7 @@ public class HDF5Addon
         return listOfDataLists_out;
     }
 
-    public static void CreateNewHdf5File_DaimlerLidar(int fileIndex_inp, Dictionary<Tuple<int, int>, int> indexToID, Hdf5Container_LidarDaimler container, List<GameObject> pointList, string exportDatapath)
+    public static void WriteHdf5File_DaimlerLidar(int fileIndex_inp, Dictionary<Tuple<int, int>, int> indexToID, Hdf5Container_LidarDaimler container, List<GameObject> pointList, string exportDatapath)
     {
         int status = 0;
 

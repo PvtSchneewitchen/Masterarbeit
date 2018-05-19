@@ -30,9 +30,9 @@ public class TutorialSessionHandler : MonoBehaviour
 #endif
         Session = new LabelSession(pointClouds, 0);
 
-        foreach (var cloud in Session._pointClouds)
+        foreach (var cloud in Session.PointClouds)
         {
-            cloud._origin.SetActive(false);
+            cloud.Origin.SetActive(false);
         }
 
         DisableFunctions();

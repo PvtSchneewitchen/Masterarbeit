@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 using Accord.MachineLearning;
-using Accord.Math;
-using Accord.Statistics;
 
 /// <summary>
 /// This is a static class that provides methods to cluster groups of points in a 3D-Pointcloud 
@@ -144,42 +140,42 @@ public static class Clustering
 /// <summary>
 /// Gets the clusters by kmeans algrithm (not used in application)
 /// </summary>
-    public static List<List<GameObject>> GetClustersByKmeans(List<GameObject> nonGroundPoints_inp, int k_inp)
-    {
-        double[][] coordinatesOfPoints = GetCoordinatesOfPoints(nonGroundPoints_inp);
+    //public static List<List<GameObject>> GetClustersByKmeans(List<GameObject> nonGroundPoints_inp, int k_inp)
+    //{
+    //    double[][] coordinatesOfPoints = GetCoordinatesOfPoints(nonGroundPoints_inp);
 
-        var clusters = Kmeans(nonGroundPoints_inp, k_inp);
-        // Use the centroids to parition all the data
-        int[] labels = clusters.Decide(coordinatesOfPoints);
+    //    var clusters = Kmeans(nonGroundPoints_inp, k_inp);
+    //    // Use the centroids to parition all the data
+    //    int[] labels = clusters.Decide(coordinatesOfPoints);
 
-        List<List<GameObject>> clusters_out = new List<List<GameObject>>();
-        for (int i = 0; i < clusters.Centroids.Length; i++)
-        {
-            clusters_out.Add(new List<GameObject>());
-        }
+    //    List<List<GameObject>> clusters_out = new List<List<GameObject>>();
+    //    for (int i = 0; i < clusters.Centroids.Length; i++)
+    //    {
+    //        clusters_out.Add(new List<GameObject>());
+    //    }
 
-        for (int i = 0; i < nonGroundPoints_inp.Count; i++)
-        {
+    //    for (int i = 0; i < nonGroundPoints_inp.Count; i++)
+    //    {
 
-            clusters_out[labels[i]].Add(nonGroundPoints_inp[i]);
+    //        clusters_out[labels[i]].Add(nonGroundPoints_inp[i]);
 
-            //attributes[i]._clusterLabel = labels[i];
-        }
+    //        //attributes[i]._clusterLabel = labels[i];
+    //    }
 
-        return clusters_out;
-    }
+    //    return clusters_out;
+    //}
 
-    private static KMeansClusterCollection Kmeans(List<GameObject> nonGroundPoints_inp, int k_inp)
-    {
-        double[][] coordinatesOfPoints = GetCoordinatesOfPoints(nonGroundPoints_inp);
+    //private static KMeansClusterCollection Kmeans(List<GameObject> nonGroundPoints_inp, int k_inp)
+    //{
+    //    double[][] coordinatesOfPoints = GetCoordinatesOfPoints(nonGroundPoints_inp);
 
-        Accord.Math.Random.Generator.Seed = 0;
+    //    Accord.Math.Random.Generator.Seed = 0;
 
-        // Create a new K-Means algorithm
-        KMeans kmeans = new KMeans(k_inp);
-        // Compute and retrieve the data centroids
-        return kmeans.Learn(coordinatesOfPoints);
-    }
+    //    // Create a new K-Means algorithm
+    //    KMeans kmeans = new KMeans(k_inp);
+    //    // Compute and retrieve the data centroids
+    //    return kmeans.Learn(coordinatesOfPoints);
+    //}
 
     /// <summary>
     /// The method gets all points within a radius from a list of points and add the found points to a referenced dictionary
