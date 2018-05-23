@@ -229,7 +229,7 @@ Das Inteview handelt von den Verkaufszahlen der Hololens},
   year         = {2017},
 }
 
-@Misc{Neurons,
+@Misc{bib:Neurons,
   author = {{Wikimedia Commons}},
   title  = {Neurons},
   year   = {2008},
@@ -323,7 +323,7 @@ Das Inteview handelt von den Verkaufszahlen der Hololens},
   publisher = {IOS Press},
 }
 
-@Book{Brewster1856,
+@Book{bib:Stereoscopy,
   title     = {The Stereoscope; Its History, Theory and Construction, with Its Application to the Fine and Useful Arts and to Education, Etc},
   publisher = {John Murray},
   year      = {1856},
@@ -645,6 +645,86 @@ Das Inteview handelt von den Verkaufszahlen der Hololens},
   month        = may,
   year         = {2018},
   url          = {http://www.pointclouds.org/documentation/tutorials/cluster_extraction.php},
+}
+
+@Misc{bib:LidarPictures,
+  author       = {Mike1024},
+  title        = {LIDAR-scanned-SICK-LMS-animation},
+  howpublished = {Internetquelle (abgerufen am 19.05.2018)},
+  month        = may,
+  year         = {2018},
+}
+
+@Misc{bib:HoloFOV,
+  author       = {Doc.OK.org},
+  title        = {HoloLens and Field of View in Augmented Reality},
+  howpublished = {Internetquelle (abgerufen am 19.05.2018)},
+  month        = may,
+  year         = {2018},
+  url          = {http://doc-ok.org/?p=1274},
+}
+
+@Misc{bib:UnityPhysics,
+  author       = {Unity},
+  title        = {Physics},
+  howpublished = {Internetquelle (abgerufen am 22.05.2018)},
+  url          = {https://docs.unity3d.com/Manual/PhysicsSection.html},
+}
+
+@Misc{bib:UnityRigidBody,
+  author       = {Unity},
+  title        = {Rigidbody},
+  howpublished = {Internetquelle (abgerufen am 22.05.2018)},
+  url          = {https://docs.unity3d.com/ScriptReference/Rigidbody.html},
+}
+
+@Misc{bib:UnityRaycast,
+  author       = {Unity},
+  title        = {Physics.Raycast},
+  howpublished = {Internetquelle (abgerufen am 22.05.2018)},
+  url          = {https://docs.unity3d.com/ScriptReference/Physics.Raycast.html?_ga=2.201585619.339704719.1526977964-634844273.1516130092},
+}
+
+@Misc{bib:AvatarSDK,
+  author       = {Unity},
+  title        = {Avatar SDK Getting Startet Guide},
+  howpublished = {Internetquelle (abgerufen am 22.05.2018)},
+  url          = {https://developer.oculus.com/documentation/avatarsdk/latest/concepts/avatars-gsg-intro/},
+}
+
+@Misc{bib:OftenPointerUse,
+  author       = {José Somolinos},
+  title        = {How to design common/basic interactions in VR},
+  howpublished = {Internetquelle (abgerufen am 22.05.2018)},
+  note         = {"The laser pointer is the new mouse cursor"},
+}
+
+@Misc{bib:HDF5Main,
+  author       = {The HDF Group},
+  title        = {WELCOME TO THE HDF5 SUPPORT PAGE!},
+  howpublished = {Internetquelle (abgerufen am 22.05.2018)},
+  url          = {https://support.hdfgroup.org/HDF5/},
+}
+
+@Misc{bib:WhoUsesHDF,
+  author       = {The HDF Group},
+  title        = {Who Uses HDF®?},
+  howpublished = {Internetquelle (abgerufen am 23.05.2018)},
+  url          = {https://www.hdfgroup.org/solutions/hdf5/},
+}
+
+@Misc{bib:UnityMenuSystem,
+  author       = {Yousician},
+  title        = {UnityMenuSystem},
+  howpublished = {Internetquelle (abgerufen am 23.05.2011)},
+  url          = {https://github.com/YousicianGit/UnityMenuSystem},
+}
+
+@Misc{bib:Generics,
+  author       = {Microsoft},
+  title        = {Generische Klassen},
+  howpublished = {Internetquelle (abgerufen am 23.05.2013)},
+  url          = {https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/generics/generic-classes},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

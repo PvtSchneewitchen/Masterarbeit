@@ -3,42 +3,47 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Vogelperspektive auf eine LiDAR-Punktwolke, wobei die roten Punkte alle Boden- und die blauen alle Nicht-Bodenpunkte darstellen\relax }}{3}{figure.caption.7}
 \contentsline {figure}{\numberline {1.2}{\ignorespaces Labeling Methoden in C.LABEL\relax }}{6}{figure.caption.8}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Diagramm um den besten Machine Learning Algorithmus für eine \gls {glos:PredAna}-Methoden zu finden \cite {bib:AzureCs}\relax }}{8}{figure.caption.9}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Diagramm um den besten Machine Learning Algorithmus für eine \gls {glos:PredAna}-Methoden zu finden \cite {bib:AzureCs}\relax }}{9}{figure.caption.9}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Abbildung des Übertragungsprinzips von Reizen zwischen Neuronen \cite {bib:Neurons}\relax }}{10}{figure.caption.10}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Einfaches Perzeptron nach dem Prinzip von Frank Rosenblatt\relax }}{10}{figure.caption.11}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Stark vereinfachte Darstellung eines \acrshort {acr:knn}s zur Erkennung von Autos und Personen\relax }}{12}{figure.caption.12}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Vergleich zwischen den Anfängen der VR-Technologie und dem heutigen Stand. Die oberen drei Bilder zeigen das VIVED-System, das von S.S. Fisher vorgestellt wurde \cite {bib:NasaVr}. Die Unteren zeigen Bilder der Oculus Rift.\relax }}{16}{figure.caption.13}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {VIVED Displayaufbau}}}{16}{subfigure.5.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Sicht eines VIVED Benutzers}}}{16}{subfigure.5.2}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Sicht auf einen VIVED Benutzer}}}{16}{subfigure.5.3}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Rift Displayaufbau \cite {bib:RiftReview}}}}{16}{subfigure.5.4}
-\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Sicht eines Rift Benutzers \cite {bib:AvatarHands}}}}{16}{subfigure.5.5}
-\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {Sicht auf einen Rift Benutzer \cite {bib:RiftUser}}}}{16}{subfigure.5.6}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Ablauf einer LiDAR-Messung von einem Sensor, der die Messimpulse im Uhrzeigersinn abgibt. Die Bilder stammen von \cite {bib:LidarPictures} und \ref {fig:Lidar2} wurde um den Winkel $\varphi $ erweitert.\relax }}{18}{figure.caption.14}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{18}{subfigure.6.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{18}{subfigure.6.2}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{18}{subfigure.6.3}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Seitliche Sicht auf eine LiDAR-Messung mit mehreren, verital angeordneten Lasern. Die Abbildung stammt aus der Arbeit \cite {bib:FastGroundSeg} und wurde durch die Einzeichnung des Winkels $\theta $ erweitert.\relax }}{19}{figure.caption.15}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Einfaches Perzeptron nach dem Prinzip von Frank Rosenblatt\relax }}{11}{figure.caption.11}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Stark vereinfachte Darstellung eines \acrshort {acr:knn}s zur Erkennung von Autos und Personen\relax }}{13}{figure.caption.12}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Ablauf einer LiDAR-Messung von einem Sensor, der die Messimpulse im Uhrzeigersinn abgibt. Die Bilder stammen von \cite {bib:LidarPictures} und \ref {fig:Lidar2} wurde um den Winkel $\varphi $ erweitert.\relax }}{17}{figure.caption.13}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{17}{subfigure.5.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{17}{subfigure.5.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{17}{subfigure.5.3}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Seitliche Sicht auf eine LiDAR-Messung mit mehreren, verital angeordneten Lasern. Die Abbildung stammt aus \cite {bib:FastGroundSeg} und wurde durch die Einzeichnung des Winkels $\theta $ erweitert.\relax }}{18}{figure.caption.14}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Vergleich zwischen den Anfängen der VR-Technologie und dem heutigen Stand. Die oberen drei Bilder zeigen das VIVED-System, das von S.S. Fisher vorgestellt wurde \cite {bib:NasaVr}. Die Unteren zeigen Bilder der Oculus Rift.\relax }}{20}{figure.caption.15}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {VIVED Displayaufbau}}}{20}{subfigure.7.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Sicht auf einen VIVED Benutzer}}}{20}{subfigure.7.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Sicht eines VIVED Benutzers}}}{20}{subfigure.7.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Rift Displayaufbau \cite {bib:RiftReview}}}}{20}{subfigure.7.4}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Sicht auf einen Rift Benutzer \cite {bib:RiftUser}}}}{20}{subfigure.7.5}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {Sicht eines Rift Benutzers \cite {bib:AvatarHands}}}}{20}{subfigure.7.6}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Die zwei potentiellen \acrshort {acr:AR}-Brillen\relax }}{22}{figure.caption.16}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Microsoft Hololens \acrshort {acr:AR}-Brille}}}{22}{subfigure.1.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Meta 2 \acrshort {acr:AR}-Brille}}}{22}{subfigure.1.2}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Die zwei potentiellen \acrshort {acr:VR}-Brillen\relax }}{26}{figure.caption.17}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {HTC Vive \acrshort {acr:VR}-Brille mit Controllern \cite {bib:VivePic}}}}{26}{subfigure.2.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Oculus Rift \acrshort {acr:VR}-Brille mit Controllern \cite {bib:OculusPic}}}}{26}{subfigure.2.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Unity Editor, der C.LABEL-VR im Play Mode ausführt.\relax }}{31}{figure.caption.19}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Die zwei potentiellen \acrshort {acr:AR}-Brillen\relax }}{23}{figure.caption.16}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Microsoft Hololens \acrshort {acr:AR}-Brille}}}{23}{subfigure.1.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Meta 2 \acrshort {acr:AR}-Brille}}}{23}{subfigure.1.2}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Die zwei potentiellen \acrshort {acr:VR}-Brillen\relax }}{27}{figure.caption.17}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {HTC Vive \acrshort {acr:VR}-Brille mit Controllern \cite {bib:VivePic}}}}{27}{subfigure.2.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Oculus Rift \acrshort {acr:VR}-Brille mit Controllern \cite {bib:OculusPic}}}}{27}{subfigure.2.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Unity Editor, der C.LABEL-VR im Play Mode ausführt.\relax }}{32}{figure.caption.19}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces \glslink {glos:Workflow} in C.LABEL-VR vom Import bis zum Export\relax }}{36}{figure.caption.20}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Das Import-Export-Prinzip in C.LABEL-VR\relax }}{38}{figure.caption.21}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Beide Bilder zeigen Komponenten aus der Unity Editor, die dem Punkt-Prefab zugeordnet sind.\relax }}{41}{figure.caption.22}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Mesh Filter- und Collider-Komponente}}}{41}{subfigure.3.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Mesh Renderer-Komponente}}}{41}{subfigure.3.2}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Oculus Touch Controller mit der offiziellen Beschriftung von Oculus \cite {bib:OculusTouchPic}\relax }}{47}{figure.caption.23}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Objektidentifizierung einer 3D-Punktwolke aus \cite {bib:Segmentation1}. Die Bodenpunkte der Wolke sind blau dargestellt und die Objekte sind mit Boxen gekennzeichnet.\relax }}{51}{figure.caption.24}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces In \cite {bib:Segmentation1} wird gezeigt, dass die Segmentierung einer Punktwolke zu einem besseren Ergebnis der Bodenpunktanalyse führt. Die obere Abbildung ist dabei ohne Segmentierung und die untere mit Segmentierung. Bodenpunkte sind blau und Objektpunkte in grün dargestellt. Die roten Rechtecke kennzeichnen den Bereich in dem die Analyse schlechter bzw. besser ist.\relax }}{53}{figure.caption.25}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Vergleich der Segmentierungsmethoden zur Bodenpunktanalyse aus \cite {bib:Segmentation1} und C.LABEL-VR. Bodenpunkte sind rot, alle anderen schwarz. Die blauen Linien stellen die Trennung der Segmente dar. Die grünen Boxen markieren den Bereich, in dem man den Unterschied der beiden Methoden bei der Bodenpunkterkennung sieht.\relax }}{54}{figure.caption.26}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Segmentierung anhand potentieller Bodenpunkten}}}{54}{subfigure.7.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Segmentierung anhand Koordinaten entlang der $x$-Achse}}}{54}{subfigure.7.2}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Bei zu wenigen Bodenpunkten in einem Segment passt sich die Ebene den falschen Punkten an.\relax }}{54}{figure.caption.27}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces \glslink {glos:Workflow} in C.LABEL-VR vom Import bis zum Export\relax }}{37}{figure.caption.20}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Das Import-Export-Prinzip in C.LABEL-VR\relax }}{41}{figure.caption.21}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Die Abbildungen zeigen Beispiele für die Inhalte einer HDF5-Datei\relax }}{43}{figure.caption.22}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Dataset mit Größe 1x10}}}{43}{subfigure.3.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Aufbau der Beispiel HDF5-Datei}}}{43}{subfigure.3.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Attribute von \textit {Classifications}}}}{43}{subfigure.3.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Beide Bilder zeigen Komponenten aus der Unity Editor, die dem Punkt-Prefab zugeordnet sind.\relax }}{46}{figure.caption.23}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Mesh Filter- und Collider-Komponente}}}{46}{subfigure.4.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Mesh Renderer-Komponente}}}{46}{subfigure.4.2}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Oculus Touch Controller mit der offiziellen Beschriftung von Oculus \cite {bib:OculusTouchPic}\relax }}{52}{figure.caption.24}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Objektidentifizierung einer 3D-Punktwolke aus \cite {bib:Segmentation1}. Die Bodenpunkte der Wolke sind blau dargestellt und die Objekte sind mit Boxen gekennzeichnet.\relax }}{61}{figure.caption.25}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces In \cite {bib:Segmentation1} wird gezeigt, dass die Segmentierung einer Punktwolke zu einem besseren Ergebnis der Bodenpunktanalyse führt. Die obere Abbildung ist dabei ohne Segmentierung und die untere mit Segmentierung. Bodenpunkte sind blau und Objektpunkte in grün dargestellt. Die roten Rechtecke kennzeichnen den Bereich in dem die Analyse schlechter bzw. besser ist.\relax }}{62}{figure.caption.26}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Vergleich der Segmentierungsmethoden zur Bodenpunktanalyse aus \cite {bib:Segmentation1} und C.LABEL-VR. Bodenpunkte sind rot, alle anderen schwarz. Die blauen Linien stellen die Trennung der Segmente dar. Die grünen Boxen markieren den Bereich, in dem man den Unterschied der beiden Methoden bei der Bodenpunkterkennung sieht.\relax }}{63}{figure.caption.27}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Segmentierung anhand potentieller Bodenpunkten}}}{63}{subfigure.8.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Segmentierung anhand Koordinaten entlang der $x$-Achse}}}{63}{subfigure.8.2}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Bei zu wenigen Bodenpunkten in einem Segment passt sich die Ebene den falschen Punkten an.\relax }}{63}{figure.caption.28}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Klassendiagramm des UI-Systems in C.LABEL-VR\relax }}{69}{figure.caption.29}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -5,36 +5,37 @@
 \BOOKMARK [2][-]{subsection.1.3.1}{CMORE Automotive GmbH}{section.1.3}% 5
 \BOOKMARK [2][-]{subsection.1.3.2}{C.LABEL}{section.1.3}% 6
 \BOOKMARK [0][-]{chapter.2}{Grundlagen}{}% 7
-\BOOKMARK [1][-]{section.2.1}{Annotation}{chapter.2}% 8
+\BOOKMARK [1][-]{section.2.1}{Datenannotation im Bereich des maschinellen Lernens}{chapter.2}% 8
 \BOOKMARK [2][-]{subsection.2.1.1}{Maschinelles Lernen}{section.2.1}% 9
-\BOOKMARK [1][-]{section.2.2}{Virtual Reality}{chapter.2}% 10
-\BOOKMARK [1][-]{section.2.3}{Aufnahme von Punktwolken mit LiDAR}{chapter.2}% 11
-\BOOKMARK [0][-]{chapter.3}{Systembeschreibung}{}% 12
-\BOOKMARK [1][-]{section.3.1}{Komponente 1: Die VR-Brille}{chapter.3}% 13
-\BOOKMARK [2][-]{subsection.3.1.1}{Warum VR die passende Technologie für C.LABEL-VR ist}{section.3.1}% 14
-\BOOKMARK [2][-]{subsection.3.1.2}{Warum die Oculus Rift verwendet wurde}{section.3.1}% 15
-\BOOKMARK [1][-]{section.3.2}{Komponente 2: Der Rechner}{chapter.3}% 16
-\BOOKMARK [1][-]{section.3.3}{Komponente 3: Die Entwicklungsplattform}{chapter.3}% 17
-\BOOKMARK [0][-]{chapter.4}{C.LABEL-VR}{}% 18
-\BOOKMARK [1][-]{section.4.1}{Import und Export von Daten}{chapter.4}% 19
-\BOOKMARK [2][-]{subsection.4.1.1}{Architektur}{section.4.1}% 20
-\BOOKMARK [2][-]{subsection.4.1.2}{Interne Datenstruktur}{section.4.1}% 21
-\BOOKMARK [2][-]{subsection.4.1.3}{HDF5 Beispiel}{section.4.1}% 22
-\BOOKMARK [1][-]{section.4.2}{Generierung einer Punktwolke}{chapter.4}% 23
-\BOOKMARK [2][-]{subsection.4.2.1}{Optimierung der Bildwiederholungsrate}{section.4.2}% 24
-\BOOKMARK [1][-]{section.4.3}{Navigation}{chapter.4}% 25
-\BOOKMARK [2][-]{subsection.4.3.1}{VR-Krankheit}{section.4.3}% 26
-\BOOKMARK [2][-]{subsection.4.3.2}{Freier Flug-Modus}{section.4.3}% 27
-\BOOKMARK [2][-]{subsection.4.3.3}{Teleport-Modus}{section.4.3}% 28
-\BOOKMARK [1][-]{section.4.4}{Annotieren der Punktwolke}{chapter.4}% 29
-\BOOKMARK [2][-]{subsection.4.4.1}{Pointer Annotation}{section.4.4}% 30
-\BOOKMARK [2][-]{subsection.4.4.2}{Touch Annotation}{section.4.4}% 31
-\BOOKMARK [2][-]{subsection.4.4.3}{Cluster Annotation}{section.4.4}% 32
-\BOOKMARK [1][-]{section.4.5}{User Interface}{chapter.4}% 33
-\BOOKMARK [2][-]{subsection.4.5.1}{Applikations-Menü}{section.4.5}% 34
-\BOOKMARK [0][-]{chapter.5}{Schluss}{}% 35
-\BOOKMARK [1][-]{section.5.1}{Zusammenfassung}{chapter.5}% 36
-\BOOKMARK [1][-]{section.5.2}{Erreichte Ziele}{chapter.5}% 37
-\BOOKMARK [1][-]{section.5.3}{Vorteil der VR-Applikation}{chapter.5}% 38
-\BOOKMARK [1][-]{section.5.4}{Ausblick}{chapter.5}% 39
-\BOOKMARK [0][-]{appendix.A}{Appendix Title}{}% 40
+\BOOKMARK [2][-]{subsection.2.1.2}{Annotation von 3D-Punktwolken}{section.2.1}% 10
+\BOOKMARK [1][-]{section.2.2}{Aufnahme von Punktwolken mit LiDAR}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.3}{Virtual Reality}{chapter.2}% 12
+\BOOKMARK [0][-]{chapter.3}{Systembeschreibung}{}% 13
+\BOOKMARK [1][-]{section.3.1}{Komponente 1: Die VR-Brille}{chapter.3}% 14
+\BOOKMARK [2][-]{subsection.3.1.1}{Warum VR die passende Technologie für C.LABEL-VR ist}{section.3.1}% 15
+\BOOKMARK [2][-]{subsection.3.1.2}{Warum die Oculus Rift verwendet wurde}{section.3.1}% 16
+\BOOKMARK [1][-]{section.3.2}{Komponente 2: Der Rechner}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.3}{Komponente 3: Die Entwicklungsplattform}{chapter.3}% 18
+\BOOKMARK [0][-]{chapter.4}{C.LABEL-VR}{}% 19
+\BOOKMARK [1][-]{section.4.1}{Funktioneller Ablauf}{chapter.4}% 20
+\BOOKMARK [1][-]{section.4.2}{Import und Export von Daten}{chapter.4}% 21
+\BOOKMARK [2][-]{subsection.4.2.1}{Architektur}{section.4.2}% 22
+\BOOKMARK [2][-]{subsection.4.2.2}{Interne Datenstruktur}{section.4.2}% 23
+\BOOKMARK [2][-]{subsection.4.2.3}{HDF5}{section.4.2}% 24
+\BOOKMARK [1][-]{section.4.3}{Generierung einer Punktwolke}{chapter.4}% 25
+\BOOKMARK [2][-]{subsection.4.3.1}{Optimierung der Bildwiederholungsrate}{section.4.3}% 26
+\BOOKMARK [1][-]{section.4.4}{Navigation}{chapter.4}% 27
+\BOOKMARK [2][-]{subsection.4.4.1}{VR-Krankheit}{section.4.4}% 28
+\BOOKMARK [2][-]{subsection.4.4.2}{Freier Flug-Modus}{section.4.4}% 29
+\BOOKMARK [2][-]{subsection.4.4.3}{Teleport-Modus}{section.4.4}% 30
+\BOOKMARK [1][-]{section.4.5}{Annotieren der Punktwolke}{chapter.4}% 31
+\BOOKMARK [2][-]{subsection.4.5.1}{Pointer Annotation}{section.4.5}% 32
+\BOOKMARK [2][-]{subsection.4.5.2}{Touch Annotation}{section.4.5}% 33
+\BOOKMARK [2][-]{subsection.4.5.3}{Cluster Annotation}{section.4.5}% 34
+\BOOKMARK [1][-]{section.4.6}{User Interface}{chapter.4}% 35
+\BOOKMARK [2][-]{subsection.4.6.1}{Applikations-Menü}{section.4.6}% 36
+\BOOKMARK [0][-]{chapter.5}{Schluss}{}% 37
+\BOOKMARK [1][-]{section.5.1}{Zusammenfassung und erreichte Ziele}{chapter.5}% 38
+\BOOKMARK [1][-]{section.5.2}{Mehrwert der VR-Applikation}{chapter.5}% 39
+\BOOKMARK [1][-]{section.5.3}{Weiterentwicklungsmöglichkeiten}{chapter.5}% 40
+\BOOKMARK [0][-]{appendix.A}{Appendix Title}{}% 41

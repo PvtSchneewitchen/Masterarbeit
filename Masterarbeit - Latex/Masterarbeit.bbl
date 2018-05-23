@@ -26,16 +26,27 @@ Microsoft, ``Machine learning – cheat sheet für algorithmen für microsoft
   azure machine learning studio,'' Internetquelle(abgerufen am 21.03.2018),
   Dec. 2017.
 
-\bibitem{bib:NasaVr}
-S.~S. Fisher, M.~McGreevy, J.~Humphries, and W.~Robinett, ``Virtual environment
-  display system,'' in \emph{Proceedings of the 1986 workshop on Interactive 3D
-  graphics - {SI}3D {\textquotesingle}86}.\hskip 1em plus 0.5em minus
-  0.4em\relax {ACM} Press, 1987.
+\bibitem{bib:Neurons}
+\BIBentryALTinterwordspacing
+{Wikimedia Commons}, ``Neurons,'' 2008, [Internetquelle (abgerufen am
+  21.03.2018)]. [Online]. Available:
+  \url{https://commons.wikimedia.org/wiki/File:Neurons_big1.jpg#filehistory}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:LidarPictures}
+Mike1024, ``Lidar-scanned-sick-lms-animation,'' Internetquelle (abgerufen am
+  19.05.2018), May 2018.
 
 \bibitem{bib:FastGroundSeg}
 P.~Chu, S.~Cho, S.~Sim, K.~Kwak, and K.~Cho, ``A fast ground segmentation
   method for 3d point cloud,'' \emph{Journal of information processing
   systems}, vol.~13, no.~3, pp. 491--499, 2017.
+
+\bibitem{bib:NasaVr}
+S.~S. Fisher, M.~McGreevy, J.~Humphries, and W.~Robinett, ``Virtual environment
+  display system,'' in \emph{Proceedings of the 1986 workshop on Interactive 3D
+  graphics - {SI}3D {\textquotesingle}86}.\hskip 1em plus 0.5em minus
+  0.4em\relax {ACM} Press, 1987.
 
 \bibitem{bib:OculusTouchPic}
 \BIBentryALTinterwordspacing
@@ -61,39 +72,6 @@ C.~V.~D. Malsburg, ``Frank rosenblatt: Principles of neurodynamics: Perceptrons
   and the theory of brain mechanisms,'' in \emph{Brain Theory}.\hskip 1em plus
   0.5em minus 0.4em\relax Springer Berlin Heidelberg, 1986, pp. 245--248.
 
-\bibitem{bib:UltimateDisplay}
-I.~E. Sutherland, ``The ultimate display,'' in \emph{Proceedings of the IFIP
-  Congress}, 1965, pp. 506--508.
-
-\bibitem{bib:VRReport}
-G.~Enrico, ``Virtual reality: Past, present and future,'' \emph{Studies in
-  Health Technology and Informatics}, vol.~58, no. Virtual Environments in
-  Clinical Psychology and Neuroscience, pp. 3--20, 1998.
-
-\bibitem{bib:RiftReview}
-P.~R. Desai, P.~N. Desai, K.~D. Ajmera, and K.~Mehta, ``A review paper on
-  oculus rift-a virtual reality headset,'' \emph{CoRR}, vol. abs/1408.1173,
-  2014.
-
-\bibitem{bib:AvatarHands}
-\BIBentryALTinterwordspacing
-TheMorenar, ``Oculus rift cv1 - vrtk avatar sdk gamedev 3,'' Internetquelle
-  (abgerufen am 07.05.2018), May 2018. [Online]. Available:
-  \url{https://www.youtube.com/watch?v=Czc4V-Mxb5k}
-\BIBentrySTDinterwordspacing
-
-\bibitem{bib:RiftUser}
-\BIBentryALTinterwordspacing
-MSPoweruser, ``All oculus rift users left in the dark following “cant reach
-  oculus runtime services” error: Update – patch now available,''
-  Internetquelle (abgerufen am 07.05.2018), May 2018. [Online]. Available:
-  \url{https://mspoweruser.com/all-oculus-rift-users-left-in-the-dark-following-cant-reach-oculus-runtime-services-error/}
-\BIBentrySTDinterwordspacing
-
-\bibitem{bib:RiftHistorical}
-C.~Gammage, ``Exploring oculus rift: A historical analysis of the ‘virtual
-  reality’paradigm,'' \emph{ART 108: Introduction to Games Studies}, 2017.
-
 \bibitem{bib:LidarArcheology}
 K.~M. Johnson and W.~B. Ouimet, ``Rediscovering the lost archaeological
   landscape of southern new england using airborne light detection and ranging
@@ -111,6 +89,44 @@ S.~K. Reddy and P.~K. Pal, ``Segmentation of point cloud from a 3d {LIDAR}
   {\textquotesingle}15}.\hskip 1em plus 0.5em minus 0.4em\relax {ACM} Press,
   2015.
 
+\bibitem{bib:UltimateDisplay}
+I.~E. Sutherland, ``The ultimate display,'' in \emph{Proceedings of the IFIP
+  Congress}, 1965, pp. 506--508.
+
+\bibitem{bib:VRReport}
+G.~Enrico, ``Virtual reality: Past, present and future,'' \emph{Studies in
+  Health Technology and Informatics}, vol.~58, no. Virtual Environments in
+  Clinical Psychology and Neuroscience, pp. 3--20, 1998.
+
+\bibitem{bib:Stereoscopy}
+D.~Brewster, \emph{The Stereoscope; Its History, Theory and Construction, with
+  Its Application to the Fine and Useful Arts and to Education, Etc}.\hskip 1em
+  plus 0.5em minus 0.4em\relax John Murray, 1856.
+
+\bibitem{bib:RiftReview}
+P.~R. Desai, P.~N. Desai, K.~D. Ajmera, and K.~Mehta, ``A review paper on
+  oculus rift-a virtual reality headset,'' \emph{CoRR}, vol. abs/1408.1173,
+  2014.
+
+\bibitem{bib:RiftUser}
+\BIBentryALTinterwordspacing
+MSPoweruser, ``All oculus rift users left in the dark following “cant reach
+  oculus runtime services” error: Update – patch now available,''
+  Internetquelle (abgerufen am 07.05.2018), May 2018. [Online]. Available:
+  \url{https://mspoweruser.com/all-oculus-rift-users-left-in-the-dark-following-cant-reach-oculus-runtime-services-error/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:AvatarHands}
+\BIBentryALTinterwordspacing
+TheMorenar, ``Oculus rift cv1 - vrtk avatar sdk gamedev 3,'' Internetquelle
+  (abgerufen am 07.05.2018), May 2018. [Online]. Available:
+  \url{https://www.youtube.com/watch?v=Czc4V-Mxb5k}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:RiftHistorical}
+C.~Gammage, ``Exploring oculus rift: A historical analysis of the ‘virtual
+  reality’paradigm,'' \emph{ART 108: Introduction to Games Studies}, 2017.
+
 \bibitem{bib:VRKitchen}
 \BIBentryALTinterwordspacing
 S.~W. Greg~Vellante, ``Ikea joins forces with htc vive for virtual reality
@@ -125,6 +141,13 @@ P.~Gothard, ``Microsoft hololens: Firm admits sales figures are in the
   'thousands','' Internetquelle (abgerufen am 24.11.2017), Jan. 2017. [Online].
   Available:
   \url{https://www.theinquirer.net/inquirer/news/3003380/microsoft-hololens-firm-admits-sales-figures-are-in-the-thousands}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:HoloFOV}
+\BIBentryALTinterwordspacing
+Doc.OK.org, ``Hololens and field of view in augmented reality,'' Internetquelle
+  (abgerufen am 19.05.2018), May 2018. [Online]. Available:
+  \url{http://doc-ok.org/?p=1274}
 \BIBentrySTDinterwordspacing
 
 \bibitem{bib:HololensPreis}
@@ -240,6 +263,18 @@ C.~Games, ``Unity3d tips 2 – the singleton pattern,'' Internetquelle
   \url{http://clearcutgames.net/home/?p=437}
 \BIBentrySTDinterwordspacing
 
+\bibitem{bib:HDF5Main}
+\BIBentryALTinterwordspacing
+T.~H. Group, ``Welcome to the hdf5 support page!'' Internetquelle (abgerufen am
+  22.05.2018). [Online]. Available: \url{https://support.hdfgroup.org/HDF5/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:WhoUsesHDF}
+\BIBentryALTinterwordspacing
+------, ``Who uses hdf®?'' Internetquelle (abgerufen am 23.05.2018). [Online].
+  Available: \url{https://www.hdfgroup.org/solutions/hdf5/}
+\BIBentrySTDinterwordspacing
+
 \bibitem{bib:UnityPrefab}
 \BIBentryALTinterwordspacing
 Unity, ``Prefabs,'' Internetquelle (abgerufen am 13.05.2018), May 2018.
@@ -326,6 +361,36 @@ C.~Boletsis, ``The new era of virtual reality locomotion: A systematic
   literature review of techniques and a proposed typology,'' \emph{Multimodal
   Technologies and Interaction}, vol.~1, no.~4, p.~24, sep 2017.
 
+\bibitem{bib:OftenPointerUse}
+J.~Somolinos, ``How to design common/basic interactions in vr,'' Internetquelle
+  (abgerufen am 22.05.2018), "The laser pointer is the new mouse cursor".
+
+\bibitem{bib:UnityRaycast}
+\BIBentryALTinterwordspacing
+Unity, ``Physics.raycast,'' Internetquelle (abgerufen am 22.05.2018). [Online].
+  Available:
+  \url{https://docs.unity3d.com/ScriptReference/Physics.Raycast.html?_ga=2.201585619.339704719.1526977964-634844273.1516130092}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:UnityPhysics}
+\BIBentryALTinterwordspacing
+------, ``Physics,'' Internetquelle (abgerufen am 22.05.2018). [Online].
+  Available: \url{https://docs.unity3d.com/Manual/PhysicsSection.html}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:UnityRigidBody}
+\BIBentryALTinterwordspacing
+------, ``Rigidbody,'' Internetquelle (abgerufen am 22.05.2018). [Online].
+  Available: \url{https://docs.unity3d.com/ScriptReference/Rigidbody.html}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:AvatarSDK}
+\BIBentryALTinterwordspacing
+------, ``Avatar sdk getting startet guide,'' Internetquelle (abgerufen am
+  22.05.2018). [Online]. Available:
+  \url{https://developer.oculus.com/documentation/avatarsdk/latest/concepts/avatars-gsg-intro/}
+\BIBentrySTDinterwordspacing
+
 \bibitem{bib:Segmentation2}
 M.~Hoy, J.~Dauwels, and J.~Yuan, ``Efficient ground object segmentation in 3d
   lidar based on cascaded mode seeking,'' in \emph{2017 IEEE 20th International
@@ -354,6 +419,19 @@ I.~Söderkvist, ``Using svd for some fitting problems,'' Lulea Univerity of
 Pointclouds.org, ``Euclidean cluster extraction,'' Internetquelle (abgerufen am
   14.05.2018), May 2018. [Online]. Available:
   \url{http://www.pointclouds.org/documentation/tutorials/cluster_extraction.php}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:UnityMenuSystem}
+\BIBentryALTinterwordspacing
+Yousician, ``Unitymenusystem,'' Internetquelle (abgerufen am 23.05.2011).
+  [Online]. Available: \url{https://github.com/YousicianGit/UnityMenuSystem}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:Generics}
+\BIBentryALTinterwordspacing
+Microsoft, ``Generische klassen,'' Internetquelle (abgerufen am 23.05.2018).
+  [Online]. Available:
+  \url{https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/generics/generic-classes}
 \BIBentrySTDinterwordspacing
 
 \end{thebibliography}

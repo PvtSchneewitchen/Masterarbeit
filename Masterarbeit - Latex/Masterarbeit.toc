@@ -6,50 +6,53 @@
 \contentsline {subsection}{\numberline {1.3.1}CMORE Automotive GmbH}{5}{subsection.1.3.1}
 \contentsline {subsection}{\numberline {1.3.2}C.LABEL}{5}{subsection.1.3.2}
 \contentsline {chapter}{\numberline {2}Grundlagen}{7}{chapter.2}
-\contentsline {section}{\numberline {2.1}Annotation}{7}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Maschinelles Lernen}{7}{subsection.2.1.1}
-\contentsline {subsubsection}{Künstliche Neuronale Netze}{9}{figure.caption.9}
+\contentsline {section}{\numberline {2.1}Datenannotation im Bereich des maschinellen Lernens}{7}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Maschinelles Lernen}{8}{subsection.2.1.1}
+\contentsline {subsubsection}{Künstliche Neuronale Netze}{8}{figure.caption.9}
 \contentsline {subsubsection}{Trainieren von künstlichen neuronalen Netzen}{12}{figure.caption.12}
-\contentsline {section}{\numberline {2.2}Virtual Reality}{14}{section.2.2}
-\contentsline {section}{\numberline {2.3}Aufnahme von Punktwolken mit LiDAR}{17}{section.2.3}
-\contentsline {chapter}{\numberline {3}Systembeschreibung}{21}{chapter.3}
-\contentsline {section}{\numberline {3.1}Komponente 1: Die VR-Brille}{21}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Warum VR die passende Technologie für C.LABEL-VR ist}{22}{subsection.3.1.1}
-\contentsline {subsubsection}{Eignung von \acrlong {acr:AR} für 3D-Annotation}{22}{figure.caption.16}
-\contentsline {subsubsection}{Eignung von \acrlong {acr:VR} für 3D-Annotation}{24}{figure.caption.16}
-\contentsline {subsubsection}{Entscheidung}{24}{figure.caption.16}
-\contentsline {subsection}{\numberline {3.1.2}Warum die Oculus Rift verwendet wurde}{25}{subsection.3.1.2}
-\contentsline {subsubsection}{Oculus Rift}{25}{figure.caption.17}
-\contentsline {subsubsection}{HTC Vive}{26}{figure.caption.17}
-\contentsline {subsubsection}{Entscheidung}{27}{figure.caption.17}
-\contentsline {section}{\numberline {3.2}Komponente 2: Der Rechner}{27}{section.3.2}
+\contentsline {subsection}{\numberline {2.1.2}Annotation von 3D-Punktwolken}{15}{subsection.2.1.2}
+\contentsline {section}{\numberline {2.2}Aufnahme von Punktwolken mit LiDAR}{16}{section.2.2}
+\contentsline {section}{\numberline {2.3}Virtual Reality}{19}{section.2.3}
+\contentsline {chapter}{\numberline {3}Systembeschreibung}{22}{chapter.3}
+\contentsline {section}{\numberline {3.1}Komponente 1: Die VR-Brille}{22}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Warum VR die passende Technologie für C.LABEL-VR ist}{23}{subsection.3.1.1}
+\contentsline {subsubsection}{Eignung von \acrlong {acr:AR} für 3D-Annotation}{23}{figure.caption.16}
+\contentsline {subsubsection}{Eignung von \acrlong {acr:VR} für 3D-Annotation}{25}{figure.caption.16}
+\contentsline {subsubsection}{Entscheidung}{26}{figure.caption.16}
+\contentsline {subsection}{\numberline {3.1.2}Warum die Oculus Rift verwendet wurde}{26}{subsection.3.1.2}
+\contentsline {subsubsection}{Oculus Rift}{27}{figure.caption.17}
+\contentsline {subsubsection}{HTC Vive}{27}{figure.caption.17}
+\contentsline {subsubsection}{Entscheidung}{28}{figure.caption.17}
+\contentsline {section}{\numberline {3.2}Komponente 2: Der Rechner}{28}{section.3.2}
 \contentsline {section}{\numberline {3.3}Komponente 3: Die Entwicklungsplattform}{29}{section.3.3}
-\contentsline {subsubsection}{Vergleich zwischen Unreal und Unity}{29}{section.3.3}
-\contentsline {subsubsection}{Entscheidung}{30}{section.3.3}
-\contentsline {subsubsection}{Entwickeln mit Unity}{30}{section.3.3}
-\contentsline {chapter}{\numberline {4}C.LABEL-VR}{35}{chapter.4}
-\contentsline {section}{\numberline {4.1}Import und Export von Daten}{36}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Architektur}{37}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Interne Datenstruktur}{39}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}HDF5 Beispiel}{40}{subsection.4.1.3}
-\contentsline {subsubsection}{HDF5 Daten}{40}{subsection.4.1.3}
-\contentsline {section}{\numberline {4.2}Generierung einer Punktwolke}{40}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Optimierung der Bildwiederholungsrate}{43}{subsection.4.2.1}
-\contentsline {section}{\numberline {4.3}Navigation}{45}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}VR-Krankheit}{45}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Freier Flug-Modus}{46}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Teleport-Modus}{49}{subsection.4.3.3}
-\contentsline {section}{\numberline {4.4}Annotieren der Punktwolke}{50}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Pointer Annotation}{50}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Touch Annotation}{50}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}Cluster Annotation}{51}{subsection.4.4.3}
-\contentsline {subsubsection}{Bodenpunkt-Analyse}{51}{figure.caption.24}
-\contentsline {subsubsection}{Cluster-Analyse}{57}{algorithm.2}
-\contentsline {section}{\numberline {4.5}User Interface}{59}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}Applikations-Menü}{59}{subsection.4.5.1}
-\contentsline {chapter}{\numberline {5}Schluss}{60}{chapter.5}
-\contentsline {section}{\numberline {5.1}Zusammenfassung}{60}{section.5.1}
-\contentsline {section}{\numberline {5.2}Erreichte Ziele}{60}{section.5.2}
-\contentsline {section}{\numberline {5.3}Vorteil der VR-Applikation}{60}{section.5.3}
-\contentsline {section}{\numberline {5.4}Ausblick}{60}{section.5.4}
-\contentsline {chapter}{\numberline {A}Appendix Title}{61}{appendix.A}
+\contentsline {subsubsection}{Vergleich zwischen Unreal und Unity}{30}{section.3.3}
+\contentsline {subsubsection}{Entscheidung}{31}{section.3.3}
+\contentsline {subsubsection}{Entwickeln mit Unity}{31}{section.3.3}
+\contentsline {chapter}{\numberline {4}C.LABEL-VR}{36}{chapter.4}
+\contentsline {section}{\numberline {4.1}Funktioneller Ablauf}{37}{section.4.1}
+\contentsline {section}{\numberline {4.2}Import und Export von Daten}{38}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Architektur}{39}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Interne Datenstruktur}{41}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}HDF5}{42}{subsection.4.2.3}
+\contentsline {subsubsection}{HDF5 Import/Export-Beispiel}{43}{subsection.4.2.3}
+\contentsline {subsubsection}{Import}{44}{figure.caption.22}
+\contentsline {subsubsection}{Export}{45}{figure.caption.22}
+\contentsline {section}{\numberline {4.3}Generierung einer Punktwolke}{46}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Optimierung der Bildwiederholungsrate}{49}{subsection.4.3.1}
+\contentsline {section}{\numberline {4.4}Navigation}{50}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}VR-Krankheit}{51}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Freier Flug-Modus}{52}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Teleport-Modus}{54}{subsection.4.4.3}
+\contentsline {section}{\numberline {4.5}Annotieren der Punktwolke}{56}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Pointer Annotation}{57}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}Touch Annotation}{59}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.3}Cluster Annotation}{60}{subsection.4.5.3}
+\contentsline {subsubsection}{Bodenpunkt-Analyse}{60}{figure.caption.25}
+\contentsline {subsubsection}{Cluster-Analyse}{66}{algorithm.2}
+\contentsline {section}{\numberline {4.6}User Interface}{68}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Applikations-Menü}{70}{subsection.4.6.1}
+\contentsline {chapter}{\numberline {5}Schluss}{71}{chapter.5}
+\contentsline {section}{\numberline {5.1}Zusammenfassung und erreichte Ziele}{71}{section.5.1}
+\contentsline {section}{\numberline {5.2}Mehrwert der VR-Applikation}{71}{section.5.2}
+\contentsline {section}{\numberline {5.3}Weiterentwicklungsmöglichkeiten}{71}{section.5.3}
+\contentsline {chapter}{\numberline {A}Appendix Title}{72}{appendix.A}
