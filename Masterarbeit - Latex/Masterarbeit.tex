@@ -39,7 +39,9 @@
         Update,
         Awake,
         Vector3,
-        GameObject
+        GameObject,
+        TestScript,
+        MenuManager
     }, emphstyle=[1]{\color{cyan}},
     morekeywords={set,get, value},
     frame=top,frame=bottom,
@@ -69,6 +71,8 @@
 
 \usepackage{geometry}
 \geometry{a4paper, top=15mm, left=35mm, right=25mm, bottom=15mm, includefoot}
+
+ \renewcommand{\floatpagefraction}{.8}
 
 %Fancy Kapitelübersxchrift und Textfont
 \usepackage{lmodern,titlesec,tikz,blindtext}
@@ -166,14 +170,18 @@ I want to thank...
 \input{Kapitel/Kapitel2_Grundlagen/Grundlagen}
 
 \chapter{Systembeschreibung}
+\label{sec:SystemComponents}
 \input{Kapitel/Kapitel3_Systembeschreibung/Systembeschreibung}
 
 \chapter{C.LABEL-VR}
 \label{sec:C.LABEL-VR}
 \input{Kapitel/Kapitel4_Hauptteil/Hauptteil}
 
+\chapter{Evaluation}
+\input{Kapitel/Kapitel5_Evaluation/Evaluation}
+
 \chapter{Schluss}
-\input{Kapitel/Kapitel5_Schluss/Schluss}
+\input{Kapitel/Kapitel6_Schluss/Schluss}
 
 
 

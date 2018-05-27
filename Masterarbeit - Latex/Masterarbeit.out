@@ -5,10 +5,10 @@
 \BOOKMARK [2][-]{subsection.1.3.1}{CMORE Automotive GmbH}{section.1.3}% 5
 \BOOKMARK [2][-]{subsection.1.3.2}{C.LABEL}{section.1.3}% 6
 \BOOKMARK [0][-]{chapter.2}{Grundlagen}{}% 7
-\BOOKMARK [1][-]{section.2.1}{Datenannotation im Bereich des maschinellen Lernens}{chapter.2}% 8
-\BOOKMARK [2][-]{subsection.2.1.1}{Maschinelles Lernen}{section.2.1}% 9
-\BOOKMARK [2][-]{subsection.2.1.2}{Annotation von 3D-Punktwolken}{section.2.1}% 10
-\BOOKMARK [1][-]{section.2.2}{Aufnahme von Punktwolken mit LiDAR}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.1}{Erfassung von Punktwolken mit LiDAR}{chapter.2}% 8
+\BOOKMARK [1][-]{section.2.2}{Datenannotation im Bereich des maschinellen Lernens}{chapter.2}% 9
+\BOOKMARK [2][-]{subsection.2.2.1}{Maschinelles Lernen}{section.2.2}% 10
+\BOOKMARK [2][-]{subsection.2.2.2}{Annotation von 3D-Punktwolken}{section.2.2}% 11
 \BOOKMARK [1][-]{section.2.3}{Virtual Reality}{chapter.2}% 12
 \BOOKMARK [0][-]{chapter.3}{Systembeschreibung}{}% 13
 \BOOKMARK [1][-]{section.3.1}{Komponente 1: Die VR-Brille}{chapter.3}% 14
@@ -34,8 +34,12 @@
 \BOOKMARK [2][-]{subsection.4.5.3}{Cluster Annotation}{section.4.5}% 34
 \BOOKMARK [1][-]{section.4.6}{User Interface}{chapter.4}% 35
 \BOOKMARK [2][-]{subsection.4.6.1}{Applikations-Menü}{section.4.6}% 36
-\BOOKMARK [0][-]{chapter.5}{Schluss}{}% 37
-\BOOKMARK [1][-]{section.5.1}{Zusammenfassung und erreichte Ziele}{chapter.5}% 38
-\BOOKMARK [1][-]{section.5.2}{Mehrwert der VR-Applikation}{chapter.5}% 39
-\BOOKMARK [1][-]{section.5.3}{Weiterentwicklungsmöglichkeiten}{chapter.5}% 40
-\BOOKMARK [0][-]{appendix.A}{Appendix Title}{}% 41
+\BOOKMARK [0][-]{chapter.5}{Evaluation}{}% 37
+\BOOKMARK [1][-]{section.5.1}{Methodik}{chapter.5}% 38
+\BOOKMARK [1][-]{section.5.2}{Ergebnis}{chapter.5}% 39
+\BOOKMARK [1][-]{section.5.3}{sec:EvaluationErgebnis}{chapter.5}% 40
+\BOOKMARK [0][-]{chapter.6}{Schluss}{}% 41
+\BOOKMARK [1][-]{section.6.1}{Zusammenfassung und erreichte Ziele}{chapter.6}% 42
+\BOOKMARK [1][-]{section.6.2}{Mehrwert der VR-Applikation}{chapter.6}% 43
+\BOOKMARK [1][-]{section.6.3}{Weiterentwicklungsmöglichkeiten}{chapter.6}% 44
+\BOOKMARK [0][-]{appendix.A}{Appendix Title}{}% 45

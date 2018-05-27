@@ -21,6 +21,15 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{bib:LidarPictures}
+Mike1024, ``Lidar-scanned-sick-lms-animation,'' Internetquelle (abgerufen am
+  19.05.2018), May 2018.
+
+\bibitem{bib:FastGroundSeg}
+P.~Chu, S.~Cho, S.~Sim, K.~Kwak, and K.~Cho, ``A fast ground segmentation
+  method for 3d point cloud,'' \emph{Journal of information processing
+  systems}, vol.~13, no.~3, pp. 491--499, 2017.
+
 \bibitem{bib:AzureCs}
 Microsoft, ``Machine learning – cheat sheet für algorithmen für microsoft
   azure machine learning studio,'' Internetquelle(abgerufen am 21.03.2018),
@@ -32,15 +41,6 @@ Microsoft, ``Machine learning – cheat sheet für algorithmen für microsoft
   21.03.2018)]. [Online]. Available:
   \url{https://commons.wikimedia.org/wiki/File:Neurons_big1.jpg#filehistory}
 \BIBentrySTDinterwordspacing
-
-\bibitem{bib:LidarPictures}
-Mike1024, ``Lidar-scanned-sick-lms-animation,'' Internetquelle (abgerufen am
-  19.05.2018), May 2018.
-
-\bibitem{bib:FastGroundSeg}
-P.~Chu, S.~Cho, S.~Sim, K.~Kwak, and K.~Cho, ``A fast ground segmentation
-  method for 3d point cloud,'' \emph{Journal of information processing
-  systems}, vol.~13, no.~3, pp. 491--499, 2017.
 
 \bibitem{bib:NasaVr}
 S.~S. Fisher, M.~McGreevy, J.~Humphries, and W.~Robinett, ``Virtual environment
@@ -61,17 +61,6 @@ D.~Zermas, I.~Izzat, and N.~Papanikolopoulos, ``Fast segmentation of 3d point
   \emph{2017 {IEEE} International Conference on Robotics and Automation
   ({ICRA})}.\hskip 1em plus 0.5em minus 0.4em\relax {IEEE}, may 2017.
 
-\bibitem{bib:UebereblickNN}
-\BIBentryALTinterwordspacing
-D.~Kriesel, \emph{Ein kleiner \"{U}berblick \"{u}ber Neuronale Netze}, 2007.
-  [Online]. Available: \url{erh\"{a}ltlich auf http://www.dkriesel.com}
-\BIBentrySTDinterwordspacing
-
-\bibitem{bib:Perzeptron}
-C.~V.~D. Malsburg, ``Frank rosenblatt: Principles of neurodynamics: Perceptrons
-  and the theory of brain mechanisms,'' in \emph{Brain Theory}.\hskip 1em plus
-  0.5em minus 0.4em\relax Springer Berlin Heidelberg, 1986, pp. 245--248.
-
 \bibitem{bib:LidarArcheology}
 K.~M. Johnson and W.~B. Ouimet, ``Rediscovering the lost archaeological
   landscape of southern new england using airborne light detection and ranging
@@ -88,6 +77,17 @@ S.~K. Reddy and P.~K. Pal, ``Segmentation of point cloud from a 3d {LIDAR}
   the 2015 Conference on Advances In Robotics - {AIR}
   {\textquotesingle}15}.\hskip 1em plus 0.5em minus 0.4em\relax {ACM} Press,
   2015.
+
+\bibitem{bib:UebereblickNN}
+\BIBentryALTinterwordspacing
+D.~Kriesel, \emph{Ein kleiner \"{U}berblick \"{u}ber Neuronale Netze}, 2007.
+  [Online]. Available: \url{erh\"{a}ltlich auf http://www.dkriesel.com}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bib:Perzeptron}
+C.~V.~D. Malsburg, ``Frank rosenblatt: Principles of neurodynamics: Perceptrons
+  and the theory of brain mechanisms,'' in \emph{Brain Theory}.\hskip 1em plus
+  0.5em minus 0.4em\relax Springer Berlin Heidelberg, 1986, pp. 245--248.
 
 \bibitem{bib:UltimateDisplay}
 I.~E. Sutherland, ``The ultimate display,'' in \emph{Proceedings of the IFIP

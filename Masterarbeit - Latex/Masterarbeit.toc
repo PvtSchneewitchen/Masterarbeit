@@ -6,12 +6,12 @@
 \contentsline {subsection}{\numberline {1.3.1}CMORE Automotive GmbH}{5}{subsection.1.3.1}
 \contentsline {subsection}{\numberline {1.3.2}C.LABEL}{5}{subsection.1.3.2}
 \contentsline {chapter}{\numberline {2}Grundlagen}{7}{chapter.2}
-\contentsline {section}{\numberline {2.1}Datenannotation im Bereich des maschinellen Lernens}{7}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Maschinelles Lernen}{8}{subsection.2.1.1}
-\contentsline {subsubsection}{Künstliche Neuronale Netze}{8}{figure.caption.9}
-\contentsline {subsubsection}{Trainieren von künstlichen neuronalen Netzen}{12}{figure.caption.12}
-\contentsline {subsection}{\numberline {2.1.2}Annotation von 3D-Punktwolken}{15}{subsection.2.1.2}
-\contentsline {section}{\numberline {2.2}Aufnahme von Punktwolken mit LiDAR}{16}{section.2.2}
+\contentsline {section}{\numberline {2.1}Erfassung von Punktwolken mit LiDAR}{7}{section.2.1}
+\contentsline {section}{\numberline {2.2}Datenannotation im Bereich des maschinellen Lernens}{10}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Maschinelles Lernen}{11}{subsection.2.2.1}
+\contentsline {subsubsection}{Künstliche Neuronale Netze}{11}{figure.caption.11}
+\contentsline {subsubsection}{Trainieren von künstlichen neuronalen Netzen}{16}{figure.caption.14}
+\contentsline {subsection}{\numberline {2.2.2}Annotation von 3D-Punktwolken}{18}{subsection.2.2.2}
 \contentsline {section}{\numberline {2.3}Virtual Reality}{19}{section.2.3}
 \contentsline {chapter}{\numberline {3}Systembeschreibung}{22}{chapter.3}
 \contentsline {section}{\numberline {3.1}Komponente 1: Die VR-Brille}{22}{section.3.1}
@@ -50,9 +50,15 @@
 \contentsline {subsubsection}{Bodenpunkt-Analyse}{60}{figure.caption.25}
 \contentsline {subsubsection}{Cluster-Analyse}{66}{algorithm.2}
 \contentsline {section}{\numberline {4.6}User Interface}{68}{section.4.6}
-\contentsline {subsection}{\numberline {4.6.1}Applikations-Menü}{70}{subsection.4.6.1}
-\contentsline {chapter}{\numberline {5}Schluss}{71}{chapter.5}
-\contentsline {section}{\numberline {5.1}Zusammenfassung und erreichte Ziele}{71}{section.5.1}
-\contentsline {section}{\numberline {5.2}Mehrwert der VR-Applikation}{71}{section.5.2}
-\contentsline {section}{\numberline {5.3}Weiterentwicklungsmöglichkeiten}{71}{section.5.3}
-\contentsline {chapter}{\numberline {A}Appendix Title}{72}{appendix.A}
+\contentsline {subsection}{\numberline {4.6.1}Applikations-Menü}{71}{subsection.4.6.1}
+\contentsline {subsubsection}{Bewegungsmenü}{72}{figure.caption.30}
+\contentsline {subsubsection}{Bewegungsmenü}{73}{figure.caption.30}
+\contentsline {chapter}{\numberline {5}Evaluation}{75}{chapter.5}
+\contentsline {section}{\numberline {5.1}Methodik}{75}{section.5.1}
+\contentsline {section}{\numberline {5.2}Ergebnis}{76}{section.5.2}
+\contentsline {section}{\numberline {5.3}sec:EvaluationErgebnis}{76}{section.5.3}
+\contentsline {chapter}{\numberline {6}Schluss}{78}{chapter.6}
+\contentsline {section}{\numberline {6.1}Zusammenfassung und erreichte Ziele}{78}{section.6.1}
+\contentsline {section}{\numberline {6.2}Mehrwert der VR-Applikation}{78}{section.6.2}
+\contentsline {section}{\numberline {6.3}Weiterentwicklungsmöglichkeiten}{78}{section.6.3}
+\contentsline {chapter}{\numberline {A}Appendix Title}{79}{appendix.A}

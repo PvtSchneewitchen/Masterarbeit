@@ -3,15 +3,15 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Vogelperspektive auf eine LiDAR-Punktwolke, wobei die roten Punkte alle Boden- und die blauen alle Nicht-Bodenpunkte darstellen\relax }}{3}{figure.caption.7}
 \contentsline {figure}{\numberline {1.2}{\ignorespaces Labeling Methoden in C.LABEL\relax }}{6}{figure.caption.8}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Diagramm um den besten Machine Learning Algorithmus für eine \gls {glos:PredAna}-Methoden zu finden \cite {bib:AzureCs}\relax }}{9}{figure.caption.9}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Abbildung des Übertragungsprinzips von Reizen zwischen Neuronen \cite {bib:Neurons}\relax }}{10}{figure.caption.10}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Einfaches Perzeptron nach dem Prinzip von Frank Rosenblatt\relax }}{11}{figure.caption.11}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Stark vereinfachte Darstellung eines \acrshort {acr:knn}s zur Erkennung von Autos und Personen\relax }}{13}{figure.caption.12}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Ablauf einer LiDAR-Messung von einem Sensor, der die Messimpulse im Uhrzeigersinn abgibt. Die Bilder stammen von \cite {bib:LidarPictures} und \ref {fig:Lidar2} wurde um den Winkel $\varphi $ erweitert.\relax }}{17}{figure.caption.13}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{17}{subfigure.5.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{17}{subfigure.5.2}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{17}{subfigure.5.3}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Seitliche Sicht auf eine LiDAR-Messung mit mehreren, verital angeordneten Lasern. Die Abbildung stammt aus \cite {bib:FastGroundSeg} und wurde durch die Einzeichnung des Winkels $\theta $ erweitert.\relax }}{18}{figure.caption.14}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Ablauf einer LiDAR-Messung von einem Sensor, der die Messimpulse im Uhrzeigersinn abgibt. Die Bilder stammen von \cite {bib:LidarPictures} und \ref {fig:Lidar2} wurde um den Winkel $\varphi $ erweitert.\relax }}{9}{figure.caption.9}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{9}{subfigure.1.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{9}{subfigure.1.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{9}{subfigure.1.3}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Seitliche Sicht auf eine LiDAR-Messung mit mehreren, verital angeordneten Lasern. Die Abbildung stammt aus \cite {bib:FastGroundSeg} und wurde durch die Einzeichnung des Winkels $\theta $ erweitert.\relax }}{9}{figure.caption.10}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Diagramm um den besten Machine Learning Algorithmus für eine \gls {glos:PredAna}-Methoden zu finden \cite {bib:AzureCs}\relax }}{12}{figure.caption.11}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Abbildung des Übertragungsprinzips von Reizen zwischen Neuronen \cite {bib:Neurons}\relax }}{13}{figure.caption.12}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Einfaches Perzeptron nach dem Prinzip von Frank Rosenblatt\relax }}{14}{figure.caption.13}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Stark vereinfachte Darstellung eines \acrshort {acr:knn}s zur Erkennung von Autos und Personen\relax }}{16}{figure.caption.14}
 \contentsline {figure}{\numberline {2.7}{\ignorespaces Vergleich zwischen den Anfängen der VR-Technologie und dem heutigen Stand. Die oberen drei Bilder zeigen das VIVED-System, das von S.S. Fisher vorgestellt wurde \cite {bib:NasaVr}. Die Unteren zeigen Bilder der Oculus Rift.\relax }}{20}{figure.caption.15}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {VIVED Displayaufbau}}}{20}{subfigure.7.1}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Sicht auf einen VIVED Benutzer}}}{20}{subfigure.7.2}
@@ -45,5 +45,10 @@
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Segmentierung anhand Koordinaten entlang der $x$-Achse}}}{63}{subfigure.8.2}
 \contentsline {figure}{\numberline {4.9}{\ignorespaces Bei zu wenigen Bodenpunkten in einem Segment passt sich die Ebene den falschen Punkten an.\relax }}{63}{figure.caption.28}
 \contentsline {figure}{\numberline {4.10}{\ignorespaces Klassendiagramm des UI-Systems in C.LABEL-VR\relax }}{69}{figure.caption.29}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Die Abbildungen zeigen die zwei Benutzeroberflächen, die innerhalb einer Session in C.LABEL-VR aufgerufen werden können.\relax }}{72}{figure.caption.30}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Bewegungsmenü}}}{72}{subfigure.11.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Klassifikationsmenü}}}{72}{subfigure.11.2}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Benutzeroberfläche zum erstellen oder editieren einer Klassifikation\relax }}{74}{figure.caption.31}
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
