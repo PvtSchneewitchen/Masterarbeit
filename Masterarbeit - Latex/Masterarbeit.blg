@@ -5,7 +5,6 @@ Warning--entry type for "bib:UEvsUE4" isn't style-file defined
 --line 135 of file Masterarbeit.bib
 Warning--entry type for "bib:PointTeleport" isn't style-file defined
 --line 570 of file Masterarbeit.bib
-Warning--I didn't find a database entry for "bib:NeuronaleNetze"
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -13,4 +12,4 @@ Warning--missing publisher in bib:UebereblickNN
 Warning--empty journal in bib:VRSicknessKolanski
 
 Done.
-(There were 5 warnings)
+(There were 4 warnings)

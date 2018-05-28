@@ -78,6 +78,13 @@ S.~K. Reddy and P.~K. Pal, ``Segmentation of point cloud from a 3d {LIDAR}
   {\textquotesingle}15}.\hskip 1em plus 0.5em minus 0.4em\relax {ACM} Press,
   2015.
 
+\bibitem{bib:LidarDetection}
+\BIBentryALTinterwordspacing
+J.~Hewitt, ``A laser and a raspberry pi can disable a self-driving car,''
+  Internetquelle (abgerufen am 28.05.2018), Sep. 2015. [Online]. Available:
+  \url{https://www.extremetech.com/extreme/213517-a-laser-and-a-raspberry-pi-can-disable-a-self-driving-car}
+\BIBentrySTDinterwordspacing
+
 \bibitem{bib:UebereblickNN}
 \BIBentryALTinterwordspacing
 D.~Kriesel, \emph{Ein kleiner \"{U}berblick \"{u}ber Neuronale Netze}, 2007.

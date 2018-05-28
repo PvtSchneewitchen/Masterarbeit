@@ -1,24 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
-public class TestObject : MonoBehaviour
-{
-    public static TestObject Instance { get; set; }
-    public bool EnableGrowing { get; set; }
 
-    private void Awake()
-    {
-        Instance = this;
-    }
-    private void Start()
-    {
-        EnableGrowing = true;
-    }
-    private void Update()
-    {
-        Instance.transform.localScale += new Vector3(1, 1, 1);
-    }
-}
 /// <summary>
 /// Attach this to Controller to annotate points with Pointer
 /// </summary>

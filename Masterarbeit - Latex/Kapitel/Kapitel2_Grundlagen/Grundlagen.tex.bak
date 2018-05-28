@@ -1,19 +1,74 @@
 \graphicspath{{Kapitel/Kapitel2_Grundlagen/Images/}}
 
-%Dieses Kapitel befasst sich mit einigen grundlegenden Themen, die mit dem Inhalt dieser Arbeit zu tun haben. Dies soll dem besseren Verständnis für die folgenden Kapitel dienen. Der Abschnitt \ref{sec:MLearning} beispielsweise, befasst sich mit dem Prinzip des maschinellen Lernens auf Basis von neuronalen Netzen, was verdeutlichen soll warum die Daten der Punktwolken überhaupt \glslink{glos:Labeling}{gelabelt} werden müssen. Anschließend wird die CMORE Inhouse Software C.LABEL in \ref{sec:C.LABEL} vorgestellt um den aktuellen Stand der Technik im Bereich Punktwolkenannotierung zu zeigen. \ref{sec:UnityEngine} stellt die \gls{glos:GameEngine} Unity vor, die benutzt wurde um die \acrlong{acr:VR} Applikation zu erstellen.
+Dieses Kapitel befasst sich mit einigen grundlegenden Themen, die mit dem Inhalt dieser Arbeit zu tun haben. Dies soll dem besseren Verständnis für die folgenden Kapitel dienen. Der Abschnitt \ref{sec:Lidar} beispielsweise, erläutert die Art und Weise, wie Punktwolken mittels eines LiDAR-Sensors erfasst werden. Damit soll verdeutlicht werden, was Punktwolken für eine Bedeutung haben und wie sie entstehen. Das Kapitel \ref{sec:AnnotationIntro} befasst sich mit der Annotation von Daten im Bereich des maschinellen Lernens. Darin wird der Prozess des maschinellen Lernens erläutert, um zu verdeutlichen, was Annotation von Daten in diesem Prozess für eine Bedeutung hat. Anschließend wird konkret auf die Annotation von Punktwolken eingegangen. Da im Zuge dieser Arbeit eine Virtual Reality Applikation entwickelt wurde, wird im Abschnitt \ref{sec:VirtualReality} auch das Thema Virtual Reality im Allgemeinen behandelt.
 
-\section{Annotation}
-\label{sec:Annotation}
-TODO
--Anntation im allgemeinen
--Für welche zwecke wird es verwendet
--Hinleitung zum maschinellen Lernen, für das Annotierte Daten notwendig sind
+\section{Erfassung von Punktwolken mit LiDAR}
+\label{sec:Lidar}
+
+Punktwolken, wie sie in dieser Arbeit behandelt werden, bestehen aus vielen einzelnen Abstandsmessungen, wobei jeder Punkt einer dieser Messungen entspricht. LiDAR (\textit{Light Detection and Ranging}) ist eine Methode zur Abstandsmessung mit Hilfe von Licht, welche in der Automobilbranche häufig verwendet wird. In den letzten Jahrzehnten wurde der LiDAR-Sensor aber auch in vielen anderen Bereichen zur herkömmlichen Methode, wenn es um die Messung von Abstandsinformationen geht. Im Bereich Archeologie benutzten Johnson und Oiumet diese Technologie, um die Landschaft von New England in den USA zu analysieren \cite{bib:LidarArcheology}. Die Analyse von Landschaften ist durch LiDAR aber nicht nur auf dem Planeten Erde möglich. In \cite{bib:LidarSpace} wurde LiDAR benutzt um Oberflächenmessungen auf dem Mars durchzuführen. In der Robotik wird es häufig verwendet um Hindernisse für mobile Roboter zu identifizieren, wie in \cite{bib:LidarRobotic}.\\
+
+Für die Messung der Distanz wird in der Regel ein Laser benutzt. Der LiDAR-Sensor sendet mit Hilfe eines solchen Lasers einen Lichtimpuls aus und misst die Zeit $t$ bis das Signal wiederkehrt. Anhand dieser Zeit ist es möglich die Distanz $d$ zu bestimmen, die vom Licht zurückgelegt wurde. Dazu nimmt man die Formel \ref{eq:LidarDistance}, in der $c$ für die Geschwindigkeit des Lichts steht.
+
+\begin{equation}
+\label{eq:LidarDistance}
+\ d = \frac{c\cdot\Delta t}{2}
+\end{equation} 
+
+Mit dem Impuls eines einzelnen Lasers bekommt man eine einzelne Abstandsmessung für den Zeitpunkt des Impulses. Führt man aber viele dieser Messungen innerhalb einer 360° Drehung durch bekommt man Abstandsinformationen des gesamten Umfeldes. Eine Möglichkeit eine 360° Umfeldmessung zu ermöglichen ist es, den Sensor um seine eigene Achse zu drehen, wie es in Abbildung \ref{fig:Lidar} gezeigt wird. In der oberen Reihe dieser Abbildung ist der LiDAR-Sensor zu sehen, dessen Lichtimpuls durch einen Spiegel (graues Objekt) gezielt auf die Umgebung gerichtet wird. Dieser Spiegel dreht sich um die eigene Achse um die Lichtimpulse nach und nach auf das Umfeld zu verteilen. In der mittleren Reihe ist die Vogelperspektive auf den Sensor und seine Umgebung abgebildet. Der Sensor ist, wie in der oberen Abbildung, in blau dargestellt und die Objekte des Umfeldes in grün. Die unteren Abbildungen zeigen, ebenfalls in der Vogelperspektive, die Abstandsinformationen, die der Sensor liefert. Diese werden in Form von blauen Punkten dargestellt und bilden eine zweidimensionale Punktwolke, in der man den Rahmen des Umfelds und das kreisförmige Objekt erkennen kann.\\
+
+\begin{figure}%
+    \centering
+    \subfloat[]{{\includegraphics[width=4cm]{Lidar1}\label{fig:Lidar1}}}%
+    \qquad
+    \subfloat[]{{\includegraphics[width=4cm]{Lidar2Phi}\label{fig:Lidar2}}}%
+    \qquad
+    \subfloat[]{{\includegraphics[width=4cm]{Lidar3}\label{fig:Lidar3}}}%
+    \caption{Ablauf einer LiDAR-Messung von einem Sensor, der die Messimpulse im Uhrzeigersinn abgibt. Die Bilder stammen von \cite{bib:LidarPictures} und \ref {fig:Lidar2} wurde um den Winkel $\varphi$ erweitert.}\label{fig:Lidar}%
+\end{figure}
+
+Diese Methode liefert also eine gute horizontale Rundumsicht, welche aber innerhalb der vertikalen Sichtweite keinerlei Informationen bietet. Dies genügt in der Regel für simple Abstandserkennungen und Detektion von Hindernissen auf Höhe des Sensors. Möchte man jedoch Aussagen über das Detektierte treffen oder braucht Informationen über andere vertikalen Ebenen, beispielsweise den Boden, muss man diese Methode noch erweitern. Dafür werden mehrere Lichtimpulse mit verschiedenen vertikalen Winkeln ausgesendet. Diese treffen die Umgebung dann mit unterschiedlicher Höhe womit die daraus resultierende Punktwolke eine dritte Dimension erhält. In Abbildung \ref{fig:LidarVertical} ist die seitliche Sicht auf einen LiDAR-Sensor mit mehreren vertikalen Lasern zu sehen.\\
+
+\begin{figure}%
+	\centering
+    \includegraphics[width=14cm]{LidarVerticalTheta}
+    \caption{Seitliche Sicht auf eine LiDAR-Messung mit mehreren, verital angeordneten Lasern. Die Abbildung stammt aus \cite{bib:FastGroundSeg} und wurde durch die Einzeichnung des Winkels $\theta$ erweitert.}
+    \label{fig:LidarVertical}
+\end{figure}
+
+Wie schon erwähnt werden die erhaltenen Messdaten in eine Struktur konvertiert, die sich Punktwolke nennt. Dafür werden die Abstandsinformationen innerhalb eines bestimmten Koordinatensystems dargestellt. In der Regel wird dabei das \textit{Sphärische Koordinatensystem} verwendet. Darin wird jeder Punkt durch einen Abstand $r$ von einem Referenzpunkt und zwei dazugehörigen Winkel repräsentiert. Einer dieser Winkel ist dabei horizontal (Winkel $\varphi$) zu interpretieren und der andere vertikal (Winkel $\theta$). 
+
+Nimmt man den Punkt \glqq 1\grqq{} aus der Abbildung \ref{fig:LidarVertical} als Beispiel, entspräche $\theta$ dem vertikalen Winkel. Dieser gibt den Winkel zwischen der gelben, gestrichelten Linie und der roten Linie an, die den Sensor und \glqq 1\grqq{} verbindet. Diese rote Linie repräsentiert den Abstand des Punktes vom Referenzpunkt, welcher der Position des Sensors entspricht. Der horizontale Winkel ist der Rotationswinkel des Sensors um seine eigene Achse (vgl. $\varphi$ in Abbildung \ref {fig:Lidar2}). Dieser wird vom Sensor bei jedem abgegebenen Impuls gemessen. Zusammenfassend kann also durch den vertikalen Winkel $\theta$ des Lichtimpulses, den horizontalen Winkel $\varphi$ des Sensors und dem gemessenen Abstand $r$ zum Sensor, der Punkt \glqq 1\grqq{} genau im Raum definiert werden.\\
+
+Viele Anwendungen, die mit Punktwolken zu tun haben arbeiten jedoch mit dem kartesischen Koordinatensystem, so auch C.LABEL-VR. In diesem Koordinatensystem wird jeder dreidimensionale Punkt durch drei Koordinaten angegeben, nämlich der $x$-, $y$- und $z$-Koordinate. Ausgehend von den drei Werten des sphärischen Koordinatensystem können die drei kartesischen Koordinaten durch die Formeln in \ref{eq:SphToKart} berechnet werden. Auch hier steht $r$ für den Abstand zwischen dem Referenzpunkt und dem Punkt den man definieren will. $\theta$ steht für den vertikalen Winkel und $\varphi$ für den horizontalen Winkel, also den Rotationswinkel des Sensors um die eigene Achse.
+
+\begin{subequations}
+\begin{align}
+        &x = r\sin\theta\cos\varphi \\
+		&y = r\sin\theta\sin\varphi \\
+		&z = r\sin\theta
+\end{align}
+\label{eq:SphToKart}
+\end{subequations}
+
+Durch die eben erklärte Definition der Messdaten in einem Koordinatensystem können diese Daten nun mit geeigneten Programmen (C.LABEL) als Punktwolke dargestellt werden. Darin ist dann jede einzelne Messung die der Sensor getätigt hat sichtbar. Somit kann der Mensch die Daten visuell analysieren und beispielsweise Zusammenhänge wie Objekte entdecken. Damit auch Computersysteme solche Objekte in diesen Daten erkennen können müssen sie erst lernen wie diese aussehen. Dazu muss eine Vielzahl an Punktwolken mit Hilfe eines LiDAR-Sensors aufgenommen werden und anschließend eine, vom Anwendungsfall abhängige, Anzahl an Punkten in dieser Wolke mit entsprechenden Klassifikationen versehen werden (Prinzip der Annotation aus Kapitel \ref{sec:Annotation}). Mit den annotierten Daten können nun Algorithmen, wie beispielsweise künstliche neuronale Netze (vgl. Kapitel \ref{sec:KNN}), lernen welche Zusammenhänge es in solchen Daten gibt und diese dann in nicht annotierten Daten wiedererkennen. Das Ziel von C.LABEL-VR ist es solche Daten in der virtuellen Realität zu visualisieren und Funktionen zur Verfügung zu stellen diese in der virtuelle Umgebung zu annotieren.
+
+\section{Datenannotation im Bereich des maschinellen Lernens}
+\label{sec:AnnotationIntro}
+
+Um den Grund und die Wichtigkeit der Datenannotation, im Bereich des maschinellen Lernens zu verstehen, ist es hilfreich den Prozess des maschinellen Lernens selbst zu verstehen. Beim maschinellen Lernen, geht es in der Regel darum, dass ein Computersystem eine bestimmte Aufgabe löst, in dem es zuvor erhaltenes Wissen und gemachte Erfahrungen anwendet, um diese Aufgabe zu lösen. Dazu soll das System aus relevanten Trainingsdaten, Muster und Gesetzmäßigkeiten erkennen, um diese dann auf unbekannte Daten zu verallgemeinern. Das System lernt also aus lehrreichen Daten das lösen eines Problems und kann das gelernte dann auf unbekannte Daten anwenden. Um die Trainingsdaten für diesen Prozess so aussagekräftig wie möglich zu machen, müssen alle relevanten Inhalte der Daten richtig gekennzeichnet werden (siehe Abbildung \ref{fig:ObjectDetection}). Möchte man beispielsweise ein System auf die Erkennung von Autos trainieren, wie es bei handelsüblichen Objekterkennungen im Automobilbereich der Fall ist, müssen in den Trainingsdaten, welche in diesem Fall Bilder sind, alle zu sehenden Autos gekennzeichnet werden (siehe Abbildung \ref{fig:Camera}). Eine solche Kennzeichnung nennt sich \textit{Label}. Das erstellen solcher Labels nennt sich Annotation. Im Folgenden soll der Prozess des maschinellen Lernens und der Datenannotation genauer erläutert werden. Anschließend wird konkret auf die Annotation von 3D-Punktwolken eingegangen.
 
 \subsection{Maschinelles Lernen}
 \label{sec:MLearning}
-Der Ausdruck Maschinelles Lernen (engl.: \textit{Machine Learning}) ist heutzutage ein Überbegriff für Methoden, die versuchen durch Optimierung eine Funktion zu erlernen. Bei solch einer Funktion kann es sich sowohl um eine simple binäre Entscheidung auf eine Fragestellung handeln als auch um komplexere Dinge wie das Übersetzen von Texten in eine andere Sprache, das Erkennen von Personen auf Bildern, oder eben das Klassifizieren von Objekten in einer Punktwolke. Letzteres ist speziell für diese Arbeit relevant. Die Komplexität der Funktion bestimmt auch die zu verwendende Methode zur Lösung des Problems. Im Zuge des \textit{Azure Machine Learning Studios} veröffentlichte Microsoft eine Graphik (vgl. Abbildung \ref{fig:MLCS}), mit der man den richtigen Lernalgorithmus für gewisse Vorhersage-Methoden bestimmen kann. Für die Objektklassifizierung im Automobilbereich ist es wichtig die Klasse eines Objekts mit hoher Genauigkeit aus einer großen Anzahl verschiedener Klassen zu bestimmen. Basierend auf der Graphik \ref{fig:MLCS} ist die beste Methode dafür die Verwendung eines künstlichen neuronalen Netzes(\acrshort{acr:knn}). Die Benutzung solcher Netze ist üblich, wenn es um Klassifikation von vielen verschiedenen Dingen geht und soll im Folgenden näher erläutert werden.\\
 
-TODO Grafik von Bild- und Wolkenerkennung\\
+\begin{figure}%
+    \centering
+    \subfloat[Klassifizierung von Autos auf einem Kamerabild]{{\includegraphics[width=7.4cm]{Camera}\label{fig:Camera}}}%
+    \quad
+    \subfloat[Klassifizierung von Objekten in einer Punktwolke \cite{bib:LidarDetection}]{{\includegraphics[width=6.6cm]{Lidar}\label{fig:Lidar}}}%
+    \caption{Beispiele des Label-Prozess in Sensordaten}\label{fig:ObjectDetection}%
+\end{figure}
+
+Der Ausdruck Maschinelles Lernen (engl.: \textit{Machine Learning}) ist heutzutage ein Überbegriff für Methoden, die versuchen durch Optimierung eine Funktion zu erlernen. Bei solch einer Funktion kann es sich sowohl um eine simple binäre Entscheidung auf eine Fragestellung handeln als auch um komplexere Dinge wie das Übersetzen von Texten in eine andere Sprache, das Erkennen von Personen auf Bildern, oder eben das Klassifizieren von Objekten in einer Punktwolke. Letzteres ist speziell für diese Arbeit relevant. Die Komplexität der Funktion bestimmt auch die zu verwendende Methode zur Lösung des Problems. Im Zuge des \textit{Azure Machine Learning Studios} veröffentlichte Microsoft eine Grafik (vgl. Abbildung \ref{fig:MLCS}), mit der man den richtigen Lernalgorithmus für gewisse Vorhersage-Methoden bestimmen kann. Für die Objektklassifizierung im Automobilbereich ist es wichtig die Klasse eines Objekts mit hoher Genauigkeit aus einer großen Anzahl verschiedener Klassen zu bestimmen. Basierend auf der Grafik \ref{fig:MLCS} ist die beste Methode dafür die Verwendung eines künstlichen neuronalen Netzes (KNN). Die Benutzung solcher Netze ist üblich, wenn es um Klassifikation von vielen verschiedenen Dingen geht und soll im Folgenden näher erläutert werden.\\
 
 \begin{figure}%
 	\centering
@@ -24,18 +79,18 @@ TODO Grafik von Bild- und Wolkenerkennung\\
   
 \subsubsection{Künstliche Neuronale Netze}
 \label{sec:KNN}
-David Kriesel hat in \cite{bib:UebereblickNN} den Zusammenhang zwischen physischen und künstlichen neuronalen Netzen dargestellt. Seine Arbeit soll im Folgenden als Quelle dienen. Das Prinzip der künstlichen neuronalen Netze ist, wie vieles in der Informatik, einer Struktur aus der realen Welt nachempfunden. Das komplexeste neuronale Netz ist wohl das menschliche Gehirn mit etwa 86 Milliarden Nervenzellen, welche auch Neuronen genannt werden. Daher kommt auch der Begriff des neuronalen Netzes. Diese Nervenzellen sind durch Synapsen mit bis zu mehreren Tausend anderen Zellen verbunden. Diese Verbindungen bilden zusammen das Netz. Die Kommunikation zwischen den Neuronen erfolgt in der Regel über elektrische Impulse und chemische Botenstoffe. Beides wird über Synapsen zu den nächsten, verbundenen Neuronen weitergeleitet und bewirkt dort einen Reiz. Durch Übertragung von chemischen Botenstoffen kann dieser Reiz zusätzlich gewichtet werden, das heißt es kann ein stärkerer oder schwächerer Reiz ausgesendet werden. Alle ankommenden Reize werden dann am Empfangsneuron akkumuliert und ergeben den Eingangsreiz des Neurons.\\ 
+David Kriesel hat in \cite{bib:UebereblickNN} den Zusammenhang zwischen physischen und künstlichen neuronalen Netzen dargestellt. Seine Arbeit soll im Folgenden als Quelle dienen. Das Prinzip der künstlichen neuronalen Netze ist, wie vieles in der Informatik, einer Struktur aus der realen Welt nachempfunden. Das komplexeste neuronale Netz ist wohl das menschliche Gehirn mit etwa 86 Milliarden Nervenzellen, welche auch Neuronen genannt werden. Daher kommt auch der Begriff des neuronalen Netzes. Diese Nervenzellen sind durch Synapsen mit bis zu mehreren Tausend anderen Zellen verbunden. Diese Verbindungen bilden zusammen das Netz. Die Kommunikation zwischen den Neuronen erfolgt in der Regel über elektrische Impulse und chemische Botenstoffe \ref{fig:Neurons}. Beides wird über Synapsen zu den nächsten, verbundenen Neuronen weitergeleitet und bewirkt dort einen Reiz. Durch Übertragung von chemischen Botenstoffen kann dieser Reiz zusätzlich gewichtet werden, das heißt es kann ein stärkerer oder schwächerer Reiz ausgesendet werden. Alle ankommenden Reize werden dann am Empfangsneuron akkumuliert und ergeben den Eingangsreiz des Neurons.\\ 
 
-Dieses, vereinfacht dargestellte Prinzip, wird auch bei den  \acrshort{acr:knn}s verwendet. Übersteigt dieser Reiz eine bestimmte Schwelle kommt es zum entscheidenden Ereignis: Das Neuron \textit{feuert}. Dadurch gibt das feuernde Neurone einen Impuls an alle anderen Neuronen weiter mit dem es verbunden ist. Bei dafür vorgesehenen Neuronen oder verbänden davon, kann dieser Impuls auch ein Ereignis auslösen. Diese Ereignisse können physischer Natur sein, also beispielsweise Bewegungen, oder auch psychischer Natur, zum Beispiel das Erkennen von Dingen. Werden diese Nervenzellen also mit einem ausreichenden Impuls angesprochen, wird das entsprechende Ereignis ausgelöst.\\
+Dieses, vereinfacht dargestellte Prinzip, wird auch bei den \acrshort{acr:knn}s verwendet. Übersteigt dieser Reiz eine bestimmte Schwelle kommt es zum entscheidenden Ereignis: Das Neuron \textit{feuert}. Dadurch gibt das feuernde Neurone einen Impuls an alle anderen Neuronen weiter mit dem es verbunden ist. Bei dafür vorgesehenen Neuronen oder verbänden davon, kann dieser Impuls auch ein Ereignis auslösen. Diese Ereignisse können physischer Natur sein, also beispielsweise Bewegungen, oder auch psychischer Natur, zum Beispiel das Erkennen von Dingen. Werden diese Nervenzellen also mit einem ausreichenden Impuls angesprochen, wird das entsprechende Ereignis ausgelöst.\\
 
 \begin{figure}%
 	\centering
     \includegraphics[width=9cm]{Neurons}
     \caption{Abbildung des Übertragungsprinzips von Reizen zwischen Neuronen \cite{bib:Neurons}}
-    \label{fig:MLCS}
+    \label{fig:Neurons}
 \end{figure}
 
-Die entscheidende Komponente dieses Prinzips ist die adaptive Gewichtung der weitergegebenen Reize. Adaptiv deswegen, da die Gewichtung der Reize sich während eines Menschenlebens verändern können. So erkennen Kinder oft Gefahrensituation nicht, da ihr Gehirn nicht ausreichend geschult ist um diese zu erkennen. In diesem Kontext bedeutet das, dass an die \textit{Gefahren-Neuronen} kein ausreichend starker Reiz gesendet wird. Durch sammeln von Erfahrungen optimiert sich dieser Wert, was in späteren Jahren zu einer anderen Reaktion des Gehirns führen kann als früher. Das Adaptieren dieser Gewichte auf einen passenden Wert bezeichnen wir als Lernen. Um Computersystemen einen derartigen Lerneffekt zu ermöglichen wurde dieses Biologische Prinzip nun mathematisch imitiert. \\
+Die entscheidende Komponente dieses Prinzips ist die adaptive Gewichtung der weitergegebenen Reize. Adaptiv deswegen, da die Gewichtung der Reize sich während eines Menschenlebens verändern können. So erkennen Kinder oft Gefahrensituation nicht, da ihr Gehirn nicht ausreichend geschult ist, um diese zu erkennen. In diesem Kontext bedeutet das, dass an die \textit{Gefahren-Neuronen} kein ausreichend starker Reiz gesendet wird. Durch sammeln von Erfahrungen optimiert sich dieser Wert, was in späteren Jahren zu einer anderen Reaktion des Gehirns führen kann als früher. Das Adaptieren dieser Gewichte auf einen passenden Wert bezeichnen wir als Lernen. Um Computersystemen einen derartigen Lerneffekt zu ermöglichen wurde dieses Biologische Prinzip nun mathematisch imitiert. \\
 
 \begin{figure}%
 	\centering
@@ -44,13 +99,13 @@ Die entscheidende Komponente dieses Prinzips ist die adaptive Gewichtung der wei
     \label{fig:Perceptron}
 \end{figure}
 
-Künstliche Neuronale Netze basieren auf dem Prinzip des Perzeptrons, das von Frank Rosenblatt 1958 vorgestellt wurde \cite{bib:Perzeptron}. Dieses Perzeptron repräsentiert die Funktion eines einzelnen Neurons auf eine mathematische Weise (vgl. \ref{fig:Perceptron}). Die Eingangsdaten eines Perzeptrons bestehen aus einer \(n\)-großen Menge an Werten \(x_1 \dots x_n\), welche eine gleichgroße Menge an jeweiligen Gewichten \(W_1 \dots W_n\) haben. Wenn das zu analysierende Ziel beispielsweise ein Bild ist, wäre \(n\) die Menge aller Pixel des Bildes und bei Punktwolken eben die Anzahl der Punkte. Die Eingangswerte werden von einer mathematischen Funktion empfangen und zu einem skalaren Wert \(z\) zusammengefasst. Hierbei wird meist die Gewichtete Summe benutzt die folgendermaßen berechnet wird:
+Künstliche Neuronale Netze basieren auf dem Prinzip des Perzeptrons, das von Frank Rosenblatt 1958 vorgestellt wurde \cite{bib:Perzeptron}. Dieses Perzeptron repräsentiert die Funktion eines einzelnen Neurons auf eine mathematische Weise (vgl. \ref{fig:Perceptron}). Die Eingangsdaten eines Perzeptrons bestehen aus einer \(n\)-großen Menge an Werten \(x_1 \dots x_n\), welche eine gleichgroße Menge an jeweiligen Gewichten \(W_1 \dots W_n\) haben. Wenn das zu analysierende Ziel beispielsweise ein Bild ist, wäre \(n\) die Menge aller Pixel des Bildes (Abbildung \ref{fig:Camera}) und bei Punktwolken eben die Anzahl der Punkte (Abbildung \ref{fig:Lidar}). Die Eingangswerte werden von einer mathematischen Funktion empfangen und zu einem skalaren Wert \(z\) zusammengefasst. Hierbei wird meist die Gewichtete Summe benutzt die folgendermaßen berechnet wird:
 
 \begin{equation}
 z = \sum \limits_{i=0}^{n} W_i \cdot x_i
 \end{equation}\\
 
-Im biologischen Vorbild repräsentiert diese Summe den eingehenden Reiz in eine Nervenzelle, die \(x\)-Werte sind dabei die Impulse der vorherigen Neuronen und die \(W\)-Werte repräsentieren die Gewichtung, also die Stärke der Eingangsreize. Der biologische Schwellwert wird im Perzeptron durch eine Mathematische Funktion \(\sigma(z)\) dargestellt. Wie in \cite{bib:NeuronaleNetze} beschrieben gibt es dafür zwei beliebte Funktionen. Die \textit{Fermifunktion} (\ref{eq:Fermi}) , auch Logische Funktion genannt, welche einen Ausgabe-Wertebereich von (0,1) hat und den \textit{Tangens Hyperbolicus} (\(tanh(z)\)) mit einem Wertebereich von (-1,1). Beide sind differenzierbar, was wichtig für das Lernen mit \textit{Backpropagation} ist. Was das bedeutet wird in Abschnitt \ref{sec:Training} näher erläutert. Wenn der Wert, den diese Funktion liefert, nicht noch durch eine weitere Ausgangsfunktion verändert wird, ist er der Ausgangswert des Perzeptrons.
+Im biologischen Vorbild repräsentiert diese Summe den eingehenden Reiz in eine Nervenzelle, die \(x\)-Werte sind dabei die Impulse der vorherigen Neuronen und die \(W\)-Werte repräsentieren die Gewichtung, also die Stärke der Eingangsreize. Der biologische Schwellwert wird im Perzeptron durch eine Mathematische Funktion \(\sigma(z)\) dargestellt. Wie in \cite{bib:UebereblickNN} beschrieben gibt es dafür zwei beliebte Funktionen. Die \textit{Fermifunktion} (\ref{eq:Fermi}) , auch Logische Funktion genannt, welche einen Ausgabe-Wertebereich von (0,1) hat und den \textit{Tangens Hyperbolicus} (\(tanh(z)\)) mit einem Wertebereich von (-1,1). Beide sind differenzierbar, was wichtig für das Lernen mit \textit{Backpropagation} ist. Was das bedeutet wird in Abschnitt \ref{sec:Training} näher erläutert. Wenn der Wert, den diese Funktion liefert, nicht noch durch eine weitere Ausgangsfunktion verändert wird, ist er der Ausgangswert des Perzeptrons.
 
 \begin{equation}
 \sigma(z) = \frac{1}{1 + e^{-z}}
@@ -92,7 +147,7 @@ Für Objektklassifizierung wird in der Regel das überwachte Lernen verwendet, d
  
 Der Lernprozess bei dieser Methode ist, wie der Name schon sagt, überwacht. Das kommt daher, dass der Mensch eine Menge an selbst ausgewählten Trainingsbeispielen erstellt. Das wird dann mit dieser überwachten Menge trainiert. Die Trainingsbeispiele bestehen aus eine Menge \(P\) an Eingabemustern mit jeweiliger korrekter Lösung. Das Netz kann seine eigene Ausgabe mit der richtigen Lösung des Beispiels vergleichen und somit eine Fehlerbeschreibung zurückgeben. Für das Beispiel der Punktwolkenklassifizierung bestünde dabei das Trainingsset aus vielen verschiedenen Punktwolken, die alle ein Objekt darstellen, wobei die Art des Objektes, also die Lösung der Klassifizierung, bekannt ist. \\
 
-Die Werte der Gewichte \(W_1 \dots W_n\) werden bei einem untrainierten Netz zu Beginn zufällig gewählt. Dadurch gibt ein solches Netz in der Regel völlig falsche Lösungen für die ersten Trainingsbeispiele aus. Das ist aber nicht weiter schlimm, da nun der Lerneffekt einsetzen soll. Durch die Bekanntheit der Lösung des Beispiels kann der Fehler zwischen dem Ergebnis des Netzes und der gewünschten Lösung genau bestimmt werden. Dieser Fehler kann anschließend durch zurückrechnen auf jedes Neuron der vorherigen Schichten projiziert werden. Auf diese Weise kann der Fehler, den jedes einzelne Neuron verursacht bestimmt werden. Dieses Zurückrechnen nennt sich \textit{Backpropagation}. Aus dem Fehler den jedes Neuron verursacht kann schließlich der Betrag errechnet werden, um den sich das Gewicht \(W_i\) des Neurons verändern muss, damit bei zukünftigen Eingaben bessere Ergebnisse erzielt werden. Für das Verständnis des Grundprinzips ist die Formel zu Berechnung der Gewichtsänderung nicht wichtig, sie wird aber zur Vervollständigung im Folgenden angegeben: 
+Die Werte der Gewichte \(W_1 \dots W_n\) werden bei einem untrainierten Netz zu Beginn zufällig gewählt. Dadurch gibt ein solches Netz in der Regel völlig falsche Lösungen für die ersten Trainingsbeispiele aus. Das ist aber nicht weiter schlimm, da nun der Lerneffekt einsetzen soll. Durch die Bekanntheit der Lösung des Beispiels kann der Fehler zwischen dem Ergebnis des Netzes und der gewünschten Lösung genau bestimmt werden. Dieser Fehler kann anschließend durch Zurückrechnen auf jedes Neuron der vorherigen Schichten projiziert werden. Auf diese Weise kann der Fehler, den jedes einzelne Neuron verursacht bestimmt werden. Dieses Zurückrechnen nennt sich \textit{Backpropagation}. Aus dem Fehler den jedes Neuron verursacht, kann schließlich der Betrag errechnet werden, um den sich das Gewicht \(W_i\) des Neurons verändern muss, damit bei zukünftigen Eingaben bessere Ergebnisse erzielt werden. Für das Verständnis des Grundprinzips ist die Formel zu Berechnung der Gewichtsänderung nicht wichtig, sie wird aber zur Vervollständigung im Folgenden angegeben: 
 
 \begin{equation}
 \triangle w_{ij} = -\eta\delta_jo_i
@@ -125,7 +180,29 @@ Zusammenfassend kann man nun sagen, dass der Lernprozess eines künstlichen Neur
 
 Wie unschwer zu erkennen ist basiert der Backpropagation-Algorithmus auf dem Vorhandensein eines Trainingsdatensatzes. Damit das Netz nach dem Training für neue, unbekannte Eingaben die richtige Lösung errechnet ist es elementar wichtig, dass dieser Datensatz eine hohe Qualität und Quantität hat. Qualität bedeutet in diesem Fall, dass die Trainingsdaten repräsentativ für den jeweiligen Anwendungsfall sein müssen. Ein Personenerkennungsalgorithmus der im Straßenverkehr Personen identifizieren soll liefert keine guten Ergebnisse, wenn er ausschließlich mit Bildern von Personen in Innenräumen gefüttert wird. Mit Quantität ist Anzahl der verschiedenen Elemente im Trainingssatz gemeint. \acrshort{acr:knn}s verbessern ihre Ausgabe in der Regel mit größerer Menge an unterschiedlichen Trainingsdaten.\\
 
-Zur Erstellung dieses Datensatzes ist es nun nötig so viele repräsentative Daten wie möglich zu sammeln und diese mit der richtigen Lösung zu annotieren. Eine Methode für eine solche Annotierung wird in dieser Arbeit vorgestellt. Dieses Kapitel sollte nun veranschaulicht haben warum  solche Methoden so essentiell sind, um künstliche Intelligenzen zu entwickeln.
+Zur Erstellung dieses Datensatzes ist es nun nötig so viele repräsentative Daten wie möglich zu sammeln und diese mit der richtigen Lösung zu annotieren. Eine Methode für eine solche Annotierung wird in dieser Arbeit vorgestellt. Dieses Kapitel sollte nun veranschaulicht haben warum solche Methoden so essentiell sind, um künstliche Intelligenzen zu entwickeln.
+
+
+\subsection{Annotation von 3D-Punktwolken}
+\label{sec:CloudAnnotation}
+
+\begin{figure}%
+    \centering
+    \subfloat[Ungelabelte Punktwolke]{{\includegraphics[width=7.2cm, height=5cm]{clabelcloud}\label{fig:Cloud}}}%
+    \quad
+    \subfloat[Gelabelte Punktwolke]{{\includegraphics[width=7.2cm, height=5cm]{clabelcloudlabeled}\label{fig:CloudLabeled}}}%
+    \caption{Die Abbildungen zeigen zwei Punktwolken, wie sie in C.LABEL visualisiert werden.}\label{fig:C.LABELclouds}%
+\end{figure}
+
+Die Annotation von 3D-Punktwolken ist speziell im Automobilbereich ein oft durchgeführter Prozess. Eine der am häufigsten genutzten Möglichkeiten das Umfeld eines Fahrzeugs zu erfassen, ist die Nutzung eines Radar- oder LiDAR-Sesnors (siehe Kapitel \ref{sec:Lidar}). Diese Sensoren liefern Abstandsmessungen, in dem sie Signale aussenden und anhand der reflektierten Signale den Abstand zum reflektierenden Objekt berechnen. Ebenfalls liefern sie die dreidimensionalen Koordinaten der Punkte, an denen diese Reflexionen stattfanden. Diese Punkte bilden gemeinsam eine Punktwolke, die das Umfeld des Sensors repräsentieren (siehe Abbildung \ref{fig:C.LABELclouds}). 
+
+Im Bereich des autonomen Fahrens und der Fahrassistenzsysteme ist es eine wichtige Aufgabe, dass Computersysteme des Autos, durch maschinelles Lernen, trainiert werden, um Zusammenhänge und Muster in Punktwolken erkennen. Dadurch erkennt das Computersystem im Fahrzeug direkt, was in der unmittelbaren Umgebung passiert und kann auf Grund dieser Erkenntnisse, Entscheidungen über das zukünftige Handeln des Fahrzeugs treffen. Um dies zu bewerkstelligen müssen Trainingsdaten, in Form von Punktwolken, erstellt und annotiert werden. Bei der Annotation von Punktwolken, wird jedem Punkt eine Klassifikation zugeordnet. In der Abbildung \ref{fig:Cloud} ist eine Ausgangs-Punktwolke zu sehen und in Abbildung \ref{fig:CloudLabeled} wird die selbe Wolke mit Annotationen gezeigt\\
+
+Das Labeln von Punktwolken ist in der Regel deutlich komplexer und aufwändiger, als das Annotieren von zweidimensionalen Daten wie beispielsweise Bilder. Eine Punktwolke besteht oft aus mehreren Tausend Punkten, die unter Umständen alle klassifiziert werden müssen. Die Wahrscheinlichkeit, dass manche Punkte falsch oder gar nicht klassifiziert werden ist, durch die große Anzahl an Punkten, relativ hoch. Um eine geringe Fehlerrate bei der Annotation von Punktwolken zu gewährleisten, wird der Großteil dieses Prozesses in aufwändiger Arbeit manuell bewältigt. Um auch große Mengen an Daten, in einer annehmbaren Zeit, händisch zu annotieren, müssen die Werkzeuge dafür so effizient und komfortabel wie möglich sein.\\
+
+TODO TEXT C.Label mit allen point cloud Features.\\
+
+Der Prozess der Annotation von 3D-Punktwolken soll mit dem System und der Applikation, die in dieser Arbeit vorgestellt wird, verbessert werden.
 
 
 \section{Virtual Reality}
@@ -137,7 +214,7 @@ Anfang der achtziger Jahre gab es dann schon funktionierende VR-Systeme, beispie
 
 Die Projizierung auf jedes Auge vermittelt dabei einen räumlichen Eindruck, der durch das Prinzip der Stereoskopie verursacht wird \cite{bib:Stereoscopy}. Dieses Prinzip beruht darauf, dass durch zwei Augen die Umgebung aus zwei verschiedenen Blickwinkeln wahrgenommen wird. Dies kann leicht selbst festgestellt werden, indem man einen Finger zwischen die Augen hält und abwechselnd jedes Auge einzeln öffnet. Dabei ist zu erkennen, dass der Finger sich weiter rechts oder links im Blickfeld befindet, je nachdem welches Auge geöffnet ist. Durch die Zusammensetzung der zwei Blickwinkel durch das Gehirn entsteht ein für uns ein Tiefeneffekt. Dieser Effekt wird auch von VR-Brillen genutzt um 2D-Inhalte räumlich wirken zu lassen.
 
-Als Eingabegerät wurde sowohl eine Spracherkennung, als auch ein Handschuh benutzt, der Bewegungssensoren an jedem Finger hatte. Somit war es dem Benutzer möglich auf eine intuitive Weise mit dem System zu Interagieren (Abbildung \ref{fig:FirstVrOutsideView}), da das System die Bewegungen des Benutzers erkannte.\\
+Als Eingabegerät wurde sowohl eine Spracherkennung, als auch ein Handschuh benutzt, der Bewegungssensoren an jedem Finger hatte. Somit war es dem Benutzer möglich auf eine intuitive Weise mit dem System zu interagieren (Abbildung \ref{fig:FirstVrOutsideView}), da das System die Bewegungen des Benutzers erkannte.\\
 
 Am Prinzip der VR-Technologie hat sich bis heute nicht viel verändert. Die Präsentation der virtuellen Welt geschieht immer noch durch eine Brille mit integrierten Linsen und einem Display (Abbildung \ref{fig:RiftConstruction}). Diese beinhaltet, ebenso wie die Eingabegeräte, Bewegungssensoren, die die Position und Orientierung dieser Komponenten misst.\\ 
 
@@ -145,71 +222,24 @@ Am Prinzip der VR-Technologie hat sich bis heute nicht viel verändert. Die Prä
     \centering
     \subfloat[VIVED Displayaufbau]{{\includegraphics[width=4cm]{FirstVrConcept}\label{fig:FirstVrConcept}}}%
     \qquad
-    \subfloat[Sicht eines VIVED Benutzers]{{\includegraphics[width=4cm]{FirstVrUserView}\label{fig:FirstVrUserView}}}%
-    \qquad
     \subfloat[Sicht auf einen VIVED Benutzer]{{\includegraphics[width=4cm]{FirstVrOutsideView}\label{fig:FirstVrOutsideView}}}%
+    \qquad
+    \subfloat[Sicht eines VIVED Benutzers]{{\includegraphics[width=4cm]{FirstVrUserView}\label{fig:FirstVrUserView}}}%
     \qquad
     \subfloat[Rift Displayaufbau \cite{bib:RiftReview}]{{\includegraphics[width=4cm]{RiftConstruction}\label{fig:RiftConstruction}}}%
     \qquad
-    \subfloat[Sicht eines Rift Benutzers \cite{bib:AvatarHands}]{{\includegraphics[width=4cm]{RiftAvatar}\label{fig:RiftAvatar}}}%
-    \qquad
     \subfloat[Sicht auf einen Rift Benutzer \cite{bib:RiftUser}]{{\includegraphics[width=4cm]{RiftUser}\label{fig:RiftUser}}}%
+    \qquad
+    \subfloat[Sicht eines Rift Benutzers \cite{bib:AvatarHands}]{{\includegraphics[width=4cm]{RiftAvatar}\label{fig:RiftAvatar}}}%
     \caption{Vergleich zwischen den Anfängen der VR-Technologie und dem heutigen Stand. Die oberen drei Bilder zeigen das VIVED-System, das von S.S. Fisher vorgestellt wurde \cite{bib:NasaVr}. Die Unteren zeigen Bilder der Oculus Rift.}\label{fig:VIVED}%
 \end{figure}
 
-Die funktionelle Leistung der Komponenten ist im Laufe der Zeit jedoch deutlich besser geworden. Statt eckigen Polygonen können nun hochauflösende 3D-Modelle durch ein Display mit 2160 x 1200 Pixeln dargestellt werden (Abbildung \ref{fig:RiftAvatar}). Die Brille und die Eingabegeräte werden nun auch, zusätzlich zu den internen Bewegungssensoren, von externen Infrarot-Sensoren erfasst, um eine präzise Portierung der physischen Bewegungen in virtuelle zu übersetzen. Der größte Unterschied ist wohl, dass die VR-Technologie heutzutage hauptsächlich für Unterhaltungszwecke genutzt wird. Was früher mal ein Forschungsprojekt einer Raumfahrtorganisation war ist heute ein Entertainment-System, das in viele Privathaushalten zu finden ist.\\
+Die funktionelle Leistung der Komponenten ist im Laufe der Zeit jedoch deutlich besser geworden. Statt eckigen Polygonen können nun hochauflösende 3D-Modelle durch ein Display mit 2160 x 1200 Pixeln dargestellt werden (Abbildung \ref{fig:RiftAvatar}). Die Brille und die Eingabegeräte werden nun auch, zusätzlich zu den internen Bewegungssensoren, von externen Infrarot-Sensoren erfasst, um eine präzise Portierung der physischen Bewegungen in virtuelle zu übersetzen. Der größte Unterschied ist wohl, dass die VR-Technologie heutzutage hauptsächlich für Unterhaltungszwecke genutzt wird. Was früher ein Forschungsprojekt einer Raumfahrtorganisation war, ist heute ein Entertainment-System, das in vielen Privathaushalten zu finden ist.\\
 
-Ein Grund dafür war die Entwicklung der zwei, derzeit geläufigsten VR-Brillen \textit{Oculus Rift} und \textit{HTC Vive}. Ein paar geschichtliche Eckdaten davon wurden in \cite{bib:RiftHistorical} gesammelt. 2010 wurde der erste Prototyp der Oculus Rift von Palmer Luckily entworfen. Dieser hatte eine horizontale Sichtweite von 90°, was zur damaligen Zeit im Verbrauchermarkt einzigartig war. 2013 hatte Valve einen Durchbruch bei der Entwicklung von \textit{Low-Persistence}-Displays, den sie öffentlich geteilt haben. Dies war sehr hilfreich für alle Entwickler, denn Oculus beispielsweise benutzte seitdem bei all ihren nachfolgenden Brillen. Low-Persistence (zu deutsch: \textit{geringe Ausdauer}) bedeutet in dem Falle die angezeigten Bilder nur wenige Millisekunden anzuzeigen um somit Objekte, die sich Bewegen schärfer darstellen zu können. 2014 wurde Oculus Rift für zwei Milliarden Dollar von Facebook gekauft und beschäftigen mittlerweile circa 400 Mitarbeiter allein für die Virtual Reality Entwicklung. Daran kann man das Potential sehen, das große Konzerne in der VR-Technologie sehen, denn kurz danach kündigte nämlich auch Sony eine VR-Brille für die Playstation 4 an.\\
+Ein Grund dafür war die Entwicklung der zwei, derzeit geläufigsten VR-Brillen \textit{Oculus Rift} und \textit{HTC Vive}. Ein paar geschichtliche Eckdaten davon wurden in \cite{bib:RiftHistorical} gesammelt. 2010 wurde der erste Prototyp der Oculus Rift von Palmer Luckily entworfen. Dieser hatte eine horizontale Sichtweite von 90°, was zur damaligen Zeit im Verbrauchermarkt einzigartig war. 2013 hatte Valve einen Durchbruch bei der Entwicklung von \textit{Low-Persistence}-Displays, den sie öffentlich geteilt haben. Dies war sehr hilfreich für alle Entwickler von VR-Brillen. Oculus beispielsweise benutzte diese Art Display bei all ihren nachfolgenden Geräten. Low-Persistence (zu deutsch: \textit{geringe Ausdauer}) bedeutet in dem Falle die angezeigten Bilder nur wenige Millisekunden anzuzeigen, um somit Objekte, die sich Bewegen schärfer darstellen zu können. 2014 wurde Oculus Rift für zwei Milliarden Dollar von Facebook gekauft und beschäftigen mittlerweile circa 400 Mitarbeiter allein für die Virtual Reality Entwicklung. Daran kann man das Potential sehen, das große Konzerne in der VR-Technologie sehen, denn kurz danach kündigte nämlich auch Sony eine VR-Brille für die Playstation 4 an.\\
 
 Die, aus der Großproduktion der führenden VR-Konzerne resultierende, Massentauglichkeit und die Erschwinglichkeit der Technologie machen diese aber auch für die Industrie interessant. Vor allem Im Zuge der \textit{Industrie 4.0} ist VR für Digitalisierung des industriellen Umfelds von Nutzen. Es werden Leistungsfähige und qualitativ immer bessere Lösungen zur virtuellen Datenerfassung und -visualisierung entwickelt. Mittels VR lassen sich Arbeitssituationen simulieren und gefahrlos testen. Industriearbeiter können in Umgebungen agieren, die in der Form noch gar nicht existieren. So können zum Beispiel Arbeitsumfelder und -prozesse effizient geplant werden. Schadens- und Störfälle lassen sich dank VR schnell und in Gänze erfassen und aus der Ferne warten. Es können auch Dinge räumlich begehbar gemacht werden, die es in der physischen Welt nicht gibt, wie beispielsweise Sensordaten. Im Rahmen dieser Arbeit werden Daten eines Lidarsensors als Punktwolke dargestellt, durch die man sich dann Bewegen kann.  
 
-\section{Aufnahme von Punktwolken mit LiDAR}
 
-Punktwolken, wie sie in dieser Arbeit behandelt werden, bestehen aus vielen einzelnen Abstandsmessungen, wobei jeder Punkt einer dieser Messungen entspricht. LiDAR (\textit{Light Detection and Ranging}) ist eine Methode zur Abstandsmessung mit Hilfe von Licht, welche in der Automobilbranche häufig verwendet wird. In den letzten Jahrzehnten wurde der LiDAR-Sensor aber auch in vielen anderen Bereichen zur herkömmlichen Methode, wenn es um die Messung von Abstandsinformationen geht. Im Bereich Archeologie benutzten Johnson und Oiumet diese Technologie um die Landschaft von New England in den USA zu analysieren \cite{bib:LidarArcheology}. Die Analyse von Landschaften ist durch LiDAR aber nicht nur auf dem Planeten Erde möglich. In \cite{bib:LidarSpace} wurde LiDAR benutzt um Oberflächenmessungen auf dem Mars durchzuführen. In der Robotik wird es häufig verwendet um Hindernisse für mobile Roboter zu identifizieren, wie in \cite{bib:LidarRobotic}.\\
-
-Für die Messung der Distanz wird in der Regel ein Laser benutzt. Der LiDAR-Sensor sendet mit Hilfe eines solchen Lasers einen Lichtimpuls aus und misst die Zeit $t$ bis das Signal wiederkehrt. Anhand dieser Zeit ist es möglich die Distanz $d$ zu bestimmen, die vom Licht zurückgelegt wurde. Dazu nimmt man die Formel \ref{eq:LidarDistance}, in der $c$ für die Geschwindigkeit des Lichts steht.
-
-\begin{equation}
-\label{eq:LidarDistance}
-\ d = \frac{c\cdot\Delta t}{2}
-\end{equation} 
-
-Mit dem Impuls eines einzelnen Lasers bekommt man eine einzelne Abstandsmessung für den Zeitpunkt des Impulses. Führt man aber viele dieser Messungen innerhalb einer 360° Drehung durch bekommt man Abstandsinformationen des gesamten Umfeldes. Eine Möglichkeit eine 360° Umfeldmessung zu ermöglichen ist es den Sensor um seine eigene Achse zu drehen, wie es in Abbildung \ref{fig:Lidar} gezeigt wird. In der oberen Reihe dieser Abbildung ist der LiDAR-Sensor zu sehen, dessen Lichtimpuls durch einen Spiegel (graues Objekt) gezielt auf die Umgebung gerichtet wird. Dieser Spiegel dreht sich um die eigene Achse um die Lichtimpulse nach und nach auf das Umfeld zu verteilen. In der mittleren Reihe ist die Vogelperspektive auf den Sensor und seine Umgebung abgebildet. Der Sensor ist, wie in der oberen Abbildung, in blau dargestellt und die Objekte des Umfeldes in grün. Die unteren Abbildungen zeigen, ebenfalls in der Vogelperspektive, die Abstandsinformationen, die der Sensor liefert. Diese werden in Form von blauen Punkten dargestellt und bilden eine zweidimensionale Punktwolke, in der man den Rahmen des Umfelds und das kreisförmige Objekt erkennen kann.\\
-
-\begin{figure}%
-    \centering
-    \subfloat[]{{\includegraphics[width=4cm]{Lidar1}\label{fig:Lidar1}}}%
-    \qquad
-    \subfloat[]{{\includegraphics[width=4cm]{Lidar2Phi}\label{fig:Lidar2}}}%
-    \qquad
-    \subfloat[]{{\includegraphics[width=4cm]{Lidar3}\label{fig:Lidar3}}}%
-    \caption{Ablauf einer LiDAR-Messung von einem Sensor, der die Messimpulse im Uhrzeigersinn abgibt. Die Bilder stammen von \cite{bib:LidarPictures} und \ref {fig:Lidar2} wurde um den Winkel $\varphi$ erweitert.}\label{fig:Lidar}%
-\end{figure}
-
-Diese Methode liefert also eine gute horizontale Rundumsicht, welche aber innerhalb der vertikalen Sichtweite keinerlei Informationen bietet. Dies genügt in der Regel für simple Abstandserkennungen und Detektion von Hindernissen auf Höhe des Sensors. Möchte man jedoch Aussagen über das detektierte treffen oder braucht Informationen über andere vertikalen Ebenen, beispielsweise den Boden, muss man diese Methode noch erweitern. Dafür werden mehrere Lichtimpulse mit verschiedenen vertikalen Winkeln ausgesendet. Diese treffen die Umgebung dann mit unterschiedlicher Höhe womit die daraus resultierende Punktwolke eine dritte Dimension erhält. In Abbildung \ref{fig:LidarVertical} ist die seitliche Sicht auf einen LiDAR-Sensor mit mehreren vertikalen Lasern zu sehen.\\
-
-\begin{figure}%
-	\centering
-    \includegraphics[width=14cm]{LidarVerticalTheta}
-    \caption{Seitliche Sicht auf eine LiDAR-Messung mit mehreren, verital angeordneten Lasern. Die Abbildung stammt aus der Arbeit \cite{bib:FastGroundSeg} und wurde durch die Einzeichnung des Winkels $\theta$ erweitert.}
-    \label{fig:LidarVertical}
-\end{figure}
-
-Wie schon erwähnt werden die erhaltenen Messdaten in eine Struktur konvertiert, die sich Punktwolke nennt. Dafür werden die Abstandsinformationen innerhalb eines bestimmten Koordinatensystems dargestellt. In der Regel wird dabei das \textit{Sphärische Koordinatensystem} verwendet. Darin wird jeder Punkt durch einen Abstand $r$ von einem Referenzpunkt und zwei dazugehörigen Winkel repräsentiert. Einer dieser Winkel ist dabei horizontal (Winkel $\varphi$) zu interpretieren und der andere vertikal (Winkel $\theta$). 
-
-Nimmt man den Punkt \glqq 1\grqq{} aus der Abbildung \ref{fig:LidarVertical} als Beispiel, entspräche $\theta$ dem vertikalen Winkel. Dieser gibt den Winkel zwischen der gelben, gestrichelten Linie und der roten Linie an, die den Sensor und \glqq 1\grqq{} verbindet. Diese rote Linie repräsentiert den Abstand des Punktes vom Referenzpunkt, welcher der Position des Sensors entspricht. Der horizontale Winkel ist der Rotationswinkel des Sensors um seine eigene Achse (vgl. $\varphi$ in Abbildung \ref {fig:Lidar2}). Dieser wird vom Sensor bei jedem abgegebenen Impuls gemessen. Zusammenfassend kann also durch den vertikalen Winkel $\theta$ des Lichtimpulses, den horizontalen Winkel $\varphi$ des Sensors und dem gemessenen Abstand $r$ zum Sensor, der Punkt \glqq 1\grqq{} genau im Raum definiert werden.\\
-
-Viele Anwendungen, die mit Punktwolken zu tun haben arbeiten jedoch mit dem kartesischen Koordinatensystem, so auch C.LABEL-VR. In diesem Koordinatensystem wird jeder dreidimensionale Punkt durch drei Koordinaten angegeben, nämlich der $x$-, $y$- und $z$-Koordinate. Ausgehend von den drei Werten des sphärischen Koordinatensystem können die drei kartesischen Koordinaten durch die Formeln in \ref{eq:SphToKart} berechnet werden. Auch hier steht $r$ für den Abstand zwischen dem Referenzpunkt und dem Punkt den man definieren will. $\theta$ steht für den vertikalen Winkel und $\varphi$ für den horizontalen Winkel, also den Rotationswinkel des Sensors um die eigene Achse.
-
-\begin{subequations}
-\begin{align}
-        &x = r\sin\theta\cos\varphi \\
-		&y = r\sin\theta\sin\varphi \\
-		&z = r\sin\theta
-\end{align}
-\label{eq:SphToKart}
-\end{subequations}
-
-Durch die eben erklärte Definition der Messdaten in einem Koordinatensystem können diese Daten nun mit geeigneten Programmen (C.LABEL) als Punktwolke dargestellt werden. Darin ist dann jede einzelne Messung die der Sensor getätigt hat sichtbar. Somit kann der Mensch die Daten visuell analysieren und beispielsweise Zusammenhänge wie Objekte entdecken. Damit auch Computersysteme solche Objekte in diesen Daten erkennen können müssen sie erst lernen wie diese aussehen. Dazu muss eine Vielzahl an Punktwolken mit Hilfe eines LiDAR-Sensors aufgenommen werden und anschließend eine, vom Anwendungsfall abhängige, Anzahl an Punkten in dieser Wolke mit entsprechenden Klassifikationen versehen werden (Prinzip der Annotation aus Kapitel \ref{sec:Annotation}). Mit den annotierten Daten können nun Algorithmen, wie beispielsweise künstliche neuronale Netze (vgl. Kapitel \ref{sec:KNN}), lernen welche Zusammenhänge es in solchen Daten gibt und diese dann in nicht annotierten Daten wiedererkennen. Das Ziel von C.LABEL-VR ist es solche Daten in der virtuellen Realität zu visualisieren und Funktionen zur Verfügung zu stellen diese in der virtuelle Umgebung zu annotieren.
 
 

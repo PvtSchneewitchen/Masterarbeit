@@ -49,7 +49,7 @@ Die Importierten Daten, beispielsweise HDF5, enthalten allerdings oft deutlich m
 
 \begin{figure}%
 	\centering
-    \includegraphics[width=13.5cm]{Import_Export_Architecture}
+    \includegraphics[width=15cm]{Import_Export_Architecture}
     \caption{Das Import-Export-Prinzip in C.LABEL-VR}
     \label{fig:ImportExport}
 \end{figure}
@@ -118,11 +118,18 @@ Sind alle Werte den Tabellen zugewiesen worden, kann eine neue HDF5-Datei erstel
 
 \section{Generierung einer Punktwolke}
 \label{sec:Generierung}
-Nach dem man die Informationen über die internen Datenstrukturen durch den Import gesammelt hat, kann man mit der Generierung der Punktwolken anfangen. Ziel davon ist es die Punktwolkendaten zu visualisieren, damit der Benutzer sie sehen und mit ihnen interagieren kann. In der Regel wird dafür, in einer passenden Visualisierungsumgebung, für jede Position eines Punktes ein Objekt eingezeichnet. Meistens sind dies zweidimensionale Punkte, die lediglich eine quadratische Einfärbung von Pixeln sind. 
+\begin{figure}%
+    \centering
+    \subfloat[C.Label]{\fbox{\includegraphics[width=7cm]{CarClabel}\label{fig:CarClabel}}}%
+    \quad
+    \subfloat[C.Label-VR]{\fbox{\includegraphics[width=6.8cm]{CarClabelVR}\label{fig:CarClabelVR}}}%
+    \caption{Vergleich der Darstellung von Perspektive und Tiefe zwischen C.LABEL und C.LABEL-VR}
+    \label{fig:CloudCompare}%
+\end{figure}
 
-------------Bild Punktwolke normal und VR-------------
+Nach dem man die Informationen über die internen Datenstrukturen durch den Import gesammelt hat, kann man mit der Generierung der Punktwolken anfangen. Ziel davon ist es die Punktwolkendaten zu visualisieren, damit der Benutzer sie sehen und mit ihnen interagieren kann. In der Regel wird dafür, in einer passenden Visualisierungsumgebung, für jede Position eines Punktes ein Objekt eingezeichnet. Meistens sind dies zweidimensionale Punkte, die lediglich eine quadratische Einfärbung von Pixeln sind (siehe Abbildung \ref{fig:CarClabel}).\\
 
-In C.Label-VR wird jeder Punkt durch eine dreidimensionale Kugel repräsentiert. Dadurch wird für den Benutzer der Eindruck erzeugt, dass die Sensordaten durch echte Objekte im Raum repräsentiert werden. Diese Objekte, sind durch ihre dreidimensionale Eigenschaft gut sichtbar sind und wirken für den Benutzer greifbar. Dies ist ein großer Unterschied zu bisherigen Visualisierungen und bietet einen erheblichen optischen Mehrwert. Die Unity Engine, als Visualisierungsumgebung, bietet nämlich die richtige Darstellung der räumlichen Proportionen an jeder Position. Diese Proportionen, also auch die Darstellung der Sensordaten im richtigen Maßstab, werden durch das Rendering der Unity Engine für jedes Bild berechnet (erklärt in Abschnitt \ref{sec:UnityDevelopment}) und somit immer richtig für den Benutzer dargestellt.\\
+In C.Label-VR wird jeder Punkt durch eine dreidimensionale Kugel repräsentiert (siehe Abbildung \ref{fig:CarClabelVR}). Dadurch wird für den Benutzer der Eindruck erzeugt, dass die Sensordaten durch echte Objekte im Raum repräsentiert werden. Diese Objekte, sind durch ihre dreidimensionale Eigenschaft gut sichtbar sind und wirken für den Benutzer greifbar. Dies ist ein großer Unterschied zu bisherigen Visualisierungen und bietet einen erheblichen optischen Mehrwert. Die Unity Engine, als Visualisierungsumgebung, bietet nämlich die richtige Darstellung der räumlichen Proportionen an jeder Position. Diese Proportionen, also auch die Darstellung der Sensordaten im richtigen Maßstab, werden durch das Rendering der Unity Engine für jedes Bild berechnet (erklärt in Abschnitt \ref{sec:UnityDevelopment}) und somit immer richtig für den Benutzer dargestellt.\\
 
 Die dreidimensionalen Punkte sind dabei vorgefertigte Objekte. Dieses Vorfertigen von Objekten bietet sich bei der Entwicklung mit Unity immer dann an, wenn mehrere gleiche Objekte zur gleichen Zeit existieren sollen, wie es beispielsweise bei einer Punktwolke der Fall ist. Die Erstellung solcher Objekte, die in Unity \textit{Prefabs} genannt werden, ist eine herkömmliche Methode bei der Entwicklung mit Unity \cite{bib:UnityPrefab}.\\ 
 
@@ -134,7 +141,6 @@ Die dreidimensionalen Punkte sind dabei vorgefertigte Objekte. Dieses Vorfertige
     \caption{Beide Bilder zeigen Komponenten aus der Unity Editor, die dem Punkt-Prefab zugeordnet sind.}
     \label{fig:Components}%
 \end{figure}
-
 
 Das Punkt-Prefab, das für C.LABEL-VR vorgefertigt wurde um einen Punkt in der Punktwolke zu repräsentieren, besteht dabei aus mehreren Komponenten. Eine Komponente ist dabei die Transform-Komponente (siehe Abschnitt \ref{sec:UnityDevelopment}), welche die Position des Punktes festlegt. Eine weitere ist die \textit{Mesh Renderer}-Komponente. Ein Mesh (zu deutsch: Gewebe/Netz) ist in der Spielentwicklung ein gängiger Begriff für das dreidimensionale Modell eines Objektes \cite{bib:Meshes}. Für das Punkt-Prefab wird das Modell einer Kugel verwendet (\textit{Sphere} als Mesh in Abbildung \ref{fig:MeshCollider}). Der Mesh-Renderer legt dabei die Materialeigenschaften des Objektes fest \cite{bib:MeshRenderer}. Diese Eigenschaften enthalten beispielsweise die Textur, also das Aussehen der Oberfläche des Objektes, die Reflexionseigenschaften oder wie die Art wie das Objekt Lichteinwirkungen auf die Umgebung verteilt. Das Standard-Material das beim Punkt-Prefab verwendet wird ist ein vorgefertigtes Material \textit{Unlabeled} (siehe Abbildung \ref{fig:MeshRenderer}), welches eine einfarbige, schwarze Oberfläche hat. Schwarze Punkte repräsentieren also diejenigen Punkte, die noch nicht annotiert wurden. Andere Eigenschaften wie Licht, Reflexionen oder Schatten wurden mit Parametern belegt, die so wenig wie möglich Berechnungen erfordern, damit die Bildwiederholungsrate der Applikation so hoch wie möglich gehalten werden kann. Genauer ist dies im folgenden Abschnitt \ref{sec:Optimierung} erklärt. \\
 
@@ -173,12 +179,14 @@ public Vector3 PointPosition
 \end{lstlisting}
 \quad
 
-----Evtl. Koordinatensystem anpassung-----------------
+\begin{figure}%
+	\centering
+    \fbox{\includegraphics[width=15cm]{PreLabeledPointcloud}}
+    \caption{Punktwolke in C.LABEL-VR mit mit Annotationen, die beim Einlesen der Daten schon vorhanden sind.}
+    \label{fig:PreLabelCloud}
+\end{figure}
 
-Das Punkt-Prefab, mit all seinen Komponenten und deren richtig festgelegten Eigenschaften, kann nun für jeden Punkt aus den Input-Daten instantiiert werden. Dafür gitb es in Unity die spezielle Funktion \textit{Instantiate} \cite{bib:Instantiate}. Die Unity Engine klont dadurch für jede Instanz das vorgefertigte Ausgangsobjekt, wobei jedes der Klone nach der Instantiierung individuell veränderbar ist. Nachdem die Instanz eines Punktes erstellt wurde kann also seine Position festgelegt werden und, wenn beim Import schon vorhanden, das Label des Punktes gesetzt werden. Durch das Vorgehen, das in diesem Abschnitt beschrieben wurde entsteht eine Punktwolke, welche in einer virtuellen Umgebung betrachtet werden kann. 
-
---------------------Abbildung Punktwolke mit pre labels----------------
-
+Das Punkt-Prefab, mit all seinen Komponenten und deren richtig festgelegten Eigenschaften, kann nun für jeden Punkt aus den Input-Daten instantiiert werden. Dafür gitb es in Unity die spezielle Funktion \textit{Instantiate} \cite{bib:Instantiate}. Die Unity Engine klont dadurch für jede Instanz das vorgefertigte Ausgangsobjekt, wobei jedes der Klone nach der Instantiierung individuell veränderbar ist. Nachdem die Instanz eines Punktes erstellt wurde kann also seine Position festgelegt werden und, wenn beim Import schon vorhanden, das Label des Punktes gesetzt werden (vgl. Abbildung \ref{fig:PreLabelCloud}). Durch das Vorgehen, das in diesem Abschnitt beschrieben wurde entsteht eine Punktwolke, welche in einer virtuellen Umgebung betrachtet werden kann. 
 
 \subsection{Optimierung der Bildwiederholungsrate}
 \label{sec:Optimierung}
@@ -261,11 +269,13 @@ Durch den freien Flugmodus soll dem Benutzer eine Bewegungsart zur Verfügung ge
  
 \subsection{Teleport-Modus}
 \label{sec:TeleportMode}
-Semaphor mit GetDown austauschen\\
 
 Der Teleport-Modus ist der zweite Navigationsmodus der für C.LABEL-VR entwickelt wurde. Der Zweck dieses Modus ist es, die Anfälligkeit des freien Flug-Modus (Abschnitt \ref{sec:FreeFlyMode}) für die VR-Krankheit auszugleichen. Symptome der VR-Krankheit treten beim freien Flug auf, da der Benutzer eine konstante Bewegung auf visuellem Weg wahrnimmt, jedoch nicht mit dem Gleichgewichtssinn spürt. Durch Teleportation, also den unverzögerten Sprung von einer Position zu einer anderen, gibt es keine konstante Bewegung. So soll nun der VR-Krankheit entgegen gewirkt werden. Diese Art der Bewegung ist aktuell die am weitesten verbreitet unter VR-Anwendungen \cite{bib:VRLocomotionReview}, da sie nachweislich weniger anfällig für die VR-Krankheit ist \cite{bib:PointTeleport}.\\
 
-Das Prinzip der Steuerung ist ähnlich wie das des freien Flug-Modus. Steuerungsbefehle kann der Benutzer zunächst mit den Sticks tätigen (siehe \textit{Thumbstick} in Abbildung \ref{fig:OculusTouchPic}). Auch hier wird die Längs- und die Lateral-Bewegung mit dem linken und die Vertikal- und Rotations-Bewegung mit dem Rechten Stick gesteuert. Die genauen Steueranweisungen sind in der Bedienungsanleitung zur Applikation zu finden (APPENDIX).\\
+Das Prinzip der Steuerung ist ähnlich wie das des freien Flug-Modus. Steuerungsbefehle kann der Benutzer zunächst mit den Sticks tätigen (siehe \textit{Thumbstick} in Abbildung \ref{fig:OculusTouchPic}). Auch hier wird die Längs- und die Lateral-Bewegung mit dem linken und die Vertikal- und Rotations-Bewegung mit dem Rechten Stick gesteuert. 
+
+TODO TEXT abklären
+-------Die genauen Steueranweisungen sind in der Bedienungsanleitung zur Applikation zu finden (APPENDIX).-----------\\
 
 Wie schon erwähnt gibt es, im Gegensatz zum freien Flug-Modus, keine konstante Bewegung durch die Benutzereingaben. Stattdessen wird die Position des Benutzers in der virtuellen Welt durch die Steuerbefehle unverzögert verschoben, sodass es einem Teleport gleicht. Die Implementation dieses Vorgangs ist dank der Transform-Komponente eines Gameobjects (siehe Abschnitt \ref{sec:UnityDevelopment}) nicht aufwändig. Wie in der Auflistung \ref{lst:Teleport} zu sehen ist, kann die Verschiebung des Objekts \textit{userView} um einen Vektor mit einem einzigen Befehl vollzogen werden. Dieses Objekt repräsentiert dabei die Augen des Benutzers in der virtuellen Welt. Wird es also verschoben, ist es für den Benutzer so, als würde er von einer zur anderen Position teleportiert werden. Der Vektor um den der Benutzer verschoben wird, kann von ihm selber eingestellt werden (siehe Kapitel \ref{sec:AppMenu}).
 
@@ -276,9 +286,16 @@ userView.transform.Translate(new Vector3(xDirection, yDirection, zDirection));
 \end{lstlisting}
 \quad
 
-------------Bild mit pointer teleport einfügen---------
+\begin{figure}%
+    \centering
+    \subfloat[Vor dem Teleport]{\fbox{\includegraphics[width=12cm]{PointerTeleportPre}\label{fig:PointerTeleportPre}}}%
+    \qquad
+    \subfloat[Nach dem Teleport]{\fbox{\includegraphics[width=12cm]{PointerTeleportAfter}\label{fig:PointerTeleportAfter}}}%
+    \caption{Zu sehen ist der Vorgang eines Pointer-Teleports.}
+    \label{fig:Components}%
+\end{figure}
 
-Zusätzlich zu den Benutzereingaben durch den Stick, gibt es eine weitere Möglichkeit für den Benutzer sich an eine bestimmte Stelle in der virtuellen Welt zu teleportieren. Dazu kann er eine Art Laserstrahl aktivieren, der vom linken virtuellen Controller ausgeht (Abbildung \ref{fig:PointerTeleport}). Dieser Strahl fungiert wie eine Stange die der Benutzer in der Hand hält, sie bewegt sich also mit der Handbewegung des Nutzers mit. Der Strahl kann durch die Hand-Auslöser-Taste des linken Controllers aktiviert werden (siehe \textit{PrimaryHandTrigger} in Abbildung \ref{fig:OculusTouchPic}). Dabei wird auch die Länge des Strahls angezeigt, was ebenfalls in der Abbildung \ref{fig:PointerTeleport} zu sehen ist. Die Länge des Strahls kann anschließend vom Benutzer angepasst werden, indem er den linken Stick nach vorne (Strahl wird länger) oder nach hinten (Strahl wird kürzer) drückt. Betätigt der Benutzer die Index-Auslöser-Taste (\textit{PrimaryIndexTrigger} in Abbildung \ref{fig:OculusTouchPic}) wird er an die Spitze des Laserstrahls teleportiert. Mit Hilfe dieser Teleportationsart kann der Benutzer auch weite Distantzen in der virtuellen Welt schnell zurücklegen. Für die Implementation dieser Funktion kann ebenfalls der Befehl aus der Auflistung \ref{lst:Teleport} verwendet werden, wobei statt dem neu erzeugten Vektor die Position des Strahlendes verwendet wird.\\
+Zusätzlich zu den Benutzereingaben durch den Stick, gibt es eine weitere Möglichkeit für den Benutzer sich an eine bestimmte Stelle in der virtuellen Welt zu teleportieren. Dazu kann er eine Art Laserstrahl aktivieren, der vom linken virtuellen Controller ausgeht (Abbildung \ref{fig:PointerTeleportPre}). Dieser Strahl fungiert wie eine Stange die der Benutzer in der Hand hält, sie bewegt sich also mit der Handbewegung des Nutzers mit. Der Strahl kann durch die Hand-Auslöser-Taste des linken Controllers aktiviert werden (siehe \textit{PrimaryHandTrigger} in Abbildung \ref{fig:OculusTouchPic}). Dabei wird auch die Länge des Strahls angezeigt, was ebenfalls in der Abbildung \ref{fig:PointerTeleportPre} zu sehen ist. Die Länge des Strahls kann anschließend vom Benutzer angepasst werden, indem er den linken Stick nach vorne (Strahl wird länger) oder nach hinten (Strahl wird kürzer) drückt. Betätigt der Benutzer die Index-Auslöser-Taste (\textit{PrimaryIndexTrigger} in Abbildung \ref{fig:OculusTouchPic}) wird er an die Spitze des Laserstrahls teleportiert (vgl. Abbildung \ref{fig:PointerTeleportAfter}). Mit Hilfe dieser Teleportationsart kann der Benutzer auch große Distanzen in der virtuellen Welt, schnell zurücklegen. Für die Implementation dieser Funktion kann ebenfalls der Befehl aus der Auflistung \ref{lst:Teleport} verwendet werden, wobei statt dem neu erzeugten Vektor die Position des Strahlendes verwendet wird.\\
 
 Durch die Bewegung mittels Teleport wird also der VR-Krankheit entgegengewirkt, da es keine konstante Bewegung für den Benutzer gibt. Durch den Teleport mittels Laserstrahl können hierbei auch große Distanzen vom Benutzer zurückgelegt werden. Der Nachteil dieses Bewegungsmodus ist es, dass durch feste Teleportationsdistanzen keine präzise Stuerung mehr garantiert werden kann. Da aber genau dafür der freie Flug-Modus Abhilfe schafft, ergänzen sich die beiden Navigationsmodi sehr gut und bieten dem Benutzer so passende Möglichkeiten sich durch die virtuelle Welt zu Bewegen.
  
@@ -287,17 +304,18 @@ Durch die Bewegung mittels Teleport wird also der VR-Krankheit entgegengewirkt, 
 \label{sec:Annotation}
 Nachdem im vorherigen Kapitel Möglichkeiten erläutert wurden, wie man durch eine VR-Punktwolke navigieren kann, gilt es nun Punkte aus dieser Wolke zu annotieren. Dazu wurden drei verschieden Möglichkeiten implementiert. Alle drei basieren zunächst auf Kollisionserkennungen, bei denen erkannt wird, dass ein Objekt mit einem Punkt der Wolke kollidiert. Auf diese Weise können Punkte mit einem anderen Objekt ausgewählt werden um diese anschließend zu annotieren. Die Auswahl erfolgt, beispielsweise bei der Pointer Annotation in Kapitel \ref{sec:SimplePointerAnnotation}, mit einer Art Laserpointer. Die Interaktion mit Objekten innerhalb von VR-Applikationen erfolgt oft über derartige Pointer \cite{bib:OftenPointerUse}. Eine andere Art der Auswahl ist die Berührung eines Punktes mit dem virtuellen Controller. Da sich der virtuelle Controller wie der physische Controller verhält, den der Benutzer in der Hand hält, ist es so, als würde der Benutzer den Punkt selbst berühren. Dieses Verfahren nennt sich \textit{Touch Annotation} und wird in Kapitel \ref{sec:TouchAnnotation} beschrieben. Die dritte Art der Annotation bietet die Möglichkeit, einen ganzen Cluster von Punkten auf einmal zu annotieren. Dazu annotiert der Benutzer einen einzelnen Punkt mit einem Pointer. Ist während dessen die CLuster-Annotation aktiviert, wird dieser Punkt als Startpunkt benutzt und ein Algorithmus sucht sich alle umliegenden Punkte, die zum gleichen Objekt gehören wie der Startpunkt. Alle gefundenen Punkte werden auf einmal annotiert. Die Funktionsweise dieses Algorithmus wird im Kapitel \ref{sec:GroundPointSegmentation} erläutert.\\
 
------TODO BILD Bild mit klasse über dem rechten controller------------\\
-
-
-Um die Punkte mit einer bestimmten Klassifikation zu versehen, muss erst die richtige Klasse ausgewählt werden. Der Name der aktuell ausgewählten Klasse wird stets über dem rechten Controller angezeigt. Zur Auswahl der gewünschten Klassifikation gibt es in C.LABEL-VR zwei Möglichkeiten. Zum einen kann der Benutzer mit den Tasten \textit{One} und \textit{Two} aus Abbildung \ref{fig:OculusTouchPic} durch die vorhandenen Klassen iterieren. Eine andere Möglichkeit ist die Nutzung einer Funktionsweise die einer Pipette ähnelt. Dazu wird mit dem Pointer ein Punkt mit der gewünschten Label anvisiert und anschließen die Pipetten-Funktion mit dem Drücken des \textit{SecondaryThumbstick} aktiviert. Die aktuell ausgewählte Klassifikation wird somit durch die Klassifikation des anvisierten Punktes ersetzt. Auf diese zwei Arten kann der Benutzer das gewünschte Label auswählen, um anschließend Punkte mit diesem zu annotieren.
+Um die Punkte mit einer bestimmten Klassifikation zu versehen, muss erst die richtige Klasse ausgewählt werden. Der Name der aktuell ausgewählten Klasse wird stets über dem rechten Controller angezeigt (vgl. Abbildung \ref{fig:PointerAnnotation}). Zur Auswahl der gewünschten Klassifikation gibt es in C.LABEL-VR zwei Möglichkeiten. Zum einen kann der Benutzer mit den Tasten \textit{One} und \textit{Two} aus Abbildung \ref{fig:OculusTouchPic} durch die vorhandenen Klassen iterieren. Eine andere Möglichkeit ist die Nutzung einer Funktionsweise die einer Pipette ähnelt. Dazu wird mit dem Pointer ein Punkt mit der gewünschten Label anvisiert und anschließen die Pipetten-Funktion mit dem Drücken des \textit{SecondaryThumbstick} aktiviert. Die aktuell ausgewählte Klassifikation wird somit durch die Klassifikation des anvisierten Punktes ersetzt. Auf diese zwei Arten kann der Benutzer das gewünschte Label auswählen, um anschließend Punkte mit diesem zu annotieren.
 
 \subsection{Pointer Annotation}
 \label{sec:SimplePointerAnnotation}
-Die erste Annotationsmöglichkeit, die für C.LABEL implementiert wurde, ist die Pointer Annotation. Der Name dieser Annotationsart kommt daher, dass damit Punkte mit einer Art Laserpointer annotiert werden können. Solch ein Pointer ist auch schon beim Pointer Teleport im vorherigen Abschnitt \ref{sec:TeleportMode} vorgestellt worden. Der Pointer besteht dabei aus einem Strahl und einer Kugel (\textit{Cursor}) am Ende des Strahls. Er geht vom rechten Controller aus und wird mit dem \textit{SecondaryHandTrigger} aktiviert (siehe Abbildung \ref{fig:OculusTouchPic}). Wird diese Taste wieder losgelassen, wird der Pointer deaktiviert und ist somit nicht mehr sichtbar. Mit Hilfe des aktivierten Pointers, kann der Benutzer einen Punkt anvisieren, den er annotieren möchte. Ist der gewünschte Punkt anvisiert, so wird er, durch Betätigung des \textit{SecondaryIndexTrigger}, mit der aktuell ausgewählten Klassifikation versehen. \\
+Die erste Annotationsmöglichkeit, die für C.LABEL implementiert wurde, ist die Pointer Annotation. Der Name dieser Annotationsart kommt daher, dass damit Punkte mit einer Art Laserpointer annotiert werden können. Solch ein Pointer ist auch schon beim Pointer Teleport im vorherigen Abschnitt \ref{sec:TeleportMode} vorgestellt worden. Der Pointer besteht dabei aus einem Strahl und einer Kugel (\textit{Cursor}) am Ende des Strahls. Er geht vom rechten Controller aus und wird mit dem \textit{SecondaryHandTrigger} aktiviert (siehe Abbildung \ref{fig:OculusTouchPic}). Wird diese Taste wieder losgelassen, wird der Pointer deaktiviert und ist somit nicht mehr sichtbar. Mit Hilfe des aktivierten Pointers, kann der Benutzer einen Punkt anvisieren, den er annotieren möchte. Ist der gewünschte Punkt anvisiert, so wird er, durch Betätigung des \textit{SecondaryIndexTrigger}, mit der aktuell ausgewählten Klassifikation versehen. Die Abbildung \ref{fig:PointerAnnotation} zeigt diesen Prozess.\\ 
 
-TODO BILD
----Ein Punkt der mit dem Pointer annotiert wurde ist in Abbildung ... zu sehen. ---\\
+\begin{figure}%
+	\centering
+    \fbox{\includegraphics[width=15cm]{PointerAnnotation}}
+    \caption{Annotation eines Punktes mit der Klasse \textit{Car}, durch eine Pointer-Annotation}
+    \label{fig:PointerAnnotation}
+\end{figure}
 
 Um das Annotieren mit solch einem Pointer zu realisieren, sind zwei Hauptfunktionen zu implementieren. Zum einen ist dies die dynamische Anpassung der Pointer-Länge beim Auftreffen des Pointers auf Objekte und zum anderen die Identifikation der Objekte, mit dem der Pointer kollidiert, wenn ein Annotationsbefehl gegeben wird. Die Anpassung der Pointer-Länge geschieht über ein \textit{Raycasting}. Ein Ray ist in Unity eine Halbgerade, die von einem Ursprung in eine bestimmte Richtung verläuft. Im falle des Pointers wird ein Ray initialisiert, der seinen Ursprung vorne am Controller hat (über dem IndexTrigger) und längs aus dem Controller heraus verläuft. Ursprung und Richtung des Rays passen sich immer der Position und Orientierung des Controllers an, sodass dieser immer längs aus dem Controller heraus verläuft. Entlang dieses Rays kann der Pointer gezeichnet werden. Ursprung und Orientierung des Pointers ist also die gleiche, wie die des Rays.\\ 
 
@@ -312,11 +330,16 @@ Anhand dieser Komponenten kann festgestellt werden, welchen Objekten diese zugeo
 \subsection{Touch Annotation}
 \label{sec:TouchAnnotation}
 
------TODO BILD Bild von touch labeling einfügen und im text referenzieren, bild evtl mit touch object-----------------\\
+\begin{figure}%
+	\centering
+    \fbox{\includegraphics[width=15cm]{TouchLabeling}}
+    \caption{Abbildung eines Touch Annotations-Vorgang. Mit der linken Hand wird eine Punkt berührt, der dadurch klassifiziert wird.}
+    \label{fig:TouchLabeling}
+\end{figure}
 
-In Kapitel \ref{sec:WhyVR} wurde schon angemerkt, dass die Applikation auch für Marketingzwecke dienen soll, beispielsweise auf Messen, um Kunden auf das Unternehmen CMORE und dessen Prdoukte und Dienstleistungen aufmerksam zu machen. Dafür bietet sich die Virtual Reality Technologie an, da sie größtenteils immer noch als neuartig und deswegen als interessant angesehen wird. Damit C-LABEL-VR die Virtual Reality Technologie ausnutzt, wurde ein Annotationsmodus implementiert, der in dieser Form nur mit einem VR-System möglich ist. Gemeint ist damit die \textit{Touch Annotation}. Mit ihr ist es möglich, durch Berührung der Punkte mit dem virtuellen Controller, diese zu annotieren. Bewegt der Benutzer also seine Hand in Richtung eines Punktes, bewegt sich der virtuelle Controller ebenfalls in diese und sobald dieser den Punkt berührt, wird er annotiert. In diesem Moment wird dem Benutzer per Controller-Vibration eine haptische Rückmeldung gegeben. Dies führt für den Benutzer zu der Immersion, dass er den Punkt berühren würde.\\
+In Kapitel \ref{sec:WhyVR} wurde schon angemerkt, dass die Applikation auch für Marketingzwecke dienen soll, beispielsweise auf Messen, um Kunden auf das Unternehmen CMORE und dessen Prdoukte und Dienstleistungen aufmerksam zu machen. Dafür bietet sich die Virtual Reality Technologie an, da sie größtenteils immer noch als neuartig und deswegen als interessant angesehen wird. Damit C-LABEL-VR die Virtual Reality Technologie ausnutzt, wurde ein Annotationsmodus implementiert, der in dieser Form nur mit einem VR-System möglich ist. Gemeint ist damit die \textit{Touch Annotation}. Mit ihr ist es möglich, durch Berührung der Punkte mit dem virtuellen Controller, diese zu annotieren. Bewegt der Benutzer also seine Hand in Richtung eines Punktes, bewegt sich der virtuelle Controller ebenfalls in diese und sobald dieser den Punkt berührt, wird er annotiert (siehe Abbildung \ref{fig:TouchLabeling}). In diesem Moment wird dem Benutzer per Controller-Vibration eine haptische Rückmeldung gegeben. Dies führt für den Benutzer zu der Immersion, dass er den Punkt berühren würde.\\
 
-Das Funktionsprinzip dahinter ist, ähnlich wie bei der Pointer Annotation in Abschnitt \ref{sec:SimplePointerAnnotation}, eine Kollisionserkennung. Kollidiert der Controller mit einem Punkt der Punktwolke, wird dieser mit dem aktuell ausgewählten Label annotiert. Die virtuellen Controller, Hände und deren Funktionen werden vom \textit{Oculus Avatar SDK} zur Verfügung gestellt \cite{bib:AvatarSDK}. Diese beinhalten keine Kollisionsmechanismen, da diese spezifisch für jede Entwicklungsplattform erstellt werden müssen. Um dies zu bewerkstelligen wird jedem Controller ein Kind-Objekt (siehe Kapitel \ref{sec:UnityDevelopment}) in Form eines 3D-GameObjects (genannt \textit{Toucher}) angehängt, welches sich an der gleichen Position wie der Controller befindet. Durch die Eltern-Kind-Beziehung bewegt sich dieses Objekt stets mit dem Controller mit.\\
+Das Funktionsprinzip dahinter ist, ähnlich wie bei der Pointer Annotation in Abschnitt \ref{sec:SimplePointerAnnotation}, eine Kollisionserkennung. Kollidiert der Controller mit einem Punkt der Punktwolke, wird dieser mit dem aktuell ausgewählten Label annotiert. Die virtuellen Controller, Hände und deren Funktionen werden vom \textit{Oculus Avatar SDK} zur Verfügung gestellt \cite{bib:AvatarSDK}. Diese beinhalten keine Kollisionsmechanismen, da diese spezifisch für jede Entwicklungsplattform erstellt werden müssen. Um dies zu bewerkstelligen wird jedem Controller ein Kind-Objekt (siehe Kapitel \ref{sec:UnityDevelopment}) in Form eines 3D-GameObjects (genannt \textit{Toucher}) angehängt, welches sich an der gleichen Position wie der Controller befindet. In der Abbildung \ref{fig:TouchLabeling} ist ein solches Objekt am rechten Controller zu sehen (weißes Objekt im rechten Controller). Das Objekt wurde aber nur zu Anschauungszwecken eingeblendet. Im normalen Betrieb ist dieses Objekt nicht zu sehen. Durch die Eltern-Kind-Beziehung bewegt sich dieses Objekt stets mit dem Controller mit.\\
 
 Das Objekt wird zusätzlich mit einer Rigidbody-Komponente ausgestattet. Dadurch kann eine Kollision mit einem anderen Objekt, welches eine Collider-Komponente besitzt, von der Physik-Engine von Unity festgestellt werden. Dies ist das selbe Prinzip, das auch bei der Pointer Annotation aus Kapitel \ref{sec:SimplePointerAnnotation} benutzt wurde. Bewegt der Benutzer also den virtuellen Controller solange zu einem Punkt in der Punktwolke, bis dieser ihn erreicht, berührt der angehängte Toucher diesen Punkt. In diesem Fall wird eine Kollision zwischen Toucher und Punkt festgestellt.\\
 
@@ -533,8 +556,6 @@ Alle Punkte die diese Bedingungen erfüllen werden in die Menge Cluster-Punkte a
 \label{sec:UIMenu}
 In C.LABEL-VR gibt es drei Stellen an denen eine Benutzeroberfläche gebraucht wird. Zum einen muss der Benutzer beim Start der Applikation eine Entscheidungsmöglichkeit haben, welche Aktionen er zu Beginn ausführen möchte, wie zum Beispiel die Erstellung einer neuen Session oder den Start des Tutorials. Dazu wird ein passendes User Interface (UI) geboten. Zum anderen, soll der Benutzer auch während einer Session die Möglichkeit haben, Einstellungen vorzunehmen, wie Beispielsweise Navigationsparameter zu ändern oder neue Klassifikationen erstellen. Aus diesem Grund muss es auch innerhalb einer Session ein UI geben. Des Weiteren sind für die Erklärungen im Tutorial Benutzeroberflächen notwendig, um dem Benutzer Bilder und Text zu liefern. Für die Verwaltung der Benutzeroberflächen wurde ein spezieller Mechanismus implementiert, der das einfache Öffnen und Schließen von User Interface-Fenstern innerhalb der VR-Umgebung gewährleisten soll. Die grundlegende Architektur dafür wurde auf der \textit{Unite Europe 2017} von der Firma \textit{Yousician} vorgestellt \cite{bib:UnityMenuSystem}.\\
 
----TODO BILD menüsystem uml anpassen (Monobehaviour)
-
 \begin{figure}%
 	\centering
     \includegraphics[width=11cm]{UI-System}
@@ -567,9 +588,14 @@ protected static void Open()
 \end{lstlisting}
 \quad
 
-Der Öffnungsvorgang selbst, also die Funktion \textit{OpenMenu(Instance)}, legt die Instanz des UI-Fensters auf den Stack und macht alle Fenster, die sich darunter befinden unsichtbar, sofern dies vom Programmierer gewünscht ist (siehe \textit{DisableMenusUnderneith} in Abbildung \ref{fig:UI-System}). Anschließend wird die Sichtbarkeit des Fensters aktiviert. Bei normalen Desktop-Applikationen wäre der Öffnungsvorgang nun abgeschlossen, da Benutzeroberflächen auf einem Computermonitor nur eine zweidimensionale Position und Orientierung haben. In einer VR-Umgebung, ist jedes UI-Fenster aber eine dreidimensionale Komponente, die richtig im Raum platziert werden muss. Da sich der Benutzer stets bewegen und drehen kann, muss bei jedem Öffnungsvorgang eines UI-Fensters sichergestellt werden, dass das Fenster auch im Sichtfeld des Benutzers ist. Dazu wird innerhalb der OpenMenu(Instance)-Funktion die Position und Orientierung, der zu öffnenden Benutzeroberfläche, an die Position und Orientierung des Benutzers angepasst. Bei der Positionsanpassung muss beachtet werden, dass das Fenster nicht direkt an die Position des Benutzers gesetzt werden darf, sondern an einer Position vor dem Benutzer (siehe Abbildung ------). Hierbei muss beachtet werden, dass der Abstand zum Benutzer abhängig von der Größe der Benutzeroberfläche ist. Ist diese beispielsweise klein und wird sehr weit vom Benutzer entfernt dargestellt, kann der Benutzer den Inhalt des Fensters nicht mehr richtig wahrnehmen. In C.LABEL-VR hat deshalb jedes UI-Fenster die selbe Größe, damit immer der gleiche Abstand benutzt werden kann.\\
+\begin{figure}%
+	\centering
+    \fbox{\includegraphics[width=15cm]{UiInSession}}
+    \caption{Geöffnetes Applikationsmenü innerhalb einer Punktwolke}
+    \label{fig:UiInSession}
+\end{figure}
 
-TODO BILD mit geöffnetem Ui in der session\\
+Der Öffnungsvorgang selbst, also die Funktion \textit{OpenMenu(Instance)}, legt die Instanz des UI-Fensters auf den Stack und macht alle Fenster, die sich darunter befinden unsichtbar, sofern dies vom Programmierer gewünscht ist (siehe \textit{DisableMenusUnderneith} in Abbildung \ref{fig:UI-System}). Anschließend wird die Sichtbarkeit des Fensters aktiviert. Bei normalen Desktop-Applikationen wäre der Öffnungsvorgang nun abgeschlossen, da Benutzeroberflächen auf einem Computermonitor nur eine zweidimensionale Position und Orientierung haben. In einer VR-Umgebung, ist jedes UI-Fenster aber eine dreidimensionale Komponente, die richtig im Raum platziert werden muss. Da sich der Benutzer stets bewegen und drehen kann, muss bei jedem Öffnungsvorgang eines UI-Fensters sichergestellt werden, dass das Fenster auch im Sichtfeld des Benutzers ist. Dazu wird innerhalb der OpenMenu(Instance)-Funktion die Position und Orientierung, der zu öffnenden Benutzeroberfläche, an die Position und Orientierung des Benutzers angepasst. Bei der Positionsanpassung muss beachtet werden, dass das Fenster nicht direkt an die Position des Benutzers gesetzt werden darf, sondern an einer Position vor dem Benutzer (siehe Abbildung \ref{fig:UiInSession}). Hierbei muss beachtet werden, dass der Abstand zum Benutzer abhängig von der Größe der Benutzeroberfläche ist. Ist diese beispielsweise klein und wird sehr weit vom Benutzer entfernt dargestellt, kann der Benutzer den Inhalt des Fensters nicht mehr richtig wahrnehmen. In C.LABEL-VR hat deshalb jedes UI-Fenster die selbe Größe, damit immer der gleiche Abstand benutzt werden kann.\\
 
 Durch das vorgestellte UI-System können Funktionen und Eigenschaften von Benutzeroberflächen individuell gestaltet und trotzdem, vom Programmierer, simpel geöffnet und geschlossen werden. Durch die dynamische Anpassung der Position und Orientierung der UI-Fenster, kann das System auch in einer dreidimensionalen Umgebung, wie der virtuellen Realität, genutzt werden. So ist es möglich auch innerhalb einer Punktwolke Benutzeroberflächen aufzurufen. Die Funktionalitäten der Benutzeroberflächen, welche während einer Session in C.LABEL-VR aufgerufen werden können, sollen im folgenden Kapitel näher beschrieben werden.
   
