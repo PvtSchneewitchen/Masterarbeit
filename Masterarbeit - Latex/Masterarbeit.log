@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.06.2 (MiKTeX 2.9.6500 64-bit)  (format=lualatex 2017.12.19)  28 MAY 2018 17:30
+This is LuaTeX, Version 1.06.2 (MiKTeX 2.9.6500 64-bit)  (format=lualatex 2017.12.19)  29 MAY 2018 15:58
  restricted system commands enabled.
 **Masterarbeit.tex
 (./Masterarbeit.tex
@@ -33,7 +33,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.484 seconds
+luaotfload | main : initialization completed in 0.661 seconds
 Babel <3.15> and hyphenation patterns for 1 language(s) loaded.
 
 ("C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/tex/latex/koma-script/scr
@@ -4418,7 +4418,7 @@ ams/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Users/gruepazu/AppData/Local/
 Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/gruepazu/AppData/Lo
 cal/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/gruepazu/AppD
 ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb>
-Output written on Masterarbeit.pdf (96 pages, 14526226 bytes).
+Output written on Masterarbeit.pdf (96 pages, 14526227 bytes).
 
 PDF statistics: 1898 PDF objects out of 2073 (max. 8388607)
  420 named destinations out of 1000 (max. 131072)
