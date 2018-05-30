@@ -9,20 +9,20 @@
 \contentsline {section}{\numberline {2.1}Erfassung von Punktwolken mit LiDAR}{7}{section.2.1}
 \contentsline {section}{\numberline {2.2}Datenannotation im Bereich des maschinellen Lernens}{10}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Maschinelles Lernen}{11}{subsection.2.2.1}
-\contentsline {subsubsection}{Künstliche Neuronale Netze}{13}{figure.caption.12}
-\contentsline {subsubsection}{Trainieren von künstlichen neuronalen Netzen}{16}{figure.caption.15}
+\contentsline {subsubsection}{Künstliche Neuronale Netze}{13}{figure.caption.9}
+\contentsline {subsubsection}{Trainieren von künstlichen neuronalen Netzen}{16}{figure.caption.12}
 \contentsline {subsection}{\numberline {2.2.2}Annotation von 3D-Punktwolken}{18}{subsection.2.2.2}
 \contentsline {section}{\numberline {2.3}Virtual Reality}{20}{section.2.3}
 \contentsline {chapter}{\numberline {3}Systembeschreibung}{23}{chapter.3}
 \contentsline {section}{\numberline {3.1}Komponente 1: Die VR-Brille}{23}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Warum VR die passende Technologie für C.LABEL-VR ist}{24}{subsection.3.1.1}
-\contentsline {subsubsection}{Eignung von \acrlong {acr:AR} für 3D-Annotation}{24}{figure.caption.18}
-\contentsline {subsubsection}{Eignung von \acrlong {acr:VR} für 3D-Annotation}{26}{figure.caption.18}
-\contentsline {subsubsection}{Entscheidung}{27}{figure.caption.18}
+\contentsline {subsubsection}{Eignung von \acrlong {acr:AR} für 3D-Annotation}{24}{figure.caption.15}
+\contentsline {subsubsection}{Eignung von \acrlong {acr:VR} für 3D-Annotation}{26}{figure.caption.15}
+\contentsline {subsubsection}{Entscheidung}{27}{figure.caption.15}
 \contentsline {subsection}{\numberline {3.1.2}Warum die Oculus Rift verwendet wurde}{27}{subsection.3.1.2}
-\contentsline {subsubsection}{Oculus Rift}{28}{figure.caption.19}
-\contentsline {subsubsection}{HTC Vive}{28}{figure.caption.19}
-\contentsline {subsubsection}{Entscheidung}{29}{figure.caption.19}
+\contentsline {subsubsection}{Oculus Rift}{28}{figure.caption.16}
+\contentsline {subsubsection}{HTC Vive}{28}{figure.caption.16}
+\contentsline {subsubsection}{Entscheidung}{29}{figure.caption.16}
 \contentsline {section}{\numberline {3.2}Komponente 2: Der Rechner}{29}{section.3.2}
 \contentsline {section}{\numberline {3.3}Komponente 3: Die Entwicklungsplattform}{30}{section.3.3}
 \contentsline {subsubsection}{Vergleich zwischen Unreal und Unity}{31}{section.3.3}
@@ -35,8 +35,8 @@
 \contentsline {subsection}{\numberline {4.2.2}Interne Datenstruktur}{42}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}HDF5}{43}{subsection.4.2.3}
 \contentsline {subsubsection}{HDF5 Import/Export-Beispiel}{44}{subsection.4.2.3}
-\contentsline {subsubsection}{Import}{45}{figure.caption.24}
-\contentsline {subsubsection}{Export}{46}{figure.caption.24}
+\contentsline {subsubsection}{Import}{45}{figure.caption.21}
+\contentsline {subsubsection}{Export}{46}{figure.caption.21}
 \contentsline {section}{\numberline {4.3}Generierung einer Punktwolke}{47}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1}Optimierung der Bildwiederholungsrate}{50}{subsection.4.3.1}
 \contentsline {section}{\numberline {4.4}Navigation}{52}{section.4.4}
@@ -47,26 +47,25 @@
 \contentsline {subsection}{\numberline {4.5.1}Pointer Annotation}{59}{subsection.4.5.1}
 \contentsline {subsection}{\numberline {4.5.2}Touch Annotation}{61}{subsection.4.5.2}
 \contentsline {subsection}{\numberline {4.5.3}Cluster Annotation}{63}{subsection.4.5.3}
-\contentsline {subsubsection}{Bodenpunkt-Analyse}{63}{figure.caption.32}
+\contentsline {subsubsection}{Bodenpunkt-Analyse}{63}{figure.caption.29}
 \contentsline {subsubsection}{Cluster-Analyse}{69}{algorithm.2}
 \contentsline {section}{\numberline {4.6}User Interface}{71}{section.4.6}
 \contentsline {subsection}{\numberline {4.6.1}Applikations-Menü}{75}{subsection.4.6.1}
-\contentsline {subsubsection}{Bewegungsmenü}{76}{figure.caption.38}
-\contentsline {subsubsection}{Bewegungsmenü}{77}{figure.caption.38}
-\contentsline {chapter}{\numberline {5}Evaluation}{78}{chapter.5}
-\contentsline {section}{\numberline {5.1}Methodik}{78}{section.5.1}
-\contentsline {section}{\numberline {5.2}Ergebnis}{79}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Navigation}{80}{subsection.5.2.1}
-\contentsline {subsubsection}{Freier Flugmodus}{80}{subsection.5.2.1}
-\contentsline {subsubsection}{Teleport-Modus}{80}{subsection.5.2.1}
-\contentsline {subsubsection}{VR-Krankheit}{81}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Annotation}{81}{subsection.5.2.2}
-\contentsline {subsubsection}{Pointer Annotation}{81}{subsection.5.2.2}
-\contentsline {subsubsection}{Touch Annotation}{82}{subsection.5.2.2}
-\contentsline {subsubsection}{Cluster Annotation}{82}{subsection.5.2.2}
-\contentsline {subsubsection}{User Interface}{82}{subsection.5.2.2}
-\contentsline {chapter}{\numberline {6}Schluss}{83}{chapter.6}
-\contentsline {section}{\numberline {6.1}Zusammenfassung und erreichte Ziele}{83}{section.6.1}
-\contentsline {section}{\numberline {6.2}Mehrwert der VR-Applikation}{83}{section.6.2}
-\contentsline {section}{\numberline {6.3}Weiterentwicklungsmöglichkeiten}{83}{section.6.3}
-\contentsline {chapter}{\numberline {A}Appendix Title}{84}{appendix.A}
+\contentsline {subsubsection}{Bewegungsmenü}{76}{figure.caption.35}
+\contentsline {subsubsection}{Bewegungsmenü}{77}{figure.caption.35}
+\contentsline {chapter}{\numberline {5}Evaluation}{79}{chapter.5}
+\contentsline {section}{\numberline {5.1}Methodik}{79}{section.5.1}
+\contentsline {section}{\numberline {5.2}Ergebnis}{80}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Navigation}{81}{subsection.5.2.1}
+\contentsline {subsubsection}{Freier Flugmodus}{81}{subsection.5.2.1}
+\contentsline {subsubsection}{Teleport-Modus}{81}{subsection.5.2.1}
+\contentsline {subsubsection}{VR-Krankheit}{82}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Annotation}{82}{subsection.5.2.2}
+\contentsline {subsubsection}{Pointer Annotation}{82}{subsection.5.2.2}
+\contentsline {subsubsection}{Touch Annotation}{83}{subsection.5.2.2}
+\contentsline {subsubsection}{Cluster Annotation}{83}{subsection.5.2.2}
+\contentsline {subsubsection}{User Interface}{83}{subsection.5.2.2}
+\contentsline {chapter}{\numberline {6}Schluss}{84}{chapter.6}
+\contentsline {section}{\numberline {6.1}Zusammenfassung}{84}{section.6.1}
+\contentsline {section}{\numberline {6.2}Weiterentwicklungsmöglichkeiten}{85}{section.6.2}
+\contentsline {chapter}{\numberline {A}Appendix Title}{86}{appendix.A}
