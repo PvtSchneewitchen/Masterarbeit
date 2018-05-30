@@ -1,0 +1,668 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.19)  29 MAY 2018 15:44
+entering extended mode
+**./Masterarbeit.tex
+(Masterarbeit.tex
+LaTeX2e <2017-04-15>
+Babel <3.15> and hyphenation patterns for 75 language(s) loaded.
+
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cl
+s"
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\size10.clo
+"
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geomet
+ry.sty"
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyval
+.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifpd
+f.sty"
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifvt
+ex.sty"
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ifxetex\ifxet
+ex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count87
+\Gm@cntv=\count88
+\c@Gm@tempcnt=\count89
+\Gm@bindingoffset=\dimen103
+\Gm@wd@mp=\dimen104
+\Gm@odd@mp=\dimen105
+\Gm@even@mp=\dimen106
+\Gm@layoutwidth=\dimen107
+\Gm@layoutheight=\dimen108
+\Gm@layouthoffset=\dimen109
+\Gm@layoutvoffset=\dimen110
+\Gm@dimlist=\toks15
+
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geomet
+ry.cfg"))
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.s
+ty"
+Package: babel 2017/11/03 3.15 The Babel package
+
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\switch.
+def"
+File: switch.def 2017/11/03 3.15 Babel switching mechanism
+)
+*************************************
+* Local config file bblopts.cfg used
+*
+
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\latex\arabi\bblopts.c
+fg"
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\latex\babel-english\e
+nglish.ldf"
+Language: english 2017/06/06 v3.3r English support from the babel system
+
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.d
+ef"
+File: babel.def 2017/11/03 3.15 Babel common definitions
+
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\switch.
+def"
+File: switch.def 2017/11/03 3.15 Babel switching mechanism
+)
+\babel@savecnt=\count90
+\U@D=\dimen111
+)
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+))
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\latex\titling\titling
+.sty"
+Package: titling 2009/09/04 v2.1d maketitle typesetting
+\thanksmarkwidth=\skip43
+\thanksmargin=\skip44
+\droptitle=\skip45
+)
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\latex\float\float.sty
+"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count91
+\float@exts=\toks16
+\float@box=\box26
+\@float@everytoks=\toks17
+\@floatcapt=\box27
+)
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\latex\subfig\subfig.s
+ty"
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\latex\caption\caption
+.sty"
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\latex\caption\caption
+3.sty"
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen112
+\captionmargin@=\dimen113
+\captionwidth=\dimen114
+\caption@tempdima=\dimen115
+\caption@indent=\dimen116
+\caption@parindent=\dimen117
+\caption@hangindent=\dimen118
+)
+\c@ContinuedFloat=\count92
+Package caption Info: float package is loaded.
+)
+\c@KVtest=\count93
+\sf@farskip=\skip46
+\sf@captopadj=\dimen119
+\sf@capskip=\skip47
+\sf@nearskip=\skip48
+\c@subfigure=\count94
+\c@subfigure@save=\count95
+\c@lofdepth=\count96
+\c@subtable=\count97
+\c@subtable@save=\count98
+\c@lotdepth=\count99
+\sf@top=\skip49
+\sf@bottom=\skip50
+)
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphi
+cx.sty"
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphi
+cs.sty"
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\trig.s
+ty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-cfg\gr
+aphics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-def\pd
+ftex.def"
+File: pdftex.def 2017/06/24 v1.0g Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen120
+\Gin@req@width=\dimen121
+)
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ltxmisc\varwidt
+h.sty"
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box28
+\sift@deathcycles=\count100
+\@vwid@loff=\dimen122
+\@vwid@roff=\dimen123
+)
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\hyperr
+ef.sty"
+Package: hyperref 2017/03/14 v6.85a Hypertext links for LaTeX
+
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\hobs
+ub-hyperref.sty"
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+
+
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\hobs
+ub-generic.sty"
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package hobsub Info: Skipping package `ifvtex' (already loaded).
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+)
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\auxhoo
+k.sty"
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\kvopti
+ons.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+)
+\@linkdim=\dimen124
+\Hy@linkcounter=\count101
+\Hy@pagecounter=\count102
+
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\pd1enc
+.def"
+File: pd1enc.def 2017/03/14 v6.85a Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count103
+
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\hyperr
+ef.cfg"
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4498.
+Package hyperref Info: Link nesting OFF on input line 4503.
+Package hyperref Info: Hyper index ON on input line 4506.
+Package hyperref Info: Plain pages OFF on input line 4513.
+Package hyperref Info: Backreferencing OFF on input line 4518.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4751.
+\c@Hy@tempcnt=\count104
+
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5104.
+\XeTeXLinkMargin=\dimen125
+\Fld@menulength=\count105
+\Field@Width=\dimen126
+\Fld@charsize=\dimen127
+Package hyperref Info: Hyper figures OFF on input line 6358.
+Package hyperref Info: Link nesting OFF on input line 6363.
+Package hyperref Info: Hyper index ON on input line 6366.
+Package hyperref Info: backreferencing OFF on input line 6373.
+Package hyperref Info: Link coloring OFF on input line 6378.
+Package hyperref Info: Link coloring with OCG OFF on input line 6383.
+Package hyperref Info: PDF/A mode OFF on input line 6388.
+LaTeX Info: Redefining \ref on input line 6428.
+LaTeX Info: Redefining \pageref on input line 6432.
+\Hy@abspage=\count106
+\c@Item=\count107
+\c@Hfootnote=\count108
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\hpdfte
+x.def"
+File: hpdftex.def 2017/03/14 v6.85a Hyperref driver for pdfTeX
+\Fld@listcount=\count109
+\c@bookmark@seq@number=\count110
+
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\rerunf
+ilecheck.sty"
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip51
+) (Masterarbeit.aux
+
+LaTeX Warning: Label `fig:UI-Interaction' multiply defined.
+
+
+LaTeX Warning: Label `fig:UI-Interaction' multiply defined.
+
+
+LaTeX Warning: Label `fig:UI-Interaction' multiply defined.
+
+
+LaTeX Warning: Label `fig:UI-Interaction' multiply defined.
+
+
+LaTeX Warning: Label `fig:UI-Interaction' multiply defined.
+
+)
+\openout1 = `Masterarbeit.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=469.75502pt
+* \textheight=650.43001pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: End \AtBeginDocument code.
+
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf
+.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count111
+\scratchdimen=\dimen128
+\scratchbox=\box29
+\nofMPsegments=\count112
+\nofMParguments=\count113
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count114
+\MPscratchDim=\dimen129
+\MPnumerator=\count115
+\makeMPintoPDFobject=\count116
+\everyMPtoPDFconversion=\toks19
+)
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstop
+df-base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\grfext
+.sty"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+\AtBeginShipoutBox=\box30
+Package hyperref Info: Link coloring OFF on input line 23.
+
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\namere
+f.sty"
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+
+("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\gett
+itlestring.sty"
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count117
+)
+LaTeX Info: Redefining \ref on input line 23.
+LaTeX Info: Redefining \pageref on input line 23.
+LaTeX Info: Redefining \nameref on input line 23.
+ (Masterarbeit.out) (Masterarbeit.out)
+\@outlinefile=\write3
+\openout3 = `Masterarbeit.out'.
+
+
+
+LaTeX Warning: No \author given.
+
+<Main_Images/Controllers_rightgrip.png, id=55, 602.25pt x 344.03531pt>
+File: Main_Images/Controllers_rightgrip.png Graphic file (type png)
+<use Main_Images/Controllers_rightgrip.png>
+Package pdftex.def Info: Main_Images/Controllers_rightgrip.png  used on input l
+ine 37. on input line 37.
+Package pdftex.def Info: Requested size: 199.16928pt x 113.77348pt on input lin
+e 37.
+<Main_Images/Controllers_righttrigger.png, id=56, 602.25pt x 344.03531pt>
+File: Main_Images/Controllers_righttrigger.png Graphic file (type png)
+<use Main_Images/Controllers_righttrigger.png>
+Package pdftex.def Info: Main_Images/Controllers_righttrigger.png  used on inpu
+t line 39. on input line 39.
+Package pdftex.def Info: Requested size: 199.16928pt x 113.77348pt on input lin
+e 39.
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--46
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--47
+
+ []
+
+<Main_Images/Controllers_sticks.png, id=59, 602.25pt x 344.03531pt>
+File: Main_Images/Controllers_sticks.png Graphic file (type png)
+<use Main_Images/Controllers_sticks.png>
+Package pdftex.def Info: Main_Images/Controllers_sticks.png  used on input line
+ 56. on input line 56.
+Package pdftex.def Info: Requested size: 312.9803pt x 178.7944pt on input line 
+56.
+[1
+
+{C:/Users/gruepazu/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./Main_I
+mages/Controllers_rightgrip.png> <./Main_Images/Controllers_righttrigger.png>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 64.
+ ("C:\Users\gruepazu\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd
+"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 64.
+ [2 <./Main_Images/Controllers_sticks.png>]
+<Main_Images/Controllers_leftgrip.png, id=82, 602.25pt x 344.03531pt>
+File: Main_Images/Controllers_leftgrip.png Graphic file (type png)
+<use Main_Images/Controllers_leftgrip.png>
+Package pdftex.def Info: Main_Images/Controllers_leftgrip.png  used on input li
+ne 97. on input line 97.
+Package pdftex.def Info: Requested size: 142.26378pt x 81.26826pt on input line
+ 97.
+<Main_Images/Controllers_leftStick.png, id=83, 602.25pt x 344.03531pt>
+File: Main_Images/Controllers_leftStick.png Graphic file (type png)
+<use Main_Images/Controllers_leftStick.png>
+Package pdftex.def Info: Main_Images/Controllers_leftStick.png  used on input l
+ine 99. on input line 99.
+Package pdftex.def Info: Requested size: 142.26378pt x 81.26826pt on input line
+ 99.
+<Main_Images/Controllers_leftTrigger.png, id=84, 602.25pt x 344.03531pt>
+File: Main_Images/Controllers_leftTrigger.png Graphic file (type png)
+<use Main_Images/Controllers_leftTrigger.png>
+Package pdftex.def Info: Main_Images/Controllers_leftTrigger.png  used on input
+ line 101. on input line 101.
+Package pdftex.def Info: Requested size: 142.26378pt x 81.26826pt on input line
+ 101.
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
+
+ []
+
+<Main_Images/Controllers_A&B.png, id=88, 602.25pt x 344.03531pt>
+File: Main_Images/Controllers_A&B.png Graphic file (type png)
+<use Main_Images/Controllers_A&B.png>
+Package pdftex.def Info: Main_Images/Controllers_A&B.png  used on input line 12
+4. on input line 124.
+Package pdftex.def Info: Requested size: 284.52756pt x 162.5418pt on input line
+ 124.
+File: Main_Images/Controllers_rightgrip.png Graphic file (type png)
+<use Main_Images/Controllers_rightgrip.png>
+Package pdftex.def Info: Main_Images/Controllers_rightgrip.png  used on input l
+ine 135. on input line 135.
+Package pdftex.def Info: Requested size: 199.16928pt x 113.77348pt on input lin
+e 135.
+<Main_Images/Controllers_RightStickPress.png, id=89, 602.25pt x 344.03531pt>
+File: Main_Images/Controllers_RightStickPress.png Graphic file (type png)
+<use Main_Images/Controllers_RightStickPress.png>
+Package pdftex.def Info: Main_Images/Controllers_RightStickPress.png  used on i
+nput line 137. on input line 137.
+Package pdftex.def Info: Requested size: 199.16928pt x 113.77348pt on input lin
+e 137.
+[3 <./Main_Images/Controllers_leftgrip.png> <./Main_Images/Controllers_leftStic
+k.png> <./Main_Images/Controllers_leftTrigger.png> <./Main_Images/Controllers_A
+&B.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 143--144
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
+
+ []
+
+File: Main_Images/Controllers_rightgrip.png Graphic file (type png)
+<use Main_Images/Controllers_rightgrip.png>
+Package pdftex.def Info: Main_Images/Controllers_rightgrip.png  used on input l
+ine 155. on input line 155.
+Package pdftex.def Info: Requested size: 199.16928pt x 113.77348pt on input lin
+e 155.
+File: Main_Images/Controllers_righttrigger.png Graphic file (type png)
+<use Main_Images/Controllers_righttrigger.png>
+Package pdftex.def Info: Main_Images/Controllers_righttrigger.png  used on inpu
+t line 157. on input line 157.
+Package pdftex.def Info: Requested size: 199.16928pt x 113.77348pt on input lin
+e 157.
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 164--165
+
+ []
+
+<Main_Images/TouchLabeling.png, id=106, 754.31813pt x 435.87843pt>
+File: Main_Images/TouchLabeling.png Graphic file (type png)
+<use Main_Images/TouchLabeling.png>
+Package pdftex.def Info: Main_Images/TouchLabeling.png  used on input line 172.
+ on input line 172.
+Package pdftex.def Info: Requested size: 284.52756pt x 164.41174pt on input lin
+e 172.
+[4 <./Main_Images/Controllers_RightStickPress.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 178--179
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 179--180
+
+ []
+
+File: Main_Images/Controllers_rightgrip.png Graphic file (type png)
+<use Main_Images/Controllers_rightgrip.png>
+Package pdftex.def Info: Main_Images/Controllers_rightgrip.png  used on input l
+ine 190. on input line 190.
+Package pdftex.def Info: Requested size: 142.26378pt x 81.26826pt on input line
+ 190.
+<Main_Images/Controllers_LeftStickPress.png, id=125, 602.25pt x 344.03531pt>
+File: Main_Images/Controllers_LeftStickPress.png Graphic file (type png)
+<use Main_Images/Controllers_LeftStickPress.png>
+Package pdftex.def Info: Main_Images/Controllers_LeftStickPress.png  used on in
+put line 192. on input line 192.
+Package pdftex.def Info: Requested size: 142.26378pt x 81.26826pt on input line
+ 192.
+<Main_Images/Controllers_rightTrigger.png, id=126, 602.25pt x 344.03531pt>
+File: Main_Images/Controllers_rightTrigger.png Graphic file (type png)
+<use Main_Images/Controllers_rightTrigger.png>
+Package pdftex.def Info: Main_Images/Controllers_rightTrigger.png  used on inpu
+t line 194. on input line 194.
+Package pdftex.def Info: Requested size: 142.26378pt x 81.26826pt on input line
+ 194.
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--201
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--202
+
+ []
+
+<Main_Images/Controllers_options.png, id=130, 602.25pt x 344.03531pt>
+File: Main_Images/Controllers_options.png Graphic file (type png)
+<use Main_Images/Controllers_options.png>
+Package pdftex.def Info: Main_Images/Controllers_options.png  used on input lin
+e 210. on input line 210.
+Package pdftex.def Info: Requested size: 170.71652pt x 97.52087pt on input line
+ 210.
+<Main_Images/InGameMenu.png, id=131, 891.33pt x 437.38406pt>
+File: Main_Images/InGameMenu.png Graphic file (type png)
+<use Main_Images/InGameMenu.png>
+Package pdftex.def Info: Main_Images/InGameMenu.png  used on input line 212. on
+ input line 212.
+Package pdftex.def Info: Requested size: 256.0748pt x 125.65683pt on input line
+ 212.
+[5 <./Main_Images/TouchLabeling.png> <./Main_Images/Controllers_LeftStickPress.
+png> <./Main_Images/Controllers_rightTrigger.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 218--219
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--220
+
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 224.
+[6 <./Main_Images/Controllers_options.png> <./Main_Images/InGameMenu.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 224.
+
+(Masterarbeit.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 224.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 224.
+Package rerunfilecheck Info: File `Masterarbeit.out' has not changed.
+(rerunfilecheck)             Checksum: 6FF814E5F6AC886FF517EE9E0EF14A52;804.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 224.
+ ) 
+Here is how much of TeX's memory you used:
+ 7447 strings out of 493312
+ 117840 string characters out of 3128521
+ 207224 words of memory out of 3000000
+ 10858 multiletter control sequences out of 15000+200000
+ 6232 words of font info for 23 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 44i,9n,49p,225b,380s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmbx10.pfb><C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmbx12.pfb><C:/Users/gruepazu/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/gruepazu/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/gruep
+azu/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><
+C:/Users/gruepazu/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmsy10.pfb>
+Output written on Masterarbeit.pdf (6 pages, 1444712 bytes).
+PDF statistics:
+ 195 PDF objects out of 1000 (max. 8388607)
+ 64 named destinations out of 1000 (max. 500000)
+ 170 words of extra memory for PDF output out of 10000 (max. 10000000)
+

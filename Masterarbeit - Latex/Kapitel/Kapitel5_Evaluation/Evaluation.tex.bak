@@ -4,7 +4,7 @@ C.LABEL-VR ist die erste Applikation, die als Prototyp im Bereich der Annotation
 
 \section{Methodik}
 \label{sec:Methodik}
-TODO BILD evtl. Bild einer Demo von der Messe 
+TODO BILD Bild der Prsäesntation auf einer Messe einfügen
 
 Das VR-System mit der Applikation C.LABEL-VR wurde mehrmals intern innerhalb der Firma zum Testen bereitgestellt. Darüber hinaus gab es auch Tests auf einer Messe und direkt bei einem Kunden von CMORE vor Ort. Die Aussagen der Probanden bei diesen Tests wurden anhand von deren Voraussetzungen eingeordnet. Die Voraussetzung eines Probanden ergibt sich zum einen über die Einordnung in einer von drei Gruppen. Die erste Gruppe besteht aus Personen, welche keinerlei Erfahrungen mit Punktwolkendaten haben. Die zweite Gruppe besteht aus Personen, die Erfahrungen im Bezug auf Punktwolkendaten haben, jedoch keine zu Annotation von Daten. Die dritte Gruppe besteht aus Personen die sowohl Erfahrungen mit Punktwolkendaten, als auch mit deren Annotation haben. Zusätzlich wurde bei jedem Tester berücksichtigt, ob dieser bereits Erfahrungen mit Virtual Reality gemacht hat. Zu Beginn jedes Tests wurden die wichtigsten Funktionen der Applikation (Navigation, Annotation, User Interface) kurz demonstriert und die Bedienung dazu erläutert. Anschließend hatten alle Probanden die Möglichkeit die Applikation selbst zu testen und dabei Aussagen zur Applikation zu äußern.\\
 
@@ -15,8 +15,6 @@ Nach dem Testen sollten die Probanden das Potential der Funktionalität von C.LA
 
 \section{Ergebnis}
 \label{sec:EvaluationErgebnis}
-TODO TEXT
-
 In diesem Kapitel werden die Ergebnisse der Evaluation präsentiert. Hierzu werden für jeden Bereich, auf den beim Testen geachtet wurde, die am meisten relevanten Aussagen zusammengefasst und dabei die Voraussetzungen der Probanden berücksichtigt. Die Bereiche, auf die geachtet wurden, sind Navigation, Symptome der VR-Krankheit, Annotation, User Interface und die Einschätzung des Potentials im Hinblick auf Weiterentwicklung und Marketingwert der Applikation. 
 
 \subsection{Navigation}
@@ -53,12 +51,8 @@ Von der Effektivität her, wurde die Cluster Annotation am besten bewertet. Spez
 waren interessiert, diesen Modus in ihre Annotations-Werkzeuge zu integrieren. Auf Wunsch der Algorithmik-Abteilung von CMORE wurde die Bodenpunkt-Analyse innerhalb der Firma präsentiert um sie für den Einsatz in C.LABEL zu evaluieren. Einzig die Steuerung dieses Modus bedurfte für Neulinge eine Gewöhnungszeit, da die Tastenkombination aus drei Tasten nicht intuitiv für sie war.
 
 \subsubsection{User Interface}
-Die Interaktion mit den Benutzeroberflächen wurde von allen Probanden als intuitiv empfunden
+Die Interaktion mit den Benutzeroberflächen wurde von allen Probanden als intuitiv empfunden. Der Grund dafür ist, dass die Steuerung für die UI-Interaktion die selbe ist, wie die der der Pointer Annotation. Da die Nutzer in der Regel erst die Pointer Annotation testeten und erst danach mit einer Benutzeroberfläche interagierten, empfanden alle Probanden die Interaktion als leicht erlernbar. Ein Proband, welcher Erfahrungen mit Punktwolken und Labeling-Werkzeugen hatte, bemängelte die Unübersichtlichkeit des Bewegungsmenüs, da zu viel Informationen auf einer kleinen Fläche seien. Der Verbesserungsvorschlag dieses Probanden war, das Bewegungsmenü in einzelne kleine Untermenüs aufzuteilen. Das Annotationsmenü dagegen wurde als gut empfunden.
 
-
-Interaltion war sehr intuitiv jeder hats gleich verstanden, da man das durch pointer labeling schon kennt
-Bewegungsmenü zu überladen
-Labeling menü gut
 
 
 
